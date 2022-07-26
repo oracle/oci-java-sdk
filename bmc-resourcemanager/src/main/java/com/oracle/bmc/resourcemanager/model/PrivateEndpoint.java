@@ -5,7 +5,7 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * A private endpoint. For more information about private endpoints, see [About Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/privateaccess.htm#private-endpoints).
+ * A private endpoint allowing Resource Manager to access nonpublic cloud resources. For more information about private endpoints, see [Private Endpoint Management](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -71,13 +71,13 @@ public final class PrivateEndpoint {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
          * @param id the value to set
          * @return this builder
          **/
@@ -87,13 +87,13 @@ public final class PrivateEndpoint {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -167,13 +167,13 @@ public final class PrivateEndpoint {
             return this;
         }
         /**
-         * The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+         * The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceIps")
         private java.util.List<String> sourceIps;
 
         /**
-         * The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+         * The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
          * @param sourceIps the value to set
          * @return this builder
          **/
@@ -183,13 +183,21 @@ public final class PrivateEndpoint {
             return this;
         }
         /**
-         * An array of network security groups (NSG) that the customer can optionally provide.
+         * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+         * for the private endpoint.
+         * Order does not matter.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIdList")
         private java.util.List<String> nsgIdList;
 
         /**
-         * An array of network security groups (NSG) that the customer can optionally provide.
+         * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+         * for the private endpoint.
+         * Order does not matter.
+         *
          * @param nsgIdList the value to set
          * @return this builder
          **/
@@ -216,14 +224,24 @@ public final class PrivateEndpoint {
             return this;
         }
         /**
-         * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+         * DNS zones to use for accessing private Git servers.
+         * For private Git server instructions, see
+         * [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git).
+         * Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver.
+         * For DNS FQDNs not specified, queries go to service provider VCN resolver.
+         * Example: {@code abc.oraclevcn.com}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
         private java.util.List<String> dnsZones;
 
         /**
-         * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+         * DNS zones to use for accessing private Git servers.
+         * For private Git server instructions, see
+         * [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git).
+         * Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver.
+         * For DNS FQDNs not specified, queries go to service provider VCN resolver.
+         * Example: {@code abc.oraclevcn.com}
          *
          * @param dnsZones the value to set
          * @return this builder
@@ -379,13 +397,13 @@ public final class PrivateEndpoint {
     }
 
     /**
-     * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      * @return the value
      **/
     public String getId() {
@@ -393,13 +411,13 @@ public final class PrivateEndpoint {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -463,13 +481,13 @@ public final class PrivateEndpoint {
     }
 
     /**
-     * The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+     * The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceIps")
     private final java.util.List<String> sourceIps;
 
     /**
-     * The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+     * The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
      * @return the value
      **/
     public java.util.List<String> getSourceIps() {
@@ -477,13 +495,21 @@ public final class PrivateEndpoint {
     }
 
     /**
-     * An array of network security groups (NSG) that the customer can optionally provide.
+     * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+     * for the private endpoint.
+     * Order does not matter.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIdList")
     private final java.util.List<String> nsgIdList;
 
     /**
-     * An array of network security groups (NSG) that the customer can optionally provide.
+     * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+     * for the private endpoint.
+     * Order does not matter.
+     *
      * @return the value
      **/
     public java.util.List<String> getNsgIdList() {
@@ -505,14 +531,24 @@ public final class PrivateEndpoint {
     }
 
     /**
-     * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+     * DNS zones to use for accessing private Git servers.
+     * For private Git server instructions, see
+     * [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git).
+     * Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver.
+     * For DNS FQDNs not specified, queries go to service provider VCN resolver.
+     * Example: {@code abc.oraclevcn.com}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
     private final java.util.List<String> dnsZones;
 
     /**
-     * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+     * DNS zones to use for accessing private Git servers.
+     * For private Git server instructions, see
+     * [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git).
+     * Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver.
+     * For DNS FQDNs not specified, queries go to service provider VCN resolver.
+     * Example: {@code abc.oraclevcn.com}
      *
      * @return the value
      **/

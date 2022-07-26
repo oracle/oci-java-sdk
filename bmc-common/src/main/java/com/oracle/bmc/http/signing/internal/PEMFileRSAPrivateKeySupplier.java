@@ -11,6 +11,9 @@ import java.nio.charset.StandardCharsets;
 import java.security.interfaces.RSAPrivateKey;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import com.oracle.bmc.InternalSdk;
+import com.oracle.bmc.internal.GuavaUtils;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
 import org.bouncycastle.openssl.EncryptionException;
@@ -23,7 +26,6 @@ import org.bouncycastle.openssl.jcajce.JcePEMDecryptorProviderBuilder;
 
 import java.util.Optional;
 import com.oracle.bmc.util.internal.Validate;
-import com.oracle.bmc.util.StreamUtils;
 
 /**
  * An implementation of {@link KeySupplier} that supplies a RSA private key from
@@ -123,9 +125,25 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
      *            this parameter is ignored. The key returned is always the same, the one from the file.
      * @return an Optional for the key
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     @Override
-    public Optional<RSAPrivateKey> getKey(@Nonnull String ignored) {
-        return getKey();
+    public Optional<RSAPrivateKey> supplyKey(@Nonnull String ignored) {
+        return supplyKey();
+    }
+
+    /**
+     * Get the key from the file.
+     *
+     * @param ignored
+     *            this parameter is ignored. The key returned is always the same, the one from the file.
+     * @return an Optional for the key
+     * @deprecated use supplyKey instead
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Deprecated
+    public com.google.common /*Guava will be removed soon*/.base.Optional<RSAPrivateKey> getKey(
+            @Nonnull String ignored) {
+        return GuavaUtils.adaptToGuava(supplyKey(ignored));
     }
 
     /**
@@ -133,9 +151,24 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
      *
      * @return an Optional for the key
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     @Nonnull
-    public Optional<RSAPrivateKey> getKey() {
+    public Optional<RSAPrivateKey> supplyKey() {
         return Optional.of(key);
+    }
+
+    /**
+     * Get the key from the file.
+     *
+     * @return an Optional for the key
+     *
+     * @deprecated use supplyKey instead
+     */
+    @Deprecated
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Nonnull
+    public com.google.common /*Guava will be removed soon*/.base.Optional<RSAPrivateKey> getKey() {
+        return GuavaUtils.adaptToGuava(supplyKey());
     }
 
     /**

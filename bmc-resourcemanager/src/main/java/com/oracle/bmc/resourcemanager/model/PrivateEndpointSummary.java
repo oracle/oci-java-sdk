@@ -64,13 +64,13 @@ public final class PrivateEndpointSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
          * @param id the value to set
          * @return this builder
          **/
@@ -80,13 +80,13 @@ public final class PrivateEndpointSummary {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -112,13 +112,13 @@ public final class PrivateEndpointSummary {
             return this;
         }
         /**
-         * General description of the private endpoint.
+         * Description of the private endpoint. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * General description of the private endpoint.
+         * Description of the private endpoint. Avoid entering confidential information.
          * @param description the value to set
          * @return this builder
          **/
@@ -161,6 +161,9 @@ public final class PrivateEndpointSummary {
             return this;
         }
         /**
+         * DNS zones to use for accessing private Git servers.
+         * For private Git server instructions, see
+         * [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git).
          * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
          *
          **/
@@ -168,6 +171,9 @@ public final class PrivateEndpointSummary {
         private java.util.List<String> dnsZones;
 
         /**
+         * DNS zones to use for accessing private Git servers.
+         * For private Git server instructions, see
+         * [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git).
          * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
          *
          * @param dnsZones the value to set
@@ -330,13 +336,13 @@ public final class PrivateEndpointSummary {
     }
 
     /**
-     * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      * @return the value
      **/
     public String getId() {
@@ -344,13 +350,13 @@ public final class PrivateEndpointSummary {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -372,13 +378,13 @@ public final class PrivateEndpointSummary {
     }
 
     /**
-     * General description of the private endpoint.
+     * Description of the private endpoint. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * General description of the private endpoint.
+     * Description of the private endpoint. Avoid entering confidential information.
      * @return the value
      **/
     public String getDescription() {
@@ -414,6 +420,9 @@ public final class PrivateEndpointSummary {
     }
 
     /**
+     * DNS zones to use for accessing private Git servers.
+     * For private Git server instructions, see
+     * [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git).
      * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
      *
      **/
@@ -421,6 +430,9 @@ public final class PrivateEndpointSummary {
     private final java.util.List<String> dnsZones;
 
     /**
+     * DNS zones to use for accessing private Git servers.
+     * For private Git server instructions, see
+     * [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git).
      * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
      *
      * @return the value

@@ -27,6 +27,7 @@ public final class CreateStackDetails {
         "displayName",
         "description",
         "configSource",
+        "customTerraformProvider",
         "variables",
         "terraformVersion",
         "freeformTags",
@@ -37,6 +38,7 @@ public final class CreateStackDetails {
             String displayName,
             String description,
             CreateConfigSourceDetails configSource,
+            CustomTerraformProvider customTerraformProvider,
             java.util.Map<String, String> variables,
             String terraformVersion,
             java.util.Map<String, String> freeformTags,
@@ -46,6 +48,7 @@ public final class CreateStackDetails {
         this.displayName = displayName;
         this.description = description;
         this.configSource = configSource;
+        this.customTerraformProvider = customTerraformProvider;
         this.variables = variables;
         this.terraformVersion = terraformVersion;
         this.freeformTags = freeformTags;
@@ -109,6 +112,15 @@ public final class CreateStackDetails {
         public Builder configSource(CreateConfigSourceDetails configSource) {
             this.configSource = configSource;
             this.__explicitlySet__.add("configSource");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customTerraformProvider")
+        private CustomTerraformProvider customTerraformProvider;
+
+        public Builder customTerraformProvider(CustomTerraformProvider customTerraformProvider) {
+            this.customTerraformProvider = customTerraformProvider;
+            this.__explicitlySet__.add("customTerraformProvider");
             return this;
         }
         /**
@@ -209,6 +221,7 @@ public final class CreateStackDetails {
                             displayName,
                             description,
                             configSource,
+                            customTerraformProvider,
                             variables,
                             terraformVersion,
                             freeformTags,
@@ -224,6 +237,7 @@ public final class CreateStackDetails {
                             .displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .configSource(o.getConfigSource())
+                            .customTerraformProvider(o.getCustomTerraformProvider())
                             .variables(o.getVariables())
                             .terraformVersion(o.getTerraformVersion())
                             .freeformTags(o.getFreeformTags())
@@ -292,6 +306,13 @@ public final class CreateStackDetails {
 
     public CreateConfigSourceDetails getConfigSource() {
         return configSource;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("customTerraformProvider")
+    private final CustomTerraformProvider customTerraformProvider;
+
+    public CustomTerraformProvider getCustomTerraformProvider() {
+        return customTerraformProvider;
     }
 
     /**
@@ -389,6 +410,8 @@ public final class CreateStackDetails {
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", configSource=").append(String.valueOf(this.configSource));
+        sb.append(", customTerraformProvider=")
+                .append(String.valueOf(this.customTerraformProvider));
         sb.append(", variables=").append(String.valueOf(this.variables));
         sb.append(", terraformVersion=").append(String.valueOf(this.terraformVersion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -412,6 +435,8 @@ public final class CreateStackDetails {
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.configSource, other.configSource)
+                && java.util.Objects.equals(
+                        this.customTerraformProvider, other.customTerraformProvider)
                 && java.util.Objects.equals(this.variables, other.variables)
                 && java.util.Objects.equals(this.terraformVersion, other.terraformVersion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -429,6 +454,11 @@ public final class CreateStackDetails {
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.configSource == null ? 43 : this.configSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customTerraformProvider == null
+                                ? 43
+                                : this.customTerraformProvider.hashCode());
         result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
         result =
                 (result * PRIME)

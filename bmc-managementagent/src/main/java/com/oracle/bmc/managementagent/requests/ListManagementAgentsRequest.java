@@ -257,6 +257,30 @@ public class ListManagementAgentsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
+    /**
+     * When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+     *
+     */
+    private String accessLevel;
+
+    /**
+     * When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+     *
+     */
+    public String getAccessLevel() {
+        return accessLevel;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -524,6 +548,38 @@ public class ListManagementAgentsRequest
         }
 
         /**
+         * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
+         * When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+         *
+         */
+        private String accessLevel = null;
+
+        /**
+         * When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+         *
+         * @param accessLevel the value to set
+         * @return this builder instance
+         */
+        public Builder accessLevel(String accessLevel) {
+            this.accessLevel = accessLevel;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -566,6 +622,8 @@ public class ListManagementAgentsRequest
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
+            accessLevel(o.getAccessLevel());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -613,8 +671,10 @@ public class ListManagementAgentsRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
+            request.accessLevel = accessLevel;
             return request;
-            // new ListManagementAgentsRequest(compartmentId, pluginName, version, displayName, lifecycleState, availabilityStatus, hostId, platformType, isCustomerDeployed, installType, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListManagementAgentsRequest(compartmentId, pluginName, version, displayName, lifecycleState, availabilityStatus, hostId, platformType, isCustomerDeployed, installType, limit, page, sortOrder, sortBy, opcRequestId, compartmentIdInSubtree, accessLevel);
         }
     }
 
@@ -638,7 +698,9 @@ public class ListManagementAgentsRequest
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
+                .accessLevel(accessLevel);
     }
 
     /**
@@ -669,6 +731,8 @@ public class ListManagementAgentsRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
         sb.append(")");
         return sb.toString();
     }
@@ -698,7 +762,10 @@ public class ListManagementAgentsRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.accessLevel, other.accessLevel);
     }
 
     @Override
@@ -732,6 +799,12 @@ public class ListManagementAgentsRequest
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
         return result;
     }
 }

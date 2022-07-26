@@ -11,9 +11,9 @@ import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class GetJobArtifactContentConverter {
-    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
-                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2();
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(GetJobArtifactContentConverter.class);
@@ -115,7 +115,7 @@ public class GetJobArtifactContentConverter {
                                 builder.inputStream(response.getItem());
 
                                 java.util.Optional<java.util.List<String>> etagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "etag");
                                 if (etagHeader.isPresent()) {
                                     builder.etag(
@@ -124,7 +124,7 @@ public class GetJobArtifactContentConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
@@ -135,7 +135,7 @@ public class GetJobArtifactContentConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> contentLengthHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "content-length");
                                 if (contentLengthHeader.isPresent()) {
                                     builder.contentLength(
@@ -146,7 +146,7 @@ public class GetJobArtifactContentConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> contentMd5Header =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "content-md5");
                                 if (contentMd5Header.isPresent()) {
                                     builder.contentMd5(
@@ -157,7 +157,7 @@ public class GetJobArtifactContentConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> lastModifiedHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "last-modified");
                                 if (lastModifiedHeader.isPresent()) {
                                     builder.lastModified(
@@ -169,8 +169,9 @@ public class GetJobArtifactContentConverter {
 
                                 java.util.Optional<java.util.List<String>>
                                         contentDispositionHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "content-disposition");
+                                                com.oracle.bmc.http.internal.HeaderUtils
+                                                        .getHeadersWithName(
+                                                                headers, "content-disposition");
                                 if (contentDispositionHeader.isPresent()) {
                                     builder.contentDisposition(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(

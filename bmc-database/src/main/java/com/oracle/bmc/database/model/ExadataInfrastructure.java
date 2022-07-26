@@ -58,6 +58,7 @@ public final class ExadataInfrastructure {
         "maintenanceWindow",
         "storageServerVersion",
         "dbServerVersion",
+        "monthlyDbServerVersion",
         "lastMaintenanceRunId",
         "nextMaintenanceRunId",
         "isCpsOfflineReportEnabled",
@@ -101,6 +102,7 @@ public final class ExadataInfrastructure {
             MaintenanceWindow maintenanceWindow,
             String storageServerVersion,
             String dbServerVersion,
+            String monthlyDbServerVersion,
             String lastMaintenanceRunId,
             String nextMaintenanceRunId,
             Boolean isCpsOfflineReportEnabled,
@@ -143,6 +145,7 @@ public final class ExadataInfrastructure {
         this.maintenanceWindow = maintenanceWindow;
         this.storageServerVersion = storageServerVersion;
         this.dbServerVersion = dbServerVersion;
+        this.monthlyDbServerVersion = monthlyDbServerVersion;
         this.lastMaintenanceRunId = lastMaintenanceRunId;
         this.nextMaintenanceRunId = nextMaintenanceRunId;
         this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
@@ -726,6 +729,22 @@ public final class ExadataInfrastructure {
             return this;
         }
         /**
+         * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("monthlyDbServerVersion")
+        private String monthlyDbServerVersion;
+
+        /**
+         * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+         * @param monthlyDbServerVersion the value to set
+         * @return this builder
+         **/
+        public Builder monthlyDbServerVersion(String monthlyDbServerVersion) {
+            this.monthlyDbServerVersion = monthlyDbServerVersion;
+            this.__explicitlySet__.add("monthlyDbServerVersion");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
@@ -867,6 +886,7 @@ public final class ExadataInfrastructure {
                             maintenanceWindow,
                             storageServerVersion,
                             dbServerVersion,
+                            monthlyDbServerVersion,
                             lastMaintenanceRunId,
                             nextMaintenanceRunId,
                             isCpsOfflineReportEnabled,
@@ -915,6 +935,7 @@ public final class ExadataInfrastructure {
                             .maintenanceWindow(o.getMaintenanceWindow())
                             .storageServerVersion(o.getStorageServerVersion())
                             .dbServerVersion(o.getDbServerVersion())
+                            .monthlyDbServerVersion(o.getMonthlyDbServerVersion())
                             .lastMaintenanceRunId(o.getLastMaintenanceRunId())
                             .nextMaintenanceRunId(o.getNextMaintenanceRunId())
                             .isCpsOfflineReportEnabled(o.getIsCpsOfflineReportEnabled())
@@ -1544,6 +1565,20 @@ public final class ExadataInfrastructure {
     }
 
     /**
+     * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("monthlyDbServerVersion")
+    private final String monthlyDbServerVersion;
+
+    /**
+     * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+     * @return the value
+     **/
+    public String getMonthlyDbServerVersion() {
+        return monthlyDbServerVersion;
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
@@ -1682,6 +1717,7 @@ public final class ExadataInfrastructure {
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", storageServerVersion=").append(String.valueOf(this.storageServerVersion));
         sb.append(", dbServerVersion=").append(String.valueOf(this.dbServerVersion));
+        sb.append(", monthlyDbServerVersion=").append(String.valueOf(this.monthlyDbServerVersion));
         sb.append(", lastMaintenanceRunId=").append(String.valueOf(this.lastMaintenanceRunId));
         sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
         sb.append(", isCpsOfflineReportEnabled=")
@@ -1743,6 +1779,8 @@ public final class ExadataInfrastructure {
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(this.storageServerVersion, other.storageServerVersion)
                 && java.util.Objects.equals(this.dbServerVersion, other.dbServerVersion)
+                && java.util.Objects.equals(
+                        this.monthlyDbServerVersion, other.monthlyDbServerVersion)
                 && java.util.Objects.equals(this.lastMaintenanceRunId, other.lastMaintenanceRunId)
                 && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
                 && java.util.Objects.equals(
@@ -1856,6 +1894,11 @@ public final class ExadataInfrastructure {
         result =
                 (result * PRIME)
                         + (this.dbServerVersion == null ? 43 : this.dbServerVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.monthlyDbServerVersion == null
+                                ? 43
+                                : this.monthlyDbServerVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.lastMaintenanceRunId == null

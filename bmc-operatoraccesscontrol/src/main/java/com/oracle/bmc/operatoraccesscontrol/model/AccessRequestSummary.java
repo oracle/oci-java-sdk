@@ -30,6 +30,7 @@ public final class AccessRequestSummary {
         "resourceName",
         "resourceType",
         "lifecycleState",
+        "lifecycleDetails",
         "timeOfCreation",
         "timeOfModification",
         "timeOfUserCreation",
@@ -49,6 +50,7 @@ public final class AccessRequestSummary {
             String resourceName,
             ResourceTypes resourceType,
             AccessRequestLifecycleStates lifecycleState,
+            String lifecycleDetails,
             java.util.Date timeOfCreation,
             java.util.Date timeOfModification,
             java.util.Date timeOfUserCreation,
@@ -67,6 +69,7 @@ public final class AccessRequestSummary {
         this.resourceName = resourceName;
         this.resourceType = resourceType;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.timeOfCreation = timeOfCreation;
         this.timeOfModification = timeOfModification;
         this.timeOfUserCreation = timeOfUserCreation;
@@ -210,6 +213,22 @@ public final class AccessRequestSummary {
         public Builder lifecycleState(AccessRequestLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * More in detail about the lifeCycleState.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * More in detail about the lifeCycleState.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
@@ -382,6 +401,7 @@ public final class AccessRequestSummary {
                             resourceName,
                             resourceType,
                             lifecycleState,
+                            lifecycleDetails,
                             timeOfCreation,
                             timeOfModification,
                             timeOfUserCreation,
@@ -406,6 +426,7 @@ public final class AccessRequestSummary {
                             .resourceName(o.getResourceName())
                             .resourceType(o.getResourceType())
                             .lifecycleState(o.getLifecycleState())
+                            .lifecycleDetails(o.getLifecycleDetails())
                             .timeOfCreation(o.getTimeOfCreation())
                             .timeOfModification(o.getTimeOfModification())
                             .timeOfUserCreation(o.getTimeOfUserCreation())
@@ -546,6 +567,20 @@ public final class AccessRequestSummary {
      **/
     public AccessRequestLifecycleStates getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * More in detail about the lifeCycleState.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * More in detail about the lifeCycleState.
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /**
@@ -705,6 +740,7 @@ public final class AccessRequestSummary {
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeOfCreation=").append(String.valueOf(this.timeOfCreation));
         sb.append(", timeOfModification=").append(String.valueOf(this.timeOfModification));
         sb.append(", timeOfUserCreation=").append(String.valueOf(this.timeOfUserCreation));
@@ -737,6 +773,7 @@ public final class AccessRequestSummary {
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeOfCreation, other.timeOfCreation)
                 && java.util.Objects.equals(this.timeOfModification, other.timeOfModification)
                 && java.util.Objects.equals(this.timeOfUserCreation, other.timeOfUserCreation)
@@ -769,6 +806,9 @@ public final class AccessRequestSummary {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeOfCreation == null ? 43 : this.timeOfCreation.hashCode());

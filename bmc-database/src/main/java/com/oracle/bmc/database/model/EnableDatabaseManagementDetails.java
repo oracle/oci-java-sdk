@@ -26,18 +26,30 @@ public final class EnableDatabaseManagementDetails {
         "credentialDetails",
         "privateEndPointId",
         "managementType",
-        "serviceName"
+        "serviceName",
+        "protocol",
+        "port",
+        "sslSecretId",
+        "role"
     })
     public EnableDatabaseManagementDetails(
             DatabaseCredentialDetails credentialDetails,
             String privateEndPointId,
             ManagementType managementType,
-            String serviceName) {
+            String serviceName,
+            Protocol protocol,
+            Integer port,
+            String sslSecretId,
+            Role role) {
         super();
         this.credentialDetails = credentialDetails;
         this.privateEndPointId = privateEndPointId;
         this.managementType = managementType;
         this.serviceName = serviceName;
+        this.protocol = protocol;
+        this.port = port;
+        this.sslSecretId = sslSecretId;
+        this.role = role;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -101,6 +113,70 @@ public final class EnableDatabaseManagementDetails {
             this.__explicitlySet__.add("serviceName");
             return this;
         }
+        /**
+         * Protocol used by the database connection.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("protocol")
+        private Protocol protocol;
+
+        /**
+         * Protocol used by the database connection.
+         * @param protocol the value to set
+         * @return this builder
+         **/
+        public Builder protocol(Protocol protocol) {
+            this.protocol = protocol;
+            this.__explicitlySet__.add("protocol");
+            return this;
+        }
+        /**
+         * The port used to connect to the database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("port")
+        private Integer port;
+
+        /**
+         * The port used to connect to the database.
+         * @param port the value to set
+         * @return this builder
+         **/
+        public Builder port(Integer port) {
+            this.port = port;
+            this.__explicitlySet__.add("port");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
+        private String sslSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * @param sslSecretId the value to set
+         * @return this builder
+         **/
+        public Builder sslSecretId(String sslSecretId) {
+            this.sslSecretId = sslSecretId;
+            this.__explicitlySet__.add("sslSecretId");
+            return this;
+        }
+        /**
+         * The role of the user that will be connecting to the database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("role")
+        private Role role;
+
+        /**
+         * The role of the user that will be connecting to the database.
+         * @param role the value to set
+         * @return this builder
+         **/
+        public Builder role(Role role) {
+            this.role = role;
+            this.__explicitlySet__.add("role");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -108,7 +184,14 @@ public final class EnableDatabaseManagementDetails {
         public EnableDatabaseManagementDetails build() {
             EnableDatabaseManagementDetails __instance__ =
                     new EnableDatabaseManagementDetails(
-                            credentialDetails, privateEndPointId, managementType, serviceName);
+                            credentialDetails,
+                            privateEndPointId,
+                            managementType,
+                            serviceName,
+                            protocol,
+                            port,
+                            sslSecretId,
+                            role);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -119,7 +202,11 @@ public final class EnableDatabaseManagementDetails {
                     credentialDetails(o.getCredentialDetails())
                             .privateEndPointId(o.getPrivateEndPointId())
                             .managementType(o.getManagementType())
-                            .serviceName(o.getServiceName());
+                            .serviceName(o.getServiceName())
+                            .protocol(o.getProtocol())
+                            .port(o.getPort())
+                            .sslSecretId(o.getSslSecretId())
+                            .role(o.getRole());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -223,6 +310,132 @@ public final class EnableDatabaseManagementDetails {
         return serviceName;
     }
 
+    /**
+     * Protocol used by the database connection.
+     **/
+    public enum Protocol {
+        Tcp("TCP"),
+        Tcps("TCPS"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Protocol> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Protocol v : Protocol.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Protocol(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Protocol create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Protocol: " + key);
+        }
+    };
+    /**
+     * Protocol used by the database connection.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
+    private final Protocol protocol;
+
+    /**
+     * Protocol used by the database connection.
+     * @return the value
+     **/
+    public Protocol getProtocol() {
+        return protocol;
+    }
+
+    /**
+     * The port used to connect to the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("port")
+    private final Integer port;
+
+    /**
+     * The port used to connect to the database.
+     * @return the value
+     **/
+    public Integer getPort() {
+        return port;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
+    private final String sslSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return the value
+     **/
+    public String getSslSecretId() {
+        return sslSecretId;
+    }
+
+    /**
+     * The role of the user that will be connecting to the database.
+     **/
+    public enum Role {
+        Sysdba("SYSDBA"),
+        Normal("NORMAL"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Role> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Role v : Role.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Role(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Role create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Role: " + key);
+        }
+    };
+    /**
+     * The role of the user that will be connecting to the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("role")
+    private final Role role;
+
+    /**
+     * The role of the user that will be connecting to the database.
+     * @return the value
+     **/
+    public Role getRole() {
+        return role;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -240,6 +453,10 @@ public final class EnableDatabaseManagementDetails {
         sb.append(", privateEndPointId=").append(String.valueOf(this.privateEndPointId));
         sb.append(", managementType=").append(String.valueOf(this.managementType));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", port=").append(String.valueOf(this.port));
+        sb.append(", sslSecretId=").append(String.valueOf(this.sslSecretId));
+        sb.append(", role=").append(String.valueOf(this.role));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -259,6 +476,10 @@ public final class EnableDatabaseManagementDetails {
                 && java.util.Objects.equals(this.privateEndPointId, other.privateEndPointId)
                 && java.util.Objects.equals(this.managementType, other.managementType)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.port, other.port)
+                && java.util.Objects.equals(this.sslSecretId, other.sslSecretId)
+                && java.util.Objects.equals(this.role, other.role)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -276,6 +497,10 @@ public final class EnableDatabaseManagementDetails {
                 (result * PRIME)
                         + (this.managementType == null ? 43 : this.managementType.hashCode());
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
+        result = (result * PRIME) + (this.sslSecretId == null ? 43 : this.sslSecretId.hashCode());
+        result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

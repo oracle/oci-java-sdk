@@ -21,7 +21,7 @@ import com.oracle.bmc.dts.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
     /**
      * Service instance for ApplianceExportJob.
@@ -563,6 +563,7 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                 DeleteApplianceExportJobConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteApplianceExportJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "ApplianceExportJob",

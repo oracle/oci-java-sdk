@@ -67,11 +67,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAuthenticationProvidersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -123,11 +123,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAuthenticationProvidersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -183,11 +183,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListChannelsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -235,11 +235,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListChannelsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -295,11 +295,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDigitalAssistantParametersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -352,11 +352,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDigitalAssistantParametersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -415,11 +415,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDigitalAssistantsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -469,11 +469,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDigitalAssistantsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -530,11 +530,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSkillParametersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -583,11 +583,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSkillParametersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -642,11 +642,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSkillsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -694,11 +694,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSkillsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -752,11 +752,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTranslatorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -804,11 +804,11 @@ public class ManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTranslatorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

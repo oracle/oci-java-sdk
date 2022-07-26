@@ -70,11 +70,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAppCatalogListingResourceVersionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -130,11 +130,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAppCatalogListingResourceVersionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -196,11 +196,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAppCatalogListingsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -250,11 +250,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAppCatalogListingsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -312,11 +312,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAppCatalogSubscriptionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -368,11 +368,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAppCatalogSubscriptionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -429,11 +429,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListBootVolumeAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -484,11 +484,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListBootVolumeAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -552,11 +552,11 @@ public class ComputePaginators {
                                             ListComputeCapacityReservationInstanceShapesRequest
                                                     .Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -615,11 +615,11 @@ public class ComputePaginators {
                                             ListComputeCapacityReservationInstanceShapesRequest
                                                     .Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -686,11 +686,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListComputeCapacityReservationInstancesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -747,11 +747,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListComputeCapacityReservationInstancesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -812,11 +812,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListComputeCapacityReservationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -869,11 +869,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListComputeCapacityReservationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -940,11 +940,11 @@ public class ComputePaginators {
                                             ListComputeGlobalImageCapabilitySchemaVersionsRequest
                                                     .Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1003,11 +1003,11 @@ public class ComputePaginators {
                                             ListComputeGlobalImageCapabilitySchemaVersionsRequest
                                                     .Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1074,11 +1074,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListComputeGlobalImageCapabilitySchemasRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1135,11 +1135,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListComputeGlobalImageCapabilitySchemasRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1205,11 +1205,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListComputeImageCapabilitySchemasRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1264,11 +1264,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListComputeImageCapabilitySchemasRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1328,11 +1328,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListConsoleHistoriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1381,11 +1381,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListConsoleHistoriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1445,11 +1445,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDedicatedVmHostInstanceShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1504,11 +1504,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDedicatedVmHostInstanceShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1569,11 +1569,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDedicatedVmHostInstancesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1626,11 +1626,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDedicatedVmHostInstancesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1689,11 +1689,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDedicatedVmHostShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1745,11 +1745,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDedicatedVmHostShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1806,11 +1806,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDedicatedVmHostsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1859,11 +1859,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDedicatedVmHostsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1923,11 +1923,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListImageShapeCompatibilityEntriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1983,11 +1983,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListImageShapeCompatibilityEntriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2045,11 +2045,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListImagesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2097,11 +2097,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListImagesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2156,11 +2156,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListInstanceConsoleConnectionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2213,11 +2213,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListInstanceConsoleConnectionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2275,11 +2275,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListInstanceDevicesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2328,11 +2328,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListInstanceDevicesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2387,11 +2387,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListInstancesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2439,11 +2439,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListInstancesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2497,11 +2497,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2549,11 +2549,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2607,11 +2607,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVnicAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2660,11 +2660,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVnicAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2720,11 +2720,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumeAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2774,11 +2774,11 @@ public class ComputePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumeAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

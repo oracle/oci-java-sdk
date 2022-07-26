@@ -37,13 +37,37 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(MediaServicesAsyncClient.class);
 
-    private final com.oracle.bmc.http.internal.RestClient client;
-
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
 
     private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
             apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
 
     /**
      * Creates a new service instance using the given authentication provider.
@@ -237,41 +261,22 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
         java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
                 new java.util.ArrayList<>(additionalClientConfigurators);
         allConfigurators.addAll(authenticationDetailsConfigurators);
-        com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
+        this.restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(allConfigurators)
                         .build();
-        boolean isNonBufferingApacheClient =
+        this.isNonBufferingApacheClient =
                 com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
                         restClientFactory.getClientConfigurator());
         this.apacheConnectionClosingStrategy =
                 com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
                         restClientFactory.getClientConfigurator());
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-        this.client =
-                restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        configuration,
-                        isNonBufferingApacheClient);
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -342,9 +347,54 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
     public void setEndpoint(String endpoint) {
         LOG.info("Setting endpoint to {}", endpoint);
-        client.setEndpoint(endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
     }
 
     @Override
@@ -406,7 +456,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ChangeMediaAssetCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/ChangeMediaAssetCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeMediaAssetCompartmentResponse>
                 transformer =
@@ -463,7 +513,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ChangeMediaWorkflowCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ChangeMediaWorkflowCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeMediaWorkflowCompartmentResponse>
                 transformer =
@@ -522,7 +572,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ChangeMediaWorkflowConfigurationCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/ChangeMediaWorkflowConfigurationCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeMediaWorkflowConfigurationCompartmentResponse>
@@ -584,7 +634,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ChangeMediaWorkflowJobCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/ChangeMediaWorkflowJobCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeMediaWorkflowJobCompartmentResponse>
                 transformer =
@@ -644,7 +694,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ChangeStreamDistributionChannelCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/ChangeStreamDistributionChannelCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ChangeStreamDistributionChannelCompartmentResponse>
@@ -701,7 +751,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "CreateMediaAsset", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "CreateMediaAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/CreateMediaAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateMediaAssetResponse>
                 transformer =
                         CreateMediaAssetConverter.fromResponse(
@@ -750,7 +803,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "CreateMediaWorkflow", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "CreateMediaWorkflow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/CreateMediaWorkflow");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateMediaWorkflowResponse>
                 transformer =
                         CreateMediaWorkflowConverter.fromResponse(
@@ -805,7 +861,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "CreateMediaWorkflowConfiguration",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/CreateMediaWorkflowConfiguration");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateMediaWorkflowConfigurationResponse>
                 transformer =
@@ -862,7 +918,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "CreateMediaWorkflowJob",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/CreateMediaWorkflowJob");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateMediaWorkflowJobResponse>
                 transformer =
                         CreateMediaWorkflowJobConverter.fromResponse(
@@ -915,7 +971,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "CreateStreamCdnConfig",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/CreateStreamCdnConfig");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateStreamCdnConfigResponse>
                 transformer =
                         CreateStreamCdnConfigConverter.fromResponse(
@@ -970,7 +1026,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "CreateStreamDistributionChannel",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/CreateStreamDistributionChannel");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateStreamDistributionChannelResponse>
                 transformer =
@@ -1029,7 +1085,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "CreateStreamPackagingConfig",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/CreateStreamPackagingConfig");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateStreamPackagingConfigResponse>
                 transformer =
@@ -1080,7 +1136,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                 DeleteMediaAssetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "DeleteMediaAsset", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "DeleteMediaAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/DeleteMediaAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteMediaAssetResponse>
                 transformer =
                         DeleteMediaAssetConverter.fromResponse(
@@ -1129,7 +1188,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "DeleteMediaAssetDistributionChannelAttachment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachment/DeleteMediaAssetDistributionChannelAttachment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         DeleteMediaAssetDistributionChannelAttachmentResponse>
@@ -1179,7 +1238,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                 DeleteMediaWorkflowConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "DeleteMediaWorkflow", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "DeleteMediaWorkflow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/DeleteMediaWorkflow");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteMediaWorkflowResponse>
                 transformer =
                         DeleteMediaWorkflowConverter.fromResponse(
@@ -1228,7 +1290,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "DeleteMediaWorkflowConfiguration",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/DeleteMediaWorkflowConfiguration");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteMediaWorkflowConfigurationResponse>
                 transformer =
@@ -1279,7 +1341,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "DeleteMediaWorkflowJob",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/DeleteMediaWorkflowJob");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteMediaWorkflowJobResponse>
                 transformer =
                         DeleteMediaWorkflowJobConverter.fromResponse(
@@ -1326,7 +1388,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "DeleteStreamCdnConfig",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/DeleteStreamCdnConfig");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteStreamCdnConfigResponse>
                 transformer =
                         DeleteStreamCdnConfigConverter.fromResponse(
@@ -1375,7 +1437,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "DeleteStreamDistributionChannel",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/DeleteStreamDistributionChannel");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteStreamDistributionChannelResponse>
                 transformer =
@@ -1428,7 +1490,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "DeleteStreamPackagingConfig",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/DeleteStreamPackagingConfig");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteStreamPackagingConfigResponse>
                 transformer =
@@ -1473,7 +1535,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                 GetMediaAssetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "GetMediaAsset", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "GetMediaAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/GetMediaAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, GetMediaAssetResponse>
                 transformer =
                         GetMediaAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1521,7 +1586,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "GetMediaAssetDistributionChannelAttachment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachment/GetMediaAssetDistributionChannelAttachment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         GetMediaAssetDistributionChannelAttachmentResponse>
@@ -1571,7 +1636,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                 GetMediaWorkflowConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "GetMediaWorkflow", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "GetMediaWorkflow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/GetMediaWorkflow");
         final java.util.function.Function<javax.ws.rs.core.Response, GetMediaWorkflowResponse>
                 transformer =
                         GetMediaWorkflowConverter.fromResponse(
@@ -1619,7 +1687,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "GetMediaWorkflowConfiguration",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/GetMediaWorkflowConfiguration");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetMediaWorkflowConfigurationResponse>
                 transformer =
@@ -1665,7 +1733,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                 GetMediaWorkflowJobConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "GetMediaWorkflowJob", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "GetMediaWorkflowJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/GetMediaWorkflowJob");
         final java.util.function.Function<javax.ws.rs.core.Response, GetMediaWorkflowJobResponse>
                 transformer =
                         GetMediaWorkflowJobConverter.fromResponse(
@@ -1712,7 +1783,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "GetMediaWorkflowJobFact",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJobFact/GetMediaWorkflowJobFact");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetMediaWorkflowJobFactResponse>
                 transformer =
@@ -1757,7 +1828,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                 GetStreamCdnConfigConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "GetStreamCdnConfig", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "GetStreamCdnConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/GetStreamCdnConfig");
         final java.util.function.Function<javax.ws.rs.core.Response, GetStreamCdnConfigResponse>
                 transformer =
                         GetStreamCdnConfigConverter.fromResponse(
@@ -1805,7 +1879,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "GetStreamDistributionChannel",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/GetStreamDistributionChannel");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetStreamDistributionChannelResponse>
                 transformer =
@@ -1854,7 +1928,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "GetStreamPackagingConfig",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/GetStreamPackagingConfig");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetStreamPackagingConfigResponse>
                 transformer =
@@ -1905,7 +1979,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "IngestStreamDistributionChannel",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/IngestStreamDistributionChannel");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, IngestStreamDistributionChannelResponse>
                 transformer =
@@ -1964,7 +2038,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ListMediaAssetDistributionChannelAttachments",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachmentCollection/ListMediaAssetDistributionChannelAttachments");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListMediaAssetDistributionChannelAttachmentsResponse>
@@ -2014,7 +2088,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                 ListMediaAssetsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "ListMediaAssets", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "ListMediaAssets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/ListMediaAssets");
         final java.util.function.Function<javax.ws.rs.core.Response, ListMediaAssetsResponse>
                 transformer =
                         ListMediaAssetsConverter.fromResponse(
@@ -2062,7 +2139,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ListMediaWorkflowConfigurations",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfigurationCollection/ListMediaWorkflowConfigurations");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListMediaWorkflowConfigurationsResponse>
                 transformer =
@@ -2113,7 +2190,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ListMediaWorkflowJobFacts",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJobFact/ListMediaWorkflowJobFacts");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListMediaWorkflowJobFactsResponse>
                 transformer =
@@ -2162,7 +2239,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ListMediaWorkflowJobs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/ListMediaWorkflowJobs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListMediaWorkflowJobsResponse>
                 transformer =
                         ListMediaWorkflowJobsConverter.fromResponse(
@@ -2211,7 +2288,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ListMediaWorkflowTaskDeclarations",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowTaskDeclarationCollection/ListMediaWorkflowTaskDeclarations");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListMediaWorkflowTaskDeclarationsResponse>
                 transformer =
@@ -2259,7 +2336,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                 ListMediaWorkflowsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "ListMediaWorkflows", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "ListMediaWorkflows",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ListMediaWorkflows");
         final java.util.function.Function<javax.ws.rs.core.Response, ListMediaWorkflowsResponse>
                 transformer =
                         ListMediaWorkflowsConverter.fromResponse(
@@ -2302,7 +2382,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                 ListStreamCdnConfigsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "ListStreamCdnConfigs", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "ListStreamCdnConfigs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/ListStreamCdnConfigs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListStreamCdnConfigsResponse>
                 transformer =
                         ListStreamCdnConfigsConverter.fromResponse(
@@ -2351,7 +2434,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ListStreamDistributionChannels",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/ListStreamDistributionChannels");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListStreamDistributionChannelsResponse>
                 transformer =
@@ -2403,7 +2486,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ListStreamPackagingConfigs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/ListStreamPackagingConfigs");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListStreamPackagingConfigsResponse>
                 transformer =
@@ -2452,7 +2535,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "ListSystemMediaWorkflows",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ListSystemMediaWorkflows");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSystemMediaWorkflowsResponse>
                 transformer =
@@ -2497,7 +2580,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                 UpdateMediaAssetConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "UpdateMediaAsset", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "UpdateMediaAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/UpdateMediaAsset");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateMediaAssetResponse>
                 transformer =
                         UpdateMediaAssetConverter.fromResponse(
@@ -2545,7 +2631,10 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                 UpdateMediaWorkflowConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "MediaServices", "UpdateMediaWorkflow", ib.getRequestUri().toString(), "");
+                        "MediaServices",
+                        "UpdateMediaWorkflow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/UpdateMediaWorkflow");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateMediaWorkflowResponse>
                 transformer =
                         UpdateMediaWorkflowConverter.fromResponse(
@@ -2599,7 +2688,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "UpdateMediaWorkflowConfiguration",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/UpdateMediaWorkflowConfiguration");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateMediaWorkflowConfigurationResponse>
                 transformer =
@@ -2655,7 +2744,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "UpdateMediaWorkflowJob",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/UpdateMediaWorkflowJob");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateMediaWorkflowJobResponse>
                 transformer =
                         UpdateMediaWorkflowJobConverter.fromResponse(
@@ -2707,7 +2796,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "UpdateStreamCdnConfig",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/UpdateStreamCdnConfig");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateStreamCdnConfigResponse>
                 transformer =
                         UpdateStreamCdnConfigConverter.fromResponse(
@@ -2761,7 +2850,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "UpdateStreamDistributionChannel",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/UpdateStreamDistributionChannel");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateStreamDistributionChannelResponse>
                 transformer =
@@ -2819,7 +2908,7 @@ public class MediaServicesAsyncClient implements MediaServicesAsync {
                         "MediaServices",
                         "UpdateStreamPackagingConfig",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/UpdateStreamPackagingConfig");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateStreamPackagingConfigResponse>
                 transformer =

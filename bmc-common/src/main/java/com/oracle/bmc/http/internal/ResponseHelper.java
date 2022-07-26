@@ -262,7 +262,7 @@ public class ResponseHelper {
                                 new WrappedResponseInputStream(rawInputStream, response);
 
                         Optional<List<String>> contentLengthHeader =
-                                HeaderUtils.get(
+                                HeaderUtils.getHeadersWithName(
                                         response.getStringHeaders(), HttpHeaders.CONTENT_LENGTH);
                         // If the Content-Length header is present and Content-Encoding header is not present in the response,
                         // verify that the length of the input stream matches it

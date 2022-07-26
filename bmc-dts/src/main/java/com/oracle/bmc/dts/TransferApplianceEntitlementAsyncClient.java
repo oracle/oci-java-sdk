@@ -21,7 +21,7 @@ import com.oracle.bmc.dts.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class TransferApplianceEntitlementAsyncClient implements TransferApplianceEntitlementAsync {
     /**
      * Service instance for TransferApplianceEntitlement.

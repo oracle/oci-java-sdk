@@ -12,9 +12,9 @@ import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UploadPartConverter {
-    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
-                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2();
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(UploadPartConverter.class);
@@ -163,8 +163,9 @@ public class UploadPartConverter {
 
                                 java.util.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-client-request-id");
+                                                com.oracle.bmc.http.internal.HeaderUtils
+                                                        .getHeadersWithName(
+                                                                headers, "opc-client-request-id");
                                 if (opcClientRequestIdHeader.isPresent()) {
                                     builder.opcClientRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -174,7 +175,7 @@ public class UploadPartConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
@@ -185,7 +186,7 @@ public class UploadPartConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcContentMd5Header =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-content-md5");
                                 if (opcContentMd5Header.isPresent()) {
                                     builder.opcContentMd5(
@@ -196,7 +197,7 @@ public class UploadPartConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> eTagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "ETag");
                                 if (eTagHeader.isPresent()) {
                                     builder.eTag(

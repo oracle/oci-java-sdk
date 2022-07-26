@@ -22,10 +22,12 @@ package com.oracle.bmc.resourcemanager.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DetectStackDriftDetails {
     @Deprecated
-    @java.beans.ConstructorProperties({"resourceAddresses"})
-    public DetectStackDriftDetails(java.util.List<String> resourceAddresses) {
+    @java.beans.ConstructorProperties({"resourceAddresses", "isProviderUpgradeRequired"})
+    public DetectStackDriftDetails(
+            java.util.List<String> resourceAddresses, Boolean isProviderUpgradeRequired) {
         super();
         this.resourceAddresses = resourceAddresses;
+        this.isProviderUpgradeRequired = isProviderUpgradeRequired;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -54,19 +56,44 @@ public final class DetectStackDriftDetails {
             this.__explicitlySet__.add("resourceAddresses");
             return this;
         }
+        /**
+         * Specifies whether or not to upgrade provider versions.
+         * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+         * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isProviderUpgradeRequired")
+        private Boolean isProviderUpgradeRequired;
+
+        /**
+         * Specifies whether or not to upgrade provider versions.
+         * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+         * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+         *
+         * @param isProviderUpgradeRequired the value to set
+         * @return this builder
+         **/
+        public Builder isProviderUpgradeRequired(Boolean isProviderUpgradeRequired) {
+            this.isProviderUpgradeRequired = isProviderUpgradeRequired;
+            this.__explicitlySet__.add("isProviderUpgradeRequired");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetectStackDriftDetails build() {
-            DetectStackDriftDetails __instance__ = new DetectStackDriftDetails(resourceAddresses);
+            DetectStackDriftDetails __instance__ =
+                    new DetectStackDriftDetails(resourceAddresses, isProviderUpgradeRequired);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DetectStackDriftDetails o) {
-            Builder copiedBuilder = resourceAddresses(o.getResourceAddresses());
+            Builder copiedBuilder =
+                    resourceAddresses(o.getResourceAddresses())
+                            .isProviderUpgradeRequired(o.getIsProviderUpgradeRequired());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -106,6 +133,26 @@ public final class DetectStackDriftDetails {
         return resourceAddresses;
     }
 
+    /**
+     * Specifies whether or not to upgrade provider versions.
+     * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+     * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isProviderUpgradeRequired")
+    private final Boolean isProviderUpgradeRequired;
+
+    /**
+     * Specifies whether or not to upgrade provider versions.
+     * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+     * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+     *
+     * @return the value
+     **/
+    public Boolean getIsProviderUpgradeRequired() {
+        return isProviderUpgradeRequired;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -120,6 +167,8 @@ public final class DetectStackDriftDetails {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetectStackDriftDetails(");
         sb.append("resourceAddresses=").append(String.valueOf(this.resourceAddresses));
+        sb.append(", isProviderUpgradeRequired=")
+                .append(String.valueOf(this.isProviderUpgradeRequired));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -136,6 +185,8 @@ public final class DetectStackDriftDetails {
 
         DetectStackDriftDetails other = (DetectStackDriftDetails) o;
         return java.util.Objects.equals(this.resourceAddresses, other.resourceAddresses)
+                && java.util.Objects.equals(
+                        this.isProviderUpgradeRequired, other.isProviderUpgradeRequired)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -146,6 +197,11 @@ public final class DetectStackDriftDetails {
         result =
                 (result * PRIME)
                         + (this.resourceAddresses == null ? 43 : this.resourceAddresses.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isProviderUpgradeRequired == null
+                                ? 43
+                                : this.isProviderUpgradeRequired.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

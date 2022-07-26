@@ -8,7 +8,7 @@ import com.oracle.bmc.dts.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteTransferDeviceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteTransferDeviceRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class DeleteTransferDeviceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -33,6 +33,27 @@ public class DeleteTransferDeviceRequest
      */
     public String getTransferDeviceLabel() {
         return transferDeviceLabel;
+    }
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
     }
 
     public static class Builder
@@ -73,6 +94,31 @@ public class DeleteTransferDeviceRequest
         }
 
         /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -102,6 +148,7 @@ public class DeleteTransferDeviceRequest
         public Builder copy(DeleteTransferDeviceRequest o) {
             id(o.getId());
             transferDeviceLabel(o.getTransferDeviceLabel());
+            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -136,8 +183,9 @@ public class DeleteTransferDeviceRequest
             DeleteTransferDeviceRequest request = new DeleteTransferDeviceRequest();
             request.id = id;
             request.transferDeviceLabel = transferDeviceLabel;
+            request.opcRetryToken = opcRetryToken;
             return request;
-            // new DeleteTransferDeviceRequest(id, transferDeviceLabel);
+            // new DeleteTransferDeviceRequest(id, transferDeviceLabel, opcRetryToken);
         }
     }
 
@@ -146,7 +194,10 @@ public class DeleteTransferDeviceRequest
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().id(id).transferDeviceLabel(transferDeviceLabel);
+        return new Builder()
+                .id(id)
+                .transferDeviceLabel(transferDeviceLabel)
+                .opcRetryToken(opcRetryToken);
     }
 
     /**
@@ -164,6 +215,7 @@ public class DeleteTransferDeviceRequest
         sb.append("super=").append(super.toString());
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",transferDeviceLabel=").append(String.valueOf(this.transferDeviceLabel));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(")");
         return sb.toString();
     }
@@ -180,7 +232,8 @@ public class DeleteTransferDeviceRequest
         DeleteTransferDeviceRequest other = (DeleteTransferDeviceRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(this.transferDeviceLabel, other.transferDeviceLabel);
+                && java.util.Objects.equals(this.transferDeviceLabel, other.transferDeviceLabel)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
     }
 
     @Override
@@ -193,6 +246,9 @@ public class DeleteTransferDeviceRequest
                         + (this.transferDeviceLabel == null
                                 ? 43
                                 : this.transferDeviceLabel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         return result;
     }
 }

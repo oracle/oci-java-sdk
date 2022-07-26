@@ -27,17 +27,6 @@ public class CreateFusionEnvironmentFamilyRequest
         return createFusionEnvironmentFamilyDetails;
     }
     /**
-     * For Oracle internal use only.
-     */
-    private String opcProvisionOption;
-
-    /**
-     * For Oracle internal use only.
-     */
-    public String getOpcProvisionOption() {
-        return opcProvisionOption;
-    }
-    /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
      * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
@@ -103,21 +92,6 @@ public class CreateFusionEnvironmentFamilyRequest
                 com.oracle.bmc.fusionapps.model.CreateFusionEnvironmentFamilyDetails
                         createFusionEnvironmentFamilyDetails) {
             this.createFusionEnvironmentFamilyDetails = createFusionEnvironmentFamilyDetails;
-            return this;
-        }
-
-        /**
-         * For Oracle internal use only.
-         */
-        private String opcProvisionOption = null;
-
-        /**
-         * For Oracle internal use only.
-         * @param opcProvisionOption the value to set
-         * @return this builder instance
-         */
-        public Builder opcProvisionOption(String opcProvisionOption) {
-            this.opcProvisionOption = opcProvisionOption;
             return this;
         }
 
@@ -190,7 +164,6 @@ public class CreateFusionEnvironmentFamilyRequest
          */
         public Builder copy(CreateFusionEnvironmentFamilyRequest o) {
             createFusionEnvironmentFamilyDetails(o.getCreateFusionEnvironmentFamilyDetails());
-            opcProvisionOption(o.getOpcProvisionOption());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -239,11 +212,10 @@ public class CreateFusionEnvironmentFamilyRequest
             CreateFusionEnvironmentFamilyRequest request =
                     new CreateFusionEnvironmentFamilyRequest();
             request.createFusionEnvironmentFamilyDetails = createFusionEnvironmentFamilyDetails;
-            request.opcProvisionOption = opcProvisionOption;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateFusionEnvironmentFamilyRequest(createFusionEnvironmentFamilyDetails, opcProvisionOption, opcRetryToken, opcRequestId);
+            // new CreateFusionEnvironmentFamilyRequest(createFusionEnvironmentFamilyDetails, opcRetryToken, opcRequestId);
         }
     }
 
@@ -254,7 +226,6 @@ public class CreateFusionEnvironmentFamilyRequest
     public Builder toBuilder() {
         return new Builder()
                 .createFusionEnvironmentFamilyDetails(createFusionEnvironmentFamilyDetails)
-                .opcProvisionOption(opcProvisionOption)
                 .opcRetryToken(opcRetryToken)
                 .opcRequestId(opcRequestId);
     }
@@ -274,7 +245,6 @@ public class CreateFusionEnvironmentFamilyRequest
         sb.append("super=").append(super.toString());
         sb.append(",createFusionEnvironmentFamilyDetails=")
                 .append(String.valueOf(this.createFusionEnvironmentFamilyDetails));
-        sb.append(",opcProvisionOption=").append(String.valueOf(this.opcProvisionOption));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -295,7 +265,6 @@ public class CreateFusionEnvironmentFamilyRequest
                 && java.util.Objects.equals(
                         this.createFusionEnvironmentFamilyDetails,
                         other.createFusionEnvironmentFamilyDetails)
-                && java.util.Objects.equals(this.opcProvisionOption, other.opcProvisionOption)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -309,11 +278,6 @@ public class CreateFusionEnvironmentFamilyRequest
                         + (this.createFusionEnvironmentFamilyDetails == null
                                 ? 43
                                 : this.createFusionEnvironmentFamilyDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.opcProvisionOption == null
-                                ? 43
-                                : this.opcProvisionOption.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());

@@ -240,7 +240,8 @@ public interface ManagementAgent extends AutoCloseable {
 
     /**
      * Returns a list of Management Agents.
-     * If no explicit page size limit is specified, it will default to 5000.
+     * If no explicit page size limit is specified, it will default to 1000 when compartmentIdInSubtree is true and 5000 otherwise.
+     * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

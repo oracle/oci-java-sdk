@@ -12,9 +12,9 @@ import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CopyVolumeBackupConverter {
-    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
-                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2();
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(CopyVolumeBackupConverter.class);
@@ -116,7 +116,7 @@ public class CopyVolumeBackupConverter {
                                 builder.volumeBackup(response.getItem());
 
                                 java.util.Optional<java.util.List<String>> etagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "etag");
                                 if (etagHeader.isPresent()) {
                                     builder.etag(
@@ -125,7 +125,7 @@ public class CopyVolumeBackupConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
@@ -136,7 +136,7 @@ public class CopyVolumeBackupConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-work-request-id");
                                 if (opcWorkRequestIdHeader.isPresent()) {
                                     builder.opcWorkRequestId(
@@ -147,7 +147,7 @@ public class CopyVolumeBackupConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> locationHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "location");
                                 if (locationHeader.isPresent()) {
                                     builder.location(
@@ -158,7 +158,7 @@ public class CopyVolumeBackupConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> contentLocationHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "content-location");
                                 if (contentLocationHeader.isPresent()) {
                                     builder.contentLocation(

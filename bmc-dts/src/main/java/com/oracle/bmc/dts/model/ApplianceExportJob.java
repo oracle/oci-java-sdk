@@ -14,7 +14,7 @@ package com.oracle.bmc.dts.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ApplianceExportJob.Builder.class
 )
@@ -47,6 +47,10 @@ public final class ApplianceExportJob {
         "manifestFile",
         "manifestMd5",
         "bucketAccessPolicies",
+        "returnShippingLabelUri",
+        "expectedReturnDate",
+        "pickupWindowStartTime",
+        "pickupWindowEndTime",
         "customerShippingAddress",
         "freeformTags",
         "definedTags"
@@ -77,6 +81,10 @@ public final class ApplianceExportJob {
             String manifestFile,
             String manifestMd5,
             java.util.List<String> bucketAccessPolicies,
+            String returnShippingLabelUri,
+            java.util.Date expectedReturnDate,
+            java.util.Date pickupWindowStartTime,
+            java.util.Date pickupWindowEndTime,
             ShippingAddress customerShippingAddress,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -106,6 +114,10 @@ public final class ApplianceExportJob {
         this.manifestFile = manifestFile;
         this.manifestMd5 = manifestMd5;
         this.bucketAccessPolicies = bucketAccessPolicies;
+        this.returnShippingLabelUri = returnShippingLabelUri;
+        this.expectedReturnDate = expectedReturnDate;
+        this.pickupWindowStartTime = pickupWindowStartTime;
+        this.pickupWindowEndTime = pickupWindowEndTime;
         this.customerShippingAddress = customerShippingAddress;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -473,6 +485,63 @@ public final class ApplianceExportJob {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("returnShippingLabelUri")
+        private String returnShippingLabelUri;
+
+        public Builder returnShippingLabelUri(String returnShippingLabelUri) {
+            this.returnShippingLabelUri = returnShippingLabelUri;
+            this.__explicitlySet__.add("returnShippingLabelUri");
+            return this;
+        }
+        /**
+         * Expected return date from customer for the device, time portion should be zero.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("expectedReturnDate")
+        private java.util.Date expectedReturnDate;
+
+        /**
+         * Expected return date from customer for the device, time portion should be zero.
+         * @param expectedReturnDate the value to set
+         * @return this builder
+         **/
+        public Builder expectedReturnDate(java.util.Date expectedReturnDate) {
+            this.expectedReturnDate = expectedReturnDate;
+            this.__explicitlySet__.add("expectedReturnDate");
+            return this;
+        }
+        /**
+         * Start time for the window to pickup the device from customer.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pickupWindowStartTime")
+        private java.util.Date pickupWindowStartTime;
+
+        /**
+         * Start time for the window to pickup the device from customer.
+         * @param pickupWindowStartTime the value to set
+         * @return this builder
+         **/
+        public Builder pickupWindowStartTime(java.util.Date pickupWindowStartTime) {
+            this.pickupWindowStartTime = pickupWindowStartTime;
+            this.__explicitlySet__.add("pickupWindowStartTime");
+            return this;
+        }
+        /**
+         * End time for the window to pickup the device from customer.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pickupWindowEndTime")
+        private java.util.Date pickupWindowEndTime;
+
+        /**
+         * End time for the window to pickup the device from customer.
+         * @param pickupWindowEndTime the value to set
+         * @return this builder
+         **/
+        public Builder pickupWindowEndTime(java.util.Date pickupWindowEndTime) {
+            this.pickupWindowEndTime = pickupWindowEndTime;
+            this.__explicitlySet__.add("pickupWindowEndTime");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("customerShippingAddress")
         private ShippingAddress customerShippingAddress;
 
@@ -562,6 +631,10 @@ public final class ApplianceExportJob {
                             manifestFile,
                             manifestMd5,
                             bucketAccessPolicies,
+                            returnShippingLabelUri,
+                            expectedReturnDate,
+                            pickupWindowStartTime,
+                            pickupWindowEndTime,
                             customerShippingAddress,
                             freeformTags,
                             definedTags);
@@ -598,6 +671,10 @@ public final class ApplianceExportJob {
                             .manifestFile(o.getManifestFile())
                             .manifestMd5(o.getManifestMd5())
                             .bucketAccessPolicies(o.getBucketAccessPolicies())
+                            .returnShippingLabelUri(o.getReturnShippingLabelUri())
+                            .expectedReturnDate(o.getExpectedReturnDate())
+                            .pickupWindowStartTime(o.getPickupWindowStartTime())
+                            .pickupWindowEndTime(o.getPickupWindowEndTime())
                             .customerShippingAddress(o.getCustomerShippingAddress())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -979,6 +1056,55 @@ public final class ApplianceExportJob {
         return bucketAccessPolicies;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("returnShippingLabelUri")
+    private final String returnShippingLabelUri;
+
+    public String getReturnShippingLabelUri() {
+        return returnShippingLabelUri;
+    }
+
+    /**
+     * Expected return date from customer for the device, time portion should be zero.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("expectedReturnDate")
+    private final java.util.Date expectedReturnDate;
+
+    /**
+     * Expected return date from customer for the device, time portion should be zero.
+     * @return the value
+     **/
+    public java.util.Date getExpectedReturnDate() {
+        return expectedReturnDate;
+    }
+
+    /**
+     * Start time for the window to pickup the device from customer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pickupWindowStartTime")
+    private final java.util.Date pickupWindowStartTime;
+
+    /**
+     * Start time for the window to pickup the device from customer.
+     * @return the value
+     **/
+    public java.util.Date getPickupWindowStartTime() {
+        return pickupWindowStartTime;
+    }
+
+    /**
+     * End time for the window to pickup the device from customer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pickupWindowEndTime")
+    private final java.util.Date pickupWindowEndTime;
+
+    /**
+     * End time for the window to pickup the device from customer.
+     * @return the value
+     **/
+    public java.util.Date getPickupWindowEndTime() {
+        return pickupWindowEndTime;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("customerShippingAddress")
     private final ShippingAddress customerShippingAddress;
 
@@ -1072,6 +1198,10 @@ public final class ApplianceExportJob {
         sb.append(", manifestFile=").append(String.valueOf(this.manifestFile));
         sb.append(", manifestMd5=").append(String.valueOf(this.manifestMd5));
         sb.append(", bucketAccessPolicies=").append(String.valueOf(this.bucketAccessPolicies));
+        sb.append(", returnShippingLabelUri=").append(String.valueOf(this.returnShippingLabelUri));
+        sb.append(", expectedReturnDate=").append(String.valueOf(this.expectedReturnDate));
+        sb.append(", pickupWindowStartTime=").append(String.valueOf(this.pickupWindowStartTime));
+        sb.append(", pickupWindowEndTime=").append(String.valueOf(this.pickupWindowEndTime));
         sb.append(", customerShippingAddress=")
                 .append(String.valueOf(this.customerShippingAddress));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -1121,6 +1251,11 @@ public final class ApplianceExportJob {
                 && java.util.Objects.equals(this.manifestFile, other.manifestFile)
                 && java.util.Objects.equals(this.manifestMd5, other.manifestMd5)
                 && java.util.Objects.equals(this.bucketAccessPolicies, other.bucketAccessPolicies)
+                && java.util.Objects.equals(
+                        this.returnShippingLabelUri, other.returnShippingLabelUri)
+                && java.util.Objects.equals(this.expectedReturnDate, other.expectedReturnDate)
+                && java.util.Objects.equals(this.pickupWindowStartTime, other.pickupWindowStartTime)
+                && java.util.Objects.equals(this.pickupWindowEndTime, other.pickupWindowEndTime)
                 && java.util.Objects.equals(
                         this.customerShippingAddress, other.customerShippingAddress)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -1201,6 +1336,26 @@ public final class ApplianceExportJob {
                         + (this.bucketAccessPolicies == null
                                 ? 43
                                 : this.bucketAccessPolicies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.returnShippingLabelUri == null
+                                ? 43
+                                : this.returnShippingLabelUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expectedReturnDate == null
+                                ? 43
+                                : this.expectedReturnDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pickupWindowStartTime == null
+                                ? 43
+                                : this.pickupWindowStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pickupWindowEndTime == null
+                                ? 43
+                                : this.pickupWindowEndTime.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerShippingAddress == null

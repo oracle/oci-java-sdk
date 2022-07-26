@@ -3,6 +3,52 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.37.0 - 2022-07-26
+### Added
+- Support for the Fusion Apps as a Service service
+- Support for the Digital Media service
+- Support for accessing all Terraform providers from Hashicorp Registry, as well as bringing your own providers, in the Resource Manager service
+- Support for runtime configurations in notebook sessions in the Data Science service
+- Support for compartmentIdInSubtree and accessLevel filters when listing management agents in the Management Agent Cloud service
+- Support for filtering by type when listing work requests in the Management Agent Cloud service
+- Support for filtering by agent id when listing management agent plugins in the Management Agent Cloud service
+- Support for specifying size preference when requesting a data transfer appliance in the Data Transfer service
+- Support for encryption of boot and block volumes associated with a cluster using customer-specified KMS keys in the Big Data service
+- Support for the VM.Standard.E4.Flex shape for Cloud SQL (CSQL) nodes in the Big Data service
+- Support for listing block and boot volumes, as well as block and boot volume replicas, within a volume group in the Block Volume service
+- Support for dedicated autonomous databases in the Operator Access Control service
+- Support for viewing automatic workload repository (AWR) data for databases added to AWRHub in the Operations Insights service
+- Support for ports, protocols, roles, and SSL secrets when enabling or modifying database management in the Database service
+- Support for monthly security maintenance runs in the Database service
+- Support for monthly infrastructure patching for Exadata Cloud at Customer resources in the Database service
+
+### Breaking Changes
+- Class `com.oracle.bmc.fusionapps.DataMaskingActivity` has been removed from `com.oracle.bmc.fusionapps.DataMaskingActivity` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.DataMaskingActivityClient$Builder` has been removed from `com.oracle.bmc.fusionapps.DataMaskingActivityClient$Builder` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.DataMaskingActivityPaginators` has been removed from `com.oracle.bmc.fusionapps.DataMaskingActivityPaginators` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.DataMaskingActivityWaiters` has been removed from `com.oracle.bmc.fusionapps.DataMaskingActivityWaiters` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.FusionEnvironment` has been removed from `com.oracle.bmc.fusionapps.FusionEnvironment` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.FusionEnvironmentClient$Builder` has been removed from `com.oracle.bmc.fusionapps.FusionEnvironmentClient$Builder` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.FusionEnvironmentFamily` has been removed from `com.oracle.bmc.fusionapps.FusionEnvironmentFamily` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.FusionEnvironmentFamilyClient$Builder` has been removed from `com.oracle.bmc.fusionapps.FusionEnvironmentFamilyClient$Builder` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.FusionEnvironmentFamilyPaginators` has been removed from `com.oracle.bmc.fusionapps.FusionEnvironmentFamilyPaginators` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.FusionEnvironmentFamilyWaiters` has been removed from `com.oracle.bmc.fusionapps.FusionEnvironmentFamilyWaiters` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.FusionEnvironmentPaginators` has been removed from `com.oracle.bmc.fusionapps.FusionEnvironmentPaginators` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.FusionEnvironmentWaiters` has been removed from `com.oracle.bmc.fusionapps.FusionEnvironmentWaiters` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.RefreshActivity` has been removed from `com.oracle.bmc.fusionapps.RefreshActivity`  in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.RefreshActivityClient$Builder` has been removed from `com.oracle.bmc.fusionapps.RefreshActivityClient$Builder` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.RefreshActivityPaginators` has been removed from `com.oracle.bmc.fusionapps.RefreshActivityPaginators` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.RefreshActivityWaiters` has been removed from `com.oracle.bmc.fusionapps.RefreshActivityWaiters` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.ScheduledActivity` has been removed from `com.oracle.bmc.fusionapps.ScheduledActivity` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.ScheduledActivityClient$Builder` has been removed from `com.oracle.bmc.fusionapps.ScheduledActivityClient$Builder` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.ScheduledActivityPaginators` has been removed from `com.oracle.bmc.fusionapps.ScheduledActivityPaginators` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.ScheduledActivityWaiters` has been removed from `com.oracle.bmc.fusionapps.ScheduledActivityWaiters` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.ServiceAttachment` has been removed from `com.oracle.bmc.fusionapps.ServiceAttachment` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.ServiceAttachmentClient$Builder` has been removed from `com.oracle.bmc.fusionapps.ServiceAttachmentClient$Builder` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.ServiceAttachmentPaginators` has been removed from `com.oracle.bmc.fusionapps.ServiceAttachmentPaginators` in the Fusion Apps as a Service service
+- Class `com.oracle.bmc.fusionapps.ServiceAttachmentWaiters` has been removed from `com.oracle.bmc.fusionapps.ServiceAttachmentWaiters` in the Fusion Apps as a Service service
+- Method `public java.lang.String getOpcProvisionOption()` has been removed from `com.oracle.bmc.fusionapps.requests.CreateFusionEnvironmentFamilyRequest` in the Fusion Apps as a Service service
+
 ## 2.36.1 - 2022-07-19
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the mx-queretaro-1 region

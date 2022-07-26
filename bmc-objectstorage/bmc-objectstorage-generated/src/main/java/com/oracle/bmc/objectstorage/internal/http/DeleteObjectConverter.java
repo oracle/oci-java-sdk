@@ -12,9 +12,9 @@ import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class DeleteObjectConverter {
-    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
-                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2();
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DeleteObjectConverter.class);
@@ -124,8 +124,9 @@ public class DeleteObjectConverter {
 
                                 java.util.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-client-request-id");
+                                                com.oracle.bmc.http.internal.HeaderUtils
+                                                        .getHeadersWithName(
+                                                                headers, "opc-client-request-id");
                                 if (opcClientRequestIdHeader.isPresent()) {
                                     builder.opcClientRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -135,7 +136,7 @@ public class DeleteObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
@@ -146,7 +147,7 @@ public class DeleteObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> lastModifiedHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "last-modified");
                                 if (lastModifiedHeader.isPresent()) {
                                     builder.lastModified(
@@ -157,7 +158,7 @@ public class DeleteObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> versionIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "version-id");
                                 if (versionIdHeader.isPresent()) {
                                     builder.versionId(
@@ -168,7 +169,7 @@ public class DeleteObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> isDeleteMarkerHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "is-delete-marker");
                                 if (isDeleteMarkerHeader.isPresent()) {
                                     builder.isDeleteMarker(

@@ -70,11 +70,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             GetVolumeBackupPolicyAssetAssignmentRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -130,11 +130,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             GetVolumeBackupPolicyAssetAssignmentRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -192,11 +192,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListBlockVolumeReplicasRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -246,11 +246,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListBlockVolumeReplicasRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -307,11 +307,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListBootVolumeBackupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -361,11 +361,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListBootVolumeBackupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -422,11 +422,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListBootVolumeReplicasRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -476,11 +476,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListBootVolumeReplicasRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -536,11 +536,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListBootVolumesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -588,11 +588,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListBootVolumesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -647,11 +647,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumeBackupPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -701,11 +701,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumeBackupPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -762,11 +762,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumeBackupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -815,11 +815,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumeBackupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -875,11 +875,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumeGroupBackupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -929,11 +929,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumeGroupBackupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -990,11 +990,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumeGroupReplicasRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1044,11 +1044,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumeGroupReplicasRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1104,11 +1104,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumeGroupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1157,11 +1157,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumeGroupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1216,11 +1216,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1268,11 +1268,11 @@ public class BlockstoragePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVolumesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

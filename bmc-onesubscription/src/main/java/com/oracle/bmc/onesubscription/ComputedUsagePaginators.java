@@ -67,11 +67,11 @@ public class ComputedUsagePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAggregatedComputedUsagesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -124,11 +124,11 @@ public class ComputedUsagePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAggregatedComputedUsagesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -190,11 +190,11 @@ public class ComputedUsagePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListComputedUsagesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -244,11 +244,11 @@ public class ComputedUsagePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListComputedUsagesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

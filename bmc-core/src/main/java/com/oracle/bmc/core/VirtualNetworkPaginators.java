@@ -66,11 +66,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             GetAllDrgAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -119,11 +119,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             GetAllDrgAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -179,11 +179,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListByoipAllocatedRangesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -234,11 +234,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListByoipAllocatedRangesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -294,11 +294,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListByoipRangesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -346,11 +346,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListByoipRangesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -405,11 +405,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCaptureFiltersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -458,11 +458,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCaptureFiltersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -518,11 +518,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCpeDeviceShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -571,11 +571,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCpeDeviceShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -629,11 +629,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCpesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -681,11 +681,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCpesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -739,11 +739,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCrossConnectGroupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -793,11 +793,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCrossConnectGroupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -854,11 +854,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCrossConnectLocationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -909,11 +909,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCrossConnectLocationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -970,11 +970,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCrossConnectsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1023,11 +1023,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCrossConnectsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1084,11 +1084,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCrossconnectPortSpeedShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1141,11 +1141,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCrossconnectPortSpeedShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1202,11 +1202,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDhcpOptionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1254,11 +1254,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDhcpOptionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1313,11 +1313,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDrgAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1366,11 +1366,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDrgAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1430,11 +1430,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDrgRouteDistributionStatementsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1490,11 +1490,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDrgRouteDistributionStatementsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1552,11 +1552,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDrgRouteDistributionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1607,11 +1607,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDrgRouteDistributionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1668,11 +1668,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDrgRouteRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1721,11 +1721,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDrgRouteRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1781,11 +1781,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDrgRouteTablesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1834,11 +1834,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDrgRouteTablesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1892,11 +1892,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDrgsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1944,11 +1944,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDrgsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2003,11 +2003,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListFastConnectProviderServicesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2060,11 +2060,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListFastConnectProviderServicesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2131,11 +2131,11 @@ public class VirtualNetworkPaginators {
                                             ListFastConnectProviderVirtualCircuitBandwidthShapesRequest
                                                     .Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2196,11 +2196,11 @@ public class VirtualNetworkPaginators {
                                             ListFastConnectProviderVirtualCircuitBandwidthShapesRequest
                                                     .Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2261,11 +2261,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListIPSecConnectionTunnelRoutesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2318,11 +2318,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListIPSecConnectionTunnelRoutesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2387,11 +2387,11 @@ public class VirtualNetworkPaginators {
                                             ListIPSecConnectionTunnelSecurityAssociationsRequest
                                                     .Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2450,11 +2450,11 @@ public class VirtualNetworkPaginators {
                                             ListIPSecConnectionTunnelSecurityAssociationsRequest
                                                     .Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2514,11 +2514,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListIPSecConnectionTunnelsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2570,11 +2570,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListIPSecConnectionTunnelsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2631,11 +2631,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListIPSecConnectionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2684,11 +2684,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListIPSecConnectionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2744,11 +2744,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListInternetGatewaysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2797,11 +2797,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListInternetGatewaysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2855,11 +2855,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListIpv6sRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2907,11 +2907,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListIpv6sRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2965,11 +2965,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLocalPeeringGatewaysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3019,11 +3019,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLocalPeeringGatewaysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3079,11 +3079,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListNatGatewaysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3131,11 +3131,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListNatGatewaysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3194,11 +3194,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListNetworkSecurityGroupSecurityRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3254,11 +3254,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListNetworkSecurityGroupSecurityRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3317,11 +3317,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListNetworkSecurityGroupVnicsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3374,11 +3374,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListNetworkSecurityGroupVnicsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3436,11 +3436,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListNetworkSecurityGroupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3491,11 +3491,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListNetworkSecurityGroupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3551,11 +3551,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPrivateIpsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3603,11 +3603,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPrivateIpsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3662,11 +3662,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPublicIpPoolsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3715,11 +3715,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPublicIpPoolsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3774,11 +3774,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPublicIpsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3826,11 +3826,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPublicIpsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3886,11 +3886,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListRemotePeeringConnectionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3943,11 +3943,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListRemotePeeringConnectionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4004,11 +4004,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListRouteTablesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4056,11 +4056,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListRouteTablesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4115,11 +4115,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSecurityListsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4168,11 +4168,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSecurityListsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4228,11 +4228,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListServiceGatewaysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4281,11 +4281,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListServiceGatewaysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4340,11 +4340,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListServicesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4392,11 +4392,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListServicesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4449,11 +4449,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSubnetsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4501,11 +4501,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSubnetsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4557,11 +4557,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVcnsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4609,11 +4609,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVcnsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4671,11 +4671,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVirtualCircuitBandwidthShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4730,11 +4730,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVirtualCircuitBandwidthShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4792,11 +4792,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVirtualCircuitsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4845,11 +4845,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVirtualCircuitsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4903,11 +4903,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVlansRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4955,11 +4955,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVlansRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -5011,11 +5011,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVtapsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -5063,11 +5063,11 @@ public class VirtualNetworkPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVtapsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

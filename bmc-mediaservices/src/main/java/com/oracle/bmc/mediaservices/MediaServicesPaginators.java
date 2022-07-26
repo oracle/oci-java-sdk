@@ -73,11 +73,11 @@ public class MediaServicesPaginators {
                                             ListMediaAssetDistributionChannelAttachmentsRequest
                                                     .Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -138,11 +138,11 @@ public class MediaServicesPaginators {
                                             ListMediaAssetDistributionChannelAttachmentsRequest
                                                     .Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -204,11 +204,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMediaAssetsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -256,11 +256,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMediaAssetsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -316,11 +316,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMediaWorkflowConfigurationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -373,11 +373,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMediaWorkflowConfigurationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -439,11 +439,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMediaWorkflowJobFactsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -495,11 +495,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMediaWorkflowJobFactsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -558,11 +558,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMediaWorkflowJobsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -613,11 +613,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMediaWorkflowJobsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -680,11 +680,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMediaWorkflowTaskDeclarationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -739,11 +739,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMediaWorkflowTaskDeclarationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -804,11 +804,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMediaWorkflowsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -858,11 +858,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMediaWorkflowsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -918,11 +918,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStreamCdnConfigsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -972,11 +972,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStreamCdnConfigsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1034,11 +1034,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStreamDistributionChannelsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1091,11 +1091,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStreamDistributionChannelsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1157,11 +1157,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStreamPackagingConfigsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1213,11 +1213,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStreamPackagingConfigsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1277,11 +1277,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSystemMediaWorkflowsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1332,11 +1332,11 @@ public class MediaServicesPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSystemMediaWorkflowsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

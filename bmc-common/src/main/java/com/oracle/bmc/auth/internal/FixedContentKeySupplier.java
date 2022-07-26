@@ -31,7 +31,7 @@ public class FixedContentKeySupplier implements SessionKeySupplier {
                 new ByteArrayInputStream(privateKeyContents.getBytes())) {
             final RSAPrivateKey privateKey =
                     new PEMFileRSAPrivateKeySupplier(inputStream, passphrase)
-                            .getKey("unused")
+                            .supplyKey("unused")
                             .orElse(null);
 
             KeyFactory keyFactory = KeyFactory.getInstance("RSA");

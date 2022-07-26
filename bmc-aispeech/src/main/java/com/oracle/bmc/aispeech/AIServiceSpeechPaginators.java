@@ -66,11 +66,11 @@ public class AIServiceSpeechPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTranscriptionJobsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -121,11 +121,11 @@ public class AIServiceSpeechPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTranscriptionJobsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -182,11 +182,11 @@ public class AIServiceSpeechPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTranscriptionTasksRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -237,11 +237,11 @@ public class AIServiceSpeechPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTranscriptionTasksRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

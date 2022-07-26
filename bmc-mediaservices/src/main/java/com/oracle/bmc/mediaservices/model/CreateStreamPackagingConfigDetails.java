@@ -67,13 +67,13 @@ public final class CreateStreamPackagingConfigDetails {
             return this;
         }
         /**
-         * The name of the stream Packaging Configuration.
+         * The name of the stream Packaging Configuration. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The name of the stream Packaging Configuration.
+         * The name of the stream Packaging Configuration. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -224,13 +224,13 @@ public final class CreateStreamPackagingConfigDetails {
     }
 
     /**
-     * The name of the stream Packaging Configuration.
+     * The name of the stream Packaging Configuration. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The name of the stream Packaging Configuration.
+     * The name of the stream Packaging Configuration. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {

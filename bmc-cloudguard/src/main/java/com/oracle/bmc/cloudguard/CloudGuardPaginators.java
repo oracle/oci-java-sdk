@@ -66,11 +66,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListConditionMetadataTypesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -122,11 +122,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListConditionMetadataTypesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -185,11 +185,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDataMaskRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -238,11 +238,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDataMaskRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -299,11 +299,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDetectorRecipeDetectorRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -356,11 +356,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDetectorRecipeDetectorRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -422,11 +422,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDetectorRecipesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -475,11 +475,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDetectorRecipesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -535,11 +535,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDetectorRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -588,11 +588,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDetectorRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -647,11 +647,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDetectorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -699,11 +699,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDetectorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -758,11 +758,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListImpactedResourcesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -813,11 +813,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListImpactedResourcesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -874,11 +874,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListManagedListTypesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -928,11 +928,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListManagedListTypesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -987,11 +987,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListManagedListsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1040,11 +1040,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListManagedListsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1099,11 +1099,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1151,11 +1151,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1210,11 +1210,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListProblemEndpointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1264,11 +1264,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListProblemEndpointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1324,11 +1324,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListProblemHistoriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1378,11 +1378,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListProblemHistoriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1437,11 +1437,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListProblemsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1489,11 +1489,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListProblemsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1548,11 +1548,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListRecommendationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1601,11 +1601,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListRecommendationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1662,11 +1662,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResourceProfileEndpointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1719,11 +1719,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResourceProfileEndpointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1787,11 +1787,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResourceProfileImpactedResourcesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1847,11 +1847,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResourceProfileImpactedResourcesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1913,11 +1913,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResourceProfilesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1967,11 +1967,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResourceProfilesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2027,11 +2027,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResourceTypesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2080,11 +2080,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResourceTypesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2140,11 +2140,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResponderActivitiesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2195,11 +2195,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResponderActivitiesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2257,11 +2257,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResponderExecutionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2312,11 +2312,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResponderExecutionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2378,11 +2378,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResponderRecipeResponderRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2437,11 +2437,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResponderRecipeResponderRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2503,11 +2503,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResponderRecipesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2557,11 +2557,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResponderRecipesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2617,11 +2617,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResponderRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2670,11 +2670,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResponderRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2730,11 +2730,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSecurityPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2784,11 +2784,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSecurityPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2844,11 +2844,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSecurityRecipesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2897,11 +2897,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSecurityRecipesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2957,11 +2957,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSecurityZonesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3010,11 +3010,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSecurityZonesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3070,11 +3070,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSightingEndpointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3125,11 +3125,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSightingEndpointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3187,11 +3187,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSightingImpactedResourcesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3244,11 +3244,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSightingImpactedResourcesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3308,11 +3308,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSightingsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3360,11 +3360,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSightingsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3418,11 +3418,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTacticsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3470,11 +3470,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTacticsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3533,11 +3533,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTargetDetectorRecipeDetectorRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3593,11 +3593,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTargetDetectorRecipeDetectorRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3659,11 +3659,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTargetDetectorRecipesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3715,11 +3715,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTargetDetectorRecipesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3783,11 +3783,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTargetResponderRecipeResponderRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3844,11 +3844,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTargetResponderRecipeResponderRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3911,11 +3911,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTargetResponderRecipesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3967,11 +3967,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTargetResponderRecipesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4029,11 +4029,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTargetsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4081,11 +4081,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTargetsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4139,11 +4139,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTechniquesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4191,11 +4191,11 @@ public class CloudGuardPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTechniquesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

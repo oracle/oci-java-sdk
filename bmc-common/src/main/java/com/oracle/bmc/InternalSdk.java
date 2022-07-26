@@ -14,4 +14,10 @@ package com.oracle.bmc;
  * Note, by convention, any class with 'internal' in the package name is not intended for consumers
  * to directly use, regardless of whether or not it contains this annotation.
  */
-public @interface InternalSdk {}
+public @interface InternalSdk {
+    /**
+     * If set to true, backward compatibility should be maintained, even though this is internal SDK code.
+     * @return true if backward compatibility should be maintained
+     */
+    boolean backwardCompatibilityRequired() default false;
+}

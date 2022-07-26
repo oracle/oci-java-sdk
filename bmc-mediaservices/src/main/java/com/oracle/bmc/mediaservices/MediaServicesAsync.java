@@ -10,13 +10,17 @@ import com.oracle.bmc.mediaservices.responses.*;
 /**
  * Media Services (includes Media Flow and Media Streams) is a fully managed service for processing media (video) source content. Use Media Flow and Media Streams to transcode and package digital video using configurable workflows and stream video outputs.
  *
- * Use the Media Services API to configure media workflows and run Media Flow jobs, create distribution channels, ingest assets, create Preview URLs and play assets. For more information, see [Media Flow](https://docs.cloud.oracle.com/iaas/Content/dms-mediaflow/home.htm) and Media Streams [Media Streams](https://docs.cloud.oracle.com/iaas/Content/dms-mediastream/home.htm).
- *
- * Use the table of contents and search tool to explore the Media Flow API and Media Streams API.
+ * Use the Media Services API to configure media workflows and run Media Flow jobs, create distribution channels, ingest assets, create Preview URLs and play assets. For more information, see [Media Flow](https://docs.cloud.oracle.com/iaas/Content/dms-mediaflow/home.htm) and [Media Streams](https://docs.cloud.oracle.com/iaas/Content/dms-mediastream/home.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public interface MediaServicesAsync extends AutoCloseable {
+
+    /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
+    void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).

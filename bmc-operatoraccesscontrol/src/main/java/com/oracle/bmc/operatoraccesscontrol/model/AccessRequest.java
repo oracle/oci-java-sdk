@@ -45,6 +45,7 @@ public final class AccessRequest {
         "workflowId",
         "isAutoApproved",
         "lifecycleState",
+        "lifecycleDetails",
         "timeOfCreation",
         "timeOfModification",
         "timeOfUserCreation",
@@ -76,6 +77,7 @@ public final class AccessRequest {
             java.util.List<String> workflowId,
             Boolean isAutoApproved,
             AccessRequestLifecycleStates lifecycleState,
+            String lifecycleDetails,
             java.util.Date timeOfCreation,
             java.util.Date timeOfModification,
             java.util.Date timeOfUserCreation,
@@ -106,6 +108,7 @@ public final class AccessRequest {
         this.workflowId = workflowId;
         this.isAutoApproved = isAutoApproved;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.timeOfCreation = timeOfCreation;
         this.timeOfModification = timeOfModification;
         this.timeOfUserCreation = timeOfUserCreation;
@@ -392,6 +395,22 @@ public final class AccessRequest {
             return this;
         }
         /**
+         * more in detail about the lifeCycleState.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * more in detail about the lifeCycleState.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+        /**
          * Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
          *
          **/
@@ -639,6 +658,7 @@ public final class AccessRequest {
                             workflowId,
                             isAutoApproved,
                             lifecycleState,
+                            lifecycleDetails,
                             timeOfCreation,
                             timeOfModification,
                             timeOfUserCreation,
@@ -675,6 +695,7 @@ public final class AccessRequest {
                             .workflowId(o.getWorkflowId())
                             .isAutoApproved(o.getIsAutoApproved())
                             .lifecycleState(o.getLifecycleState())
+                            .lifecycleDetails(o.getLifecycleDetails())
                             .timeOfCreation(o.getTimeOfCreation())
                             .timeOfModification(o.getTimeOfModification())
                             .timeOfUserCreation(o.getTimeOfUserCreation())
@@ -942,6 +963,20 @@ public final class AccessRequest {
     }
 
     /**
+     * more in detail about the lifeCycleState.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * more in detail about the lifeCycleState.
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    /**
      * Time when the access request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      **/
@@ -1168,6 +1203,7 @@ public final class AccessRequest {
         sb.append(", workflowId=").append(String.valueOf(this.workflowId));
         sb.append(", isAutoApproved=").append(String.valueOf(this.isAutoApproved));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeOfCreation=").append(String.valueOf(this.timeOfCreation));
         sb.append(", timeOfModification=").append(String.valueOf(this.timeOfModification));
         sb.append(", timeOfUserCreation=").append(String.valueOf(this.timeOfUserCreation));
@@ -1212,6 +1248,7 @@ public final class AccessRequest {
                 && java.util.Objects.equals(this.workflowId, other.workflowId)
                 && java.util.Objects.equals(this.isAutoApproved, other.isAutoApproved)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeOfCreation, other.timeOfCreation)
                 && java.util.Objects.equals(this.timeOfModification, other.timeOfModification)
                 && java.util.Objects.equals(this.timeOfUserCreation, other.timeOfUserCreation)
@@ -1265,6 +1302,9 @@ public final class AccessRequest {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeOfCreation == null ? 43 : this.timeOfCreation.hashCode());

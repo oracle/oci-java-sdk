@@ -164,7 +164,7 @@ public interface ResourceManager extends AutoCloseable {
     CreateJobResponse createJob(CreateJobRequest request);
 
     /**
-     * Creates a a private endpoint in the specified compartment.
+     * Creates a private endpoint in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -388,7 +388,8 @@ public interface ResourceManager extends AutoCloseable {
     GetPrivateEndpointResponse getPrivateEndpoint(GetPrivateEndpointRequest request);
 
     /**
-     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     * Gets the reachable, or alternative, IP address for a nonpublic IP address that is associated with the private endpoint.
+     * Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -525,7 +526,7 @@ public interface ResourceManager extends AutoCloseable {
 
     /**
      * Lists private endpoints according to the specified filter.
-     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * - For `compartmentId`, lists all private endpoints in the matching compartment.
      * - For `privateEndpointId`, lists the matching private endpoint.
      *
      * @param request The request object containing the details to send

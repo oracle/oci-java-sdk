@@ -66,11 +66,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAssociableEntitiesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -120,11 +120,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAssociableEntitiesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -181,11 +181,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAssociatedEntitiesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -236,11 +236,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAssociatedEntitiesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -299,11 +299,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAutoAssociationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -353,11 +353,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAutoAssociationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -412,11 +412,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCategoriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -464,11 +464,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCategoriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -523,11 +523,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListConfigWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -578,11 +578,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListConfigWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -643,11 +643,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListEntityAssociationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -698,11 +698,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListEntityAssociationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -762,11 +762,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListEntitySourceAssociationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -819,11 +819,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListEntitySourceAssociationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -881,11 +881,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListFieldsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -933,11 +933,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListFieldsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -994,11 +994,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLabelPrioritiesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1047,11 +1047,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLabelPrioritiesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1107,11 +1107,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLabelSourceDetailsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1162,11 +1162,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLabelSourceDetailsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1222,11 +1222,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLabelsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1274,11 +1274,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLabelsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1335,11 +1335,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogAnalyticsEmBridgesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1391,11 +1391,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogAnalyticsEmBridgesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1454,11 +1454,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogAnalyticsEntitiesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1509,11 +1509,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogAnalyticsEntitiesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1573,11 +1573,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogAnalyticsEntityTopologyRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1630,11 +1630,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogAnalyticsEntityTopologyRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1697,11 +1697,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogAnalyticsEntityTypesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1753,11 +1753,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogAnalyticsEntityTypesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1817,11 +1817,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogAnalyticsLogGroupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1873,11 +1873,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogAnalyticsLogGroupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1940,11 +1940,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogAnalyticsObjectCollectionRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2000,11 +2000,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogAnalyticsObjectCollectionRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2065,11 +2065,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLookupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2117,11 +2117,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLookupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2176,11 +2176,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMetaSourceTypesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2230,11 +2230,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMetaSourceTypesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2292,11 +2292,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListParserFunctionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2346,11 +2346,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListParserFunctionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2408,11 +2408,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListParserMetaPluginsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2463,11 +2463,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListParserMetaPluginsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2525,11 +2525,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListParsersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2577,11 +2577,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListParsersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2638,11 +2638,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListQueryWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2693,11 +2693,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListQueryWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2754,11 +2754,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListRecalledDataRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2807,11 +2807,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListRecalledDataRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2867,11 +2867,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResourceCategoriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2922,11 +2922,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResourceCategoriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -2985,11 +2985,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListScheduledTasksRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3038,11 +3038,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListScheduledTasksRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3098,11 +3098,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourceAssociationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3153,11 +3153,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourceAssociationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3215,11 +3215,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourceEventTypesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3268,11 +3268,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourceEventTypesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3332,11 +3332,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourceExtendedFieldDefinitionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3392,11 +3392,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourceExtendedFieldDefinitionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3459,11 +3459,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourceLabelOperatorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3514,11 +3514,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourceLabelOperatorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3577,11 +3577,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourceMetaFunctionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3632,11 +3632,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourceMetaFunctionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3695,11 +3695,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourcePatternsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3749,11 +3749,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourcePatternsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3810,11 +3810,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourcesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3862,11 +3862,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSourcesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3924,11 +3924,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStorageWorkRequestErrorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -3981,11 +3981,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStorageWorkRequestErrorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4043,11 +4043,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStorageWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4098,11 +4098,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStorageWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4160,11 +4160,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListUploadFilesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4212,11 +4212,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListUploadFilesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4271,11 +4271,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListUploadWarningsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4324,11 +4324,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListUploadWarningsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4383,11 +4383,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListUploadsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4435,11 +4435,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListUploadsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4493,11 +4493,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWarningsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4545,11 +4545,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWarningsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4604,11 +4604,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestErrorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4658,11 +4658,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestErrorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4719,11 +4719,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestLogsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4772,11 +4772,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestLogsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4831,11 +4831,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -4884,11 +4884,11 @@ public class LogAnalyticsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

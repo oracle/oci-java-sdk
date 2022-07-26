@@ -579,6 +579,40 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the AWR report for the specified database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAwrDatabaseReportResponse> getAwrDatabaseReport(
+            GetAwrDatabaseReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAwrDatabaseReportRequest, GetAwrDatabaseReportResponse>
+                    handler);
+
+    /**
+     * Gets the SQL health check report for one SQL of the specified database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAwrDatabaseSqlReportResponse> getAwrDatabaseSqlReport(
+            GetAwrDatabaseSqlReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAwrDatabaseSqlReportRequest, GetAwrDatabaseSqlReportResponse>
+                    handler);
+
+    /**
      * Gets details of an AWR hub.
      *
      * @param request The request object containing the details to send
@@ -875,6 +909,39 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     java.util.concurrent.Future<IngestSqlTextResponse> ingestSqlText(
             IngestSqlTextRequest request,
             com.oracle.bmc.responses.AsyncHandler<IngestSqlTextRequest, IngestSqlTextResponse>
+                    handler);
+
+    /**
+     * Lists AWR snapshots for the specified database in the AWR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAwrDatabaseSnapshotsResponse> listAwrDatabaseSnapshots(
+            ListAwrDatabaseSnapshotsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAwrDatabaseSnapshotsRequest, ListAwrDatabaseSnapshotsResponse>
+                    handler);
+
+    /**
+     * Gets the list of databases and their snapshot summary details available in the AWRHub.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAwrDatabasesResponse> listAwrDatabases(
+            ListAwrDatabasesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListAwrDatabasesRequest, ListAwrDatabasesResponse>
                     handler);
 
     /**
@@ -1298,6 +1365,192 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     RotateOperationsInsightsWarehouseWalletRequest,
                                     RotateOperationsInsightsWarehouseWalletResponse>
+                            handler);
+
+    /**
+     * Summarizes the AWR CPU resource limits and metrics for the specified database in AWR.
+     * Based on the time range provided as part of query param, the metrics points will be returned in the response as below.
+     * - if time range is <=7 days then the metrics points will be for every MINUTES
+     * - if time range is <=2 hours then the metrics points will be for every 10 SECONDS
+     * - if time range is >7 days then the metrics points will be for every HOUR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAwrDatabaseCpuUsagesResponse>
+            summarizeAwrDatabaseCpuUsages(
+                    SummarizeAwrDatabaseCpuUsagesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAwrDatabaseCpuUsagesRequest,
+                                    SummarizeAwrDatabaseCpuUsagesResponse>
+                            handler);
+
+    /**
+     * Summarizes the metric samples for the specified database in the AWR. The metric samples are summarized based on the Time dimension for each metric.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAwrDatabaseMetricsResponse> summarizeAwrDatabaseMetrics(
+            SummarizeAwrDatabaseMetricsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAwrDatabaseMetricsRequest, SummarizeAwrDatabaseMetricsResponse>
+                    handler);
+
+    /**
+     * Summarizes the database parameter change history for one database parameter of the specified database in AWR. One change history record contains
+     * the previous value, the changed value, and the corresponding time range. If the database parameter value was changed multiple times within the time range, then multiple change history records are created for the same parameter.
+     * Note that this API only returns information on change history details for one database parameter.
+     * To get a list of all the database parameters whose values were changed during a specified time range, use the following API endpoint:
+     * /awrHubs/{awrHubId}/awrDbParameters?awrSourceDatabaseIdentifier={awrSourceDbId}
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAwrDatabaseParameterChangesResponse>
+            summarizeAwrDatabaseParameterChanges(
+                    SummarizeAwrDatabaseParameterChangesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAwrDatabaseParameterChangesRequest,
+                                    SummarizeAwrDatabaseParameterChangesResponse>
+                            handler);
+
+    /**
+     * Summarizes the database parameter history for the specified database in AWR. This includes the list of database
+     * parameters, with information on whether the parameter values were modified within the query time range. Note that
+     * each database parameter is only listed once. Depending on the optional query parameters, the returned summary gets all the database parameters, which include:
+     * <p>
+     * Queryparam (valueChanged =\"Y\") - Each parameter whose value was changed during the time range, \"isChanged : true\" in response for the DB params.
+     * Queryparam (valueChanged =\"N\") - Each parameter whose value was unchanged during the time range, \"isChanged : false\" in response for the DB params.
+     * Queryparam (valueChanged =\"Y\"  and valueModified = \"SYSTEM_MOD\") - Each parameter whose value was changed at the system level during the time range, \"isChanged : true\" & \"valueModified : SYSTEM_MOD\" in response for the DB params.
+     * Queryparam (valueChanged =\"N\" and  valueDefault = \"FALSE\") - Each parameter whose value was unchanged during the time range, however, the value is not the default value, \"isChanged : true\" & \"isDefault : false\" in response for the DB params.
+     * <p>
+     * Note that this API does not return information on the number of times each database parameter has been changed within the time range. To get the database parameter value change history for a specific parameter, use the following API endpoint:
+     * /awrHubs/{awrHubId}/awrDbParameterChanges?awrSourceDatabaseIdentifier={awrSourceDbId}
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAwrDatabaseParametersResponse>
+            summarizeAwrDatabaseParameters(
+                    SummarizeAwrDatabaseParametersRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAwrDatabaseParametersRequest,
+                                    SummarizeAwrDatabaseParametersResponse>
+                            handler);
+
+    /**
+     * Summarizes the AWR snapshot ranges that contain continuous snapshots, for the specified AWRHub.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAwrDatabaseSnapshotRangesResponse>
+            summarizeAwrDatabaseSnapshotRanges(
+                    SummarizeAwrDatabaseSnapshotRangesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAwrDatabaseSnapshotRangesRequest,
+                                    SummarizeAwrDatabaseSnapshotRangesResponse>
+                            handler);
+
+    /**
+     * Summarizes the AWR SYSSTAT sample data for the specified database in AWR. The statistical data is summarized based on the Time dimension for each statistic.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAwrDatabaseSysstatsResponse> summarizeAwrDatabaseSysstats(
+            SummarizeAwrDatabaseSysstatsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAwrDatabaseSysstatsRequest,
+                            SummarizeAwrDatabaseSysstatsResponse>
+                    handler);
+
+    /**
+     * Summarizes the AWR top wait events.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAwrDatabaseTopWaitEventsResponse>
+            summarizeAwrDatabaseTopWaitEvents(
+                    SummarizeAwrDatabaseTopWaitEventsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAwrDatabaseTopWaitEventsRequest,
+                                    SummarizeAwrDatabaseTopWaitEventsResponse>
+                            handler);
+
+    /**
+     * Summarizes AWR wait event data into value buckets and frequency, for the specified database in the AWR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAwrDatabaseWaitEventBucketsResponse>
+            summarizeAwrDatabaseWaitEventBuckets(
+                    SummarizeAwrDatabaseWaitEventBucketsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAwrDatabaseWaitEventBucketsRequest,
+                                    SummarizeAwrDatabaseWaitEventBucketsResponse>
+                            handler);
+
+    /**
+     * Summarizes the AWR wait event sample data for the specified database in the AWR. The event data is summarized based on the Time dimension for each event.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAwrDatabaseWaitEventsResponse>
+            summarizeAwrDatabaseWaitEvents(
+                    SummarizeAwrDatabaseWaitEventsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAwrDatabaseWaitEventsRequest,
+                                    SummarizeAwrDatabaseWaitEventsResponse>
                             handler);
 
     /**

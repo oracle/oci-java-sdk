@@ -12,17 +12,6 @@ import com.oracle.bmc.core.model.*;
 public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-     */
-    private String compartmentId;
-
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-     */
-    public String getCompartmentId() {
-        return compartmentId;
-    }
-    /**
      * The name of the availability domain.
      * <p>
      * Example: {@code Uocm:PHX-AD-1}
@@ -38,6 +27,17 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     public String getAvailabilityDomain() {
         return availabilityDomain;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
+    private String compartmentId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
+    public String getCompartmentId() {
+        return compartmentId;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -249,21 +249,6 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-         */
-        private String compartmentId = null;
-
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-         * @param compartmentId the value to set
-         * @return this builder instance
-         */
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            return this;
-        }
-
-        /**
          * The name of the availability domain.
          * <p>
          * Example: {@code Uocm:PHX-AD-1}
@@ -281,6 +266,21 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
          */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        private String compartmentId = null;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
 
@@ -460,8 +460,8 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
          * @return this builder instance
          */
         public Builder copy(ListVolumesRequest o) {
-            compartmentId(o.getCompartmentId());
             availabilityDomain(o.getAvailabilityDomain());
+            compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
             displayName(o.getDisplayName());
@@ -501,8 +501,8 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
          */
         public ListVolumesRequest buildWithoutInvocationCallback() {
             ListVolumesRequest request = new ListVolumesRequest();
-            request.compartmentId = compartmentId;
             request.availabilityDomain = availabilityDomain;
+            request.compartmentId = compartmentId;
             request.limit = limit;
             request.page = page;
             request.displayName = displayName;
@@ -511,7 +511,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.volumeGroupId = volumeGroupId;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListVolumesRequest(compartmentId, availabilityDomain, limit, page, displayName, sortBy, sortOrder, volumeGroupId, lifecycleState);
+            // new ListVolumesRequest(availabilityDomain, compartmentId, limit, page, displayName, sortBy, sortOrder, volumeGroupId, lifecycleState);
         }
     }
 
@@ -521,8 +521,8 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     public Builder toBuilder() {
         return new Builder()
-                .compartmentId(compartmentId)
                 .availabilityDomain(availabilityDomain)
+                .compartmentId(compartmentId)
                 .limit(limit)
                 .page(page)
                 .displayName(displayName)
@@ -545,8 +545,8 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
@@ -569,8 +569,8 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         ListVolumesRequest other = (ListVolumesRequest) o;
         return super.equals(o)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -586,12 +586,12 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         int result = super.hashCode();
         result =
                 (result * PRIME)
-                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result =
-                (result * PRIME)
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());

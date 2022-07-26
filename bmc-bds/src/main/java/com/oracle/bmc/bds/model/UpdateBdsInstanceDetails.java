@@ -25,18 +25,21 @@ public final class UpdateBdsInstanceDetails {
         "displayName",
         "bootstrapScriptUrl",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "kmsKeyId"
     })
     public UpdateBdsInstanceDetails(
             String displayName,
             String bootstrapScriptUrl,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String kmsKeyId) {
         super();
         this.displayName = displayName;
         this.bootstrapScriptUrl = bootstrapScriptUrl;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.kmsKeyId = kmsKeyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -114,6 +117,22 @@ public final class UpdateBdsInstanceDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * The OCID of the Key Management master encryption key.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        /**
+         * The OCID of the Key Management master encryption key.
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -121,7 +140,7 @@ public final class UpdateBdsInstanceDetails {
         public UpdateBdsInstanceDetails build() {
             UpdateBdsInstanceDetails __instance__ =
                     new UpdateBdsInstanceDetails(
-                            displayName, bootstrapScriptUrl, freeformTags, definedTags);
+                            displayName, bootstrapScriptUrl, freeformTags, definedTags, kmsKeyId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -132,7 +151,8 @@ public final class UpdateBdsInstanceDetails {
                     displayName(o.getDisplayName())
                             .bootstrapScriptUrl(o.getBootstrapScriptUrl())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .kmsKeyId(o.getKmsKeyId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -214,6 +234,20 @@ public final class UpdateBdsInstanceDetails {
         return definedTags;
     }
 
+    /**
+     * The OCID of the Key Management master encryption key.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    private final String kmsKeyId;
+
+    /**
+     * The OCID of the Key Management master encryption key.
+     * @return the value
+     **/
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -231,6 +265,7 @@ public final class UpdateBdsInstanceDetails {
         sb.append(", bootstrapScriptUrl=").append(String.valueOf(this.bootstrapScriptUrl));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -250,6 +285,7 @@ public final class UpdateBdsInstanceDetails {
                 && java.util.Objects.equals(this.bootstrapScriptUrl, other.bootstrapScriptUrl)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -265,6 +301,7 @@ public final class UpdateBdsInstanceDetails {
                                 : this.bootstrapScriptUrl.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

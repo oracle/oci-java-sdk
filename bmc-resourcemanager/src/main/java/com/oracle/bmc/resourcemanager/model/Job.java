@@ -34,6 +34,7 @@ public final class Job {
         "compartmentId",
         "displayName",
         "operation",
+        "isProviderUpgradeRequired",
         "jobOperationDetails",
         "applyJobPlanResolution",
         "resolvedPlanJobId",
@@ -54,6 +55,7 @@ public final class Job {
             String compartmentId,
             String displayName,
             Operation operation,
+            Boolean isProviderUpgradeRequired,
             JobOperationDetails jobOperationDetails,
             ApplyJobPlanResolution applyJobPlanResolution,
             String resolvedPlanJobId,
@@ -73,6 +75,7 @@ public final class Job {
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.operation = operation;
+        this.isProviderUpgradeRequired = isProviderUpgradeRequired;
         this.jobOperationDetails = jobOperationDetails;
         this.applyJobPlanResolution = applyJobPlanResolution;
         this.resolvedPlanJobId = resolvedPlanJobId;
@@ -168,6 +171,28 @@ public final class Job {
         public Builder operation(Operation operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
+            return this;
+        }
+        /**
+         * Specifies whether or not to upgrade provider versions.
+         * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+         * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isProviderUpgradeRequired")
+        private Boolean isProviderUpgradeRequired;
+
+        /**
+         * Specifies whether or not to upgrade provider versions.
+         * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+         * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+         *
+         * @param isProviderUpgradeRequired the value to set
+         * @return this builder
+         **/
+        public Builder isProviderUpgradeRequired(Boolean isProviderUpgradeRequired) {
+            this.isProviderUpgradeRequired = isProviderUpgradeRequired;
+            this.__explicitlySet__.add("isProviderUpgradeRequired");
             return this;
         }
 
@@ -410,6 +435,7 @@ public final class Job {
                             compartmentId,
                             displayName,
                             operation,
+                            isProviderUpgradeRequired,
                             jobOperationDetails,
                             applyJobPlanResolution,
                             resolvedPlanJobId,
@@ -435,6 +461,7 @@ public final class Job {
                             .compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
                             .operation(o.getOperation())
+                            .isProviderUpgradeRequired(o.getIsProviderUpgradeRequired())
                             .jobOperationDetails(o.getJobOperationDetails())
                             .applyJobPlanResolution(o.getApplyJobPlanResolution())
                             .resolvedPlanJobId(o.getResolvedPlanJobId())
@@ -583,6 +610,26 @@ public final class Job {
      **/
     public Operation getOperation() {
         return operation;
+    }
+
+    /**
+     * Specifies whether or not to upgrade provider versions.
+     * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+     * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isProviderUpgradeRequired")
+    private final Boolean isProviderUpgradeRequired;
+
+    /**
+     * Specifies whether or not to upgrade provider versions.
+     * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+     * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+     *
+     * @return the value
+     **/
+    public Boolean getIsProviderUpgradeRequired() {
+        return isProviderUpgradeRequired;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("jobOperationDetails")
@@ -859,6 +906,8 @@ public final class Job {
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", operation=").append(String.valueOf(this.operation));
+        sb.append(", isProviderUpgradeRequired=")
+                .append(String.valueOf(this.isProviderUpgradeRequired));
         sb.append(", jobOperationDetails=").append(String.valueOf(this.jobOperationDetails));
         sb.append(", applyJobPlanResolution=").append(String.valueOf(this.applyJobPlanResolution));
         sb.append(", resolvedPlanJobId=").append(String.valueOf(this.resolvedPlanJobId));
@@ -892,6 +941,8 @@ public final class Job {
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.operation, other.operation)
+                && java.util.Objects.equals(
+                        this.isProviderUpgradeRequired, other.isProviderUpgradeRequired)
                 && java.util.Objects.equals(this.jobOperationDetails, other.jobOperationDetails)
                 && java.util.Objects.equals(
                         this.applyJobPlanResolution, other.applyJobPlanResolution)
@@ -920,6 +971,11 @@ public final class Job {
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isProviderUpgradeRequired == null
+                                ? 43
+                                : this.isProviderUpgradeRequired.hashCode());
         result =
                 (result * PRIME)
                         + (this.jobOperationDetails == null

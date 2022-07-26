@@ -67,7 +67,9 @@ public class FileBasedKeySupplier implements SessionKeySupplier {
             }
 
             RSAPrivateKey privateKey =
-                    new PEMFileRSAPrivateKeySupplier(in, passphrase).getKey("unused").orElse(null);
+                    new PEMFileRSAPrivateKeySupplier(in, passphrase)
+                            .supplyKey("unused")
+                            .orElse(null);
 
             KeyFactory keyFactory = KeyFactory.getInstance("RSA");
             RSAPrivateCrtKeySpec keySpec =

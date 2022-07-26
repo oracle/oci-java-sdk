@@ -28,6 +28,14 @@ package com.oracle.bmc.resourcemanager.model;
 public final class CreateApplyJobOperationDetails extends CreateJobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isProviderUpgradeRequired")
+        private Boolean isProviderUpgradeRequired;
+
+        public Builder isProviderUpgradeRequired(Boolean isProviderUpgradeRequired) {
+            this.isProviderUpgradeRequired = isProviderUpgradeRequired;
+            this.__explicitlySet__.add("isProviderUpgradeRequired");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
         private TerraformAdvancedOptions terraformAdvancedOptions;
@@ -83,7 +91,10 @@ public final class CreateApplyJobOperationDetails extends CreateJobOperationDeta
         public CreateApplyJobOperationDetails build() {
             CreateApplyJobOperationDetails __instance__ =
                     new CreateApplyJobOperationDetails(
-                            terraformAdvancedOptions, executionPlanStrategy, executionPlanJobId);
+                            isProviderUpgradeRequired,
+                            terraformAdvancedOptions,
+                            executionPlanStrategy,
+                            executionPlanJobId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -91,7 +102,8 @@ public final class CreateApplyJobOperationDetails extends CreateJobOperationDeta
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateApplyJobOperationDetails o) {
             Builder copiedBuilder =
-                    terraformAdvancedOptions(o.getTerraformAdvancedOptions())
+                    isProviderUpgradeRequired(o.getIsProviderUpgradeRequired())
+                            .terraformAdvancedOptions(o.getTerraformAdvancedOptions())
                             .executionPlanStrategy(o.getExecutionPlanStrategy())
                             .executionPlanJobId(o.getExecutionPlanJobId());
 
@@ -113,10 +125,11 @@ public final class CreateApplyJobOperationDetails extends CreateJobOperationDeta
 
     @Deprecated
     public CreateApplyJobOperationDetails(
+            Boolean isProviderUpgradeRequired,
             TerraformAdvancedOptions terraformAdvancedOptions,
             ApplyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy,
             String executionPlanJobId) {
-        super();
+        super(isProviderUpgradeRequired);
         this.terraformAdvancedOptions = terraformAdvancedOptions;
         this.executionPlanStrategy = executionPlanStrategy;
         this.executionPlanJobId = executionPlanJobId;

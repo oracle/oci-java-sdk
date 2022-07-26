@@ -167,7 +167,7 @@ public class RequestSignerImplTest {
                 (KeySupplier<RSAPrivateKey>) mock(KeySupplier.class);
 
         RSAPrivateKey privateKey = mock(RSAPrivateKey.class);
-        when(keySupplier.getKey(keyId)).thenReturn(Optional.of(privateKey));
+        when(keySupplier.supplyKey(keyId)).thenReturn(Optional.of(privateKey));
 
         SignatureSigner signer = mock(SignatureSigner.class);
 
@@ -458,7 +458,7 @@ public class RequestSignerImplTest {
                         uri,
                         existingHeaders,
                         body,
-                        Constants.ALL_HEADERS,
+                        Constants.ALL_HEADERS_LIST,
                         signingConfiguration);
         assertNotNull(missingHeaders);
         int expectedMissingHeaderSize =

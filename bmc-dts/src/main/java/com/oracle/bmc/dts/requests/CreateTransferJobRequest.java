@@ -8,7 +8,7 @@ import com.oracle.bmc.dts.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferJobExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateTransferJobRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class CreateTransferJobRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dts.model.CreateTransferJobDetails> {
@@ -24,12 +24,6 @@ public class CreateTransferJobRequest
     public com.oracle.bmc.dts.model.CreateTransferJobDetails getCreateTransferJobDetails() {
         return createTransferJobDetails;
     }
-
-    private String opcRetryToken;
-
-    public String getOpcRetryToken() {
-        return opcRetryToken;
-    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
@@ -44,6 +38,27 @@ public class CreateTransferJobRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
     }
 
     /**
@@ -79,18 +94,6 @@ public class CreateTransferJobRequest
             return this;
         }
 
-        private String opcRetryToken = null;
-
-        /**
-         *
-         * @param opcRetryToken the value to set
-         * @return this builder instance
-         */
-        public Builder opcRetryToken(String opcRetryToken) {
-            this.opcRetryToken = opcRetryToken;
-            return this;
-        }
-
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the request ID.
@@ -107,6 +110,31 @@ public class CreateTransferJobRequest
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
             return this;
         }
 
@@ -139,8 +167,8 @@ public class CreateTransferJobRequest
          */
         public Builder copy(CreateTransferJobRequest o) {
             createTransferJobDetails(o.getCreateTransferJobDetails());
-            opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -185,10 +213,10 @@ public class CreateTransferJobRequest
         public CreateTransferJobRequest buildWithoutInvocationCallback() {
             CreateTransferJobRequest request = new CreateTransferJobRequest();
             request.createTransferJobDetails = createTransferJobDetails;
-            request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateTransferJobRequest(createTransferJobDetails, opcRetryToken, opcRequestId);
+            // new CreateTransferJobRequest(createTransferJobDetails, opcRequestId, opcRetryToken);
         }
     }
 
@@ -199,8 +227,8 @@ public class CreateTransferJobRequest
     public Builder toBuilder() {
         return new Builder()
                 .createTransferJobDetails(createTransferJobDetails)
-                .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
     }
 
     /**
@@ -218,8 +246,8 @@ public class CreateTransferJobRequest
         sb.append("super=").append(super.toString());
         sb.append(",createTransferJobDetails=")
                 .append(String.valueOf(this.createTransferJobDetails));
-        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(")");
         return sb.toString();
     }
@@ -237,8 +265,8 @@ public class CreateTransferJobRequest
         return super.equals(o)
                 && java.util.Objects.equals(
                         this.createTransferJobDetails, other.createTransferJobDetails)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
     }
 
     @Override
@@ -250,10 +278,10 @@ public class CreateTransferJobRequest
                         + (this.createTransferJobDetails == null
                                 ? 43
                                 : this.createTransferJobDetails.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
-        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }
 }

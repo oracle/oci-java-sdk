@@ -12,9 +12,9 @@ import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListBootVolumeReplicasConverter {
-    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
-                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2();
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ListBootVolumeReplicasConverter.class);
@@ -29,23 +29,33 @@ public class ListBootVolumeReplicasConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.core.requests.ListBootVolumeReplicasRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getAvailabilityDomain(), "availabilityDomain is required");
-        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20160918").path("bootVolumeReplicas");
 
-        target =
-                target.queryParam(
-                        "availabilityDomain",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getAvailabilityDomain()));
+        if (request.getAvailabilityDomain() != null) {
+            target =
+                    target.queryParam(
+                            "availabilityDomain",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAvailabilityDomain()));
+        }
 
-        target =
-                target.queryParam(
-                        "compartmentId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getCompartmentId()));
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
+
+        if (request.getVolumeGroupReplicaId() != null) {
+            target =
+                    target.queryParam(
+                            "volumeGroupReplicaId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getVolumeGroupReplicaId()));
+        }
 
         if (request.getLimit() != null) {
             target =
@@ -170,7 +180,7 @@ public class ListBootVolumeReplicasConverter {
                                 builder.items(response.getItem());
 
                                 java.util.Optional<java.util.List<String>> opcNextPageHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-next-page");
                                 if (opcNextPageHeader.isPresent()) {
                                     builder.opcNextPage(
@@ -181,7 +191,7 @@ public class ListBootVolumeReplicasConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(

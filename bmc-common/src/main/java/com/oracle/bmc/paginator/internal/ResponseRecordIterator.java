@@ -126,7 +126,7 @@ public class ResponseRecordIterator<REQUESTBUILDER, REQUEST, RESPONSE, ITEMTYPE>
 
     private void getFirstPage() {
         final RequestBuilderAndToken<REQUESTBUILDER> requestBuilderAndToken =
-                new RequestBuilderAndToken<>(requestBuilder, null);
+                RequestBuilderAndToken.initialPage(requestBuilder);
 
         currentResponse =
                 pageRetrievalFunction.apply(requestBuilderFunction.apply(requestBuilderAndToken));

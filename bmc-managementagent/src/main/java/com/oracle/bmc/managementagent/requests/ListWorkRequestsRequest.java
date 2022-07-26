@@ -78,6 +78,17 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return status;
     }
     /**
+     * The OperationType of the workRequest
+     */
+    private com.oracle.bmc.managementagent.model.OperationTypes type;
+
+    /**
+     * The OperationType of the workRequest
+     */
+    public com.oracle.bmc.managementagent.model.OperationTypes getType() {
+        return type;
+    }
+    /**
      * Filter for items with timeCreated greater or equal to provided value.
      * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
      * Z offset, as defined by RFC 3339.
@@ -289,6 +300,21 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * The OperationType of the workRequest
+         */
+        private com.oracle.bmc.managementagent.model.OperationTypes type = null;
+
+        /**
+         * The OperationType of the workRequest
+         * @param type the value to set
+         * @return this builder instance
+         */
+        public Builder type(com.oracle.bmc.managementagent.model.OperationTypes type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
          * Filter for items with timeCreated greater or equal to provided value.
          * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
          * Z offset, as defined by RFC 3339.
@@ -376,6 +402,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             page(o.getPage());
             limit(o.getLimit());
             status(o.getStatus());
+            type(o.getType());
             timeCreatedGreaterThanOrEqualTo(o.getTimeCreatedGreaterThanOrEqualTo());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
@@ -417,11 +444,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.page = page;
             request.limit = limit;
             request.status = status;
+            request.type = type;
             request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, agentId, opcRequestId, page, limit, status, timeCreatedGreaterThanOrEqualTo, sortOrder, sortBy);
+            // new ListWorkRequestsRequest(compartmentId, agentId, opcRequestId, page, limit, status, type, timeCreatedGreaterThanOrEqualTo, sortOrder, sortBy);
         }
     }
 
@@ -437,6 +465,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .page(page)
                 .limit(limit)
                 .status(status)
+                .type(type)
                 .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy);
@@ -461,6 +490,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",status=").append(String.valueOf(this.status));
+        sb.append(",type=").append(String.valueOf(this.type));
         sb.append(",timeCreatedGreaterThanOrEqualTo=")
                 .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -486,6 +516,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(
                         this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -504,6 +535,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeCreatedGreaterThanOrEqualTo == null

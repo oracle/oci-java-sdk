@@ -13,6 +13,7 @@ public enum ResourceTypes {
     Exacc("EXACC"),
     Exadatainfrastructure("EXADATAINFRASTRUCTURE"),
     Autonomousvmcluster("AUTONOMOUSVMCLUSTER"),
+    Cloudautonomousvmcluster("CLOUDAUTONOMOUSVMCLUSTER"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -45,7 +45,7 @@ public class RestClientUtils {
         KeySupplier<RSAPrivateKey> keySupplier =
                 new KeySupplier<RSAPrivateKey>() {
                     @Override
-                    public Optional<RSAPrivateKey> getKey(String keyId) {
+                    public Optional<RSAPrivateKey> supplyKey(String keyId) {
                         return Optional.of(
                                 leafCertificateSupplier.getCertificateAndKeyPair().getPrivateKey());
                     }
@@ -84,7 +84,7 @@ public class RestClientUtils {
         KeySupplier<RSAPrivateKey> keySupplier =
                 new KeySupplier<RSAPrivateKey>() {
                     @Override
-                    public Optional<RSAPrivateKey> getKey(String keyId) {
+                    public Optional<RSAPrivateKey> supplyKey(String keyId) {
                         return Optional.of(
                                 federationClient
                                         .getLeafCertificateSupplier()
@@ -123,12 +123,12 @@ public class RestClientUtils {
             CircuitBreakerConfiguration circuitBreakerConfiguration) {
 
         // for the federation endpoint, do not sign the HOST header right now
-        List<String> genericHeaders = removeHostHeader(Constants.GENERIC_HEADERS);
-        List<String> allHeaders = removeHostHeader(Constants.ALL_HEADERS);
+        List<String> genericHeaders = removeHostHeader(Constants.GENERIC_HEADERS_LIST);
+        List<String> allHeaders = removeHostHeader(Constants.ALL_HEADERS_LIST);
         ClientConfiguration clientConfiguration = null;
 
         Map<String, List<String>> headersToSign =
-                Constants.createHeadersToSignMap(
+                Constants.createHeadersToSignForVerbMap(
                         genericHeaders,
                         genericHeaders,
                         genericHeaders,
@@ -138,7 +138,7 @@ public class RestClientUtils {
 
         RequestSignerImpl.SigningConfiguration signingConfiguration =
                 new RequestSignerImpl.SigningConfiguration(
-                        headersToSign, Constants.OPTIONAL_SIGNING_HEADERS, false);
+                        headersToSign, Constants.OPTIONAL_SIGNING_HEADERS_MAP, false);
 
         RequestSigner requestSigner =
                 new RequestSignerImpl(keySupplier, signingConfiguration, keyIdSupplier);

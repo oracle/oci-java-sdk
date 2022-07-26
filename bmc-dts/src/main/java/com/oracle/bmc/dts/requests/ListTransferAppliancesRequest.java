@@ -8,7 +8,7 @@ import com.oracle.bmc.dts.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferAppliancesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTransferAppliancesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ListTransferAppliancesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -38,6 +38,9 @@ public class ListTransferAppliancesRequest
         Delivered("DELIVERED"),
         Preparing("PREPARING"),
         Finalized("FINALIZED"),
+        ReturnLabelRequested("RETURN_LABEL_REQUESTED"),
+        ReturnLabelGenerating("RETURN_LABEL_GENERATING"),
+        ReturnLabelAvailable("RETURN_LABEL_AVAILABLE"),
         ReturnDelayed("RETURN_DELAYED"),
         ReturnShipped("RETURN_SHIPPED"),
         ReturnShippedCancelled("RETURN_SHIPPED_CANCELLED"),

@@ -45,13 +45,13 @@ public final class CreateMediaWorkflowConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * MediaWorkflowConfiguration identifier.
+         * MediaWorkflowConfiguration identifier. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * MediaWorkflowConfiguration identifier.
+         * MediaWorkflowConfiguration identifier. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -179,13 +179,13 @@ public final class CreateMediaWorkflowConfigurationDetails {
     }
 
     /**
-     * MediaWorkflowConfiguration identifier.
+     * MediaWorkflowConfiguration identifier. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * MediaWorkflowConfiguration identifier.
+     * MediaWorkflowConfiguration identifier. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {

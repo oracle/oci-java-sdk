@@ -14,6 +14,9 @@ import java.util.Map.Entry;
 import javax.ws.rs.core.MultivaluedMap;
 
 import java.util.Optional;
+
+import com.oracle.bmc.InternalSdk;
+import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.model.Range;
 
 /**
@@ -29,7 +32,24 @@ public class HeaderUtils {
      *            The header to get the value for.
      * @return The values, or empty.
      */
-    public static Optional<List<String>> get(MultivaluedMap<String, String> headers, String name) {
+    @InternalSdk(backwardCompatibilityRequired = true)
+    public static com.google.common /*Guava will be removed soon*/.base.Optional<List<String>> get(
+            MultivaluedMap<String, String> headers, String name) {
+        return GuavaUtils.adaptToGuava(getHeadersWithName(headers, name));
+    }
+
+    /**
+     * Returns the header values for the given header key.
+     *
+     * @param headers
+     *            The header map.
+     * @param name
+     *            The header to get the value for.
+     * @return The values, or empty.
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    public static Optional<List<String>> getHeadersWithName(
+            MultivaluedMap<String, String> headers, String name) {
         if (headers == null) {
             return Optional.empty();
         }
@@ -56,6 +76,7 @@ public class HeaderUtils {
      * @return A new class instance.
      */
     @SuppressWarnings("unchecked")
+    @InternalSdk(backwardCompatibilityRequired = true)
     public static <T> T toValue(String headerName, String value, Class<T> clazz) {
         if (clazz == String.class) {
             return (T) value;

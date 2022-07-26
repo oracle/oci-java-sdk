@@ -8,7 +8,7 @@ import com.oracle.bmc.dts.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferApplianceAdminCredentialsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateTransferApplianceAdminCredentialsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class CreateTransferApplianceAdminCredentialsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dts.model.TransferAppliancePublicKey> {
@@ -40,6 +40,27 @@ public class CreateTransferApplianceAdminCredentialsRequest
 
     public com.oracle.bmc.dts.model.TransferAppliancePublicKey getAdminPublicKey() {
         return adminPublicKey;
+    }
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
     }
 
     /**
@@ -104,6 +125,31 @@ public class CreateTransferApplianceAdminCredentialsRequest
         }
 
         /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -134,6 +180,7 @@ public class CreateTransferApplianceAdminCredentialsRequest
             id(o.getId());
             transferApplianceLabel(o.getTransferApplianceLabel());
             adminPublicKey(o.getAdminPublicKey());
+            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -182,8 +229,9 @@ public class CreateTransferApplianceAdminCredentialsRequest
             request.id = id;
             request.transferApplianceLabel = transferApplianceLabel;
             request.adminPublicKey = adminPublicKey;
+            request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateTransferApplianceAdminCredentialsRequest(id, transferApplianceLabel, adminPublicKey);
+            // new CreateTransferApplianceAdminCredentialsRequest(id, transferApplianceLabel, adminPublicKey, opcRetryToken);
         }
     }
 
@@ -195,7 +243,8 @@ public class CreateTransferApplianceAdminCredentialsRequest
         return new Builder()
                 .id(id)
                 .transferApplianceLabel(transferApplianceLabel)
-                .adminPublicKey(adminPublicKey);
+                .adminPublicKey(adminPublicKey)
+                .opcRetryToken(opcRetryToken);
     }
 
     /**
@@ -214,6 +263,7 @@ public class CreateTransferApplianceAdminCredentialsRequest
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",transferApplianceLabel=").append(String.valueOf(this.transferApplianceLabel));
         sb.append(",adminPublicKey=").append(String.valueOf(this.adminPublicKey));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(")");
         return sb.toString();
     }
@@ -233,7 +283,8 @@ public class CreateTransferApplianceAdminCredentialsRequest
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(
                         this.transferApplianceLabel, other.transferApplianceLabel)
-                && java.util.Objects.equals(this.adminPublicKey, other.adminPublicKey);
+                && java.util.Objects.equals(this.adminPublicKey, other.adminPublicKey)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
     }
 
     @Override
@@ -249,6 +300,9 @@ public class CreateTransferApplianceAdminCredentialsRequest
         result =
                 (result * PRIME)
                         + (this.adminPublicKey == null ? 43 : this.adminPublicKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         return result;
     }
 }

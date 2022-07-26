@@ -26,6 +26,8 @@ public final class UpdateStackDetails {
         "displayName",
         "description",
         "configSource",
+        "customTerraformProvider",
+        "isThirdPartyProviderExperienceEnabled",
         "variables",
         "terraformVersion",
         "freeformTags",
@@ -35,6 +37,8 @@ public final class UpdateStackDetails {
             String displayName,
             String description,
             UpdateConfigSourceDetails configSource,
+            CustomTerraformProvider customTerraformProvider,
+            Boolean isThirdPartyProviderExperienceEnabled,
             java.util.Map<String, String> variables,
             String terraformVersion,
             java.util.Map<String, String> freeformTags,
@@ -43,6 +47,8 @@ public final class UpdateStackDetails {
         this.displayName = displayName;
         this.description = description;
         this.configSource = configSource;
+        this.customTerraformProvider = customTerraformProvider;
+        this.isThirdPartyProviderExperienceEnabled = isThirdPartyProviderExperienceEnabled;
         this.variables = variables;
         this.terraformVersion = terraformVersion;
         this.freeformTags = freeformTags;
@@ -90,6 +96,48 @@ public final class UpdateStackDetails {
         public Builder configSource(UpdateConfigSourceDetails configSource) {
             this.configSource = configSource;
             this.__explicitlySet__.add("configSource");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customTerraformProvider")
+        private CustomTerraformProvider customTerraformProvider;
+
+        public Builder customTerraformProvider(CustomTerraformProvider customTerraformProvider) {
+            this.customTerraformProvider = customTerraformProvider;
+            this.__explicitlySet__.add("customTerraformProvider");
+            return this;
+        }
+        /**
+         * When {@code true}, changes the stack's sourcing of third-party Terraform providers to
+         * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+         * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+         * Applies to older stacks that use Terraform version 0.12.x and 0.13.x only.
+         * (Older stacks that use other Terraform versions are automatically updated.)
+         * Once set to {@code true}, cannot be reverted.
+         * For more information about stack sourcing of third-party Terraform providers, see
+         * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
+        private Boolean isThirdPartyProviderExperienceEnabled;
+
+        /**
+         * When {@code true}, changes the stack's sourcing of third-party Terraform providers to
+         * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+         * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+         * Applies to older stacks that use Terraform version 0.12.x and 0.13.x only.
+         * (Older stacks that use other Terraform versions are automatically updated.)
+         * Once set to {@code true}, cannot be reverted.
+         * For more information about stack sourcing of third-party Terraform providers, see
+         * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         *
+         * @param isThirdPartyProviderExperienceEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isThirdPartyProviderExperienceEnabled(
+                Boolean isThirdPartyProviderExperienceEnabled) {
+            this.isThirdPartyProviderExperienceEnabled = isThirdPartyProviderExperienceEnabled;
+            this.__explicitlySet__.add("isThirdPartyProviderExperienceEnabled");
             return this;
         }
         /**
@@ -189,6 +237,8 @@ public final class UpdateStackDetails {
                             displayName,
                             description,
                             configSource,
+                            customTerraformProvider,
+                            isThirdPartyProviderExperienceEnabled,
                             variables,
                             terraformVersion,
                             freeformTags,
@@ -203,6 +253,9 @@ public final class UpdateStackDetails {
                     displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .configSource(o.getConfigSource())
+                            .customTerraformProvider(o.getCustomTerraformProvider())
+                            .isThirdPartyProviderExperienceEnabled(
+                                    o.getIsThirdPartyProviderExperienceEnabled())
                             .variables(o.getVariables())
                             .terraformVersion(o.getTerraformVersion())
                             .freeformTags(o.getFreeformTags())
@@ -257,6 +310,43 @@ public final class UpdateStackDetails {
 
     public UpdateConfigSourceDetails getConfigSource() {
         return configSource;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("customTerraformProvider")
+    private final CustomTerraformProvider customTerraformProvider;
+
+    public CustomTerraformProvider getCustomTerraformProvider() {
+        return customTerraformProvider;
+    }
+
+    /**
+     * When {@code true}, changes the stack's sourcing of third-party Terraform providers to
+     * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+     * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+     * Applies to older stacks that use Terraform version 0.12.x and 0.13.x only.
+     * (Older stacks that use other Terraform versions are automatically updated.)
+     * Once set to {@code true}, cannot be reverted.
+     * For more information about stack sourcing of third-party Terraform providers, see
+     * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
+    private final Boolean isThirdPartyProviderExperienceEnabled;
+
+    /**
+     * When {@code true}, changes the stack's sourcing of third-party Terraform providers to
+     * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+     * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+     * Applies to older stacks that use Terraform version 0.12.x and 0.13.x only.
+     * (Older stacks that use other Terraform versions are automatically updated.)
+     * Once set to {@code true}, cannot be reverted.
+     * For more information about stack sourcing of third-party Terraform providers, see
+     * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     *
+     * @return the value
+     **/
+    public Boolean getIsThirdPartyProviderExperienceEnabled() {
+        return isThirdPartyProviderExperienceEnabled;
     }
 
     /**
@@ -353,6 +443,10 @@ public final class UpdateStackDetails {
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", configSource=").append(String.valueOf(this.configSource));
+        sb.append(", customTerraformProvider=")
+                .append(String.valueOf(this.customTerraformProvider));
+        sb.append(", isThirdPartyProviderExperienceEnabled=")
+                .append(String.valueOf(this.isThirdPartyProviderExperienceEnabled));
         sb.append(", variables=").append(String.valueOf(this.variables));
         sb.append(", terraformVersion=").append(String.valueOf(this.terraformVersion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -375,6 +469,11 @@ public final class UpdateStackDetails {
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.configSource, other.configSource)
+                && java.util.Objects.equals(
+                        this.customTerraformProvider, other.customTerraformProvider)
+                && java.util.Objects.equals(
+                        this.isThirdPartyProviderExperienceEnabled,
+                        other.isThirdPartyProviderExperienceEnabled)
                 && java.util.Objects.equals(this.variables, other.variables)
                 && java.util.Objects.equals(this.terraformVersion, other.terraformVersion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -389,6 +488,16 @@ public final class UpdateStackDetails {
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.configSource == null ? 43 : this.configSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customTerraformProvider == null
+                                ? 43
+                                : this.customTerraformProvider.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isThirdPartyProviderExperienceEnabled == null
+                                ? 43
+                                : this.isThirdPartyProviderExperienceEnabled.hashCode());
         result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
         result =
                 (result * PRIME)

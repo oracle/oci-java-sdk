@@ -86,9 +86,10 @@ public class ConfigSourceRecord {
      *
      **/
     public enum ConfigSourceRecordType {
-        ZipUpload("ZIP_UPLOAD"),
+        CompartmentConfigSource("COMPARTMENT_CONFIG_SOURCE"),
         GitConfigSource("GIT_CONFIG_SOURCE"),
         ObjectStorageConfigSource("OBJECT_STORAGE_CONFIG_SOURCE"),
+        ZipUpload("ZIP_UPLOAD"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
