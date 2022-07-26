@@ -330,7 +330,7 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
         for (int retry = 0; retry < MAX_RETRIES; retry++) {
             try (InputStream inputStream = getResourceStream(privateKeyResourceDetails)) {
                 return new PEMFileRSAPrivateKeySupplier(inputStream, privateKeyPassphrase)
-                        .getKey(null)
+                        .supplyKey(null)
                         .orElse(null);
             } catch (IOException
                     | PEMFileRSAPrivateKeySupplier.PEMFileRSAPrivateKeySupplierException e) {

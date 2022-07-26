@@ -14,17 +14,22 @@ package com.oracle.bmc.dts.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateTransferApplianceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateTransferApplianceDetails {
     @Deprecated
-    @java.beans.ConstructorProperties({"customerShippingAddress"})
-    public CreateTransferApplianceDetails(ShippingAddress customerShippingAddress) {
+    @java.beans.ConstructorProperties({
+        "customerShippingAddress",
+        "minimumStorageCapacityInTerabytes"
+    })
+    public CreateTransferApplianceDetails(
+            ShippingAddress customerShippingAddress, Integer minimumStorageCapacityInTerabytes) {
         super();
         this.customerShippingAddress = customerShippingAddress;
+        this.minimumStorageCapacityInTerabytes = minimumStorageCapacityInTerabytes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -38,20 +43,41 @@ public final class CreateTransferApplianceDetails {
             this.__explicitlySet__.add("customerShippingAddress");
             return this;
         }
+        /**
+         * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("minimumStorageCapacityInTerabytes")
+        private Integer minimumStorageCapacityInTerabytes;
+
+        /**
+         * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+         * @param minimumStorageCapacityInTerabytes the value to set
+         * @return this builder
+         **/
+        public Builder minimumStorageCapacityInTerabytes(
+                Integer minimumStorageCapacityInTerabytes) {
+            this.minimumStorageCapacityInTerabytes = minimumStorageCapacityInTerabytes;
+            this.__explicitlySet__.add("minimumStorageCapacityInTerabytes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateTransferApplianceDetails build() {
             CreateTransferApplianceDetails __instance__ =
-                    new CreateTransferApplianceDetails(customerShippingAddress);
+                    new CreateTransferApplianceDetails(
+                            customerShippingAddress, minimumStorageCapacityInTerabytes);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateTransferApplianceDetails o) {
-            Builder copiedBuilder = customerShippingAddress(o.getCustomerShippingAddress());
+            Builder copiedBuilder =
+                    customerShippingAddress(o.getCustomerShippingAddress())
+                            .minimumStorageCapacityInTerabytes(
+                                    o.getMinimumStorageCapacityInTerabytes());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -76,6 +102,20 @@ public final class CreateTransferApplianceDetails {
         return customerShippingAddress;
     }
 
+    /**
+     * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minimumStorageCapacityInTerabytes")
+    private final Integer minimumStorageCapacityInTerabytes;
+
+    /**
+     * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+     * @return the value
+     **/
+    public Integer getMinimumStorageCapacityInTerabytes() {
+        return minimumStorageCapacityInTerabytes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -90,6 +130,8 @@ public final class CreateTransferApplianceDetails {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateTransferApplianceDetails(");
         sb.append("customerShippingAddress=").append(String.valueOf(this.customerShippingAddress));
+        sb.append(", minimumStorageCapacityInTerabytes=")
+                .append(String.valueOf(this.minimumStorageCapacityInTerabytes));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -106,6 +148,9 @@ public final class CreateTransferApplianceDetails {
 
         CreateTransferApplianceDetails other = (CreateTransferApplianceDetails) o;
         return java.util.Objects.equals(this.customerShippingAddress, other.customerShippingAddress)
+                && java.util.Objects.equals(
+                        this.minimumStorageCapacityInTerabytes,
+                        other.minimumStorageCapacityInTerabytes)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -118,6 +163,11 @@ public final class CreateTransferApplianceDetails {
                         + (this.customerShippingAddress == null
                                 ? 43
                                 : this.customerShippingAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minimumStorageCapacityInTerabytes == null
+                                ? 43
+                                : this.minimumStorageCapacityInTerabytes.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

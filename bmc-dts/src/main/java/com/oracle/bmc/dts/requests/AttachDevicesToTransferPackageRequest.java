@@ -8,7 +8,7 @@ import com.oracle.bmc.dts.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/AttachDevicesToTransferPackageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AttachDevicesToTransferPackageRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class AttachDevicesToTransferPackageRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dts.model.AttachDevicesDetails> {
 
@@ -44,6 +44,27 @@ public class AttachDevicesToTransferPackageRequest
      */
     public com.oracle.bmc.dts.model.AttachDevicesDetails getAttachDevicesDetails() {
         return attachDevicesDetails;
+    }
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
     }
 
     /**
@@ -111,6 +132,31 @@ public class AttachDevicesToTransferPackageRequest
         }
 
         /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -141,6 +187,7 @@ public class AttachDevicesToTransferPackageRequest
             id(o.getId());
             transferPackageLabel(o.getTransferPackageLabel());
             attachDevicesDetails(o.getAttachDevicesDetails());
+            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -188,8 +235,9 @@ public class AttachDevicesToTransferPackageRequest
             request.id = id;
             request.transferPackageLabel = transferPackageLabel;
             request.attachDevicesDetails = attachDevicesDetails;
+            request.opcRetryToken = opcRetryToken;
             return request;
-            // new AttachDevicesToTransferPackageRequest(id, transferPackageLabel, attachDevicesDetails);
+            // new AttachDevicesToTransferPackageRequest(id, transferPackageLabel, attachDevicesDetails, opcRetryToken);
         }
     }
 
@@ -201,7 +249,8 @@ public class AttachDevicesToTransferPackageRequest
         return new Builder()
                 .id(id)
                 .transferPackageLabel(transferPackageLabel)
-                .attachDevicesDetails(attachDevicesDetails);
+                .attachDevicesDetails(attachDevicesDetails)
+                .opcRetryToken(opcRetryToken);
     }
 
     /**
@@ -220,6 +269,7 @@ public class AttachDevicesToTransferPackageRequest
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",transferPackageLabel=").append(String.valueOf(this.transferPackageLabel));
         sb.append(",attachDevicesDetails=").append(String.valueOf(this.attachDevicesDetails));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(")");
         return sb.toString();
     }
@@ -237,7 +287,8 @@ public class AttachDevicesToTransferPackageRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.transferPackageLabel, other.transferPackageLabel)
-                && java.util.Objects.equals(this.attachDevicesDetails, other.attachDevicesDetails);
+                && java.util.Objects.equals(this.attachDevicesDetails, other.attachDevicesDetails)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
     }
 
     @Override
@@ -255,6 +306,9 @@ public class AttachDevicesToTransferPackageRequest
                         + (this.attachDevicesDetails == null
                                 ? 43
                                 : this.attachDevicesDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         return result;
     }
 }

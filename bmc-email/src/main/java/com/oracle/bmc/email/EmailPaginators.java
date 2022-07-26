@@ -64,11 +64,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDkimsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -116,11 +116,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDkimsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -174,11 +174,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListEmailDomainsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -227,11 +227,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListEmailDomainsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -286,11 +286,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSendersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -338,11 +338,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSendersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -396,11 +396,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSuppressionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -449,11 +449,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSuppressionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -509,11 +509,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestErrorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -563,11 +563,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestErrorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -624,11 +624,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestLogsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -677,11 +677,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestLogsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -736,11 +736,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -789,11 +789,11 @@ public class EmailPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

@@ -35,13 +35,13 @@ public final class UpdateStreamDistributionChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Stream Distribution channel display name.
+         * Stream Distribution channel display name. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Stream Distribution channel display name.
+         * Stream Distribution channel display name. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -127,13 +127,13 @@ public final class UpdateStreamDistributionChannelDetails {
     }
 
     /**
-     * Stream Distribution channel display name.
+     * Stream Distribution channel display name. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Stream Distribution channel display name.
+     * Stream Distribution channel display name. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {

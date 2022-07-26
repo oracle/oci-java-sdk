@@ -68,11 +68,11 @@ public class SqlTuningPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSqlTuningAdvisorTaskFindingsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -126,11 +126,11 @@ public class SqlTuningPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSqlTuningAdvisorTaskFindingsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -197,11 +197,11 @@ public class SqlTuningPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSqlTuningAdvisorTaskRecommendationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -260,11 +260,11 @@ public class SqlTuningPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSqlTuningAdvisorTaskRecommendationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -327,11 +327,11 @@ public class SqlTuningPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSqlTuningAdvisorTasksRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -383,11 +383,11 @@ public class SqlTuningPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSqlTuningAdvisorTasksRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -448,11 +448,11 @@ public class SqlTuningPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSqlTuningSetsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -502,11 +502,11 @@ public class SqlTuningPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSqlTuningSetsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

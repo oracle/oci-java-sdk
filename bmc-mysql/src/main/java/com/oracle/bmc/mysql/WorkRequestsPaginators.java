@@ -66,11 +66,11 @@ public class WorkRequestsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestErrorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -120,11 +120,11 @@ public class WorkRequestsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestErrorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -181,11 +181,11 @@ public class WorkRequestsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestLogsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -234,11 +234,11 @@ public class WorkRequestsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestLogsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -293,11 +293,11 @@ public class WorkRequestsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -346,11 +346,11 @@ public class WorkRequestsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

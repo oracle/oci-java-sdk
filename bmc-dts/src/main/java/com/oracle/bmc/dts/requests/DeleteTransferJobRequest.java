@@ -8,7 +8,7 @@ import com.oracle.bmc.dts.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteTransferJobExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteTransferJobRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class DeleteTransferJobRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
@@ -36,6 +36,27 @@ public class DeleteTransferJobRequest extends com.oracle.bmc.requests.BmcRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
     }
 
     public static class Builder
@@ -80,6 +101,31 @@ public class DeleteTransferJobRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -109,6 +155,7 @@ public class DeleteTransferJobRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(DeleteTransferJobRequest o) {
             id(o.getId());
             opcRequestId(o.getOpcRequestId());
+            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -143,8 +190,9 @@ public class DeleteTransferJobRequest extends com.oracle.bmc.requests.BmcRequest
             DeleteTransferJobRequest request = new DeleteTransferJobRequest();
             request.id = id;
             request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
             return request;
-            // new DeleteTransferJobRequest(id, opcRequestId);
+            // new DeleteTransferJobRequest(id, opcRequestId, opcRetryToken);
         }
     }
 
@@ -153,7 +201,7 @@ public class DeleteTransferJobRequest extends com.oracle.bmc.requests.BmcRequest
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().id(id).opcRequestId(opcRequestId);
+        return new Builder().id(id).opcRequestId(opcRequestId).opcRetryToken(opcRetryToken);
     }
 
     /**
@@ -171,6 +219,7 @@ public class DeleteTransferJobRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append("super=").append(super.toString());
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(")");
         return sb.toString();
     }
@@ -187,7 +236,8 @@ public class DeleteTransferJobRequest extends com.oracle.bmc.requests.BmcRequest
         DeleteTransferJobRequest other = (DeleteTransferJobRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
     }
 
     @Override
@@ -196,6 +246,9 @@ public class DeleteTransferJobRequest extends com.oracle.bmc.requests.BmcRequest
         int result = super.hashCode();
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         return result;
     }
 }

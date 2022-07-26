@@ -10,41 +10,23 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Date;
 import java.util.Optional;
-import com.nimbusds.jwt.JWTClaimsSet;
-import com.nimbusds.jwt.SignedJWT;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import org.slf4j.Logger;
 
-import java.security.interfaces.RSAPublicKey;
-
 class SecurityTokenAdapter {
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(SecurityTokenAdapter.class);
-    private final JWTClaimsSet jwt;
+    private final Optional<JwtClaimsSet> jwt;
     private final SessionKeySupplier sessionKeySupplier;
     private final String securityToken;
 
     SecurityTokenAdapter(String securityToken, SessionKeySupplier sessionKeySupplier) {
         this.securityToken = securityToken;
-        if (securityToken == null || securityToken.isEmpty()) {
-            jwt = null;
+        if (securityToken != null && !securityToken.isEmpty()) {
+            this.jwt = Optional.of(new JwtClaimsSet(securityToken));
         } else {
-            jwt = parse(securityToken);
+            this.jwt = Optional.empty();
         }
         this.sessionKeySupplier = sessionKeySupplier;
-    }
-
-    private JWTClaimsSet parse(String token) {
-        try {
-            SignedJWT signedJWT = SignedJWT.parse(token);
-            if (signedJWT.getSignature().toString().isEmpty()) {
-                throw new IllegalArgumentException("The token doesn't have a signature");
-            }
-            // check if payload is a valid JSON object and throws ParseException when it's not
-            return signedJWT.getJWTClaimsSet();
-        } catch (ParseException e) {
-            throw new IllegalArgumentException(
-                    "The token does not conform to signed JWT format. " + e.getMessage());
-        }
     }
 
     /**
@@ -60,13 +42,13 @@ class SecurityTokenAdapter {
      * @return true if valid
      */
     boolean isValid(java.util.Optional<Duration> time) {
-        if (jwt == null) {
+        if (!jwt.isPresent()) {
             LOG.debug("Security token is not valid.");
             return false;
         }
 
         try {
-            Date exp = jwt.getExpirationTime();
+            Date exp = jwt.get().getExpirationTime();
             if (exp != null) {
                 // Make sure the token is not expired
                 final Duration bufferTime = time.isPresent() ? time.get() : Duration.ZERO;
@@ -78,7 +60,7 @@ class SecurityTokenAdapter {
                     // We check this in case secrets service deploys a new key
                     // and the JWT is still not expired.
                     // In such case, we would want to re-issue the token
-                    String jwk = jwt.getStringClaim("jwk");
+                    String jwk = jwt.get().getStringClaim("jwk");
                     if (jwk != null) {
                         Optional<RSAPublicKey> jwkRsa = AuthUtils.toPublicKeyFromJson(jwk);
                         if (jwkRsa.isPresent()
@@ -126,12 +108,12 @@ class SecurityTokenAdapter {
      * Return a claim from the token
      */
     public String getStringClaim(String key) {
-        if (jwt == null) {
+        if (!jwt.isPresent()) {
             LOG.debug("Security token is not valid.");
             return null;
         }
         try {
-            return jwt.getStringClaim(key);
+            return jwt.get().getStringClaim(key);
         } catch (ParseException e) {
             throw new IllegalStateException("JWT parsing failed");
         }

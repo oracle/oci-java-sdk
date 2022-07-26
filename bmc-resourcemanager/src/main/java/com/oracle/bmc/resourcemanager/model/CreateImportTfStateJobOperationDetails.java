@@ -28,6 +28,14 @@ package com.oracle.bmc.resourcemanager.model;
 public final class CreateImportTfStateJobOperationDetails extends CreateJobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isProviderUpgradeRequired")
+        private Boolean isProviderUpgradeRequired;
+
+        public Builder isProviderUpgradeRequired(Boolean isProviderUpgradeRequired) {
+            this.isProviderUpgradeRequired = isProviderUpgradeRequired;
+            this.__explicitlySet__.add("isProviderUpgradeRequired");
+            return this;
+        }
         /**
          * Base64-encoded state file
          *
@@ -52,14 +60,17 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
 
         public CreateImportTfStateJobOperationDetails build() {
             CreateImportTfStateJobOperationDetails __instance__ =
-                    new CreateImportTfStateJobOperationDetails(tfStateBase64Encoded);
+                    new CreateImportTfStateJobOperationDetails(
+                            isProviderUpgradeRequired, tfStateBase64Encoded);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateImportTfStateJobOperationDetails o) {
-            Builder copiedBuilder = tfStateBase64Encoded(o.getTfStateBase64Encoded());
+            Builder copiedBuilder =
+                    isProviderUpgradeRequired(o.getIsProviderUpgradeRequired())
+                            .tfStateBase64Encoded(o.getTfStateBase64Encoded());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -78,8 +89,9 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
     }
 
     @Deprecated
-    public CreateImportTfStateJobOperationDetails(byte[] tfStateBase64Encoded) {
-        super();
+    public CreateImportTfStateJobOperationDetails(
+            Boolean isProviderUpgradeRequired, byte[] tfStateBase64Encoded) {
+        super(isProviderUpgradeRequired);
         this.tfStateBase64Encoded = tfStateBase64Encoded;
     }
 

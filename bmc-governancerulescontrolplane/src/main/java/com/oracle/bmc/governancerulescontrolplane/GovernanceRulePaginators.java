@@ -67,11 +67,11 @@ public class GovernanceRulePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListEnforcedGovernanceRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -123,11 +123,11 @@ public class GovernanceRulePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListEnforcedGovernanceRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -188,11 +188,11 @@ public class GovernanceRulePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListGovernanceRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -242,11 +242,11 @@ public class GovernanceRulePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListGovernanceRulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -306,11 +306,11 @@ public class GovernanceRulePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListInclusionCriteriaRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -361,11 +361,11 @@ public class GovernanceRulePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListInclusionCriteriaRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -426,11 +426,11 @@ public class GovernanceRulePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTenancyAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -481,11 +481,11 @@ public class GovernanceRulePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTenancyAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

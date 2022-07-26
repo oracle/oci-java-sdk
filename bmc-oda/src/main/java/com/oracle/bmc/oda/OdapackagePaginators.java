@@ -66,11 +66,11 @@ public class OdapackagePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListImportedPackagesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -119,11 +119,11 @@ public class OdapackagePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListImportedPackagesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -178,11 +178,11 @@ public class OdapackagePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPackagesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -230,11 +230,11 @@ public class OdapackagePaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPackagesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

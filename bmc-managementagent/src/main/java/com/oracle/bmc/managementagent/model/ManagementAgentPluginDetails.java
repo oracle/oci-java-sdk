@@ -26,6 +26,8 @@ public final class ManagementAgentPluginDetails {
         "pluginName",
         "pluginDisplayName",
         "pluginVersion",
+        "pluginStatus",
+        "pluginStatusMessage",
         "isEnabled"
     })
     public ManagementAgentPluginDetails(
@@ -33,12 +35,16 @@ public final class ManagementAgentPluginDetails {
             String pluginName,
             String pluginDisplayName,
             String pluginVersion,
+            PluginStatus pluginStatus,
+            String pluginStatusMessage,
             Boolean isEnabled) {
         super();
         this.pluginId = pluginId;
         this.pluginName = pluginName;
         this.pluginDisplayName = pluginDisplayName;
         this.pluginVersion = pluginVersion;
+        this.pluginStatus = pluginStatus;
+        this.pluginStatusMessage = pluginStatusMessage;
         this.isEnabled = isEnabled;
     }
 
@@ -109,6 +115,38 @@ public final class ManagementAgentPluginDetails {
             return this;
         }
         /**
+         * Plugin Status
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pluginStatus")
+        private PluginStatus pluginStatus;
+
+        /**
+         * Plugin Status
+         * @param pluginStatus the value to set
+         * @return this builder
+         **/
+        public Builder pluginStatus(PluginStatus pluginStatus) {
+            this.pluginStatus = pluginStatus;
+            this.__explicitlySet__.add("pluginStatus");
+            return this;
+        }
+        /**
+         * Status message of the Plugin
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pluginStatusMessage")
+        private String pluginStatusMessage;
+
+        /**
+         * Status message of the Plugin
+         * @param pluginStatusMessage the value to set
+         * @return this builder
+         **/
+        public Builder pluginStatusMessage(String pluginStatusMessage) {
+            this.pluginStatusMessage = pluginStatusMessage;
+            this.__explicitlySet__.add("pluginStatusMessage");
+            return this;
+        }
+        /**
          * flag indicating whether the plugin is in enabled mode or disabled mode.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
@@ -131,7 +169,13 @@ public final class ManagementAgentPluginDetails {
         public ManagementAgentPluginDetails build() {
             ManagementAgentPluginDetails __instance__ =
                     new ManagementAgentPluginDetails(
-                            pluginId, pluginName, pluginDisplayName, pluginVersion, isEnabled);
+                            pluginId,
+                            pluginName,
+                            pluginDisplayName,
+                            pluginVersion,
+                            pluginStatus,
+                            pluginStatusMessage,
+                            isEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -143,6 +187,8 @@ public final class ManagementAgentPluginDetails {
                             .pluginName(o.getPluginName())
                             .pluginDisplayName(o.getPluginDisplayName())
                             .pluginVersion(o.getPluginVersion())
+                            .pluginStatus(o.getPluginStatus())
+                            .pluginStatusMessage(o.getPluginStatusMessage())
                             .isEnabled(o.getIsEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -218,6 +264,34 @@ public final class ManagementAgentPluginDetails {
     }
 
     /**
+     * Plugin Status
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pluginStatus")
+    private final PluginStatus pluginStatus;
+
+    /**
+     * Plugin Status
+     * @return the value
+     **/
+    public PluginStatus getPluginStatus() {
+        return pluginStatus;
+    }
+
+    /**
+     * Status message of the Plugin
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pluginStatusMessage")
+    private final String pluginStatusMessage;
+
+    /**
+     * Status message of the Plugin
+     * @return the value
+     **/
+    public String getPluginStatusMessage() {
+        return pluginStatusMessage;
+    }
+
+    /**
      * flag indicating whether the plugin is in enabled mode or disabled mode.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
@@ -248,6 +322,8 @@ public final class ManagementAgentPluginDetails {
         sb.append(", pluginName=").append(String.valueOf(this.pluginName));
         sb.append(", pluginDisplayName=").append(String.valueOf(this.pluginDisplayName));
         sb.append(", pluginVersion=").append(String.valueOf(this.pluginVersion));
+        sb.append(", pluginStatus=").append(String.valueOf(this.pluginStatus));
+        sb.append(", pluginStatusMessage=").append(String.valueOf(this.pluginStatusMessage));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
@@ -268,6 +344,8 @@ public final class ManagementAgentPluginDetails {
                 && java.util.Objects.equals(this.pluginName, other.pluginName)
                 && java.util.Objects.equals(this.pluginDisplayName, other.pluginDisplayName)
                 && java.util.Objects.equals(this.pluginVersion, other.pluginVersion)
+                && java.util.Objects.equals(this.pluginStatus, other.pluginStatus)
+                && java.util.Objects.equals(this.pluginStatusMessage, other.pluginStatusMessage)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
@@ -284,6 +362,12 @@ public final class ManagementAgentPluginDetails {
         result =
                 (result * PRIME)
                         + (this.pluginVersion == null ? 43 : this.pluginVersion.hashCode());
+        result = (result * PRIME) + (this.pluginStatus == null ? 43 : this.pluginStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pluginStatusMessage == null
+                                ? 43
+                                : this.pluginStatusMessage.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result =
                 (result * PRIME)

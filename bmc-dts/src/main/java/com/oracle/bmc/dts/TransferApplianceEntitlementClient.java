@@ -10,7 +10,7 @@ import com.oracle.bmc.dts.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class TransferApplianceEntitlementClient implements TransferApplianceEntitlement {
     /**
      * Service instance for TransferApplianceEntitlement.

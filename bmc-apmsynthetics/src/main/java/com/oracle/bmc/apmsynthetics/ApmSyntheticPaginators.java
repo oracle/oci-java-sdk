@@ -66,11 +66,11 @@ public class ApmSyntheticPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDedicatedVantagePointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -122,11 +122,11 @@ public class ApmSyntheticPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListDedicatedVantagePointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -185,11 +185,11 @@ public class ApmSyntheticPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMonitorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -237,11 +237,11 @@ public class ApmSyntheticPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMonitorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -296,11 +296,11 @@ public class ApmSyntheticPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPublicVantagePointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -351,11 +351,11 @@ public class ApmSyntheticPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPublicVantagePointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -413,11 +413,11 @@ public class ApmSyntheticPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListScriptsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -465,11 +465,11 @@ public class ApmSyntheticPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListScriptsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

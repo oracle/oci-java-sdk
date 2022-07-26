@@ -65,11 +65,11 @@ public class KmsManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListKeyVersionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -117,11 +117,11 @@ public class KmsManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListKeyVersionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -174,11 +174,11 @@ public class KmsManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListKeysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -226,11 +226,11 @@ public class KmsManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListKeysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

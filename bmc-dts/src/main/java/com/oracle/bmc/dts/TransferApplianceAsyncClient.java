@@ -21,7 +21,7 @@ import com.oracle.bmc.dts.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class TransferApplianceAsyncClient implements TransferApplianceAsync {
     /**
      * Service instance for TransferAppliance.
@@ -506,6 +506,7 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateTransferApplianceAdminCredentialsConverter.fromRequest(
                         client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferAppliance",
@@ -563,6 +564,7 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                 DeleteTransferApplianceConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteTransferApplianceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "TransferAppliance",

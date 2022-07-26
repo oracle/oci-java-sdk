@@ -66,11 +66,11 @@ public class LicenseManagerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLicenseRecordsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -120,11 +120,11 @@ public class LicenseManagerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLicenseRecordsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -182,11 +182,11 @@ public class LicenseManagerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListProductLicenseConsumersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -238,11 +238,11 @@ public class LicenseManagerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListProductLicenseConsumersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -303,11 +303,11 @@ public class LicenseManagerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListProductLicensesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -357,11 +357,11 @@ public class LicenseManagerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListProductLicensesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -419,11 +419,11 @@ public class LicenseManagerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTopUtilizedProductLicensesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -476,11 +476,11 @@ public class LicenseManagerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTopUtilizedProductLicensesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -542,11 +542,11 @@ public class LicenseManagerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTopUtilizedResourcesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -597,11 +597,11 @@ public class LicenseManagerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTopUtilizedResourcesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

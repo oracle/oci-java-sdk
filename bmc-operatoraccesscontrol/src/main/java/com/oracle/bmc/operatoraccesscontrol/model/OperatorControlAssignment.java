@@ -35,6 +35,7 @@ public final class OperatorControlAssignment {
         "timeAssignmentTo",
         "isEnforcedAlways",
         "lifecycleState",
+        "lifecycleDetails",
         "assignerId",
         "timeOfAssignment",
         "comment",
@@ -63,6 +64,7 @@ public final class OperatorControlAssignment {
             java.util.Date timeAssignmentTo,
             Boolean isEnforcedAlways,
             OperatorControlAssignmentLifecycleStates lifecycleState,
+            String lifecycleDetails,
             String assignerId,
             java.util.Date timeOfAssignment,
             String comment,
@@ -90,6 +92,7 @@ public final class OperatorControlAssignment {
         this.timeAssignmentTo = timeAssignmentTo;
         this.isEnforcedAlways = isEnforcedAlways;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.assignerId = assignerId;
         this.timeOfAssignment = timeOfAssignment;
         this.comment = comment;
@@ -291,6 +294,22 @@ public final class OperatorControlAssignment {
         public Builder lifecycleState(OperatorControlAssignmentLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * More in detail about the lifeCycleState.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * More in detail about the lifeCycleState.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
@@ -560,6 +579,7 @@ public final class OperatorControlAssignment {
                             timeAssignmentTo,
                             isEnforcedAlways,
                             lifecycleState,
+                            lifecycleDetails,
                             assignerId,
                             timeOfAssignment,
                             comment,
@@ -593,6 +613,7 @@ public final class OperatorControlAssignment {
                             .timeAssignmentTo(o.getTimeAssignmentTo())
                             .isEnforcedAlways(o.getIsEnforcedAlways())
                             .lifecycleState(o.getLifecycleState())
+                            .lifecycleDetails(o.getLifecycleDetails())
                             .assignerId(o.getAssignerId())
                             .timeOfAssignment(o.getTimeOfAssignment())
                             .comment(o.getComment())
@@ -785,6 +806,20 @@ public final class OperatorControlAssignment {
      **/
     public OperatorControlAssignmentLifecycleStates getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * More in detail about the lifeCycleState.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * More in detail about the lifeCycleState.
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /**
@@ -1029,6 +1064,7 @@ public final class OperatorControlAssignment {
         sb.append(", timeAssignmentTo=").append(String.valueOf(this.timeAssignmentTo));
         sb.append(", isEnforcedAlways=").append(String.valueOf(this.isEnforcedAlways));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", assignerId=").append(String.valueOf(this.assignerId));
         sb.append(", timeOfAssignment=").append(String.valueOf(this.timeOfAssignment));
         sb.append(", comment=").append(String.valueOf(this.comment));
@@ -1073,6 +1109,7 @@ public final class OperatorControlAssignment {
                 && java.util.Objects.equals(this.timeAssignmentTo, other.timeAssignmentTo)
                 && java.util.Objects.equals(this.isEnforcedAlways, other.isEnforcedAlways)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.assignerId, other.assignerId)
                 && java.util.Objects.equals(this.timeOfAssignment, other.timeOfAssignment)
                 && java.util.Objects.equals(this.comment, other.comment)
@@ -1128,6 +1165,9 @@ public final class OperatorControlAssignment {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.assignerId == null ? 43 : this.assignerId.hashCode());
         result =
                 (result * PRIME)

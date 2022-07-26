@@ -67,11 +67,11 @@ public class HealthChecksPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListHealthChecksVantagePointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -124,11 +124,11 @@ public class HealthChecksPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListHealthChecksVantagePointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -189,11 +189,11 @@ public class HealthChecksPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListHttpMonitorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -242,11 +242,11 @@ public class HealthChecksPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListHttpMonitorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -302,11 +302,11 @@ public class HealthChecksPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListHttpProbeResultsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -356,11 +356,11 @@ public class HealthChecksPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListHttpProbeResultsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -416,11 +416,11 @@ public class HealthChecksPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPingMonitorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -469,11 +469,11 @@ public class HealthChecksPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPingMonitorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -529,11 +529,11 @@ public class HealthChecksPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPingProbeResultsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -583,11 +583,11 @@ public class HealthChecksPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPingProbeResultsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

@@ -14,7 +14,7 @@ package com.oracle.bmc.dts.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TransferApplianceSummary.Builder.class
 )
@@ -123,6 +123,9 @@ public final class TransferApplianceSummary {
         Delivered("DELIVERED"),
         Preparing("PREPARING"),
         Finalized("FINALIZED"),
+        ReturnLabelRequested("RETURN_LABEL_REQUESTED"),
+        ReturnLabelGenerating("RETURN_LABEL_GENERATING"),
+        ReturnLabelAvailable("RETURN_LABEL_AVAILABLE"),
         ReturnDelayed("RETURN_DELAYED"),
         ReturnShipped("RETURN_SHIPPED"),
         ReturnShippedCancelled("RETURN_SHIPPED_CANCELLED"),

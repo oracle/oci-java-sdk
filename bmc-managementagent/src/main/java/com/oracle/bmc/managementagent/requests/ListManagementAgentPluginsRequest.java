@@ -185,6 +185,17 @@ public class ListManagementAgentPluginsRequest
     public java.util.List<com.oracle.bmc.managementagent.model.PlatformTypes> getPlatformType() {
         return platformType;
     }
+    /**
+     * The ManagementAgentID of the agent from which the Management Agents to be filtered.
+     */
+    private String agentId;
+
+    /**
+     * The ManagementAgentID of the agent from which the Management Agents to be filtered.
+     */
+    public String getAgentId() {
+        return agentId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -343,6 +354,21 @@ public class ListManagementAgentPluginsRequest
         }
 
         /**
+         * The ManagementAgentID of the agent from which the Management Agents to be filtered.
+         */
+        private String agentId = null;
+
+        /**
+         * The ManagementAgentID of the agent from which the Management Agents to be filtered.
+         * @param agentId the value to set
+         * @return this builder instance
+         */
+        public Builder agentId(String agentId) {
+            this.agentId = agentId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -379,6 +405,7 @@ public class ListManagementAgentPluginsRequest
             opcRequestId(o.getOpcRequestId());
             lifecycleState(o.getLifecycleState());
             platformType(o.getPlatformType());
+            agentId(o.getAgentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -420,8 +447,9 @@ public class ListManagementAgentPluginsRequest
             request.opcRequestId = opcRequestId;
             request.lifecycleState = lifecycleState;
             request.platformType = platformType;
+            request.agentId = agentId;
             return request;
-            // new ListManagementAgentPluginsRequest(compartmentId, displayName, limit, page, sortOrder, sortBy, opcRequestId, lifecycleState, platformType);
+            // new ListManagementAgentPluginsRequest(compartmentId, displayName, limit, page, sortOrder, sortBy, opcRequestId, lifecycleState, platformType, agentId);
         }
     }
 
@@ -439,7 +467,8 @@ public class ListManagementAgentPluginsRequest
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
                 .lifecycleState(lifecycleState)
-                .platformType(platformType);
+                .platformType(platformType)
+                .agentId(agentId);
     }
 
     /**
@@ -464,6 +493,7 @@ public class ListManagementAgentPluginsRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",platformType=").append(String.valueOf(this.platformType));
+        sb.append(",agentId=").append(String.valueOf(this.agentId));
         sb.append(")");
         return sb.toString();
     }
@@ -487,7 +517,8 @@ public class ListManagementAgentPluginsRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.platformType, other.platformType);
+                && java.util.Objects.equals(this.platformType, other.platformType)
+                && java.util.Objects.equals(this.agentId, other.agentId);
     }
 
     @Override
@@ -507,6 +538,7 @@ public class ListManagementAgentPluginsRequest
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.platformType == null ? 43 : this.platformType.hashCode());
+        result = (result * PRIME) + (this.agentId == null ? 43 : this.agentId.hashCode());
         return result;
     }
 }

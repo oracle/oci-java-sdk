@@ -65,11 +65,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             GetDomainRecordsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -118,11 +118,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             GetDomainRecordsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -176,11 +176,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             GetRRSetRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -228,11 +228,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             GetRRSetRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -285,11 +285,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             GetZoneRecordsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -337,11 +337,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             GetZoneRecordsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -395,11 +395,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResolverEndpointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -449,11 +449,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResolverEndpointsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -509,11 +509,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResolversRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -561,11 +561,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListResolversRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -620,11 +620,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSteeringPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -673,11 +673,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSteeringPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -734,11 +734,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSteeringPolicyAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -791,11 +791,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSteeringPolicyAttachmentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -853,11 +853,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTsigKeysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -905,11 +905,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListTsigKeysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -962,11 +962,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListViewsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1014,11 +1014,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListViewsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1072,11 +1072,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListZoneTransferServersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1126,11 +1126,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListZoneTransferServersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1185,11 +1185,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListZonesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1237,11 +1237,11 @@ public class DnsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListZonesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

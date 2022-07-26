@@ -65,11 +65,11 @@ public class CertificatesManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAssociationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -118,11 +118,11 @@ public class CertificatesManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAssociationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -179,11 +179,11 @@ public class CertificatesManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCaBundlesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -231,11 +231,11 @@ public class CertificatesManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCaBundlesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -292,11 +292,11 @@ public class CertificatesManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCertificateAuthoritiesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -348,11 +348,11 @@ public class CertificatesManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCertificateAuthoritiesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -415,11 +415,11 @@ public class CertificatesManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCertificateAuthorityVersionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -473,11 +473,11 @@ public class CertificatesManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCertificateAuthorityVersionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -539,11 +539,11 @@ public class CertificatesManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCertificateVersionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -594,11 +594,11 @@ public class CertificatesManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCertificateVersionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -658,11 +658,11 @@ public class CertificatesManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCertificatesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -711,11 +711,11 @@ public class CertificatesManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCertificatesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

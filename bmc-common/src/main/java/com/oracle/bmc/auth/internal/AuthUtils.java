@@ -19,6 +19,7 @@ import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.Base64;
 
+import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
 import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.util.internal.Validate;
@@ -166,6 +167,7 @@ public class AuthUtils {
      * @param key The key to convert.
      * @return A new input stream
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public static byte[] toByteArrayFromRSAPrivateKey(RSAPrivateKey key) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try (JcaPEMWriter writer =

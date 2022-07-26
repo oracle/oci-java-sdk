@@ -7,18 +7,5 @@ package com.oracle.bmc.fusionapps;
 import com.oracle.bmc.SdkClients;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
-@SdkClients({
-    DataMaskingActivityAsyncClient.class,
-    DataMaskingActivityClient.class,
-    FusionEnvironmentAsyncClient.class,
-    FusionEnvironmentClient.class,
-    FusionEnvironmentFamilyAsyncClient.class,
-    FusionEnvironmentFamilyClient.class,
-    RefreshActivityAsyncClient.class,
-    RefreshActivityClient.class,
-    ScheduledActivityAsyncClient.class,
-    ScheduledActivityClient.class,
-    ServiceAttachmentAsyncClient.class,
-    ServiceAttachmentClient.class
-})
+@SdkClients({FusionApplicationsAsyncClient.class, FusionApplicationsClient.class})
 public final class SdkClientsMetadata {}

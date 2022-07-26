@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Supplier;
 
+import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.AuthCachingPolicy;
@@ -94,11 +95,11 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
         if (!cachePrivateKey) {
             return new KeySupplier<RSAPrivateKey>() {
                 @Override
-                public Optional<RSAPrivateKey> getKey(String keyId) {
+                public Optional<RSAPrivateKey> supplyKey(String keyId) {
                     return new PEMFileRSAPrivateKeySupplier(
                                     authenticationDetailsProvider.getPrivateKey(),
                                     authenticationDetailsProvider.getPassphraseCharacters())
-                            .getKey(keyId);
+                            .supplyKey(keyId);
                 }
             };
         }
@@ -127,6 +128,7 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
     }
 
     @java.beans.ConstructorProperties({"signingStrategy"})
+    @InternalSdk(backwardCompatibilityRequired = true)
     public DefaultRequestSignerFactory(final SigningStrategy signingStrategy) {
         this.signingStrategy = signingStrategy;
     }

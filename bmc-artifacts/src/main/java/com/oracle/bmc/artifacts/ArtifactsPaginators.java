@@ -67,11 +67,11 @@ public class ArtifactsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListContainerImageSignaturesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -124,11 +124,11 @@ public class ArtifactsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListContainerImageSignaturesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -188,11 +188,11 @@ public class ArtifactsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListContainerImagesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -241,11 +241,11 @@ public class ArtifactsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListContainerImagesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -301,11 +301,11 @@ public class ArtifactsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListContainerRepositoriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -357,11 +357,11 @@ public class ArtifactsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListContainerRepositoriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -419,11 +419,11 @@ public class ArtifactsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListGenericArtifactsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -473,11 +473,11 @@ public class ArtifactsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListGenericArtifactsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -532,11 +532,11 @@ public class ArtifactsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListRepositoriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -585,11 +585,11 @@ public class ArtifactsPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListRepositoriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

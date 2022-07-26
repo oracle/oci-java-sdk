@@ -12,9 +12,9 @@ import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class HeadObjectConverter {
-    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
-                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2();
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(HeadObjectConverter.class);
@@ -146,8 +146,9 @@ public class HeadObjectConverter {
 
                                 java.util.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-client-request-id");
+                                                com.oracle.bmc.http.internal.HeaderUtils
+                                                        .getHeadersWithName(
+                                                                headers, "opc-client-request-id");
                                 if (opcClientRequestIdHeader.isPresent()) {
                                     builder.opcClientRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -157,7 +158,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
@@ -168,7 +169,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> eTagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "ETag");
                                 if (eTagHeader.isPresent()) {
                                     builder.eTag(
@@ -192,7 +193,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> contentLengthHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "content-length");
                                 if (contentLengthHeader.isPresent()) {
                                     builder.contentLength(
@@ -203,7 +204,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> contentMd5Header =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "content-md5");
                                 if (contentMd5Header.isPresent()) {
                                     builder.contentMd5(
@@ -214,7 +215,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcMultipartMd5Header =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-multipart-md5");
                                 if (opcMultipartMd5Header.isPresent()) {
                                     builder.opcMultipartMd5(
@@ -225,7 +226,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> contentTypeHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "content-type");
                                 if (contentTypeHeader.isPresent()) {
                                     builder.contentType(
@@ -236,7 +237,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> contentLanguageHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "content-language");
                                 if (contentLanguageHeader.isPresent()) {
                                     builder.contentLanguage(
@@ -247,7 +248,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> contentEncodingHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "content-encoding");
                                 if (contentEncodingHeader.isPresent()) {
                                     builder.contentEncoding(
@@ -258,7 +259,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> cacheControlHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "cache-control");
                                 if (cacheControlHeader.isPresent()) {
                                     builder.cacheControl(
@@ -270,8 +271,9 @@ public class HeadObjectConverter {
 
                                 java.util.Optional<java.util.List<String>>
                                         contentDispositionHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "content-disposition");
+                                                com.oracle.bmc.http.internal.HeaderUtils
+                                                        .getHeadersWithName(
+                                                                headers, "content-disposition");
                                 if (contentDispositionHeader.isPresent()) {
                                     builder.contentDisposition(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -281,7 +283,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> lastModifiedHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "last-modified");
                                 if (lastModifiedHeader.isPresent()) {
                                     builder.lastModified(
@@ -292,7 +294,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> storageTierHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "storage-tier");
                                 if (storageTierHeader.isPresent()) {
                                     builder.storageTier(
@@ -303,7 +305,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> archivalStateHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "archival-state");
                                 if (archivalStateHeader.isPresent()) {
                                     builder.archivalState(
@@ -314,7 +316,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> timeOfArchivalHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "time-of-archival");
                                 if (timeOfArchivalHeader.isPresent()) {
                                     builder.timeOfArchival(
@@ -325,7 +327,7 @@ public class HeadObjectConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> versionIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "version-id");
                                 if (versionIdHeader.isPresent()) {
                                     builder.versionId(

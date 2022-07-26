@@ -28,6 +28,14 @@ package com.oracle.bmc.resourcemanager.model;
 public final class CreateDestroyJobOperationDetails extends CreateJobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isProviderUpgradeRequired")
+        private Boolean isProviderUpgradeRequired;
+
+        public Builder isProviderUpgradeRequired(Boolean isProviderUpgradeRequired) {
+            this.isProviderUpgradeRequired = isProviderUpgradeRequired;
+            this.__explicitlySet__.add("isProviderUpgradeRequired");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("terraformAdvancedOptions")
         private TerraformAdvancedOptions terraformAdvancedOptions;
@@ -67,7 +75,9 @@ public final class CreateDestroyJobOperationDetails extends CreateJobOperationDe
         public CreateDestroyJobOperationDetails build() {
             CreateDestroyJobOperationDetails __instance__ =
                     new CreateDestroyJobOperationDetails(
-                            terraformAdvancedOptions, executionPlanStrategy);
+                            isProviderUpgradeRequired,
+                            terraformAdvancedOptions,
+                            executionPlanStrategy);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,7 +85,8 @@ public final class CreateDestroyJobOperationDetails extends CreateJobOperationDe
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDestroyJobOperationDetails o) {
             Builder copiedBuilder =
-                    terraformAdvancedOptions(o.getTerraformAdvancedOptions())
+                    isProviderUpgradeRequired(o.getIsProviderUpgradeRequired())
+                            .terraformAdvancedOptions(o.getTerraformAdvancedOptions())
                             .executionPlanStrategy(o.getExecutionPlanStrategy());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -96,9 +107,10 @@ public final class CreateDestroyJobOperationDetails extends CreateJobOperationDe
 
     @Deprecated
     public CreateDestroyJobOperationDetails(
+            Boolean isProviderUpgradeRequired,
             TerraformAdvancedOptions terraformAdvancedOptions,
             DestroyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy) {
-        super();
+        super(isProviderUpgradeRequired);
         this.terraformAdvancedOptions = terraformAdvancedOptions;
         this.executionPlanStrategy = executionPlanStrategy;
     }

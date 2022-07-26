@@ -7,5 +7,10 @@ package com.oracle.bmc.mediaservices;
 import com.oracle.bmc.SdkClients;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
-@SdkClients({MediaServicesAsyncClient.class, MediaServicesClient.class})
+@SdkClients({
+    MediaServicesAsyncClient.class,
+    MediaServicesClient.class,
+    MediaStreamAsyncClient.class,
+    MediaStreamClient.class
+})
 public final class SdkClientsMetadata {}

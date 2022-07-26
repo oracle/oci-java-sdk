@@ -65,11 +65,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogGroupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -117,11 +117,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogGroupsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -176,11 +176,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogIncludedSearchesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -231,11 +231,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogIncludedSearchesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -292,11 +292,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogSavedSearchesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -345,11 +345,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogSavedSearchesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -403,11 +403,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -455,11 +455,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLogsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -515,11 +515,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListUnifiedAgentConfigurationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -572,11 +572,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListUnifiedAgentConfigurationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -636,11 +636,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestErrorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -690,11 +690,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestErrorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -751,11 +751,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestLogsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -804,11 +804,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestLogsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -863,11 +863,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -916,11 +916,11 @@ public class LoggingManagementPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

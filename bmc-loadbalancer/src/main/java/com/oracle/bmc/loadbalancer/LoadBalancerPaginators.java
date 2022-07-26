@@ -66,11 +66,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLoadBalancerHealthsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -121,11 +121,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLoadBalancerHealthsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -184,11 +184,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLoadBalancersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -237,11 +237,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListLoadBalancersRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -296,11 +296,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -348,11 +348,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -406,11 +406,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListProtocolsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -458,11 +458,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListProtocolsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -517,11 +517,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListRoutingPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -570,11 +570,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListRoutingPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -629,11 +629,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -681,11 +681,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListShapesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -739,11 +739,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -792,11 +792,11 @@ public class LoadBalancerPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

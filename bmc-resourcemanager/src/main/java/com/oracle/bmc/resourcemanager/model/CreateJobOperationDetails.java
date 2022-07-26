@@ -43,9 +43,30 @@ package com.oracle.bmc.resourcemanager.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateJobOperationDetails {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected CreateJobOperationDetails() {
+    @java.beans.ConstructorProperties({"isProviderUpgradeRequired"})
+    protected CreateJobOperationDetails(Boolean isProviderUpgradeRequired) {
         super();
+        this.isProviderUpgradeRequired = isProviderUpgradeRequired;
+    }
+
+    /**
+     * Specifies whether or not to upgrade provider versions.
+     * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+     * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isProviderUpgradeRequired")
+    private final Boolean isProviderUpgradeRequired;
+
+    /**
+     * Specifies whether or not to upgrade provider versions.
+     * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+     * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+     *
+     * @return the value
+     **/
+    public Boolean getIsProviderUpgradeRequired() {
+        return isProviderUpgradeRequired;
     }
 
     @Override
@@ -61,6 +82,8 @@ public class CreateJobOperationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateJobOperationDetails(");
+        sb.append("isProviderUpgradeRequired=")
+                .append(String.valueOf(this.isProviderUpgradeRequired));
         sb.append(")");
         return sb.toString();
     }
@@ -75,13 +98,19 @@ public class CreateJobOperationDetails {
         }
 
         CreateJobOperationDetails other = (CreateJobOperationDetails) o;
-        return true;
+        return java.util.Objects.equals(
+                this.isProviderUpgradeRequired, other.isProviderUpgradeRequired);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isProviderUpgradeRequired == null
+                                ? 43
+                                : this.isProviderUpgradeRequired.hashCode());
         return result;
     }
 }

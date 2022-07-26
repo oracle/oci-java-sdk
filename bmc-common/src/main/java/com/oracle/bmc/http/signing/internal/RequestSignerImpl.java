@@ -6,7 +6,6 @@ package com.oracle.bmc.http.signing.internal;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ByteArrayInputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
@@ -254,7 +253,7 @@ public class RequestSignerImpl implements RequestSigner {
 
     private static RSAPrivateKey getPrivateKey(
             String keyId, KeySupplier<RSAPrivateKey> keySupplier) {
-        Optional<RSAPrivateKey> keyOptional = keySupplier.getKey(keyId);
+        Optional<RSAPrivateKey> keyOptional = keySupplier.supplyKey(keyId);
 
         // TODO: throw exception for now so it's re-thrown as
         // SignedRequestException

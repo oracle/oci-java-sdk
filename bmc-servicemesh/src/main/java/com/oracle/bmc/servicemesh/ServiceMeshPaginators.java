@@ -66,11 +66,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAccessPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -119,11 +119,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAccessPoliciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -180,11 +180,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListIngressGatewayRouteTablesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -237,11 +237,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListIngressGatewayRouteTablesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -303,11 +303,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListIngressGatewaysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -357,11 +357,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListIngressGatewaysRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -416,11 +416,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMeshesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -468,11 +468,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListMeshesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -527,11 +527,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVirtualDeploymentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -582,11 +582,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVirtualDeploymentsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -645,11 +645,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVirtualServiceRouteTablesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -702,11 +702,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVirtualServiceRouteTablesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -768,11 +768,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVirtualServicesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -822,11 +822,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListVirtualServicesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -882,11 +882,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestErrorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -936,11 +936,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestErrorsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -997,11 +997,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestLogsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1050,11 +1050,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestLogsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1109,11 +1109,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -1162,11 +1162,11 @@ public class ServiceMeshPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListWorkRequestsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

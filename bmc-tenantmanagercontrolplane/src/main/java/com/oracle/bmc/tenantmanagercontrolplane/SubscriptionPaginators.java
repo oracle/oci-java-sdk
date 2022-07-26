@@ -66,11 +66,11 @@ public class SubscriptionPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAssignedSubscriptionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -122,11 +122,11 @@ public class SubscriptionPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAssignedSubscriptionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -187,11 +187,11 @@ public class SubscriptionPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAvailableRegionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -241,11 +241,11 @@ public class SubscriptionPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListAvailableRegionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -305,11 +305,11 @@ public class SubscriptionPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSubscriptionMappingsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -360,11 +360,11 @@ public class SubscriptionPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSubscriptionMappingsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -425,11 +425,11 @@ public class SubscriptionPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSubscriptionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -479,11 +479,11 @@ public class SubscriptionPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSubscriptionsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

@@ -14,7 +14,7 @@ package com.oracle.bmc.dts.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = TransferAppliance.Builder.class
 )
@@ -36,7 +36,12 @@ public final class TransferAppliance {
         "applianceReturnDeliveryTrackingNumber",
         "applianceDeliveryVendor",
         "customerShippingAddress",
-        "uploadStatusLogUri"
+        "uploadStatusLogUri",
+        "returnShippingLabelUri",
+        "expectedReturnDate",
+        "pickupWindowStartTime",
+        "pickupWindowEndTime",
+        "minimumStorageCapacityInTerabytes"
     })
     public TransferAppliance(
             String label,
@@ -53,7 +58,12 @@ public final class TransferAppliance {
             String applianceReturnDeliveryTrackingNumber,
             String applianceDeliveryVendor,
             ShippingAddress customerShippingAddress,
-            String uploadStatusLogUri) {
+            String uploadStatusLogUri,
+            String returnShippingLabelUri,
+            java.util.Date expectedReturnDate,
+            java.util.Date pickupWindowStartTime,
+            java.util.Date pickupWindowEndTime,
+            Integer minimumStorageCapacityInTerabytes) {
         super();
         this.label = label;
         this.lifecycleState = lifecycleState;
@@ -70,6 +80,11 @@ public final class TransferAppliance {
         this.applianceDeliveryVendor = applianceDeliveryVendor;
         this.customerShippingAddress = customerShippingAddress;
         this.uploadStatusLogUri = uploadStatusLogUri;
+        this.returnShippingLabelUri = returnShippingLabelUri;
+        this.expectedReturnDate = expectedReturnDate;
+        this.pickupWindowStartTime = pickupWindowStartTime;
+        this.pickupWindowEndTime = pickupWindowEndTime;
+        this.minimumStorageCapacityInTerabytes = minimumStorageCapacityInTerabytes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -218,6 +233,80 @@ public final class TransferAppliance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("returnShippingLabelUri")
+        private String returnShippingLabelUri;
+
+        public Builder returnShippingLabelUri(String returnShippingLabelUri) {
+            this.returnShippingLabelUri = returnShippingLabelUri;
+            this.__explicitlySet__.add("returnShippingLabelUri");
+            return this;
+        }
+        /**
+         * Expected return date from customer for the device, time portion should be zero.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("expectedReturnDate")
+        private java.util.Date expectedReturnDate;
+
+        /**
+         * Expected return date from customer for the device, time portion should be zero.
+         * @param expectedReturnDate the value to set
+         * @return this builder
+         **/
+        public Builder expectedReturnDate(java.util.Date expectedReturnDate) {
+            this.expectedReturnDate = expectedReturnDate;
+            this.__explicitlySet__.add("expectedReturnDate");
+            return this;
+        }
+        /**
+         * Start time for the window to pickup the device from customer.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pickupWindowStartTime")
+        private java.util.Date pickupWindowStartTime;
+
+        /**
+         * Start time for the window to pickup the device from customer.
+         * @param pickupWindowStartTime the value to set
+         * @return this builder
+         **/
+        public Builder pickupWindowStartTime(java.util.Date pickupWindowStartTime) {
+            this.pickupWindowStartTime = pickupWindowStartTime;
+            this.__explicitlySet__.add("pickupWindowStartTime");
+            return this;
+        }
+        /**
+         * End time for the window to pickup the device from customer.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pickupWindowEndTime")
+        private java.util.Date pickupWindowEndTime;
+
+        /**
+         * End time for the window to pickup the device from customer.
+         * @param pickupWindowEndTime the value to set
+         * @return this builder
+         **/
+        public Builder pickupWindowEndTime(java.util.Date pickupWindowEndTime) {
+            this.pickupWindowEndTime = pickupWindowEndTime;
+            this.__explicitlySet__.add("pickupWindowEndTime");
+            return this;
+        }
+        /**
+         * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("minimumStorageCapacityInTerabytes")
+        private Integer minimumStorageCapacityInTerabytes;
+
+        /**
+         * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+         * @param minimumStorageCapacityInTerabytes the value to set
+         * @return this builder
+         **/
+        public Builder minimumStorageCapacityInTerabytes(
+                Integer minimumStorageCapacityInTerabytes) {
+            this.minimumStorageCapacityInTerabytes = minimumStorageCapacityInTerabytes;
+            this.__explicitlySet__.add("minimumStorageCapacityInTerabytes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -238,7 +327,12 @@ public final class TransferAppliance {
                             applianceReturnDeliveryTrackingNumber,
                             applianceDeliveryVendor,
                             customerShippingAddress,
-                            uploadStatusLogUri);
+                            uploadStatusLogUri,
+                            returnShippingLabelUri,
+                            expectedReturnDate,
+                            pickupWindowStartTime,
+                            pickupWindowEndTime,
+                            minimumStorageCapacityInTerabytes);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -261,7 +355,13 @@ public final class TransferAppliance {
                                     o.getApplianceReturnDeliveryTrackingNumber())
                             .applianceDeliveryVendor(o.getApplianceDeliveryVendor())
                             .customerShippingAddress(o.getCustomerShippingAddress())
-                            .uploadStatusLogUri(o.getUploadStatusLogUri());
+                            .uploadStatusLogUri(o.getUploadStatusLogUri())
+                            .returnShippingLabelUri(o.getReturnShippingLabelUri())
+                            .expectedReturnDate(o.getExpectedReturnDate())
+                            .pickupWindowStartTime(o.getPickupWindowStartTime())
+                            .pickupWindowEndTime(o.getPickupWindowEndTime())
+                            .minimumStorageCapacityInTerabytes(
+                                    o.getMinimumStorageCapacityInTerabytes());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -302,6 +402,9 @@ public final class TransferAppliance {
         Delivered("DELIVERED"),
         Preparing("PREPARING"),
         Finalized("FINALIZED"),
+        ReturnLabelRequested("RETURN_LABEL_REQUESTED"),
+        ReturnLabelGenerating("RETURN_LABEL_GENERATING"),
+        ReturnLabelAvailable("RETURN_LABEL_AVAILABLE"),
         ReturnDelayed("RETURN_DELAYED"),
         ReturnShipped("RETURN_SHIPPED"),
         ReturnShippedCancelled("RETURN_SHIPPED_CANCELLED"),
@@ -457,6 +560,69 @@ public final class TransferAppliance {
         return uploadStatusLogUri;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("returnShippingLabelUri")
+    private final String returnShippingLabelUri;
+
+    public String getReturnShippingLabelUri() {
+        return returnShippingLabelUri;
+    }
+
+    /**
+     * Expected return date from customer for the device, time portion should be zero.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("expectedReturnDate")
+    private final java.util.Date expectedReturnDate;
+
+    /**
+     * Expected return date from customer for the device, time portion should be zero.
+     * @return the value
+     **/
+    public java.util.Date getExpectedReturnDate() {
+        return expectedReturnDate;
+    }
+
+    /**
+     * Start time for the window to pickup the device from customer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pickupWindowStartTime")
+    private final java.util.Date pickupWindowStartTime;
+
+    /**
+     * Start time for the window to pickup the device from customer.
+     * @return the value
+     **/
+    public java.util.Date getPickupWindowStartTime() {
+        return pickupWindowStartTime;
+    }
+
+    /**
+     * End time for the window to pickup the device from customer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pickupWindowEndTime")
+    private final java.util.Date pickupWindowEndTime;
+
+    /**
+     * End time for the window to pickup the device from customer.
+     * @return the value
+     **/
+    public java.util.Date getPickupWindowEndTime() {
+        return pickupWindowEndTime;
+    }
+
+    /**
+     * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minimumStorageCapacityInTerabytes")
+    private final Integer minimumStorageCapacityInTerabytes;
+
+    /**
+     * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+     * @return the value
+     **/
+    public Integer getMinimumStorageCapacityInTerabytes() {
+        return minimumStorageCapacityInTerabytes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -489,6 +655,12 @@ public final class TransferAppliance {
         sb.append(", customerShippingAddress=")
                 .append(String.valueOf(this.customerShippingAddress));
         sb.append(", uploadStatusLogUri=").append(String.valueOf(this.uploadStatusLogUri));
+        sb.append(", returnShippingLabelUri=").append(String.valueOf(this.returnShippingLabelUri));
+        sb.append(", expectedReturnDate=").append(String.valueOf(this.expectedReturnDate));
+        sb.append(", pickupWindowStartTime=").append(String.valueOf(this.pickupWindowStartTime));
+        sb.append(", pickupWindowEndTime=").append(String.valueOf(this.pickupWindowEndTime));
+        sb.append(", minimumStorageCapacityInTerabytes=")
+                .append(String.valueOf(this.minimumStorageCapacityInTerabytes));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -524,6 +696,14 @@ public final class TransferAppliance {
                 && java.util.Objects.equals(
                         this.customerShippingAddress, other.customerShippingAddress)
                 && java.util.Objects.equals(this.uploadStatusLogUri, other.uploadStatusLogUri)
+                && java.util.Objects.equals(
+                        this.returnShippingLabelUri, other.returnShippingLabelUri)
+                && java.util.Objects.equals(this.expectedReturnDate, other.expectedReturnDate)
+                && java.util.Objects.equals(this.pickupWindowStartTime, other.pickupWindowStartTime)
+                && java.util.Objects.equals(this.pickupWindowEndTime, other.pickupWindowEndTime)
+                && java.util.Objects.equals(
+                        this.minimumStorageCapacityInTerabytes,
+                        other.minimumStorageCapacityInTerabytes)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -588,6 +768,31 @@ public final class TransferAppliance {
                         + (this.uploadStatusLogUri == null
                                 ? 43
                                 : this.uploadStatusLogUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.returnShippingLabelUri == null
+                                ? 43
+                                : this.returnShippingLabelUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.expectedReturnDate == null
+                                ? 43
+                                : this.expectedReturnDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pickupWindowStartTime == null
+                                ? 43
+                                : this.pickupWindowStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pickupWindowEndTime == null
+                                ? 43
+                                : this.pickupWindowEndTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minimumStorageCapacityInTerabytes == null
+                                ? 43
+                                : this.minimumStorageCapacityInTerabytes.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

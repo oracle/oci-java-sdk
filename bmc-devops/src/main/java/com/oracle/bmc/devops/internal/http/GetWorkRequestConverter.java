@@ -12,9 +12,9 @@ import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class GetWorkRequestConverter {
-    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
-                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2();
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(GetWorkRequestConverter.class);
@@ -108,7 +108,7 @@ public class GetWorkRequestConverter {
                                 builder.workRequest(response.getItem());
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
@@ -119,7 +119,7 @@ public class GetWorkRequestConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> retryAfterHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "retry-after");
                                 if (retryAfterHeader.isPresent()) {
                                     builder.retryAfter(

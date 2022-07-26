@@ -11,7 +11,7 @@ import com.oracle.bmc.dts.responses.*;
  * Data Transfer Service API Specification
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public interface TransferPackage extends AutoCloseable {
 
     /**

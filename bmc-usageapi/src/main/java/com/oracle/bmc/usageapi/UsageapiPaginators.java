@@ -65,11 +65,11 @@ public class UsageapiPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCustomTablesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -118,11 +118,11 @@ public class UsageapiPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListCustomTablesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -177,11 +177,11 @@ public class UsageapiPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListQueriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -229,11 +229,11 @@ public class UsageapiPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListQueriesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -288,11 +288,11 @@ public class UsageapiPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListScheduledRunsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -341,11 +341,11 @@ public class UsageapiPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListScheduledRunsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -400,11 +400,11 @@ public class UsageapiPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSchedulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -452,11 +452,11 @@ public class UsageapiPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListSchedulesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

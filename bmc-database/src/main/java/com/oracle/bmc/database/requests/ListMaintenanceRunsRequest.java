@@ -206,6 +206,19 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
+    /**
+     * The sub-type of the maintenance run.
+     */
+    private com.oracle.bmc.database.model.MaintenanceRunSummary.MaintenanceSubtype
+            maintenanceSubtype;
+
+    /**
+     * The sub-type of the maintenance run.
+     */
+    public com.oracle.bmc.database.model.MaintenanceRunSummary.MaintenanceSubtype
+            getMaintenanceSubtype() {
+        return maintenanceSubtype;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -379,6 +392,24 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * The sub-type of the maintenance run.
+         */
+        private com.oracle.bmc.database.model.MaintenanceRunSummary.MaintenanceSubtype
+                maintenanceSubtype = null;
+
+        /**
+         * The sub-type of the maintenance run.
+         * @param maintenanceSubtype the value to set
+         * @return this builder instance
+         */
+        public Builder maintenanceSubtype(
+                com.oracle.bmc.database.model.MaintenanceRunSummary.MaintenanceSubtype
+                        maintenanceSubtype) {
+            this.maintenanceSubtype = maintenanceSubtype;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -416,6 +447,7 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
             availabilityDomain(o.getAvailabilityDomain());
+            maintenanceSubtype(o.getMaintenanceSubtype());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -458,8 +490,9 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             request.availabilityDomain = availabilityDomain;
+            request.maintenanceSubtype = maintenanceSubtype;
             return request;
-            // new ListMaintenanceRunsRequest(compartmentId, targetResourceId, targetResourceType, maintenanceType, limit, page, sortBy, sortOrder, lifecycleState, availabilityDomain);
+            // new ListMaintenanceRunsRequest(compartmentId, targetResourceId, targetResourceType, maintenanceType, limit, page, sortBy, sortOrder, lifecycleState, availabilityDomain, maintenanceSubtype);
         }
     }
 
@@ -478,7 +511,8 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
-                .availabilityDomain(availabilityDomain);
+                .availabilityDomain(availabilityDomain)
+                .maintenanceSubtype(maintenanceSubtype);
     }
 
     /**
@@ -504,6 +538,7 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(",maintenanceSubtype=").append(String.valueOf(this.maintenanceSubtype));
         sb.append(")");
         return sb.toString();
     }
@@ -528,7 +563,8 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain);
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.maintenanceSubtype, other.maintenanceSubtype);
     }
 
     @Override
@@ -561,6 +597,11 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceSubtype == null
+                                ? 43
+                                : this.maintenanceSubtype.hashCode());
         return result;
     }
 }

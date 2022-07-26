@@ -1810,6 +1810,81 @@ public class OperationsInsightsClient implements OperationsInsights {
     }
 
     @Override
+    public GetAwrDatabaseReportResponse getAwrDatabaseReport(GetAwrDatabaseReportRequest request) {
+        LOG.trace("Called getAwrDatabaseReport");
+        final GetAwrDatabaseReportRequest interceptedRequest =
+                GetAwrDatabaseReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAwrDatabaseReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "GetAwrDatabaseReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrDatabaseReport");
+        java.util.function.Function<javax.ws.rs.core.Response, GetAwrDatabaseReportResponse>
+                transformer =
+                        GetAwrDatabaseReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetAwrDatabaseSqlReportResponse getAwrDatabaseSqlReport(
+            GetAwrDatabaseSqlReportRequest request) {
+        LOG.trace("Called getAwrDatabaseSqlReport");
+        final GetAwrDatabaseSqlReportRequest interceptedRequest =
+                GetAwrDatabaseSqlReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAwrDatabaseSqlReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "GetAwrDatabaseSqlReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrDatabaseSqlReport");
+        java.util.function.Function<javax.ws.rs.core.Response, GetAwrDatabaseSqlReportResponse>
+                transformer =
+                        GetAwrDatabaseSqlReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetAwrHubResponse getAwrHub(GetAwrHubRequest request) {
         LOG.trace("Called getAwrHub");
         final GetAwrHubRequest interceptedRequest = GetAwrHubConverter.interceptRequest(request);
@@ -2503,6 +2578,81 @@ public class OperationsInsightsClient implements OperationsInsights {
                                                 ib,
                                                 retriedRequest.getIngestSqlTextDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListAwrDatabaseSnapshotsResponse listAwrDatabaseSnapshots(
+            ListAwrDatabaseSnapshotsRequest request) {
+        LOG.trace("Called listAwrDatabaseSnapshots");
+        final ListAwrDatabaseSnapshotsRequest interceptedRequest =
+                ListAwrDatabaseSnapshotsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAwrDatabaseSnapshotsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ListAwrDatabaseSnapshots",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrDatabaseSnapshots");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAwrDatabaseSnapshotsResponse>
+                transformer =
+                        ListAwrDatabaseSnapshotsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListAwrDatabasesResponse listAwrDatabases(ListAwrDatabasesRequest request) {
+        LOG.trace("Called listAwrDatabases");
+        final ListAwrDatabasesRequest interceptedRequest =
+                ListAwrDatabasesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAwrDatabasesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "ListAwrDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrDatabases");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAwrDatabasesResponse>
+                transformer =
+                        ListAwrDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -3411,6 +3561,357 @@ public class OperationsInsightsClient implements OperationsInsights {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeAwrDatabaseCpuUsagesResponse summarizeAwrDatabaseCpuUsages(
+            SummarizeAwrDatabaseCpuUsagesRequest request) {
+        LOG.trace("Called summarizeAwrDatabaseCpuUsages");
+        final SummarizeAwrDatabaseCpuUsagesRequest interceptedRequest =
+                SummarizeAwrDatabaseCpuUsagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDatabaseCpuUsagesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAwrDatabaseCpuUsages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseCpuUsages");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDatabaseCpuUsagesResponse>
+                transformer =
+                        SummarizeAwrDatabaseCpuUsagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeAwrDatabaseMetricsResponse summarizeAwrDatabaseMetrics(
+            SummarizeAwrDatabaseMetricsRequest request) {
+        LOG.trace("Called summarizeAwrDatabaseMetrics");
+        final SummarizeAwrDatabaseMetricsRequest interceptedRequest =
+                SummarizeAwrDatabaseMetricsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDatabaseMetricsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAwrDatabaseMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseMetrics");
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeAwrDatabaseMetricsResponse>
+                transformer =
+                        SummarizeAwrDatabaseMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeAwrDatabaseParameterChangesResponse summarizeAwrDatabaseParameterChanges(
+            SummarizeAwrDatabaseParameterChangesRequest request) {
+        LOG.trace("Called summarizeAwrDatabaseParameterChanges");
+        final SummarizeAwrDatabaseParameterChangesRequest interceptedRequest =
+                SummarizeAwrDatabaseParameterChangesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDatabaseParameterChangesConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAwrDatabaseParameterChanges",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseParameterChanges");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDatabaseParameterChangesResponse>
+                transformer =
+                        SummarizeAwrDatabaseParameterChangesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeAwrDatabaseParametersResponse summarizeAwrDatabaseParameters(
+            SummarizeAwrDatabaseParametersRequest request) {
+        LOG.trace("Called summarizeAwrDatabaseParameters");
+        final SummarizeAwrDatabaseParametersRequest interceptedRequest =
+                SummarizeAwrDatabaseParametersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDatabaseParametersConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAwrDatabaseParameters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseParameters");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDatabaseParametersResponse>
+                transformer =
+                        SummarizeAwrDatabaseParametersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeAwrDatabaseSnapshotRangesResponse summarizeAwrDatabaseSnapshotRanges(
+            SummarizeAwrDatabaseSnapshotRangesRequest request) {
+        LOG.trace("Called summarizeAwrDatabaseSnapshotRanges");
+        final SummarizeAwrDatabaseSnapshotRangesRequest interceptedRequest =
+                SummarizeAwrDatabaseSnapshotRangesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDatabaseSnapshotRangesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAwrDatabaseSnapshotRanges",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseSnapshotRanges");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDatabaseSnapshotRangesResponse>
+                transformer =
+                        SummarizeAwrDatabaseSnapshotRangesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeAwrDatabaseSysstatsResponse summarizeAwrDatabaseSysstats(
+            SummarizeAwrDatabaseSysstatsRequest request) {
+        LOG.trace("Called summarizeAwrDatabaseSysstats");
+        final SummarizeAwrDatabaseSysstatsRequest interceptedRequest =
+                SummarizeAwrDatabaseSysstatsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDatabaseSysstatsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAwrDatabaseSysstats",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseSysstats");
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeAwrDatabaseSysstatsResponse>
+                transformer =
+                        SummarizeAwrDatabaseSysstatsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeAwrDatabaseTopWaitEventsResponse summarizeAwrDatabaseTopWaitEvents(
+            SummarizeAwrDatabaseTopWaitEventsRequest request) {
+        LOG.trace("Called summarizeAwrDatabaseTopWaitEvents");
+        final SummarizeAwrDatabaseTopWaitEventsRequest interceptedRequest =
+                SummarizeAwrDatabaseTopWaitEventsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDatabaseTopWaitEventsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAwrDatabaseTopWaitEvents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseTopWaitEvents");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDatabaseTopWaitEventsResponse>
+                transformer =
+                        SummarizeAwrDatabaseTopWaitEventsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeAwrDatabaseWaitEventBucketsResponse summarizeAwrDatabaseWaitEventBuckets(
+            SummarizeAwrDatabaseWaitEventBucketsRequest request) {
+        LOG.trace("Called summarizeAwrDatabaseWaitEventBuckets");
+        final SummarizeAwrDatabaseWaitEventBucketsRequest interceptedRequest =
+                SummarizeAwrDatabaseWaitEventBucketsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDatabaseWaitEventBucketsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAwrDatabaseWaitEventBuckets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseWaitEventBuckets");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDatabaseWaitEventBucketsResponse>
+                transformer =
+                        SummarizeAwrDatabaseWaitEventBucketsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeAwrDatabaseWaitEventsResponse summarizeAwrDatabaseWaitEvents(
+            SummarizeAwrDatabaseWaitEventsRequest request) {
+        LOG.trace("Called summarizeAwrDatabaseWaitEvents");
+        final SummarizeAwrDatabaseWaitEventsRequest interceptedRequest =
+                SummarizeAwrDatabaseWaitEventsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAwrDatabaseWaitEventsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperationsInsights",
+                        "SummarizeAwrDatabaseWaitEvents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseWaitEvents");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAwrDatabaseWaitEventsResponse>
+                transformer =
+                        SummarizeAwrDatabaseWaitEventsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

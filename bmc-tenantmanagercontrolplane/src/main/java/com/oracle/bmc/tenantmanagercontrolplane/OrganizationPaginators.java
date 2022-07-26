@@ -66,11 +66,11 @@ public class OrganizationPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListOrganizationTenanciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -122,11 +122,11 @@ public class OrganizationPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListOrganizationTenanciesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -187,11 +187,11 @@ public class OrganizationPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListOrganizationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -241,11 +241,11 @@ public class OrganizationPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListOrganizationsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

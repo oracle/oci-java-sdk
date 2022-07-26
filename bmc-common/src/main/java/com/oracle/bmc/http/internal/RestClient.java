@@ -4,10 +4,12 @@
  */
 package com.oracle.bmc.http.internal;
 
+import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.http.ApacheUtils;
 import com.oracle.bmc.http.ClientConfigurator;
+import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.io.DuplicatableInputStream;
 import com.oracle.bmc.io.internal.KeepOpenInputStream;
 import com.oracle.bmc.io.internal.ResettableFileInputStream;
@@ -222,6 +224,7 @@ public class RestClient implements AutoCloseable {
      * @return The {@link Response} object.
      * @throws BmcException If an error was encountered while invoking the request.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Response get(
             @Nonnull WrappedInvocationBuilder ib, @Nonnull T request) throws BmcException {
         if (ib == null) {
@@ -251,6 +254,7 @@ public class RestClient implements AutoCloseable {
      * from both the future and the consumer, as the entity stream may
      * not be able to support being consumed twice.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Future<Response> get(
             @Nonnull WrappedInvocationBuilder ib,
             @Nonnull T request,
@@ -287,6 +291,7 @@ public class RestClient implements AutoCloseable {
      * @param <RESPONSE> type of the response
      * @return future for the get request
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <B, REQUEST extends BmcRequest<B>, RESPONSE>
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> getFutureSupplier(
                     REQUEST interceptedRequest,
@@ -306,6 +311,29 @@ public class RestClient implements AutoCloseable {
     }
 
     /**
+     * Return the function that, given an {@link AsyncHandler}, makes the get request and returns the future.
+     * @param interceptedRequest intercepted request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the get request
+     * @deprecated Use the method without Guava parameters instead
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Deprecated
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> getFutureSupplier(
+                    REQUEST interceptedRequest,
+                    WrappedInvocationBuilder ib,
+                    com.google.common /*Guava will be removed soon*/.base.Function<
+                                    Response, RESPONSE>
+                            transformer) {
+        return getFutureSupplier(interceptedRequest, ib, GuavaUtils.adaptFromGuava(transformer));
+    }
+
+    /**
      * Post a request object to the endpoint represented by the web target and
      * get the response.
      *
@@ -316,6 +344,7 @@ public class RestClient implements AutoCloseable {
      * @return The {@link Response} object.
      * @throws BmcException If an error was encountered while invoking the request.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Response post(
             @Nonnull WrappedInvocationBuilder ib, @Nullable Object body, @Nonnull T request)
             throws BmcException {
@@ -350,6 +379,7 @@ public class RestClient implements AutoCloseable {
      * from both the future and the consumer, as the entity stream may
      * not be able to support being consumed twice.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Future<Response> post(
             @Nonnull WrappedInvocationBuilder ib,
             @Nullable Object body,
@@ -381,7 +411,9 @@ public class RestClient implements AutoCloseable {
     }
 
     /**
-     * Return the function that, given an {@link AsyncHandler}, makes the post request and returns the future
+     * Return the function that, given an {@link AsyncHandler}, makes the post request and returns
+     * the future
+     *
      * @param interceptedRequest intercepted request
      * @param body the body of the request
      * @param ib invocation builder
@@ -391,6 +423,7 @@ public class RestClient implements AutoCloseable {
      * @param <RESPONSE> type of the response
      * @return future for the post request
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <B, REQUEST extends BmcRequest<B>, RESPONSE>
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> postFutureSupplier(
                     REQUEST interceptedRequest,
@@ -398,10 +431,10 @@ public class RestClient implements AutoCloseable {
                     WrappedInvocationBuilder ib,
                     java.util.function.Function<Response, RESPONSE> transformer) {
         return h -> {
-            final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
+            final Consumer<Response> onSuccess =
                     new com.oracle.bmc.http.internal.SuccessConsumer<>(
                             h, transformer, interceptedRequest);
-            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+            final Consumer<Throwable> onError =
                     new com.oracle.bmc.http.internal.ErrorConsumer<>(h, interceptedRequest);
 
             Future<Response> responseFuture =
@@ -414,6 +447,32 @@ public class RestClient implements AutoCloseable {
     /**
      * Return the function that, given an {@link AsyncHandler}, makes the post request and returns the future
      * @param interceptedRequest intercepted request
+     * @param body the body of the request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the post request
+     * @deprecated use the method without Guava parameters instead
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Deprecated
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> postFutureSupplier(
+                    REQUEST interceptedRequest,
+                    Object body,
+                    WrappedInvocationBuilder ib,
+                    com.google.common /*Guava will be removed soon*/.base.Function<
+                                    Response, RESPONSE>
+                            transformer) {
+        return postFutureSupplier(
+                interceptedRequest, body, ib, GuavaUtils.adaptFromGuava(transformer));
+    }
+
+    /**
+     * Return the function that, given an {@link AsyncHandler}, makes the post request and returns the future
+     * @param interceptedRequest intercepted request
      * @param ib invocation builder
      * @param transformer transformer from JAX-RS response to model response
      * @param <B> type of the body
@@ -421,6 +480,7 @@ public class RestClient implements AutoCloseable {
      * @param <RESPONSE> type of the response
      * @return future for the post request
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <B, REQUEST extends BmcRequest<B>, RESPONSE>
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> postFutureSupplier(
                     REQUEST interceptedRequest,
@@ -440,6 +500,29 @@ public class RestClient implements AutoCloseable {
     }
 
     /**
+     * Return the function that, given an {@link AsyncHandler}, makes the post request and returns the future
+     * @param interceptedRequest intercepted request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the post request
+     * @deprecated use method without GUava parameters instead
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Deprecated
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> postFutureSupplier(
+                    REQUEST interceptedRequest,
+                    WrappedInvocationBuilder ib,
+                    com.google.common /*Guava will be removed soon*/.base.Function<
+                                    Response, RESPONSE>
+                            transformer) {
+        return postFutureSupplier(interceptedRequest, ib, GuavaUtils.adaptFromGuava(transformer));
+    }
+
+    /**
      * Post an empty body to the endpoint represented by the web target and get
      * the response.
      *
@@ -449,6 +532,7 @@ public class RestClient implements AutoCloseable {
      * @return The {@link Response} object.
      * @throws BmcException If an error was encountered while invoking the request.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Response post(
             @Nonnull WrappedInvocationBuilder ib, @Nonnull T request) {
         if (ib == null) {
@@ -474,6 +558,7 @@ public class RestClient implements AutoCloseable {
      * from both the future and the consumer, as the entity stream may
      * not be able to support being consumed twice.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Future<Response> post(
             @Nonnull WrappedInvocationBuilder ib,
             @Nonnull T request,
@@ -498,6 +583,7 @@ public class RestClient implements AutoCloseable {
      * @return The {@link Response} object.
      * @throws BmcException If an error was encountered while invoking the request.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Response patch(
             @Nonnull WrappedInvocationBuilder ib, @Nonnull T request) {
         if (ib == null) {
@@ -520,6 +606,7 @@ public class RestClient implements AutoCloseable {
      * @return The {@link Response} object.
      * @throws BmcException If an error was encountered while invoking the request.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Response patch(
             @Nonnull WrappedInvocationBuilder ib, @Nullable Object body, @Nonnull T request)
             throws BmcException {
@@ -553,6 +640,7 @@ public class RestClient implements AutoCloseable {
      * from both the future and the consumer, as the entity stream may
      * not be able to support being consumed twice.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Future<Response> patch(
             @Nonnull WrappedInvocationBuilder ib,
             @Nonnull T request,
@@ -582,6 +670,7 @@ public class RestClient implements AutoCloseable {
      * from both the future and the consumer, as the entity stream may
      * not be able to support being consumed twice.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Future<Response> patch(
             @Nonnull WrappedInvocationBuilder ib,
             @Nullable Object body,
@@ -623,6 +712,7 @@ public class RestClient implements AutoCloseable {
      * @param <RESPONSE> type of the response
      * @return future for the patch request
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <B, REQUEST extends BmcRequest<B>, RESPONSE>
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> patchFutureSupplier(
                     REQUEST interceptedRequest,
@@ -644,6 +734,29 @@ public class RestClient implements AutoCloseable {
     /**
      * Return the function that, given an {@link AsyncHandler}, makes the patch request and returns the future
      * @param interceptedRequest intercepted request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the patch request
+     * @deprecated use method without Guava parameters instead
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Deprecated
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> patchFutureSupplier(
+                    REQUEST interceptedRequest,
+                    WrappedInvocationBuilder ib,
+                    com.google.common /*Guava will be removed soon*/.base.Function<
+                                    Response, RESPONSE>
+                            transformer) {
+        return patchFutureSupplier(interceptedRequest, ib, GuavaUtils.adaptFromGuava(transformer));
+    }
+
+    /**
+     * Return the function that, given an {@link AsyncHandler}, makes the patch request and returns the future
+     * @param interceptedRequest intercepted request
      * @param body the body of the request
      * @param ib invocation builder
      * @param transformer transformer from JAX-RS response to model response
@@ -652,6 +765,7 @@ public class RestClient implements AutoCloseable {
      * @param <RESPONSE> type of the response
      * @return future for the patch request
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <B, REQUEST extends BmcRequest<B>, RESPONSE>
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> patchFutureSupplier(
                     REQUEST interceptedRequest,
@@ -673,6 +787,32 @@ public class RestClient implements AutoCloseable {
     }
 
     /**
+     * Return the function that, given an {@link AsyncHandler}, makes the patch request and returns the future
+     * @param interceptedRequest intercepted request
+     * @param body the body of the request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the patch request
+     * @deprecated use method without Guava parameters instead
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Deprecated
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> patchFutureSupplier(
+                    REQUEST interceptedRequest,
+                    Object body,
+                    WrappedInvocationBuilder ib,
+                    com.google.common /*Guava will be removed soon*/.base.Function<
+                                    Response, RESPONSE>
+                            transformer) {
+        return patchFutureSupplier(
+                interceptedRequest, body, ib, GuavaUtils.adaptFromGuava(transformer));
+    }
+
+    /**
      * Put a request object without body to the endpoint represented by the web target and
      * get the response.
      *
@@ -682,6 +822,7 @@ public class RestClient implements AutoCloseable {
      * @return The {@link Response} object.
      * @throws BmcException If an error was encountered while invoking the request.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Response put(
             @Nonnull WrappedInvocationBuilder ib, @Nonnull T request) {
         return put(ib, null, request);
@@ -702,6 +843,7 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException
      *             If an error was encountered while invoking the request.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Response put(
             @Nonnull WrappedInvocationBuilder ib, @Nullable Object body, @Nonnull T request)
             throws BmcException {
@@ -739,6 +881,7 @@ public class RestClient implements AutoCloseable {
      *         from both the future and the consumer, as the entity stream may
      *         not be able to support being consumed twice.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Future<Response> put(
             @Nonnull WrappedInvocationBuilder ib,
             @Nonnull T request,
@@ -773,6 +916,7 @@ public class RestClient implements AutoCloseable {
      *         from both the future and the consumer, as the entity stream may
      *         not be able to support being consumed twice.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Future<Response> put(
             @Nonnull WrappedInvocationBuilder ib,
             @Nullable Object body,
@@ -813,6 +957,7 @@ public class RestClient implements AutoCloseable {
      * @param <RESPONSE> type of the response
      * @return future for the put request
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <B, REQUEST extends BmcRequest<B>, RESPONSE>
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> putFutureSupplier(
                     REQUEST interceptedRequest,
@@ -834,6 +979,29 @@ public class RestClient implements AutoCloseable {
     /**
      * Return the function that, given an {@link AsyncHandler}, makes the put request and returns the future
      * @param interceptedRequest intercepted request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the put request
+     * @deprecated use the method without Guava parameters instead
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Deprecated
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> putFutureSupplier(
+                    REQUEST interceptedRequest,
+                    WrappedInvocationBuilder ib,
+                    com.google.common /*Guava will be removed soon*/.base.Function<
+                                    Response, RESPONSE>
+                            transformer) {
+        return putFutureSupplier(interceptedRequest, ib, GuavaUtils.adaptFromGuava(transformer));
+    }
+
+    /**
+     * Return the function that, given an {@link AsyncHandler}, makes the put request and returns the future
+     * @param interceptedRequest intercepted request
      * @param body the body of the request
      * @param ib invocation builder
      * @param transformer transformer from JAX-RS response to model response
@@ -842,6 +1010,7 @@ public class RestClient implements AutoCloseable {
      * @param <RESPONSE> type of the response
      * @return future for the put request
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <B, REQUEST extends BmcRequest<B>, RESPONSE>
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> putFutureSupplier(
                     REQUEST interceptedRequest,
@@ -862,6 +1031,32 @@ public class RestClient implements AutoCloseable {
     }
 
     /**
+     * Return the function that, given an {@link AsyncHandler}, makes the put request and returns the future
+     * @param interceptedRequest intercepted request
+     * @param body the body of the request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the put request
+     * @deprecated use the method without Guava parameters instead
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Deprecated
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> putFutureSupplier(
+                    REQUEST interceptedRequest,
+                    Object body,
+                    WrappedInvocationBuilder ib,
+                    com.google.common /*Guava will be removed soon*/.base.Function<
+                                    Response, RESPONSE>
+                            transformer) {
+        return putFutureSupplier(
+                interceptedRequest, body, ib, GuavaUtils.adaptFromGuava(transformer));
+    }
+
+    /**
      * Execute a delete on a resource and get the response.
      *
      * @param ib
@@ -873,6 +1068,7 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException
      *             If an error was encountered while invoking the request.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Response delete(
             @Nonnull WrappedInvocationBuilder ib, @Nonnull T request) throws BmcException {
         if (ib == null) {
@@ -906,6 +1102,7 @@ public class RestClient implements AutoCloseable {
      *         from both the future and the consumer, as the entity stream may
      *         not be able to support being consumed twice.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Future<Response> delete(
             @Nonnull WrappedInvocationBuilder ib,
             @Nonnull T request,
@@ -941,6 +1138,7 @@ public class RestClient implements AutoCloseable {
      * @param <RESPONSE> type of the response
      * @return future for the post request
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <B, REQUEST extends BmcRequest<B>, RESPONSE>
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> deleteFutureSupplier(
                     REQUEST interceptedRequest,
@@ -960,6 +1158,29 @@ public class RestClient implements AutoCloseable {
     }
 
     /**
+     * Return the function that, given an {@link AsyncHandler}, makes the delete request and returns the future.
+     * @param interceptedRequest intercepted request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the post request
+     * @deprecated use the method without Guava parameters instead
+     */
+    @Deprecated
+    @InternalSdk(backwardCompatibilityRequired = true)
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> deleteFutureSupplier(
+                    REQUEST interceptedRequest,
+                    WrappedInvocationBuilder ib,
+                    com.google.common /*Guava will be removed soon*/.base.Function<
+                                    Response, RESPONSE>
+                            transformer) {
+        return deleteFutureSupplier(interceptedRequest, ib, GuavaUtils.adaptFromGuava(transformer));
+    }
+
+    /**
      * Execute a head request for a resource and return the response.
      *
      * @param ib
@@ -971,6 +1192,7 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException
      *             If an error was encountered while invoking the request.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Response head(
             @Nonnull WrappedInvocationBuilder ib, @Nonnull T request) throws BmcException {
         if (ib == null) {
@@ -1005,6 +1227,7 @@ public class RestClient implements AutoCloseable {
      *         from both the future and the consumer, as the entity stream may
      *         not be able to support being consumed twice.
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <T extends BmcRequest> Future<Response> head(
             @Nonnull WrappedInvocationBuilder ib,
             @Nonnull T request,
@@ -1041,6 +1264,7 @@ public class RestClient implements AutoCloseable {
      * @param <RESPONSE> type of the response
      * @return future for the head request
      */
+    @InternalSdk(backwardCompatibilityRequired = true)
     public <B, REQUEST extends BmcRequest<B>, RESPONSE>
             Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> headFutureSupplier(
                     REQUEST interceptedRequest,
@@ -1057,6 +1281,29 @@ public class RestClient implements AutoCloseable {
             return new com.oracle.bmc.util.internal.TransformingFuture<>(
                     responseFuture, transformer);
         };
+    }
+
+    /**
+     * Return the function that, given an {@link AsyncHandler}, makes the head request and returns the future.
+     * @param interceptedRequest intercepted request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the head request
+     * @Deprecated use method without Guava parameters instead
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Deprecated
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> headFutureSupplier(
+                    REQUEST interceptedRequest,
+                    WrappedInvocationBuilder ib,
+                    com.google.common /*Guava will be removed soon*/.base.Function<
+                                    Response, RESPONSE>
+                            transformer) {
+        return headFutureSupplier(interceptedRequest, ib, GuavaUtils.adaptFromGuava(transformer));
     }
 
     /**

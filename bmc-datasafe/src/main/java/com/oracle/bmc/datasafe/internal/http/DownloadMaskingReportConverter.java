@@ -11,9 +11,9 @@ import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class DownloadMaskingReportConverter {
-    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
-                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2();
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DownloadMaskingReportConverter.class);
@@ -112,7 +112,7 @@ public class DownloadMaskingReportConverter {
                                 builder.inputStream(response.getItem());
 
                                 java.util.Optional<java.util.List<String>> etagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "etag");
                                 if (etagHeader.isPresent()) {
                                     builder.etag(
@@ -121,7 +121,7 @@ public class DownloadMaskingReportConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
@@ -132,7 +132,7 @@ public class DownloadMaskingReportConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> contentLengthHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "content-length");
                                 if (contentLengthHeader.isPresent()) {
                                     builder.contentLength(

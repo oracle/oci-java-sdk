@@ -29,6 +29,8 @@ public final class Stack {
         "timeCreated",
         "lifecycleState",
         "configSource",
+        "customTerraformProvider",
+        "isThirdPartyProviderExperienceEnabled",
         "variables",
         "terraformVersion",
         "stackDriftStatus",
@@ -44,6 +46,8 @@ public final class Stack {
             java.util.Date timeCreated,
             LifecycleState lifecycleState,
             ConfigSource configSource,
+            CustomTerraformProvider customTerraformProvider,
+            Boolean isThirdPartyProviderExperienceEnabled,
             java.util.Map<String, String> variables,
             String terraformVersion,
             StackDriftStatus stackDriftStatus,
@@ -58,6 +62,8 @@ public final class Stack {
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
         this.configSource = configSource;
+        this.customTerraformProvider = customTerraformProvider;
+        this.isThirdPartyProviderExperienceEnabled = isThirdPartyProviderExperienceEnabled;
         this.variables = variables;
         this.terraformVersion = terraformVersion;
         this.stackDriftStatus = stackDriftStatus;
@@ -183,6 +189,42 @@ public final class Stack {
         public Builder configSource(ConfigSource configSource) {
             this.configSource = configSource;
             this.__explicitlySet__.add("configSource");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customTerraformProvider")
+        private CustomTerraformProvider customTerraformProvider;
+
+        public Builder customTerraformProvider(CustomTerraformProvider customTerraformProvider) {
+            this.customTerraformProvider = customTerraformProvider;
+            this.__explicitlySet__.add("customTerraformProvider");
+            return this;
+        }
+        /**
+         * When {@code true}, the stack sources third-party Terraform providers from
+         * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+         * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+         * For more information about stack sourcing of third-party Terraform providers, see
+         * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
+        private Boolean isThirdPartyProviderExperienceEnabled;
+
+        /**
+         * When {@code true}, the stack sources third-party Terraform providers from
+         * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+         * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+         * For more information about stack sourcing of third-party Terraform providers, see
+         * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         *
+         * @param isThirdPartyProviderExperienceEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isThirdPartyProviderExperienceEnabled(
+                Boolean isThirdPartyProviderExperienceEnabled) {
+            this.isThirdPartyProviderExperienceEnabled = isThirdPartyProviderExperienceEnabled;
+            this.__explicitlySet__.add("isThirdPartyProviderExperienceEnabled");
             return this;
         }
         /**
@@ -328,6 +370,8 @@ public final class Stack {
                             timeCreated,
                             lifecycleState,
                             configSource,
+                            customTerraformProvider,
+                            isThirdPartyProviderExperienceEnabled,
                             variables,
                             terraformVersion,
                             stackDriftStatus,
@@ -348,6 +392,9 @@ public final class Stack {
                             .timeCreated(o.getTimeCreated())
                             .lifecycleState(o.getLifecycleState())
                             .configSource(o.getConfigSource())
+                            .customTerraformProvider(o.getCustomTerraformProvider())
+                            .isThirdPartyProviderExperienceEnabled(
+                                    o.getIsThirdPartyProviderExperienceEnabled())
                             .variables(o.getVariables())
                             .terraformVersion(o.getTerraformVersion())
                             .stackDriftStatus(o.getStackDriftStatus())
@@ -526,6 +573,37 @@ public final class Stack {
 
     public ConfigSource getConfigSource() {
         return configSource;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("customTerraformProvider")
+    private final CustomTerraformProvider customTerraformProvider;
+
+    public CustomTerraformProvider getCustomTerraformProvider() {
+        return customTerraformProvider;
+    }
+
+    /**
+     * When {@code true}, the stack sources third-party Terraform providers from
+     * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+     * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+     * For more information about stack sourcing of third-party Terraform providers, see
+     * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
+    private final Boolean isThirdPartyProviderExperienceEnabled;
+
+    /**
+     * When {@code true}, the stack sources third-party Terraform providers from
+     * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+     * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+     * For more information about stack sourcing of third-party Terraform providers, see
+     * [Third-party Provider Configuration](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     *
+     * @return the value
+     **/
+    public Boolean getIsThirdPartyProviderExperienceEnabled() {
+        return isThirdPartyProviderExperienceEnabled;
     }
 
     /**
@@ -715,6 +793,10 @@ public final class Stack {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", configSource=").append(String.valueOf(this.configSource));
+        sb.append(", customTerraformProvider=")
+                .append(String.valueOf(this.customTerraformProvider));
+        sb.append(", isThirdPartyProviderExperienceEnabled=")
+                .append(String.valueOf(this.isThirdPartyProviderExperienceEnabled));
         sb.append(", variables=").append(String.valueOf(this.variables));
         sb.append(", terraformVersion=").append(String.valueOf(this.terraformVersion));
         sb.append(", stackDriftStatus=").append(String.valueOf(this.stackDriftStatus));
@@ -743,6 +825,11 @@ public final class Stack {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.configSource, other.configSource)
+                && java.util.Objects.equals(
+                        this.customTerraformProvider, other.customTerraformProvider)
+                && java.util.Objects.equals(
+                        this.isThirdPartyProviderExperienceEnabled,
+                        other.isThirdPartyProviderExperienceEnabled)
                 && java.util.Objects.equals(this.variables, other.variables)
                 && java.util.Objects.equals(this.terraformVersion, other.terraformVersion)
                 && java.util.Objects.equals(this.stackDriftStatus, other.stackDriftStatus)
@@ -767,6 +854,16 @@ public final class Stack {
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.configSource == null ? 43 : this.configSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customTerraformProvider == null
+                                ? 43
+                                : this.customTerraformProvider.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isThirdPartyProviderExperienceEnabled == null
+                                ? 43
+                                : this.isThirdPartyProviderExperienceEnabled.hashCode());
         result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
         result =
                 (result * PRIME)

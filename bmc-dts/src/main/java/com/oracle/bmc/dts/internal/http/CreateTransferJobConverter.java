@@ -10,11 +10,11 @@ import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class CreateTransferJobConverter {
-    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
-                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2();
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(CreateTransferJobConverter.class);
@@ -39,12 +39,12 @@ public class CreateTransferJobConverter {
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
-        if (request.getOpcRetryToken() != null) {
-            ib.header("opc-retry-token", request.getOpcRetryToken());
-        }
-
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
+        }
+
+        if (request.getOpcRetryToken() != null) {
+            ib.header("opc-retry-token", request.getOpcRetryToken());
         }
 
         if (client.getClientConfigurator() != null) {
@@ -108,7 +108,7 @@ public class CreateTransferJobConverter {
                                 builder.transferJob(response.getItem());
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
@@ -119,7 +119,7 @@ public class CreateTransferJobConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> etagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "etag");
                                 if (etagHeader.isPresent()) {
                                     builder.etag(

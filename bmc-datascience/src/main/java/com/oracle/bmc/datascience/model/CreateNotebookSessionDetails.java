@@ -29,7 +29,8 @@ public final class CreateNotebookSessionDetails {
         "notebookSessionConfigurationDetails",
         "notebookSessionConfigDetails",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "notebookSessionRuntimeConfigDetails"
     })
     public CreateNotebookSessionDetails(
             String displayName,
@@ -38,7 +39,8 @@ public final class CreateNotebookSessionDetails {
             NotebookSessionConfigurationDetails notebookSessionConfigurationDetails,
             NotebookSessionConfigDetails notebookSessionConfigDetails,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            NotebookSessionRuntimeConfigDetails notebookSessionRuntimeConfigDetails) {
         super();
         this.displayName = displayName;
         this.projectId = projectId;
@@ -47,6 +49,7 @@ public final class CreateNotebookSessionDetails {
         this.notebookSessionConfigDetails = notebookSessionConfigDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -165,6 +168,16 @@ public final class CreateNotebookSessionDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionRuntimeConfigDetails")
+        private NotebookSessionRuntimeConfigDetails notebookSessionRuntimeConfigDetails;
+
+        public Builder notebookSessionRuntimeConfigDetails(
+                NotebookSessionRuntimeConfigDetails notebookSessionRuntimeConfigDetails) {
+            this.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
+            this.__explicitlySet__.add("notebookSessionRuntimeConfigDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -177,7 +190,8 @@ public final class CreateNotebookSessionDetails {
                             notebookSessionConfigurationDetails,
                             notebookSessionConfigDetails,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            notebookSessionRuntimeConfigDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -192,7 +206,9 @@ public final class CreateNotebookSessionDetails {
                                     o.getNotebookSessionConfigurationDetails())
                             .notebookSessionConfigDetails(o.getNotebookSessionConfigDetails())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .notebookSessionRuntimeConfigDetails(
+                                    o.getNotebookSessionRuntimeConfigDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -306,6 +322,13 @@ public final class CreateNotebookSessionDetails {
         return definedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionRuntimeConfigDetails")
+    private final NotebookSessionRuntimeConfigDetails notebookSessionRuntimeConfigDetails;
+
+    public NotebookSessionRuntimeConfigDetails getNotebookSessionRuntimeConfigDetails() {
+        return notebookSessionRuntimeConfigDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -328,6 +351,8 @@ public final class CreateNotebookSessionDetails {
                 .append(String.valueOf(this.notebookSessionConfigDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", notebookSessionRuntimeConfigDetails=")
+                .append(String.valueOf(this.notebookSessionRuntimeConfigDetails));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -353,6 +378,9 @@ public final class CreateNotebookSessionDetails {
                         this.notebookSessionConfigDetails, other.notebookSessionConfigDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.notebookSessionRuntimeConfigDetails,
+                        other.notebookSessionRuntimeConfigDetails)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -377,6 +405,11 @@ public final class CreateNotebookSessionDetails {
                                 : this.notebookSessionConfigDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notebookSessionRuntimeConfigDetails == null
+                                ? 43
+                                : this.notebookSessionRuntimeConfigDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

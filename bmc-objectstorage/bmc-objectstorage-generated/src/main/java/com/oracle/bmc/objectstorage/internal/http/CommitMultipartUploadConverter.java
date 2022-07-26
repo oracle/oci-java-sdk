@@ -12,9 +12,9 @@ import com.oracle.bmc.util.internal.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CommitMultipartUploadConverter {
-    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
-                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2();
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(CommitMultipartUploadConverter.class);
@@ -134,8 +134,9 @@ public class CommitMultipartUploadConverter {
 
                                 java.util.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-client-request-id");
+                                                com.oracle.bmc.http.internal.HeaderUtils
+                                                        .getHeadersWithName(
+                                                                headers, "opc-client-request-id");
                                 if (opcClientRequestIdHeader.isPresent()) {
                                     builder.opcClientRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
@@ -145,7 +146,7 @@ public class CommitMultipartUploadConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-request-id");
                                 if (opcRequestIdHeader.isPresent()) {
                                     builder.opcRequestId(
@@ -156,7 +157,7 @@ public class CommitMultipartUploadConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> opcMultipartMd5Header =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "opc-multipart-md5");
                                 if (opcMultipartMd5Header.isPresent()) {
                                     builder.opcMultipartMd5(
@@ -167,7 +168,7 @@ public class CommitMultipartUploadConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> eTagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "ETag");
                                 if (eTagHeader.isPresent()) {
                                     builder.eTag(
@@ -176,7 +177,7 @@ public class CommitMultipartUploadConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> lastModifiedHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "last-modified");
                                 if (lastModifiedHeader.isPresent()) {
                                     builder.lastModified(
@@ -187,7 +188,7 @@ public class CommitMultipartUploadConverter {
                                 }
 
                                 java.util.Optional<java.util.List<String>> versionIdHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "version-id");
                                 if (versionIdHeader.isPresent()) {
                                     builder.versionId(

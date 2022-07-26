@@ -5,7 +5,8 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * A reachableIp ip address used by Resource Manager Service to connect to the private resource.
+ * The reachable, or alternative, IP address for a nonpublic IP address that is associated with the private endpoint.
+ * Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -29,13 +30,15 @@ public final class ReachableIp {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An IP address for the Resource Manager service to use for connection to the private resource.
+         * Reachable IP address associated with the private endpoint.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * An IP address for the Resource Manager service to use for connection to the private resource.
+         * Reachable IP address associated with the private endpoint.
+         *
          * @param ipAddress the value to set
          * @return this builder
          **/
@@ -75,13 +78,15 @@ public final class ReachableIp {
     }
 
     /**
-     * An IP address for the Resource Manager service to use for connection to the private resource.
+     * Reachable IP address associated with the private endpoint.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * An IP address for the Resource Manager service to use for connection to the private resource.
+     * Reachable IP address associated with the private endpoint.
+     *
      * @return the value
      **/
     public String getIpAddress() {

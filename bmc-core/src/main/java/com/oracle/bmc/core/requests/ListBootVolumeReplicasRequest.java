@@ -41,6 +41,17 @@ public class ListBootVolumeReplicasRequest
         return compartmentId;
     }
     /**
+     * The OCID of the volume group replica.
+     */
+    private String volumeGroupReplicaId;
+
+    /**
+     * The OCID of the volume group replica.
+     */
+    public String getVolumeGroupReplicaId() {
+        return volumeGroupReplicaId;
+    }
+    /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
      * "List" call. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -273,6 +284,21 @@ public class ListBootVolumeReplicasRequest
         }
 
         /**
+         * The OCID of the volume group replica.
+         */
+        private String volumeGroupReplicaId = null;
+
+        /**
+         * The OCID of the volume group replica.
+         * @param volumeGroupReplicaId the value to set
+         * @return this builder instance
+         */
+        public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
+            this.volumeGroupReplicaId = volumeGroupReplicaId;
+            return this;
+        }
+
+        /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated
          * "List" call. For important details about how pagination works, see
          * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -433,6 +459,7 @@ public class ListBootVolumeReplicasRequest
         public Builder copy(ListBootVolumeReplicasRequest o) {
             availabilityDomain(o.getAvailabilityDomain());
             compartmentId(o.getCompartmentId());
+            volumeGroupReplicaId(o.getVolumeGroupReplicaId());
             limit(o.getLimit());
             page(o.getPage());
             displayName(o.getDisplayName());
@@ -473,6 +500,7 @@ public class ListBootVolumeReplicasRequest
             ListBootVolumeReplicasRequest request = new ListBootVolumeReplicasRequest();
             request.availabilityDomain = availabilityDomain;
             request.compartmentId = compartmentId;
+            request.volumeGroupReplicaId = volumeGroupReplicaId;
             request.limit = limit;
             request.page = page;
             request.displayName = displayName;
@@ -480,7 +508,7 @@ public class ListBootVolumeReplicasRequest
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListBootVolumeReplicasRequest(availabilityDomain, compartmentId, limit, page, displayName, sortBy, sortOrder, lifecycleState);
+            // new ListBootVolumeReplicasRequest(availabilityDomain, compartmentId, volumeGroupReplicaId, limit, page, displayName, sortBy, sortOrder, lifecycleState);
         }
     }
 
@@ -492,6 +520,7 @@ public class ListBootVolumeReplicasRequest
         return new Builder()
                 .availabilityDomain(availabilityDomain)
                 .compartmentId(compartmentId)
+                .volumeGroupReplicaId(volumeGroupReplicaId)
                 .limit(limit)
                 .page(page)
                 .displayName(displayName)
@@ -515,6 +544,7 @@ public class ListBootVolumeReplicasRequest
         sb.append("super=").append(super.toString());
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",volumeGroupReplicaId=").append(String.valueOf(this.volumeGroupReplicaId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
@@ -538,6 +568,7 @@ public class ListBootVolumeReplicasRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.volumeGroupReplicaId, other.volumeGroupReplicaId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -558,6 +589,11 @@ public class ListBootVolumeReplicasRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.volumeGroupReplicaId == null
+                                ? 43
+                                : this.volumeGroupReplicaId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());

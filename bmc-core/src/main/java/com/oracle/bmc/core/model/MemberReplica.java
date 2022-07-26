@@ -19,10 +19,11 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MemberReplica {
     @Deprecated
-    @java.beans.ConstructorProperties({"volumeReplicaId"})
-    public MemberReplica(String volumeReplicaId) {
+    @java.beans.ConstructorProperties({"volumeReplicaId", "membershipState"})
+    public MemberReplica(String volumeReplicaId, MembershipState membershipState) {
         super();
         this.volumeReplicaId = volumeReplicaId;
+        this.membershipState = membershipState;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -43,19 +44,36 @@ public final class MemberReplica {
             this.__explicitlySet__.add("volumeReplicaId");
             return this;
         }
+        /**
+         * Membership state of the volume replica in relation to the volume group replica.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("membershipState")
+        private MembershipState membershipState;
+
+        /**
+         * Membership state of the volume replica in relation to the volume group replica.
+         * @param membershipState the value to set
+         * @return this builder
+         **/
+        public Builder membershipState(MembershipState membershipState) {
+            this.membershipState = membershipState;
+            this.__explicitlySet__.add("membershipState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MemberReplica build() {
-            MemberReplica __instance__ = new MemberReplica(volumeReplicaId);
+            MemberReplica __instance__ = new MemberReplica(volumeReplicaId, membershipState);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(MemberReplica o) {
-            Builder copiedBuilder = volumeReplicaId(o.getVolumeReplicaId());
+            Builder copiedBuilder =
+                    volumeReplicaId(o.getVolumeReplicaId()).membershipState(o.getMembershipState());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -87,6 +105,69 @@ public final class MemberReplica {
         return volumeReplicaId;
     }
 
+    /**
+     * Membership state of the volume replica in relation to the volume group replica.
+     **/
+    public enum MembershipState {
+        AddPending("ADD_PENDING"),
+        Stable("STABLE"),
+        RemovePending("REMOVE_PENDING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(MembershipState.class);
+
+        private final String value;
+        private static java.util.Map<String, MembershipState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (MembershipState v : MembershipState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        MembershipState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static MembershipState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'MembershipState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Membership state of the volume replica in relation to the volume group replica.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("membershipState")
+    private final MembershipState membershipState;
+
+    /**
+     * Membership state of the volume replica in relation to the volume group replica.
+     * @return the value
+     **/
+    public MembershipState getMembershipState() {
+        return membershipState;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -101,6 +182,7 @@ public final class MemberReplica {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MemberReplica(");
         sb.append("volumeReplicaId=").append(String.valueOf(this.volumeReplicaId));
+        sb.append(", membershipState=").append(String.valueOf(this.membershipState));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -117,6 +199,7 @@ public final class MemberReplica {
 
         MemberReplica other = (MemberReplica) o;
         return java.util.Objects.equals(this.volumeReplicaId, other.volumeReplicaId)
+                && java.util.Objects.equals(this.membershipState, other.membershipState)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
     }
 
@@ -127,6 +210,9 @@ public final class MemberReplica {
         result =
                 (result * PRIME)
                         + (this.volumeReplicaId == null ? 43 : this.volumeReplicaId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.membershipState == null ? 43 : this.membershipState.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

@@ -25,6 +25,9 @@ public final class WorkRequestResource {
         "entityType",
         "actionType",
         "identifier",
+        "sourceId",
+        "sourceName",
+        "sourceVersion",
         "entityUri",
         "timeAccepted",
         "timeStarted",
@@ -35,6 +38,9 @@ public final class WorkRequestResource {
             String entityType,
             ActionTypes actionType,
             String identifier,
+            String sourceId,
+            String sourceName,
+            String sourceVersion,
             String entityUri,
             java.util.Date timeAccepted,
             java.util.Date timeStarted,
@@ -44,6 +50,9 @@ public final class WorkRequestResource {
         this.entityType = entityType;
         this.actionType = actionType;
         this.identifier = identifier;
+        this.sourceId = sourceId;
+        this.sourceName = sourceName;
+        this.sourceVersion = sourceVersion;
         this.entityUri = entityUri;
         this.timeAccepted = timeAccepted;
         this.timeStarted = timeStarted;
@@ -107,6 +116,54 @@ public final class WorkRequestResource {
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
+            return this;
+        }
+        /**
+         * The identifier of the source the work request is requesting.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
+        private String sourceId;
+
+        /**
+         * The identifier of the source the work request is requesting.
+         * @param sourceId the value to set
+         * @return this builder
+         **/
+        public Builder sourceId(String sourceId) {
+            this.sourceId = sourceId;
+            this.__explicitlySet__.add("sourceId");
+            return this;
+        }
+        /**
+         * The name of the source the work request is requesting.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
+        private String sourceName;
+
+        /**
+         * The name of the source the work request is requesting.
+         * @param sourceName the value to set
+         * @return this builder
+         **/
+        public Builder sourceName(String sourceName) {
+            this.sourceName = sourceName;
+            this.__explicitlySet__.add("sourceName");
+            return this;
+        }
+        /**
+         * The version of the source the work request is requesting.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceVersion")
+        private String sourceVersion;
+
+        /**
+         * The version of the source the work request is requesting.
+         * @param sourceVersion the value to set
+         * @return this builder
+         **/
+        public Builder sourceVersion(String sourceVersion) {
+            this.sourceVersion = sourceVersion;
+            this.__explicitlySet__.add("sourceVersion");
             return this;
         }
         /**
@@ -219,6 +276,9 @@ public final class WorkRequestResource {
                             entityType,
                             actionType,
                             identifier,
+                            sourceId,
+                            sourceName,
+                            sourceVersion,
                             entityUri,
                             timeAccepted,
                             timeStarted,
@@ -234,6 +294,9 @@ public final class WorkRequestResource {
                     entityType(o.getEntityType())
                             .actionType(o.getActionType())
                             .identifier(o.getIdentifier())
+                            .sourceId(o.getSourceId())
+                            .sourceName(o.getSourceName())
+                            .sourceVersion(o.getSourceVersion())
                             .entityUri(o.getEntityUri())
                             .timeAccepted(o.getTimeAccepted())
                             .timeStarted(o.getTimeStarted())
@@ -304,6 +367,48 @@ public final class WorkRequestResource {
      **/
     public String getIdentifier() {
         return identifier;
+    }
+
+    /**
+     * The identifier of the source the work request is requesting.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
+    private final String sourceId;
+
+    /**
+     * The identifier of the source the work request is requesting.
+     * @return the value
+     **/
+    public String getSourceId() {
+        return sourceId;
+    }
+
+    /**
+     * The name of the source the work request is requesting.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
+    private final String sourceName;
+
+    /**
+     * The name of the source the work request is requesting.
+     * @return the value
+     **/
+    public String getSourceName() {
+        return sourceName;
+    }
+
+    /**
+     * The version of the source the work request is requesting.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceVersion")
+    private final String sourceVersion;
+
+    /**
+     * The version of the source the work request is requesting.
+     * @return the value
+     **/
+    public String getSourceVersion() {
+        return sourceVersion;
     }
 
     /**
@@ -412,6 +517,9 @@ public final class WorkRequestResource {
         sb.append("entityType=").append(String.valueOf(this.entityType));
         sb.append(", actionType=").append(String.valueOf(this.actionType));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
+        sb.append(", sourceId=").append(String.valueOf(this.sourceId));
+        sb.append(", sourceName=").append(String.valueOf(this.sourceName));
+        sb.append(", sourceVersion=").append(String.valueOf(this.sourceVersion));
         sb.append(", entityUri=").append(String.valueOf(this.entityUri));
         sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
@@ -435,6 +543,9 @@ public final class WorkRequestResource {
         return java.util.Objects.equals(this.entityType, other.entityType)
                 && java.util.Objects.equals(this.actionType, other.actionType)
                 && java.util.Objects.equals(this.identifier, other.identifier)
+                && java.util.Objects.equals(this.sourceId, other.sourceId)
+                && java.util.Objects.equals(this.sourceName, other.sourceName)
+                && java.util.Objects.equals(this.sourceVersion, other.sourceVersion)
                 && java.util.Objects.equals(this.entityUri, other.entityUri)
                 && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
@@ -450,6 +561,11 @@ public final class WorkRequestResource {
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
         result = (result * PRIME) + (this.actionType == null ? 43 : this.actionType.hashCode());
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
+        result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceVersion == null ? 43 : this.sourceVersion.hashCode());
         result = (result * PRIME) + (this.entityUri == null ? 43 : this.entityUri.hashCode());
         result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());

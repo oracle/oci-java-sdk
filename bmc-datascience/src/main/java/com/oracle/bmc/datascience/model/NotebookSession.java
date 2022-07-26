@@ -29,6 +29,7 @@ public final class NotebookSession {
         "compartmentId",
         "notebookSessionConfigurationDetails",
         "notebookSessionConfigDetails",
+        "notebookSessionRuntimeConfigDetails",
         "notebookSessionUrl",
         "lifecycleState",
         "lifecycleDetails",
@@ -44,6 +45,7 @@ public final class NotebookSession {
             String compartmentId,
             NotebookSessionConfigurationDetails notebookSessionConfigurationDetails,
             NotebookSessionConfigDetails notebookSessionConfigDetails,
+            NotebookSessionRuntimeConfigDetails notebookSessionRuntimeConfigDetails,
             String notebookSessionUrl,
             NotebookSessionLifecycleState lifecycleState,
             String lifecycleDetails,
@@ -58,6 +60,7 @@ public final class NotebookSession {
         this.compartmentId = compartmentId;
         this.notebookSessionConfigurationDetails = notebookSessionConfigurationDetails;
         this.notebookSessionConfigDetails = notebookSessionConfigDetails;
+        this.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
         this.notebookSessionUrl = notebookSessionUrl;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -191,6 +194,16 @@ public final class NotebookSession {
             this.__explicitlySet__.add("notebookSessionConfigDetails");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionRuntimeConfigDetails")
+        private NotebookSessionRuntimeConfigDetails notebookSessionRuntimeConfigDetails;
+
+        public Builder notebookSessionRuntimeConfigDetails(
+                NotebookSessionRuntimeConfigDetails notebookSessionRuntimeConfigDetails) {
+            this.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
+            this.__explicitlySet__.add("notebookSessionRuntimeConfigDetails");
+            return this;
+        }
         /**
          * The URL to interact with the notebook session.
          **/
@@ -295,6 +308,7 @@ public final class NotebookSession {
                             compartmentId,
                             notebookSessionConfigurationDetails,
                             notebookSessionConfigDetails,
+                            notebookSessionRuntimeConfigDetails,
                             notebookSessionUrl,
                             lifecycleState,
                             lifecycleDetails,
@@ -316,6 +330,8 @@ public final class NotebookSession {
                             .notebookSessionConfigurationDetails(
                                     o.getNotebookSessionConfigurationDetails())
                             .notebookSessionConfigDetails(o.getNotebookSessionConfigDetails())
+                            .notebookSessionRuntimeConfigDetails(
+                                    o.getNotebookSessionRuntimeConfigDetails())
                             .notebookSessionUrl(o.getNotebookSessionUrl())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
@@ -444,6 +460,13 @@ public final class NotebookSession {
         return notebookSessionConfigDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionRuntimeConfigDetails")
+    private final NotebookSessionRuntimeConfigDetails notebookSessionRuntimeConfigDetails;
+
+    public NotebookSessionRuntimeConfigDetails getNotebookSessionRuntimeConfigDetails() {
+        return notebookSessionRuntimeConfigDetails;
+    }
+
     /**
      * The URL to interact with the notebook session.
      **/
@@ -545,6 +568,8 @@ public final class NotebookSession {
                 .append(String.valueOf(this.notebookSessionConfigurationDetails));
         sb.append(", notebookSessionConfigDetails=")
                 .append(String.valueOf(this.notebookSessionConfigDetails));
+        sb.append(", notebookSessionRuntimeConfigDetails=")
+                .append(String.valueOf(this.notebookSessionRuntimeConfigDetails));
         sb.append(", notebookSessionUrl=").append(String.valueOf(this.notebookSessionUrl));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -576,6 +601,9 @@ public final class NotebookSession {
                         other.notebookSessionConfigurationDetails)
                 && java.util.Objects.equals(
                         this.notebookSessionConfigDetails, other.notebookSessionConfigDetails)
+                && java.util.Objects.equals(
+                        this.notebookSessionRuntimeConfigDetails,
+                        other.notebookSessionRuntimeConfigDetails)
                 && java.util.Objects.equals(this.notebookSessionUrl, other.notebookSessionUrl)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -606,6 +634,11 @@ public final class NotebookSession {
                         + (this.notebookSessionConfigDetails == null
                                 ? 43
                                 : this.notebookSessionConfigDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notebookSessionRuntimeConfigDetails == null
+                                ? 43
+                                : this.notebookSessionRuntimeConfigDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.notebookSessionUrl == null

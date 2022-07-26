@@ -66,11 +66,11 @@ public class StreamAdminPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListConnectHarnessesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -119,11 +119,11 @@ public class StreamAdminPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListConnectHarnessesRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -178,11 +178,11 @@ public class StreamAdminPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStreamPoolsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -230,11 +230,11 @@ public class StreamAdminPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStreamPoolsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -288,11 +288,11 @@ public class StreamAdminPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStreamsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -340,11 +340,11 @@ public class StreamAdminPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListStreamsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

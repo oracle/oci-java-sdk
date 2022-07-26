@@ -8,7 +8,7 @@ import com.oracle.bmc.dts.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferJobExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTransferJobRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class GetTransferJobRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**

@@ -119,13 +119,13 @@ public class StreamPackagingConfig {
     }
 
     /**
-     * The name of the stream packaging configuration.
+     * The name of the stream packaging configuration. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The name of the stream packaging configuration.
+     * The name of the stream packaging configuration. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {

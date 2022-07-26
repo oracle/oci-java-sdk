@@ -450,6 +450,32 @@ public interface OperationsInsights extends AutoCloseable {
     EnableHostInsightResponse enableHostInsight(EnableHostInsightRequest request);
 
     /**
+     * Gets the AWR report for the specified database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetAwrDatabaseReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAwrDatabaseReport API.
+     */
+    GetAwrDatabaseReportResponse getAwrDatabaseReport(GetAwrDatabaseReportRequest request);
+
+    /**
+     * Gets the SQL health check report for one SQL of the specified database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetAwrDatabaseSqlReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAwrDatabaseSqlReport API.
+     */
+    GetAwrDatabaseSqlReportResponse getAwrDatabaseSqlReport(GetAwrDatabaseSqlReportRequest request);
+
+    /**
      * Gets details of an AWR hub.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -682,6 +708,33 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestSqlTextExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use IngestSqlText API.
      */
     IngestSqlTextResponse ingestSqlText(IngestSqlTextRequest request);
+
+    /**
+     * Lists AWR snapshots for the specified database in the AWR.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAwrDatabaseSnapshotsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAwrDatabaseSnapshots API.
+     */
+    ListAwrDatabaseSnapshotsResponse listAwrDatabaseSnapshots(
+            ListAwrDatabaseSnapshotsRequest request);
+
+    /**
+     * Gets the list of databases and their snapshot summary details available in the AWRHub.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAwrDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAwrDatabases API.
+     */
+    ListAwrDatabasesResponse listAwrDatabases(ListAwrDatabasesRequest request);
 
     /**
      * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
@@ -1015,6 +1068,150 @@ public interface OperationsInsights extends AutoCloseable {
      */
     RotateOperationsInsightsWarehouseWalletResponse rotateOperationsInsightsWarehouseWallet(
             RotateOperationsInsightsWarehouseWalletRequest request);
+
+    /**
+     * Summarizes the AWR CPU resource limits and metrics for the specified database in AWR.
+     * Based on the time range provided as part of query param, the metrics points will be returned in the response as below.
+     * - if time range is <=7 days then the metrics points will be for every MINUTES
+     * - if time range is <=2 hours then the metrics points will be for every 10 SECONDS
+     * - if time range is >7 days then the metrics points will be for every HOUR.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseCpuUsagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAwrDatabaseCpuUsages API.
+     */
+    SummarizeAwrDatabaseCpuUsagesResponse summarizeAwrDatabaseCpuUsages(
+            SummarizeAwrDatabaseCpuUsagesRequest request);
+
+    /**
+     * Summarizes the metric samples for the specified database in the AWR. The metric samples are summarized based on the Time dimension for each metric.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAwrDatabaseMetrics API.
+     */
+    SummarizeAwrDatabaseMetricsResponse summarizeAwrDatabaseMetrics(
+            SummarizeAwrDatabaseMetricsRequest request);
+
+    /**
+     * Summarizes the database parameter change history for one database parameter of the specified database in AWR. One change history record contains
+     * the previous value, the changed value, and the corresponding time range. If the database parameter value was changed multiple times within the time range, then multiple change history records are created for the same parameter.
+     * Note that this API only returns information on change history details for one database parameter.
+     * To get a list of all the database parameters whose values were changed during a specified time range, use the following API endpoint:
+     * /awrHubs/{awrHubId}/awrDbParameters?awrSourceDatabaseIdentifier={awrSourceDbId}
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseParameterChangesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAwrDatabaseParameterChanges API.
+     */
+    SummarizeAwrDatabaseParameterChangesResponse summarizeAwrDatabaseParameterChanges(
+            SummarizeAwrDatabaseParameterChangesRequest request);
+
+    /**
+     * Summarizes the database parameter history for the specified database in AWR. This includes the list of database
+     * parameters, with information on whether the parameter values were modified within the query time range. Note that
+     * each database parameter is only listed once. Depending on the optional query parameters, the returned summary gets all the database parameters, which include:
+     * <p>
+     * Queryparam (valueChanged =\"Y\") - Each parameter whose value was changed during the time range, \"isChanged : true\" in response for the DB params.
+     * Queryparam (valueChanged =\"N\") - Each parameter whose value was unchanged during the time range, \"isChanged : false\" in response for the DB params.
+     * Queryparam (valueChanged =\"Y\"  and valueModified = \"SYSTEM_MOD\") - Each parameter whose value was changed at the system level during the time range, \"isChanged : true\" & \"valueModified : SYSTEM_MOD\" in response for the DB params.
+     * Queryparam (valueChanged =\"N\" and  valueDefault = \"FALSE\") - Each parameter whose value was unchanged during the time range, however, the value is not the default value, \"isChanged : true\" & \"isDefault : false\" in response for the DB params.
+     * <p>
+     * Note that this API does not return information on the number of times each database parameter has been changed within the time range. To get the database parameter value change history for a specific parameter, use the following API endpoint:
+     * /awrHubs/{awrHubId}/awrDbParameterChanges?awrSourceDatabaseIdentifier={awrSourceDbId}
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAwrDatabaseParameters API.
+     */
+    SummarizeAwrDatabaseParametersResponse summarizeAwrDatabaseParameters(
+            SummarizeAwrDatabaseParametersRequest request);
+
+    /**
+     * Summarizes the AWR snapshot ranges that contain continuous snapshots, for the specified AWRHub.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseSnapshotRangesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAwrDatabaseSnapshotRanges API.
+     */
+    SummarizeAwrDatabaseSnapshotRangesResponse summarizeAwrDatabaseSnapshotRanges(
+            SummarizeAwrDatabaseSnapshotRangesRequest request);
+
+    /**
+     * Summarizes the AWR SYSSTAT sample data for the specified database in AWR. The statistical data is summarized based on the Time dimension for each statistic.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseSysstatsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAwrDatabaseSysstats API.
+     */
+    SummarizeAwrDatabaseSysstatsResponse summarizeAwrDatabaseSysstats(
+            SummarizeAwrDatabaseSysstatsRequest request);
+
+    /**
+     * Summarizes the AWR top wait events.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseTopWaitEventsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAwrDatabaseTopWaitEvents API.
+     */
+    SummarizeAwrDatabaseTopWaitEventsResponse summarizeAwrDatabaseTopWaitEvents(
+            SummarizeAwrDatabaseTopWaitEventsRequest request);
+
+    /**
+     * Summarizes AWR wait event data into value buckets and frequency, for the specified database in the AWR.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseWaitEventBucketsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAwrDatabaseWaitEventBuckets API.
+     */
+    SummarizeAwrDatabaseWaitEventBucketsResponse summarizeAwrDatabaseWaitEventBuckets(
+            SummarizeAwrDatabaseWaitEventBucketsRequest request);
+
+    /**
+     * Summarizes the AWR wait event sample data for the specified database in the AWR. The event data is summarized based on the Time dimension for each event.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseWaitEventsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAwrDatabaseWaitEvents API.
+     */
+    SummarizeAwrDatabaseWaitEventsResponse summarizeAwrDatabaseWaitEvents(
+            SummarizeAwrDatabaseWaitEventsRequest request);
 
     /**
      * Gets a list of summary of AWR Sources.

@@ -135,7 +135,7 @@ public class OciSaslClient implements SaslClient {
 
         final RSAPrivateKey privateKey =
                 keySupplier
-                        .getKey()
+                        .supplyKey()
                         .orElseThrow(() -> new SaslException("Unable to get private key"));
 
         final byte[] intentBytes = intent.getBytes(StandardCharsets.UTF_8);

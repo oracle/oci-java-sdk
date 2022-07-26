@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.oracle.bmc.InternalSdk;
+
 public class Constants {
 
     // Headers
@@ -22,6 +24,8 @@ public class Constants {
     static final String CONTENT_LENGTH = "content-length";
     static final String CONTENT_TYPE = "content-type";
     static final String X_CONTENT_SHA256 = "x-content-sha256";
+
+    @InternalSdk(backwardCompatibilityRequired = true)
     public static final String HOST = "host";
 
     // Optional
@@ -31,53 +35,120 @@ public class Constants {
 
     static final String JSON_CONTENT_TYPE = "application/json";
 
-    public static final List<String> GENERIC_HEADERS =
+    @InternalSdk(backwardCompatibilityRequired = true)
+    public static final List<String> GENERIC_HEADERS_LIST =
             Collections.unmodifiableList(Arrays.asList(DATE, REQUEST_TARGET, HOST));
-    public static final List<String> BODY_HEADERS =
+
+    /**
+     * This field will be removed soon, when Guava is removed as a dependency.
+     * @deprecated Use GENERIC_HEADERS_LIST instead
+     */
+    @Deprecated
+    @InternalSdk(backwardCompatibilityRequired = true)
+    public static final com.google.common /*Guava will be removed soon*/.collect.ImmutableList<
+                    String>
+            GENERIC_HEADERS =
+                    com.google.common /*Guava will be removed soon*/.collect.ImmutableList.copyOf(
+                            GENERIC_HEADERS_LIST);
+
+    public static final List<String> BODY_HEADERS_LIST =
             Collections.unmodifiableList(
                     Arrays.asList(CONTENT_LENGTH, CONTENT_TYPE, X_CONTENT_SHA256));
-    public static final List<String> ALL_HEADERS;
+
+    /**
+     * This field will be removed soon, when Guava is removed as a dependency.
+     * @deprecated use BODY_HEADERS_LIST instead
+     */
+    @Deprecated
+    public static final com.google.common /*Guava will be removed soon*/.collect.ImmutableList<
+                    String>
+            BODY_HEADERS =
+                    com.google.common /*Guava will be removed soon*/.collect.ImmutableList.copyOf(
+                            BODY_HEADERS_LIST);
+
+    public static final List<String> ALL_HEADERS_LIST;
 
     static {
-        List<String> tempAllHeaders = new ArrayList<>(GENERIC_HEADERS);
-        tempAllHeaders.addAll(BODY_HEADERS);
-        ALL_HEADERS = Collections.unmodifiableList(tempAllHeaders);
+        List<String> tempAllHeaders = new ArrayList<>(GENERIC_HEADERS_LIST);
+        tempAllHeaders.addAll(BODY_HEADERS_LIST);
+        ALL_HEADERS_LIST = Collections.unmodifiableList(tempAllHeaders);
     }
 
-    public static final Map<String, List<String>> REQUIRED_SIGNING_HEADERS =
-            createHeadersToSignMap(
-                    GENERIC_HEADERS,
-                    GENERIC_HEADERS,
-                    GENERIC_HEADERS,
-                    ALL_HEADERS,
-                    ALL_HEADERS,
-                    ALL_HEADERS);
+    /**
+     * This field will be removed soon, when Guava is removed as a dependency.
+     * @deprecated use ALL_HEADERS_LIST instead
+     */
+    public static final com.google.common /*Guava will be removed soon*/.collect.ImmutableList<
+                    String>
+            ALL_HEADERS =
+                    com.google.common /*Guava will be removed soon*/.collect.ImmutableList.copyOf(
+                            ALL_HEADERS_LIST);
+
+    public static final Map<String, List<String>> REQUIRED_SIGNING_HEADERS_MAP =
+            createHeadersToSignForVerbMap(
+                    GENERIC_HEADERS_LIST,
+                    GENERIC_HEADERS_LIST,
+                    GENERIC_HEADERS_LIST,
+                    ALL_HEADERS_LIST,
+                    ALL_HEADERS_LIST,
+                    ALL_HEADERS_LIST);
+
+    /**
+     * This field will be removed soon, when Guava is removed as a dependency.
+     * @deprecated use REQUIRED_SIGNING_HEADERS_MAP instead
+     */
+    @Deprecated
+    public static final com.google.common /*Guava will be removed soon*/.collect.ImmutableMap<
+                    String, List<String>>
+            REQUIRED_SIGNING_HEADERS =
+                    com.google.common /*Guava will be removed soon*/.collect.ImmutableMap.copyOf(
+                            REQUIRED_SIGNING_HEADERS_MAP);
 
     @Deprecated
     /**
      * A signing strategy that signs headers and body, except for PUT, where bodies are not signed
-     * @deprecated use REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS instead; Object Storage has migrated to using STANDARD, with EXCLUDE_BODY as a per-operation override.  We therefore do not want to maintain a service-specific signing strategy.
+     * @deprecated use REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS_MAP instead; Object Storage has migrated to using STANDARD, with EXCLUDE_BODY as a per-operation override.  We therefore do not want to maintain a service-specific signing strategy.
      */
-    public static final Map<String, List<String>> REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS =
-            createHeadersToSignMap(
-                    GENERIC_HEADERS,
-                    GENERIC_HEADERS,
-                    GENERIC_HEADERS,
-                    GENERIC_HEADERS, // PUT is special cased for object storage
+    public static final Map<String, List<String>> REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS_MAP =
+            createHeadersToSignForVerbMap(
+                    GENERIC_HEADERS_LIST,
+                    GENERIC_HEADERS_LIST,
+                    GENERIC_HEADERS_LIST,
+                    GENERIC_HEADERS_LIST, // PUT is special cased for object storage
                     ALL_HEADERS,
                     ALL_HEADERS);
 
     /**
+     * This field will be removed soon, when Guava is removed as a dependency.
+     * @deprecated use REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS_MAP instead
+     */
+    public static final com.google.common /*Guava will be removed soon*/.collect.ImmutableMap<
+                    String, List<String>>
+            REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS =
+                    com.google.common /*Guava will be removed soon*/.collect.ImmutableMap.copyOf(
+                            REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS_MAP);
+
+    /**
      * A signing strategy that signs headers only.
      */
-    public static final Map<String, List<String>> REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS =
-            createHeadersToSignMap(
-                    GENERIC_HEADERS,
-                    GENERIC_HEADERS,
-                    GENERIC_HEADERS,
-                    GENERIC_HEADERS,
-                    GENERIC_HEADERS,
-                    GENERIC_HEADERS);
+    public static final Map<String, List<String>> REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS_MAP =
+            createHeadersToSignForVerbMap(
+                    GENERIC_HEADERS_LIST,
+                    GENERIC_HEADERS_LIST,
+                    GENERIC_HEADERS_LIST,
+                    GENERIC_HEADERS_LIST,
+                    GENERIC_HEADERS_LIST,
+                    GENERIC_HEADERS_LIST);
+
+    /**
+     * This field will be removed soon, when Guava is removed as a dependency.
+     * @deprecated use REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS_MAP instead
+     */
+    public static final com.google.common /*Guava will be removed soon*/.collect.ImmutableMap<
+                    String, List<String>>
+            REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS =
+                    com.google.common /*Guava will be removed soon*/.collect.ImmutableMap.copyOf(
+                            REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS_MAP);
 
     /**
      * Headers included in the signature if they are set.
@@ -87,14 +158,56 @@ public class Constants {
                     Arrays.asList(
                             OPC_OBO_TOKEN, CROSS_TENANCY_REQUEST_HEADER_NAME, X_SUBSCRIPTION));
 
-    public static final Map<String, List<String>> OPTIONAL_SIGNING_HEADERS =
-            createHeadersToSignMap(
+    public static final Map<String, List<String>> OPTIONAL_SIGNING_HEADERS_MAP =
+            createHeadersToSignForVerbMap(
                     OPTIONAL_HEADERS_NAMES,
                     OPTIONAL_HEADERS_NAMES,
                     OPTIONAL_HEADERS_NAMES,
                     OPTIONAL_HEADERS_NAMES,
                     OPTIONAL_HEADERS_NAMES,
                     OPTIONAL_HEADERS_NAMES);
+
+    /**
+     * This field will be removed soon, when Guava is removed as a dependency.
+     * @deprecated use OPTIONAL_SIGNING_HEADERS_MAP instead
+     */
+    public static final com.google.common /*Guava will be removed soon*/.collect.ImmutableMap<
+                    String, List<String>>
+            OPTIONAL_SIGNING_HEADERS =
+                    com.google.common /*Guava will be removed soon*/.collect.ImmutableMap.copyOf(
+                            OPTIONAL_SIGNING_HEADERS_MAP);
+
+    /**
+     * Creates a map of headers to sign for each HTTP method.
+     * @param getHeaders headers for GET requests
+     * @param headHeaders headers for HEAD requests
+     * @param deleteHeaders headers for DELETE requests
+     * @param putHeaders headers for PUT requests
+     * @param postHeaders headers for POST requests
+     * @param patchHeaders headers for PATCH requests
+     * @return A new immutable map of headers
+     * @deprecated use createHeadersToSignForVerbMap instead
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Deprecated
+    public static com.google.common /*Guava will be removed soon*/.collect.ImmutableMap<
+                    String, List<String>>
+            createHeadersToSignMap(
+                    List<String> getHeaders,
+                    List<String> headHeaders,
+                    List<String> deleteHeaders,
+                    List<String> putHeaders,
+                    List<String> postHeaders,
+                    List<String> patchHeaders) {
+        return com.google.common /*Guava will be removed soon*/.collect.ImmutableMap.copyOf(
+                createHeadersToSignForVerbMap(
+                        getHeaders,
+                        headHeaders,
+                        deleteHeaders,
+                        putHeaders,
+                        postHeaders,
+                        patchHeaders));
+    }
 
     /**
      * Creates a map of headers to sign for each HTTP method.
@@ -106,7 +219,8 @@ public class Constants {
      * @param patchHeaders headers for PATCH requests
      * @return A new immutable map of headers
      */
-    public static Map<String, List<String>> createHeadersToSignMap(
+    @InternalSdk(backwardCompatibilityRequired = true)
+    public static Map<String, List<String>> createHeadersToSignForVerbMap(
             List<String> getHeaders,
             List<String> headHeaders,
             List<String> deleteHeaders,

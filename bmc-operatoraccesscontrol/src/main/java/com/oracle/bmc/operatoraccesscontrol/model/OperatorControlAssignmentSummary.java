@@ -37,6 +37,7 @@ public final class OperatorControlAssignmentSummary {
         "remoteSyslogServerAddress",
         "remoteSyslogServerPort",
         "lifecycleState",
+        "lifecycleDetails",
         "freeformTags",
         "definedTags"
     })
@@ -56,6 +57,7 @@ public final class OperatorControlAssignmentSummary {
             String remoteSyslogServerAddress,
             Integer remoteSyslogServerPort,
             OperatorControlAssignmentLifecycleStates lifecycleState,
+            String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -74,6 +76,7 @@ public final class OperatorControlAssignmentSummary {
         this.remoteSyslogServerAddress = remoteSyslogServerAddress;
         this.remoteSyslogServerPort = remoteSyslogServerPort;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -327,6 +330,22 @@ public final class OperatorControlAssignmentSummary {
             return this;
         }
         /**
+         * More in detail about the lifeCycleState.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * More in detail about the lifeCycleState.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          *
          **/
@@ -385,6 +404,7 @@ public final class OperatorControlAssignmentSummary {
                             remoteSyslogServerAddress,
                             remoteSyslogServerPort,
                             lifecycleState,
+                            lifecycleDetails,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -409,6 +429,7 @@ public final class OperatorControlAssignmentSummary {
                             .remoteSyslogServerAddress(o.getRemoteSyslogServerAddress())
                             .remoteSyslogServerPort(o.getRemoteSyslogServerPort())
                             .lifecycleState(o.getLifecycleState())
+                            .lifecycleDetails(o.getLifecycleDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -645,6 +666,20 @@ public final class OperatorControlAssignmentSummary {
     }
 
     /**
+     * More in detail about the lifeCycleState.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * More in detail about the lifeCycleState.
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      *
      **/
@@ -705,6 +740,7 @@ public final class OperatorControlAssignmentSummary {
                 .append(String.valueOf(this.remoteSyslogServerAddress));
         sb.append(", remoteSyslogServerPort=").append(String.valueOf(this.remoteSyslogServerPort));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
@@ -739,6 +775,7 @@ public final class OperatorControlAssignmentSummary {
                 && java.util.Objects.equals(
                         this.remoteSyslogServerPort, other.remoteSyslogServerPort)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
@@ -789,6 +826,9 @@ public final class OperatorControlAssignmentSummary {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

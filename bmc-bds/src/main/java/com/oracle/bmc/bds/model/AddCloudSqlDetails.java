@@ -21,11 +21,20 @@ package com.oracle.bmc.bds.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AddCloudSqlDetails {
     @Deprecated
-    @java.beans.ConstructorProperties({"shape", "blockVolumeSizeInGBs", "clusterAdminPassword"})
+    @java.beans.ConstructorProperties({
+        "shape",
+        "shapeConfig",
+        "blockVolumeSizeInGBs",
+        "clusterAdminPassword"
+    })
     public AddCloudSqlDetails(
-            String shape, Long blockVolumeSizeInGBs, String clusterAdminPassword) {
+            String shape,
+            ShapeConfigDetails shapeConfig,
+            Long blockVolumeSizeInGBs,
+            String clusterAdminPassword) {
         super();
         this.shape = shape;
+        this.shapeConfig = shapeConfig;
         this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
         this.clusterAdminPassword = clusterAdminPassword;
     }
@@ -46,6 +55,15 @@ public final class AddCloudSqlDetails {
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+        private ShapeConfigDetails shapeConfig;
+
+        public Builder shapeConfig(ShapeConfigDetails shapeConfig) {
+            this.shapeConfig = shapeConfig;
+            this.__explicitlySet__.add("shapeConfig");
             return this;
         }
         /**
@@ -88,7 +106,8 @@ public final class AddCloudSqlDetails {
 
         public AddCloudSqlDetails build() {
             AddCloudSqlDetails __instance__ =
-                    new AddCloudSqlDetails(shape, blockVolumeSizeInGBs, clusterAdminPassword);
+                    new AddCloudSqlDetails(
+                            shape, shapeConfig, blockVolumeSizeInGBs, clusterAdminPassword);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -97,6 +116,7 @@ public final class AddCloudSqlDetails {
         public Builder copy(AddCloudSqlDetails o) {
             Builder copiedBuilder =
                     shape(o.getShape())
+                            .shapeConfig(o.getShapeConfig())
                             .blockVolumeSizeInGBs(o.getBlockVolumeSizeInGBs())
                             .clusterAdminPassword(o.getClusterAdminPassword());
 
@@ -128,6 +148,13 @@ public final class AddCloudSqlDetails {
      **/
     public String getShape() {
         return shape;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+    private final ShapeConfigDetails shapeConfig;
+
+    public ShapeConfigDetails getShapeConfig() {
+        return shapeConfig;
     }
 
     /**
@@ -174,6 +201,7 @@ public final class AddCloudSqlDetails {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddCloudSqlDetails(");
         sb.append("shape=").append(String.valueOf(this.shape));
+        sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
         sb.append(", blockVolumeSizeInGBs=").append(String.valueOf(this.blockVolumeSizeInGBs));
         sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
@@ -192,6 +220,7 @@ public final class AddCloudSqlDetails {
 
         AddCloudSqlDetails other = (AddCloudSqlDetails) o;
         return java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
                 && java.util.Objects.equals(this.blockVolumeSizeInGBs, other.blockVolumeSizeInGBs)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
@@ -202,6 +231,7 @@ public final class AddCloudSqlDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.blockVolumeSizeInGBs == null

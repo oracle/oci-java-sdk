@@ -66,11 +66,11 @@ public class OperatorControlPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListOperatorControlsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }
@@ -120,11 +120,11 @@ public class OperatorControlPaginators {
                             com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
                                             ListOperatorControlsRequest.Builder>
                                     input) {
-                        if (input.getToken() == null) {
+                        if (input.getNextPageToken() == null) {
                             return input.getRequestBuilder().build();
                         } else {
                             return input.getRequestBuilder()
-                                    .page(input.getToken().orElse(null))
+                                    .page(input.getNextPageToken().orElse(null))
                                     .build();
                         }
                     }

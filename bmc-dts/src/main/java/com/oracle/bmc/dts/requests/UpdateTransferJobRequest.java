@@ -8,7 +8,7 @@ import com.oracle.bmc.dts.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferJobExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTransferJobRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class UpdateTransferJobRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dts.model.UpdateTransferJobDetails> {
