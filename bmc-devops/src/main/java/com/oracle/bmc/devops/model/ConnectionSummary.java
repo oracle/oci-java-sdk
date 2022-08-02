@@ -33,6 +33,14 @@ package com.oracle.bmc.devops.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GitlabAccessTokenConnectionSummary.class,
         name = "GITLAB_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketServerTokenConnectionSummary.class,
+        name = "BITBUCKET_SERVER_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GitlabServerAccessTokenConnectionSummary.class,
+        name = "GITLAB_SERVER_ACCESS_TOKEN"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

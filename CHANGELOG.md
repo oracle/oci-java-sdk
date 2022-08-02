@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.38.0 - 2022-08-02
+### Added
+- Support for OpenSearch in the Search service
+- Support for child tables in the NoSQL Database Cloud service
+- Support for private repositories in the DevOps service
+- Support for session token authentication
+
+### Breaking Changes
+- Support for retries by default on operations of the Quotas service
+
 ## 2.37.0 - 2022-07-26
 ### Added
 - Support for the Fusion Apps as a Service service

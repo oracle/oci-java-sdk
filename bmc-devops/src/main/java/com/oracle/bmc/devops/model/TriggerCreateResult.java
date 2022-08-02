@@ -23,6 +23,10 @@ package com.oracle.bmc.devops.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GitlabServerTriggerCreateResult.class,
+        name = "GITLAB_SERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GithubTriggerCreateResult.class,
         name = "GITHUB"
     ),
@@ -37,6 +41,10 @@ package com.oracle.bmc.devops.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = BitbucketCloudTriggerCreateResult.class,
         name = "BITBUCKET_CLOUD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketServerTriggerCreateResult.class,
+        name = "BITBUCKET_SERVER"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

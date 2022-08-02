@@ -23,6 +23,14 @@ package com.oracle.bmc.devops.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateBitbucketServerTriggerDetails.class,
+        name = "BITBUCKET_SERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateGitlabServerTriggerDetails.class,
+        name = "GITLAB_SERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDevopsCodeRepositoryTriggerDetails.class,
         name = "DEVOPS_CODE_REPOSITORY"
     ),

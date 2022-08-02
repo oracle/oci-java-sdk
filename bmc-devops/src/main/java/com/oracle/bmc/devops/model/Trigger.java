@@ -27,6 +27,14 @@ package com.oracle.bmc.devops.model;
         name = "GITLAB"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketServerTrigger.class,
+        name = "BITBUCKET_SERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GitlabServerTrigger.class,
+        name = "GITLAB_SERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GithubTrigger.class,
         name = "GITHUB"
     ),
@@ -403,7 +411,9 @@ public class Trigger {
     public enum TriggerSource {
         Github("GITHUB"),
         Gitlab("GITLAB"),
+        GitlabServer("GITLAB_SERVER"),
         BitbucketCloud("BITBUCKET_CLOUD"),
+        BitbucketServer("BITBUCKET_SERVER"),
         DevopsCodeRepository("DEVOPS_CODE_REPOSITORY"),
 
         /**

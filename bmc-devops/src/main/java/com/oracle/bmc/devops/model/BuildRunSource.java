@@ -23,6 +23,14 @@ package com.oracle.bmc.devops.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GitlabServerBuildRunSource.class,
+        name = "GITLAB_SERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketServerBuildRunSource.class,
+        name = "BITBUCKET_SERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GithubBuildRunSource.class,
         name = "GITHUB"
     ),
@@ -95,7 +103,9 @@ public class BuildRunSource {
         Manual("MANUAL"),
         Github("GITHUB"),
         Gitlab("GITLAB"),
+        GitlabServer("GITLAB_SERVER"),
         BitbucketCloud("BITBUCKET_CLOUD"),
+        BitbucketServer("BITBUCKET_SERVER"),
         DevopsCodeRepository("DEVOPS_CODE_REPOSITORY"),
 
         /**

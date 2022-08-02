@@ -90,13 +90,17 @@ public final class UpdateInvokeFunctionDeployStageDetails extends UpdateDeploySt
             return this;
         }
         /**
-         * Optional binary artifact OCID user may provide to this stage.
+         * Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution.
+         * If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
         private String deployArtifactId;
 
         /**
-         * Optional binary artifact OCID user may provide to this stage.
+         * Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution.
+         * If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
+         *
          * @param deployArtifactId the value to set
          * @return this builder
          **/
@@ -225,13 +229,17 @@ public final class UpdateInvokeFunctionDeployStageDetails extends UpdateDeploySt
     }
 
     /**
-     * Optional binary artifact OCID user may provide to this stage.
+     * Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution.
+     * If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
     private final String deployArtifactId;
 
     /**
-     * Optional binary artifact OCID user may provide to this stage.
+     * Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution.
+     * If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
+     *
      * @return the value
      **/
     public String getDeployArtifactId() {

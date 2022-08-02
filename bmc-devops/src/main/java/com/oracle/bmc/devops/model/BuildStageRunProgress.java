@@ -206,6 +206,15 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateAccessConfig")
+        private NetworkChannel privateAccessConfig;
+
+        public Builder privateAccessConfig(NetworkChannel privateAccessConfig) {
+            this.privateAccessConfig = privateAccessConfig;
+            this.__explicitlySet__.add("privateAccessConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -226,7 +235,8 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
                             buildSourceCollection,
                             primaryBuildSource,
                             steps,
-                            exportedVariables);
+                            exportedVariables,
+                            privateAccessConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -248,7 +258,8 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
                             .buildSourceCollection(o.getBuildSourceCollection())
                             .primaryBuildSource(o.getPrimaryBuildSource())
                             .steps(o.getSteps())
-                            .exportedVariables(o.getExportedVariables());
+                            .exportedVariables(o.getExportedVariables())
+                            .privateAccessConfig(o.getPrivateAccessConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -282,7 +293,8 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
             BuildSourceCollection buildSourceCollection,
             String primaryBuildSource,
             java.util.List<BuildStageRunStep> steps,
-            ExportedVariableCollection exportedVariables) {
+            ExportedVariableCollection exportedVariables,
+            NetworkChannel privateAccessConfig) {
         super(
                 stageDisplayName,
                 buildPipelineStageId,
@@ -299,6 +311,7 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
         this.primaryBuildSource = primaryBuildSource;
         this.steps = steps;
         this.exportedVariables = exportedVariables;
+        this.privateAccessConfig = privateAccessConfig;
     }
 
     /**
@@ -452,6 +465,13 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
         return exportedVariables;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("privateAccessConfig")
+    private final NetworkChannel privateAccessConfig;
+
+    public NetworkChannel getPrivateAccessConfig() {
+        return privateAccessConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -477,6 +497,7 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
         sb.append(", primaryBuildSource=").append(String.valueOf(this.primaryBuildSource));
         sb.append(", steps=").append(String.valueOf(this.steps));
         sb.append(", exportedVariables=").append(String.valueOf(this.exportedVariables));
+        sb.append(", privateAccessConfig=").append(String.valueOf(this.privateAccessConfig));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -503,6 +524,7 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
                 && java.util.Objects.equals(this.primaryBuildSource, other.primaryBuildSource)
                 && java.util.Objects.equals(this.steps, other.steps)
                 && java.util.Objects.equals(this.exportedVariables, other.exportedVariables)
+                && java.util.Objects.equals(this.privateAccessConfig, other.privateAccessConfig)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
                 && super.equals(o);
     }
@@ -544,6 +566,11 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
         result =
                 (result * PRIME)
                         + (this.exportedVariables == null ? 43 : this.exportedVariables.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateAccessConfig == null
+                                ? 43
+                                : this.privateAccessConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
