@@ -147,6 +147,15 @@ public final class UpdateBuildStageDetails extends UpdateBuildPipelineStageDetai
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateAccessConfig")
+        private NetworkChannel privateAccessConfig;
+
+        public Builder privateAccessConfig(NetworkChannel privateAccessConfig) {
+            this.privateAccessConfig = privateAccessConfig;
+            this.__explicitlySet__.add("privateAccessConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -162,7 +171,8 @@ public final class UpdateBuildStageDetails extends UpdateBuildPipelineStageDetai
                             buildSpecFile,
                             stageExecutionTimeoutInSeconds,
                             buildSourceCollection,
-                            primaryBuildSource);
+                            primaryBuildSource,
+                            privateAccessConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -180,7 +190,8 @@ public final class UpdateBuildStageDetails extends UpdateBuildPipelineStageDetai
                             .buildSpecFile(o.getBuildSpecFile())
                             .stageExecutionTimeoutInSeconds(o.getStageExecutionTimeoutInSeconds())
                             .buildSourceCollection(o.getBuildSourceCollection())
-                            .primaryBuildSource(o.getPrimaryBuildSource());
+                            .primaryBuildSource(o.getPrimaryBuildSource())
+                            .privateAccessConfig(o.getPrivateAccessConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -209,7 +220,8 @@ public final class UpdateBuildStageDetails extends UpdateBuildPipelineStageDetai
             String buildSpecFile,
             Integer stageExecutionTimeoutInSeconds,
             BuildSourceCollection buildSourceCollection,
-            String primaryBuildSource) {
+            String primaryBuildSource,
+            NetworkChannel privateAccessConfig) {
         super(
                 displayName,
                 description,
@@ -221,6 +233,7 @@ public final class UpdateBuildStageDetails extends UpdateBuildPipelineStageDetai
         this.stageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
         this.buildSourceCollection = buildSourceCollection;
         this.primaryBuildSource = primaryBuildSource;
+        this.privateAccessConfig = privateAccessConfig;
     }
 
     /**
@@ -286,6 +299,13 @@ public final class UpdateBuildStageDetails extends UpdateBuildPipelineStageDetai
         return primaryBuildSource;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("privateAccessConfig")
+    private final NetworkChannel privateAccessConfig;
+
+    public NetworkChannel getPrivateAccessConfig() {
+        return privateAccessConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -306,6 +326,7 @@ public final class UpdateBuildStageDetails extends UpdateBuildPipelineStageDetai
                 .append(String.valueOf(this.stageExecutionTimeoutInSeconds));
         sb.append(", buildSourceCollection=").append(String.valueOf(this.buildSourceCollection));
         sb.append(", primaryBuildSource=").append(String.valueOf(this.primaryBuildSource));
+        sb.append(", privateAccessConfig=").append(String.valueOf(this.privateAccessConfig));
         sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
@@ -327,6 +348,7 @@ public final class UpdateBuildStageDetails extends UpdateBuildPipelineStageDetai
                         this.stageExecutionTimeoutInSeconds, other.stageExecutionTimeoutInSeconds)
                 && java.util.Objects.equals(this.buildSourceCollection, other.buildSourceCollection)
                 && java.util.Objects.equals(this.primaryBuildSource, other.primaryBuildSource)
+                && java.util.Objects.equals(this.privateAccessConfig, other.privateAccessConfig)
                 && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
                 && super.equals(o);
     }
@@ -354,6 +376,11 @@ public final class UpdateBuildStageDetails extends UpdateBuildPipelineStageDetai
                         + (this.primaryBuildSource == null
                                 ? 43
                                 : this.primaryBuildSource.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateAccessConfig == null
+                                ? 43
+                                : this.privateAccessConfig.hashCode());
         result =
                 (result * PRIME)
                         + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());

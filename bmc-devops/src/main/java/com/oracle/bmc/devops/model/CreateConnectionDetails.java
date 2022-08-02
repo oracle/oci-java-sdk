@@ -24,6 +24,14 @@ package com.oracle.bmc.devops.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateGitlabServerAccessTokenConnectionDetails.class,
+        name = "GITLAB_SERVER_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateBitbucketServerAccessTokenConnectionDetails.class,
+        name = "BITBUCKET_SERVER_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateGithubAccessTokenConnectionDetails.class,
         name = "GITHUB_ACCESS_TOKEN"
     ),

@@ -31,10 +31,21 @@ package com.oracle.bmc.devops.model;
         name = "BITBUCKET_CLOUD"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketServerFilter.class,
+        name = "BITBUCKET_SERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GitlabFilter.class,
         name = "GITLAB"
     ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = GithubFilter.class, name = "GITHUB")
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GithubFilter.class,
+        name = "GITHUB"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GitlabServerFilter.class,
+        name = "GITLAB_SERVER"
+    )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Filter {

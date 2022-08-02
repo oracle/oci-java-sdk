@@ -91,6 +91,7 @@ package com.oracle.bmc.graalvm;
     com.oracle.bmc.onesubscription.SdkClientsMetadata.class,
     com.oracle.bmc.ons.SdkClientsMetadata.class,
     com.oracle.bmc.opa.SdkClientsMetadata.class,
+    com.oracle.bmc.opensearch.SdkClientsMetadata.class,
     com.oracle.bmc.operatoraccesscontrol.SdkClientsMetadata.class,
     com.oracle.bmc.opsi.SdkClientsMetadata.class,
     com.oracle.bmc.optimizer.SdkClientsMetadata.class,

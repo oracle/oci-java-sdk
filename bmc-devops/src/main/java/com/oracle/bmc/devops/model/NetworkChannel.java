@@ -25,6 +25,10 @@ package com.oracle.bmc.devops.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ServiceVnicChannel.class,
+        name = "SERVICE_VNIC_CHANNEL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = PrivateEndpointChannel.class,
         name = "PRIVATE_ENDPOINT_CHANNEL"
     )
@@ -79,6 +83,7 @@ public class NetworkChannel {
      **/
     public enum NetworkChannelType {
         PrivateEndpointChannel("PRIVATE_ENDPOINT_CHANNEL"),
+        ServiceVnicChannel("SERVICE_VNIC_CHANNEL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -23,12 +23,20 @@ package com.oracle.bmc.devops.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketServerBuildSource.class,
+        name = "BITBUCKET_SERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GithubBuildSource.class,
         name = "GITHUB"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = BitbucketCloudBuildSource.class,
         name = "BITBUCKET_CLOUD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GitlabServerBuildSource.class,
+        name = "GITLAB_SERVER"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DevopsCodeRepositoryBuildSource.class,
@@ -145,7 +153,9 @@ public class BuildSource {
     public enum ConnectionType {
         Github("GITHUB"),
         Gitlab("GITLAB"),
+        GitlabServer("GITLAB_SERVER"),
         BitbucketCloud("BITBUCKET_CLOUD"),
+        BitbucketServer("BITBUCKET_SERVER"),
         DevopsCodeRepository("DEVOPS_CODE_REPOSITORY"),
 
         /**

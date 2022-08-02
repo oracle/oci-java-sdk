@@ -31,12 +31,20 @@ package com.oracle.bmc.devops.model;
         name = "GITLAB"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GitlabServerTriggerSummary.class,
+        name = "GITLAB_SERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GithubTriggerSummary.class,
         name = "GITHUB"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DevopsCodeRepositoryTriggerSummary.class,
         name = "DEVOPS_CODE_REPOSITORY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = BitbucketServerTriggerSummary.class,
+        name = "BITBUCKET_SERVER"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

@@ -28,12 +28,20 @@ package com.oracle.bmc.devops.model;
         name = "GITHUB_ACCESS_TOKEN"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateBitbucketServerAccessTokenConnectionDetails.class,
+        name = "BITBUCKET_SERVER_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateGitlabAccessTokenConnectionDetails.class,
         name = "GITLAB_ACCESS_TOKEN"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateBitbucketCloudAppPasswordConnectionDetails.class,
         name = "BITBUCKET_CLOUD_APP_PASSWORD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateGitlabServerAccessTokenConnectionDetails.class,
+        name = "GITLAB_SERVER_ACCESS_TOKEN"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
