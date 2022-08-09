@@ -22,7 +22,7 @@ package com.oracle.bmc.database.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DatabaseSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseSummary {
+public final class DatabaseSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -559,73 +559,126 @@ public final class DatabaseSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseSummary build() {
-            DatabaseSummary __instance__ =
+            DatabaseSummary model =
                     new DatabaseSummary(
-                            id,
-                            compartmentId,
-                            characterSet,
-                            ncharacterSet,
-                            dbHomeId,
-                            dbSystemId,
-                            vmClusterId,
-                            dbName,
-                            pdbName,
-                            dbWorkload,
-                            dbUniqueName,
-                            lifecycleDetails,
-                            lifecycleState,
-                            timeCreated,
-                            lastBackupTimestamp,
-                            dbBackupConfig,
-                            freeformTags,
-                            definedTags,
-                            connectionStrings,
-                            kmsKeyId,
-                            kmsKeyVersionId,
-                            vaultId,
-                            sourceDatabasePointInTimeRecoveryTimestamp,
-                            databaseSoftwareImageId,
-                            isCdb,
-                            databaseManagementConfig,
-                            sidPrefix);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.characterSet,
+                            this.ncharacterSet,
+                            this.dbHomeId,
+                            this.dbSystemId,
+                            this.vmClusterId,
+                            this.dbName,
+                            this.pdbName,
+                            this.dbWorkload,
+                            this.dbUniqueName,
+                            this.lifecycleDetails,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.lastBackupTimestamp,
+                            this.dbBackupConfig,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.connectionStrings,
+                            this.kmsKeyId,
+                            this.kmsKeyVersionId,
+                            this.vaultId,
+                            this.sourceDatabasePointInTimeRecoveryTimestamp,
+                            this.databaseSoftwareImageId,
+                            this.isCdb,
+                            this.databaseManagementConfig,
+                            this.sidPrefix);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .characterSet(o.getCharacterSet())
-                            .ncharacterSet(o.getNcharacterSet())
-                            .dbHomeId(o.getDbHomeId())
-                            .dbSystemId(o.getDbSystemId())
-                            .vmClusterId(o.getVmClusterId())
-                            .dbName(o.getDbName())
-                            .pdbName(o.getPdbName())
-                            .dbWorkload(o.getDbWorkload())
-                            .dbUniqueName(o.getDbUniqueName())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .lastBackupTimestamp(o.getLastBackupTimestamp())
-                            .dbBackupConfig(o.getDbBackupConfig())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .connectionStrings(o.getConnectionStrings())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .kmsKeyVersionId(o.getKmsKeyVersionId())
-                            .vaultId(o.getVaultId())
-                            .sourceDatabasePointInTimeRecoveryTimestamp(
-                                    o.getSourceDatabasePointInTimeRecoveryTimestamp())
-                            .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
-                            .isCdb(o.getIsCdb())
-                            .databaseManagementConfig(o.getDatabaseManagementConfig())
-                            .sidPrefix(o.getSidPrefix());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("characterSet")) {
+                this.characterSet(model.getCharacterSet());
+            }
+            if (model.wasPropertyExplicitlySet("ncharacterSet")) {
+                this.ncharacterSet(model.getNcharacterSet());
+            }
+            if (model.wasPropertyExplicitlySet("dbHomeId")) {
+                this.dbHomeId(model.getDbHomeId());
+            }
+            if (model.wasPropertyExplicitlySet("dbSystemId")) {
+                this.dbSystemId(model.getDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterId")) {
+                this.vmClusterId(model.getVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("dbName")) {
+                this.dbName(model.getDbName());
+            }
+            if (model.wasPropertyExplicitlySet("pdbName")) {
+                this.pdbName(model.getPdbName());
+            }
+            if (model.wasPropertyExplicitlySet("dbWorkload")) {
+                this.dbWorkload(model.getDbWorkload());
+            }
+            if (model.wasPropertyExplicitlySet("dbUniqueName")) {
+                this.dbUniqueName(model.getDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lastBackupTimestamp")) {
+                this.lastBackupTimestamp(model.getLastBackupTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("dbBackupConfig")) {
+                this.dbBackupConfig(model.getDbBackupConfig());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("connectionStrings")) {
+                this.connectionStrings(model.getConnectionStrings());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
+                this.kmsKeyVersionId(model.getKmsKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDatabasePointInTimeRecoveryTimestamp")) {
+                this.sourceDatabasePointInTimeRecoveryTimestamp(
+                        model.getSourceDatabasePointInTimeRecoveryTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
+                this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("isCdb")) {
+                this.isCdb(model.getIsCdb());
+            }
+            if (model.wasPropertyExplicitlySet("databaseManagementConfig")) {
+                this.databaseManagementConfig(model.getDatabaseManagementConfig());
+            }
+            if (model.wasPropertyExplicitlySet("sidPrefix")) {
+                this.sidPrefix(model.getSidPrefix());
+            }
+            return this;
         }
     }
 
@@ -1091,6 +1144,7 @@ public final class DatabaseSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
@@ -1121,7 +1175,6 @@ public final class DatabaseSummary {
         sb.append(", databaseManagementConfig=")
                 .append(String.valueOf(this.databaseManagementConfig));
         sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1167,7 +1220,7 @@ public final class DatabaseSummary {
                 && java.util.Objects.equals(
                         this.databaseManagementConfig, other.databaseManagementConfig)
                 && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1231,16 +1284,7 @@ public final class DatabaseSummary {
                                 ? 43
                                 : this.databaseManagementConfig.hashCode());
         result = (result * PRIME) + (this.sidPrefix == null ? 43 : this.sidPrefix.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

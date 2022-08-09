@@ -171,8 +171,8 @@ public class ListFusionEnvironmentFamiliesConverter {
                                                 com.oracle.bmc.fusionapps.responses
                                                         .ListFusionEnvironmentFamiliesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.fusionEnvironmentFamilyCollection(response.getItem());
 

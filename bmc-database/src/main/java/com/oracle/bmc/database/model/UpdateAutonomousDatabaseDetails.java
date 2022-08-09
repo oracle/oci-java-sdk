@@ -26,7 +26,8 @@ package com.oracle.bmc.database.model;
     builder = UpdateAutonomousDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateAutonomousDatabaseDetails {
+public final class UpdateAutonomousDatabaseDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cpuCoreCount",
@@ -897,86 +898,153 @@ public final class UpdateAutonomousDatabaseDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAutonomousDatabaseDetails build() {
-            UpdateAutonomousDatabaseDetails __instance__ =
+            UpdateAutonomousDatabaseDetails model =
                     new UpdateAutonomousDatabaseDetails(
-                            cpuCoreCount,
-                            ocpuCount,
-                            dataStorageSizeInTBs,
-                            dataStorageSizeInGBs,
-                            displayName,
-                            isFreeTier,
-                            adminPassword,
-                            dbName,
-                            freeformTags,
-                            definedTags,
-                            dbWorkload,
-                            licenseModel,
-                            isAccessControlEnabled,
-                            whitelistedIps,
-                            arePrimaryWhitelistedIpsUsed,
-                            standbyWhitelistedIps,
-                            isAutoScalingEnabled,
-                            isRefreshableClone,
-                            refreshableMode,
-                            isLocalDataGuardEnabled,
-                            isDataGuardEnabled,
-                            peerDbId,
-                            dbVersion,
-                            openMode,
-                            permissionLevel,
-                            subnetId,
-                            privateEndpointLabel,
-                            nsgIds,
-                            customerContacts,
-                            isMtlsConnectionRequired,
-                            scheduledOperations,
-                            isAutoScalingForStorageEnabled,
-                            maxCpuCoreCount,
-                            databaseEdition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.cpuCoreCount,
+                            this.ocpuCount,
+                            this.dataStorageSizeInTBs,
+                            this.dataStorageSizeInGBs,
+                            this.displayName,
+                            this.isFreeTier,
+                            this.adminPassword,
+                            this.dbName,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.dbWorkload,
+                            this.licenseModel,
+                            this.isAccessControlEnabled,
+                            this.whitelistedIps,
+                            this.arePrimaryWhitelistedIpsUsed,
+                            this.standbyWhitelistedIps,
+                            this.isAutoScalingEnabled,
+                            this.isRefreshableClone,
+                            this.refreshableMode,
+                            this.isLocalDataGuardEnabled,
+                            this.isDataGuardEnabled,
+                            this.peerDbId,
+                            this.dbVersion,
+                            this.openMode,
+                            this.permissionLevel,
+                            this.subnetId,
+                            this.privateEndpointLabel,
+                            this.nsgIds,
+                            this.customerContacts,
+                            this.isMtlsConnectionRequired,
+                            this.scheduledOperations,
+                            this.isAutoScalingForStorageEnabled,
+                            this.maxCpuCoreCount,
+                            this.databaseEdition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateAutonomousDatabaseDetails o) {
-            Builder copiedBuilder =
-                    cpuCoreCount(o.getCpuCoreCount())
-                            .ocpuCount(o.getOcpuCount())
-                            .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
-                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
-                            .displayName(o.getDisplayName())
-                            .isFreeTier(o.getIsFreeTier())
-                            .adminPassword(o.getAdminPassword())
-                            .dbName(o.getDbName())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .dbWorkload(o.getDbWorkload())
-                            .licenseModel(o.getLicenseModel())
-                            .isAccessControlEnabled(o.getIsAccessControlEnabled())
-                            .whitelistedIps(o.getWhitelistedIps())
-                            .arePrimaryWhitelistedIpsUsed(o.getArePrimaryWhitelistedIpsUsed())
-                            .standbyWhitelistedIps(o.getStandbyWhitelistedIps())
-                            .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
-                            .isRefreshableClone(o.getIsRefreshableClone())
-                            .refreshableMode(o.getRefreshableMode())
-                            .isLocalDataGuardEnabled(o.getIsLocalDataGuardEnabled())
-                            .isDataGuardEnabled(o.getIsDataGuardEnabled())
-                            .peerDbId(o.getPeerDbId())
-                            .dbVersion(o.getDbVersion())
-                            .openMode(o.getOpenMode())
-                            .permissionLevel(o.getPermissionLevel())
-                            .subnetId(o.getSubnetId())
-                            .privateEndpointLabel(o.getPrivateEndpointLabel())
-                            .nsgIds(o.getNsgIds())
-                            .customerContacts(o.getCustomerContacts())
-                            .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
-                            .scheduledOperations(o.getScheduledOperations())
-                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
-                            .maxCpuCoreCount(o.getMaxCpuCoreCount())
-                            .databaseEdition(o.getDatabaseEdition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateAutonomousDatabaseDetails model) {
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuCount")) {
+                this.ocpuCount(model.getOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInTBs")) {
+                this.dataStorageSizeInTBs(model.getDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
+                this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isFreeTier")) {
+                this.isFreeTier(model.getIsFreeTier());
+            }
+            if (model.wasPropertyExplicitlySet("adminPassword")) {
+                this.adminPassword(model.getAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("dbName")) {
+                this.dbName(model.getDbName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("dbWorkload")) {
+                this.dbWorkload(model.getDbWorkload());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("isAccessControlEnabled")) {
+                this.isAccessControlEnabled(model.getIsAccessControlEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("whitelistedIps")) {
+                this.whitelistedIps(model.getWhitelistedIps());
+            }
+            if (model.wasPropertyExplicitlySet("arePrimaryWhitelistedIpsUsed")) {
+                this.arePrimaryWhitelistedIpsUsed(model.getArePrimaryWhitelistedIpsUsed());
+            }
+            if (model.wasPropertyExplicitlySet("standbyWhitelistedIps")) {
+                this.standbyWhitelistedIps(model.getStandbyWhitelistedIps());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
+                this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isRefreshableClone")) {
+                this.isRefreshableClone(model.getIsRefreshableClone());
+            }
+            if (model.wasPropertyExplicitlySet("refreshableMode")) {
+                this.refreshableMode(model.getRefreshableMode());
+            }
+            if (model.wasPropertyExplicitlySet("isLocalDataGuardEnabled")) {
+                this.isLocalDataGuardEnabled(model.getIsLocalDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isDataGuardEnabled")) {
+                this.isDataGuardEnabled(model.getIsDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("peerDbId")) {
+                this.peerDbId(model.getPeerDbId());
+            }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("openMode")) {
+                this.openMode(model.getOpenMode());
+            }
+            if (model.wasPropertyExplicitlySet("permissionLevel")) {
+                this.permissionLevel(model.getPermissionLevel());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointLabel")) {
+                this.privateEndpointLabel(model.getPrivateEndpointLabel());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("customerContacts")) {
+                this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("isMtlsConnectionRequired")) {
+                this.isMtlsConnectionRequired(model.getIsMtlsConnectionRequired());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledOperations")) {
+                this.scheduledOperations(model.getScheduledOperations());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoScalingForStorageEnabled")) {
+                this.isAutoScalingForStorageEnabled(model.getIsAutoScalingForStorageEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("maxCpuCoreCount")) {
+                this.maxCpuCoreCount(model.getMaxCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("databaseEdition")) {
+                this.databaseEdition(model.getDatabaseEdition());
+            }
+            return this;
         }
     }
 
@@ -1875,6 +1943,7 @@ public final class UpdateAutonomousDatabaseDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateAutonomousDatabaseDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
         sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
@@ -1913,7 +1982,6 @@ public final class UpdateAutonomousDatabaseDetails {
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
         sb.append(", maxCpuCoreCount=").append(String.valueOf(this.maxCpuCoreCount));
         sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1967,7 +2035,7 @@ public final class UpdateAutonomousDatabaseDetails {
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
                 && java.util.Objects.equals(this.maxCpuCoreCount, other.maxCpuCoreCount)
                 && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -2074,16 +2142,7 @@ public final class UpdateAutonomousDatabaseDetails {
         result =
                 (result * PRIME)
                         + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

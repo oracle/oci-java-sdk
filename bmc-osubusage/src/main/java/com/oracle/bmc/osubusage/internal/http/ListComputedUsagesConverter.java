@@ -189,8 +189,8 @@ public class ListComputedUsagesConverter {
                                         builder =
                                                 com.oracle.bmc.osubusage.responses
                                                         .ListComputedUsagesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

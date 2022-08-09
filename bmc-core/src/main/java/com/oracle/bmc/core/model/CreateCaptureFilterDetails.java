@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = CreateCaptureFilterDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateCaptureFilterDetails {
+public final class CreateCaptureFilterDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -175,30 +176,41 @@ public final class CreateCaptureFilterDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateCaptureFilterDetails build() {
-            CreateCaptureFilterDetails __instance__ =
+            CreateCaptureFilterDetails model =
                     new CreateCaptureFilterDetails(
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            filterType,
-                            vtapCaptureFilterRules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.filterType,
+                            this.vtapCaptureFilterRules);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateCaptureFilterDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .filterType(o.getFilterType())
-                            .vtapCaptureFilterRules(o.getVtapCaptureFilterRules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateCaptureFilterDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("filterType")) {
+                this.filterType(model.getFilterType());
+            }
+            if (model.wasPropertyExplicitlySet("vtapCaptureFilterRules")) {
+                this.vtapCaptureFilterRules(model.getVtapCaptureFilterRules());
+            }
+            return this;
         }
     }
 
@@ -368,13 +380,13 @@ public final class CreateCaptureFilterDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateCaptureFilterDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", filterType=").append(String.valueOf(this.filterType));
         sb.append(", vtapCaptureFilterRules=").append(String.valueOf(this.vtapCaptureFilterRules));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -396,7 +408,7 @@ public final class CreateCaptureFilterDetails {
                 && java.util.Objects.equals(this.filterType, other.filterType)
                 && java.util.Objects.equals(
                         this.vtapCaptureFilterRules, other.vtapCaptureFilterRules)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -415,16 +427,7 @@ public final class CreateCaptureFilterDetails {
                         + (this.vtapCaptureFilterRules == null
                                 ? 43
                                 : this.vtapCaptureFilterRules.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

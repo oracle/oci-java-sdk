@@ -116,8 +116,8 @@ public class UpdateTagDefaultConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .UpdateTagDefaultResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tagDefault(response.getItem());
 

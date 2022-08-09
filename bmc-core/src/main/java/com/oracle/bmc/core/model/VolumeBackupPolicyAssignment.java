@@ -23,7 +23,8 @@ package com.oracle.bmc.core.model;
     builder = VolumeBackupPolicyAssignment.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VolumeBackupPolicyAssignment {
+public final class VolumeBackupPolicyAssignment
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"assetId", "id", "policyId", "timeCreated"})
     public VolumeBackupPolicyAssignment(
@@ -112,22 +113,30 @@ public final class VolumeBackupPolicyAssignment {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VolumeBackupPolicyAssignment build() {
-            VolumeBackupPolicyAssignment __instance__ =
-                    new VolumeBackupPolicyAssignment(assetId, id, policyId, timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VolumeBackupPolicyAssignment model =
+                    new VolumeBackupPolicyAssignment(
+                            this.assetId, this.id, this.policyId, this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VolumeBackupPolicyAssignment o) {
-            Builder copiedBuilder =
-                    assetId(o.getAssetId())
-                            .id(o.getId())
-                            .policyId(o.getPolicyId())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VolumeBackupPolicyAssignment model) {
+            if (model.wasPropertyExplicitlySet("assetId")) {
+                this.assetId(model.getAssetId());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("policyId")) {
+                this.policyId(model.getPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -217,11 +226,11 @@ public final class VolumeBackupPolicyAssignment {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VolumeBackupPolicyAssignment(");
+        sb.append("super=").append(super.toString());
         sb.append("assetId=").append(String.valueOf(this.assetId));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", policyId=").append(String.valueOf(this.policyId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -240,7 +249,7 @@ public final class VolumeBackupPolicyAssignment {
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.policyId, other.policyId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -251,16 +260,7 @@ public final class VolumeBackupPolicyAssignment {
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.policyId == null ? 43 : this.policyId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

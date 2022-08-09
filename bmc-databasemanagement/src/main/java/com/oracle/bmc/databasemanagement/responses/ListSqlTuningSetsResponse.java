@@ -60,16 +60,18 @@ public class ListSqlTuningSetsResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "sqlTuningSetCollection"
     })
     private ListSqlTuningSetsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.databasemanagement.model.SqlTuningSetCollection sqlTuningSetCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.sqlTuningSetCollection = sqlTuningSetCollection;
@@ -80,6 +82,13 @@ public class ListSqlTuningSetsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -147,6 +156,7 @@ public class ListSqlTuningSetsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(ListSqlTuningSetsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             sqlTuningSetCollection(o.getSqlTuningSetCollection());
@@ -160,7 +170,7 @@ public class ListSqlTuningSetsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public ListSqlTuningSetsResponse build() {
             return new ListSqlTuningSetsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, sqlTuningSetCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, sqlTuningSetCollection);
         }
     }
 

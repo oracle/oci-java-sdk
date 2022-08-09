@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = UpdateAttributeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateAttributeDetails {
+public final class UpdateAttributeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -384,52 +385,85 @@ public final class UpdateAttributeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAttributeDetails build() {
-            UpdateAttributeDetails __instance__ =
+            UpdateAttributeDetails model =
                     new UpdateAttributeDetails(
-                            displayName,
-                            businessName,
-                            description,
-                            externalDataType,
-                            isIncrementalData,
-                            isNullable,
-                            length,
-                            position,
-                            precision,
-                            scale,
-                            timeExternal,
-                            minCollectionCount,
-                            maxCollectionCount,
-                            externalDatatypeEntityKey,
-                            externalParentAttributeKey,
-                            customPropertyMembers,
-                            properties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.businessName,
+                            this.description,
+                            this.externalDataType,
+                            this.isIncrementalData,
+                            this.isNullable,
+                            this.length,
+                            this.position,
+                            this.precision,
+                            this.scale,
+                            this.timeExternal,
+                            this.minCollectionCount,
+                            this.maxCollectionCount,
+                            this.externalDatatypeEntityKey,
+                            this.externalParentAttributeKey,
+                            this.customPropertyMembers,
+                            this.properties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateAttributeDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .businessName(o.getBusinessName())
-                            .description(o.getDescription())
-                            .externalDataType(o.getExternalDataType())
-                            .isIncrementalData(o.getIsIncrementalData())
-                            .isNullable(o.getIsNullable())
-                            .length(o.getLength())
-                            .position(o.getPosition())
-                            .precision(o.getPrecision())
-                            .scale(o.getScale())
-                            .timeExternal(o.getTimeExternal())
-                            .minCollectionCount(o.getMinCollectionCount())
-                            .maxCollectionCount(o.getMaxCollectionCount())
-                            .externalDatatypeEntityKey(o.getExternalDatatypeEntityKey())
-                            .externalParentAttributeKey(o.getExternalParentAttributeKey())
-                            .customPropertyMembers(o.getCustomPropertyMembers())
-                            .properties(o.getProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateAttributeDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("businessName")) {
+                this.businessName(model.getBusinessName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("externalDataType")) {
+                this.externalDataType(model.getExternalDataType());
+            }
+            if (model.wasPropertyExplicitlySet("isIncrementalData")) {
+                this.isIncrementalData(model.getIsIncrementalData());
+            }
+            if (model.wasPropertyExplicitlySet("isNullable")) {
+                this.isNullable(model.getIsNullable());
+            }
+            if (model.wasPropertyExplicitlySet("length")) {
+                this.length(model.getLength());
+            }
+            if (model.wasPropertyExplicitlySet("position")) {
+                this.position(model.getPosition());
+            }
+            if (model.wasPropertyExplicitlySet("precision")) {
+                this.precision(model.getPrecision());
+            }
+            if (model.wasPropertyExplicitlySet("scale")) {
+                this.scale(model.getScale());
+            }
+            if (model.wasPropertyExplicitlySet("timeExternal")) {
+                this.timeExternal(model.getTimeExternal());
+            }
+            if (model.wasPropertyExplicitlySet("minCollectionCount")) {
+                this.minCollectionCount(model.getMinCollectionCount());
+            }
+            if (model.wasPropertyExplicitlySet("maxCollectionCount")) {
+                this.maxCollectionCount(model.getMaxCollectionCount());
+            }
+            if (model.wasPropertyExplicitlySet("externalDatatypeEntityKey")) {
+                this.externalDatatypeEntityKey(model.getExternalDatatypeEntityKey());
+            }
+            if (model.wasPropertyExplicitlySet("externalParentAttributeKey")) {
+                this.externalParentAttributeKey(model.getExternalParentAttributeKey());
+            }
+            if (model.wasPropertyExplicitlySet("customPropertyMembers")) {
+                this.customPropertyMembers(model.getCustomPropertyMembers());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            return this;
         }
     }
 
@@ -721,6 +755,7 @@ public final class UpdateAttributeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateAttributeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", businessName=").append(String.valueOf(this.businessName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -740,7 +775,6 @@ public final class UpdateAttributeDetails {
                 .append(String.valueOf(this.externalParentAttributeKey));
         sb.append(", customPropertyMembers=").append(String.valueOf(this.customPropertyMembers));
         sb.append(", properties=").append(String.valueOf(this.properties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -774,7 +808,7 @@ public final class UpdateAttributeDetails {
                         this.externalParentAttributeKey, other.externalParentAttributeKey)
                 && java.util.Objects.equals(this.customPropertyMembers, other.customPropertyMembers)
                 && java.util.Objects.equals(this.properties, other.properties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -822,16 +856,7 @@ public final class UpdateAttributeDetails {
                                 ? 43
                                 : this.customPropertyMembers.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

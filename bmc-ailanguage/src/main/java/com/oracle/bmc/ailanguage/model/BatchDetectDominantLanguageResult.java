@@ -19,7 +19,8 @@ package com.oracle.bmc.ailanguage.model;
     builder = BatchDetectDominantLanguageResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BatchDetectDominantLanguageResult {
+public final class BatchDetectDominantLanguageResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"documents", "errors"})
     public BatchDetectDominantLanguageResult(
@@ -69,18 +70,23 @@ public final class BatchDetectDominantLanguageResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BatchDetectDominantLanguageResult build() {
-            BatchDetectDominantLanguageResult __instance__ =
-                    new BatchDetectDominantLanguageResult(documents, errors);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BatchDetectDominantLanguageResult model =
+                    new BatchDetectDominantLanguageResult(this.documents, this.errors);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BatchDetectDominantLanguageResult o) {
-            Builder copiedBuilder = documents(o.getDocuments()).errors(o.getErrors());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BatchDetectDominantLanguageResult model) {
+            if (model.wasPropertyExplicitlySet("documents")) {
+                this.documents(model.getDocuments());
+            }
+            if (model.wasPropertyExplicitlySet("errors")) {
+                this.errors(model.getErrors());
+            }
+            return this;
         }
     }
 
@@ -136,9 +142,9 @@ public final class BatchDetectDominantLanguageResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchDetectDominantLanguageResult(");
+        sb.append("super=").append(super.toString());
         sb.append("documents=").append(String.valueOf(this.documents));
         sb.append(", errors=").append(String.valueOf(this.errors));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +161,7 @@ public final class BatchDetectDominantLanguageResult {
         BatchDetectDominantLanguageResult other = (BatchDetectDominantLanguageResult) o;
         return java.util.Objects.equals(this.documents, other.documents)
                 && java.util.Objects.equals(this.errors, other.errors)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -164,16 +170,7 @@ public final class BatchDetectDominantLanguageResult {
         int result = 1;
         result = (result * PRIME) + (this.documents == null ? 43 : this.documents.hashCode());
         result = (result * PRIME) + (this.errors == null ? 43 : this.errors.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

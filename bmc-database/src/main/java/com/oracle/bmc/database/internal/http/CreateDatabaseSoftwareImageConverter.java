@@ -109,8 +109,8 @@ public class CreateDatabaseSoftwareImageConverter {
                                                 com.oracle.bmc.database.responses
                                                         .CreateDatabaseSoftwareImageResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseSoftwareImage(response.getItem());
 

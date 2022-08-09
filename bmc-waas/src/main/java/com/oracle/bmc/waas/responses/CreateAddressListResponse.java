@@ -47,13 +47,20 @@ public class CreateAddressListResponse extends com.oracle.bmc.responses.BmcRespo
         return addressList;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "addressList"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "addressList"
+    })
     private CreateAddressListResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.waas.model.AddressList addressList) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.addressList = addressList;
@@ -64,6 +71,13 @@ public class CreateAddressListResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -118,6 +132,7 @@ public class CreateAddressListResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(CreateAddressListResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             addressList(o.getAddressList());
@@ -131,7 +146,7 @@ public class CreateAddressListResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public CreateAddressListResponse build() {
             return new CreateAddressListResponse(
-                    __httpStatusCode__, opcRequestId, etag, addressList);
+                    __httpStatusCode__, headers, opcRequestId, etag, addressList);
         }
     }
 

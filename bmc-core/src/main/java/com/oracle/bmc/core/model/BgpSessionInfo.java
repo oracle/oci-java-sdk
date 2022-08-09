@@ -17,7 +17,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BgpSessionInfo.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BgpSessionInfo {
+public final class BgpSessionInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "oracleInterfaceIp",
@@ -302,34 +302,49 @@ public final class BgpSessionInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BgpSessionInfo build() {
-            BgpSessionInfo __instance__ =
+            BgpSessionInfo model =
                     new BgpSessionInfo(
-                            oracleInterfaceIp,
-                            customerInterfaceIp,
-                            oracleInterfaceIpv6,
-                            customerInterfaceIpv6,
-                            oracleBgpAsn,
-                            customerBgpAsn,
-                            bgpState,
-                            bgpIpv6State);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.oracleInterfaceIp,
+                            this.customerInterfaceIp,
+                            this.oracleInterfaceIpv6,
+                            this.customerInterfaceIpv6,
+                            this.oracleBgpAsn,
+                            this.customerBgpAsn,
+                            this.bgpState,
+                            this.bgpIpv6State);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BgpSessionInfo o) {
-            Builder copiedBuilder =
-                    oracleInterfaceIp(o.getOracleInterfaceIp())
-                            .customerInterfaceIp(o.getCustomerInterfaceIp())
-                            .oracleInterfaceIpv6(o.getOracleInterfaceIpv6())
-                            .customerInterfaceIpv6(o.getCustomerInterfaceIpv6())
-                            .oracleBgpAsn(o.getOracleBgpAsn())
-                            .customerBgpAsn(o.getCustomerBgpAsn())
-                            .bgpState(o.getBgpState())
-                            .bgpIpv6State(o.getBgpIpv6State());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BgpSessionInfo model) {
+            if (model.wasPropertyExplicitlySet("oracleInterfaceIp")) {
+                this.oracleInterfaceIp(model.getOracleInterfaceIp());
+            }
+            if (model.wasPropertyExplicitlySet("customerInterfaceIp")) {
+                this.customerInterfaceIp(model.getCustomerInterfaceIp());
+            }
+            if (model.wasPropertyExplicitlySet("oracleInterfaceIpv6")) {
+                this.oracleInterfaceIpv6(model.getOracleInterfaceIpv6());
+            }
+            if (model.wasPropertyExplicitlySet("customerInterfaceIpv6")) {
+                this.customerInterfaceIpv6(model.getCustomerInterfaceIpv6());
+            }
+            if (model.wasPropertyExplicitlySet("oracleBgpAsn")) {
+                this.oracleBgpAsn(model.getOracleBgpAsn());
+            }
+            if (model.wasPropertyExplicitlySet("customerBgpAsn")) {
+                this.customerBgpAsn(model.getCustomerBgpAsn());
+            }
+            if (model.wasPropertyExplicitlySet("bgpState")) {
+                this.bgpState(model.getBgpState());
+            }
+            if (model.wasPropertyExplicitlySet("bgpIpv6State")) {
+                this.bgpIpv6State(model.getBgpIpv6State());
+            }
+            return this;
         }
     }
 
@@ -685,6 +700,7 @@ public final class BgpSessionInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BgpSessionInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("oracleInterfaceIp=").append(String.valueOf(this.oracleInterfaceIp));
         sb.append(", customerInterfaceIp=").append(String.valueOf(this.customerInterfaceIp));
         sb.append(", oracleInterfaceIpv6=").append(String.valueOf(this.oracleInterfaceIpv6));
@@ -693,7 +709,6 @@ public final class BgpSessionInfo {
         sb.append(", customerBgpAsn=").append(String.valueOf(this.customerBgpAsn));
         sb.append(", bgpState=").append(String.valueOf(this.bgpState));
         sb.append(", bgpIpv6State=").append(String.valueOf(this.bgpIpv6State));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -716,7 +731,7 @@ public final class BgpSessionInfo {
                 && java.util.Objects.equals(this.customerBgpAsn, other.customerBgpAsn)
                 && java.util.Objects.equals(this.bgpState, other.bgpState)
                 && java.util.Objects.equals(this.bgpIpv6State, other.bgpIpv6State)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -747,16 +762,7 @@ public final class BgpSessionInfo {
                         + (this.customerBgpAsn == null ? 43 : this.customerBgpAsn.hashCode());
         result = (result * PRIME) + (this.bgpState == null ? 43 : this.bgpState.hashCode());
         result = (result * PRIME) + (this.bgpIpv6State == null ? 43 : this.bgpIpv6State.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

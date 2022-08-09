@@ -19,7 +19,7 @@ package com.oracle.bmc.datasafe.model;
     builder = SectionStatistics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SectionStatistics {
+public final class SectionStatistics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "targetsCount",
@@ -188,36 +188,51 @@ public final class SectionStatistics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SectionStatistics build() {
-            SectionStatistics __instance__ =
+            SectionStatistics model =
                     new SectionStatistics(
-                            targetsCount,
-                            auditingFindingsCount,
-                            authorizationControlFindingsCount,
-                            dataEncryptionFindingsCount,
-                            dbConfigurationFindingsCount,
-                            fineGrainedAccessControlFindingsCount,
-                            privilegesAndRolesFindingsCount,
-                            userAccountsFindingsCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.targetsCount,
+                            this.auditingFindingsCount,
+                            this.authorizationControlFindingsCount,
+                            this.dataEncryptionFindingsCount,
+                            this.dbConfigurationFindingsCount,
+                            this.fineGrainedAccessControlFindingsCount,
+                            this.privilegesAndRolesFindingsCount,
+                            this.userAccountsFindingsCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SectionStatistics o) {
-            Builder copiedBuilder =
-                    targetsCount(o.getTargetsCount())
-                            .auditingFindingsCount(o.getAuditingFindingsCount())
-                            .authorizationControlFindingsCount(
-                                    o.getAuthorizationControlFindingsCount())
-                            .dataEncryptionFindingsCount(o.getDataEncryptionFindingsCount())
-                            .dbConfigurationFindingsCount(o.getDbConfigurationFindingsCount())
-                            .fineGrainedAccessControlFindingsCount(
-                                    o.getFineGrainedAccessControlFindingsCount())
-                            .privilegesAndRolesFindingsCount(o.getPrivilegesAndRolesFindingsCount())
-                            .userAccountsFindingsCount(o.getUserAccountsFindingsCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SectionStatistics model) {
+            if (model.wasPropertyExplicitlySet("targetsCount")) {
+                this.targetsCount(model.getTargetsCount());
+            }
+            if (model.wasPropertyExplicitlySet("auditingFindingsCount")) {
+                this.auditingFindingsCount(model.getAuditingFindingsCount());
+            }
+            if (model.wasPropertyExplicitlySet("authorizationControlFindingsCount")) {
+                this.authorizationControlFindingsCount(
+                        model.getAuthorizationControlFindingsCount());
+            }
+            if (model.wasPropertyExplicitlySet("dataEncryptionFindingsCount")) {
+                this.dataEncryptionFindingsCount(model.getDataEncryptionFindingsCount());
+            }
+            if (model.wasPropertyExplicitlySet("dbConfigurationFindingsCount")) {
+                this.dbConfigurationFindingsCount(model.getDbConfigurationFindingsCount());
+            }
+            if (model.wasPropertyExplicitlySet("fineGrainedAccessControlFindingsCount")) {
+                this.fineGrainedAccessControlFindingsCount(
+                        model.getFineGrainedAccessControlFindingsCount());
+            }
+            if (model.wasPropertyExplicitlySet("privilegesAndRolesFindingsCount")) {
+                this.privilegesAndRolesFindingsCount(model.getPrivilegesAndRolesFindingsCount());
+            }
+            if (model.wasPropertyExplicitlySet("userAccountsFindingsCount")) {
+                this.userAccountsFindingsCount(model.getUserAccountsFindingsCount());
+            }
+            return this;
         }
     }
 
@@ -357,6 +372,7 @@ public final class SectionStatistics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SectionStatistics(");
+        sb.append("super=").append(super.toString());
         sb.append("targetsCount=").append(String.valueOf(this.targetsCount));
         sb.append(", auditingFindingsCount=").append(String.valueOf(this.auditingFindingsCount));
         sb.append(", authorizationControlFindingsCount=")
@@ -371,7 +387,6 @@ public final class SectionStatistics {
                 .append(String.valueOf(this.privilegesAndRolesFindingsCount));
         sb.append(", userAccountsFindingsCount=")
                 .append(String.valueOf(this.userAccountsFindingsCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -402,7 +417,7 @@ public final class SectionStatistics {
                         this.privilegesAndRolesFindingsCount, other.privilegesAndRolesFindingsCount)
                 && java.util.Objects.equals(
                         this.userAccountsFindingsCount, other.userAccountsFindingsCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -445,16 +460,7 @@ public final class SectionStatistics {
                         + (this.userAccountsFindingsCount == null
                                 ? 43
                                 : this.userAccountsFindingsCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

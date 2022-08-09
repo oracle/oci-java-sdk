@@ -17,7 +17,7 @@ package com.oracle.bmc.devops.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BuildRunProgress.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BuildRunProgress {
+public final class BuildRunProgress extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeStarted",
@@ -91,21 +91,29 @@ public final class BuildRunProgress {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BuildRunProgress build() {
-            BuildRunProgress __instance__ =
-                    new BuildRunProgress(timeStarted, timeFinished, buildPipelineStageRunProgress);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BuildRunProgress model =
+                    new BuildRunProgress(
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.buildPipelineStageRunProgress);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BuildRunProgress o) {
-            Builder copiedBuilder =
-                    timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .buildPipelineStageRunProgress(o.getBuildPipelineStageRunProgress());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BuildRunProgress model) {
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineStageRunProgress")) {
+                this.buildPipelineStageRunProgress(model.getBuildPipelineStageRunProgress());
+            }
+            return this;
         }
     }
 
@@ -176,11 +184,11 @@ public final class BuildRunProgress {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BuildRunProgress(");
+        sb.append("super=").append(super.toString());
         sb.append("timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
         sb.append(", buildPipelineStageRunProgress=")
                 .append(String.valueOf(this.buildPipelineStageRunProgress));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,7 +207,7 @@ public final class BuildRunProgress {
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
                 && java.util.Objects.equals(
                         this.buildPipelineStageRunProgress, other.buildPipelineStageRunProgress)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -213,16 +221,7 @@ public final class BuildRunProgress {
                         + (this.buildPipelineStageRunProgress == null
                                 ? 43
                                 : this.buildPipelineStageRunProgress.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

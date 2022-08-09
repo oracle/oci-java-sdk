@@ -24,7 +24,7 @@ package com.oracle.bmc.networkloadbalancer.model;
     builder = BackendSetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BackendSetDetails {
+public final class BackendSetDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "policy",
@@ -141,24 +141,37 @@ public final class BackendSetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BackendSetDetails build() {
-            BackendSetDetails __instance__ =
+            BackendSetDetails model =
                     new BackendSetDetails(
-                            policy, ipVersion, isPreserveSource, backends, healthChecker);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.policy,
+                            this.ipVersion,
+                            this.isPreserveSource,
+                            this.backends,
+                            this.healthChecker);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BackendSetDetails o) {
-            Builder copiedBuilder =
-                    policy(o.getPolicy())
-                            .ipVersion(o.getIpVersion())
-                            .isPreserveSource(o.getIsPreserveSource())
-                            .backends(o.getBackends())
-                            .healthChecker(o.getHealthChecker());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BackendSetDetails model) {
+            if (model.wasPropertyExplicitlySet("policy")) {
+                this.policy(model.getPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("ipVersion")) {
+                this.ipVersion(model.getIpVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isPreserveSource")) {
+                this.isPreserveSource(model.getIsPreserveSource());
+            }
+            if (model.wasPropertyExplicitlySet("backends")) {
+                this.backends(model.getBackends());
+            }
+            if (model.wasPropertyExplicitlySet("healthChecker")) {
+                this.healthChecker(model.getHealthChecker());
+            }
+            return this;
         }
     }
 
@@ -263,12 +276,12 @@ public final class BackendSetDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BackendSetDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("policy=").append(String.valueOf(this.policy));
         sb.append(", ipVersion=").append(String.valueOf(this.ipVersion));
         sb.append(", isPreserveSource=").append(String.valueOf(this.isPreserveSource));
         sb.append(", backends=").append(String.valueOf(this.backends));
         sb.append(", healthChecker=").append(String.valueOf(this.healthChecker));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -288,7 +301,7 @@ public final class BackendSetDetails {
                 && java.util.Objects.equals(this.isPreserveSource, other.isPreserveSource)
                 && java.util.Objects.equals(this.backends, other.backends)
                 && java.util.Objects.equals(this.healthChecker, other.healthChecker)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -304,16 +317,7 @@ public final class BackendSetDetails {
         result =
                 (result * PRIME)
                         + (this.healthChecker == null ? 43 : this.healthChecker.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

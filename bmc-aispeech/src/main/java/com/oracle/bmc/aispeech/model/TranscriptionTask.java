@@ -19,7 +19,7 @@ package com.oracle.bmc.aispeech.model;
     builder = TranscriptionTask.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TranscriptionTask {
+public final class TranscriptionTask extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -32,6 +32,7 @@ public final class TranscriptionTask {
         "audioFormatDetails",
         "fileSizeInBytes",
         "fileDurationInSeconds",
+        "processingDurationInSeconds",
         "inputLocation",
         "outputLocation",
         "lifecycleState",
@@ -48,6 +49,7 @@ public final class TranscriptionTask {
             AudioFormatDetails audioFormatDetails,
             Integer fileSizeInBytes,
             Integer fileDurationInSeconds,
+            Integer processingDurationInSeconds,
             ObjectLocation inputLocation,
             ObjectLocation outputLocation,
             LifecycleState lifecycleState,
@@ -63,6 +65,7 @@ public final class TranscriptionTask {
         this.audioFormatDetails = audioFormatDetails;
         this.fileSizeInBytes = fileSizeInBytes;
         this.fileDurationInSeconds = fileDurationInSeconds;
+        this.processingDurationInSeconds = processingDurationInSeconds;
         this.inputLocation = inputLocation;
         this.outputLocation = outputLocation;
         this.lifecycleState = lifecycleState;
@@ -217,6 +220,22 @@ public final class TranscriptionTask {
             this.__explicitlySet__.add("fileDurationInSeconds");
             return this;
         }
+        /**
+         * Task proccessing duration, which excludes waiting time in the system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("processingDurationInSeconds")
+        private Integer processingDurationInSeconds;
+
+        /**
+         * Task proccessing duration, which excludes waiting time in the system.
+         * @param processingDurationInSeconds the value to set
+         * @return this builder
+         **/
+        public Builder processingDurationInSeconds(Integer processingDurationInSeconds) {
+            this.processingDurationInSeconds = processingDurationInSeconds;
+            this.__explicitlySet__.add("processingDurationInSeconds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("inputLocation")
         private ObjectLocation inputLocation;
@@ -272,46 +291,77 @@ public final class TranscriptionTask {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TranscriptionTask build() {
-            TranscriptionTask __instance__ =
+            TranscriptionTask model =
                     new TranscriptionTask(
-                            id,
-                            displayName,
-                            timeStarted,
-                            timeFinished,
-                            percentComplete,
-                            ttlInDays,
-                            modelDetails,
-                            audioFormatDetails,
-                            fileSizeInBytes,
-                            fileDurationInSeconds,
-                            inputLocation,
-                            outputLocation,
-                            lifecycleState,
-                            lifecycleDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.percentComplete,
+                            this.ttlInDays,
+                            this.modelDetails,
+                            this.audioFormatDetails,
+                            this.fileSizeInBytes,
+                            this.fileDurationInSeconds,
+                            this.processingDurationInSeconds,
+                            this.inputLocation,
+                            this.outputLocation,
+                            this.lifecycleState,
+                            this.lifecycleDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TranscriptionTask o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .percentComplete(o.getPercentComplete())
-                            .ttlInDays(o.getTtlInDays())
-                            .modelDetails(o.getModelDetails())
-                            .audioFormatDetails(o.getAudioFormatDetails())
-                            .fileSizeInBytes(o.getFileSizeInBytes())
-                            .fileDurationInSeconds(o.getFileDurationInSeconds())
-                            .inputLocation(o.getInputLocation())
-                            .outputLocation(o.getOutputLocation())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TranscriptionTask model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("percentComplete")) {
+                this.percentComplete(model.getPercentComplete());
+            }
+            if (model.wasPropertyExplicitlySet("ttlInDays")) {
+                this.ttlInDays(model.getTtlInDays());
+            }
+            if (model.wasPropertyExplicitlySet("modelDetails")) {
+                this.modelDetails(model.getModelDetails());
+            }
+            if (model.wasPropertyExplicitlySet("audioFormatDetails")) {
+                this.audioFormatDetails(model.getAudioFormatDetails());
+            }
+            if (model.wasPropertyExplicitlySet("fileSizeInBytes")) {
+                this.fileSizeInBytes(model.getFileSizeInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("fileDurationInSeconds")) {
+                this.fileDurationInSeconds(model.getFileDurationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("processingDurationInSeconds")) {
+                this.processingDurationInSeconds(model.getProcessingDurationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("inputLocation")) {
+                this.inputLocation(model.getInputLocation());
+            }
+            if (model.wasPropertyExplicitlySet("outputLocation")) {
+                this.outputLocation(model.getOutputLocation());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            return this;
         }
     }
 
@@ -452,6 +502,20 @@ public final class TranscriptionTask {
         return fileDurationInSeconds;
     }
 
+    /**
+     * Task proccessing duration, which excludes waiting time in the system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("processingDurationInSeconds")
+    private final Integer processingDurationInSeconds;
+
+    /**
+     * Task proccessing duration, which excludes waiting time in the system.
+     * @return the value
+     **/
+    public Integer getProcessingDurationInSeconds() {
+        return processingDurationInSeconds;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("inputLocation")
     private final ObjectLocation inputLocation;
 
@@ -558,6 +622,7 @@ public final class TranscriptionTask {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TranscriptionTask(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
@@ -568,11 +633,12 @@ public final class TranscriptionTask {
         sb.append(", audioFormatDetails=").append(String.valueOf(this.audioFormatDetails));
         sb.append(", fileSizeInBytes=").append(String.valueOf(this.fileSizeInBytes));
         sb.append(", fileDurationInSeconds=").append(String.valueOf(this.fileDurationInSeconds));
+        sb.append(", processingDurationInSeconds=")
+                .append(String.valueOf(this.processingDurationInSeconds));
         sb.append(", inputLocation=").append(String.valueOf(this.inputLocation));
         sb.append(", outputLocation=").append(String.valueOf(this.outputLocation));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -597,11 +663,13 @@ public final class TranscriptionTask {
                 && java.util.Objects.equals(this.audioFormatDetails, other.audioFormatDetails)
                 && java.util.Objects.equals(this.fileSizeInBytes, other.fileSizeInBytes)
                 && java.util.Objects.equals(this.fileDurationInSeconds, other.fileDurationInSeconds)
+                && java.util.Objects.equals(
+                        this.processingDurationInSeconds, other.processingDurationInSeconds)
                 && java.util.Objects.equals(this.inputLocation, other.inputLocation)
                 && java.util.Objects.equals(this.outputLocation, other.outputLocation)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -632,6 +700,11 @@ public final class TranscriptionTask {
                                 : this.fileDurationInSeconds.hashCode());
         result =
                 (result * PRIME)
+                        + (this.processingDurationInSeconds == null
+                                ? 43
+                                : this.processingDurationInSeconds.hashCode());
+        result =
+                (result * PRIME)
                         + (this.inputLocation == null ? 43 : this.inputLocation.hashCode());
         result =
                 (result * PRIME)
@@ -642,16 +715,7 @@ public final class TranscriptionTask {
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

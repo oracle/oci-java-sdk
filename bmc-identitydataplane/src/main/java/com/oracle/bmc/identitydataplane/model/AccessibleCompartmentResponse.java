@@ -19,7 +19,8 @@ package com.oracle.bmc.identitydataplane.model;
     builder = AccessibleCompartmentResponse.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AccessibleCompartmentResponse {
+public final class AccessibleCompartmentResponse
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentsMetadata"})
     public AccessibleCompartmentResponse(java.util.List<CompartmentMetadata> compartmentsMetadata) {
@@ -51,18 +52,20 @@ public final class AccessibleCompartmentResponse {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AccessibleCompartmentResponse build() {
-            AccessibleCompartmentResponse __instance__ =
-                    new AccessibleCompartmentResponse(compartmentsMetadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AccessibleCompartmentResponse model =
+                    new AccessibleCompartmentResponse(this.compartmentsMetadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AccessibleCompartmentResponse o) {
-            Builder copiedBuilder = compartmentsMetadata(o.getCompartmentsMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AccessibleCompartmentResponse model) {
+            if (model.wasPropertyExplicitlySet("compartmentsMetadata")) {
+                this.compartmentsMetadata(model.getCompartmentsMetadata());
+            }
+            return this;
         }
     }
 
@@ -104,8 +107,8 @@ public final class AccessibleCompartmentResponse {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AccessibleCompartmentResponse(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentsMetadata=").append(String.valueOf(this.compartmentsMetadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -121,7 +124,7 @@ public final class AccessibleCompartmentResponse {
 
         AccessibleCompartmentResponse other = (AccessibleCompartmentResponse) o;
         return java.util.Objects.equals(this.compartmentsMetadata, other.compartmentsMetadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -133,16 +136,7 @@ public final class AccessibleCompartmentResponse {
                         + (this.compartmentsMetadata == null
                                 ? 43
                                 : this.compartmentsMetadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

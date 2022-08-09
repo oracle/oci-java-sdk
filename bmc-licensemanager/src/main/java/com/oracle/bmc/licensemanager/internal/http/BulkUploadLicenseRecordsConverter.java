@@ -114,8 +114,8 @@ public class BulkUploadLicenseRecordsConverter {
                                         builder =
                                                 com.oracle.bmc.licensemanager.responses
                                                         .BulkUploadLicenseRecordsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.bulkUploadResponse(response.getItem());
 

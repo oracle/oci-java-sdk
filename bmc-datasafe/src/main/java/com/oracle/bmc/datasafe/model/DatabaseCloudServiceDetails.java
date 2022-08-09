@@ -88,23 +88,33 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseCloudServiceDetails build() {
-            DatabaseCloudServiceDetails __instance__ =
+            DatabaseCloudServiceDetails model =
                     new DatabaseCloudServiceDetails(
-                            infrastructureType, vmClusterId, dbSystemId, serviceName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.infrastructureType,
+                            this.vmClusterId,
+                            this.dbSystemId,
+                            this.serviceName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseCloudServiceDetails o) {
-            Builder copiedBuilder =
-                    infrastructureType(o.getInfrastructureType())
-                            .vmClusterId(o.getVmClusterId())
-                            .dbSystemId(o.getDbSystemId())
-                            .serviceName(o.getServiceName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseCloudServiceDetails model) {
+            if (model.wasPropertyExplicitlySet("infrastructureType")) {
+                this.infrastructureType(model.getInfrastructureType());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterId")) {
+                this.vmClusterId(model.getVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("dbSystemId")) {
+                this.dbSystemId(model.getDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("serviceName")) {
+                this.serviceName(model.getServiceName());
+            }
+            return this;
         }
     }
 
@@ -190,7 +200,6 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
         sb.append(", vmClusterId=").append(String.valueOf(this.vmClusterId));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -208,8 +217,7 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
         return java.util.Objects.equals(this.vmClusterId, other.vmClusterId)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -219,16 +227,6 @@ public final class DatabaseCloudServiceDetails extends DatabaseDetails {
         result = (result * PRIME) + (this.vmClusterId == null ? 43 : this.vmClusterId.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

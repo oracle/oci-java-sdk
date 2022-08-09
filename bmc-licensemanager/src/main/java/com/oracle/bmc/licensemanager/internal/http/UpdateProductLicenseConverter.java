@@ -118,8 +118,8 @@ public class UpdateProductLicenseConverter {
                                         builder =
                                                 com.oracle.bmc.licensemanager.responses
                                                         .UpdateProductLicenseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.productLicense(response.getItem());
 

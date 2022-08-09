@@ -138,8 +138,8 @@ public class SearchMonitoredResourcesConverter {
                                         builder =
                                                 com.oracle.bmc.stackmonitoring.responses
                                                         .SearchMonitoredResourcesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.monitoredResourceCollection(response.getItem());
 

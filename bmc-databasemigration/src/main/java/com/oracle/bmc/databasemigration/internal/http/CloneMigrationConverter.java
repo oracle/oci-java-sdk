@@ -118,8 +118,8 @@ public class CloneMigrationConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .CloneMigrationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.migration(response.getItem());
 

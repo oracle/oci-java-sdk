@@ -107,8 +107,8 @@ public class UpdateAlertConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .UpdateAlertResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.alert(response.getItem());
 

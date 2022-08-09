@@ -56,17 +56,22 @@ public final class JsonFormatAttribute extends AbstractFormatAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JsonFormatAttribute build() {
-            JsonFormatAttribute __instance__ = new JsonFormatAttribute(isFilePattern, encoding);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            JsonFormatAttribute model = new JsonFormatAttribute(this.isFilePattern, this.encoding);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JsonFormatAttribute o) {
-            Builder copiedBuilder = isFilePattern(o.getIsFilePattern()).encoding(o.getEncoding());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JsonFormatAttribute model) {
+            if (model.wasPropertyExplicitlySet("isFilePattern")) {
+                this.isFilePattern(model.getIsFilePattern());
+            }
+            if (model.wasPropertyExplicitlySet("encoding")) {
+                this.encoding(model.getEncoding());
+            }
+            return this;
         }
     }
 
@@ -116,7 +121,6 @@ public final class JsonFormatAttribute extends AbstractFormatAttribute {
         sb.append("JsonFormatAttribute(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", encoding=").append(String.valueOf(this.encoding));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -131,9 +135,7 @@ public final class JsonFormatAttribute extends AbstractFormatAttribute {
         }
 
         JsonFormatAttribute other = (JsonFormatAttribute) o;
-        return java.util.Objects.equals(this.encoding, other.encoding)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.encoding, other.encoding) && super.equals(other);
     }
 
     @Override
@@ -141,16 +143,6 @@ public final class JsonFormatAttribute extends AbstractFormatAttribute {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.encoding == null ? 43 : this.encoding.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = FullPushDownTaskResponse.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FullPushDownTaskResponse {
+public final class FullPushDownTaskResponse
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"modelType", "errorMessage", "status"})
     public FullPushDownTaskResponse(String modelType, String errorMessage, String status) {
@@ -84,21 +85,26 @@ public final class FullPushDownTaskResponse {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FullPushDownTaskResponse build() {
-            FullPushDownTaskResponse __instance__ =
-                    new FullPushDownTaskResponse(modelType, errorMessage, status);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FullPushDownTaskResponse model =
+                    new FullPushDownTaskResponse(this.modelType, this.errorMessage, this.status);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FullPushDownTaskResponse o) {
-            Builder copiedBuilder =
-                    modelType(o.getModelType())
-                            .errorMessage(o.getErrorMessage())
-                            .status(o.getStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FullPushDownTaskResponse model) {
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            return this;
         }
     }
 
@@ -168,10 +174,10 @@ public final class FullPushDownTaskResponse {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FullPushDownTaskResponse(");
+        sb.append("super=").append(super.toString());
         sb.append("modelType=").append(String.valueOf(this.modelType));
         sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
         sb.append(", status=").append(String.valueOf(this.status));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -189,7 +195,7 @@ public final class FullPushDownTaskResponse {
         return java.util.Objects.equals(this.modelType, other.modelType)
                 && java.util.Objects.equals(this.errorMessage, other.errorMessage)
                 && java.util.Objects.equals(this.status, other.status)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -199,16 +205,7 @@ public final class FullPushDownTaskResponse {
         result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
         result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

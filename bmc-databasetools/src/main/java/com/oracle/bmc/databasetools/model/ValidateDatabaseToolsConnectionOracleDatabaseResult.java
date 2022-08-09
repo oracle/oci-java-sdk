@@ -100,25 +100,41 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ValidateDatabaseToolsConnectionOracleDatabaseResult build() {
-            ValidateDatabaseToolsConnectionOracleDatabaseResult __instance__ =
+            ValidateDatabaseToolsConnectionOracleDatabaseResult model =
                     new ValidateDatabaseToolsConnectionOracleDatabaseResult(
-                            code, message, cause, action, databaseName, databaseVersion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.code,
+                            this.message,
+                            this.cause,
+                            this.action,
+                            this.databaseName,
+                            this.databaseVersion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ValidateDatabaseToolsConnectionOracleDatabaseResult o) {
-            Builder copiedBuilder =
-                    code(o.getCode())
-                            .message(o.getMessage())
-                            .cause(o.getCause())
-                            .action(o.getAction())
-                            .databaseName(o.getDatabaseName())
-                            .databaseVersion(o.getDatabaseVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ValidateDatabaseToolsConnectionOracleDatabaseResult model) {
+            if (model.wasPropertyExplicitlySet("code")) {
+                this.code(model.getCode());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("cause")) {
+                this.cause(model.getCause());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("databaseName")) {
+                this.databaseName(model.getDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            return this;
         }
     }
 
@@ -190,7 +206,6 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));
         sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -208,8 +223,7 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
                 (ValidateDatabaseToolsConnectionOracleDatabaseResult) o;
         return java.util.Objects.equals(this.databaseName, other.databaseName)
                 && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -220,16 +234,6 @@ public final class ValidateDatabaseToolsConnectionOracleDatabaseResult
         result =
                 (result * PRIME)
                         + (this.databaseVersion == null ? 43 : this.databaseVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

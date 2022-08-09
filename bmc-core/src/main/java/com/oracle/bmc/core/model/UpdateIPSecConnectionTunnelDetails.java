@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = UpdateIPSecConnectionTunnelDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateIPSecConnectionTunnelDetails {
+public final class UpdateIPSecConnectionTunnelDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -216,38 +217,57 @@ public final class UpdateIPSecConnectionTunnelDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateIPSecConnectionTunnelDetails build() {
-            UpdateIPSecConnectionTunnelDetails __instance__ =
+            UpdateIPSecConnectionTunnelDetails model =
                     new UpdateIPSecConnectionTunnelDetails(
-                            displayName,
-                            routing,
-                            ikeVersion,
-                            bgpSessionConfig,
-                            oracleInitiation,
-                            natTranslationEnabled,
-                            phaseOneConfig,
-                            phaseTwoConfig,
-                            dpdConfig,
-                            encryptionDomainConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.routing,
+                            this.ikeVersion,
+                            this.bgpSessionConfig,
+                            this.oracleInitiation,
+                            this.natTranslationEnabled,
+                            this.phaseOneConfig,
+                            this.phaseTwoConfig,
+                            this.dpdConfig,
+                            this.encryptionDomainConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateIPSecConnectionTunnelDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .routing(o.getRouting())
-                            .ikeVersion(o.getIkeVersion())
-                            .bgpSessionConfig(o.getBgpSessionConfig())
-                            .oracleInitiation(o.getOracleInitiation())
-                            .natTranslationEnabled(o.getNatTranslationEnabled())
-                            .phaseOneConfig(o.getPhaseOneConfig())
-                            .phaseTwoConfig(o.getPhaseTwoConfig())
-                            .dpdConfig(o.getDpdConfig())
-                            .encryptionDomainConfig(o.getEncryptionDomainConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateIPSecConnectionTunnelDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("routing")) {
+                this.routing(model.getRouting());
+            }
+            if (model.wasPropertyExplicitlySet("ikeVersion")) {
+                this.ikeVersion(model.getIkeVersion());
+            }
+            if (model.wasPropertyExplicitlySet("bgpSessionConfig")) {
+                this.bgpSessionConfig(model.getBgpSessionConfig());
+            }
+            if (model.wasPropertyExplicitlySet("oracleInitiation")) {
+                this.oracleInitiation(model.getOracleInitiation());
+            }
+            if (model.wasPropertyExplicitlySet("natTranslationEnabled")) {
+                this.natTranslationEnabled(model.getNatTranslationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("phaseOneConfig")) {
+                this.phaseOneConfig(model.getPhaseOneConfig());
+            }
+            if (model.wasPropertyExplicitlySet("phaseTwoConfig")) {
+                this.phaseTwoConfig(model.getPhaseTwoConfig());
+            }
+            if (model.wasPropertyExplicitlySet("dpdConfig")) {
+                this.dpdConfig(model.getDpdConfig());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionDomainConfig")) {
+                this.encryptionDomainConfig(model.getEncryptionDomainConfig());
+            }
+            return this;
         }
     }
 
@@ -559,6 +579,7 @@ public final class UpdateIPSecConnectionTunnelDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateIPSecConnectionTunnelDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", routing=").append(String.valueOf(this.routing));
         sb.append(", ikeVersion=").append(String.valueOf(this.ikeVersion));
@@ -569,7 +590,6 @@ public final class UpdateIPSecConnectionTunnelDetails {
         sb.append(", phaseTwoConfig=").append(String.valueOf(this.phaseTwoConfig));
         sb.append(", dpdConfig=").append(String.valueOf(this.dpdConfig));
         sb.append(", encryptionDomainConfig=").append(String.valueOf(this.encryptionDomainConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -595,7 +615,7 @@ public final class UpdateIPSecConnectionTunnelDetails {
                 && java.util.Objects.equals(this.dpdConfig, other.dpdConfig)
                 && java.util.Objects.equals(
                         this.encryptionDomainConfig, other.encryptionDomainConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -628,16 +648,7 @@ public final class UpdateIPSecConnectionTunnelDetails {
                         + (this.encryptionDomainConfig == null
                                 ? 43
                                 : this.encryptionDomainConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

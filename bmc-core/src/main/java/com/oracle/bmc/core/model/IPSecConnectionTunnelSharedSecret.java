@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = IPSecConnectionTunnelSharedSecret.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IPSecConnectionTunnelSharedSecret {
+public final class IPSecConnectionTunnelSharedSecret
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sharedSecret"})
     public IPSecConnectionTunnelSharedSecret(String sharedSecret) {
@@ -52,18 +53,20 @@ public final class IPSecConnectionTunnelSharedSecret {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IPSecConnectionTunnelSharedSecret build() {
-            IPSecConnectionTunnelSharedSecret __instance__ =
-                    new IPSecConnectionTunnelSharedSecret(sharedSecret);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            IPSecConnectionTunnelSharedSecret model =
+                    new IPSecConnectionTunnelSharedSecret(this.sharedSecret);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IPSecConnectionTunnelSharedSecret o) {
-            Builder copiedBuilder = sharedSecret(o.getSharedSecret());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IPSecConnectionTunnelSharedSecret model) {
+            if (model.wasPropertyExplicitlySet("sharedSecret")) {
+                this.sharedSecret(model.getSharedSecret());
+            }
+            return this;
         }
     }
 
@@ -107,8 +110,8 @@ public final class IPSecConnectionTunnelSharedSecret {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IPSecConnectionTunnelSharedSecret(");
+        sb.append("super=").append(super.toString());
         sb.append("sharedSecret=").append(String.valueOf(this.sharedSecret));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -124,7 +127,7 @@ public final class IPSecConnectionTunnelSharedSecret {
 
         IPSecConnectionTunnelSharedSecret other = (IPSecConnectionTunnelSharedSecret) o;
         return java.util.Objects.equals(this.sharedSecret, other.sharedSecret)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -132,16 +135,7 @@ public final class IPSecConnectionTunnelSharedSecret {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.sharedSecret == null ? 43 : this.sharedSecret.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

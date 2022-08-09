@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = AppCatalogListingResourceVersion.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AppCatalogListingResourceVersion {
+public final class AppCatalogListingResourceVersion
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "listingId",
@@ -212,34 +213,49 @@ public final class AppCatalogListingResourceVersion {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AppCatalogListingResourceVersion build() {
-            AppCatalogListingResourceVersion __instance__ =
+            AppCatalogListingResourceVersion model =
                     new AppCatalogListingResourceVersion(
-                            listingId,
-                            timePublished,
-                            listingResourceId,
-                            listingResourceVersion,
-                            availableRegions,
-                            compatibleShapes,
-                            accessiblePorts,
-                            allowedActions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.listingId,
+                            this.timePublished,
+                            this.listingResourceId,
+                            this.listingResourceVersion,
+                            this.availableRegions,
+                            this.compatibleShapes,
+                            this.accessiblePorts,
+                            this.allowedActions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AppCatalogListingResourceVersion o) {
-            Builder copiedBuilder =
-                    listingId(o.getListingId())
-                            .timePublished(o.getTimePublished())
-                            .listingResourceId(o.getListingResourceId())
-                            .listingResourceVersion(o.getListingResourceVersion())
-                            .availableRegions(o.getAvailableRegions())
-                            .compatibleShapes(o.getCompatibleShapes())
-                            .accessiblePorts(o.getAccessiblePorts())
-                            .allowedActions(o.getAllowedActions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AppCatalogListingResourceVersion model) {
+            if (model.wasPropertyExplicitlySet("listingId")) {
+                this.listingId(model.getListingId());
+            }
+            if (model.wasPropertyExplicitlySet("timePublished")) {
+                this.timePublished(model.getTimePublished());
+            }
+            if (model.wasPropertyExplicitlySet("listingResourceId")) {
+                this.listingResourceId(model.getListingResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("listingResourceVersion")) {
+                this.listingResourceVersion(model.getListingResourceVersion());
+            }
+            if (model.wasPropertyExplicitlySet("availableRegions")) {
+                this.availableRegions(model.getAvailableRegions());
+            }
+            if (model.wasPropertyExplicitlySet("compatibleShapes")) {
+                this.compatibleShapes(model.getCompatibleShapes());
+            }
+            if (model.wasPropertyExplicitlySet("accessiblePorts")) {
+                this.accessiblePorts(model.getAccessiblePorts());
+            }
+            if (model.wasPropertyExplicitlySet("allowedActions")) {
+                this.allowedActions(model.getAllowedActions());
+            }
+            return this;
         }
     }
 
@@ -457,6 +473,7 @@ public final class AppCatalogListingResourceVersion {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AppCatalogListingResourceVersion(");
+        sb.append("super=").append(super.toString());
         sb.append("listingId=").append(String.valueOf(this.listingId));
         sb.append(", timePublished=").append(String.valueOf(this.timePublished));
         sb.append(", listingResourceId=").append(String.valueOf(this.listingResourceId));
@@ -465,7 +482,6 @@ public final class AppCatalogListingResourceVersion {
         sb.append(", compatibleShapes=").append(String.valueOf(this.compatibleShapes));
         sb.append(", accessiblePorts=").append(String.valueOf(this.accessiblePorts));
         sb.append(", allowedActions=").append(String.valueOf(this.allowedActions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -489,7 +505,7 @@ public final class AppCatalogListingResourceVersion {
                 && java.util.Objects.equals(this.compatibleShapes, other.compatibleShapes)
                 && java.util.Objects.equals(this.accessiblePorts, other.accessiblePorts)
                 && java.util.Objects.equals(this.allowedActions, other.allowedActions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -520,16 +536,7 @@ public final class AppCatalogListingResourceVersion {
         result =
                 (result * PRIME)
                         + (this.allowedActions == null ? 43 : this.allowedActions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

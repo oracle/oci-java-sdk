@@ -57,18 +57,23 @@ public final class GitlabServerBuildRunSource extends BuildRunSource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GitlabServerBuildRunSource build() {
-            GitlabServerBuildRunSource __instance__ =
-                    new GitlabServerBuildRunSource(triggerId, triggerInfo);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            GitlabServerBuildRunSource model =
+                    new GitlabServerBuildRunSource(this.triggerId, this.triggerInfo);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GitlabServerBuildRunSource o) {
-            Builder copiedBuilder = triggerId(o.getTriggerId()).triggerInfo(o.getTriggerInfo());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GitlabServerBuildRunSource model) {
+            if (model.wasPropertyExplicitlySet("triggerId")) {
+                this.triggerId(model.getTriggerId());
+            }
+            if (model.wasPropertyExplicitlySet("triggerInfo")) {
+                this.triggerInfo(model.getTriggerInfo());
+            }
+            return this;
         }
     }
 
@@ -127,7 +132,6 @@ public final class GitlabServerBuildRunSource extends BuildRunSource {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", triggerId=").append(String.valueOf(this.triggerId));
         sb.append(", triggerInfo=").append(String.valueOf(this.triggerInfo));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -144,8 +148,7 @@ public final class GitlabServerBuildRunSource extends BuildRunSource {
         GitlabServerBuildRunSource other = (GitlabServerBuildRunSource) o;
         return java.util.Objects.equals(this.triggerId, other.triggerId)
                 && java.util.Objects.equals(this.triggerInfo, other.triggerInfo)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -154,16 +157,6 @@ public final class GitlabServerBuildRunSource extends BuildRunSource {
         int result = super.hashCode();
         result = (result * PRIME) + (this.triggerId == null ? 43 : this.triggerId.hashCode());
         result = (result * PRIME) + (this.triggerInfo == null ? 43 : this.triggerInfo.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

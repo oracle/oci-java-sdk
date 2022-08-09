@@ -191,52 +191,85 @@ public final class DataAssetSummaryFromFusionApp extends DataAssetSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataAssetSummaryFromFusionApp build() {
-            DataAssetSummaryFromFusionApp __instance__ =
+            DataAssetSummaryFromFusionApp model =
                     new DataAssetSummaryFromFusionApp(
-                            key,
-                            modelVersion,
-                            name,
-                            description,
-                            objectStatus,
-                            identifier,
-                            externalKey,
-                            assetProperties,
-                            nativeTypeSystem,
-                            objectVersion,
-                            parentRef,
-                            metadata,
-                            serviceUrl,
-                            defaultConnection,
-                            stagingDataAsset,
-                            stagingConnection,
-                            bucketSchema);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.name,
+                            this.description,
+                            this.objectStatus,
+                            this.identifier,
+                            this.externalKey,
+                            this.assetProperties,
+                            this.nativeTypeSystem,
+                            this.objectVersion,
+                            this.parentRef,
+                            this.metadata,
+                            this.serviceUrl,
+                            this.defaultConnection,
+                            this.stagingDataAsset,
+                            this.stagingConnection,
+                            this.bucketSchema);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataAssetSummaryFromFusionApp o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .externalKey(o.getExternalKey())
-                            .assetProperties(o.getAssetProperties())
-                            .nativeTypeSystem(o.getNativeTypeSystem())
-                            .objectVersion(o.getObjectVersion())
-                            .parentRef(o.getParentRef())
-                            .metadata(o.getMetadata())
-                            .serviceUrl(o.getServiceUrl())
-                            .defaultConnection(o.getDefaultConnection())
-                            .stagingDataAsset(o.getStagingDataAsset())
-                            .stagingConnection(o.getStagingConnection())
-                            .bucketSchema(o.getBucketSchema());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataAssetSummaryFromFusionApp model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("assetProperties")) {
+                this.assetProperties(model.getAssetProperties());
+            }
+            if (model.wasPropertyExplicitlySet("nativeTypeSystem")) {
+                this.nativeTypeSystem(model.getNativeTypeSystem());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("serviceUrl")) {
+                this.serviceUrl(model.getServiceUrl());
+            }
+            if (model.wasPropertyExplicitlySet("defaultConnection")) {
+                this.defaultConnection(model.getDefaultConnection());
+            }
+            if (model.wasPropertyExplicitlySet("stagingDataAsset")) {
+                this.stagingDataAsset(model.getStagingDataAsset());
+            }
+            if (model.wasPropertyExplicitlySet("stagingConnection")) {
+                this.stagingConnection(model.getStagingConnection());
+            }
+            if (model.wasPropertyExplicitlySet("bucketSchema")) {
+                this.bucketSchema(model.getBucketSchema());
+            }
+            return this;
         }
     }
 
@@ -351,7 +384,6 @@ public final class DataAssetSummaryFromFusionApp extends DataAssetSummary {
         sb.append(", stagingDataAsset=").append(String.valueOf(this.stagingDataAsset));
         sb.append(", stagingConnection=").append(String.valueOf(this.stagingConnection));
         sb.append(", bucketSchema=").append(String.valueOf(this.bucketSchema));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -371,8 +403,7 @@ public final class DataAssetSummaryFromFusionApp extends DataAssetSummary {
                 && java.util.Objects.equals(this.stagingDataAsset, other.stagingDataAsset)
                 && java.util.Objects.equals(this.stagingConnection, other.stagingConnection)
                 && java.util.Objects.equals(this.bucketSchema, other.bucketSchema)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -390,16 +421,6 @@ public final class DataAssetSummaryFromFusionApp extends DataAssetSummary {
                 (result * PRIME)
                         + (this.stagingConnection == null ? 43 : this.stagingConnection.hashCode());
         result = (result * PRIME) + (this.bucketSchema == null ? 43 : this.bucketSchema.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

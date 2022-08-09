@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = CloudAutonomousVmCluster.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CloudAutonomousVmCluster {
+public final class CloudAutonomousVmCluster
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -767,92 +768,162 @@ public final class CloudAutonomousVmCluster {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CloudAutonomousVmCluster build() {
-            CloudAutonomousVmCluster __instance__ =
+            CloudAutonomousVmCluster model =
                     new CloudAutonomousVmCluster(
-                            id,
-                            compartmentId,
-                            description,
-                            availabilityDomain,
-                            subnetId,
-                            nsgIds,
-                            lastUpdateHistoryEntryId,
-                            lifecycleState,
-                            displayName,
-                            timeCreated,
-                            timeUpdated,
-                            clusterTimeZone,
-                            lifecycleDetails,
-                            hostname,
-                            domain,
-                            cloudExadataInfrastructureId,
-                            shape,
-                            nodeCount,
-                            dataStorageSizeInTBs,
-                            dataStorageSizeInGBs,
-                            cpuCoreCount,
-                            ocpuCount,
-                            memorySizeInGBs,
-                            licenseModel,
-                            lastMaintenanceRunId,
-                            nextMaintenanceRunId,
-                            freeformTags,
-                            definedTags,
-                            availableCpus,
-                            reclaimableCpus,
-                            availableContainerDatabases,
-                            totalContainerDatabases,
-                            availableAutonomousDataStorageSizeInTBs,
-                            autonomousDataStorageSizeInTBs,
-                            dbNodeStorageSizeInGBs,
-                            memoryPerOracleComputeUnitInGBs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.description,
+                            this.availabilityDomain,
+                            this.subnetId,
+                            this.nsgIds,
+                            this.lastUpdateHistoryEntryId,
+                            this.lifecycleState,
+                            this.displayName,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.clusterTimeZone,
+                            this.lifecycleDetails,
+                            this.hostname,
+                            this.domain,
+                            this.cloudExadataInfrastructureId,
+                            this.shape,
+                            this.nodeCount,
+                            this.dataStorageSizeInTBs,
+                            this.dataStorageSizeInGBs,
+                            this.cpuCoreCount,
+                            this.ocpuCount,
+                            this.memorySizeInGBs,
+                            this.licenseModel,
+                            this.lastMaintenanceRunId,
+                            this.nextMaintenanceRunId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.availableCpus,
+                            this.reclaimableCpus,
+                            this.availableContainerDatabases,
+                            this.totalContainerDatabases,
+                            this.availableAutonomousDataStorageSizeInTBs,
+                            this.autonomousDataStorageSizeInTBs,
+                            this.dbNodeStorageSizeInGBs,
+                            this.memoryPerOracleComputeUnitInGBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CloudAutonomousVmCluster o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .description(o.getDescription())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .subnetId(o.getSubnetId())
-                            .nsgIds(o.getNsgIds())
-                            .lastUpdateHistoryEntryId(o.getLastUpdateHistoryEntryId())
-                            .lifecycleState(o.getLifecycleState())
-                            .displayName(o.getDisplayName())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .clusterTimeZone(o.getClusterTimeZone())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .hostname(o.getHostname())
-                            .domain(o.getDomain())
-                            .cloudExadataInfrastructureId(o.getCloudExadataInfrastructureId())
-                            .shape(o.getShape())
-                            .nodeCount(o.getNodeCount())
-                            .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
-                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
-                            .cpuCoreCount(o.getCpuCoreCount())
-                            .ocpuCount(o.getOcpuCount())
-                            .memorySizeInGBs(o.getMemorySizeInGBs())
-                            .licenseModel(o.getLicenseModel())
-                            .lastMaintenanceRunId(o.getLastMaintenanceRunId())
-                            .nextMaintenanceRunId(o.getNextMaintenanceRunId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .availableCpus(o.getAvailableCpus())
-                            .reclaimableCpus(o.getReclaimableCpus())
-                            .availableContainerDatabases(o.getAvailableContainerDatabases())
-                            .totalContainerDatabases(o.getTotalContainerDatabases())
-                            .availableAutonomousDataStorageSizeInTBs(
-                                    o.getAvailableAutonomousDataStorageSizeInTBs())
-                            .autonomousDataStorageSizeInTBs(o.getAutonomousDataStorageSizeInTBs())
-                            .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
-                            .memoryPerOracleComputeUnitInGBs(
-                                    o.getMemoryPerOracleComputeUnitInGBs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CloudAutonomousVmCluster model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("lastUpdateHistoryEntryId")) {
+                this.lastUpdateHistoryEntryId(model.getLastUpdateHistoryEntryId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("clusterTimeZone")) {
+                this.clusterTimeZone(model.getClusterTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("domain")) {
+                this.domain(model.getDomain());
+            }
+            if (model.wasPropertyExplicitlySet("cloudExadataInfrastructureId")) {
+                this.cloudExadataInfrastructureId(model.getCloudExadataInfrastructureId());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("nodeCount")) {
+                this.nodeCount(model.getNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInTBs")) {
+                this.dataStorageSizeInTBs(model.getDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
+                this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuCount")) {
+                this.ocpuCount(model.getOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
+                this.memorySizeInGBs(model.getMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("lastMaintenanceRunId")) {
+                this.lastMaintenanceRunId(model.getLastMaintenanceRunId());
+            }
+            if (model.wasPropertyExplicitlySet("nextMaintenanceRunId")) {
+                this.nextMaintenanceRunId(model.getNextMaintenanceRunId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("availableCpus")) {
+                this.availableCpus(model.getAvailableCpus());
+            }
+            if (model.wasPropertyExplicitlySet("reclaimableCpus")) {
+                this.reclaimableCpus(model.getReclaimableCpus());
+            }
+            if (model.wasPropertyExplicitlySet("availableContainerDatabases")) {
+                this.availableContainerDatabases(model.getAvailableContainerDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("totalContainerDatabases")) {
+                this.totalContainerDatabases(model.getTotalContainerDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("availableAutonomousDataStorageSizeInTBs")) {
+                this.availableAutonomousDataStorageSizeInTBs(
+                        model.getAvailableAutonomousDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousDataStorageSizeInTBs")) {
+                this.autonomousDataStorageSizeInTBs(model.getAutonomousDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("dbNodeStorageSizeInGBs")) {
+                this.dbNodeStorageSizeInGBs(model.getDbNodeStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("memoryPerOracleComputeUnitInGBs")) {
+                this.memoryPerOracleComputeUnitInGBs(model.getMemoryPerOracleComputeUnitInGBs());
+            }
+            return this;
         }
     }
 
@@ -1535,6 +1606,7 @@ public final class CloudAutonomousVmCluster {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CloudAutonomousVmCluster(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -1578,7 +1650,6 @@ public final class CloudAutonomousVmCluster {
         sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
         sb.append(", memoryPerOracleComputeUnitInGBs=")
                 .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1638,7 +1709,7 @@ public final class CloudAutonomousVmCluster {
                         this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
                 && java.util.Objects.equals(
                         this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1747,16 +1818,7 @@ public final class CloudAutonomousVmCluster {
                         + (this.memoryPerOracleComputeUnitInGBs == null
                                 ? 43
                                 : this.memoryPerOracleComputeUnitInGBs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

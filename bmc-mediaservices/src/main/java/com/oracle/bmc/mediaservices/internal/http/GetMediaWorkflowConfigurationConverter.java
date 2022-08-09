@@ -117,8 +117,8 @@ public class GetMediaWorkflowConfigurationConverter {
                                                 com.oracle.bmc.mediaservices.responses
                                                         .GetMediaWorkflowConfigurationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.mediaWorkflowConfiguration(response.getItem());
 

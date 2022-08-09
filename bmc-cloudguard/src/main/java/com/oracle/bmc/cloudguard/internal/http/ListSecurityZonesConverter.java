@@ -182,8 +182,8 @@ public class ListSecurityZonesConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListSecurityZonesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityZoneCollection(response.getItem());
 

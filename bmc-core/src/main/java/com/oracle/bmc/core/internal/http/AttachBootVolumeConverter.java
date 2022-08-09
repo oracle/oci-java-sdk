@@ -101,8 +101,8 @@ public class AttachBootVolumeConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .AttachBootVolumeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.bootVolumeAttachment(response.getItem());
 

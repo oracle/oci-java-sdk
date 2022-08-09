@@ -159,7 +159,8 @@ public class ListRefsConverter {
 
                                 com.oracle.bmc.devops.responses.ListRefsResponse.Builder builder =
                                         com.oracle.bmc.devops.responses.ListRefsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.repositoryRefCollection(response.getItem());
 

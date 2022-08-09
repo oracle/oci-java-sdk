@@ -39,10 +39,13 @@ public class ScheduleCertificateVersionDeletionResponse
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "etag", "opcRequestId"})
     private ScheduleCertificateVersionDeletionResponse(
-            int __httpStatusCode__, String etag, String opcRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String etag,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
     }
@@ -52,6 +55,13 @@ public class ScheduleCertificateVersionDeletionResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -95,6 +105,7 @@ public class ScheduleCertificateVersionDeletionResponse
          */
         public Builder copy(ScheduleCertificateVersionDeletionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
 
@@ -107,7 +118,7 @@ public class ScheduleCertificateVersionDeletionResponse
          */
         public ScheduleCertificateVersionDeletionResponse build() {
             return new ScheduleCertificateVersionDeletionResponse(
-                    __httpStatusCode__, etag, opcRequestId);
+                    __httpStatusCode__, headers, etag, opcRequestId);
         }
     }
 

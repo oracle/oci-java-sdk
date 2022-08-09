@@ -188,8 +188,8 @@ public class ListSightingsConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListSightingsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sightingCollection(response.getItem());
 

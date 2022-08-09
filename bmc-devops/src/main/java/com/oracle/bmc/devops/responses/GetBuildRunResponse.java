@@ -47,13 +47,20 @@ public class GetBuildRunResponse extends com.oracle.bmc.responses.BmcResponse {
         return buildRun;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "buildRun"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "buildRun"
+    })
     private GetBuildRunResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.devops.model.BuildRun buildRun) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.buildRun = buildRun;
@@ -64,6 +71,13 @@ public class GetBuildRunResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -118,6 +132,7 @@ public class GetBuildRunResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetBuildRunResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             buildRun(o.getBuildRun());
@@ -130,7 +145,8 @@ public class GetBuildRunResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetBuildRunResponse build() {
-            return new GetBuildRunResponse(__httpStatusCode__, etag, opcRequestId, buildRun);
+            return new GetBuildRunResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, buildRun);
         }
     }
 

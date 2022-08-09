@@ -17,7 +17,7 @@ package com.oracle.bmc.devops.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DeliverArtifact.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DeliverArtifact {
+public final class DeliverArtifact extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"artifactName", "artifactId"})
     public DeliverArtifact(String artifactName, String artifactId) {
@@ -65,17 +65,22 @@ public final class DeliverArtifact {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DeliverArtifact build() {
-            DeliverArtifact __instance__ = new DeliverArtifact(artifactName, artifactId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DeliverArtifact model = new DeliverArtifact(this.artifactName, this.artifactId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeliverArtifact o) {
-            Builder copiedBuilder = artifactName(o.getArtifactName()).artifactId(o.getArtifactId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DeliverArtifact model) {
+            if (model.wasPropertyExplicitlySet("artifactName")) {
+                this.artifactName(model.getArtifactName());
+            }
+            if (model.wasPropertyExplicitlySet("artifactId")) {
+                this.artifactId(model.getArtifactId());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class DeliverArtifact {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DeliverArtifact(");
+        sb.append("super=").append(super.toString());
         sb.append("artifactName=").append(String.valueOf(this.artifactName));
         sb.append(", artifactId=").append(String.valueOf(this.artifactId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class DeliverArtifact {
         DeliverArtifact other = (DeliverArtifact) o;
         return java.util.Objects.equals(this.artifactName, other.artifactName)
                 && java.util.Objects.equals(this.artifactId, other.artifactId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class DeliverArtifact {
         int result = 1;
         result = (result * PRIME) + (this.artifactName == null ? 43 : this.artifactName.hashCode());
         result = (result * PRIME) + (this.artifactId == null ? 43 : this.artifactId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

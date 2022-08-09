@@ -135,40 +135,61 @@ public final class PivotField extends TypedObject {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PivotField build() {
-            PivotField __instance__ =
+            PivotField model =
                     new PivotField(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            configValues,
-                            objectStatus,
-                            name,
-                            description,
-                            expr,
-                            useType,
-                            type,
-                            columnNamePattern);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.configValues,
+                            this.objectStatus,
+                            this.name,
+                            this.description,
+                            this.expr,
+                            this.useType,
+                            this.type,
+                            this.columnNamePattern);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PivotField o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .configValues(o.getConfigValues())
-                            .objectStatus(o.getObjectStatus())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .expr(o.getExpr())
-                            .useType(o.getUseType())
-                            .type(o.getType())
-                            .columnNamePattern(o.getColumnNamePattern());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PivotField model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("expr")) {
+                this.expr(model.getExpr());
+            }
+            if (model.wasPropertyExplicitlySet("useType")) {
+                this.useType(model.getUseType());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("columnNamePattern")) {
+                this.columnNamePattern(model.getColumnNamePattern());
+            }
+            return this;
         }
     }
 
@@ -256,7 +277,6 @@ public final class PivotField extends TypedObject {
         sb.append(", useType=").append(String.valueOf(this.useType));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", columnNamePattern=").append(String.valueOf(this.columnNamePattern));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -275,8 +295,7 @@ public final class PivotField extends TypedObject {
                 && java.util.Objects.equals(this.useType, other.useType)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.columnNamePattern, other.columnNamePattern)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -289,16 +308,6 @@ public final class PivotField extends TypedObject {
         result =
                 (result * PRIME)
                         + (this.columnNamePattern == null ? 43 : this.columnNamePattern.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

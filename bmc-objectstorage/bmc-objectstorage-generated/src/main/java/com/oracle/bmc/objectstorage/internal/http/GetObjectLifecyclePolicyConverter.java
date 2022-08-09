@@ -118,8 +118,8 @@ public class GetObjectLifecyclePolicyConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .GetObjectLifecyclePolicyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.objectLifecyclePolicy(response.getItem());
 

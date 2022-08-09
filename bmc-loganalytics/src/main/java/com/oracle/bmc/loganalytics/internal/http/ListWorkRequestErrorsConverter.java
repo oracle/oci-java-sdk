@@ -134,8 +134,8 @@ public class ListWorkRequestErrorsConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListWorkRequestErrorsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.workRequestErrorCollection(response.getItem());
 

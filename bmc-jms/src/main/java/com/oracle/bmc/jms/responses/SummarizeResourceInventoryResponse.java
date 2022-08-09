@@ -38,12 +38,18 @@ public class SummarizeResourceInventoryResponse extends com.oracle.bmc.responses
         return resourceInventory;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "resourceInventory"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "resourceInventory"
+    })
     private SummarizeResourceInventoryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.jms.model.ResourceInventory resourceInventory) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.resourceInventory = resourceInventory;
     }
@@ -53,6 +59,13 @@ public class SummarizeResourceInventoryResponse extends com.oracle.bmc.responses
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class SummarizeResourceInventoryResponse extends com.oracle.bmc.responses
          */
         public Builder copy(SummarizeResourceInventoryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             resourceInventory(o.getResourceInventory());
 
@@ -109,7 +123,7 @@ public class SummarizeResourceInventoryResponse extends com.oracle.bmc.responses
          */
         public SummarizeResourceInventoryResponse build() {
             return new SummarizeResourceInventoryResponse(
-                    __httpStatusCode__, opcRequestId, resourceInventory);
+                    __httpStatusCode__, headers, opcRequestId, resourceInventory);
         }
     }
 

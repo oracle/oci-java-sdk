@@ -218,8 +218,8 @@ public class ListContainerImageSignaturesConverter {
                                                 com.oracle.bmc.artifacts.responses
                                                         .ListContainerImageSignaturesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.containerImageSignatureCollection(response.getItem());
 

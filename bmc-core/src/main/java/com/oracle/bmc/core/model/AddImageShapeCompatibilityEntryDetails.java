@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = AddImageShapeCompatibilityEntryDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddImageShapeCompatibilityEntryDetails {
+public final class AddImageShapeCompatibilityEntryDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"memoryConstraints", "ocpuConstraints"})
     public AddImageShapeCompatibilityEntryDetails(
@@ -54,20 +55,24 @@ public final class AddImageShapeCompatibilityEntryDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddImageShapeCompatibilityEntryDetails build() {
-            AddImageShapeCompatibilityEntryDetails __instance__ =
-                    new AddImageShapeCompatibilityEntryDetails(memoryConstraints, ocpuConstraints);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AddImageShapeCompatibilityEntryDetails model =
+                    new AddImageShapeCompatibilityEntryDetails(
+                            this.memoryConstraints, this.ocpuConstraints);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddImageShapeCompatibilityEntryDetails o) {
-            Builder copiedBuilder =
-                    memoryConstraints(o.getMemoryConstraints())
-                            .ocpuConstraints(o.getOcpuConstraints());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddImageShapeCompatibilityEntryDetails model) {
+            if (model.wasPropertyExplicitlySet("memoryConstraints")) {
+                this.memoryConstraints(model.getMemoryConstraints());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuConstraints")) {
+                this.ocpuConstraints(model.getOcpuConstraints());
+            }
+            return this;
         }
     }
 
@@ -109,9 +114,9 @@ public final class AddImageShapeCompatibilityEntryDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddImageShapeCompatibilityEntryDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("memoryConstraints=").append(String.valueOf(this.memoryConstraints));
         sb.append(", ocpuConstraints=").append(String.valueOf(this.ocpuConstraints));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -128,7 +133,7 @@ public final class AddImageShapeCompatibilityEntryDetails {
         AddImageShapeCompatibilityEntryDetails other = (AddImageShapeCompatibilityEntryDetails) o;
         return java.util.Objects.equals(this.memoryConstraints, other.memoryConstraints)
                 && java.util.Objects.equals(this.ocpuConstraints, other.ocpuConstraints)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -141,16 +146,7 @@ public final class AddImageShapeCompatibilityEntryDetails {
         result =
                 (result * PRIME)
                         + (this.ocpuConstraints == null ? 43 : this.ocpuConstraints.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

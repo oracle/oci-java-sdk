@@ -37,7 +37,7 @@ package com.oracle.bmc.identity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = User.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class User {
+public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -486,54 +486,89 @@ public final class User {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public User build() {
-            User __instance__ =
+            User model =
                     new User(
-                            id,
-                            compartmentId,
-                            name,
-                            description,
-                            email,
-                            emailVerified,
-                            dbUserName,
-                            identityProviderId,
-                            externalIdentifier,
-                            timeCreated,
-                            lifecycleState,
-                            inactiveStatus,
-                            freeformTags,
-                            definedTags,
-                            capabilities,
-                            isMfaActivated,
-                            lastSuccessfulLoginTime,
-                            previousSuccessfulLoginTime);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.name,
+                            this.description,
+                            this.email,
+                            this.emailVerified,
+                            this.dbUserName,
+                            this.identityProviderId,
+                            this.externalIdentifier,
+                            this.timeCreated,
+                            this.lifecycleState,
+                            this.inactiveStatus,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.capabilities,
+                            this.isMfaActivated,
+                            this.lastSuccessfulLoginTime,
+                            this.previousSuccessfulLoginTime);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(User o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .email(o.getEmail())
-                            .emailVerified(o.getEmailVerified())
-                            .dbUserName(o.getDbUserName())
-                            .identityProviderId(o.getIdentityProviderId())
-                            .externalIdentifier(o.getExternalIdentifier())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleState(o.getLifecycleState())
-                            .inactiveStatus(o.getInactiveStatus())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .capabilities(o.getCapabilities())
-                            .isMfaActivated(o.getIsMfaActivated())
-                            .lastSuccessfulLoginTime(o.getLastSuccessfulLoginTime())
-                            .previousSuccessfulLoginTime(o.getPreviousSuccessfulLoginTime());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(User model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("email")) {
+                this.email(model.getEmail());
+            }
+            if (model.wasPropertyExplicitlySet("emailVerified")) {
+                this.emailVerified(model.getEmailVerified());
+            }
+            if (model.wasPropertyExplicitlySet("dbUserName")) {
+                this.dbUserName(model.getDbUserName());
+            }
+            if (model.wasPropertyExplicitlySet("identityProviderId")) {
+                this.identityProviderId(model.getIdentityProviderId());
+            }
+            if (model.wasPropertyExplicitlySet("externalIdentifier")) {
+                this.externalIdentifier(model.getExternalIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("inactiveStatus")) {
+                this.inactiveStatus(model.getInactiveStatus());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("capabilities")) {
+                this.capabilities(model.getCapabilities());
+            }
+            if (model.wasPropertyExplicitlySet("isMfaActivated")) {
+                this.isMfaActivated(model.getIsMfaActivated());
+            }
+            if (model.wasPropertyExplicitlySet("lastSuccessfulLoginTime")) {
+                this.lastSuccessfulLoginTime(model.getLastSuccessfulLoginTime());
+            }
+            if (model.wasPropertyExplicitlySet("previousSuccessfulLoginTime")) {
+                this.previousSuccessfulLoginTime(model.getPreviousSuccessfulLoginTime());
+            }
+            return this;
         }
     }
 
@@ -957,6 +992,7 @@ public final class User {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("User(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -977,7 +1013,6 @@ public final class User {
                 .append(String.valueOf(this.lastSuccessfulLoginTime));
         sb.append(", previousSuccessfulLoginTime=")
                 .append(String.valueOf(this.previousSuccessfulLoginTime));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1012,7 +1047,7 @@ public final class User {
                         this.lastSuccessfulLoginTime, other.lastSuccessfulLoginTime)
                 && java.util.Objects.equals(
                         this.previousSuccessfulLoginTime, other.previousSuccessfulLoginTime)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1063,16 +1098,7 @@ public final class User {
                         + (this.previousSuccessfulLoginTime == null
                                 ? 43
                                 : this.previousSuccessfulLoginTime.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

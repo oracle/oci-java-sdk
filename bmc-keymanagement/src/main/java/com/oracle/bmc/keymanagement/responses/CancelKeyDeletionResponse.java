@@ -51,13 +51,20 @@ public class CancelKeyDeletionResponse extends com.oracle.bmc.responses.BmcRespo
         return key;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "key"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "key"
+    })
     private CancelKeyDeletionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.keymanagement.model.Key key) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.key = key;
@@ -68,6 +75,13 @@ public class CancelKeyDeletionResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class CancelKeyDeletionResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(CancelKeyDeletionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             key(o.getKey());
@@ -138,7 +153,8 @@ public class CancelKeyDeletionResponse extends com.oracle.bmc.responses.BmcRespo
          * @return the response object
          */
         public CancelKeyDeletionResponse build() {
-            return new CancelKeyDeletionResponse(__httpStatusCode__, etag, opcRequestId, key);
+            return new CancelKeyDeletionResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, key);
         }
     }
 

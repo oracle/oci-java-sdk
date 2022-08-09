@@ -19,7 +19,8 @@ package com.oracle.bmc.dns.model;
     builder = SteeringPolicyHealthRuleCase.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SteeringPolicyHealthRuleCase {
+public final class SteeringPolicyHealthRuleCase
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"caseCondition"})
     public SteeringPolicyHealthRuleCase(String caseCondition) {
@@ -62,18 +63,20 @@ public final class SteeringPolicyHealthRuleCase {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SteeringPolicyHealthRuleCase build() {
-            SteeringPolicyHealthRuleCase __instance__ =
-                    new SteeringPolicyHealthRuleCase(caseCondition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SteeringPolicyHealthRuleCase model =
+                    new SteeringPolicyHealthRuleCase(this.caseCondition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SteeringPolicyHealthRuleCase o) {
-            Builder copiedBuilder = caseCondition(o.getCaseCondition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SteeringPolicyHealthRuleCase model) {
+            if (model.wasPropertyExplicitlySet("caseCondition")) {
+                this.caseCondition(model.getCaseCondition());
+            }
+            return this;
         }
     }
 
@@ -127,8 +130,8 @@ public final class SteeringPolicyHealthRuleCase {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SteeringPolicyHealthRuleCase(");
+        sb.append("super=").append(super.toString());
         sb.append("caseCondition=").append(String.valueOf(this.caseCondition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -144,7 +147,7 @@ public final class SteeringPolicyHealthRuleCase {
 
         SteeringPolicyHealthRuleCase other = (SteeringPolicyHealthRuleCase) o;
         return java.util.Objects.equals(this.caseCondition, other.caseCondition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -154,16 +157,7 @@ public final class SteeringPolicyHealthRuleCase {
         result =
                 (result * PRIME)
                         + (this.caseCondition == null ? 43 : this.caseCondition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

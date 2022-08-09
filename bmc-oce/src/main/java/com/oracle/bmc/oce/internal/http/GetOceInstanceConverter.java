@@ -100,8 +100,8 @@ public class GetOceInstanceConverter {
                                         builder =
                                                 com.oracle.bmc.oce.responses.GetOceInstanceResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.oceInstance(response.getItem());
 

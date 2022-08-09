@@ -17,7 +17,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateJobDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateJobDetails {
+public final class CreateJobDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -177,32 +177,45 @@ public final class CreateJobDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateJobDetails build() {
-            CreateJobDetails __instance__ =
+            CreateJobDetails model =
                     new CreateJobDetails(
-                            displayName,
-                            description,
-                            scheduleCronExpression,
-                            timeScheduleBegin,
-                            timeScheduleEnd,
-                            connectionKey,
-                            jobDefinitionKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.description,
+                            this.scheduleCronExpression,
+                            this.timeScheduleBegin,
+                            this.timeScheduleEnd,
+                            this.connectionKey,
+                            this.jobDefinitionKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateJobDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .scheduleCronExpression(o.getScheduleCronExpression())
-                            .timeScheduleBegin(o.getTimeScheduleBegin())
-                            .timeScheduleEnd(o.getTimeScheduleEnd())
-                            .connectionKey(o.getConnectionKey())
-                            .jobDefinitionKey(o.getJobDefinitionKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateJobDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("scheduleCronExpression")) {
+                this.scheduleCronExpression(model.getScheduleCronExpression());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduleBegin")) {
+                this.timeScheduleBegin(model.getTimeScheduleBegin());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduleEnd")) {
+                this.timeScheduleEnd(model.getTimeScheduleEnd());
+            }
+            if (model.wasPropertyExplicitlySet("connectionKey")) {
+                this.connectionKey(model.getConnectionKey());
+            }
+            if (model.wasPropertyExplicitlySet("jobDefinitionKey")) {
+                this.jobDefinitionKey(model.getJobDefinitionKey());
+            }
+            return this;
         }
     }
 
@@ -340,6 +353,7 @@ public final class CreateJobDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateJobDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", scheduleCronExpression=").append(String.valueOf(this.scheduleCronExpression));
@@ -347,7 +361,6 @@ public final class CreateJobDetails {
         sb.append(", timeScheduleEnd=").append(String.valueOf(this.timeScheduleEnd));
         sb.append(", connectionKey=").append(String.valueOf(this.connectionKey));
         sb.append(", jobDefinitionKey=").append(String.valueOf(this.jobDefinitionKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -370,7 +383,7 @@ public final class CreateJobDetails {
                 && java.util.Objects.equals(this.timeScheduleEnd, other.timeScheduleEnd)
                 && java.util.Objects.equals(this.connectionKey, other.connectionKey)
                 && java.util.Objects.equals(this.jobDefinitionKey, other.jobDefinitionKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -396,16 +409,7 @@ public final class CreateJobDetails {
         result =
                 (result * PRIME)
                         + (this.jobDefinitionKey == null ? 43 : this.jobDefinitionKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -154,8 +154,8 @@ public class ListConditionMetadataTypesConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListConditionMetadataTypesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.conditionMetadataTypeCollection(response.getItem());
 

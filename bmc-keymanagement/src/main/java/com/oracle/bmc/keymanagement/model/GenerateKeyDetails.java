@@ -19,7 +19,7 @@ package com.oracle.bmc.keymanagement.model;
     builder = GenerateKeyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GenerateKeyDetails {
+public final class GenerateKeyDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "associatedData",
@@ -132,24 +132,37 @@ public final class GenerateKeyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenerateKeyDetails build() {
-            GenerateKeyDetails __instance__ =
+            GenerateKeyDetails model =
                     new GenerateKeyDetails(
-                            associatedData, includePlaintextKey, keyId, keyShape, loggingContext);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.associatedData,
+                            this.includePlaintextKey,
+                            this.keyId,
+                            this.keyShape,
+                            this.loggingContext);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GenerateKeyDetails o) {
-            Builder copiedBuilder =
-                    associatedData(o.getAssociatedData())
-                            .includePlaintextKey(o.getIncludePlaintextKey())
-                            .keyId(o.getKeyId())
-                            .keyShape(o.getKeyShape())
-                            .loggingContext(o.getLoggingContext());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GenerateKeyDetails model) {
+            if (model.wasPropertyExplicitlySet("associatedData")) {
+                this.associatedData(model.getAssociatedData());
+            }
+            if (model.wasPropertyExplicitlySet("includePlaintextKey")) {
+                this.includePlaintextKey(model.getIncludePlaintextKey());
+            }
+            if (model.wasPropertyExplicitlySet("keyId")) {
+                this.keyId(model.getKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("keyShape")) {
+                this.keyShape(model.getKeyShape());
+            }
+            if (model.wasPropertyExplicitlySet("loggingContext")) {
+                this.loggingContext(model.getLoggingContext());
+            }
+            return this;
         }
     }
 
@@ -250,12 +263,12 @@ public final class GenerateKeyDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GenerateKeyDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("associatedData=").append(String.valueOf(this.associatedData));
         sb.append(", includePlaintextKey=").append(String.valueOf(this.includePlaintextKey));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", keyShape=").append(String.valueOf(this.keyShape));
         sb.append(", loggingContext=").append(String.valueOf(this.loggingContext));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -275,7 +288,7 @@ public final class GenerateKeyDetails {
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.keyShape, other.keyShape)
                 && java.util.Objects.equals(this.loggingContext, other.loggingContext)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -295,16 +308,7 @@ public final class GenerateKeyDetails {
         result =
                 (result * PRIME)
                         + (this.loggingContext == null ? 43 : this.loggingContext.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

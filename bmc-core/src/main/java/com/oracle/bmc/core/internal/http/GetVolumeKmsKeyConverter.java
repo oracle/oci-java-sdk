@@ -103,8 +103,8 @@ public class GetVolumeKmsKeyConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetVolumeKmsKeyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.volumeKmsKey(response.getItem());
 

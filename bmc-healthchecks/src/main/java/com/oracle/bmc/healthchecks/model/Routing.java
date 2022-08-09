@@ -17,7 +17,7 @@ package com.oracle.bmc.healthchecks.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Routing.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Routing {
+public final class Routing extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"asLabel", "asn", "prefix", "weight"})
     public Routing(String asLabel, Integer asn, String prefix, Integer weight) {
@@ -117,21 +117,28 @@ public final class Routing {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Routing build() {
-            Routing __instance__ = new Routing(asLabel, asn, prefix, weight);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Routing model = new Routing(this.asLabel, this.asn, this.prefix, this.weight);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Routing o) {
-            Builder copiedBuilder =
-                    asLabel(o.getAsLabel())
-                            .asn(o.getAsn())
-                            .prefix(o.getPrefix())
-                            .weight(o.getWeight());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Routing model) {
+            if (model.wasPropertyExplicitlySet("asLabel")) {
+                this.asLabel(model.getAsLabel());
+            }
+            if (model.wasPropertyExplicitlySet("asn")) {
+                this.asn(model.getAsn());
+            }
+            if (model.wasPropertyExplicitlySet("prefix")) {
+                this.prefix(model.getPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("weight")) {
+                this.weight(model.getWeight());
+            }
+            return this;
         }
     }
 
@@ -233,11 +240,11 @@ public final class Routing {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Routing(");
+        sb.append("super=").append(super.toString());
         sb.append("asLabel=").append(String.valueOf(this.asLabel));
         sb.append(", asn=").append(String.valueOf(this.asn));
         sb.append(", prefix=").append(String.valueOf(this.prefix));
         sb.append(", weight=").append(String.valueOf(this.weight));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -256,7 +263,7 @@ public final class Routing {
                 && java.util.Objects.equals(this.asn, other.asn)
                 && java.util.Objects.equals(this.prefix, other.prefix)
                 && java.util.Objects.equals(this.weight, other.weight)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -267,16 +274,7 @@ public final class Routing {
         result = (result * PRIME) + (this.asn == null ? 43 : this.asn.hashCode());
         result = (result * PRIME) + (this.prefix == null ? 43 : this.prefix.hashCode());
         result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -60,7 +60,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateConnectionDetails {
+public class CreateConnectionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -220,6 +220,7 @@ public class CreateConnectionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateConnectionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -251,7 +252,8 @@ public class CreateConnectionDetails {
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.connectionProperties, other.connectionProperties)
-                && java.util.Objects.equals(this.registryMetadata, other.registryMetadata);
+                && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
+                && super.equals(other);
     }
 
     @Override
@@ -273,6 +275,7 @@ public class CreateConnectionDetails {
         result =
                 (result * PRIME)
                         + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

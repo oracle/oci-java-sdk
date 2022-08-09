@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = CreateClusterNetworkDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateClusterNetworkDetails {
+public final class CreateClusterNetworkDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -174,30 +175,41 @@ public final class CreateClusterNetworkDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateClusterNetworkDetails build() {
-            CreateClusterNetworkDetails __instance__ =
+            CreateClusterNetworkDetails model =
                     new CreateClusterNetworkDetails(
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            instancePools,
-                            placementConfiguration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.instancePools,
+                            this.placementConfiguration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateClusterNetworkDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .instancePools(o.getInstancePools())
-                            .placementConfiguration(o.getPlacementConfiguration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateClusterNetworkDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("instancePools")) {
+                this.instancePools(model.getInstancePools());
+            }
+            if (model.wasPropertyExplicitlySet("placementConfiguration")) {
+                this.placementConfiguration(model.getPlacementConfiguration());
+            }
+            return this;
         }
     }
 
@@ -332,13 +344,13 @@ public final class CreateClusterNetworkDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateClusterNetworkDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", instancePools=").append(String.valueOf(this.instancePools));
         sb.append(", placementConfiguration=").append(String.valueOf(this.placementConfiguration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -360,7 +372,7 @@ public final class CreateClusterNetworkDetails {
                 && java.util.Objects.equals(this.instancePools, other.instancePools)
                 && java.util.Objects.equals(
                         this.placementConfiguration, other.placementConfiguration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -381,16 +393,7 @@ public final class CreateClusterNetworkDetails {
                         + (this.placementConfiguration == null
                                 ? 43
                                 : this.placementConfiguration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

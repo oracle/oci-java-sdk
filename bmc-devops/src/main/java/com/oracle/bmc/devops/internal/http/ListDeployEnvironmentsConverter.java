@@ -175,8 +175,8 @@ public class ListDeployEnvironmentsConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .ListDeployEnvironmentsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deployEnvironmentCollection(response.getItem());
 

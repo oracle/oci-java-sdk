@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportContent.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExportContent {
+public final class ExportContent extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldNames", "parserNames", "sourceNames"})
     public ExportContent(
@@ -85,20 +85,26 @@ public final class ExportContent {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExportContent build() {
-            ExportContent __instance__ = new ExportContent(fieldNames, parserNames, sourceNames);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExportContent model =
+                    new ExportContent(this.fieldNames, this.parserNames, this.sourceNames);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExportContent o) {
-            Builder copiedBuilder =
-                    fieldNames(o.getFieldNames())
-                            .parserNames(o.getParserNames())
-                            .sourceNames(o.getSourceNames());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExportContent model) {
+            if (model.wasPropertyExplicitlySet("fieldNames")) {
+                this.fieldNames(model.getFieldNames());
+            }
+            if (model.wasPropertyExplicitlySet("parserNames")) {
+                this.parserNames(model.getParserNames());
+            }
+            if (model.wasPropertyExplicitlySet("sourceNames")) {
+                this.sourceNames(model.getSourceNames());
+            }
+            return this;
         }
     }
 
@@ -168,10 +174,10 @@ public final class ExportContent {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExportContent(");
+        sb.append("super=").append(super.toString());
         sb.append("fieldNames=").append(String.valueOf(this.fieldNames));
         sb.append(", parserNames=").append(String.valueOf(this.parserNames));
         sb.append(", sourceNames=").append(String.valueOf(this.sourceNames));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -189,7 +195,7 @@ public final class ExportContent {
         return java.util.Objects.equals(this.fieldNames, other.fieldNames)
                 && java.util.Objects.equals(this.parserNames, other.parserNames)
                 && java.util.Objects.equals(this.sourceNames, other.sourceNames)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -199,16 +205,7 @@ public final class ExportContent {
         result = (result * PRIME) + (this.fieldNames == null ? 43 : this.fieldNames.hashCode());
         result = (result * PRIME) + (this.parserNames == null ? 43 : this.parserNames.hashCode());
         result = (result * PRIME) + (this.sourceNames == null ? 43 : this.sourceNames.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

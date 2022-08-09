@@ -110,8 +110,8 @@ public class CreateMigrationConverter {
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
                                                         .CreateMigrationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.migration(response.getItem());
 

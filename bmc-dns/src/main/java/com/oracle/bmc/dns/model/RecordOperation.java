@@ -20,7 +20,7 @@ package com.oracle.bmc.dns.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RecordOperation.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RecordOperation {
+public final class RecordOperation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "domain",
@@ -251,34 +251,49 @@ public final class RecordOperation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RecordOperation build() {
-            RecordOperation __instance__ =
+            RecordOperation model =
                     new RecordOperation(
-                            domain,
-                            recordHash,
-                            isProtected,
-                            rdata,
-                            rrsetVersion,
-                            rtype,
-                            ttl,
-                            operation);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.domain,
+                            this.recordHash,
+                            this.isProtected,
+                            this.rdata,
+                            this.rrsetVersion,
+                            this.rtype,
+                            this.ttl,
+                            this.operation);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RecordOperation o) {
-            Builder copiedBuilder =
-                    domain(o.getDomain())
-                            .recordHash(o.getRecordHash())
-                            .isProtected(o.getIsProtected())
-                            .rdata(o.getRdata())
-                            .rrsetVersion(o.getRrsetVersion())
-                            .rtype(o.getRtype())
-                            .ttl(o.getTtl())
-                            .operation(o.getOperation());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RecordOperation model) {
+            if (model.wasPropertyExplicitlySet("domain")) {
+                this.domain(model.getDomain());
+            }
+            if (model.wasPropertyExplicitlySet("recordHash")) {
+                this.recordHash(model.getRecordHash());
+            }
+            if (model.wasPropertyExplicitlySet("isProtected")) {
+                this.isProtected(model.getIsProtected());
+            }
+            if (model.wasPropertyExplicitlySet("rdata")) {
+                this.rdata(model.getRdata());
+            }
+            if (model.wasPropertyExplicitlySet("rrsetVersion")) {
+                this.rrsetVersion(model.getRrsetVersion());
+            }
+            if (model.wasPropertyExplicitlySet("rtype")) {
+                this.rtype(model.getRtype());
+            }
+            if (model.wasPropertyExplicitlySet("ttl")) {
+                this.ttl(model.getTtl());
+            }
+            if (model.wasPropertyExplicitlySet("operation")) {
+                this.operation(model.getOperation());
+            }
+            return this;
         }
     }
 
@@ -539,6 +554,7 @@ public final class RecordOperation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RecordOperation(");
+        sb.append("super=").append(super.toString());
         sb.append("domain=").append(String.valueOf(this.domain));
         sb.append(", recordHash=").append(String.valueOf(this.recordHash));
         sb.append(", isProtected=").append(String.valueOf(this.isProtected));
@@ -547,7 +563,6 @@ public final class RecordOperation {
         sb.append(", rtype=").append(String.valueOf(this.rtype));
         sb.append(", ttl=").append(String.valueOf(this.ttl));
         sb.append(", operation=").append(String.valueOf(this.operation));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -570,7 +585,7 @@ public final class RecordOperation {
                 && java.util.Objects.equals(this.rtype, other.rtype)
                 && java.util.Objects.equals(this.ttl, other.ttl)
                 && java.util.Objects.equals(this.operation, other.operation)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -585,16 +600,7 @@ public final class RecordOperation {
         result = (result * PRIME) + (this.rtype == null ? 43 : this.rtype.hashCode());
         result = (result * PRIME) + (this.ttl == null ? 43 : this.ttl.hashCode());
         result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

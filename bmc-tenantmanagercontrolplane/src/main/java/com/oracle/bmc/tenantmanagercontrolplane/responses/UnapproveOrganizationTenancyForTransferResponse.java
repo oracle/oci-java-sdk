@@ -57,17 +57,19 @@ public class UnapproveOrganizationTenancyForTransferResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "organizationTenancy"
     })
     private UnapproveOrganizationTenancyForTransferResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancy
                     organizationTenancy) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.organizationTenancy = organizationTenancy;
@@ -78,6 +80,13 @@ public class UnapproveOrganizationTenancyForTransferResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -141,6 +150,7 @@ public class UnapproveOrganizationTenancyForTransferResponse
          */
         public Builder copy(UnapproveOrganizationTenancyForTransferResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             organizationTenancy(o.getOrganizationTenancy());
@@ -154,7 +164,7 @@ public class UnapproveOrganizationTenancyForTransferResponse
          */
         public UnapproveOrganizationTenancyForTransferResponse build() {
             return new UnapproveOrganizationTenancyForTransferResponse(
-                    __httpStatusCode__, opcRequestId, etag, organizationTenancy);
+                    __httpStatusCode__, headers, opcRequestId, etag, organizationTenancy);
         }
     }
 

@@ -19,7 +19,7 @@ package com.oracle.bmc.loggingsearch.model;
     builder = SearchResultSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SearchResultSummary {
+public final class SearchResultSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resultCount", "fieldCount"})
     public SearchResultSummary(Integer resultCount, Integer fieldCount) {
@@ -67,17 +67,22 @@ public final class SearchResultSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SearchResultSummary build() {
-            SearchResultSummary __instance__ = new SearchResultSummary(resultCount, fieldCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SearchResultSummary model = new SearchResultSummary(this.resultCount, this.fieldCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SearchResultSummary o) {
-            Builder copiedBuilder = resultCount(o.getResultCount()).fieldCount(o.getFieldCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SearchResultSummary model) {
+            if (model.wasPropertyExplicitlySet("resultCount")) {
+                this.resultCount(model.getResultCount());
+            }
+            if (model.wasPropertyExplicitlySet("fieldCount")) {
+                this.fieldCount(model.getFieldCount());
+            }
+            return this;
         }
     }
 
@@ -133,9 +138,9 @@ public final class SearchResultSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SearchResultSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("resultCount=").append(String.valueOf(this.resultCount));
         sb.append(", fieldCount=").append(String.valueOf(this.fieldCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +157,7 @@ public final class SearchResultSummary {
         SearchResultSummary other = (SearchResultSummary) o;
         return java.util.Objects.equals(this.resultCount, other.resultCount)
                 && java.util.Objects.equals(this.fieldCount, other.fieldCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +166,7 @@ public final class SearchResultSummary {
         int result = 1;
         result = (result * PRIME) + (this.resultCount == null ? 43 : this.resultCount.hashCode());
         result = (result * PRIME) + (this.fieldCount == null ? 43 : this.fieldCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

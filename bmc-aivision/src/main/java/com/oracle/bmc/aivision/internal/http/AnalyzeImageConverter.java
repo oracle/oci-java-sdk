@@ -100,8 +100,8 @@ public class AnalyzeImageConverter {
                                         builder =
                                                 com.oracle.bmc.aivision.responses
                                                         .AnalyzeImageResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.analyzeImageResult(response.getItem());
 

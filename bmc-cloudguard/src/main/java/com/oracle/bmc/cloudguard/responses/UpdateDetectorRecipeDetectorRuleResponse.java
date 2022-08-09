@@ -56,16 +56,18 @@ public class UpdateDetectorRecipeDetectorRuleResponse extends com.oracle.bmc.res
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "detectorRecipeDetectorRule"
     })
     private UpdateDetectorRecipeDetectorRuleResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRule detectorRecipeDetectorRule) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.detectorRecipeDetectorRule = detectorRecipeDetectorRule;
@@ -76,6 +78,13 @@ public class UpdateDetectorRecipeDetectorRuleResponse extends com.oracle.bmc.res
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -139,6 +148,7 @@ public class UpdateDetectorRecipeDetectorRuleResponse extends com.oracle.bmc.res
          */
         public Builder copy(UpdateDetectorRecipeDetectorRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             detectorRecipeDetectorRule(o.getDetectorRecipeDetectorRule());
@@ -152,7 +162,7 @@ public class UpdateDetectorRecipeDetectorRuleResponse extends com.oracle.bmc.res
          */
         public UpdateDetectorRecipeDetectorRuleResponse build() {
             return new UpdateDetectorRecipeDetectorRuleResponse(
-                    __httpStatusCode__, etag, opcRequestId, detectorRecipeDetectorRule);
+                    __httpStatusCode__, headers, etag, opcRequestId, detectorRecipeDetectorRule);
         }
     }
 

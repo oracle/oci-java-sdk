@@ -28,7 +28,8 @@ package com.oracle.bmc.core.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DrgAttachmentNetworkCreateDetails {
+public class DrgAttachmentNetworkCreateDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id"})
     protected DrgAttachmentNetworkCreateDetails(String id) {
@@ -65,6 +66,7 @@ public class DrgAttachmentNetworkCreateDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DrgAttachmentNetworkCreateDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(")");
         return sb.toString();
@@ -80,7 +82,7 @@ public class DrgAttachmentNetworkCreateDetails {
         }
 
         DrgAttachmentNetworkCreateDetails other = (DrgAttachmentNetworkCreateDetails) o;
-        return java.util.Objects.equals(this.id, other.id);
+        return java.util.Objects.equals(this.id, other.id) && super.equals(other);
     }
 
     @Override
@@ -88,6 +90,7 @@ public class DrgAttachmentNetworkCreateDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

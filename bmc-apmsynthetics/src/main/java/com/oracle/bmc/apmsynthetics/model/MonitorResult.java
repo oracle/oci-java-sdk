@@ -17,7 +17,7 @@ package com.oracle.bmc.apmsynthetics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MonitorResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MonitorResult {
+public final class MonitorResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resultType",
@@ -154,30 +154,41 @@ public final class MonitorResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonitorResult build() {
-            MonitorResult __instance__ =
+            MonitorResult model =
                     new MonitorResult(
-                            resultType,
-                            resultContentType,
-                            resultDataSet,
-                            monitorId,
-                            vantagePoint,
-                            executionTime);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.resultType,
+                            this.resultContentType,
+                            this.resultDataSet,
+                            this.monitorId,
+                            this.vantagePoint,
+                            this.executionTime);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonitorResult o) {
-            Builder copiedBuilder =
-                    resultType(o.getResultType())
-                            .resultContentType(o.getResultContentType())
-                            .resultDataSet(o.getResultDataSet())
-                            .monitorId(o.getMonitorId())
-                            .vantagePoint(o.getVantagePoint())
-                            .executionTime(o.getExecutionTime());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonitorResult model) {
+            if (model.wasPropertyExplicitlySet("resultType")) {
+                this.resultType(model.getResultType());
+            }
+            if (model.wasPropertyExplicitlySet("resultContentType")) {
+                this.resultContentType(model.getResultContentType());
+            }
+            if (model.wasPropertyExplicitlySet("resultDataSet")) {
+                this.resultDataSet(model.getResultDataSet());
+            }
+            if (model.wasPropertyExplicitlySet("monitorId")) {
+                this.monitorId(model.getMonitorId());
+            }
+            if (model.wasPropertyExplicitlySet("vantagePoint")) {
+                this.vantagePoint(model.getVantagePoint());
+            }
+            if (model.wasPropertyExplicitlySet("executionTime")) {
+                this.executionTime(model.getExecutionTime());
+            }
+            return this;
         }
     }
 
@@ -297,13 +308,13 @@ public final class MonitorResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MonitorResult(");
+        sb.append("super=").append(super.toString());
         sb.append("resultType=").append(String.valueOf(this.resultType));
         sb.append(", resultContentType=").append(String.valueOf(this.resultContentType));
         sb.append(", resultDataSet=").append(String.valueOf(this.resultDataSet));
         sb.append(", monitorId=").append(String.valueOf(this.monitorId));
         sb.append(", vantagePoint=").append(String.valueOf(this.vantagePoint));
         sb.append(", executionTime=").append(String.valueOf(this.executionTime));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -324,7 +335,7 @@ public final class MonitorResult {
                 && java.util.Objects.equals(this.monitorId, other.monitorId)
                 && java.util.Objects.equals(this.vantagePoint, other.vantagePoint)
                 && java.util.Objects.equals(this.executionTime, other.executionTime)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -343,16 +354,7 @@ public final class MonitorResult {
         result =
                 (result * PRIME)
                         + (this.executionTime == null ? 43 : this.executionTime.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

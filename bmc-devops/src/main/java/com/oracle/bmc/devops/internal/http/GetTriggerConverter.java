@@ -98,7 +98,8 @@ public class GetTriggerConverter {
 
                                 com.oracle.bmc.devops.responses.GetTriggerResponse.Builder builder =
                                         com.oracle.bmc.devops.responses.GetTriggerResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.trigger(response.getItem());
 

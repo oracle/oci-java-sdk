@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = ConnectRemotePeeringConnectionsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConnectRemotePeeringConnectionsDetails {
+public final class ConnectRemotePeeringConnectionsDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"peerId", "peerRegionName"})
     public ConnectRemotePeeringConnectionsDetails(String peerId, String peerRegionName) {
@@ -73,18 +74,23 @@ public final class ConnectRemotePeeringConnectionsDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConnectRemotePeeringConnectionsDetails build() {
-            ConnectRemotePeeringConnectionsDetails __instance__ =
-                    new ConnectRemotePeeringConnectionsDetails(peerId, peerRegionName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ConnectRemotePeeringConnectionsDetails model =
+                    new ConnectRemotePeeringConnectionsDetails(this.peerId, this.peerRegionName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConnectRemotePeeringConnectionsDetails o) {
-            Builder copiedBuilder = peerId(o.getPeerId()).peerRegionName(o.getPeerRegionName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConnectRemotePeeringConnectionsDetails model) {
+            if (model.wasPropertyExplicitlySet("peerId")) {
+                this.peerId(model.getPeerId());
+            }
+            if (model.wasPropertyExplicitlySet("peerRegionName")) {
+                this.peerRegionName(model.getPeerRegionName());
+            }
+            return this;
         }
     }
 
@@ -146,9 +152,9 @@ public final class ConnectRemotePeeringConnectionsDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConnectRemotePeeringConnectionsDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("peerId=").append(String.valueOf(this.peerId));
         sb.append(", peerRegionName=").append(String.valueOf(this.peerRegionName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -165,7 +171,7 @@ public final class ConnectRemotePeeringConnectionsDetails {
         ConnectRemotePeeringConnectionsDetails other = (ConnectRemotePeeringConnectionsDetails) o;
         return java.util.Objects.equals(this.peerId, other.peerId)
                 && java.util.Objects.equals(this.peerRegionName, other.peerRegionName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -176,16 +182,7 @@ public final class ConnectRemotePeeringConnectionsDetails {
         result =
                 (result * PRIME)
                         + (this.peerRegionName == null ? 43 : this.peerRegionName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

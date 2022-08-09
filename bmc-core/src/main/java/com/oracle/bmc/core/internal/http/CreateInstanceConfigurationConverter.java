@@ -105,8 +105,8 @@ public class CreateInstanceConfigurationConverter {
                                                 com.oracle.bmc.core.responses
                                                         .CreateInstanceConfigurationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.instanceConfiguration(response.getItem());
 

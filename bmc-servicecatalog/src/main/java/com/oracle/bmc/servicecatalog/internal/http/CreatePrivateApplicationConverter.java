@@ -114,8 +114,8 @@ public class CreatePrivateApplicationConverter {
                                         builder =
                                                 com.oracle.bmc.servicecatalog.responses
                                                         .CreatePrivateApplicationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.privateApplication(response.getItem());
 

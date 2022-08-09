@@ -226,58 +226,97 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PeComanagedDatabaseInsightSummary build() {
-            PeComanagedDatabaseInsightSummary __instance__ =
+            PeComanagedDatabaseInsightSummary model =
                     new PeComanagedDatabaseInsightSummary(
-                            id,
-                            databaseId,
-                            compartmentId,
-                            databaseName,
-                            databaseDisplayName,
-                            databaseType,
-                            databaseVersion,
-                            databaseHostNames,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            processorCount,
-                            status,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            databaseConnectionStatusDetails,
-                            databaseResourceType,
-                            opsiPrivateEndpointId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.databaseId,
+                            this.compartmentId,
+                            this.databaseName,
+                            this.databaseDisplayName,
+                            this.databaseType,
+                            this.databaseVersion,
+                            this.databaseHostNames,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.processorCount,
+                            this.status,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.databaseConnectionStatusDetails,
+                            this.databaseResourceType,
+                            this.opsiPrivateEndpointId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PeComanagedDatabaseInsightSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .databaseId(o.getDatabaseId())
-                            .compartmentId(o.getCompartmentId())
-                            .databaseName(o.getDatabaseName())
-                            .databaseDisplayName(o.getDatabaseDisplayName())
-                            .databaseType(o.getDatabaseType())
-                            .databaseVersion(o.getDatabaseVersion())
-                            .databaseHostNames(o.getDatabaseHostNames())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .processorCount(o.getProcessorCount())
-                            .status(o.getStatus())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .databaseConnectionStatusDetails(o.getDatabaseConnectionStatusDetails())
-                            .databaseResourceType(o.getDatabaseResourceType())
-                            .opsiPrivateEndpointId(o.getOpsiPrivateEndpointId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PeComanagedDatabaseInsightSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseName")) {
+                this.databaseName(model.getDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseDisplayName")) {
+                this.databaseDisplayName(model.getDatabaseDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("databaseHostNames")) {
+                this.databaseHostNames(model.getDatabaseHostNames());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("processorCount")) {
+                this.processorCount(model.getProcessorCount());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseConnectionStatusDetails")) {
+                this.databaseConnectionStatusDetails(model.getDatabaseConnectionStatusDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseResourceType")) {
+                this.databaseResourceType(model.getDatabaseResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("opsiPrivateEndpointId")) {
+                this.opsiPrivateEndpointId(model.getOpsiPrivateEndpointId());
+            }
+            return this;
         }
     }
 
@@ -381,7 +420,6 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", databaseResourceType=").append(String.valueOf(this.databaseResourceType));
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -398,8 +436,7 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
         PeComanagedDatabaseInsightSummary other = (PeComanagedDatabaseInsightSummary) o;
         return java.util.Objects.equals(this.databaseResourceType, other.databaseResourceType)
                 && java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -416,16 +453,6 @@ public final class PeComanagedDatabaseInsightSummary extends DatabaseInsightSumm
                         + (this.opsiPrivateEndpointId == null
                                 ? 43
                                 : this.opsiPrivateEndpointId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

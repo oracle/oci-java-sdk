@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = UpsertLogAnalyticsSourceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpsertLogAnalyticsSourceDetails {
+public final class UpsertLogAnalyticsSourceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "labelConditions",
@@ -605,76 +606,133 @@ public final class UpsertLogAnalyticsSourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpsertLogAnalyticsSourceDetails build() {
-            UpsertLogAnalyticsSourceDetails __instance__ =
+            UpsertLogAnalyticsSourceDetails model =
                     new UpsertLogAnalyticsSourceDetails(
-                            labelConditions,
-                            dataFilterDefinitions,
-                            databaseCredential,
-                            extendedFieldDefinitions,
-                            isForCloud,
-                            labels,
-                            metricDefinitions,
-                            metrics,
-                            oobParsers,
-                            parameters,
-                            patterns,
-                            description,
-                            displayName,
-                            editVersion,
-                            functions,
-                            sourceId,
-                            name,
-                            isSecureContent,
-                            isSystem,
-                            parsers,
-                            ruleId,
-                            typeName,
-                            warningConfig,
-                            metadataFields,
-                            labelDefinitions,
-                            entityTypes,
-                            isTimezoneOverride,
-                            userParsers,
-                            categories);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.labelConditions,
+                            this.dataFilterDefinitions,
+                            this.databaseCredential,
+                            this.extendedFieldDefinitions,
+                            this.isForCloud,
+                            this.labels,
+                            this.metricDefinitions,
+                            this.metrics,
+                            this.oobParsers,
+                            this.parameters,
+                            this.patterns,
+                            this.description,
+                            this.displayName,
+                            this.editVersion,
+                            this.functions,
+                            this.sourceId,
+                            this.name,
+                            this.isSecureContent,
+                            this.isSystem,
+                            this.parsers,
+                            this.ruleId,
+                            this.typeName,
+                            this.warningConfig,
+                            this.metadataFields,
+                            this.labelDefinitions,
+                            this.entityTypes,
+                            this.isTimezoneOverride,
+                            this.userParsers,
+                            this.categories);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpsertLogAnalyticsSourceDetails o) {
-            Builder copiedBuilder =
-                    labelConditions(o.getLabelConditions())
-                            .dataFilterDefinitions(o.getDataFilterDefinitions())
-                            .databaseCredential(o.getDatabaseCredential())
-                            .extendedFieldDefinitions(o.getExtendedFieldDefinitions())
-                            .isForCloud(o.getIsForCloud())
-                            .labels(o.getLabels())
-                            .metricDefinitions(o.getMetricDefinitions())
-                            .metrics(o.getMetrics())
-                            .oobParsers(o.getOobParsers())
-                            .parameters(o.getParameters())
-                            .patterns(o.getPatterns())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .editVersion(o.getEditVersion())
-                            .functions(o.getFunctions())
-                            .sourceId(o.getSourceId())
-                            .name(o.getName())
-                            .isSecureContent(o.getIsSecureContent())
-                            .isSystem(o.getIsSystem())
-                            .parsers(o.getParsers())
-                            .ruleId(o.getRuleId())
-                            .typeName(o.getTypeName())
-                            .warningConfig(o.getWarningConfig())
-                            .metadataFields(o.getMetadataFields())
-                            .labelDefinitions(o.getLabelDefinitions())
-                            .entityTypes(o.getEntityTypes())
-                            .isTimezoneOverride(o.getIsTimezoneOverride())
-                            .userParsers(o.getUserParsers())
-                            .categories(o.getCategories());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpsertLogAnalyticsSourceDetails model) {
+            if (model.wasPropertyExplicitlySet("labelConditions")) {
+                this.labelConditions(model.getLabelConditions());
+            }
+            if (model.wasPropertyExplicitlySet("dataFilterDefinitions")) {
+                this.dataFilterDefinitions(model.getDataFilterDefinitions());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
+            }
+            if (model.wasPropertyExplicitlySet("extendedFieldDefinitions")) {
+                this.extendedFieldDefinitions(model.getExtendedFieldDefinitions());
+            }
+            if (model.wasPropertyExplicitlySet("isForCloud")) {
+                this.isForCloud(model.getIsForCloud());
+            }
+            if (model.wasPropertyExplicitlySet("labels")) {
+                this.labels(model.getLabels());
+            }
+            if (model.wasPropertyExplicitlySet("metricDefinitions")) {
+                this.metricDefinitions(model.getMetricDefinitions());
+            }
+            if (model.wasPropertyExplicitlySet("metrics")) {
+                this.metrics(model.getMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("oobParsers")) {
+                this.oobParsers(model.getOobParsers());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("patterns")) {
+                this.patterns(model.getPatterns());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("editVersion")) {
+                this.editVersion(model.getEditVersion());
+            }
+            if (model.wasPropertyExplicitlySet("functions")) {
+                this.functions(model.getFunctions());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("isSecureContent")) {
+                this.isSecureContent(model.getIsSecureContent());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("parsers")) {
+                this.parsers(model.getParsers());
+            }
+            if (model.wasPropertyExplicitlySet("ruleId")) {
+                this.ruleId(model.getRuleId());
+            }
+            if (model.wasPropertyExplicitlySet("typeName")) {
+                this.typeName(model.getTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("warningConfig")) {
+                this.warningConfig(model.getWarningConfig());
+            }
+            if (model.wasPropertyExplicitlySet("metadataFields")) {
+                this.metadataFields(model.getMetadataFields());
+            }
+            if (model.wasPropertyExplicitlySet("labelDefinitions")) {
+                this.labelDefinitions(model.getLabelDefinitions());
+            }
+            if (model.wasPropertyExplicitlySet("entityTypes")) {
+                this.entityTypes(model.getEntityTypes());
+            }
+            if (model.wasPropertyExplicitlySet("isTimezoneOverride")) {
+                this.isTimezoneOverride(model.getIsTimezoneOverride());
+            }
+            if (model.wasPropertyExplicitlySet("userParsers")) {
+                this.userParsers(model.getUserParsers());
+            }
+            if (model.wasPropertyExplicitlySet("categories")) {
+                this.categories(model.getCategories());
+            }
+            return this;
         }
     }
 
@@ -1123,6 +1181,7 @@ public final class UpsertLogAnalyticsSourceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpsertLogAnalyticsSourceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("labelConditions=").append(String.valueOf(this.labelConditions));
         sb.append(", dataFilterDefinitions=").append(String.valueOf(this.dataFilterDefinitions));
         sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
@@ -1153,7 +1212,6 @@ public final class UpsertLogAnalyticsSourceDetails {
         sb.append(", isTimezoneOverride=").append(String.valueOf(this.isTimezoneOverride));
         sb.append(", userParsers=").append(String.valueOf(this.userParsers));
         sb.append(", categories=").append(String.valueOf(this.categories));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1198,7 +1256,7 @@ public final class UpsertLogAnalyticsSourceDetails {
                 && java.util.Objects.equals(this.isTimezoneOverride, other.isTimezoneOverride)
                 && java.util.Objects.equals(this.userParsers, other.userParsers)
                 && java.util.Objects.equals(this.categories, other.categories)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1262,16 +1320,7 @@ public final class UpsertLogAnalyticsSourceDetails {
                                 : this.isTimezoneOverride.hashCode());
         result = (result * PRIME) + (this.userParsers == null ? 43 : this.userParsers.hashCode());
         result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

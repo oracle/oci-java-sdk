@@ -163,44 +163,66 @@ public final class UpdateComputeInstanceGroupDeployStageDetails extends UpdateDe
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateComputeInstanceGroupDeployStageDetails build() {
-            UpdateComputeInstanceGroupDeployStageDetails __instance__ =
+            UpdateComputeInstanceGroupDeployStageDetails model =
                     new UpdateComputeInstanceGroupDeployStageDetails(
-                            description,
-                            displayName,
-                            deployStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            computeInstanceGroupDeployEnvironmentId,
-                            deploymentSpecDeployArtifactId,
-                            deployArtifactIds,
-                            rolloutPolicy,
-                            rollbackPolicy,
-                            failurePolicy,
-                            loadBalancerConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.deployStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.computeInstanceGroupDeployEnvironmentId,
+                            this.deploymentSpecDeployArtifactId,
+                            this.deployArtifactIds,
+                            this.rolloutPolicy,
+                            this.rollbackPolicy,
+                            this.failurePolicy,
+                            this.loadBalancerConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateComputeInstanceGroupDeployStageDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .deployStagePredecessorCollection(
-                                    o.getDeployStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .computeInstanceGroupDeployEnvironmentId(
-                                    o.getComputeInstanceGroupDeployEnvironmentId())
-                            .deploymentSpecDeployArtifactId(o.getDeploymentSpecDeployArtifactId())
-                            .deployArtifactIds(o.getDeployArtifactIds())
-                            .rolloutPolicy(o.getRolloutPolicy())
-                            .rollbackPolicy(o.getRollbackPolicy())
-                            .failurePolicy(o.getFailurePolicy())
-                            .loadBalancerConfig(o.getLoadBalancerConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateComputeInstanceGroupDeployStageDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessorCollection")) {
+                this.deployStagePredecessorCollection(model.getDeployStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("computeInstanceGroupDeployEnvironmentId")) {
+                this.computeInstanceGroupDeployEnvironmentId(
+                        model.getComputeInstanceGroupDeployEnvironmentId());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentSpecDeployArtifactId")) {
+                this.deploymentSpecDeployArtifactId(model.getDeploymentSpecDeployArtifactId());
+            }
+            if (model.wasPropertyExplicitlySet("deployArtifactIds")) {
+                this.deployArtifactIds(model.getDeployArtifactIds());
+            }
+            if (model.wasPropertyExplicitlySet("rolloutPolicy")) {
+                this.rolloutPolicy(model.getRolloutPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("rollbackPolicy")) {
+                this.rollbackPolicy(model.getRollbackPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("failurePolicy")) {
+                this.failurePolicy(model.getFailurePolicy());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerConfig")) {
+                this.loadBalancerConfig(model.getLoadBalancerConfig());
+            }
+            return this;
         }
     }
 
@@ -337,7 +359,6 @@ public final class UpdateComputeInstanceGroupDeployStageDetails extends UpdateDe
         sb.append(", rollbackPolicy=").append(String.valueOf(this.rollbackPolicy));
         sb.append(", failurePolicy=").append(String.valueOf(this.failurePolicy));
         sb.append(", loadBalancerConfig=").append(String.valueOf(this.loadBalancerConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -363,8 +384,7 @@ public final class UpdateComputeInstanceGroupDeployStageDetails extends UpdateDe
                 && java.util.Objects.equals(this.rollbackPolicy, other.rollbackPolicy)
                 && java.util.Objects.equals(this.failurePolicy, other.failurePolicy)
                 && java.util.Objects.equals(this.loadBalancerConfig, other.loadBalancerConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -398,16 +418,6 @@ public final class UpdateComputeInstanceGroupDeployStageDetails extends UpdateDe
                         + (this.loadBalancerConfig == null
                                 ? 43
                                 : this.loadBalancerConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

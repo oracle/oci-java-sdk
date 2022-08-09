@@ -122,8 +122,8 @@ public class UpdateAuthenticationProviderConverter {
                                                 com.oracle.bmc.oda.responses
                                                         .UpdateAuthenticationProviderResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.authenticationProvider(response.getItem());
 

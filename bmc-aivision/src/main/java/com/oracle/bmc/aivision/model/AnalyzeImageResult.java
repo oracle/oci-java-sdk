@@ -19,7 +19,7 @@ package com.oracle.bmc.aivision.model;
     builder = AnalyzeImageResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AnalyzeImageResult {
+public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "imageObjects",
@@ -179,34 +179,49 @@ public final class AnalyzeImageResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AnalyzeImageResult build() {
-            AnalyzeImageResult __instance__ =
+            AnalyzeImageResult model =
                     new AnalyzeImageResult(
-                            imageObjects,
-                            labels,
-                            ontologyClasses,
-                            imageText,
-                            imageClassificationModelVersion,
-                            objectDetectionModelVersion,
-                            textDetectionModelVersion,
-                            errors);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.imageObjects,
+                            this.labels,
+                            this.ontologyClasses,
+                            this.imageText,
+                            this.imageClassificationModelVersion,
+                            this.objectDetectionModelVersion,
+                            this.textDetectionModelVersion,
+                            this.errors);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AnalyzeImageResult o) {
-            Builder copiedBuilder =
-                    imageObjects(o.getImageObjects())
-                            .labels(o.getLabels())
-                            .ontologyClasses(o.getOntologyClasses())
-                            .imageText(o.getImageText())
-                            .imageClassificationModelVersion(o.getImageClassificationModelVersion())
-                            .objectDetectionModelVersion(o.getObjectDetectionModelVersion())
-                            .textDetectionModelVersion(o.getTextDetectionModelVersion())
-                            .errors(o.getErrors());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AnalyzeImageResult model) {
+            if (model.wasPropertyExplicitlySet("imageObjects")) {
+                this.imageObjects(model.getImageObjects());
+            }
+            if (model.wasPropertyExplicitlySet("labels")) {
+                this.labels(model.getLabels());
+            }
+            if (model.wasPropertyExplicitlySet("ontologyClasses")) {
+                this.ontologyClasses(model.getOntologyClasses());
+            }
+            if (model.wasPropertyExplicitlySet("imageText")) {
+                this.imageText(model.getImageText());
+            }
+            if (model.wasPropertyExplicitlySet("imageClassificationModelVersion")) {
+                this.imageClassificationModelVersion(model.getImageClassificationModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectDetectionModelVersion")) {
+                this.objectDetectionModelVersion(model.getObjectDetectionModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("textDetectionModelVersion")) {
+                this.textDetectionModelVersion(model.getTextDetectionModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("errors")) {
+                this.errors(model.getErrors());
+            }
+            return this;
         }
     }
 
@@ -339,6 +354,7 @@ public final class AnalyzeImageResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AnalyzeImageResult(");
+        sb.append("super=").append(super.toString());
         sb.append("imageObjects=").append(String.valueOf(this.imageObjects));
         sb.append(", labels=").append(String.valueOf(this.labels));
         sb.append(", ontologyClasses=").append(String.valueOf(this.ontologyClasses));
@@ -350,7 +366,6 @@ public final class AnalyzeImageResult {
         sb.append(", textDetectionModelVersion=")
                 .append(String.valueOf(this.textDetectionModelVersion));
         sb.append(", errors=").append(String.valueOf(this.errors));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -376,7 +391,7 @@ public final class AnalyzeImageResult {
                 && java.util.Objects.equals(
                         this.textDetectionModelVersion, other.textDetectionModelVersion)
                 && java.util.Objects.equals(this.errors, other.errors)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -405,16 +420,7 @@ public final class AnalyzeImageResult {
                                 ? 43
                                 : this.textDetectionModelVersion.hashCode());
         result = (result * PRIME) + (this.errors == null ? 43 : this.errors.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

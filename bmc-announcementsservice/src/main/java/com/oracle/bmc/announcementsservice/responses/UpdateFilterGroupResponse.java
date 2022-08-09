@@ -53,13 +53,20 @@ public class UpdateFilterGroupResponse extends com.oracle.bmc.responses.BmcRespo
         return filterGroup;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "filterGroup"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "filterGroup"
+    })
     private UpdateFilterGroupResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.announcementsservice.model.FilterGroup filterGroup) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.filterGroup = filterGroup;
@@ -70,6 +77,13 @@ public class UpdateFilterGroupResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +145,7 @@ public class UpdateFilterGroupResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(UpdateFilterGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             filterGroup(o.getFilterGroup());
@@ -144,7 +159,7 @@ public class UpdateFilterGroupResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public UpdateFilterGroupResponse build() {
             return new UpdateFilterGroupResponse(
-                    __httpStatusCode__, opcRequestId, etag, filterGroup);
+                    __httpStatusCode__, headers, opcRequestId, etag, filterGroup);
         }
     }
 

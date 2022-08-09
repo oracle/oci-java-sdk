@@ -118,7 +118,8 @@ public class ValidateUserConverter {
 
                                 com.oracle.bmc.cims.responses.ValidateUserResponse.Builder builder =
                                         com.oracle.bmc.cims.responses.ValidateUserResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.validationResponse(response.getItem());
 

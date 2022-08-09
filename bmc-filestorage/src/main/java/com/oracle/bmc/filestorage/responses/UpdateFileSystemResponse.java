@@ -53,13 +53,20 @@ public class UpdateFileSystemResponse extends com.oracle.bmc.responses.BmcRespon
         return fileSystem;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "fileSystem"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "fileSystem"
+    })
     private UpdateFileSystemResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.filestorage.model.FileSystem fileSystem) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.fileSystem = fileSystem;
@@ -70,6 +77,13 @@ public class UpdateFileSystemResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateFileSystemResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(UpdateFileSystemResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             fileSystem(o.getFileSystem());
@@ -142,7 +157,8 @@ public class UpdateFileSystemResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public UpdateFileSystemResponse build() {
-            return new UpdateFileSystemResponse(__httpStatusCode__, etag, opcRequestId, fileSystem);
+            return new UpdateFileSystemResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, fileSystem);
         }
     }
 

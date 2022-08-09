@@ -75,6 +75,7 @@ public class ListIPSecConnectionTunnelSecurityAssociationsResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "opcTotalItems",
@@ -82,11 +83,12 @@ public class ListIPSecConnectionTunnelSecurityAssociationsResponse
     })
     private ListIPSecConnectionTunnelSecurityAssociationsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             Integer opcTotalItems,
             java.util.List<com.oracle.bmc.core.model.TunnelSecurityAssociationSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.opcTotalItems = opcTotalItems;
@@ -98,6 +100,13 @@ public class ListIPSecConnectionTunnelSecurityAssociationsResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -180,6 +189,7 @@ public class ListIPSecConnectionTunnelSecurityAssociationsResponse
          */
         public Builder copy(ListIPSecConnectionTunnelSecurityAssociationsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             opcTotalItems(o.getOpcTotalItems());
@@ -194,7 +204,7 @@ public class ListIPSecConnectionTunnelSecurityAssociationsResponse
          */
         public ListIPSecConnectionTunnelSecurityAssociationsResponse build() {
             return new ListIPSecConnectionTunnelSecurityAssociationsResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, opcTotalItems, items);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, opcTotalItems, items);
         }
     }
 

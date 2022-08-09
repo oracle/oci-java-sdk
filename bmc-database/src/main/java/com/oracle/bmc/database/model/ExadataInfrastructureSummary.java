@@ -21,7 +21,8 @@ package com.oracle.bmc.database.model;
     builder = ExadataInfrastructureSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExadataInfrastructureSummary {
+public final class ExadataInfrastructureSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -850,102 +851,185 @@ public final class ExadataInfrastructureSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExadataInfrastructureSummary build() {
-            ExadataInfrastructureSummary __instance__ =
+            ExadataInfrastructureSummary model =
                     new ExadataInfrastructureSummary(
-                            id,
-                            compartmentId,
-                            lifecycleState,
-                            displayName,
-                            shape,
-                            timeZone,
-                            cpusEnabled,
-                            maxCpuCount,
-                            memorySizeInGBs,
-                            maxMemoryInGBs,
-                            dbNodeStorageSizeInGBs,
-                            maxDbNodeStorageInGBs,
-                            dataStorageSizeInTBs,
-                            maxDataStorageInTBs,
-                            rackSerialNumber,
-                            storageCount,
-                            additionalStorageCount,
-                            activatedStorageCount,
-                            computeCount,
-                            cloudControlPlaneServer1,
-                            cloudControlPlaneServer2,
-                            netmask,
-                            gateway,
-                            adminNetworkCIDR,
-                            infiniBandNetworkCIDR,
-                            corporateProxy,
-                            dnsServer,
-                            ntpServer,
-                            timeCreated,
-                            lifecycleDetails,
-                            csiNumber,
-                            contacts,
-                            maintenanceSLOStatus,
-                            maintenanceWindow,
-                            storageServerVersion,
-                            dbServerVersion,
-                            monthlyDbServerVersion,
-                            lastMaintenanceRunId,
-                            nextMaintenanceRunId,
-                            isCpsOfflineReportEnabled,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.lifecycleState,
+                            this.displayName,
+                            this.shape,
+                            this.timeZone,
+                            this.cpusEnabled,
+                            this.maxCpuCount,
+                            this.memorySizeInGBs,
+                            this.maxMemoryInGBs,
+                            this.dbNodeStorageSizeInGBs,
+                            this.maxDbNodeStorageInGBs,
+                            this.dataStorageSizeInTBs,
+                            this.maxDataStorageInTBs,
+                            this.rackSerialNumber,
+                            this.storageCount,
+                            this.additionalStorageCount,
+                            this.activatedStorageCount,
+                            this.computeCount,
+                            this.cloudControlPlaneServer1,
+                            this.cloudControlPlaneServer2,
+                            this.netmask,
+                            this.gateway,
+                            this.adminNetworkCIDR,
+                            this.infiniBandNetworkCIDR,
+                            this.corporateProxy,
+                            this.dnsServer,
+                            this.ntpServer,
+                            this.timeCreated,
+                            this.lifecycleDetails,
+                            this.csiNumber,
+                            this.contacts,
+                            this.maintenanceSLOStatus,
+                            this.maintenanceWindow,
+                            this.storageServerVersion,
+                            this.dbServerVersion,
+                            this.monthlyDbServerVersion,
+                            this.lastMaintenanceRunId,
+                            this.nextMaintenanceRunId,
+                            this.isCpsOfflineReportEnabled,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExadataInfrastructureSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .lifecycleState(o.getLifecycleState())
-                            .displayName(o.getDisplayName())
-                            .shape(o.getShape())
-                            .timeZone(o.getTimeZone())
-                            .cpusEnabled(o.getCpusEnabled())
-                            .maxCpuCount(o.getMaxCpuCount())
-                            .memorySizeInGBs(o.getMemorySizeInGBs())
-                            .maxMemoryInGBs(o.getMaxMemoryInGBs())
-                            .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
-                            .maxDbNodeStorageInGBs(o.getMaxDbNodeStorageInGBs())
-                            .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
-                            .maxDataStorageInTBs(o.getMaxDataStorageInTBs())
-                            .rackSerialNumber(o.getRackSerialNumber())
-                            .storageCount(o.getStorageCount())
-                            .additionalStorageCount(o.getAdditionalStorageCount())
-                            .activatedStorageCount(o.getActivatedStorageCount())
-                            .computeCount(o.getComputeCount())
-                            .cloudControlPlaneServer1(o.getCloudControlPlaneServer1())
-                            .cloudControlPlaneServer2(o.getCloudControlPlaneServer2())
-                            .netmask(o.getNetmask())
-                            .gateway(o.getGateway())
-                            .adminNetworkCIDR(o.getAdminNetworkCIDR())
-                            .infiniBandNetworkCIDR(o.getInfiniBandNetworkCIDR())
-                            .corporateProxy(o.getCorporateProxy())
-                            .dnsServer(o.getDnsServer())
-                            .ntpServer(o.getNtpServer())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .csiNumber(o.getCsiNumber())
-                            .contacts(o.getContacts())
-                            .maintenanceSLOStatus(o.getMaintenanceSLOStatus())
-                            .maintenanceWindow(o.getMaintenanceWindow())
-                            .storageServerVersion(o.getStorageServerVersion())
-                            .dbServerVersion(o.getDbServerVersion())
-                            .monthlyDbServerVersion(o.getMonthlyDbServerVersion())
-                            .lastMaintenanceRunId(o.getLastMaintenanceRunId())
-                            .nextMaintenanceRunId(o.getNextMaintenanceRunId())
-                            .isCpsOfflineReportEnabled(o.getIsCpsOfflineReportEnabled())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExadataInfrastructureSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("timeZone")) {
+                this.timeZone(model.getTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("cpusEnabled")) {
+                this.cpusEnabled(model.getCpusEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("maxCpuCount")) {
+                this.maxCpuCount(model.getMaxCpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
+                this.memorySizeInGBs(model.getMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("maxMemoryInGBs")) {
+                this.maxMemoryInGBs(model.getMaxMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dbNodeStorageSizeInGBs")) {
+                this.dbNodeStorageSizeInGBs(model.getDbNodeStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("maxDbNodeStorageInGBs")) {
+                this.maxDbNodeStorageInGBs(model.getMaxDbNodeStorageInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInTBs")) {
+                this.dataStorageSizeInTBs(model.getDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("maxDataStorageInTBs")) {
+                this.maxDataStorageInTBs(model.getMaxDataStorageInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("rackSerialNumber")) {
+                this.rackSerialNumber(model.getRackSerialNumber());
+            }
+            if (model.wasPropertyExplicitlySet("storageCount")) {
+                this.storageCount(model.getStorageCount());
+            }
+            if (model.wasPropertyExplicitlySet("additionalStorageCount")) {
+                this.additionalStorageCount(model.getAdditionalStorageCount());
+            }
+            if (model.wasPropertyExplicitlySet("activatedStorageCount")) {
+                this.activatedStorageCount(model.getActivatedStorageCount());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
+            }
+            if (model.wasPropertyExplicitlySet("cloudControlPlaneServer1")) {
+                this.cloudControlPlaneServer1(model.getCloudControlPlaneServer1());
+            }
+            if (model.wasPropertyExplicitlySet("cloudControlPlaneServer2")) {
+                this.cloudControlPlaneServer2(model.getCloudControlPlaneServer2());
+            }
+            if (model.wasPropertyExplicitlySet("netmask")) {
+                this.netmask(model.getNetmask());
+            }
+            if (model.wasPropertyExplicitlySet("gateway")) {
+                this.gateway(model.getGateway());
+            }
+            if (model.wasPropertyExplicitlySet("adminNetworkCIDR")) {
+                this.adminNetworkCIDR(model.getAdminNetworkCIDR());
+            }
+            if (model.wasPropertyExplicitlySet("infiniBandNetworkCIDR")) {
+                this.infiniBandNetworkCIDR(model.getInfiniBandNetworkCIDR());
+            }
+            if (model.wasPropertyExplicitlySet("corporateProxy")) {
+                this.corporateProxy(model.getCorporateProxy());
+            }
+            if (model.wasPropertyExplicitlySet("dnsServer")) {
+                this.dnsServer(model.getDnsServer());
+            }
+            if (model.wasPropertyExplicitlySet("ntpServer")) {
+                this.ntpServer(model.getNtpServer());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("csiNumber")) {
+                this.csiNumber(model.getCsiNumber());
+            }
+            if (model.wasPropertyExplicitlySet("contacts")) {
+                this.contacts(model.getContacts());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceSLOStatus")) {
+                this.maintenanceSLOStatus(model.getMaintenanceSLOStatus());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
+                this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("storageServerVersion")) {
+                this.storageServerVersion(model.getStorageServerVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dbServerVersion")) {
+                this.dbServerVersion(model.getDbServerVersion());
+            }
+            if (model.wasPropertyExplicitlySet("monthlyDbServerVersion")) {
+                this.monthlyDbServerVersion(model.getMonthlyDbServerVersion());
+            }
+            if (model.wasPropertyExplicitlySet("lastMaintenanceRunId")) {
+                this.lastMaintenanceRunId(model.getLastMaintenanceRunId());
+            }
+            if (model.wasPropertyExplicitlySet("nextMaintenanceRunId")) {
+                this.nextMaintenanceRunId(model.getNextMaintenanceRunId());
+            }
+            if (model.wasPropertyExplicitlySet("isCpsOfflineReportEnabled")) {
+                this.isCpsOfflineReportEnabled(model.getIsCpsOfflineReportEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -1681,6 +1765,7 @@ public final class ExadataInfrastructureSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExadataInfrastructureSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -1726,7 +1811,6 @@ public final class ExadataInfrastructureSummary {
                 .append(String.valueOf(this.isCpsOfflineReportEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1789,7 +1873,7 @@ public final class ExadataInfrastructureSummary {
                         this.isCpsOfflineReportEnabled, other.isCpsOfflineReportEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1918,16 +2002,7 @@ public final class ExadataInfrastructureSummary {
                                 : this.isCpsOfflineReportEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

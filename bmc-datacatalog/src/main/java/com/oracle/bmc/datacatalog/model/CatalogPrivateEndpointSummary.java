@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = CatalogPrivateEndpointSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CatalogPrivateEndpointSummary {
+public final class CatalogPrivateEndpointSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -275,42 +276,65 @@ public final class CatalogPrivateEndpointSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CatalogPrivateEndpointSummary build() {
-            CatalogPrivateEndpointSummary __instance__ =
+            CatalogPrivateEndpointSummary model =
                     new CatalogPrivateEndpointSummary(
-                            id,
-                            subnetId,
-                            dnsZones,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            displayName,
-                            lifecycleDetails,
-                            freeformTags,
-                            definedTags,
-                            lifecycleState,
-                            attachedCatalogs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.subnetId,
+                            this.dnsZones,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.displayName,
+                            this.lifecycleDetails,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.lifecycleState,
+                            this.attachedCatalogs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CatalogPrivateEndpointSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .subnetId(o.getSubnetId())
-                            .dnsZones(o.getDnsZones())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .displayName(o.getDisplayName())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .lifecycleState(o.getLifecycleState())
-                            .attachedCatalogs(o.getAttachedCatalogs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CatalogPrivateEndpointSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("dnsZones")) {
+                this.dnsZones(model.getDnsZones());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("attachedCatalogs")) {
+                this.attachedCatalogs(model.getAttachedCatalogs());
+            }
+            return this;
         }
     }
 
@@ -518,6 +542,7 @@ public final class CatalogPrivateEndpointSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CatalogPrivateEndpointSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", dnsZones=").append(String.valueOf(this.dnsZones));
@@ -530,7 +555,6 @@ public final class CatalogPrivateEndpointSummary {
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", attachedCatalogs=").append(String.valueOf(this.attachedCatalogs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -557,7 +581,7 @@ public final class CatalogPrivateEndpointSummary {
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.attachedCatalogs, other.attachedCatalogs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -584,16 +608,7 @@ public final class CatalogPrivateEndpointSummary {
         result =
                 (result * PRIME)
                         + (this.attachedCatalogs == null ? 43 : this.attachedCatalogs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = DatabaseIOAggregateMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseIOAggregateMetrics {
+public final class DatabaseIOAggregateMetrics
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "iops",
@@ -111,23 +112,33 @@ public final class DatabaseIOAggregateMetrics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseIOAggregateMetrics build() {
-            DatabaseIOAggregateMetrics __instance__ =
+            DatabaseIOAggregateMetrics model =
                     new DatabaseIOAggregateMetrics(
-                            iops, ioThroughput, iopsStatistics, ioThroughputStatistics);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.iops,
+                            this.ioThroughput,
+                            this.iopsStatistics,
+                            this.ioThroughputStatistics);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseIOAggregateMetrics o) {
-            Builder copiedBuilder =
-                    iops(o.getIops())
-                            .ioThroughput(o.getIoThroughput())
-                            .iopsStatistics(o.getIopsStatistics())
-                            .ioThroughputStatistics(o.getIoThroughputStatistics());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseIOAggregateMetrics model) {
+            if (model.wasPropertyExplicitlySet("iops")) {
+                this.iops(model.getIops());
+            }
+            if (model.wasPropertyExplicitlySet("ioThroughput")) {
+                this.ioThroughput(model.getIoThroughput());
+            }
+            if (model.wasPropertyExplicitlySet("iopsStatistics")) {
+                this.iopsStatistics(model.getIopsStatistics());
+            }
+            if (model.wasPropertyExplicitlySet("ioThroughputStatistics")) {
+                this.ioThroughputStatistics(model.getIoThroughputStatistics());
+            }
+            return this;
         }
     }
 
@@ -211,11 +222,11 @@ public final class DatabaseIOAggregateMetrics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseIOAggregateMetrics(");
+        sb.append("super=").append(super.toString());
         sb.append("iops=").append(String.valueOf(this.iops));
         sb.append(", ioThroughput=").append(String.valueOf(this.ioThroughput));
         sb.append(", iopsStatistics=").append(String.valueOf(this.iopsStatistics));
         sb.append(", ioThroughputStatistics=").append(String.valueOf(this.ioThroughputStatistics));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -235,7 +246,7 @@ public final class DatabaseIOAggregateMetrics {
                 && java.util.Objects.equals(this.iopsStatistics, other.iopsStatistics)
                 && java.util.Objects.equals(
                         this.ioThroughputStatistics, other.ioThroughputStatistics)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -252,16 +263,7 @@ public final class DatabaseIOAggregateMetrics {
                         + (this.ioThroughputStatistics == null
                                 ? 43
                                 : this.ioThroughputStatistics.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

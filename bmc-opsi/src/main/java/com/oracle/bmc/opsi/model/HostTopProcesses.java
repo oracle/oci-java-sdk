@@ -203,40 +203,61 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostTopProcesses build() {
-            HostTopProcesses __instance__ =
+            HostTopProcesses model =
                     new HostTopProcesses(
-                            timeCollected,
-                            pid,
-                            userName,
-                            memoryUtilizationPercent,
-                            cpuUtilizationPercent,
-                            cpuUsageInSeconds,
-                            command,
-                            virtualMemoryInMBs,
-                            physicalMemoryInMBs,
-                            startTime,
-                            totalProcesses);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeCollected,
+                            this.pid,
+                            this.userName,
+                            this.memoryUtilizationPercent,
+                            this.cpuUtilizationPercent,
+                            this.cpuUsageInSeconds,
+                            this.command,
+                            this.virtualMemoryInMBs,
+                            this.physicalMemoryInMBs,
+                            this.startTime,
+                            this.totalProcesses);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostTopProcesses o) {
-            Builder copiedBuilder =
-                    timeCollected(o.getTimeCollected())
-                            .pid(o.getPid())
-                            .userName(o.getUserName())
-                            .memoryUtilizationPercent(o.getMemoryUtilizationPercent())
-                            .cpuUtilizationPercent(o.getCpuUtilizationPercent())
-                            .cpuUsageInSeconds(o.getCpuUsageInSeconds())
-                            .command(o.getCommand())
-                            .virtualMemoryInMBs(o.getVirtualMemoryInMBs())
-                            .physicalMemoryInMBs(o.getPhysicalMemoryInMBs())
-                            .startTime(o.getStartTime())
-                            .totalProcesses(o.getTotalProcesses());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostTopProcesses model) {
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("pid")) {
+                this.pid(model.getPid());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("memoryUtilizationPercent")) {
+                this.memoryUtilizationPercent(model.getMemoryUtilizationPercent());
+            }
+            if (model.wasPropertyExplicitlySet("cpuUtilizationPercent")) {
+                this.cpuUtilizationPercent(model.getCpuUtilizationPercent());
+            }
+            if (model.wasPropertyExplicitlySet("cpuUsageInSeconds")) {
+                this.cpuUsageInSeconds(model.getCpuUsageInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("command")) {
+                this.command(model.getCommand());
+            }
+            if (model.wasPropertyExplicitlySet("virtualMemoryInMBs")) {
+                this.virtualMemoryInMBs(model.getVirtualMemoryInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("physicalMemoryInMBs")) {
+                this.physicalMemoryInMBs(model.getPhysicalMemoryInMBs());
+            }
+            if (model.wasPropertyExplicitlySet("startTime")) {
+                this.startTime(model.getStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("totalProcesses")) {
+                this.totalProcesses(model.getTotalProcesses());
+            }
+            return this;
         }
     }
 
@@ -446,7 +467,6 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
         sb.append(", physicalMemoryInMBs=").append(String.valueOf(this.physicalMemoryInMBs));
         sb.append(", startTime=").append(String.valueOf(this.startTime));
         sb.append(", totalProcesses=").append(String.valueOf(this.totalProcesses));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -472,8 +492,7 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
                 && java.util.Objects.equals(this.physicalMemoryInMBs, other.physicalMemoryInMBs)
                 && java.util.Objects.equals(this.startTime, other.startTime)
                 && java.util.Objects.equals(this.totalProcesses, other.totalProcesses)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -510,16 +529,6 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
         result =
                 (result * PRIME)
                         + (this.totalProcesses == null ? 43 : this.totalProcesses.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

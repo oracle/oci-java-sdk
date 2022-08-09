@@ -17,7 +17,7 @@ package com.oracle.bmc.oce.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OceInstance.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OceInstance {
+public final class OceInstance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -540,70 +540,121 @@ public final class OceInstance {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OceInstance build() {
-            OceInstance __instance__ =
+            OceInstance model =
                     new OceInstance(
-                            id,
-                            guid,
-                            description,
-                            compartmentId,
-                            name,
-                            tenancyId,
-                            idcsTenancy,
-                            tenancyName,
-                            upgradeSchedule,
-                            identityStripe,
-                            instanceUsageType,
-                            addOnFeatures,
-                            objectStorageNamespace,
-                            adminEmail,
-                            wafPrimaryDomain,
-                            instanceAccessType,
-                            instanceLicenseType,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            stateMessage,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            service);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.guid,
+                            this.description,
+                            this.compartmentId,
+                            this.name,
+                            this.tenancyId,
+                            this.idcsTenancy,
+                            this.tenancyName,
+                            this.upgradeSchedule,
+                            this.identityStripe,
+                            this.instanceUsageType,
+                            this.addOnFeatures,
+                            this.objectStorageNamespace,
+                            this.adminEmail,
+                            this.wafPrimaryDomain,
+                            this.instanceAccessType,
+                            this.instanceLicenseType,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.stateMessage,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.service);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OceInstance o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .guid(o.getGuid())
-                            .description(o.getDescription())
-                            .compartmentId(o.getCompartmentId())
-                            .name(o.getName())
-                            .tenancyId(o.getTenancyId())
-                            .idcsTenancy(o.getIdcsTenancy())
-                            .tenancyName(o.getTenancyName())
-                            .upgradeSchedule(o.getUpgradeSchedule())
-                            .identityStripe(o.getIdentityStripe())
-                            .instanceUsageType(o.getInstanceUsageType())
-                            .addOnFeatures(o.getAddOnFeatures())
-                            .objectStorageNamespace(o.getObjectStorageNamespace())
-                            .adminEmail(o.getAdminEmail())
-                            .wafPrimaryDomain(o.getWafPrimaryDomain())
-                            .instanceAccessType(o.getInstanceAccessType())
-                            .instanceLicenseType(o.getInstanceLicenseType())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .stateMessage(o.getStateMessage())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .service(o.getService());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OceInstance model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("guid")) {
+                this.guid(model.getGuid());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("tenancyId")) {
+                this.tenancyId(model.getTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("idcsTenancy")) {
+                this.idcsTenancy(model.getIdcsTenancy());
+            }
+            if (model.wasPropertyExplicitlySet("tenancyName")) {
+                this.tenancyName(model.getTenancyName());
+            }
+            if (model.wasPropertyExplicitlySet("upgradeSchedule")) {
+                this.upgradeSchedule(model.getUpgradeSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("identityStripe")) {
+                this.identityStripe(model.getIdentityStripe());
+            }
+            if (model.wasPropertyExplicitlySet("instanceUsageType")) {
+                this.instanceUsageType(model.getInstanceUsageType());
+            }
+            if (model.wasPropertyExplicitlySet("addOnFeatures")) {
+                this.addOnFeatures(model.getAddOnFeatures());
+            }
+            if (model.wasPropertyExplicitlySet("objectStorageNamespace")) {
+                this.objectStorageNamespace(model.getObjectStorageNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("adminEmail")) {
+                this.adminEmail(model.getAdminEmail());
+            }
+            if (model.wasPropertyExplicitlySet("wafPrimaryDomain")) {
+                this.wafPrimaryDomain(model.getWafPrimaryDomain());
+            }
+            if (model.wasPropertyExplicitlySet("instanceAccessType")) {
+                this.instanceAccessType(model.getInstanceAccessType());
+            }
+            if (model.wasPropertyExplicitlySet("instanceLicenseType")) {
+                this.instanceLicenseType(model.getInstanceLicenseType());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("stateMessage")) {
+                this.stateMessage(model.getStateMessage());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("service")) {
+                this.service(model.getService());
+            }
+            return this;
         }
     }
 
@@ -1154,6 +1205,7 @@ public final class OceInstance {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OceInstance(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", guid=").append(String.valueOf(this.guid));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -1180,7 +1232,6 @@ public final class OceInstance {
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", service=").append(String.valueOf(this.service));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1222,7 +1273,7 @@ public final class OceInstance {
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.service, other.service)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1283,16 +1334,7 @@ public final class OceInstance {
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

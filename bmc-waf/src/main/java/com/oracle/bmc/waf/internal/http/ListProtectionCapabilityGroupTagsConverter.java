@@ -165,8 +165,8 @@ public class ListProtectionCapabilityGroupTagsConverter {
                                                 com.oracle.bmc.waf.responses
                                                         .ListProtectionCapabilityGroupTagsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.protectionCapabilityGroupTagCollection(response.getItem());
 

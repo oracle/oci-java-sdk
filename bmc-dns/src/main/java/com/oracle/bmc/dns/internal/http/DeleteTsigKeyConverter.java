@@ -109,7 +109,8 @@ public class DeleteTsigKeyConverter {
 
                                 com.oracle.bmc.dns.responses.DeleteTsigKeyResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.DeleteTsigKeyResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

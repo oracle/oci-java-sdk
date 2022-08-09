@@ -36,10 +36,18 @@ public class SuspendWorkRequestResponse extends com.oracle.bmc.responses.BmcResp
         return retryAfter;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "retryAfter"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "retryAfter"
+    })
     private SuspendWorkRequestResponse(
-            int __httpStatusCode__, String opcRequestId, Integer retryAfter) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            Integer retryAfter) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.retryAfter = retryAfter;
     }
@@ -49,6 +57,13 @@ public class SuspendWorkRequestResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -90,6 +105,7 @@ public class SuspendWorkRequestResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(SuspendWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             retryAfter(o.getRetryAfter());
 
@@ -101,7 +117,8 @@ public class SuspendWorkRequestResponse extends com.oracle.bmc.responses.BmcResp
          * @return the response object
          */
         public SuspendWorkRequestResponse build() {
-            return new SuspendWorkRequestResponse(__httpStatusCode__, opcRequestId, retryAfter);
+            return new SuspendWorkRequestResponse(
+                    __httpStatusCode__, headers, opcRequestId, retryAfter);
         }
     }
 

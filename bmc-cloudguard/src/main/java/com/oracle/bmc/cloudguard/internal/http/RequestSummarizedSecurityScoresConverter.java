@@ -135,8 +135,8 @@ public class RequestSummarizedSecurityScoresConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .RequestSummarizedSecurityScoresResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityScoreAggregationCollection(response.getItem());
 

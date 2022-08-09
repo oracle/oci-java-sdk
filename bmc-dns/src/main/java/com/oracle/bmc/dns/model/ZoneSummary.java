@@ -20,7 +20,7 @@ package com.oracle.bmc.dns.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ZoneSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ZoneSummary {
+public final class ZoneSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -348,46 +348,73 @@ public final class ZoneSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ZoneSummary build() {
-            ZoneSummary __instance__ =
+            ZoneSummary model =
                     new ZoneSummary(
-                            name,
-                            zoneType,
-                            compartmentId,
-                            viewId,
-                            scope,
-                            freeformTags,
-                            definedTags,
-                            self,
-                            id,
-                            timeCreated,
-                            version,
-                            serial,
-                            lifecycleState,
-                            isProtected);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.zoneType,
+                            this.compartmentId,
+                            this.viewId,
+                            this.scope,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.self,
+                            this.id,
+                            this.timeCreated,
+                            this.version,
+                            this.serial,
+                            this.lifecycleState,
+                            this.isProtected);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ZoneSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .zoneType(o.getZoneType())
-                            .compartmentId(o.getCompartmentId())
-                            .viewId(o.getViewId())
-                            .scope(o.getScope())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .self(o.getSelf())
-                            .id(o.getId())
-                            .timeCreated(o.getTimeCreated())
-                            .version(o.getVersion())
-                            .serial(o.getSerial())
-                            .lifecycleState(o.getLifecycleState())
-                            .isProtected(o.getIsProtected());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ZoneSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("zoneType")) {
+                this.zoneType(model.getZoneType());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("viewId")) {
+                this.viewId(model.getViewId());
+            }
+            if (model.wasPropertyExplicitlySet("scope")) {
+                this.scope(model.getScope());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("self")) {
+                this.self(model.getSelf());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("serial")) {
+                this.serial(model.getSerial());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("isProtected")) {
+                this.isProtected(model.getIsProtected());
+            }
+            return this;
         }
     }
 
@@ -758,6 +785,7 @@ public final class ZoneSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ZoneSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", zoneType=").append(String.valueOf(this.zoneType));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -772,7 +800,6 @@ public final class ZoneSummary {
         sb.append(", serial=").append(String.valueOf(this.serial));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", isProtected=").append(String.valueOf(this.isProtected));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -801,7 +828,7 @@ public final class ZoneSummary {
                 && java.util.Objects.equals(this.serial, other.serial)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.isProtected, other.isProtected)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -826,16 +853,7 @@ public final class ZoneSummary {
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.isProtected == null ? 43 : this.isProtected.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

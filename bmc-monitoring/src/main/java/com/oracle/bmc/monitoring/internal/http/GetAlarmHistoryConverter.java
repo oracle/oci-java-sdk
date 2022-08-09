@@ -149,8 +149,8 @@ public class GetAlarmHistoryConverter {
                                         builder =
                                                 com.oracle.bmc.monitoring.responses
                                                         .GetAlarmHistoryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.alarmHistoryCollection(response.getItem());
 

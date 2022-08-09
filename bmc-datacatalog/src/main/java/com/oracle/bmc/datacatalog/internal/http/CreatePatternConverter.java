@@ -108,8 +108,8 @@ public class CreatePatternConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .CreatePatternResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pattern(response.getItem());
 

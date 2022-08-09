@@ -93,21 +93,27 @@ public final class RemoteJsonWebKeySet extends PublicKeySet {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RemoteJsonWebKeySet build() {
-            RemoteJsonWebKeySet __instance__ =
-                    new RemoteJsonWebKeySet(uri, isSslVerifyDisabled, maxCacheDurationInHours);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RemoteJsonWebKeySet model =
+                    new RemoteJsonWebKeySet(
+                            this.uri, this.isSslVerifyDisabled, this.maxCacheDurationInHours);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RemoteJsonWebKeySet o) {
-            Builder copiedBuilder =
-                    uri(o.getUri())
-                            .isSslVerifyDisabled(o.getIsSslVerifyDisabled())
-                            .maxCacheDurationInHours(o.getMaxCacheDurationInHours());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RemoteJsonWebKeySet model) {
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("isSslVerifyDisabled")) {
+                this.isSslVerifyDisabled(model.getIsSslVerifyDisabled());
+            }
+            if (model.wasPropertyExplicitlySet("maxCacheDurationInHours")) {
+                this.maxCacheDurationInHours(model.getMaxCacheDurationInHours());
+            }
+            return this;
         }
     }
 
@@ -201,7 +207,6 @@ public final class RemoteJsonWebKeySet extends PublicKeySet {
         sb.append(", isSslVerifyDisabled=").append(String.valueOf(this.isSslVerifyDisabled));
         sb.append(", maxCacheDurationInHours=")
                 .append(String.valueOf(this.maxCacheDurationInHours));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -220,8 +225,7 @@ public final class RemoteJsonWebKeySet extends PublicKeySet {
                 && java.util.Objects.equals(this.isSslVerifyDisabled, other.isSslVerifyDisabled)
                 && java.util.Objects.equals(
                         this.maxCacheDurationInHours, other.maxCacheDurationInHours)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -239,16 +243,6 @@ public final class RemoteJsonWebKeySet extends PublicKeySet {
                         + (this.maxCacheDurationInHours == null
                                 ? 43
                                 : this.maxCacheDurationInHours.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -87,22 +87,27 @@ public final class OciVcnIpNativeNodePoolPodNetworkOptionDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OciVcnIpNativeNodePoolPodNetworkOptionDetails build() {
-            OciVcnIpNativeNodePoolPodNetworkOptionDetails __instance__ =
+            OciVcnIpNativeNodePoolPodNetworkOptionDetails model =
                     new OciVcnIpNativeNodePoolPodNetworkOptionDetails(
-                            maxPodsPerNode, podNsgIds, podSubnetIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.maxPodsPerNode, this.podNsgIds, this.podSubnetIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OciVcnIpNativeNodePoolPodNetworkOptionDetails o) {
-            Builder copiedBuilder =
-                    maxPodsPerNode(o.getMaxPodsPerNode())
-                            .podNsgIds(o.getPodNsgIds())
-                            .podSubnetIds(o.getPodSubnetIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OciVcnIpNativeNodePoolPodNetworkOptionDetails model) {
+            if (model.wasPropertyExplicitlySet("maxPodsPerNode")) {
+                this.maxPodsPerNode(model.getMaxPodsPerNode());
+            }
+            if (model.wasPropertyExplicitlySet("podNsgIds")) {
+                this.podNsgIds(model.getPodNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("podSubnetIds")) {
+                this.podSubnetIds(model.getPodSubnetIds());
+            }
+            return this;
         }
     }
 
@@ -193,7 +198,6 @@ public final class OciVcnIpNativeNodePoolPodNetworkOptionDetails
         sb.append(", maxPodsPerNode=").append(String.valueOf(this.maxPodsPerNode));
         sb.append(", podNsgIds=").append(String.valueOf(this.podNsgIds));
         sb.append(", podSubnetIds=").append(String.valueOf(this.podSubnetIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -212,8 +216,7 @@ public final class OciVcnIpNativeNodePoolPodNetworkOptionDetails
         return java.util.Objects.equals(this.maxPodsPerNode, other.maxPodsPerNode)
                 && java.util.Objects.equals(this.podNsgIds, other.podNsgIds)
                 && java.util.Objects.equals(this.podSubnetIds, other.podSubnetIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -225,16 +228,6 @@ public final class OciVcnIpNativeNodePoolPodNetworkOptionDetails
                         + (this.maxPodsPerNode == null ? 43 : this.maxPodsPerNode.hashCode());
         result = (result * PRIME) + (this.podNsgIds == null ? 43 : this.podNsgIds.hashCode());
         result = (result * PRIME) + (this.podSubnetIds == null ? 43 : this.podSubnetIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.dts.model;
     builder = CreateTransferPackageDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateTransferPackageDetails {
+public final class CreateTransferPackageDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "originalPackageDeliveryTrackingNumber",
@@ -72,26 +73,31 @@ public final class CreateTransferPackageDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateTransferPackageDetails build() {
-            CreateTransferPackageDetails __instance__ =
+            CreateTransferPackageDetails model =
                     new CreateTransferPackageDetails(
-                            originalPackageDeliveryTrackingNumber,
-                            returnPackageDeliveryTrackingNumber,
-                            packageDeliveryVendor);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.originalPackageDeliveryTrackingNumber,
+                            this.returnPackageDeliveryTrackingNumber,
+                            this.packageDeliveryVendor);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateTransferPackageDetails o) {
-            Builder copiedBuilder =
-                    originalPackageDeliveryTrackingNumber(
-                                    o.getOriginalPackageDeliveryTrackingNumber())
-                            .returnPackageDeliveryTrackingNumber(
-                                    o.getReturnPackageDeliveryTrackingNumber())
-                            .packageDeliveryVendor(o.getPackageDeliveryVendor());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateTransferPackageDetails model) {
+            if (model.wasPropertyExplicitlySet("originalPackageDeliveryTrackingNumber")) {
+                this.originalPackageDeliveryTrackingNumber(
+                        model.getOriginalPackageDeliveryTrackingNumber());
+            }
+            if (model.wasPropertyExplicitlySet("returnPackageDeliveryTrackingNumber")) {
+                this.returnPackageDeliveryTrackingNumber(
+                        model.getReturnPackageDeliveryTrackingNumber());
+            }
+            if (model.wasPropertyExplicitlySet("packageDeliveryVendor")) {
+                this.packageDeliveryVendor(model.getPackageDeliveryVendor());
+            }
+            return this;
         }
     }
 
@@ -140,12 +146,12 @@ public final class CreateTransferPackageDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateTransferPackageDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("originalPackageDeliveryTrackingNumber=")
                 .append(String.valueOf(this.originalPackageDeliveryTrackingNumber));
         sb.append(", returnPackageDeliveryTrackingNumber=")
                 .append(String.valueOf(this.returnPackageDeliveryTrackingNumber));
         sb.append(", packageDeliveryVendor=").append(String.valueOf(this.packageDeliveryVendor));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -167,7 +173,7 @@ public final class CreateTransferPackageDetails {
                         this.returnPackageDeliveryTrackingNumber,
                         other.returnPackageDeliveryTrackingNumber)
                 && java.util.Objects.equals(this.packageDeliveryVendor, other.packageDeliveryVendor)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -189,16 +195,7 @@ public final class CreateTransferPackageDetails {
                         + (this.packageDeliveryVendor == null
                                 ? 43
                                 : this.packageDeliveryVendor.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

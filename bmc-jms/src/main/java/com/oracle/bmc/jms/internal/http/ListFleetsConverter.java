@@ -97,6 +97,14 @@ public class ListFleetsConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getDisplayNameContains() != null) {
+            target =
+                    target.queryParam(
+                            "displayNameContains",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDisplayNameContains()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -155,7 +163,8 @@ public class ListFleetsConverter {
 
                                 com.oracle.bmc.jms.responses.ListFleetsResponse.Builder builder =
                                         com.oracle.bmc.jms.responses.ListFleetsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.fleetCollection(response.getItem());
 

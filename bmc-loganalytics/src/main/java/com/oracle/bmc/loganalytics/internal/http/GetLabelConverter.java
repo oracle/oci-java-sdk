@@ -112,8 +112,8 @@ public class GetLabelConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetLabelResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsLabel(response.getItem());
 

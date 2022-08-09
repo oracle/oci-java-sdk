@@ -154,38 +154,57 @@ public final class ActivityItem extends Item {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ActivityItem build() {
-            ActivityItem __instance__ =
+            ActivityItem model =
                     new ActivityItem(
-                            itemKey,
-                            name,
-                            category,
-                            subCategory,
-                            issueType,
-                            comments,
-                            timeCreated,
-                            timeUpdated,
-                            activityType,
-                            activityAuthor);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.itemKey,
+                            this.name,
+                            this.category,
+                            this.subCategory,
+                            this.issueType,
+                            this.comments,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.activityType,
+                            this.activityAuthor);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ActivityItem o) {
-            Builder copiedBuilder =
-                    itemKey(o.getItemKey())
-                            .name(o.getName())
-                            .category(o.getCategory())
-                            .subCategory(o.getSubCategory())
-                            .issueType(o.getIssueType())
-                            .comments(o.getComments())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .activityType(o.getActivityType())
-                            .activityAuthor(o.getActivityAuthor());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ActivityItem model) {
+            if (model.wasPropertyExplicitlySet("itemKey")) {
+                this.itemKey(model.getItemKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("subCategory")) {
+                this.subCategory(model.getSubCategory());
+            }
+            if (model.wasPropertyExplicitlySet("issueType")) {
+                this.issueType(model.getIssueType());
+            }
+            if (model.wasPropertyExplicitlySet("comments")) {
+                this.comments(model.getComments());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("activityType")) {
+                this.activityType(model.getActivityType());
+            }
+            if (model.wasPropertyExplicitlySet("activityAuthor")) {
+                this.activityAuthor(model.getActivityAuthor());
+            }
+            return this;
         }
     }
 
@@ -407,7 +426,6 @@ public final class ActivityItem extends Item {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", activityType=").append(String.valueOf(this.activityType));
         sb.append(", activityAuthor=").append(String.valueOf(this.activityAuthor));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -427,8 +445,7 @@ public final class ActivityItem extends Item {
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.activityType, other.activityType)
                 && java.util.Objects.equals(this.activityAuthor, other.activityAuthor)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -442,16 +459,6 @@ public final class ActivityItem extends Item {
         result =
                 (result * PRIME)
                         + (this.activityAuthor == null ? 43 : this.activityAuthor.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

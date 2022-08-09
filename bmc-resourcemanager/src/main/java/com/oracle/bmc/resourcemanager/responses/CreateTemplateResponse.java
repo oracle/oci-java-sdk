@@ -47,13 +47,20 @@ public class CreateTemplateResponse extends com.oracle.bmc.responses.BmcResponse
         return template;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "template"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "template"
+    })
     private CreateTemplateResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.resourcemanager.model.Template template) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.template = template;
@@ -64,6 +71,13 @@ public class CreateTemplateResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -118,6 +132,7 @@ public class CreateTemplateResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(CreateTemplateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             template(o.getTemplate());
@@ -130,7 +145,8 @@ public class CreateTemplateResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public CreateTemplateResponse build() {
-            return new CreateTemplateResponse(__httpStatusCode__, opcRequestId, etag, template);
+            return new CreateTemplateResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, template);
         }
     }
 

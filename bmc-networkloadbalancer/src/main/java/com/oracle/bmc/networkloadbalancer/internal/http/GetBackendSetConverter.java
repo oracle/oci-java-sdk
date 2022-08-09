@@ -120,8 +120,8 @@ public class GetBackendSetConverter {
                                         builder =
                                                 com.oracle.bmc.networkloadbalancer.responses
                                                         .GetBackendSetResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.backendSet(response.getItem());
 

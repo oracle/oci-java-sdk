@@ -48,7 +48,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Task {
+public class Task extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -306,6 +306,7 @@ public class Task {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Task(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -352,7 +353,8 @@ public class Task {
                         this.configProviderDelegate, other.configProviderDelegate)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.keyMap, other.keyMap)
-                && java.util.Objects.equals(this.registryMetadata, other.registryMetadata);
+                && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
+                && super.equals(other);
     }
 
     @Override
@@ -385,6 +387,7 @@ public class Task {
         result =
                 (result * PRIME)
                         + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

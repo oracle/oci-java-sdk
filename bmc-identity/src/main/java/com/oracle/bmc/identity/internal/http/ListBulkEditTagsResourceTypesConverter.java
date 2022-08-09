@@ -119,8 +119,8 @@ public class ListBulkEditTagsResourceTypesConverter {
                                                 com.oracle.bmc.identity.responses
                                                         .ListBulkEditTagsResourceTypesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.bulkEditTagsResourceTypeCollection(response.getItem());
 

@@ -55,18 +55,20 @@ public final class DrgAttachmentTypeDrgRouteDistributionMatchCriteria
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DrgAttachmentTypeDrgRouteDistributionMatchCriteria build() {
-            DrgAttachmentTypeDrgRouteDistributionMatchCriteria __instance__ =
-                    new DrgAttachmentTypeDrgRouteDistributionMatchCriteria(attachmentType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DrgAttachmentTypeDrgRouteDistributionMatchCriteria model =
+                    new DrgAttachmentTypeDrgRouteDistributionMatchCriteria(this.attachmentType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DrgAttachmentTypeDrgRouteDistributionMatchCriteria o) {
-            Builder copiedBuilder = attachmentType(o.getAttachmentType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DrgAttachmentTypeDrgRouteDistributionMatchCriteria model) {
+            if (model.wasPropertyExplicitlySet("attachmentType")) {
+                this.attachmentType(model.getAttachmentType());
+            }
+            return this;
         }
     }
 
@@ -159,7 +161,6 @@ public final class DrgAttachmentTypeDrgRouteDistributionMatchCriteria
         sb.append("DrgAttachmentTypeDrgRouteDistributionMatchCriteria(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", attachmentType=").append(String.valueOf(this.attachmentType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -176,8 +177,7 @@ public final class DrgAttachmentTypeDrgRouteDistributionMatchCriteria
         DrgAttachmentTypeDrgRouteDistributionMatchCriteria other =
                 (DrgAttachmentTypeDrgRouteDistributionMatchCriteria) o;
         return java.util.Objects.equals(this.attachmentType, other.attachmentType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -187,16 +187,6 @@ public final class DrgAttachmentTypeDrgRouteDistributionMatchCriteria
         result =
                 (result * PRIME)
                         + (this.attachmentType == null ? 43 : this.attachmentType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -55,16 +55,18 @@ public class UpdateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "analyticsInstance"
     })
     private UpdateAnalyticsInstanceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.analyticsInstance = analyticsInstance;
@@ -75,6 +77,13 @@ public class UpdateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class UpdateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(UpdateAnalyticsInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             analyticsInstance(o.getAnalyticsInstance());
@@ -149,7 +159,7 @@ public class UpdateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
          */
         public UpdateAnalyticsInstanceResponse build() {
             return new UpdateAnalyticsInstanceResponse(
-                    __httpStatusCode__, etag, opcRequestId, analyticsInstance);
+                    __httpStatusCode__, headers, etag, opcRequestId, analyticsInstance);
         }
     }
 

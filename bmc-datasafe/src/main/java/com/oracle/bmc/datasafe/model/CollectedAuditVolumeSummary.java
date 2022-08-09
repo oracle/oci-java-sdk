@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = CollectedAuditVolumeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CollectedAuditVolumeSummary {
+public final class CollectedAuditVolumeSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "auditProfileId",
@@ -116,23 +117,33 @@ public final class CollectedAuditVolumeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CollectedAuditVolumeSummary build() {
-            CollectedAuditVolumeSummary __instance__ =
+            CollectedAuditVolumeSummary model =
                     new CollectedAuditVolumeSummary(
-                            auditProfileId, monthInConsideration, onlineVolume, archivedVolume);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.auditProfileId,
+                            this.monthInConsideration,
+                            this.onlineVolume,
+                            this.archivedVolume);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CollectedAuditVolumeSummary o) {
-            Builder copiedBuilder =
-                    auditProfileId(o.getAuditProfileId())
-                            .monthInConsideration(o.getMonthInConsideration())
-                            .onlineVolume(o.getOnlineVolume())
-                            .archivedVolume(o.getArchivedVolume());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CollectedAuditVolumeSummary model) {
+            if (model.wasPropertyExplicitlySet("auditProfileId")) {
+                this.auditProfileId(model.getAuditProfileId());
+            }
+            if (model.wasPropertyExplicitlySet("monthInConsideration")) {
+                this.monthInConsideration(model.getMonthInConsideration());
+            }
+            if (model.wasPropertyExplicitlySet("onlineVolume")) {
+                this.onlineVolume(model.getOnlineVolume());
+            }
+            if (model.wasPropertyExplicitlySet("archivedVolume")) {
+                this.archivedVolume(model.getArchivedVolume());
+            }
+            return this;
         }
     }
 
@@ -222,11 +233,11 @@ public final class CollectedAuditVolumeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CollectedAuditVolumeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("auditProfileId=").append(String.valueOf(this.auditProfileId));
         sb.append(", monthInConsideration=").append(String.valueOf(this.monthInConsideration));
         sb.append(", onlineVolume=").append(String.valueOf(this.onlineVolume));
         sb.append(", archivedVolume=").append(String.valueOf(this.archivedVolume));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -245,7 +256,7 @@ public final class CollectedAuditVolumeSummary {
                 && java.util.Objects.equals(this.monthInConsideration, other.monthInConsideration)
                 && java.util.Objects.equals(this.onlineVolume, other.onlineVolume)
                 && java.util.Objects.equals(this.archivedVolume, other.archivedVolume)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -264,16 +275,7 @@ public final class CollectedAuditVolumeSummary {
         result =
                 (result * PRIME)
                         + (this.archivedVolume == null ? 43 : this.archivedVolume.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

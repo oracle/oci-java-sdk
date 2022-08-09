@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = UpdateInstancePoolPlacementConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateInstancePoolPlacementConfigurationDetails {
+public final class UpdateInstancePoolPlacementConfigurationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -145,26 +146,33 @@ public final class UpdateInstancePoolPlacementConfigurationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateInstancePoolPlacementConfigurationDetails build() {
-            UpdateInstancePoolPlacementConfigurationDetails __instance__ =
+            UpdateInstancePoolPlacementConfigurationDetails model =
                     new UpdateInstancePoolPlacementConfigurationDetails(
-                            availabilityDomain,
-                            faultDomains,
-                            primarySubnetId,
-                            secondaryVnicSubnets);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.faultDomains,
+                            this.primarySubnetId,
+                            this.secondaryVnicSubnets);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateInstancePoolPlacementConfigurationDetails o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .faultDomains(o.getFaultDomains())
-                            .primarySubnetId(o.getPrimarySubnetId())
-                            .secondaryVnicSubnets(o.getSecondaryVnicSubnets());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateInstancePoolPlacementConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomains")) {
+                this.faultDomains(model.getFaultDomains());
+            }
+            if (model.wasPropertyExplicitlySet("primarySubnetId")) {
+                this.primarySubnetId(model.getPrimarySubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("secondaryVnicSubnets")) {
+                this.secondaryVnicSubnets(model.getSecondaryVnicSubnets());
+            }
+            return this;
         }
     }
 
@@ -282,11 +290,11 @@ public final class UpdateInstancePoolPlacementConfigurationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateInstancePoolPlacementConfigurationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomains=").append(String.valueOf(this.faultDomains));
         sb.append(", primarySubnetId=").append(String.valueOf(this.primarySubnetId));
         sb.append(", secondaryVnicSubnets=").append(String.valueOf(this.secondaryVnicSubnets));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -306,7 +314,7 @@ public final class UpdateInstancePoolPlacementConfigurationDetails {
                 && java.util.Objects.equals(this.faultDomains, other.faultDomains)
                 && java.util.Objects.equals(this.primarySubnetId, other.primarySubnetId)
                 && java.util.Objects.equals(this.secondaryVnicSubnets, other.secondaryVnicSubnets)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -327,16 +335,7 @@ public final class UpdateInstancePoolPlacementConfigurationDetails {
                         + (this.secondaryVnicSubnets == null
                                 ? 43
                                 : this.secondaryVnicSubnets.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

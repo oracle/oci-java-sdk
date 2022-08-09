@@ -25,9 +25,12 @@ public class ChangeServiceCatalogCompartmentResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
-    private ChangeServiceCatalogCompartmentResponse(int __httpStatusCode__, String opcRequestId) {
-        super(__httpStatusCode__);
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    private ChangeServiceCatalogCompartmentResponse(
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
@@ -36,6 +39,13 @@ public class ChangeServiceCatalogCompartmentResponse extends com.oracle.bmc.resp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -64,6 +74,7 @@ public class ChangeServiceCatalogCompartmentResponse extends com.oracle.bmc.resp
          */
         public Builder copy(ChangeServiceCatalogCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
 
             return this;
@@ -74,7 +85,8 @@ public class ChangeServiceCatalogCompartmentResponse extends com.oracle.bmc.resp
          * @return the response object
          */
         public ChangeServiceCatalogCompartmentResponse build() {
-            return new ChangeServiceCatalogCompartmentResponse(__httpStatusCode__, opcRequestId);
+            return new ChangeServiceCatalogCompartmentResponse(
+                    __httpStatusCode__, headers, opcRequestId);
         }
     }
 

@@ -118,8 +118,8 @@ public class RemoveCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .RemoveCompartmentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityZone(response.getItem());
 

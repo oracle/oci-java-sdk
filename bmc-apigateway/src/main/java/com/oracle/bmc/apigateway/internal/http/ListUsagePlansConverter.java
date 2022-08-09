@@ -156,8 +156,8 @@ public class ListUsagePlansConverter {
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
                                                         .ListUsagePlansResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.usagePlanCollection(response.getItem());
 

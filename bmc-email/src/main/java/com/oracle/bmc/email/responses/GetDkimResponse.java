@@ -53,13 +53,20 @@ public class GetDkimResponse extends com.oracle.bmc.responses.BmcResponse {
         return dkim;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dkim"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "dkim"
+    })
     private GetDkimResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.email.model.Dkim dkim) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.dkim = dkim;
@@ -70,6 +77,13 @@ public class GetDkimResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetDkimResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetDkimResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             dkim(o.getDkim());
@@ -142,7 +157,7 @@ public class GetDkimResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetDkimResponse build() {
-            return new GetDkimResponse(__httpStatusCode__, etag, opcRequestId, dkim);
+            return new GetDkimResponse(__httpStatusCode__, headers, etag, opcRequestId, dkim);
         }
     }
 

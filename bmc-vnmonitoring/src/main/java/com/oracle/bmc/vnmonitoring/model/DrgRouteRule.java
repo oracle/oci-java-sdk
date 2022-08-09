@@ -20,7 +20,7 @@ package com.oracle.bmc.vnmonitoring.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DrgRouteRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DrgRouteRule {
+public final class DrgRouteRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "destination",
@@ -268,36 +268,53 @@ public final class DrgRouteRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DrgRouteRule build() {
-            DrgRouteRule __instance__ =
+            DrgRouteRule model =
                     new DrgRouteRule(
-                            destination,
-                            destinationType,
-                            nextHopDrgAttachmentId,
-                            routeType,
-                            isConflict,
-                            isBlackhole,
-                            id,
-                            routeProvenance,
-                            attributes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.destination,
+                            this.destinationType,
+                            this.nextHopDrgAttachmentId,
+                            this.routeType,
+                            this.isConflict,
+                            this.isBlackhole,
+                            this.id,
+                            this.routeProvenance,
+                            this.attributes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DrgRouteRule o) {
-            Builder copiedBuilder =
-                    destination(o.getDestination())
-                            .destinationType(o.getDestinationType())
-                            .nextHopDrgAttachmentId(o.getNextHopDrgAttachmentId())
-                            .routeType(o.getRouteType())
-                            .isConflict(o.getIsConflict())
-                            .isBlackhole(o.getIsBlackhole())
-                            .id(o.getId())
-                            .routeProvenance(o.getRouteProvenance())
-                            .attributes(o.getAttributes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DrgRouteRule model) {
+            if (model.wasPropertyExplicitlySet("destination")) {
+                this.destination(model.getDestination());
+            }
+            if (model.wasPropertyExplicitlySet("destinationType")) {
+                this.destinationType(model.getDestinationType());
+            }
+            if (model.wasPropertyExplicitlySet("nextHopDrgAttachmentId")) {
+                this.nextHopDrgAttachmentId(model.getNextHopDrgAttachmentId());
+            }
+            if (model.wasPropertyExplicitlySet("routeType")) {
+                this.routeType(model.getRouteType());
+            }
+            if (model.wasPropertyExplicitlySet("isConflict")) {
+                this.isConflict(model.getIsConflict());
+            }
+            if (model.wasPropertyExplicitlySet("isBlackhole")) {
+                this.isBlackhole(model.getIsBlackhole());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("routeProvenance")) {
+                this.routeProvenance(model.getRouteProvenance());
+            }
+            if (model.wasPropertyExplicitlySet("attributes")) {
+                this.attributes(model.getAttributes());
+            }
+            return this;
         }
     }
 
@@ -675,6 +692,7 @@ public final class DrgRouteRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DrgRouteRule(");
+        sb.append("super=").append(super.toString());
         sb.append("destination=").append(String.valueOf(this.destination));
         sb.append(", destinationType=").append(String.valueOf(this.destinationType));
         sb.append(", nextHopDrgAttachmentId=").append(String.valueOf(this.nextHopDrgAttachmentId));
@@ -684,7 +702,6 @@ public final class DrgRouteRule {
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", routeProvenance=").append(String.valueOf(this.routeProvenance));
         sb.append(", attributes=").append(String.valueOf(this.attributes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -709,7 +726,7 @@ public final class DrgRouteRule {
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.routeProvenance, other.routeProvenance)
                 && java.util.Objects.equals(this.attributes, other.attributes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -733,16 +750,7 @@ public final class DrgRouteRule {
                 (result * PRIME)
                         + (this.routeProvenance == null ? 43 : this.routeProvenance.hashCode());
         result = (result * PRIME) + (this.attributes == null ? 43 : this.attributes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

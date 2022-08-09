@@ -185,8 +185,8 @@ public class ListOperatorControlAssignmentsConverter {
                                                 com.oracle.bmc.operatoraccesscontrol.responses
                                                         .ListOperatorControlAssignmentsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.operatorControlAssignmentCollection(response.getItem());
 

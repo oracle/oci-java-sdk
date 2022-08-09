@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = LabelSourceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LabelSourceSummary {
+public final class LabelSourceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceDisplayName",
@@ -167,32 +167,45 @@ public final class LabelSourceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LabelSourceSummary build() {
-            LabelSourceSummary __instance__ =
+            LabelSourceSummary model =
                     new LabelSourceSummary(
-                            sourceDisplayName,
-                            sourceName,
-                            sourceId,
-                            labelOperatorName,
-                            labelCondition,
-                            labelFieldDisplayname,
-                            labelFieldName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sourceDisplayName,
+                            this.sourceName,
+                            this.sourceId,
+                            this.labelOperatorName,
+                            this.labelCondition,
+                            this.labelFieldDisplayname,
+                            this.labelFieldName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LabelSourceSummary o) {
-            Builder copiedBuilder =
-                    sourceDisplayName(o.getSourceDisplayName())
-                            .sourceName(o.getSourceName())
-                            .sourceId(o.getSourceId())
-                            .labelOperatorName(o.getLabelOperatorName())
-                            .labelCondition(o.getLabelCondition())
-                            .labelFieldDisplayname(o.getLabelFieldDisplayname())
-                            .labelFieldName(o.getLabelFieldName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LabelSourceSummary model) {
+            if (model.wasPropertyExplicitlySet("sourceDisplayName")) {
+                this.sourceDisplayName(model.getSourceDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("sourceName")) {
+                this.sourceName(model.getSourceName());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("labelOperatorName")) {
+                this.labelOperatorName(model.getLabelOperatorName());
+            }
+            if (model.wasPropertyExplicitlySet("labelCondition")) {
+                this.labelCondition(model.getLabelCondition());
+            }
+            if (model.wasPropertyExplicitlySet("labelFieldDisplayname")) {
+                this.labelFieldDisplayname(model.getLabelFieldDisplayname());
+            }
+            if (model.wasPropertyExplicitlySet("labelFieldName")) {
+                this.labelFieldName(model.getLabelFieldName());
+            }
+            return this;
         }
     }
 
@@ -318,6 +331,7 @@ public final class LabelSourceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LabelSourceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("sourceDisplayName=").append(String.valueOf(this.sourceDisplayName));
         sb.append(", sourceName=").append(String.valueOf(this.sourceName));
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
@@ -325,7 +339,6 @@ public final class LabelSourceSummary {
         sb.append(", labelCondition=").append(String.valueOf(this.labelCondition));
         sb.append(", labelFieldDisplayname=").append(String.valueOf(this.labelFieldDisplayname));
         sb.append(", labelFieldName=").append(String.valueOf(this.labelFieldName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -347,7 +360,7 @@ public final class LabelSourceSummary {
                 && java.util.Objects.equals(this.labelCondition, other.labelCondition)
                 && java.util.Objects.equals(this.labelFieldDisplayname, other.labelFieldDisplayname)
                 && java.util.Objects.equals(this.labelFieldName, other.labelFieldName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -373,16 +386,7 @@ public final class LabelSourceSummary {
         result =
                 (result * PRIME)
                         + (this.labelFieldName == null ? 43 : this.labelFieldName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

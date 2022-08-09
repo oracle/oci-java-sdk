@@ -53,13 +53,20 @@ public class DeactivateModelResponse extends com.oracle.bmc.responses.BmcRespons
         return model;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "model"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "model"
+    })
     private DeactivateModelResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datascience.model.Model model) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.model = model;
@@ -70,6 +77,13 @@ public class DeactivateModelResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class DeactivateModelResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(DeactivateModelResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             model(o.getModel());
@@ -142,7 +157,8 @@ public class DeactivateModelResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public DeactivateModelResponse build() {
-            return new DeactivateModelResponse(__httpStatusCode__, etag, opcRequestId, model);
+            return new DeactivateModelResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, model);
         }
     }
 

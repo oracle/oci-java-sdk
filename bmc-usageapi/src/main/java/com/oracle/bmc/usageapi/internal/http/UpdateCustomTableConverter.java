@@ -109,8 +109,8 @@ public class UpdateCustomTableConverter {
                                         builder =
                                                 com.oracle.bmc.usageapi.responses
                                                         .UpdateCustomTableResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.customTable(response.getItem());
 

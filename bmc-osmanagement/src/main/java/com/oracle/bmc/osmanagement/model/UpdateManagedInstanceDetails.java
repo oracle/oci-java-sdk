@@ -19,7 +19,8 @@ package com.oracle.bmc.osmanagement.model;
     builder = UpdateManagedInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateManagedInstanceDetails {
+public final class UpdateManagedInstanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"notificationTopicId", "isDataCollectionAuthorized"})
     public UpdateManagedInstanceDetails(
@@ -68,21 +69,24 @@ public final class UpdateManagedInstanceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateManagedInstanceDetails build() {
-            UpdateManagedInstanceDetails __instance__ =
+            UpdateManagedInstanceDetails model =
                     new UpdateManagedInstanceDetails(
-                            notificationTopicId, isDataCollectionAuthorized);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.notificationTopicId, this.isDataCollectionAuthorized);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateManagedInstanceDetails o) {
-            Builder copiedBuilder =
-                    notificationTopicId(o.getNotificationTopicId())
-                            .isDataCollectionAuthorized(o.getIsDataCollectionAuthorized());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateManagedInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("notificationTopicId")) {
+                this.notificationTopicId(model.getNotificationTopicId());
+            }
+            if (model.wasPropertyExplicitlySet("isDataCollectionAuthorized")) {
+                this.isDataCollectionAuthorized(model.getIsDataCollectionAuthorized());
+            }
+            return this;
         }
     }
 
@@ -138,10 +142,10 @@ public final class UpdateManagedInstanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateManagedInstanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("notificationTopicId=").append(String.valueOf(this.notificationTopicId));
         sb.append(", isDataCollectionAuthorized=")
                 .append(String.valueOf(this.isDataCollectionAuthorized));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,7 +163,7 @@ public final class UpdateManagedInstanceDetails {
         return java.util.Objects.equals(this.notificationTopicId, other.notificationTopicId)
                 && java.util.Objects.equals(
                         this.isDataCollectionAuthorized, other.isDataCollectionAuthorized)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -176,16 +180,7 @@ public final class UpdateManagedInstanceDetails {
                         + (this.isDataCollectionAuthorized == null
                                 ? 43
                                 : this.isDataCollectionAuthorized.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -194,7 +194,8 @@ public class ListSkillsConverter {
 
                                 com.oracle.bmc.oda.responses.ListSkillsResponse.Builder builder =
                                         com.oracle.bmc.oda.responses.ListSkillsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.skillCollection(response.getItem());
 

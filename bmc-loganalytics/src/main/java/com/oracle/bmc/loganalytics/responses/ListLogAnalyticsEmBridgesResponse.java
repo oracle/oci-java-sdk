@@ -59,17 +59,19 @@ public class ListLogAnalyticsEmBridgesResponse extends com.oracle.bmc.responses.
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "logAnalyticsEmBridgeCollection"
     })
     private ListLogAnalyticsEmBridgesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeCollection
                     logAnalyticsEmBridgeCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.logAnalyticsEmBridgeCollection = logAnalyticsEmBridgeCollection;
@@ -80,6 +82,13 @@ public class ListLogAnalyticsEmBridgesResponse extends com.oracle.bmc.responses.
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -145,6 +154,7 @@ public class ListLogAnalyticsEmBridgesResponse extends com.oracle.bmc.responses.
          */
         public Builder copy(ListLogAnalyticsEmBridgesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             logAnalyticsEmBridgeCollection(o.getLogAnalyticsEmBridgeCollection());
@@ -158,7 +168,11 @@ public class ListLogAnalyticsEmBridgesResponse extends com.oracle.bmc.responses.
          */
         public ListLogAnalyticsEmBridgesResponse build() {
             return new ListLogAnalyticsEmBridgesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, logAnalyticsEmBridgeCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    logAnalyticsEmBridgeCollection);
         }
     }
 

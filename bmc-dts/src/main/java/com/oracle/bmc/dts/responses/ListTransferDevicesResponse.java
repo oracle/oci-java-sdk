@@ -36,14 +36,16 @@ public class ListTransferDevicesResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "multipleTransferDevices"
     })
     private ListTransferDevicesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.dts.model.MultipleTransferDevices multipleTransferDevices) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.multipleTransferDevices = multipleTransferDevices;
     }
@@ -53,6 +55,13 @@ public class ListTransferDevicesResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -93,6 +102,7 @@ public class ListTransferDevicesResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ListTransferDevicesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             multipleTransferDevices(o.getMultipleTransferDevices());
 
@@ -105,7 +115,7 @@ public class ListTransferDevicesResponse extends com.oracle.bmc.responses.BmcRes
          */
         public ListTransferDevicesResponse build() {
             return new ListTransferDevicesResponse(
-                    __httpStatusCode__, opcRequestId, multipleTransferDevices);
+                    __httpStatusCode__, headers, opcRequestId, multipleTransferDevices);
         }
     }
 

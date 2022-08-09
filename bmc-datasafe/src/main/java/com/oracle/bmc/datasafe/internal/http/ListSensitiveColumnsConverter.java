@@ -272,8 +272,8 @@ public class ListSensitiveColumnsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListSensitiveColumnsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sensitiveColumnCollection(response.getItem());
 

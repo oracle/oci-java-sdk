@@ -77,6 +77,7 @@ public class SummarizeExadataInsightResourceUtilizationInsightResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcTotalItems",
         "opcNextPage",
@@ -84,12 +85,13 @@ public class SummarizeExadataInsightResourceUtilizationInsightResponse
     })
     private SummarizeExadataInsightResourceUtilizationInsightResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             Integer opcTotalItems,
             String opcNextPage,
             com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceUtilizationInsightAggregation
                     summarizeExadataInsightResourceUtilizationInsightAggregation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcTotalItems = opcTotalItems;
         this.opcNextPage = opcNextPage;
@@ -102,6 +104,13 @@ public class SummarizeExadataInsightResourceUtilizationInsightResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -189,6 +198,7 @@ public class SummarizeExadataInsightResourceUtilizationInsightResponse
          */
         public Builder copy(SummarizeExadataInsightResourceUtilizationInsightResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcTotalItems(o.getOpcTotalItems());
             opcNextPage(o.getOpcNextPage());
@@ -205,6 +215,7 @@ public class SummarizeExadataInsightResourceUtilizationInsightResponse
         public SummarizeExadataInsightResourceUtilizationInsightResponse build() {
             return new SummarizeExadataInsightResourceUtilizationInsightResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcTotalItems,
                     opcNextPage,

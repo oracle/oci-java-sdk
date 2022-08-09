@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsParserField.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsParserField {
+public final class LogAnalyticsParserField
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "field",
@@ -210,38 +211,57 @@ public final class LogAnalyticsParserField {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsParserField build() {
-            LogAnalyticsParserField __instance__ =
+            LogAnalyticsParserField model =
                     new LogAnalyticsParserField(
-                            field,
-                            parserFieldId,
-                            parserFieldExpression,
-                            parserFieldName,
-                            storageFieldName,
-                            parserFieldIntegratorName,
-                            parserName,
-                            parserFieldSequence,
-                            parser,
-                            structuredColumnInfo);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.field,
+                            this.parserFieldId,
+                            this.parserFieldExpression,
+                            this.parserFieldName,
+                            this.storageFieldName,
+                            this.parserFieldIntegratorName,
+                            this.parserName,
+                            this.parserFieldSequence,
+                            this.parser,
+                            this.structuredColumnInfo);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsParserField o) {
-            Builder copiedBuilder =
-                    field(o.getField())
-                            .parserFieldId(o.getParserFieldId())
-                            .parserFieldExpression(o.getParserFieldExpression())
-                            .parserFieldName(o.getParserFieldName())
-                            .storageFieldName(o.getStorageFieldName())
-                            .parserFieldIntegratorName(o.getParserFieldIntegratorName())
-                            .parserName(o.getParserName())
-                            .parserFieldSequence(o.getParserFieldSequence())
-                            .parser(o.getParser())
-                            .structuredColumnInfo(o.getStructuredColumnInfo());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsParserField model) {
+            if (model.wasPropertyExplicitlySet("field")) {
+                this.field(model.getField());
+            }
+            if (model.wasPropertyExplicitlySet("parserFieldId")) {
+                this.parserFieldId(model.getParserFieldId());
+            }
+            if (model.wasPropertyExplicitlySet("parserFieldExpression")) {
+                this.parserFieldExpression(model.getParserFieldExpression());
+            }
+            if (model.wasPropertyExplicitlySet("parserFieldName")) {
+                this.parserFieldName(model.getParserFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("storageFieldName")) {
+                this.storageFieldName(model.getStorageFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("parserFieldIntegratorName")) {
+                this.parserFieldIntegratorName(model.getParserFieldIntegratorName());
+            }
+            if (model.wasPropertyExplicitlySet("parserName")) {
+                this.parserName(model.getParserName());
+            }
+            if (model.wasPropertyExplicitlySet("parserFieldSequence")) {
+                this.parserFieldSequence(model.getParserFieldSequence());
+            }
+            if (model.wasPropertyExplicitlySet("parser")) {
+                this.parser(model.getParser());
+            }
+            if (model.wasPropertyExplicitlySet("structuredColumnInfo")) {
+                this.structuredColumnInfo(model.getStructuredColumnInfo());
+            }
+            return this;
         }
     }
 
@@ -395,6 +415,7 @@ public final class LogAnalyticsParserField {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsParserField(");
+        sb.append("super=").append(super.toString());
         sb.append("field=").append(String.valueOf(this.field));
         sb.append(", parserFieldId=").append(String.valueOf(this.parserFieldId));
         sb.append(", parserFieldExpression=").append(String.valueOf(this.parserFieldExpression));
@@ -406,7 +427,6 @@ public final class LogAnalyticsParserField {
         sb.append(", parserFieldSequence=").append(String.valueOf(this.parserFieldSequence));
         sb.append(", parser=").append(String.valueOf(this.parser));
         sb.append(", structuredColumnInfo=").append(String.valueOf(this.structuredColumnInfo));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -432,7 +452,7 @@ public final class LogAnalyticsParserField {
                 && java.util.Objects.equals(this.parserFieldSequence, other.parserFieldSequence)
                 && java.util.Objects.equals(this.parser, other.parser)
                 && java.util.Objects.equals(this.structuredColumnInfo, other.structuredColumnInfo)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -471,16 +491,7 @@ public final class LogAnalyticsParserField {
                         + (this.structuredColumnInfo == null
                                 ? 43
                                 : this.structuredColumnInfo.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

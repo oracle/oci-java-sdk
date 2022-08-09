@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = IPSecConnectionTunnelErrorDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IPSecConnectionTunnelErrorDetails {
+public final class IPSecConnectionTunnelErrorDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -148,25 +149,41 @@ public final class IPSecConnectionTunnelErrorDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IPSecConnectionTunnelErrorDetails build() {
-            IPSecConnectionTunnelErrorDetails __instance__ =
+            IPSecConnectionTunnelErrorDetails model =
                     new IPSecConnectionTunnelErrorDetails(
-                            id, errorCode, errorDescription, solution, ociResourcesLink, timestamp);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.errorCode,
+                            this.errorDescription,
+                            this.solution,
+                            this.ociResourcesLink,
+                            this.timestamp);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IPSecConnectionTunnelErrorDetails o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .errorCode(o.getErrorCode())
-                            .errorDescription(o.getErrorDescription())
-                            .solution(o.getSolution())
-                            .ociResourcesLink(o.getOciResourcesLink())
-                            .timestamp(o.getTimestamp());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IPSecConnectionTunnelErrorDetails model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("errorCode")) {
+                this.errorCode(model.getErrorCode());
+            }
+            if (model.wasPropertyExplicitlySet("errorDescription")) {
+                this.errorDescription(model.getErrorDescription());
+            }
+            if (model.wasPropertyExplicitlySet("solution")) {
+                this.solution(model.getSolution());
+            }
+            if (model.wasPropertyExplicitlySet("ociResourcesLink")) {
+                this.ociResourcesLink(model.getOciResourcesLink());
+            }
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            return this;
         }
     }
 
@@ -278,13 +295,13 @@ public final class IPSecConnectionTunnelErrorDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IPSecConnectionTunnelErrorDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", errorCode=").append(String.valueOf(this.errorCode));
         sb.append(", errorDescription=").append(String.valueOf(this.errorDescription));
         sb.append(", solution=").append(String.valueOf(this.solution));
         sb.append(", ociResourcesLink=").append(String.valueOf(this.ociResourcesLink));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -305,7 +322,7 @@ public final class IPSecConnectionTunnelErrorDetails {
                 && java.util.Objects.equals(this.solution, other.solution)
                 && java.util.Objects.equals(this.ociResourcesLink, other.ociResourcesLink)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -322,16 +339,7 @@ public final class IPSecConnectionTunnelErrorDetails {
                 (result * PRIME)
                         + (this.ociResourcesLink == null ? 43 : this.ociResourcesLink.hashCode());
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

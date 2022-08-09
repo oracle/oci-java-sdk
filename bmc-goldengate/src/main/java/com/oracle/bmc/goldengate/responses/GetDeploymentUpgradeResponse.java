@@ -53,16 +53,18 @@ public class GetDeploymentUpgradeResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "deploymentUpgrade"
     })
     private GetDeploymentUpgradeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.goldengate.model.DeploymentUpgrade deploymentUpgrade) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.deploymentUpgrade = deploymentUpgrade;
@@ -73,6 +75,13 @@ public class GetDeploymentUpgradeResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetDeploymentUpgradeResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(GetDeploymentUpgradeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             deploymentUpgrade(o.getDeploymentUpgrade());
@@ -145,7 +155,7 @@ public class GetDeploymentUpgradeResponse extends com.oracle.bmc.responses.BmcRe
          */
         public GetDeploymentUpgradeResponse build() {
             return new GetDeploymentUpgradeResponse(
-                    __httpStatusCode__, etag, opcRequestId, deploymentUpgrade);
+                    __httpStatusCode__, headers, etag, opcRequestId, deploymentUpgrade);
         }
     }
 

@@ -55,16 +55,18 @@ public class GetIPSecConnectionDeviceConfigResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "iPSecConnectionDeviceConfig"
     })
     private GetIPSecConnectionDeviceConfigResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.IPSecConnectionDeviceConfig iPSecConnectionDeviceConfig) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.iPSecConnectionDeviceConfig = iPSecConnectionDeviceConfig;
@@ -75,6 +77,13 @@ public class GetIPSecConnectionDeviceConfigResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetIPSecConnectionDeviceConfigResponse extends com.oracle.bmc.respo
          */
         public Builder copy(GetIPSecConnectionDeviceConfigResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             iPSecConnectionDeviceConfig(o.getIPSecConnectionDeviceConfig());
@@ -149,7 +159,7 @@ public class GetIPSecConnectionDeviceConfigResponse extends com.oracle.bmc.respo
          */
         public GetIPSecConnectionDeviceConfigResponse build() {
             return new GetIPSecConnectionDeviceConfigResponse(
-                    __httpStatusCode__, etag, opcRequestId, iPSecConnectionDeviceConfig);
+                    __httpStatusCode__, headers, etag, opcRequestId, iPSecConnectionDeviceConfig);
         }
     }
 

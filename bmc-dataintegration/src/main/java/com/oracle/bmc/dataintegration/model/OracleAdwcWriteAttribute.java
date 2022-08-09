@@ -82,23 +82,33 @@ public final class OracleAdwcWriteAttribute extends AbstractWriteAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OracleAdwcWriteAttribute build() {
-            OracleAdwcWriteAttribute __instance__ =
+            OracleAdwcWriteAttribute model =
                     new OracleAdwcWriteAttribute(
-                            bucketName, stagingFileName, stagingDataAsset, stagingConnection);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.bucketName,
+                            this.stagingFileName,
+                            this.stagingDataAsset,
+                            this.stagingConnection);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OracleAdwcWriteAttribute o) {
-            Builder copiedBuilder =
-                    bucketName(o.getBucketName())
-                            .stagingFileName(o.getStagingFileName())
-                            .stagingDataAsset(o.getStagingDataAsset())
-                            .stagingConnection(o.getStagingConnection());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OracleAdwcWriteAttribute model) {
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("stagingFileName")) {
+                this.stagingFileName(model.getStagingFileName());
+            }
+            if (model.wasPropertyExplicitlySet("stagingDataAsset")) {
+                this.stagingDataAsset(model.getStagingDataAsset());
+            }
+            if (model.wasPropertyExplicitlySet("stagingConnection")) {
+                this.stagingConnection(model.getStagingConnection());
+            }
+            return this;
         }
     }
 
@@ -186,7 +196,6 @@ public final class OracleAdwcWriteAttribute extends AbstractWriteAttribute {
         sb.append(", stagingFileName=").append(String.valueOf(this.stagingFileName));
         sb.append(", stagingDataAsset=").append(String.valueOf(this.stagingDataAsset));
         sb.append(", stagingConnection=").append(String.valueOf(this.stagingConnection));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -205,8 +214,7 @@ public final class OracleAdwcWriteAttribute extends AbstractWriteAttribute {
                 && java.util.Objects.equals(this.stagingFileName, other.stagingFileName)
                 && java.util.Objects.equals(this.stagingDataAsset, other.stagingDataAsset)
                 && java.util.Objects.equals(this.stagingConnection, other.stagingConnection)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -223,16 +231,6 @@ public final class OracleAdwcWriteAttribute extends AbstractWriteAttribute {
         result =
                 (result * PRIME)
                         + (this.stagingConnection == null ? 43 : this.stagingConnection.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

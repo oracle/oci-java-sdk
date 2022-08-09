@@ -110,8 +110,8 @@ public class GenerateScopedAccessTokenConverter {
                                         builder =
                                                 com.oracle.bmc.identitydataplane.responses
                                                         .GenerateScopedAccessTokenResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityToken(response.getItem());
 

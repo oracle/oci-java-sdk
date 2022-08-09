@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = DropSqlTuningTaskDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DropSqlTuningTaskDetails {
+public final class DropSqlTuningTaskDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"taskId", "credentialDetails"})
     public DropSqlTuningTaskDetails(Long taskId, SqlTuningTaskCredentialDetails credentialDetails) {
@@ -66,19 +67,23 @@ public final class DropSqlTuningTaskDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DropSqlTuningTaskDetails build() {
-            DropSqlTuningTaskDetails __instance__ =
-                    new DropSqlTuningTaskDetails(taskId, credentialDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DropSqlTuningTaskDetails model =
+                    new DropSqlTuningTaskDetails(this.taskId, this.credentialDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DropSqlTuningTaskDetails o) {
-            Builder copiedBuilder =
-                    taskId(o.getTaskId()).credentialDetails(o.getCredentialDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DropSqlTuningTaskDetails model) {
+            if (model.wasPropertyExplicitlySet("taskId")) {
+                this.taskId(model.getTaskId());
+            }
+            if (model.wasPropertyExplicitlySet("credentialDetails")) {
+                this.credentialDetails(model.getCredentialDetails());
+            }
+            return this;
         }
     }
 
@@ -133,9 +138,9 @@ public final class DropSqlTuningTaskDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DropSqlTuningTaskDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("taskId=").append(String.valueOf(this.taskId));
         sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +157,7 @@ public final class DropSqlTuningTaskDetails {
         DropSqlTuningTaskDetails other = (DropSqlTuningTaskDetails) o;
         return java.util.Objects.equals(this.taskId, other.taskId)
                 && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -163,16 +168,7 @@ public final class DropSqlTuningTaskDetails {
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

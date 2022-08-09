@@ -110,8 +110,8 @@ public class ListSmtpCredentialsConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .ListSmtpCredentialsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

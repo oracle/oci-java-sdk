@@ -22,7 +22,8 @@ package com.oracle.bmc.cims.model;
     builder = CreateResourceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateResourceDetails {
+public final class CreateResourceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"item", "region", "availabilityDomain"})
     public CreateResourceDetails(
@@ -81,21 +82,26 @@ public final class CreateResourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateResourceDetails build() {
-            CreateResourceDetails __instance__ =
-                    new CreateResourceDetails(item, region, availabilityDomain);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateResourceDetails model =
+                    new CreateResourceDetails(this.item, this.region, this.availabilityDomain);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateResourceDetails o) {
-            Builder copiedBuilder =
-                    item(o.getItem())
-                            .region(o.getRegion())
-                            .availabilityDomain(o.getAvailabilityDomain());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateResourceDetails model) {
+            if (model.wasPropertyExplicitlySet("item")) {
+                this.item(model.getItem());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            return this;
         }
     }
 
@@ -158,10 +164,10 @@ public final class CreateResourceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateResourceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("item=").append(String.valueOf(this.item));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -179,7 +185,7 @@ public final class CreateResourceDetails {
         return java.util.Objects.equals(this.item, other.item)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -193,16 +199,7 @@ public final class CreateResourceDetails {
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -74,6 +74,7 @@ public class CreateDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "opcWorkRequestId",
@@ -81,11 +82,12 @@ public class CreateDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcR
     })
     private CreateDedicatedVmHostResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
             com.oracle.bmc.core.model.DedicatedVmHost dedicatedVmHost) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
@@ -97,6 +99,13 @@ public class CreateDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -178,6 +187,7 @@ public class CreateDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(CreateDedicatedVmHostResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
@@ -192,7 +202,12 @@ public class CreateDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcR
          */
         public CreateDedicatedVmHostResponse build() {
             return new CreateDedicatedVmHostResponse(
-                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, dedicatedVmHost);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    dedicatedVmHost);
         }
     }
 

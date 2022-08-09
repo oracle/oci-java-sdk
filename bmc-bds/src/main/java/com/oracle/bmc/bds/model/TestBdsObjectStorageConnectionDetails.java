@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = TestBdsObjectStorageConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TestBdsObjectStorageConnectionDetails {
+public final class TestBdsObjectStorageConnectionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"objectStorageUri", "passphrase", "objectStorageRegion"})
     public TestBdsObjectStorageConnectionDetails(
@@ -85,22 +86,27 @@ public final class TestBdsObjectStorageConnectionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TestBdsObjectStorageConnectionDetails build() {
-            TestBdsObjectStorageConnectionDetails __instance__ =
+            TestBdsObjectStorageConnectionDetails model =
                     new TestBdsObjectStorageConnectionDetails(
-                            objectStorageUri, passphrase, objectStorageRegion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.objectStorageUri, this.passphrase, this.objectStorageRegion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TestBdsObjectStorageConnectionDetails o) {
-            Builder copiedBuilder =
-                    objectStorageUri(o.getObjectStorageUri())
-                            .passphrase(o.getPassphrase())
-                            .objectStorageRegion(o.getObjectStorageRegion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TestBdsObjectStorageConnectionDetails model) {
+            if (model.wasPropertyExplicitlySet("objectStorageUri")) {
+                this.objectStorageUri(model.getObjectStorageUri());
+            }
+            if (model.wasPropertyExplicitlySet("passphrase")) {
+                this.passphrase(model.getPassphrase());
+            }
+            if (model.wasPropertyExplicitlySet("objectStorageRegion")) {
+                this.objectStorageRegion(model.getObjectStorageRegion());
+            }
+            return this;
         }
     }
 
@@ -170,10 +176,10 @@ public final class TestBdsObjectStorageConnectionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TestBdsObjectStorageConnectionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("objectStorageUri=").append(String.valueOf(this.objectStorageUri));
         sb.append(", passphrase=").append(String.valueOf(this.passphrase));
         sb.append(", objectStorageRegion=").append(String.valueOf(this.objectStorageRegion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -191,7 +197,7 @@ public final class TestBdsObjectStorageConnectionDetails {
         return java.util.Objects.equals(this.objectStorageUri, other.objectStorageUri)
                 && java.util.Objects.equals(this.passphrase, other.passphrase)
                 && java.util.Objects.equals(this.objectStorageRegion, other.objectStorageRegion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -207,16 +213,7 @@ public final class TestBdsObjectStorageConnectionDetails {
                         + (this.objectStorageRegion == null
                                 ? 43
                                 : this.objectStorageRegion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -36,7 +36,7 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class HostConfigurationSummary {
+public class HostConfigurationSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "hostInsightId",
@@ -459,6 +459,7 @@ public class HostConfigurationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostConfigurationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("hostInsightId=").append(String.valueOf(this.hostInsightId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", hostName=").append(String.valueOf(this.hostName));
@@ -512,7 +513,8 @@ public class HostConfigurationSummary {
                 && java.util.Objects.equals(
                         this.isHyperThreadingEnabled, other.isHyperThreadingEnabled)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.freeformTags, other.freeformTags);
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && super.equals(other);
     }
 
     @Override
@@ -564,6 +566,7 @@ public class HostConfigurationSummary {
                                 : this.isHyperThreadingEnabled.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

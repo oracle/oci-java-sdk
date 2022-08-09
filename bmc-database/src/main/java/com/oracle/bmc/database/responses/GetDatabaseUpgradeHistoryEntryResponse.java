@@ -41,14 +41,16 @@ public class GetDatabaseUpgradeHistoryEntryResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "databaseUpgradeHistoryEntry"
     })
     private GetDatabaseUpgradeHistoryEntryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntry databaseUpgradeHistoryEntry) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.databaseUpgradeHistoryEntry = databaseUpgradeHistoryEntry;
     }
@@ -58,6 +60,13 @@ public class GetDatabaseUpgradeHistoryEntryResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -104,6 +113,7 @@ public class GetDatabaseUpgradeHistoryEntryResponse extends com.oracle.bmc.respo
          */
         public Builder copy(GetDatabaseUpgradeHistoryEntryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             databaseUpgradeHistoryEntry(o.getDatabaseUpgradeHistoryEntry());
 
@@ -116,7 +126,7 @@ public class GetDatabaseUpgradeHistoryEntryResponse extends com.oracle.bmc.respo
          */
         public GetDatabaseUpgradeHistoryEntryResponse build() {
             return new GetDatabaseUpgradeHistoryEntryResponse(
-                    __httpStatusCode__, opcRequestId, databaseUpgradeHistoryEntry);
+                    __httpStatusCode__, headers, opcRequestId, databaseUpgradeHistoryEntry);
         }
     }
 

@@ -134,8 +134,8 @@ public class GetTermRelationshipConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .GetTermRelationshipResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.termRelationship(response.getItem());
 

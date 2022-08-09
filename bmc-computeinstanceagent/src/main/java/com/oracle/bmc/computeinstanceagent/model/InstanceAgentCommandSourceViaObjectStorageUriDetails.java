@@ -49,18 +49,20 @@ public final class InstanceAgentCommandSourceViaObjectStorageUriDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceAgentCommandSourceViaObjectStorageUriDetails build() {
-            InstanceAgentCommandSourceViaObjectStorageUriDetails __instance__ =
-                    new InstanceAgentCommandSourceViaObjectStorageUriDetails(sourceUri);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            InstanceAgentCommandSourceViaObjectStorageUriDetails model =
+                    new InstanceAgentCommandSourceViaObjectStorageUriDetails(this.sourceUri);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceAgentCommandSourceViaObjectStorageUriDetails o) {
-            Builder copiedBuilder = sourceUri(o.getSourceUri());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceAgentCommandSourceViaObjectStorageUriDetails model) {
+            if (model.wasPropertyExplicitlySet("sourceUri")) {
+                this.sourceUri(model.getSourceUri());
+            }
+            return this;
         }
     }
 
@@ -110,7 +112,6 @@ public final class InstanceAgentCommandSourceViaObjectStorageUriDetails
         sb.append("InstanceAgentCommandSourceViaObjectStorageUriDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sourceUri=").append(String.valueOf(this.sourceUri));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -126,9 +127,7 @@ public final class InstanceAgentCommandSourceViaObjectStorageUriDetails
 
         InstanceAgentCommandSourceViaObjectStorageUriDetails other =
                 (InstanceAgentCommandSourceViaObjectStorageUriDetails) o;
-        return java.util.Objects.equals(this.sourceUri, other.sourceUri)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.sourceUri, other.sourceUri) && super.equals(other);
     }
 
     @Override
@@ -136,16 +135,6 @@ public final class InstanceAgentCommandSourceViaObjectStorageUriDetails
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.sourceUri == null ? 43 : this.sourceUri.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

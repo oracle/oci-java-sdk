@@ -20,7 +20,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobLogSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobLogSummary {
+public final class JobLogSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -153,24 +153,41 @@ public final class JobLogSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobLogSummary build() {
-            JobLogSummary __instance__ =
-                    new JobLogSummary(key, jobExecutionKey, uri, timeCreated, severity, logMessage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            JobLogSummary model =
+                    new JobLogSummary(
+                            this.key,
+                            this.jobExecutionKey,
+                            this.uri,
+                            this.timeCreated,
+                            this.severity,
+                            this.logMessage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JobLogSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .jobExecutionKey(o.getJobExecutionKey())
-                            .uri(o.getUri())
-                            .timeCreated(o.getTimeCreated())
-                            .severity(o.getSeverity())
-                            .logMessage(o.getLogMessage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JobLogSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("jobExecutionKey")) {
+                this.jobExecutionKey(model.getJobExecutionKey());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("severity")) {
+                this.severity(model.getSeverity());
+            }
+            if (model.wasPropertyExplicitlySet("logMessage")) {
+                this.logMessage(model.getLogMessage());
+            }
+            return this;
         }
     }
 
@@ -286,13 +303,13 @@ public final class JobLogSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JobLogSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", jobExecutionKey=").append(String.valueOf(this.jobExecutionKey));
         sb.append(", uri=").append(String.valueOf(this.uri));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", severity=").append(String.valueOf(this.severity));
         sb.append(", logMessage=").append(String.valueOf(this.logMessage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -313,7 +330,7 @@ public final class JobLogSummary {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.severity, other.severity)
                 && java.util.Objects.equals(this.logMessage, other.logMessage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -328,16 +345,7 @@ public final class JobLogSummary {
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
         result = (result * PRIME) + (this.logMessage == null ? 43 : this.logMessage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

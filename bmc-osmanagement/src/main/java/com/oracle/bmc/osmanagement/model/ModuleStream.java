@@ -17,7 +17,7 @@ package com.oracle.bmc.osmanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ModuleStream.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ModuleStream {
+public final class ModuleStream extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "moduleName",
@@ -200,34 +200,49 @@ public final class ModuleStream {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ModuleStream build() {
-            ModuleStream __instance__ =
+            ModuleStream model =
                     new ModuleStream(
-                            moduleName,
-                            streamName,
-                            isDefault,
-                            softwareSourceId,
-                            architecture,
-                            description,
-                            profiles,
-                            packages);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.moduleName,
+                            this.streamName,
+                            this.isDefault,
+                            this.softwareSourceId,
+                            this.architecture,
+                            this.description,
+                            this.profiles,
+                            this.packages);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ModuleStream o) {
-            Builder copiedBuilder =
-                    moduleName(o.getModuleName())
-                            .streamName(o.getStreamName())
-                            .isDefault(o.getIsDefault())
-                            .softwareSourceId(o.getSoftwareSourceId())
-                            .architecture(o.getArchitecture())
-                            .description(o.getDescription())
-                            .profiles(o.getProfiles())
-                            .packages(o.getPackages());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ModuleStream model) {
+            if (model.wasPropertyExplicitlySet("moduleName")) {
+                this.moduleName(model.getModuleName());
+            }
+            if (model.wasPropertyExplicitlySet("streamName")) {
+                this.streamName(model.getStreamName());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSourceId")) {
+                this.softwareSourceId(model.getSoftwareSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("architecture")) {
+                this.architecture(model.getArchitecture());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("profiles")) {
+                this.profiles(model.getProfiles());
+            }
+            if (model.wasPropertyExplicitlySet("packages")) {
+                this.packages(model.getPackages());
+            }
+            return this;
         }
     }
 
@@ -383,6 +398,7 @@ public final class ModuleStream {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModuleStream(");
+        sb.append("super=").append(super.toString());
         sb.append("moduleName=").append(String.valueOf(this.moduleName));
         sb.append(", streamName=").append(String.valueOf(this.streamName));
         sb.append(", isDefault=").append(String.valueOf(this.isDefault));
@@ -391,7 +407,6 @@ public final class ModuleStream {
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", profiles=").append(String.valueOf(this.profiles));
         sb.append(", packages=").append(String.valueOf(this.packages));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -414,7 +429,7 @@ public final class ModuleStream {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.profiles, other.profiles)
                 && java.util.Objects.equals(this.packages, other.packages)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -431,16 +446,7 @@ public final class ModuleStream {
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.profiles == null ? 43 : this.profiles.hashCode());
         result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

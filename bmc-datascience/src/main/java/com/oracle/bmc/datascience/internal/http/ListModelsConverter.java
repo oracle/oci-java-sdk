@@ -185,8 +185,8 @@ public class ListModelsConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .ListModelsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

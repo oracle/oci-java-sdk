@@ -19,7 +19,8 @@ package com.oracle.bmc.managementagent.model;
     builder = AvailabilityHistorySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AvailabilityHistorySummary {
+public final class AvailabilityHistorySummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "managementAgentId",
@@ -110,26 +111,33 @@ public final class AvailabilityHistorySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AvailabilityHistorySummary build() {
-            AvailabilityHistorySummary __instance__ =
+            AvailabilityHistorySummary model =
                     new AvailabilityHistorySummary(
-                            managementAgentId,
-                            availabilityStatus,
-                            timeAvailabilityStatusStarted,
-                            timeAvailabilityStatusEnded);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.managementAgentId,
+                            this.availabilityStatus,
+                            this.timeAvailabilityStatusStarted,
+                            this.timeAvailabilityStatusEnded);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AvailabilityHistorySummary o) {
-            Builder copiedBuilder =
-                    managementAgentId(o.getManagementAgentId())
-                            .availabilityStatus(o.getAvailabilityStatus())
-                            .timeAvailabilityStatusStarted(o.getTimeAvailabilityStatusStarted())
-                            .timeAvailabilityStatusEnded(o.getTimeAvailabilityStatusEnded());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AvailabilityHistorySummary model) {
+            if (model.wasPropertyExplicitlySet("managementAgentId")) {
+                this.managementAgentId(model.getManagementAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityStatus")) {
+                this.availabilityStatus(model.getAvailabilityStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeAvailabilityStatusStarted")) {
+                this.timeAvailabilityStatusStarted(model.getTimeAvailabilityStatusStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeAvailabilityStatusEnded")) {
+                this.timeAvailabilityStatusEnded(model.getTimeAvailabilityStatusEnded());
+            }
+            return this;
         }
     }
 
@@ -213,13 +221,13 @@ public final class AvailabilityHistorySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AvailabilityHistorySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", availabilityStatus=").append(String.valueOf(this.availabilityStatus));
         sb.append(", timeAvailabilityStatusStarted=")
                 .append(String.valueOf(this.timeAvailabilityStatusStarted));
         sb.append(", timeAvailabilityStatusEnded=")
                 .append(String.valueOf(this.timeAvailabilityStatusEnded));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -240,7 +248,7 @@ public final class AvailabilityHistorySummary {
                         this.timeAvailabilityStatusStarted, other.timeAvailabilityStatusStarted)
                 && java.util.Objects.equals(
                         this.timeAvailabilityStatusEnded, other.timeAvailabilityStatusEnded)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -265,16 +273,7 @@ public final class AvailabilityHistorySummary {
                         + (this.timeAvailabilityStatusEnded == null
                                 ? 43
                                 : this.timeAvailabilityStatusEnded.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

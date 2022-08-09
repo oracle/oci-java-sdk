@@ -27,7 +27,7 @@ package com.oracle.bmc.vnmonitoring.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IcmpOptions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IcmpOptions {
+public final class IcmpOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"code", "type"})
     public IcmpOptions(Integer code, Integer type) {
@@ -75,17 +75,22 @@ public final class IcmpOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IcmpOptions build() {
-            IcmpOptions __instance__ = new IcmpOptions(code, type);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            IcmpOptions model = new IcmpOptions(this.code, this.type);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IcmpOptions o) {
-            Builder copiedBuilder = code(o.getCode()).type(o.getType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IcmpOptions model) {
+            if (model.wasPropertyExplicitlySet("code")) {
+                this.code(model.getCode());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            return this;
         }
     }
 
@@ -141,9 +146,9 @@ public final class IcmpOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IcmpOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("code=").append(String.valueOf(this.code));
         sb.append(", type=").append(String.valueOf(this.type));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -160,7 +165,7 @@ public final class IcmpOptions {
         IcmpOptions other = (IcmpOptions) o;
         return java.util.Objects.equals(this.code, other.code)
                 && java.util.Objects.equals(this.type, other.type)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -169,16 +174,7 @@ public final class IcmpOptions {
         int result = 1;
         result = (result * PRIME) + (this.code == null ? 43 : this.code.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

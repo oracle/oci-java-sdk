@@ -20,7 +20,8 @@ package com.oracle.bmc.waf.model;
     builder = CollaborativeCapabilityWeight.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CollaborativeCapabilityWeight {
+public final class CollaborativeCapabilityWeight
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "displayName", "weight"})
     public CollaborativeCapabilityWeight(String key, String displayName, Integer weight) {
@@ -85,19 +86,26 @@ public final class CollaborativeCapabilityWeight {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CollaborativeCapabilityWeight build() {
-            CollaborativeCapabilityWeight __instance__ =
-                    new CollaborativeCapabilityWeight(key, displayName, weight);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CollaborativeCapabilityWeight model =
+                    new CollaborativeCapabilityWeight(this.key, this.displayName, this.weight);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CollaborativeCapabilityWeight o) {
-            Builder copiedBuilder =
-                    key(o.getKey()).displayName(o.getDisplayName()).weight(o.getWeight());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CollaborativeCapabilityWeight model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("weight")) {
+                this.weight(model.getWeight());
+            }
+            return this;
         }
     }
 
@@ -167,10 +175,10 @@ public final class CollaborativeCapabilityWeight {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CollaborativeCapabilityWeight(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", weight=").append(String.valueOf(this.weight));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -188,7 +196,7 @@ public final class CollaborativeCapabilityWeight {
         return java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.weight, other.weight)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -198,16 +206,7 @@ public final class CollaborativeCapabilityWeight {
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

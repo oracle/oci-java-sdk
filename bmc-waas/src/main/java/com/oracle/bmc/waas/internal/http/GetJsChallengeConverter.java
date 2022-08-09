@@ -102,8 +102,8 @@ public class GetJsChallengeConverter {
                                         builder =
                                                 com.oracle.bmc.waas.responses.GetJsChallengeResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.jsChallenge(response.getItem());
 

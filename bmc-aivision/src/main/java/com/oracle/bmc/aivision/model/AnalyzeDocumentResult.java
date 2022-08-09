@@ -19,7 +19,8 @@ package com.oracle.bmc.aivision.model;
     builder = AnalyzeDocumentResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AnalyzeDocumentResult {
+public final class AnalyzeDocumentResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "documentMetadata",
@@ -239,42 +240,63 @@ public final class AnalyzeDocumentResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AnalyzeDocumentResult build() {
-            AnalyzeDocumentResult __instance__ =
+            AnalyzeDocumentResult model =
                     new AnalyzeDocumentResult(
-                            documentMetadata,
-                            pages,
-                            detectedDocumentTypes,
-                            detectedLanguages,
-                            documentClassificationModelVersion,
-                            languageClassificationModelVersion,
-                            textDetectionModelVersion,
-                            keyValueDetectionModelVersion,
-                            tableDetectionModelVersion,
-                            errors,
-                            searchablePdf);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.documentMetadata,
+                            this.pages,
+                            this.detectedDocumentTypes,
+                            this.detectedLanguages,
+                            this.documentClassificationModelVersion,
+                            this.languageClassificationModelVersion,
+                            this.textDetectionModelVersion,
+                            this.keyValueDetectionModelVersion,
+                            this.tableDetectionModelVersion,
+                            this.errors,
+                            this.searchablePdf);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AnalyzeDocumentResult o) {
-            Builder copiedBuilder =
-                    documentMetadata(o.getDocumentMetadata())
-                            .pages(o.getPages())
-                            .detectedDocumentTypes(o.getDetectedDocumentTypes())
-                            .detectedLanguages(o.getDetectedLanguages())
-                            .documentClassificationModelVersion(
-                                    o.getDocumentClassificationModelVersion())
-                            .languageClassificationModelVersion(
-                                    o.getLanguageClassificationModelVersion())
-                            .textDetectionModelVersion(o.getTextDetectionModelVersion())
-                            .keyValueDetectionModelVersion(o.getKeyValueDetectionModelVersion())
-                            .tableDetectionModelVersion(o.getTableDetectionModelVersion())
-                            .errors(o.getErrors())
-                            .searchablePdf(o.getSearchablePdf());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AnalyzeDocumentResult model) {
+            if (model.wasPropertyExplicitlySet("documentMetadata")) {
+                this.documentMetadata(model.getDocumentMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("pages")) {
+                this.pages(model.getPages());
+            }
+            if (model.wasPropertyExplicitlySet("detectedDocumentTypes")) {
+                this.detectedDocumentTypes(model.getDetectedDocumentTypes());
+            }
+            if (model.wasPropertyExplicitlySet("detectedLanguages")) {
+                this.detectedLanguages(model.getDetectedLanguages());
+            }
+            if (model.wasPropertyExplicitlySet("documentClassificationModelVersion")) {
+                this.documentClassificationModelVersion(
+                        model.getDocumentClassificationModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("languageClassificationModelVersion")) {
+                this.languageClassificationModelVersion(
+                        model.getLanguageClassificationModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("textDetectionModelVersion")) {
+                this.textDetectionModelVersion(model.getTextDetectionModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("keyValueDetectionModelVersion")) {
+                this.keyValueDetectionModelVersion(model.getKeyValueDetectionModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("tableDetectionModelVersion")) {
+                this.tableDetectionModelVersion(model.getTableDetectionModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("errors")) {
+                this.errors(model.getErrors());
+            }
+            if (model.wasPropertyExplicitlySet("searchablePdf")) {
+                this.searchablePdf(model.getSearchablePdf());
+            }
+            return this;
         }
     }
 
@@ -449,6 +471,7 @@ public final class AnalyzeDocumentResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AnalyzeDocumentResult(");
+        sb.append("super=").append(super.toString());
         sb.append("documentMetadata=").append(String.valueOf(this.documentMetadata));
         sb.append(", pages=").append(String.valueOf(this.pages));
         sb.append(", detectedDocumentTypes=").append(String.valueOf(this.detectedDocumentTypes));
@@ -472,7 +495,6 @@ public final class AnalyzeDocumentResult {
                                         + (this.searchablePdf != null
                                                 ? " (byte[" + this.searchablePdf.length + "])"
                                                 : ""))));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -505,7 +527,7 @@ public final class AnalyzeDocumentResult {
                         this.tableDetectionModelVersion, other.tableDetectionModelVersion)
                 && java.util.Objects.equals(this.errors, other.errors)
                 && java.util.Arrays.equals(this.searchablePdf, other.searchablePdf)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -551,16 +573,7 @@ public final class AnalyzeDocumentResult {
                                 : this.tableDetectionModelVersion.hashCode());
         result = (result * PRIME) + (this.errors == null ? 43 : this.errors.hashCode());
         result = (result * PRIME) + java.util.Arrays.hashCode(this.searchablePdf);
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

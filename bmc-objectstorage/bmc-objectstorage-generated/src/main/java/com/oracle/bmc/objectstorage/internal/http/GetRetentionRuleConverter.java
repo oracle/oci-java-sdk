@@ -116,8 +116,8 @@ public class GetRetentionRuleConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .GetRetentionRuleResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.retentionRule(response.getItem());
 

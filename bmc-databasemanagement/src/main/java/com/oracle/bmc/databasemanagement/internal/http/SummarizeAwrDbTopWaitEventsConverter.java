@@ -205,8 +205,8 @@ public class SummarizeAwrDbTopWaitEventsConverter {
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .SummarizeAwrDbTopWaitEventsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDbTopWaitEventCollection(response.getItem());
 

@@ -53,13 +53,20 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
         return items;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "items"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "items"
+    })
     private ExpandTreeForGlossaryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             java.util.List<com.oracle.bmc.datacatalog.model.GlossaryTreeElement> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.items = items;
@@ -70,6 +77,13 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +145,7 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(ExpandTreeForGlossaryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
@@ -143,7 +158,8 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
          * @return the response object
          */
         public ExpandTreeForGlossaryResponse build() {
-            return new ExpandTreeForGlossaryResponse(__httpStatusCode__, etag, opcRequestId, items);
+            return new ExpandTreeForGlossaryResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, items);
         }
     }
 

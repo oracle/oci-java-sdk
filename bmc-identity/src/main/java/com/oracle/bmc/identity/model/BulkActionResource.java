@@ -20,7 +20,7 @@ package com.oracle.bmc.identity.model;
     builder = BulkActionResource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BulkActionResource {
+public final class BulkActionResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"identifier", "entityType", "metadata"})
     public BulkActionResource(
@@ -142,21 +142,26 @@ public final class BulkActionResource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BulkActionResource build() {
-            BulkActionResource __instance__ =
-                    new BulkActionResource(identifier, entityType, metadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BulkActionResource model =
+                    new BulkActionResource(this.identifier, this.entityType, this.metadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BulkActionResource o) {
-            Builder copiedBuilder =
-                    identifier(o.getIdentifier())
-                            .entityType(o.getEntityType())
-                            .metadata(o.getMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BulkActionResource model) {
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            return this;
         }
     }
 
@@ -282,10 +287,10 @@ public final class BulkActionResource {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BulkActionResource(");
+        sb.append("super=").append(super.toString());
         sb.append("identifier=").append(String.valueOf(this.identifier));
         sb.append(", entityType=").append(String.valueOf(this.entityType));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -303,7 +308,7 @@ public final class BulkActionResource {
         return java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.entityType, other.entityType)
                 && java.util.Objects.equals(this.metadata, other.metadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -313,16 +318,7 @@ public final class BulkActionResource {
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

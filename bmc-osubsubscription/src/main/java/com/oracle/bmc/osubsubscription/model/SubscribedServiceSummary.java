@@ -20,7 +20,8 @@ package com.oracle.bmc.osubsubscription.model;
     builder = SubscribedServiceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SubscribedServiceSummary {
+public final class SubscribedServiceSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -490,62 +491,105 @@ public final class SubscribedServiceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SubscribedServiceSummary build() {
-            SubscribedServiceSummary __instance__ =
+            SubscribedServiceSummary model =
                     new SubscribedServiceSummary(
-                            id,
-                            product,
-                            quantity,
-                            status,
-                            operationType,
-                            netUnitPrice,
-                            fundedAllocationValue,
-                            partnerTransactionType,
-                            termValue,
-                            termValueUOM,
-                            bookingOptyNumber,
-                            totalValue,
-                            orderNumber,
-                            dataCenterRegion,
-                            pricingModel,
-                            programType,
-                            promoType,
-                            csi,
-                            isIntentToPay,
-                            timeStart,
-                            timeEnd,
-                            commitmentServices);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.product,
+                            this.quantity,
+                            this.status,
+                            this.operationType,
+                            this.netUnitPrice,
+                            this.fundedAllocationValue,
+                            this.partnerTransactionType,
+                            this.termValue,
+                            this.termValueUOM,
+                            this.bookingOptyNumber,
+                            this.totalValue,
+                            this.orderNumber,
+                            this.dataCenterRegion,
+                            this.pricingModel,
+                            this.programType,
+                            this.promoType,
+                            this.csi,
+                            this.isIntentToPay,
+                            this.timeStart,
+                            this.timeEnd,
+                            this.commitmentServices);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SubscribedServiceSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .product(o.getProduct())
-                            .quantity(o.getQuantity())
-                            .status(o.getStatus())
-                            .operationType(o.getOperationType())
-                            .netUnitPrice(o.getNetUnitPrice())
-                            .fundedAllocationValue(o.getFundedAllocationValue())
-                            .partnerTransactionType(o.getPartnerTransactionType())
-                            .termValue(o.getTermValue())
-                            .termValueUOM(o.getTermValueUOM())
-                            .bookingOptyNumber(o.getBookingOptyNumber())
-                            .totalValue(o.getTotalValue())
-                            .orderNumber(o.getOrderNumber())
-                            .dataCenterRegion(o.getDataCenterRegion())
-                            .pricingModel(o.getPricingModel())
-                            .programType(o.getProgramType())
-                            .promoType(o.getPromoType())
-                            .csi(o.getCsi())
-                            .isIntentToPay(o.getIsIntentToPay())
-                            .timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd())
-                            .commitmentServices(o.getCommitmentServices());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SubscribedServiceSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("product")) {
+                this.product(model.getProduct());
+            }
+            if (model.wasPropertyExplicitlySet("quantity")) {
+                this.quantity(model.getQuantity());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("operationType")) {
+                this.operationType(model.getOperationType());
+            }
+            if (model.wasPropertyExplicitlySet("netUnitPrice")) {
+                this.netUnitPrice(model.getNetUnitPrice());
+            }
+            if (model.wasPropertyExplicitlySet("fundedAllocationValue")) {
+                this.fundedAllocationValue(model.getFundedAllocationValue());
+            }
+            if (model.wasPropertyExplicitlySet("partnerTransactionType")) {
+                this.partnerTransactionType(model.getPartnerTransactionType());
+            }
+            if (model.wasPropertyExplicitlySet("termValue")) {
+                this.termValue(model.getTermValue());
+            }
+            if (model.wasPropertyExplicitlySet("termValueUOM")) {
+                this.termValueUOM(model.getTermValueUOM());
+            }
+            if (model.wasPropertyExplicitlySet("bookingOptyNumber")) {
+                this.bookingOptyNumber(model.getBookingOptyNumber());
+            }
+            if (model.wasPropertyExplicitlySet("totalValue")) {
+                this.totalValue(model.getTotalValue());
+            }
+            if (model.wasPropertyExplicitlySet("orderNumber")) {
+                this.orderNumber(model.getOrderNumber());
+            }
+            if (model.wasPropertyExplicitlySet("dataCenterRegion")) {
+                this.dataCenterRegion(model.getDataCenterRegion());
+            }
+            if (model.wasPropertyExplicitlySet("pricingModel")) {
+                this.pricingModel(model.getPricingModel());
+            }
+            if (model.wasPropertyExplicitlySet("programType")) {
+                this.programType(model.getProgramType());
+            }
+            if (model.wasPropertyExplicitlySet("promoType")) {
+                this.promoType(model.getPromoType());
+            }
+            if (model.wasPropertyExplicitlySet("csi")) {
+                this.csi(model.getCsi());
+            }
+            if (model.wasPropertyExplicitlySet("isIntentToPay")) {
+                this.isIntentToPay(model.getIsIntentToPay());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("commitmentServices")) {
+                this.commitmentServices(model.getCommitmentServices());
+            }
+            return this;
         }
     }
 
@@ -918,6 +962,7 @@ public final class SubscribedServiceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SubscribedServiceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", product=").append(String.valueOf(this.product));
         sb.append(", quantity=").append(String.valueOf(this.quantity));
@@ -940,7 +985,6 @@ public final class SubscribedServiceSummary {
         sb.append(", timeStart=").append(String.valueOf(this.timeStart));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", commitmentServices=").append(String.valueOf(this.commitmentServices));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -978,7 +1022,7 @@ public final class SubscribedServiceSummary {
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.commitmentServices, other.commitmentServices)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1027,16 +1071,7 @@ public final class SubscribedServiceSummary {
                         + (this.commitmentServices == null
                                 ? 43
                                 : this.commitmentServices.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

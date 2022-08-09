@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemanagement.model;
     builder = AwrDbMetricSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwrDbMetricSummary {
+public final class AwrDbMetricSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "timestamp", "avgValue", "minValue", "maxValue"})
     public AwrDbMetricSummary(
@@ -123,23 +123,33 @@ public final class AwrDbMetricSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrDbMetricSummary build() {
-            AwrDbMetricSummary __instance__ =
-                    new AwrDbMetricSummary(name, timestamp, avgValue, minValue, maxValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AwrDbMetricSummary model =
+                    new AwrDbMetricSummary(
+                            this.name, this.timestamp, this.avgValue, this.minValue, this.maxValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrDbMetricSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .timestamp(o.getTimestamp())
-                            .avgValue(o.getAvgValue())
-                            .minValue(o.getMinValue())
-                            .maxValue(o.getMaxValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrDbMetricSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("avgValue")) {
+                this.avgValue(model.getAvgValue());
+            }
+            if (model.wasPropertyExplicitlySet("minValue")) {
+                this.minValue(model.getMinValue());
+            }
+            if (model.wasPropertyExplicitlySet("maxValue")) {
+                this.maxValue(model.getMaxValue());
+            }
+            return this;
         }
     }
 
@@ -237,12 +247,12 @@ public final class AwrDbMetricSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrDbMetricSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", avgValue=").append(String.valueOf(this.avgValue));
         sb.append(", minValue=").append(String.valueOf(this.minValue));
         sb.append(", maxValue=").append(String.valueOf(this.maxValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -262,7 +272,7 @@ public final class AwrDbMetricSummary {
                 && java.util.Objects.equals(this.avgValue, other.avgValue)
                 && java.util.Objects.equals(this.minValue, other.minValue)
                 && java.util.Objects.equals(this.maxValue, other.maxValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -274,16 +284,7 @@ public final class AwrDbMetricSummary {
         result = (result * PRIME) + (this.avgValue == null ? 43 : this.avgValue.hashCode());
         result = (result * PRIME) + (this.minValue == null ? 43 : this.minValue.hashCode());
         result = (result * PRIME) + (this.maxValue == null ? 43 : this.maxValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

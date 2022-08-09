@@ -28,7 +28,7 @@ package com.oracle.bmc.databasemanagement.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateJobDetails {
+public class CreateJobDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -211,6 +211,7 @@ public class CreateJobDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateJobDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -245,7 +246,8 @@ public class CreateJobDetails {
                 && java.util.Objects.equals(this.scheduleType, other.scheduleType)
                 && java.util.Objects.equals(this.timeout, other.timeout)
                 && java.util.Objects.equals(this.resultLocation, other.resultLocation)
-                && java.util.Objects.equals(this.scheduleDetails, other.scheduleDetails);
+                && java.util.Objects.equals(this.scheduleDetails, other.scheduleDetails)
+                && super.equals(other);
     }
 
     @Override
@@ -276,6 +278,7 @@ public class CreateJobDetails {
         result =
                 (result * PRIME)
                         + (this.scheduleDetails == null ? 43 : this.scheduleDetails.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

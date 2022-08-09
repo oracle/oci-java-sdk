@@ -112,35 +112,49 @@ public final class CreateOkeCanaryTrafficShiftDeployStageDetails extends CreateD
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateOkeCanaryTrafficShiftDeployStageDetails build() {
-            CreateOkeCanaryTrafficShiftDeployStageDetails __instance__ =
+            CreateOkeCanaryTrafficShiftDeployStageDetails model =
                     new CreateOkeCanaryTrafficShiftDeployStageDetails(
-                            description,
-                            displayName,
-                            deployPipelineId,
-                            deployStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            okeCanaryDeployStageId,
-                            rolloutPolicy);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.deployPipelineId,
+                            this.deployStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.okeCanaryDeployStageId,
+                            this.rolloutPolicy);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateOkeCanaryTrafficShiftDeployStageDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .deployPipelineId(o.getDeployPipelineId())
-                            .deployStagePredecessorCollection(
-                                    o.getDeployStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .okeCanaryDeployStageId(o.getOkeCanaryDeployStageId())
-                            .rolloutPolicy(o.getRolloutPolicy());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateOkeCanaryTrafficShiftDeployStageDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessorCollection")) {
+                this.deployStagePredecessorCollection(model.getDeployStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("okeCanaryDeployStageId")) {
+                this.okeCanaryDeployStageId(model.getOkeCanaryDeployStageId());
+            }
+            if (model.wasPropertyExplicitlySet("rolloutPolicy")) {
+                this.rolloutPolicy(model.getRolloutPolicy());
+            }
+            return this;
         }
     }
 
@@ -213,7 +227,6 @@ public final class CreateOkeCanaryTrafficShiftDeployStageDetails extends CreateD
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", okeCanaryDeployStageId=").append(String.valueOf(this.okeCanaryDeployStageId));
         sb.append(", rolloutPolicy=").append(String.valueOf(this.rolloutPolicy));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -231,8 +244,7 @@ public final class CreateOkeCanaryTrafficShiftDeployStageDetails extends CreateD
                 (CreateOkeCanaryTrafficShiftDeployStageDetails) o;
         return java.util.Objects.equals(this.okeCanaryDeployStageId, other.okeCanaryDeployStageId)
                 && java.util.Objects.equals(this.rolloutPolicy, other.rolloutPolicy)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -247,16 +259,6 @@ public final class CreateOkeCanaryTrafficShiftDeployStageDetails extends CreateD
         result =
                 (result * PRIME)
                         + (this.rolloutPolicy == null ? 43 : this.rolloutPolicy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

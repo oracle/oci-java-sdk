@@ -18,7 +18,7 @@ package com.oracle.bmc.databasemanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AlertLogSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AlertLogSummary {
+public final class AlertLogSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "messageLevel",
@@ -147,30 +147,41 @@ public final class AlertLogSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AlertLogSummary build() {
-            AlertLogSummary __instance__ =
+            AlertLogSummary model =
                     new AlertLogSummary(
-                            messageLevel,
-                            messageType,
-                            messageContent,
-                            timestamp,
-                            supplementalDetail,
-                            fileLocation);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.messageLevel,
+                            this.messageType,
+                            this.messageContent,
+                            this.timestamp,
+                            this.supplementalDetail,
+                            this.fileLocation);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AlertLogSummary o) {
-            Builder copiedBuilder =
-                    messageLevel(o.getMessageLevel())
-                            .messageType(o.getMessageType())
-                            .messageContent(o.getMessageContent())
-                            .timestamp(o.getTimestamp())
-                            .supplementalDetail(o.getSupplementalDetail())
-                            .fileLocation(o.getFileLocation());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AlertLogSummary model) {
+            if (model.wasPropertyExplicitlySet("messageLevel")) {
+                this.messageLevel(model.getMessageLevel());
+            }
+            if (model.wasPropertyExplicitlySet("messageType")) {
+                this.messageType(model.getMessageType());
+            }
+            if (model.wasPropertyExplicitlySet("messageContent")) {
+                this.messageContent(model.getMessageContent());
+            }
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("supplementalDetail")) {
+                this.supplementalDetail(model.getSupplementalDetail());
+            }
+            if (model.wasPropertyExplicitlySet("fileLocation")) {
+                this.fileLocation(model.getFileLocation());
+            }
+            return this;
         }
     }
 
@@ -384,13 +395,13 @@ public final class AlertLogSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AlertLogSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("messageLevel=").append(String.valueOf(this.messageLevel));
         sb.append(", messageType=").append(String.valueOf(this.messageType));
         sb.append(", messageContent=").append(String.valueOf(this.messageContent));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", supplementalDetail=").append(String.valueOf(this.supplementalDetail));
         sb.append(", fileLocation=").append(String.valueOf(this.fileLocation));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -411,7 +422,7 @@ public final class AlertLogSummary {
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.supplementalDetail, other.supplementalDetail)
                 && java.util.Objects.equals(this.fileLocation, other.fileLocation)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -430,16 +441,7 @@ public final class AlertLogSummary {
                                 ? 43
                                 : this.supplementalDetail.hashCode());
         result = (result * PRIME) + (this.fileLocation == null ? 43 : this.fileLocation.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

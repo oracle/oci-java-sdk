@@ -105,23 +105,33 @@ public final class CreateCompartmentConfigSourceDetails extends CreateConfigSour
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateCompartmentConfigSourceDetails build() {
-            CreateCompartmentConfigSourceDetails __instance__ =
+            CreateCompartmentConfigSourceDetails model =
                     new CreateCompartmentConfigSourceDetails(
-                            workingDirectory, compartmentId, region, servicesToDiscover);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.workingDirectory,
+                            this.compartmentId,
+                            this.region,
+                            this.servicesToDiscover);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateCompartmentConfigSourceDetails o) {
-            Builder copiedBuilder =
-                    workingDirectory(o.getWorkingDirectory())
-                            .compartmentId(o.getCompartmentId())
-                            .region(o.getRegion())
-                            .servicesToDiscover(o.getServicesToDiscover());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateCompartmentConfigSourceDetails model) {
+            if (model.wasPropertyExplicitlySet("workingDirectory")) {
+                this.workingDirectory(model.getWorkingDirectory());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("servicesToDiscover")) {
+                this.servicesToDiscover(model.getServicesToDiscover());
+            }
+            return this;
         }
     }
 
@@ -223,7 +233,6 @@ public final class CreateCompartmentConfigSourceDetails extends CreateConfigSour
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", servicesToDiscover=").append(String.valueOf(this.servicesToDiscover));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -241,8 +250,7 @@ public final class CreateCompartmentConfigSourceDetails extends CreateConfigSour
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.servicesToDiscover, other.servicesToDiscover)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -258,16 +266,6 @@ public final class CreateCompartmentConfigSourceDetails extends CreateConfigSour
                         + (this.servicesToDiscover == null
                                 ? 43
                                 : this.servicesToDiscover.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -125,8 +125,8 @@ public class CreateFilterGroupConverter {
                                         builder =
                                                 com.oracle.bmc.announcementsservice.responses
                                                         .CreateFilterGroupResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.filterGroup(response.getItem());
 

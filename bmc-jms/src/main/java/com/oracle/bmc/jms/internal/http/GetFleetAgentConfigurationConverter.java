@@ -108,8 +108,8 @@ public class GetFleetAgentConfigurationConverter {
                                                 com.oracle.bmc.jms.responses
                                                         .GetFleetAgentConfigurationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.fleetAgentConfiguration(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = AllowedPhaseOneParameters.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AllowedPhaseOneParameters {
+public final class AllowedPhaseOneParameters
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "encryptionAlgorithms",
@@ -91,22 +92,29 @@ public final class AllowedPhaseOneParameters {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AllowedPhaseOneParameters build() {
-            AllowedPhaseOneParameters __instance__ =
+            AllowedPhaseOneParameters model =
                     new AllowedPhaseOneParameters(
-                            encryptionAlgorithms, authenticationAlgorithms, dhGroups);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.encryptionAlgorithms,
+                            this.authenticationAlgorithms,
+                            this.dhGroups);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AllowedPhaseOneParameters o) {
-            Builder copiedBuilder =
-                    encryptionAlgorithms(o.getEncryptionAlgorithms())
-                            .authenticationAlgorithms(o.getAuthenticationAlgorithms())
-                            .dhGroups(o.getDhGroups());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AllowedPhaseOneParameters model) {
+            if (model.wasPropertyExplicitlySet("encryptionAlgorithms")) {
+                this.encryptionAlgorithms(model.getEncryptionAlgorithms());
+            }
+            if (model.wasPropertyExplicitlySet("authenticationAlgorithms")) {
+                this.authenticationAlgorithms(model.getAuthenticationAlgorithms());
+            }
+            if (model.wasPropertyExplicitlySet("dhGroups")) {
+                this.dhGroups(model.getDhGroups());
+            }
+            return this;
         }
     }
 
@@ -176,11 +184,11 @@ public final class AllowedPhaseOneParameters {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AllowedPhaseOneParameters(");
+        sb.append("super=").append(super.toString());
         sb.append("encryptionAlgorithms=").append(String.valueOf(this.encryptionAlgorithms));
         sb.append(", authenticationAlgorithms=")
                 .append(String.valueOf(this.authenticationAlgorithms));
         sb.append(", dhGroups=").append(String.valueOf(this.dhGroups));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,7 +207,7 @@ public final class AllowedPhaseOneParameters {
                 && java.util.Objects.equals(
                         this.authenticationAlgorithms, other.authenticationAlgorithms)
                 && java.util.Objects.equals(this.dhGroups, other.dhGroups)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -217,16 +225,7 @@ public final class AllowedPhaseOneParameters {
                                 ? 43
                                 : this.authenticationAlgorithms.hashCode());
         result = (result * PRIME) + (this.dhGroups == null ? 43 : this.dhGroups.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

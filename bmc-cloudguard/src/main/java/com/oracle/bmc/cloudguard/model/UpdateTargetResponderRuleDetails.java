@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = UpdateTargetResponderRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateTargetResponderRuleDetails {
+public final class UpdateTargetResponderRuleDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"condition", "configurations", "mode"})
     public UpdateTargetResponderRuleDetails(
@@ -80,21 +81,27 @@ public final class UpdateTargetResponderRuleDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateTargetResponderRuleDetails build() {
-            UpdateTargetResponderRuleDetails __instance__ =
-                    new UpdateTargetResponderRuleDetails(condition, configurations, mode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateTargetResponderRuleDetails model =
+                    new UpdateTargetResponderRuleDetails(
+                            this.condition, this.configurations, this.mode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateTargetResponderRuleDetails o) {
-            Builder copiedBuilder =
-                    condition(o.getCondition())
-                            .configurations(o.getConfigurations())
-                            .mode(o.getMode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateTargetResponderRuleDetails model) {
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            if (model.wasPropertyExplicitlySet("configurations")) {
+                this.configurations(model.getConfigurations());
+            }
+            if (model.wasPropertyExplicitlySet("mode")) {
+                this.mode(model.getMode());
+            }
+            return this;
         }
     }
 
@@ -157,10 +164,10 @@ public final class UpdateTargetResponderRuleDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateTargetResponderRuleDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("condition=").append(String.valueOf(this.condition));
         sb.append(", configurations=").append(String.valueOf(this.configurations));
         sb.append(", mode=").append(String.valueOf(this.mode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -178,7 +185,7 @@ public final class UpdateTargetResponderRuleDetails {
         return java.util.Objects.equals(this.condition, other.condition)
                 && java.util.Objects.equals(this.configurations, other.configurations)
                 && java.util.Objects.equals(this.mode, other.mode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -190,16 +197,7 @@ public final class UpdateTargetResponderRuleDetails {
                 (result * PRIME)
                         + (this.configurations == null ? 43 : this.configurations.hashCode());
         result = (result * PRIME) + (this.mode == null ? 43 : this.mode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

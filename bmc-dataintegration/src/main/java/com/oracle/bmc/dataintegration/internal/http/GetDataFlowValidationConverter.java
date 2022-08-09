@@ -118,8 +118,8 @@ public class GetDataFlowValidationConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .GetDataFlowValidationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataFlowValidation(response.getItem());
 

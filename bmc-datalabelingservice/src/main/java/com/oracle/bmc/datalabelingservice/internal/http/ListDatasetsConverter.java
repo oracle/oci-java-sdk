@@ -175,8 +175,8 @@ public class ListDatasetsConverter {
                                         builder =
                                                 com.oracle.bmc.datalabelingservice.responses
                                                         .ListDatasetsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.datasetCollection(response.getItem());
 

@@ -36,12 +36,18 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
         return volumeGroupBackup;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "volumeGroupBackup"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "volumeGroupBackup"
+    })
     private UpdateVolumeGroupBackupResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.volumeGroupBackup = volumeGroupBackup;
     }
@@ -51,6 +57,13 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -93,6 +106,7 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(UpdateVolumeGroupBackupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             volumeGroupBackup(o.getVolumeGroupBackup());
 
@@ -104,7 +118,8 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
          * @return the response object
          */
         public UpdateVolumeGroupBackupResponse build() {
-            return new UpdateVolumeGroupBackupResponse(__httpStatusCode__, etag, volumeGroupBackup);
+            return new UpdateVolumeGroupBackupResponse(
+                    __httpStatusCode__, headers, etag, volumeGroupBackup);
         }
     }
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.oda.model;
     builder = OdaInstanceAttachment.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OdaInstanceAttachment {
+public final class OdaInstanceAttachment
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -264,42 +265,65 @@ public final class OdaInstanceAttachment {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OdaInstanceAttachment build() {
-            OdaInstanceAttachment __instance__ =
+            OdaInstanceAttachment model =
                     new OdaInstanceAttachment(
-                            id,
-                            instanceId,
-                            attachToId,
-                            attachmentType,
-                            attachmentMetadata,
-                            restrictedOperations,
-                            owner,
-                            timeCreated,
-                            timeLastUpdate,
-                            lifecycleState,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.instanceId,
+                            this.attachToId,
+                            this.attachmentType,
+                            this.attachmentMetadata,
+                            this.restrictedOperations,
+                            this.owner,
+                            this.timeCreated,
+                            this.timeLastUpdate,
+                            this.lifecycleState,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OdaInstanceAttachment o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .instanceId(o.getInstanceId())
-                            .attachToId(o.getAttachToId())
-                            .attachmentType(o.getAttachmentType())
-                            .attachmentMetadata(o.getAttachmentMetadata())
-                            .restrictedOperations(o.getRestrictedOperations())
-                            .owner(o.getOwner())
-                            .timeCreated(o.getTimeCreated())
-                            .timeLastUpdate(o.getTimeLastUpdate())
-                            .lifecycleState(o.getLifecycleState())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OdaInstanceAttachment model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("attachToId")) {
+                this.attachToId(model.getAttachToId());
+            }
+            if (model.wasPropertyExplicitlySet("attachmentType")) {
+                this.attachmentType(model.getAttachmentType());
+            }
+            if (model.wasPropertyExplicitlySet("attachmentMetadata")) {
+                this.attachmentMetadata(model.getAttachmentMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("restrictedOperations")) {
+                this.restrictedOperations(model.getRestrictedOperations());
+            }
+            if (model.wasPropertyExplicitlySet("owner")) {
+                this.owner(model.getOwner());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastUpdate")) {
+                this.timeLastUpdate(model.getTimeLastUpdate());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -594,6 +618,7 @@ public final class OdaInstanceAttachment {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OdaInstanceAttachment(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", attachToId=").append(String.valueOf(this.attachToId));
@@ -606,7 +631,6 @@ public final class OdaInstanceAttachment {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -633,7 +657,7 @@ public final class OdaInstanceAttachment {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -666,16 +690,7 @@ public final class OdaInstanceAttachment {
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

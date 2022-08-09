@@ -181,8 +181,8 @@ public class SummarizeJobExecutionsStatusesConverter {
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .SummarizeJobExecutionsStatusesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.jobExecutionsStatusSummaryCollection(response.getItem());
 

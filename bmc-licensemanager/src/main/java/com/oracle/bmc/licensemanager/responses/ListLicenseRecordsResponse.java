@@ -60,16 +60,18 @@ public class ListLicenseRecordsResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "licenseRecordCollection"
     })
     private ListLicenseRecordsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.licensemanager.model.LicenseRecordCollection licenseRecordCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.licenseRecordCollection = licenseRecordCollection;
@@ -80,6 +82,13 @@ public class ListLicenseRecordsResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -146,6 +155,7 @@ public class ListLicenseRecordsResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(ListLicenseRecordsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             licenseRecordCollection(o.getLicenseRecordCollection());
@@ -159,7 +169,11 @@ public class ListLicenseRecordsResponse extends com.oracle.bmc.responses.BmcResp
          */
         public ListLicenseRecordsResponse build() {
             return new ListLicenseRecordsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, licenseRecordCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    licenseRecordCollection);
         }
     }
 

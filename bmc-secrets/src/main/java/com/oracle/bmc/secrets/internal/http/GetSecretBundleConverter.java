@@ -127,8 +127,8 @@ public class GetSecretBundleConverter {
                                         builder =
                                                 com.oracle.bmc.secrets.responses
                                                         .GetSecretBundleResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.secretBundle(response.getItem());
 

@@ -110,8 +110,8 @@ public class GetDashboardConverter {
                                         builder =
                                                 com.oracle.bmc.dashboardservice.responses
                                                         .GetDashboardResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dashboard(response.getItem());
 

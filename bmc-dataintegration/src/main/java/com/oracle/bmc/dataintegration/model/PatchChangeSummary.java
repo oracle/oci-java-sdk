@@ -19,7 +19,7 @@ package com.oracle.bmc.dataintegration.model;
     builder = PatchChangeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PatchChangeSummary {
+public final class PatchChangeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -167,26 +167,45 @@ public final class PatchChangeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PatchChangeSummary build() {
-            PatchChangeSummary __instance__ =
+            PatchChangeSummary model =
                     new PatchChangeSummary(
-                            key, name, namePath, type, objectVersion, identifier, action);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.name,
+                            this.namePath,
+                            this.type,
+                            this.objectVersion,
+                            this.identifier,
+                            this.action);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PatchChangeSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .name(o.getName())
-                            .namePath(o.getNamePath())
-                            .type(o.getType())
-                            .objectVersion(o.getObjectVersion())
-                            .identifier(o.getIdentifier())
-                            .action(o.getAction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PatchChangeSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("namePath")) {
+                this.namePath(model.getNamePath());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            return this;
         }
     }
 
@@ -410,6 +429,7 @@ public final class PatchChangeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PatchChangeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", namePath=").append(String.valueOf(this.namePath));
@@ -417,7 +437,6 @@ public final class PatchChangeSummary {
         sb.append(", objectVersion=").append(String.valueOf(this.objectVersion));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
         sb.append(", action=").append(String.valueOf(this.action));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -439,7 +458,7 @@ public final class PatchChangeSummary {
                 && java.util.Objects.equals(this.objectVersion, other.objectVersion)
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.action, other.action)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -455,16 +474,7 @@ public final class PatchChangeSummary {
                         + (this.objectVersion == null ? 43 : this.objectVersion.hashCode());
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

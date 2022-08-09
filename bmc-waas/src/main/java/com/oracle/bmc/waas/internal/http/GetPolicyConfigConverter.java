@@ -103,8 +103,8 @@ public class GetPolicyConfigConverter {
                                         builder =
                                                 com.oracle.bmc.waas.responses
                                                         .GetPolicyConfigResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.policyConfig(response.getItem());
 

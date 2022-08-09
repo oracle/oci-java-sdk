@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsSourceDataFilter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsSourceDataFilter {
+public final class LogAnalyticsSourceDataFilter
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -306,46 +307,73 @@ public final class LogAnalyticsSourceDataFilter {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsSourceDataFilter build() {
-            LogAnalyticsSourceDataFilter __instance__ =
+            LogAnalyticsSourceDataFilter model =
                     new LogAnalyticsSourceDataFilter(
-                            description,
-                            displayName,
-                            editVersion,
-                            isEnabled,
-                            fieldName,
-                            hashType,
-                            dataFilterId,
-                            isSystem,
-                            matchRegularExpression,
-                            order,
-                            path,
-                            replacementString,
-                            sourceId,
-                            filterType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.editVersion,
+                            this.isEnabled,
+                            this.fieldName,
+                            this.hashType,
+                            this.dataFilterId,
+                            this.isSystem,
+                            this.matchRegularExpression,
+                            this.order,
+                            this.path,
+                            this.replacementString,
+                            this.sourceId,
+                            this.filterType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsSourceDataFilter o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .editVersion(o.getEditVersion())
-                            .isEnabled(o.getIsEnabled())
-                            .fieldName(o.getFieldName())
-                            .hashType(o.getHashType())
-                            .dataFilterId(o.getDataFilterId())
-                            .isSystem(o.getIsSystem())
-                            .matchRegularExpression(o.getMatchRegularExpression())
-                            .order(o.getOrder())
-                            .path(o.getPath())
-                            .replacementString(o.getReplacementString())
-                            .sourceId(o.getSourceId())
-                            .filterType(o.getFilterType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsSourceDataFilter model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("editVersion")) {
+                this.editVersion(model.getEditVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("fieldName")) {
+                this.fieldName(model.getFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("hashType")) {
+                this.hashType(model.getHashType());
+            }
+            if (model.wasPropertyExplicitlySet("dataFilterId")) {
+                this.dataFilterId(model.getDataFilterId());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("matchRegularExpression")) {
+                this.matchRegularExpression(model.getMatchRegularExpression());
+            }
+            if (model.wasPropertyExplicitlySet("order")) {
+                this.order(model.getOrder());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("replacementString")) {
+                this.replacementString(model.getReplacementString());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("filterType")) {
+                this.filterType(model.getFilterType());
+            }
+            return this;
         }
     }
 
@@ -625,6 +653,7 @@ public final class LogAnalyticsSourceDataFilter {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsSourceDataFilter(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", editVersion=").append(String.valueOf(this.editVersion));
@@ -639,7 +668,6 @@ public final class LogAnalyticsSourceDataFilter {
         sb.append(", replacementString=").append(String.valueOf(this.replacementString));
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", filterType=").append(String.valueOf(this.filterType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -669,7 +697,7 @@ public final class LogAnalyticsSourceDataFilter {
                 && java.util.Objects.equals(this.replacementString, other.replacementString)
                 && java.util.Objects.equals(this.sourceId, other.sourceId)
                 && java.util.Objects.equals(this.filterType, other.filterType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -696,16 +724,7 @@ public final class LogAnalyticsSourceDataFilter {
                         + (this.replacementString == null ? 43 : this.replacementString.hashCode());
         result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
         result = (result * PRIME) + (this.filterType == null ? 43 : this.filterType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -18,7 +18,7 @@ package com.oracle.bmc.mysql.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystemEndpoint.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DbSystemEndpoint {
+public final class DbSystemEndpoint extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "hostname",
@@ -170,26 +170,45 @@ public final class DbSystemEndpoint {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbSystemEndpoint build() {
-            DbSystemEndpoint __instance__ =
+            DbSystemEndpoint model =
                     new DbSystemEndpoint(
-                            hostname, ipAddress, port, portX, modes, status, statusDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.hostname,
+                            this.ipAddress,
+                            this.port,
+                            this.portX,
+                            this.modes,
+                            this.status,
+                            this.statusDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DbSystemEndpoint o) {
-            Builder copiedBuilder =
-                    hostname(o.getHostname())
-                            .ipAddress(o.getIpAddress())
-                            .port(o.getPort())
-                            .portX(o.getPortX())
-                            .modes(o.getModes())
-                            .status(o.getStatus())
-                            .statusDetails(o.getStatusDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DbSystemEndpoint model) {
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddress")) {
+                this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("portX")) {
+                this.portX(model.getPortX());
+            }
+            if (model.wasPropertyExplicitlySet("modes")) {
+                this.modes(model.getModes());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("statusDetails")) {
+                this.statusDetails(model.getStatusDetails());
+            }
+            return this;
         }
     }
 
@@ -415,6 +434,7 @@ public final class DbSystemEndpoint {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DbSystemEndpoint(");
+        sb.append("super=").append(super.toString());
         sb.append("hostname=").append(String.valueOf(this.hostname));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
@@ -422,7 +442,6 @@ public final class DbSystemEndpoint {
         sb.append(", modes=").append(String.valueOf(this.modes));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", statusDetails=").append(String.valueOf(this.statusDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -444,7 +463,7 @@ public final class DbSystemEndpoint {
                 && java.util.Objects.equals(this.modes, other.modes)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.statusDetails, other.statusDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -460,16 +479,7 @@ public final class DbSystemEndpoint {
         result =
                 (result * PRIME)
                         + (this.statusDetails == null ? 43 : this.statusDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

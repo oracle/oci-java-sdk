@@ -154,8 +154,8 @@ public class ListWaasPolicyCustomProtectionRulesConverter {
                                                 com.oracle.bmc.waas.responses
                                                         .ListWaasPolicyCustomProtectionRulesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

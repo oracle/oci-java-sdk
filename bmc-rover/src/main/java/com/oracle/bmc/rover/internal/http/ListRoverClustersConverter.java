@@ -164,8 +164,8 @@ public class ListRoverClustersConverter {
                                         builder =
                                                 com.oracle.bmc.rover.responses
                                                         .ListRoverClustersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.roverClusterCollection(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = SummarizeOperationsInsightsWarehouseResourceUsageAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation {
+public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "cpuUsed", "storageUsedInGBs", "lifecycleState"})
     public SummarizeOperationsInsightsWarehouseResourceUsageAggregation(
@@ -109,23 +110,30 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SummarizeOperationsInsightsWarehouseResourceUsageAggregation build() {
-            SummarizeOperationsInsightsWarehouseResourceUsageAggregation __instance__ =
+            SummarizeOperationsInsightsWarehouseResourceUsageAggregation model =
                     new SummarizeOperationsInsightsWarehouseResourceUsageAggregation(
-                            id, cpuUsed, storageUsedInGBs, lifecycleState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id, this.cpuUsed, this.storageUsedInGBs, this.lifecycleState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SummarizeOperationsInsightsWarehouseResourceUsageAggregation o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .cpuUsed(o.getCpuUsed())
-                            .storageUsedInGBs(o.getStorageUsedInGBs())
-                            .lifecycleState(o.getLifecycleState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SummarizeOperationsInsightsWarehouseResourceUsageAggregation model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("cpuUsed")) {
+                this.cpuUsed(model.getCpuUsed());
+            }
+            if (model.wasPropertyExplicitlySet("storageUsedInGBs")) {
+                this.storageUsedInGBs(model.getStorageUsedInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            return this;
         }
     }
 
@@ -213,11 +221,11 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation 
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SummarizeOperationsInsightsWarehouseResourceUsageAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", cpuUsed=").append(String.valueOf(this.cpuUsed));
         sb.append(", storageUsedInGBs=").append(String.valueOf(this.storageUsedInGBs));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -237,7 +245,7 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation 
                 && java.util.Objects.equals(this.cpuUsed, other.cpuUsed)
                 && java.util.Objects.equals(this.storageUsedInGBs, other.storageUsedInGBs)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -252,16 +260,7 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation 
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

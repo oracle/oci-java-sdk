@@ -129,8 +129,8 @@ public class IngestSqlStatsConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses.IngestSqlStatsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.ingestSqlStatsResponseDetails(response.getItem());
 

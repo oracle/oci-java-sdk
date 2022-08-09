@@ -19,7 +19,8 @@ package com.oracle.bmc.database.model;
     builder = ExadataInfrastructureContact.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExadataInfrastructureContact {
+public final class ExadataInfrastructureContact
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -129,24 +130,37 @@ public final class ExadataInfrastructureContact {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExadataInfrastructureContact build() {
-            ExadataInfrastructureContact __instance__ =
+            ExadataInfrastructureContact model =
                     new ExadataInfrastructureContact(
-                            name, phoneNumber, email, isPrimary, isContactMosValidated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.phoneNumber,
+                            this.email,
+                            this.isPrimary,
+                            this.isContactMosValidated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExadataInfrastructureContact o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .phoneNumber(o.getPhoneNumber())
-                            .email(o.getEmail())
-                            .isPrimary(o.getIsPrimary())
-                            .isContactMosValidated(o.getIsContactMosValidated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExadataInfrastructureContact model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("phoneNumber")) {
+                this.phoneNumber(model.getPhoneNumber());
+            }
+            if (model.wasPropertyExplicitlySet("email")) {
+                this.email(model.getEmail());
+            }
+            if (model.wasPropertyExplicitlySet("isPrimary")) {
+                this.isPrimary(model.getIsPrimary());
+            }
+            if (model.wasPropertyExplicitlySet("isContactMosValidated")) {
+                this.isContactMosValidated(model.getIsContactMosValidated());
+            }
+            return this;
         }
     }
 
@@ -244,12 +258,12 @@ public final class ExadataInfrastructureContact {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExadataInfrastructureContact(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", phoneNumber=").append(String.valueOf(this.phoneNumber));
         sb.append(", email=").append(String.valueOf(this.email));
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
         sb.append(", isContactMosValidated=").append(String.valueOf(this.isContactMosValidated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -269,7 +283,7 @@ public final class ExadataInfrastructureContact {
                 && java.util.Objects.equals(this.email, other.email)
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
                 && java.util.Objects.equals(this.isContactMosValidated, other.isContactMosValidated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -285,16 +299,7 @@ public final class ExadataInfrastructureContact {
                         + (this.isContactMosValidated == null
                                 ? 43
                                 : this.isContactMosValidated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

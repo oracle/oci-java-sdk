@@ -53,16 +53,18 @@ public class ListObjectsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcClientRequestId",
         "opcRequestId",
         "listObjects"
     })
     private ListObjectsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             com.oracle.bmc.objectstorage.model.ListObjects listObjects) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
         this.listObjects = listObjects;
@@ -73,6 +75,13 @@ public class ListObjectsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +140,7 @@ public class ListObjectsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListObjectsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             listObjects(o.getListObjects());
@@ -144,7 +154,7 @@ public class ListObjectsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListObjectsResponse build() {
             return new ListObjectsResponse(
-                    __httpStatusCode__, opcClientRequestId, opcRequestId, listObjects);
+                    __httpStatusCode__, headers, opcClientRequestId, opcRequestId, listObjects);
         }
     }
 

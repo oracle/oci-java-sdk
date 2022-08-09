@@ -17,7 +17,7 @@ package com.oracle.bmc.bds.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChangeShapeNodes.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ChangeShapeNodes {
+public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "worker",
@@ -176,36 +176,53 @@ public final class ChangeShapeNodes {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChangeShapeNodes build() {
-            ChangeShapeNodes __instance__ =
+            ChangeShapeNodes model =
                     new ChangeShapeNodes(
-                            worker,
-                            workerShapeConfig,
-                            computeOnlyWorker,
-                            computeOnlyWorkerShapeConfig,
-                            master,
-                            masterShapeConfig,
-                            utility,
-                            utilityShapeConfig,
-                            cloudsql);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.worker,
+                            this.workerShapeConfig,
+                            this.computeOnlyWorker,
+                            this.computeOnlyWorkerShapeConfig,
+                            this.master,
+                            this.masterShapeConfig,
+                            this.utility,
+                            this.utilityShapeConfig,
+                            this.cloudsql);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ChangeShapeNodes o) {
-            Builder copiedBuilder =
-                    worker(o.getWorker())
-                            .workerShapeConfig(o.getWorkerShapeConfig())
-                            .computeOnlyWorker(o.getComputeOnlyWorker())
-                            .computeOnlyWorkerShapeConfig(o.getComputeOnlyWorkerShapeConfig())
-                            .master(o.getMaster())
-                            .masterShapeConfig(o.getMasterShapeConfig())
-                            .utility(o.getUtility())
-                            .utilityShapeConfig(o.getUtilityShapeConfig())
-                            .cloudsql(o.getCloudsql());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ChangeShapeNodes model) {
+            if (model.wasPropertyExplicitlySet("worker")) {
+                this.worker(model.getWorker());
+            }
+            if (model.wasPropertyExplicitlySet("workerShapeConfig")) {
+                this.workerShapeConfig(model.getWorkerShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("computeOnlyWorker")) {
+                this.computeOnlyWorker(model.getComputeOnlyWorker());
+            }
+            if (model.wasPropertyExplicitlySet("computeOnlyWorkerShapeConfig")) {
+                this.computeOnlyWorkerShapeConfig(model.getComputeOnlyWorkerShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("master")) {
+                this.master(model.getMaster());
+            }
+            if (model.wasPropertyExplicitlySet("masterShapeConfig")) {
+                this.masterShapeConfig(model.getMasterShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("utility")) {
+                this.utility(model.getUtility());
+            }
+            if (model.wasPropertyExplicitlySet("utilityShapeConfig")) {
+                this.utilityShapeConfig(model.getUtilityShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("cloudsql")) {
+                this.cloudsql(model.getCloudsql());
+            }
+            return this;
         }
     }
 
@@ -331,6 +348,7 @@ public final class ChangeShapeNodes {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ChangeShapeNodes(");
+        sb.append("super=").append(super.toString());
         sb.append("worker=").append(String.valueOf(this.worker));
         sb.append(", workerShapeConfig=").append(String.valueOf(this.workerShapeConfig));
         sb.append(", computeOnlyWorker=").append(String.valueOf(this.computeOnlyWorker));
@@ -341,7 +359,6 @@ public final class ChangeShapeNodes {
         sb.append(", utility=").append(String.valueOf(this.utility));
         sb.append(", utilityShapeConfig=").append(String.valueOf(this.utilityShapeConfig));
         sb.append(", cloudsql=").append(String.valueOf(this.cloudsql));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -366,7 +383,7 @@ public final class ChangeShapeNodes {
                 && java.util.Objects.equals(this.utility, other.utility)
                 && java.util.Objects.equals(this.utilityShapeConfig, other.utilityShapeConfig)
                 && java.util.Objects.equals(this.cloudsql, other.cloudsql)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -396,16 +413,7 @@ public final class ChangeShapeNodes {
                                 ? 43
                                 : this.utilityShapeConfig.hashCode());
         result = (result * PRIME) + (this.cloudsql == null ? 43 : this.cloudsql.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

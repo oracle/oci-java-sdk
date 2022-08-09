@@ -64,18 +64,23 @@ public final class ImageClassificationFeature extends ImageFeature {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageClassificationFeature build() {
-            ImageClassificationFeature __instance__ =
-                    new ImageClassificationFeature(maxResults, modelId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ImageClassificationFeature model =
+                    new ImageClassificationFeature(this.maxResults, this.modelId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImageClassificationFeature o) {
-            Builder copiedBuilder = maxResults(o.getMaxResults()).modelId(o.getModelId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImageClassificationFeature model) {
+            if (model.wasPropertyExplicitlySet("maxResults")) {
+                this.maxResults(model.getMaxResults());
+            }
+            if (model.wasPropertyExplicitlySet("modelId")) {
+                this.modelId(model.getModelId());
+            }
+            return this;
         }
     }
 
@@ -141,7 +146,6 @@ public final class ImageClassificationFeature extends ImageFeature {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", maxResults=").append(String.valueOf(this.maxResults));
         sb.append(", modelId=").append(String.valueOf(this.modelId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -158,8 +162,7 @@ public final class ImageClassificationFeature extends ImageFeature {
         ImageClassificationFeature other = (ImageClassificationFeature) o;
         return java.util.Objects.equals(this.maxResults, other.maxResults)
                 && java.util.Objects.equals(this.modelId, other.modelId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +171,6 @@ public final class ImageClassificationFeature extends ImageFeature {
         int result = super.hashCode();
         result = (result * PRIME) + (this.maxResults == null ? 43 : this.maxResults.hashCode());
         result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = UpdateTargetDetectorRecipeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateTargetDetectorRecipeDetails {
+public final class UpdateTargetDetectorRecipeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "detectorRecipeId",
@@ -92,22 +93,27 @@ public final class UpdateTargetDetectorRecipeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateTargetDetectorRecipeDetails build() {
-            UpdateTargetDetectorRecipeDetails __instance__ =
+            UpdateTargetDetectorRecipeDetails model =
                     new UpdateTargetDetectorRecipeDetails(
-                            detectorRecipeId, isValidationOnlyQuery, detectorRules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.detectorRecipeId, this.isValidationOnlyQuery, this.detectorRules);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateTargetDetectorRecipeDetails o) {
-            Builder copiedBuilder =
-                    detectorRecipeId(o.getDetectorRecipeId())
-                            .isValidationOnlyQuery(o.getIsValidationOnlyQuery())
-                            .detectorRules(o.getDetectorRules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateTargetDetectorRecipeDetails model) {
+            if (model.wasPropertyExplicitlySet("detectorRecipeId")) {
+                this.detectorRecipeId(model.getDetectorRecipeId());
+            }
+            if (model.wasPropertyExplicitlySet("isValidationOnlyQuery")) {
+                this.isValidationOnlyQuery(model.getIsValidationOnlyQuery());
+            }
+            if (model.wasPropertyExplicitlySet("detectorRules")) {
+                this.detectorRules(model.getDetectorRules());
+            }
+            return this;
         }
     }
 
@@ -177,10 +183,10 @@ public final class UpdateTargetDetectorRecipeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateTargetDetectorRecipeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("detectorRecipeId=").append(String.valueOf(this.detectorRecipeId));
         sb.append(", isValidationOnlyQuery=").append(String.valueOf(this.isValidationOnlyQuery));
         sb.append(", detectorRules=").append(String.valueOf(this.detectorRules));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -198,7 +204,7 @@ public final class UpdateTargetDetectorRecipeDetails {
         return java.util.Objects.equals(this.detectorRecipeId, other.detectorRecipeId)
                 && java.util.Objects.equals(this.isValidationOnlyQuery, other.isValidationOnlyQuery)
                 && java.util.Objects.equals(this.detectorRules, other.detectorRules)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -216,16 +222,7 @@ public final class UpdateTargetDetectorRecipeDetails {
         result =
                 (result * PRIME)
                         + (this.detectorRules == null ? 43 : this.detectorRules.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

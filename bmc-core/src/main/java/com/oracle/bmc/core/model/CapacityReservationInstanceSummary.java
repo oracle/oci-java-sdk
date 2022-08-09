@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = CapacityReservationInstanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CapacityReservationInstanceSummary {
+public final class CapacityReservationInstanceSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -149,25 +150,41 @@ public final class CapacityReservationInstanceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CapacityReservationInstanceSummary build() {
-            CapacityReservationInstanceSummary __instance__ =
+            CapacityReservationInstanceSummary model =
                     new CapacityReservationInstanceSummary(
-                            id, availabilityDomain, compartmentId, faultDomain, shapeConfig, shape);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.availabilityDomain,
+                            this.compartmentId,
+                            this.faultDomain,
+                            this.shapeConfig,
+                            this.shape);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CapacityReservationInstanceSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .compartmentId(o.getCompartmentId())
-                            .faultDomain(o.getFaultDomain())
-                            .shapeConfig(o.getShapeConfig())
-                            .shape(o.getShape());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CapacityReservationInstanceSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomain")) {
+                this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("shapeConfig")) {
+                this.shapeConfig(model.getShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            return this;
         }
     }
 
@@ -280,13 +297,13 @@ public final class CapacityReservationInstanceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CapacityReservationInstanceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
         sb.append(", shape=").append(String.valueOf(this.shape));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -307,7 +324,7 @@ public final class CapacityReservationInstanceSummary {
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
                 && java.util.Objects.equals(this.shape, other.shape)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -326,16 +343,7 @@ public final class CapacityReservationInstanceSummary {
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
         result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

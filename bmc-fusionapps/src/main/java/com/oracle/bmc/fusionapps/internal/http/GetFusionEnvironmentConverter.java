@@ -110,8 +110,8 @@ public class GetFusionEnvironmentConverter {
                                         builder =
                                                 com.oracle.bmc.fusionapps.responses
                                                         .GetFusionEnvironmentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.fusionEnvironment(response.getItem());
 

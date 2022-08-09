@@ -106,8 +106,8 @@ public class UpdateDynamicGroupConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .UpdateDynamicGroupResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dynamicGroup(response.getItem());
 

@@ -20,7 +20,8 @@ package com.oracle.bmc.resourcemanager.model;
     builder = ApplyJobPlanResolution.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApplyJobPlanResolution {
+public final class ApplyJobPlanResolution
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"planJobId", "isUseLatestJobId", "isAutoApproved"})
     public ApplyJobPlanResolution(
@@ -98,21 +99,27 @@ public final class ApplyJobPlanResolution {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApplyJobPlanResolution build() {
-            ApplyJobPlanResolution __instance__ =
-                    new ApplyJobPlanResolution(planJobId, isUseLatestJobId, isAutoApproved);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ApplyJobPlanResolution model =
+                    new ApplyJobPlanResolution(
+                            this.planJobId, this.isUseLatestJobId, this.isAutoApproved);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApplyJobPlanResolution o) {
-            Builder copiedBuilder =
-                    planJobId(o.getPlanJobId())
-                            .isUseLatestJobId(o.getIsUseLatestJobId())
-                            .isAutoApproved(o.getIsAutoApproved());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApplyJobPlanResolution model) {
+            if (model.wasPropertyExplicitlySet("planJobId")) {
+                this.planJobId(model.getPlanJobId());
+            }
+            if (model.wasPropertyExplicitlySet("isUseLatestJobId")) {
+                this.isUseLatestJobId(model.getIsUseLatestJobId());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoApproved")) {
+                this.isAutoApproved(model.getIsAutoApproved());
+            }
+            return this;
         }
     }
 
@@ -194,10 +201,10 @@ public final class ApplyJobPlanResolution {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApplyJobPlanResolution(");
+        sb.append("super=").append(super.toString());
         sb.append("planJobId=").append(String.valueOf(this.planJobId));
         sb.append(", isUseLatestJobId=").append(String.valueOf(this.isUseLatestJobId));
         sb.append(", isAutoApproved=").append(String.valueOf(this.isAutoApproved));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -215,7 +222,7 @@ public final class ApplyJobPlanResolution {
         return java.util.Objects.equals(this.planJobId, other.planJobId)
                 && java.util.Objects.equals(this.isUseLatestJobId, other.isUseLatestJobId)
                 && java.util.Objects.equals(this.isAutoApproved, other.isAutoApproved)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -229,16 +236,7 @@ public final class ApplyJobPlanResolution {
         result =
                 (result * PRIME)
                         + (this.isAutoApproved == null ? 43 : this.isAutoApproved.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = LabelSummaryReport.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LabelSummaryReport {
+public final class LabelSummaryReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"nonOobCount", "oobCount"})
     public LabelSummaryReport(Integer nonOobCount, Integer oobCount) {
@@ -67,17 +67,22 @@ public final class LabelSummaryReport {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LabelSummaryReport build() {
-            LabelSummaryReport __instance__ = new LabelSummaryReport(nonOobCount, oobCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LabelSummaryReport model = new LabelSummaryReport(this.nonOobCount, this.oobCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LabelSummaryReport o) {
-            Builder copiedBuilder = nonOobCount(o.getNonOobCount()).oobCount(o.getOobCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LabelSummaryReport model) {
+            if (model.wasPropertyExplicitlySet("nonOobCount")) {
+                this.nonOobCount(model.getNonOobCount());
+            }
+            if (model.wasPropertyExplicitlySet("oobCount")) {
+                this.oobCount(model.getOobCount());
+            }
+            return this;
         }
     }
 
@@ -133,9 +138,9 @@ public final class LabelSummaryReport {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LabelSummaryReport(");
+        sb.append("super=").append(super.toString());
         sb.append("nonOobCount=").append(String.valueOf(this.nonOobCount));
         sb.append(", oobCount=").append(String.valueOf(this.oobCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +157,7 @@ public final class LabelSummaryReport {
         LabelSummaryReport other = (LabelSummaryReport) o;
         return java.util.Objects.equals(this.nonOobCount, other.nonOobCount)
                 && java.util.Objects.equals(this.oobCount, other.oobCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +166,7 @@ public final class LabelSummaryReport {
         int result = 1;
         result = (result * PRIME) + (this.nonOobCount == null ? 43 : this.nonOobCount.hashCode());
         result = (result * PRIME) + (this.oobCount == null ? 43 : this.oobCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

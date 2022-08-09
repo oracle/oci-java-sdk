@@ -22,7 +22,8 @@ package com.oracle.bmc.apmsynthetics.model;
     builder = MonitorScriptParameterInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MonitorScriptParameterInfo {
+public final class MonitorScriptParameterInfo
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"monitorScriptParameter", "isSecret", "isOverwritten"})
     public MonitorScriptParameterInfo(
@@ -89,21 +90,27 @@ public final class MonitorScriptParameterInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonitorScriptParameterInfo build() {
-            MonitorScriptParameterInfo __instance__ =
-                    new MonitorScriptParameterInfo(monitorScriptParameter, isSecret, isOverwritten);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MonitorScriptParameterInfo model =
+                    new MonitorScriptParameterInfo(
+                            this.monitorScriptParameter, this.isSecret, this.isOverwritten);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonitorScriptParameterInfo o) {
-            Builder copiedBuilder =
-                    monitorScriptParameter(o.getMonitorScriptParameter())
-                            .isSecret(o.getIsSecret())
-                            .isOverwritten(o.getIsOverwritten());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonitorScriptParameterInfo model) {
+            if (model.wasPropertyExplicitlySet("monitorScriptParameter")) {
+                this.monitorScriptParameter(model.getMonitorScriptParameter());
+            }
+            if (model.wasPropertyExplicitlySet("isSecret")) {
+                this.isSecret(model.getIsSecret());
+            }
+            if (model.wasPropertyExplicitlySet("isOverwritten")) {
+                this.isOverwritten(model.getIsOverwritten());
+            }
+            return this;
         }
     }
 
@@ -172,10 +179,10 @@ public final class MonitorScriptParameterInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MonitorScriptParameterInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("monitorScriptParameter=").append(String.valueOf(this.monitorScriptParameter));
         sb.append(", isSecret=").append(String.valueOf(this.isSecret));
         sb.append(", isOverwritten=").append(String.valueOf(this.isOverwritten));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -193,7 +200,7 @@ public final class MonitorScriptParameterInfo {
         return java.util.Objects.equals(this.monitorScriptParameter, other.monitorScriptParameter)
                 && java.util.Objects.equals(this.isSecret, other.isSecret)
                 && java.util.Objects.equals(this.isOverwritten, other.isOverwritten)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -209,16 +216,7 @@ public final class MonitorScriptParameterInfo {
         result =
                 (result * PRIME)
                         + (this.isOverwritten == null ? 43 : this.isOverwritten.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

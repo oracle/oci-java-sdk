@@ -107,8 +107,8 @@ public class GetCrossConnectLetterOfAuthorityConverter {
                                                 com.oracle.bmc.core.responses
                                                         .GetCrossConnectLetterOfAuthorityResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.letterOfAuthority(response.getItem());
 

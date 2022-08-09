@@ -97,7 +97,8 @@ public class GetRuleConverter {
 
                                 com.oracle.bmc.events.responses.GetRuleResponse.Builder builder =
                                         com.oracle.bmc.events.responses.GetRuleResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.rule(response.getItem());
 

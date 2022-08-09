@@ -40,14 +40,16 @@ public class GetAwrDatabaseSqlReportResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "awrDatabaseSqlReport"
     })
     private GetAwrDatabaseSqlReportResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.opsi.model.AwrDatabaseSqlReport awrDatabaseSqlReport) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.awrDatabaseSqlReport = awrDatabaseSqlReport;
     }
@@ -57,6 +59,13 @@ public class GetAwrDatabaseSqlReportResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -101,6 +110,7 @@ public class GetAwrDatabaseSqlReportResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(GetAwrDatabaseSqlReportResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             awrDatabaseSqlReport(o.getAwrDatabaseSqlReport());
 
@@ -113,7 +123,7 @@ public class GetAwrDatabaseSqlReportResponse extends com.oracle.bmc.responses.Bm
          */
         public GetAwrDatabaseSqlReportResponse build() {
             return new GetAwrDatabaseSqlReportResponse(
-                    __httpStatusCode__, opcRequestId, awrDatabaseSqlReport);
+                    __httpStatusCode__, headers, opcRequestId, awrDatabaseSqlReport);
         }
     }
 

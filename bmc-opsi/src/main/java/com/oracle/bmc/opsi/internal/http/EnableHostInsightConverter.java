@@ -109,8 +109,8 @@ public class EnableHostInsightConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .EnableHostInsightResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

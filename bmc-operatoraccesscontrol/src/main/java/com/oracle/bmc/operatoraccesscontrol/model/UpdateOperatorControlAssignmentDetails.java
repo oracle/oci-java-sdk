@@ -19,7 +19,8 @@ package com.oracle.bmc.operatoraccesscontrol.model;
     builder = UpdateOperatorControlAssignmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateOperatorControlAssignmentDetails {
+public final class UpdateOperatorControlAssignmentDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeAssignmentFrom",
@@ -252,40 +253,61 @@ public final class UpdateOperatorControlAssignmentDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateOperatorControlAssignmentDetails build() {
-            UpdateOperatorControlAssignmentDetails __instance__ =
+            UpdateOperatorControlAssignmentDetails model =
                     new UpdateOperatorControlAssignmentDetails(
-                            timeAssignmentFrom,
-                            timeAssignmentTo,
-                            isEnforcedAlways,
-                            comment,
-                            isLogForwarded,
-                            remoteSyslogServerAddress,
-                            remoteSyslogServerPort,
-                            remoteSyslogServerCACert,
-                            isAutoApproveDuringMaintenance,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeAssignmentFrom,
+                            this.timeAssignmentTo,
+                            this.isEnforcedAlways,
+                            this.comment,
+                            this.isLogForwarded,
+                            this.remoteSyslogServerAddress,
+                            this.remoteSyslogServerPort,
+                            this.remoteSyslogServerCACert,
+                            this.isAutoApproveDuringMaintenance,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateOperatorControlAssignmentDetails o) {
-            Builder copiedBuilder =
-                    timeAssignmentFrom(o.getTimeAssignmentFrom())
-                            .timeAssignmentTo(o.getTimeAssignmentTo())
-                            .isEnforcedAlways(o.getIsEnforcedAlways())
-                            .comment(o.getComment())
-                            .isLogForwarded(o.getIsLogForwarded())
-                            .remoteSyslogServerAddress(o.getRemoteSyslogServerAddress())
-                            .remoteSyslogServerPort(o.getRemoteSyslogServerPort())
-                            .remoteSyslogServerCACert(o.getRemoteSyslogServerCACert())
-                            .isAutoApproveDuringMaintenance(o.getIsAutoApproveDuringMaintenance())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateOperatorControlAssignmentDetails model) {
+            if (model.wasPropertyExplicitlySet("timeAssignmentFrom")) {
+                this.timeAssignmentFrom(model.getTimeAssignmentFrom());
+            }
+            if (model.wasPropertyExplicitlySet("timeAssignmentTo")) {
+                this.timeAssignmentTo(model.getTimeAssignmentTo());
+            }
+            if (model.wasPropertyExplicitlySet("isEnforcedAlways")) {
+                this.isEnforcedAlways(model.getIsEnforcedAlways());
+            }
+            if (model.wasPropertyExplicitlySet("comment")) {
+                this.comment(model.getComment());
+            }
+            if (model.wasPropertyExplicitlySet("isLogForwarded")) {
+                this.isLogForwarded(model.getIsLogForwarded());
+            }
+            if (model.wasPropertyExplicitlySet("remoteSyslogServerAddress")) {
+                this.remoteSyslogServerAddress(model.getRemoteSyslogServerAddress());
+            }
+            if (model.wasPropertyExplicitlySet("remoteSyslogServerPort")) {
+                this.remoteSyslogServerPort(model.getRemoteSyslogServerPort());
+            }
+            if (model.wasPropertyExplicitlySet("remoteSyslogServerCACert")) {
+                this.remoteSyslogServerCACert(model.getRemoteSyslogServerCACert());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoApproveDuringMaintenance")) {
+                this.isAutoApproveDuringMaintenance(model.getIsAutoApproveDuringMaintenance());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -475,6 +497,7 @@ public final class UpdateOperatorControlAssignmentDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateOperatorControlAssignmentDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("timeAssignmentFrom=").append(String.valueOf(this.timeAssignmentFrom));
         sb.append(", timeAssignmentTo=").append(String.valueOf(this.timeAssignmentTo));
         sb.append(", isEnforcedAlways=").append(String.valueOf(this.isEnforcedAlways));
@@ -489,7 +512,6 @@ public final class UpdateOperatorControlAssignmentDetails {
                 .append(String.valueOf(this.isAutoApproveDuringMaintenance));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -519,7 +541,7 @@ public final class UpdateOperatorControlAssignmentDetails {
                         this.isAutoApproveDuringMaintenance, other.isAutoApproveDuringMaintenance)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -563,16 +585,7 @@ public final class UpdateOperatorControlAssignmentDetails {
                                 : this.isAutoApproveDuringMaintenance.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

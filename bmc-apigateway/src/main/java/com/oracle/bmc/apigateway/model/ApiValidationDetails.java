@@ -19,7 +19,7 @@ package com.oracle.bmc.apigateway.model;
     builder = ApiValidationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApiValidationDetails {
+public final class ApiValidationDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"details", "name", "result"})
     public ApiValidationDetails(
@@ -85,17 +85,26 @@ public final class ApiValidationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApiValidationDetails build() {
-            ApiValidationDetails __instance__ = new ApiValidationDetails(details, name, result);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ApiValidationDetails model =
+                    new ApiValidationDetails(this.details, this.name, this.result);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApiValidationDetails o) {
-            Builder copiedBuilder = details(o.getDetails()).name(o.getName()).result(o.getResult());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApiValidationDetails model) {
+            if (model.wasPropertyExplicitlySet("details")) {
+                this.details(model.getDetails());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("result")) {
+                this.result(model.getResult());
+            }
+            return this;
         }
     }
 
@@ -214,10 +223,10 @@ public final class ApiValidationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApiValidationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("details=").append(String.valueOf(this.details));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", result=").append(String.valueOf(this.result));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -235,7 +244,7 @@ public final class ApiValidationDetails {
         return java.util.Objects.equals(this.details, other.details)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.result, other.result)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -245,16 +254,7 @@ public final class ApiValidationDetails {
         result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.result == null ? 43 : this.result.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

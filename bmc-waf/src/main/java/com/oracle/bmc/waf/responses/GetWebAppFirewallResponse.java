@@ -55,16 +55,18 @@ public class GetWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "webAppFirewall"
     })
     private GetWebAppFirewallResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.waf.model.WebAppFirewall webAppFirewall) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.webAppFirewall = webAppFirewall;
@@ -75,6 +77,13 @@ public class GetWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class GetWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetWebAppFirewallResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             webAppFirewall(o.getWebAppFirewall());
@@ -148,7 +158,7 @@ public class GetWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public GetWebAppFirewallResponse build() {
             return new GetWebAppFirewallResponse(
-                    __httpStatusCode__, etag, opcRequestId, webAppFirewall);
+                    __httpStatusCode__, headers, etag, opcRequestId, webAppFirewall);
         }
     }
 

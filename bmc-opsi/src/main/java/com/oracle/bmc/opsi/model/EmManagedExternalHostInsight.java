@@ -325,68 +325,115 @@ public final class EmManagedExternalHostInsight extends HostInsight {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EmManagedExternalHostInsight build() {
-            EmManagedExternalHostInsight __instance__ =
+            EmManagedExternalHostInsight model =
                     new EmManagedExternalHostInsight(
-                            id,
-                            compartmentId,
-                            hostName,
-                            hostDisplayName,
-                            hostType,
-                            processorCount,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            status,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            enterpriseManagerIdentifier,
-                            enterpriseManagerEntityName,
-                            enterpriseManagerEntityType,
-                            enterpriseManagerEntityIdentifier,
-                            enterpriseManagerEntityDisplayName,
-                            enterpriseManagerBridgeId,
-                            platformType,
-                            platformName,
-                            platformVersion,
-                            exadataInsightId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.hostName,
+                            this.hostDisplayName,
+                            this.hostType,
+                            this.processorCount,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.status,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.enterpriseManagerIdentifier,
+                            this.enterpriseManagerEntityName,
+                            this.enterpriseManagerEntityType,
+                            this.enterpriseManagerEntityIdentifier,
+                            this.enterpriseManagerEntityDisplayName,
+                            this.enterpriseManagerBridgeId,
+                            this.platformType,
+                            this.platformName,
+                            this.platformVersion,
+                            this.exadataInsightId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EmManagedExternalHostInsight o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .hostName(o.getHostName())
-                            .hostDisplayName(o.getHostDisplayName())
-                            .hostType(o.getHostType())
-                            .processorCount(o.getProcessorCount())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .status(o.getStatus())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .enterpriseManagerIdentifier(o.getEnterpriseManagerIdentifier())
-                            .enterpriseManagerEntityName(o.getEnterpriseManagerEntityName())
-                            .enterpriseManagerEntityType(o.getEnterpriseManagerEntityType())
-                            .enterpriseManagerEntityIdentifier(
-                                    o.getEnterpriseManagerEntityIdentifier())
-                            .enterpriseManagerEntityDisplayName(
-                                    o.getEnterpriseManagerEntityDisplayName())
-                            .enterpriseManagerBridgeId(o.getEnterpriseManagerBridgeId())
-                            .platformType(o.getPlatformType())
-                            .platformName(o.getPlatformName())
-                            .platformVersion(o.getPlatformVersion())
-                            .exadataInsightId(o.getExadataInsightId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EmManagedExternalHostInsight model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("hostName")) {
+                this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("hostDisplayName")) {
+                this.hostDisplayName(model.getHostDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("hostType")) {
+                this.hostType(model.getHostType());
+            }
+            if (model.wasPropertyExplicitlySet("processorCount")) {
+                this.processorCount(model.getProcessorCount());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerIdentifier")) {
+                this.enterpriseManagerIdentifier(model.getEnterpriseManagerIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityName")) {
+                this.enterpriseManagerEntityName(model.getEnterpriseManagerEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityType")) {
+                this.enterpriseManagerEntityType(model.getEnterpriseManagerEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityIdentifier")) {
+                this.enterpriseManagerEntityIdentifier(
+                        model.getEnterpriseManagerEntityIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityDisplayName")) {
+                this.enterpriseManagerEntityDisplayName(
+                        model.getEnterpriseManagerEntityDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerBridgeId")) {
+                this.enterpriseManagerBridgeId(model.getEnterpriseManagerBridgeId());
+            }
+            if (model.wasPropertyExplicitlySet("platformType")) {
+                this.platformType(model.getPlatformType());
+            }
+            if (model.wasPropertyExplicitlySet("platformName")) {
+                this.platformName(model.getPlatformName());
+            }
+            if (model.wasPropertyExplicitlySet("platformVersion")) {
+                this.platformVersion(model.getPlatformVersion());
+            }
+            if (model.wasPropertyExplicitlySet("exadataInsightId")) {
+                this.exadataInsightId(model.getExadataInsightId());
+            }
+            return this;
         }
     }
 
@@ -683,7 +730,6 @@ public final class EmManagedExternalHostInsight extends HostInsight {
         sb.append(", platformName=").append(String.valueOf(this.platformName));
         sb.append(", platformVersion=").append(String.valueOf(this.platformVersion));
         sb.append(", exadataInsightId=").append(String.valueOf(this.exadataInsightId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -716,8 +762,7 @@ public final class EmManagedExternalHostInsight extends HostInsight {
                 && java.util.Objects.equals(this.platformName, other.platformName)
                 && java.util.Objects.equals(this.platformVersion, other.platformVersion)
                 && java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -762,16 +807,6 @@ public final class EmManagedExternalHostInsight extends HostInsight {
         result =
                 (result * PRIME)
                         + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

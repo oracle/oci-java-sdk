@@ -119,8 +119,8 @@ public class GetThirdPartyPaidListingEligibilityConverter {
                                                 com.oracle.bmc.marketplace.responses
                                                         .GetThirdPartyPaidListingEligibilityResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.thirdPartyPaidListingEligibility(response.getItem());
 

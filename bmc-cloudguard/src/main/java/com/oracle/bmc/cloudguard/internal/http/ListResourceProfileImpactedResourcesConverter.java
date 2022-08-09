@@ -152,8 +152,8 @@ public class ListResourceProfileImpactedResourcesConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListResourceProfileImpactedResourcesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceProfileImpactedResourceCollection(
                                         response.getItem());

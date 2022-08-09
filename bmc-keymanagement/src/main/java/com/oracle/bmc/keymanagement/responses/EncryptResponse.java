@@ -38,12 +38,18 @@ public class EncryptResponse extends com.oracle.bmc.responses.BmcResponse {
         return encryptedData;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "encryptedData"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "encryptedData"
+    })
     private EncryptResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.keymanagement.model.EncryptedData encryptedData) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.encryptedData = encryptedData;
     }
@@ -53,6 +59,13 @@ public class EncryptResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class EncryptResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(EncryptResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             encryptedData(o.getEncryptedData());
 
@@ -108,7 +122,7 @@ public class EncryptResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public EncryptResponse build() {
-            return new EncryptResponse(__httpStatusCode__, opcRequestId, encryptedData);
+            return new EncryptResponse(__httpStatusCode__, headers, opcRequestId, encryptedData);
         }
     }
 

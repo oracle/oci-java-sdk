@@ -112,8 +112,8 @@ public class GetSkillParameterConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses
                                                         .GetSkillParameterResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.skillParameter(response.getItem());
 

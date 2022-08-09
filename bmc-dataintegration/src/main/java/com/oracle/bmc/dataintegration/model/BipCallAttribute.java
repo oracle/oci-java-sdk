@@ -97,30 +97,41 @@ public final class BipCallAttribute extends AbstractCallAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BipCallAttribute build() {
-            BipCallAttribute __instance__ =
+            BipCallAttribute model =
                     new BipCallAttribute(
-                            fetchSize,
-                            offsetParameter,
-                            fetchNextRowsParameter,
-                            stagingDataAsset,
-                            stagingConnection,
-                            bucketSchema);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.fetchSize,
+                            this.offsetParameter,
+                            this.fetchNextRowsParameter,
+                            this.stagingDataAsset,
+                            this.stagingConnection,
+                            this.bucketSchema);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BipCallAttribute o) {
-            Builder copiedBuilder =
-                    fetchSize(o.getFetchSize())
-                            .offsetParameter(o.getOffsetParameter())
-                            .fetchNextRowsParameter(o.getFetchNextRowsParameter())
-                            .stagingDataAsset(o.getStagingDataAsset())
-                            .stagingConnection(o.getStagingConnection())
-                            .bucketSchema(o.getBucketSchema());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BipCallAttribute model) {
+            if (model.wasPropertyExplicitlySet("fetchSize")) {
+                this.fetchSize(model.getFetchSize());
+            }
+            if (model.wasPropertyExplicitlySet("offsetParameter")) {
+                this.offsetParameter(model.getOffsetParameter());
+            }
+            if (model.wasPropertyExplicitlySet("fetchNextRowsParameter")) {
+                this.fetchNextRowsParameter(model.getFetchNextRowsParameter());
+            }
+            if (model.wasPropertyExplicitlySet("stagingDataAsset")) {
+                this.stagingDataAsset(model.getStagingDataAsset());
+            }
+            if (model.wasPropertyExplicitlySet("stagingConnection")) {
+                this.stagingConnection(model.getStagingConnection());
+            }
+            if (model.wasPropertyExplicitlySet("bucketSchema")) {
+                this.bucketSchema(model.getBucketSchema());
+            }
+            return this;
         }
     }
 
@@ -219,7 +230,6 @@ public final class BipCallAttribute extends AbstractCallAttribute {
         sb.append(", stagingDataAsset=").append(String.valueOf(this.stagingDataAsset));
         sb.append(", stagingConnection=").append(String.valueOf(this.stagingConnection));
         sb.append(", bucketSchema=").append(String.valueOf(this.bucketSchema));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -240,8 +250,7 @@ public final class BipCallAttribute extends AbstractCallAttribute {
                 && java.util.Objects.equals(this.stagingDataAsset, other.stagingDataAsset)
                 && java.util.Objects.equals(this.stagingConnection, other.stagingConnection)
                 && java.util.Objects.equals(this.bucketSchema, other.bucketSchema)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -263,16 +272,6 @@ public final class BipCallAttribute extends AbstractCallAttribute {
                 (result * PRIME)
                         + (this.stagingConnection == null ? 43 : this.stagingConnection.hashCode());
         result = (result * PRIME) + (this.bucketSchema == null ? 43 : this.bucketSchema.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -172,7 +172,8 @@ public class ListTsigKeysConverter {
 
                                 com.oracle.bmc.dns.responses.ListTsigKeysResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.ListTsigKeysResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

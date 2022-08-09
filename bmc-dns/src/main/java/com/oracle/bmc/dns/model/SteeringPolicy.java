@@ -20,7 +20,7 @@ package com.oracle.bmc.dns.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SteeringPolicy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SteeringPolicy {
+public final class SteeringPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -433,44 +433,69 @@ public final class SteeringPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SteeringPolicy build() {
-            SteeringPolicy __instance__ =
+            SteeringPolicy model =
                     new SteeringPolicy(
-                            compartmentId,
-                            displayName,
-                            ttl,
-                            healthCheckMonitorId,
-                            template,
-                            freeformTags,
-                            definedTags,
-                            answers,
-                            rules,
-                            self,
-                            id,
-                            timeCreated,
-                            lifecycleState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.displayName,
+                            this.ttl,
+                            this.healthCheckMonitorId,
+                            this.template,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.answers,
+                            this.rules,
+                            this.self,
+                            this.id,
+                            this.timeCreated,
+                            this.lifecycleState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SteeringPolicy o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .ttl(o.getTtl())
-                            .healthCheckMonitorId(o.getHealthCheckMonitorId())
-                            .template(o.getTemplate())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .answers(o.getAnswers())
-                            .rules(o.getRules())
-                            .self(o.getSelf())
-                            .id(o.getId())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleState(o.getLifecycleState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SteeringPolicy model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("ttl")) {
+                this.ttl(model.getTtl());
+            }
+            if (model.wasPropertyExplicitlySet("healthCheckMonitorId")) {
+                this.healthCheckMonitorId(model.getHealthCheckMonitorId());
+            }
+            if (model.wasPropertyExplicitlySet("template")) {
+                this.template(model.getTemplate());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("answers")) {
+                this.answers(model.getAnswers());
+            }
+            if (model.wasPropertyExplicitlySet("rules")) {
+                this.rules(model.getRules());
+            }
+            if (model.wasPropertyExplicitlySet("self")) {
+                this.self(model.getSelf());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            return this;
         }
     }
 
@@ -973,6 +998,7 @@ public final class SteeringPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SteeringPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", ttl=").append(String.valueOf(this.ttl));
@@ -986,7 +1012,6 @@ public final class SteeringPolicy {
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1014,7 +1039,7 @@ public final class SteeringPolicy {
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1042,16 +1067,7 @@ public final class SteeringPolicy {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

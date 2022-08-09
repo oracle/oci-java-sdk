@@ -19,7 +19,8 @@ package com.oracle.bmc.apigateway.model;
     builder = BodyValidationRequestPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BodyValidationRequestPolicy {
+public final class BodyValidationRequestPolicy
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"required", "content", "validationMode"})
     public BodyValidationRequestPolicy(
@@ -127,21 +128,27 @@ public final class BodyValidationRequestPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BodyValidationRequestPolicy build() {
-            BodyValidationRequestPolicy __instance__ =
-                    new BodyValidationRequestPolicy(required, content, validationMode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BodyValidationRequestPolicy model =
+                    new BodyValidationRequestPolicy(
+                            this.required, this.content, this.validationMode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BodyValidationRequestPolicy o) {
-            Builder copiedBuilder =
-                    required(o.getRequired())
-                            .content(o.getContent())
-                            .validationMode(o.getValidationMode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BodyValidationRequestPolicy model) {
+            if (model.wasPropertyExplicitlySet("required")) {
+                this.required(model.getRequired());
+            }
+            if (model.wasPropertyExplicitlySet("content")) {
+                this.content(model.getContent());
+            }
+            if (model.wasPropertyExplicitlySet("validationMode")) {
+                this.validationMode(model.getValidationMode());
+            }
+            return this;
         }
     }
 
@@ -296,10 +303,10 @@ public final class BodyValidationRequestPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BodyValidationRequestPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("required=").append(String.valueOf(this.required));
         sb.append(", content=").append(String.valueOf(this.content));
         sb.append(", validationMode=").append(String.valueOf(this.validationMode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -317,7 +324,7 @@ public final class BodyValidationRequestPolicy {
         return java.util.Objects.equals(this.required, other.required)
                 && java.util.Objects.equals(this.content, other.content)
                 && java.util.Objects.equals(this.validationMode, other.validationMode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -329,16 +336,7 @@ public final class BodyValidationRequestPolicy {
         result =
                 (result * PRIME)
                         + (this.validationMode == null ? 43 : this.validationMode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

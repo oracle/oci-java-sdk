@@ -61,17 +61,19 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "managementAgentAggregationCollection"
     })
     private SummarizeManagementAgentCountsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.managementagent.model.ManagementAgentAggregationCollection
                     managementAgentAggregationCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.managementAgentAggregationCollection = managementAgentAggregationCollection;
@@ -82,6 +84,13 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
          */
         public Builder copy(SummarizeManagementAgentCountsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             managementAgentAggregationCollection(o.getManagementAgentAggregationCollection());
@@ -163,6 +173,7 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
         public SummarizeManagementAgentCountsResponse build() {
             return new SummarizeManagementAgentCountsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     managementAgentAggregationCollection);

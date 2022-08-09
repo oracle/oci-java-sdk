@@ -38,10 +38,18 @@ public class ReencryptObjectResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcClientRequestId", "opcRequestId"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcClientRequestId",
+        "opcRequestId"
+    })
     private ReencryptObjectResponse(
-            int __httpStatusCode__, String opcClientRequestId, String opcRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcClientRequestId,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
     }
@@ -51,6 +59,13 @@ public class ReencryptObjectResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -94,6 +109,7 @@ public class ReencryptObjectResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(ReencryptObjectResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
 
@@ -106,7 +122,7 @@ public class ReencryptObjectResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public ReencryptObjectResponse build() {
             return new ReencryptObjectResponse(
-                    __httpStatusCode__, opcClientRequestId, opcRequestId);
+                    __httpStatusCode__, headers, opcClientRequestId, opcRequestId);
         }
     }
 

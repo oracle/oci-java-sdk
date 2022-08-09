@@ -104,8 +104,8 @@ public class UpdateCrossConnectConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateCrossConnectResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.crossConnect(response.getItem());
 

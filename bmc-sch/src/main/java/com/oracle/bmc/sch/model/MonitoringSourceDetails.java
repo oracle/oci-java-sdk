@@ -53,17 +53,19 @@ public final class MonitoringSourceDetails extends SourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonitoringSourceDetails build() {
-            MonitoringSourceDetails __instance__ = new MonitoringSourceDetails(monitoringSources);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MonitoringSourceDetails model = new MonitoringSourceDetails(this.monitoringSources);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonitoringSourceDetails o) {
-            Builder copiedBuilder = monitoringSources(o.getMonitoringSources());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonitoringSourceDetails model) {
+            if (model.wasPropertyExplicitlySet("monitoringSources")) {
+                this.monitoringSources(model.getMonitoringSources());
+            }
+            return this;
         }
     }
 
@@ -115,7 +117,6 @@ public final class MonitoringSourceDetails extends SourceDetails {
         sb.append("MonitoringSourceDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", monitoringSources=").append(String.valueOf(this.monitoringSources));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -131,8 +132,7 @@ public final class MonitoringSourceDetails extends SourceDetails {
 
         MonitoringSourceDetails other = (MonitoringSourceDetails) o;
         return java.util.Objects.equals(this.monitoringSources, other.monitoringSources)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -142,16 +142,6 @@ public final class MonitoringSourceDetails extends SourceDetails {
         result =
                 (result * PRIME)
                         + (this.monitoringSources == null ? 43 : this.monitoringSources.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -55,16 +55,18 @@ public class GetConfirmSubscriptionResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "confirmationResult"
     })
     private GetConfirmSubscriptionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.ons.model.ConfirmationResult confirmationResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.confirmationResult = confirmationResult;
@@ -75,6 +77,13 @@ public class GetConfirmSubscriptionResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetConfirmSubscriptionResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(GetConfirmSubscriptionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             confirmationResult(o.getConfirmationResult());
@@ -149,7 +159,7 @@ public class GetConfirmSubscriptionResponse extends com.oracle.bmc.responses.Bmc
          */
         public GetConfirmSubscriptionResponse build() {
             return new GetConfirmSubscriptionResponse(
-                    __httpStatusCode__, opcRequestId, etag, confirmationResult);
+                    __httpStatusCode__, headers, opcRequestId, etag, confirmationResult);
         }
     }
 

@@ -113,8 +113,8 @@ public class GetDatabaseRegistrationConverter {
                                         builder =
                                                 com.oracle.bmc.goldengate.responses
                                                         .GetDatabaseRegistrationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseRegistration(response.getItem());
 

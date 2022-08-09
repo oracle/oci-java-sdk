@@ -74,22 +74,30 @@ public final class BitbucketCloudBuildSource extends BuildSource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BitbucketCloudBuildSource build() {
-            BitbucketCloudBuildSource __instance__ =
-                    new BitbucketCloudBuildSource(name, repositoryUrl, branch, connectionId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BitbucketCloudBuildSource model =
+                    new BitbucketCloudBuildSource(
+                            this.name, this.repositoryUrl, this.branch, this.connectionId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BitbucketCloudBuildSource o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .repositoryUrl(o.getRepositoryUrl())
-                            .branch(o.getBranch())
-                            .connectionId(o.getConnectionId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BitbucketCloudBuildSource model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("repositoryUrl")) {
+                this.repositoryUrl(model.getRepositoryUrl());
+            }
+            if (model.wasPropertyExplicitlySet("branch")) {
+                this.branch(model.getBranch());
+            }
+            if (model.wasPropertyExplicitlySet("connectionId")) {
+                this.connectionId(model.getConnectionId());
+            }
+            return this;
         }
     }
 
@@ -140,7 +148,6 @@ public final class BitbucketCloudBuildSource extends BuildSource {
         sb.append("BitbucketCloudBuildSource(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", connectionId=").append(String.valueOf(this.connectionId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -156,8 +163,7 @@ public final class BitbucketCloudBuildSource extends BuildSource {
 
         BitbucketCloudBuildSource other = (BitbucketCloudBuildSource) o;
         return java.util.Objects.equals(this.connectionId, other.connectionId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -165,16 +171,6 @@ public final class BitbucketCloudBuildSource extends BuildSource {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.connectionId == null ? 43 : this.connectionId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -112,8 +112,8 @@ public class GetVcnDnsResolverAssociationConverter {
                                                 com.oracle.bmc.core.responses
                                                         .GetVcnDnsResolverAssociationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.vcnDnsResolverAssociation(response.getItem());
 

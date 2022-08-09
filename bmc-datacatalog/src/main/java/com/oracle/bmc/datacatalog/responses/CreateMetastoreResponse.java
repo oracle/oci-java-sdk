@@ -40,10 +40,18 @@ public class CreateMetastoreResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcWorkRequestId",
+        "opcRequestId"
+    })
     private CreateMetastoreResponse(
-            int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcWorkRequestId,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
     }
@@ -53,6 +61,13 @@ public class CreateMetastoreResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -98,6 +113,7 @@ public class CreateMetastoreResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(CreateMetastoreResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 
@@ -109,7 +125,8 @@ public class CreateMetastoreResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public CreateMetastoreResponse build() {
-            return new CreateMetastoreResponse(__httpStatusCode__, opcWorkRequestId, opcRequestId);
+            return new CreateMetastoreResponse(
+                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
         }
     }
 

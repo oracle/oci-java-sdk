@@ -70,6 +70,7 @@ public class CreateDomainResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcWorkRequestId",
         "etag",
@@ -77,11 +78,12 @@ public class CreateDomainResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private CreateDomainResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcWorkRequestId,
             String etag,
             com.oracle.bmc.tenantmanagercontrolplane.model.Domain domain) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
         this.etag = etag;
@@ -93,6 +95,13 @@ public class CreateDomainResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -170,6 +179,7 @@ public class CreateDomainResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(CreateDomainResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
             etag(o.getEtag());
@@ -184,7 +194,7 @@ public class CreateDomainResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public CreateDomainResponse build() {
             return new CreateDomainResponse(
-                    __httpStatusCode__, opcRequestId, opcWorkRequestId, etag, domain);
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId, etag, domain);
         }
     }
 

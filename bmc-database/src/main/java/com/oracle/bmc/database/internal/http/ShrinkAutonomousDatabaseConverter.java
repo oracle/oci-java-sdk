@@ -111,8 +111,8 @@ public class ShrinkAutonomousDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ShrinkAutonomousDatabaseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autonomousDatabase(response.getItem());
 

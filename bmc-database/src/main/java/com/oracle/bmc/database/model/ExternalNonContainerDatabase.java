@@ -19,7 +19,8 @@ package com.oracle.bmc.database.model;
     builder = ExternalNonContainerDatabase.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExternalNonContainerDatabase {
+public final class ExternalNonContainerDatabase
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationsInsightsConfig",
@@ -418,58 +419,97 @@ public final class ExternalNonContainerDatabase {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExternalNonContainerDatabase build() {
-            ExternalNonContainerDatabase __instance__ =
+            ExternalNonContainerDatabase model =
                     new ExternalNonContainerDatabase(
-                            operationsInsightsConfig,
-                            compartmentId,
-                            freeformTags,
-                            definedTags,
-                            displayName,
-                            id,
-                            lifecycleDetails,
-                            lifecycleState,
-                            timeCreated,
-                            dbUniqueName,
-                            dbId,
-                            databaseVersion,
-                            databaseEdition,
-                            timeZone,
-                            characterSet,
-                            ncharacterSet,
-                            dbPacks,
-                            databaseConfiguration,
-                            databaseManagementConfig,
-                            stackMonitoringConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.operationsInsightsConfig,
+                            this.compartmentId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.displayName,
+                            this.id,
+                            this.lifecycleDetails,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.dbUniqueName,
+                            this.dbId,
+                            this.databaseVersion,
+                            this.databaseEdition,
+                            this.timeZone,
+                            this.characterSet,
+                            this.ncharacterSet,
+                            this.dbPacks,
+                            this.databaseConfiguration,
+                            this.databaseManagementConfig,
+                            this.stackMonitoringConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExternalNonContainerDatabase o) {
-            Builder copiedBuilder =
-                    operationsInsightsConfig(o.getOperationsInsightsConfig())
-                            .compartmentId(o.getCompartmentId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .id(o.getId())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .dbUniqueName(o.getDbUniqueName())
-                            .dbId(o.getDbId())
-                            .databaseVersion(o.getDatabaseVersion())
-                            .databaseEdition(o.getDatabaseEdition())
-                            .timeZone(o.getTimeZone())
-                            .characterSet(o.getCharacterSet())
-                            .ncharacterSet(o.getNcharacterSet())
-                            .dbPacks(o.getDbPacks())
-                            .databaseConfiguration(o.getDatabaseConfiguration())
-                            .databaseManagementConfig(o.getDatabaseManagementConfig())
-                            .stackMonitoringConfig(o.getStackMonitoringConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExternalNonContainerDatabase model) {
+            if (model.wasPropertyExplicitlySet("operationsInsightsConfig")) {
+                this.operationsInsightsConfig(model.getOperationsInsightsConfig());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("dbUniqueName")) {
+                this.dbUniqueName(model.getDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("dbId")) {
+                this.dbId(model.getDbId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("databaseEdition")) {
+                this.databaseEdition(model.getDatabaseEdition());
+            }
+            if (model.wasPropertyExplicitlySet("timeZone")) {
+                this.timeZone(model.getTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("characterSet")) {
+                this.characterSet(model.getCharacterSet());
+            }
+            if (model.wasPropertyExplicitlySet("ncharacterSet")) {
+                this.ncharacterSet(model.getNcharacterSet());
+            }
+            if (model.wasPropertyExplicitlySet("dbPacks")) {
+                this.dbPacks(model.getDbPacks());
+            }
+            if (model.wasPropertyExplicitlySet("databaseConfiguration")) {
+                this.databaseConfiguration(model.getDatabaseConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("databaseManagementConfig")) {
+                this.databaseManagementConfig(model.getDatabaseManagementConfig());
+            }
+            if (model.wasPropertyExplicitlySet("stackMonitoringConfig")) {
+                this.stackMonitoringConfig(model.getStackMonitoringConfig());
+            }
+            return this;
         }
     }
 
@@ -932,6 +972,7 @@ public final class ExternalNonContainerDatabase {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExternalNonContainerDatabase(");
+        sb.append("super=").append(super.toString());
         sb.append("operationsInsightsConfig=")
                 .append(String.valueOf(this.operationsInsightsConfig));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -954,7 +995,6 @@ public final class ExternalNonContainerDatabase {
         sb.append(", databaseManagementConfig=")
                 .append(String.valueOf(this.databaseManagementConfig));
         sb.append(", stackMonitoringConfig=").append(String.valueOf(this.stackMonitoringConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -991,7 +1031,7 @@ public final class ExternalNonContainerDatabase {
                 && java.util.Objects.equals(
                         this.databaseManagementConfig, other.databaseManagementConfig)
                 && java.util.Objects.equals(this.stackMonitoringConfig, other.stackMonitoringConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1046,16 +1086,7 @@ public final class ExternalNonContainerDatabase {
                         + (this.stackMonitoringConfig == null
                                 ? 43
                                 : this.stackMonitoringConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -55,16 +55,18 @@ public class CreateFunctionLibraryResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "functionLibrary"
     })
     private CreateFunctionLibraryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.FunctionLibrary functionLibrary) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.functionLibrary = functionLibrary;
@@ -75,6 +77,13 @@ public class CreateFunctionLibraryResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class CreateFunctionLibraryResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(CreateFunctionLibraryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             functionLibrary(o.getFunctionLibrary());
@@ -149,7 +159,7 @@ public class CreateFunctionLibraryResponse extends com.oracle.bmc.responses.BmcR
          */
         public CreateFunctionLibraryResponse build() {
             return new CreateFunctionLibraryResponse(
-                    __httpStatusCode__, etag, opcRequestId, functionLibrary);
+                    __httpStatusCode__, headers, etag, opcRequestId, functionLibrary);
         }
     }
 

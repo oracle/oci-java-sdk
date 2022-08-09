@@ -19,7 +19,8 @@ package com.oracle.bmc.nosql.model;
     builder = ChangeTableCompartmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ChangeTableCompartmentDetails {
+public final class ChangeTableCompartmentDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fromCompartmentId", "toCompartmentId"})
     public ChangeTableCompartmentDetails(String fromCompartmentId, String toCompartmentId) {
@@ -77,20 +78,23 @@ public final class ChangeTableCompartmentDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChangeTableCompartmentDetails build() {
-            ChangeTableCompartmentDetails __instance__ =
-                    new ChangeTableCompartmentDetails(fromCompartmentId, toCompartmentId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ChangeTableCompartmentDetails model =
+                    new ChangeTableCompartmentDetails(this.fromCompartmentId, this.toCompartmentId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ChangeTableCompartmentDetails o) {
-            Builder copiedBuilder =
-                    fromCompartmentId(o.getFromCompartmentId())
-                            .toCompartmentId(o.getToCompartmentId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ChangeTableCompartmentDetails model) {
+            if (model.wasPropertyExplicitlySet("fromCompartmentId")) {
+                this.fromCompartmentId(model.getFromCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("toCompartmentId")) {
+                this.toCompartmentId(model.getToCompartmentId());
+            }
+            return this;
         }
     }
 
@@ -156,9 +160,9 @@ public final class ChangeTableCompartmentDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ChangeTableCompartmentDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("fromCompartmentId=").append(String.valueOf(this.fromCompartmentId));
         sb.append(", toCompartmentId=").append(String.valueOf(this.toCompartmentId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -175,7 +179,7 @@ public final class ChangeTableCompartmentDetails {
         ChangeTableCompartmentDetails other = (ChangeTableCompartmentDetails) o;
         return java.util.Objects.equals(this.fromCompartmentId, other.fromCompartmentId)
                 && java.util.Objects.equals(this.toCompartmentId, other.toCompartmentId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -188,16 +192,7 @@ public final class ChangeTableCompartmentDetails {
         result =
                 (result * PRIME)
                         + (this.toCompartmentId == null ? 43 : this.toCompartmentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

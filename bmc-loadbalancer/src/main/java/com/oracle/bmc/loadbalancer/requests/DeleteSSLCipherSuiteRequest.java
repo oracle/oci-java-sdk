@@ -57,6 +57,37 @@ public class DeleteSSLCipherSuiteRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+     * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+     * or POST response for any resource of that load balancer.
+     * <p>
+     * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+     * <p>
+     * The resource is updated or deleted only if the ETag you provide matches the resource's current
+     * ETag value.
+     * <p>
+     * Example: {@code example-etag}
+     *
+     */
+    private String ifMatch;
+
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+     * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+     * or POST response for any resource of that load balancer.
+     * <p>
+     * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+     * <p>
+     * The resource is updated or deleted only if the ETag you provide matches the resource's current
+     * ETag value.
+     * <p>
+     * Example: {@code example-etag}
+     *
+     */
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -123,6 +154,41 @@ public class DeleteSSLCipherSuiteRequest
         }
 
         /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+         * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+         * or POST response for any resource of that load balancer.
+         * <p>
+         * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+         * <p>
+         * The resource is updated or deleted only if the ETag you provide matches the resource's current
+         * ETag value.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         */
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+         * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+         * or POST response for any resource of that load balancer.
+         * <p>
+         * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+         * <p>
+         * The resource is updated or deleted only if the ETag you provide matches the resource's current
+         * ETag value.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         * @param ifMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -153,6 +219,7 @@ public class DeleteSSLCipherSuiteRequest
             loadBalancerId(o.getLoadBalancerId());
             name(o.getName());
             opcRequestId(o.getOpcRequestId());
+            ifMatch(o.getIfMatch());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -188,8 +255,9 @@ public class DeleteSSLCipherSuiteRequest
             request.loadBalancerId = loadBalancerId;
             request.name = name;
             request.opcRequestId = opcRequestId;
+            request.ifMatch = ifMatch;
             return request;
-            // new DeleteSSLCipherSuiteRequest(loadBalancerId, name, opcRequestId);
+            // new DeleteSSLCipherSuiteRequest(loadBalancerId, name, opcRequestId, ifMatch);
         }
     }
 
@@ -198,7 +266,11 @@ public class DeleteSSLCipherSuiteRequest
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().loadBalancerId(loadBalancerId).name(name).opcRequestId(opcRequestId);
+        return new Builder()
+                .loadBalancerId(loadBalancerId)
+                .name(name)
+                .opcRequestId(opcRequestId)
+                .ifMatch(ifMatch);
     }
 
     /**
@@ -217,6 +289,7 @@ public class DeleteSSLCipherSuiteRequest
         sb.append(",loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(")");
         return sb.toString();
     }
@@ -234,7 +307,8 @@ public class DeleteSSLCipherSuiteRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
 
     @Override
@@ -246,6 +320,7 @@ public class DeleteSSLCipherSuiteRequest
                         + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         return result;
     }
 }

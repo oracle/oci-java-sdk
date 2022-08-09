@@ -136,7 +136,8 @@ public class DeleteRowConverter {
 
                                 com.oracle.bmc.nosql.responses.DeleteRowResponse.Builder builder =
                                         com.oracle.bmc.nosql.responses.DeleteRowResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.deleteRowResult(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = SqlTuningAdvisorTaskSummaryReportStatementCounts.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlTuningAdvisorTaskSummaryReportStatementCounts {
+public final class SqlTuningAdvisorTaskSummaryReportStatementCounts
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"distinctSql", "totalSql", "findingCount", "errorCount"})
     public SqlTuningAdvisorTaskSummaryReportStatementCounts(
@@ -102,23 +103,30 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlTuningAdvisorTaskSummaryReportStatementCounts build() {
-            SqlTuningAdvisorTaskSummaryReportStatementCounts __instance__ =
+            SqlTuningAdvisorTaskSummaryReportStatementCounts model =
                     new SqlTuningAdvisorTaskSummaryReportStatementCounts(
-                            distinctSql, totalSql, findingCount, errorCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.distinctSql, this.totalSql, this.findingCount, this.errorCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlTuningAdvisorTaskSummaryReportStatementCounts o) {
-            Builder copiedBuilder =
-                    distinctSql(o.getDistinctSql())
-                            .totalSql(o.getTotalSql())
-                            .findingCount(o.getFindingCount())
-                            .errorCount(o.getErrorCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlTuningAdvisorTaskSummaryReportStatementCounts model) {
+            if (model.wasPropertyExplicitlySet("distinctSql")) {
+                this.distinctSql(model.getDistinctSql());
+            }
+            if (model.wasPropertyExplicitlySet("totalSql")) {
+                this.totalSql(model.getTotalSql());
+            }
+            if (model.wasPropertyExplicitlySet("findingCount")) {
+                this.findingCount(model.getFindingCount());
+            }
+            if (model.wasPropertyExplicitlySet("errorCount")) {
+                this.errorCount(model.getErrorCount());
+            }
+            return this;
         }
     }
 
@@ -202,11 +210,11 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlTuningAdvisorTaskSummaryReportStatementCounts(");
+        sb.append("super=").append(super.toString());
         sb.append("distinctSql=").append(String.valueOf(this.distinctSql));
         sb.append(", totalSql=").append(String.valueOf(this.totalSql));
         sb.append(", findingCount=").append(String.valueOf(this.findingCount));
         sb.append(", errorCount=").append(String.valueOf(this.errorCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -226,7 +234,7 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts {
                 && java.util.Objects.equals(this.totalSql, other.totalSql)
                 && java.util.Objects.equals(this.findingCount, other.findingCount)
                 && java.util.Objects.equals(this.errorCount, other.errorCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -237,16 +245,7 @@ public final class SqlTuningAdvisorTaskSummaryReportStatementCounts {
         result = (result * PRIME) + (this.totalSql == null ? 43 : this.totalSql.hashCode());
         result = (result * PRIME) + (this.findingCount == null ? 43 : this.findingCount.hashCode());
         result = (result * PRIME) + (this.errorCount == null ? 43 : this.errorCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

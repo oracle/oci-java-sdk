@@ -17,7 +17,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateVcnDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateVcnDetails {
+public final class CreateVcnDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cidrBlock",
@@ -338,40 +338,61 @@ public final class CreateVcnDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateVcnDetails build() {
-            CreateVcnDetails __instance__ =
+            CreateVcnDetails model =
                     new CreateVcnDetails(
-                            cidrBlock,
-                            cidrBlocks,
-                            compartmentId,
-                            ipv6PrivateCidrBlocks,
-                            isOracleGuaAllocationEnabled,
-                            byoipv6CidrDetails,
-                            definedTags,
-                            displayName,
-                            dnsLabel,
-                            freeformTags,
-                            isIpv6Enabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.cidrBlock,
+                            this.cidrBlocks,
+                            this.compartmentId,
+                            this.ipv6PrivateCidrBlocks,
+                            this.isOracleGuaAllocationEnabled,
+                            this.byoipv6CidrDetails,
+                            this.definedTags,
+                            this.displayName,
+                            this.dnsLabel,
+                            this.freeformTags,
+                            this.isIpv6Enabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateVcnDetails o) {
-            Builder copiedBuilder =
-                    cidrBlock(o.getCidrBlock())
-                            .cidrBlocks(o.getCidrBlocks())
-                            .compartmentId(o.getCompartmentId())
-                            .ipv6PrivateCidrBlocks(o.getIpv6PrivateCidrBlocks())
-                            .isOracleGuaAllocationEnabled(o.getIsOracleGuaAllocationEnabled())
-                            .byoipv6CidrDetails(o.getByoipv6CidrDetails())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .dnsLabel(o.getDnsLabel())
-                            .freeformTags(o.getFreeformTags())
-                            .isIpv6Enabled(o.getIsIpv6Enabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateVcnDetails model) {
+            if (model.wasPropertyExplicitlySet("cidrBlock")) {
+                this.cidrBlock(model.getCidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("cidrBlocks")) {
+                this.cidrBlocks(model.getCidrBlocks());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6PrivateCidrBlocks")) {
+                this.ipv6PrivateCidrBlocks(model.getIpv6PrivateCidrBlocks());
+            }
+            if (model.wasPropertyExplicitlySet("isOracleGuaAllocationEnabled")) {
+                this.isOracleGuaAllocationEnabled(model.getIsOracleGuaAllocationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("byoipv6CidrDetails")) {
+                this.byoipv6CidrDetails(model.getByoipv6CidrDetails());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("dnsLabel")) {
+                this.dnsLabel(model.getDnsLabel());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("isIpv6Enabled")) {
+                this.isIpv6Enabled(model.getIsIpv6Enabled());
+            }
+            return this;
         }
     }
 
@@ -649,6 +670,7 @@ public final class CreateVcnDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateVcnDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("cidrBlock=").append(String.valueOf(this.cidrBlock));
         sb.append(", cidrBlocks=").append(String.valueOf(this.cidrBlocks));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -661,7 +683,6 @@ public final class CreateVcnDetails {
         sb.append(", dnsLabel=").append(String.valueOf(this.dnsLabel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", isIpv6Enabled=").append(String.valueOf(this.isIpv6Enabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -688,7 +709,7 @@ public final class CreateVcnDetails {
                 && java.util.Objects.equals(this.dnsLabel, other.dnsLabel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.isIpv6Enabled, other.isIpv6Enabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -722,16 +743,7 @@ public final class CreateVcnDetails {
         result =
                 (result * PRIME)
                         + (this.isIpv6Enabled == null ? 43 : this.isIpv6Enabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

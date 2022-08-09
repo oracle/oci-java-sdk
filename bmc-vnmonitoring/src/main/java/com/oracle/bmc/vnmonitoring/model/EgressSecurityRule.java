@@ -19,7 +19,7 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = EgressSecurityRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EgressSecurityRule {
+public final class EgressSecurityRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "destination",
@@ -206,32 +206,45 @@ public final class EgressSecurityRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EgressSecurityRule build() {
-            EgressSecurityRule __instance__ =
+            EgressSecurityRule model =
                     new EgressSecurityRule(
-                            destination,
-                            destinationType,
-                            icmpOptions,
-                            isStateless,
-                            protocol,
-                            tcpOptions,
-                            udpOptions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.destination,
+                            this.destinationType,
+                            this.icmpOptions,
+                            this.isStateless,
+                            this.protocol,
+                            this.tcpOptions,
+                            this.udpOptions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EgressSecurityRule o) {
-            Builder copiedBuilder =
-                    destination(o.getDestination())
-                            .destinationType(o.getDestinationType())
-                            .icmpOptions(o.getIcmpOptions())
-                            .isStateless(o.getIsStateless())
-                            .protocol(o.getProtocol())
-                            .tcpOptions(o.getTcpOptions())
-                            .udpOptions(o.getUdpOptions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EgressSecurityRule model) {
+            if (model.wasPropertyExplicitlySet("destination")) {
+                this.destination(model.getDestination());
+            }
+            if (model.wasPropertyExplicitlySet("destinationType")) {
+                this.destinationType(model.getDestinationType());
+            }
+            if (model.wasPropertyExplicitlySet("icmpOptions")) {
+                this.icmpOptions(model.getIcmpOptions());
+            }
+            if (model.wasPropertyExplicitlySet("isStateless")) {
+                this.isStateless(model.getIsStateless());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("tcpOptions")) {
+                this.tcpOptions(model.getTcpOptions());
+            }
+            if (model.wasPropertyExplicitlySet("udpOptions")) {
+                this.udpOptions(model.getUdpOptions());
+            }
+            return this;
         }
     }
 
@@ -453,6 +466,7 @@ public final class EgressSecurityRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EgressSecurityRule(");
+        sb.append("super=").append(super.toString());
         sb.append("destination=").append(String.valueOf(this.destination));
         sb.append(", destinationType=").append(String.valueOf(this.destinationType));
         sb.append(", icmpOptions=").append(String.valueOf(this.icmpOptions));
@@ -460,7 +474,6 @@ public final class EgressSecurityRule {
         sb.append(", protocol=").append(String.valueOf(this.protocol));
         sb.append(", tcpOptions=").append(String.valueOf(this.tcpOptions));
         sb.append(", udpOptions=").append(String.valueOf(this.udpOptions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -482,7 +495,7 @@ public final class EgressSecurityRule {
                 && java.util.Objects.equals(this.protocol, other.protocol)
                 && java.util.Objects.equals(this.tcpOptions, other.tcpOptions)
                 && java.util.Objects.equals(this.udpOptions, other.udpOptions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -498,16 +511,7 @@ public final class EgressSecurityRule {
         result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
         result = (result * PRIME) + (this.tcpOptions == null ? 43 : this.tcpOptions.hashCode());
         result = (result * PRIME) + (this.udpOptions == null ? 43 : this.udpOptions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

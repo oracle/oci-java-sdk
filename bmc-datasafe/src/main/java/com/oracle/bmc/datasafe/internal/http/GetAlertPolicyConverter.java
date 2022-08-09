@@ -103,8 +103,8 @@ public class GetAlertPolicyConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetAlertPolicyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.alertPolicy(response.getItem());
 

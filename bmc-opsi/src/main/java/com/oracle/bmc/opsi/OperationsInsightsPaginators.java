@@ -1295,6 +1295,127 @@ public class OperationsInsightsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listImportableComputeEntities operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListImportableComputeEntitiesResponse>
+            listImportableComputeEntitiesResponseIterator(
+                    final ListImportableComputeEntitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListImportableComputeEntitiesRequest.Builder, ListImportableComputeEntitiesRequest,
+                ListImportableComputeEntitiesResponse>(
+                new java.util.function.Supplier<ListImportableComputeEntitiesRequest.Builder>() {
+                    @Override
+                    public ListImportableComputeEntitiesRequest.Builder get() {
+                        return ListImportableComputeEntitiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListImportableComputeEntitiesResponse, String>() {
+                    @Override
+                    public String apply(ListImportableComputeEntitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListImportableComputeEntitiesRequest.Builder>,
+                        ListImportableComputeEntitiesRequest>() {
+                    @Override
+                    public ListImportableComputeEntitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListImportableComputeEntitiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListImportableComputeEntitiesRequest,
+                        ListImportableComputeEntitiesResponse>() {
+                    @Override
+                    public ListImportableComputeEntitiesResponse apply(
+                            ListImportableComputeEntitiesRequest request) {
+                        return client.listImportableComputeEntities(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.ImportableComputeEntitySummary} objects
+     * contained in responses from the listImportableComputeEntities operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.ImportableComputeEntitySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.ImportableComputeEntitySummary>
+            listImportableComputeEntitiesRecordIterator(
+                    final ListImportableComputeEntitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListImportableComputeEntitiesRequest.Builder, ListImportableComputeEntitiesRequest,
+                ListImportableComputeEntitiesResponse,
+                com.oracle.bmc.opsi.model.ImportableComputeEntitySummary>(
+                new java.util.function.Supplier<ListImportableComputeEntitiesRequest.Builder>() {
+                    @Override
+                    public ListImportableComputeEntitiesRequest.Builder get() {
+                        return ListImportableComputeEntitiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListImportableComputeEntitiesResponse, String>() {
+                    @Override
+                    public String apply(ListImportableComputeEntitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListImportableComputeEntitiesRequest.Builder>,
+                        ListImportableComputeEntitiesRequest>() {
+                    @Override
+                    public ListImportableComputeEntitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListImportableComputeEntitiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListImportableComputeEntitiesRequest,
+                        ListImportableComputeEntitiesResponse>() {
+                    @Override
+                    public ListImportableComputeEntitiesResponse apply(
+                            ListImportableComputeEntitiesRequest request) {
+                        return client.listImportableComputeEntities(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListImportableComputeEntitiesResponse,
+                        java.util.List<
+                                com.oracle.bmc.opsi.model.ImportableComputeEntitySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.ImportableComputeEntitySummary>
+                            apply(ListImportableComputeEntitiesResponse response) {
+                        return response.getImportableComputeEntitySummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listImportableEnterpriseManagerEntities operation. This iterable
      * will fetch more data from the server as needed.
      *

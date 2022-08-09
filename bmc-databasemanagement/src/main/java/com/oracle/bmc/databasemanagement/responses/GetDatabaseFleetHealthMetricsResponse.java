@@ -42,15 +42,17 @@ public class GetDatabaseFleetHealthMetricsResponse extends com.oracle.bmc.respon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "databaseFleetHealthMetrics"
     })
     private GetDatabaseFleetHealthMetricsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.DatabaseFleetHealthMetrics
                     databaseFleetHealthMetrics) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.databaseFleetHealthMetrics = databaseFleetHealthMetrics;
     }
@@ -60,6 +62,13 @@ public class GetDatabaseFleetHealthMetricsResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -106,6 +115,7 @@ public class GetDatabaseFleetHealthMetricsResponse extends com.oracle.bmc.respon
          */
         public Builder copy(GetDatabaseFleetHealthMetricsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             databaseFleetHealthMetrics(o.getDatabaseFleetHealthMetrics());
 
@@ -118,7 +128,7 @@ public class GetDatabaseFleetHealthMetricsResponse extends com.oracle.bmc.respon
          */
         public GetDatabaseFleetHealthMetricsResponse build() {
             return new GetDatabaseFleetHealthMetricsResponse(
-                    __httpStatusCode__, opcRequestId, databaseFleetHealthMetrics);
+                    __httpStatusCode__, headers, opcRequestId, databaseFleetHealthMetrics);
         }
     }
 

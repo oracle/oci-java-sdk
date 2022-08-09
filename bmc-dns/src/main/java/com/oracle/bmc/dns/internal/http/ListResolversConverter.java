@@ -172,7 +172,8 @@ public class ListResolversConverter {
 
                                 com.oracle.bmc.dns.responses.ListResolversResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.ListResolversResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

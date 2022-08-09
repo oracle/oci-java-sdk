@@ -189,8 +189,8 @@ public class ListManagedListsConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListManagedListsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managedListCollection(response.getItem());
 

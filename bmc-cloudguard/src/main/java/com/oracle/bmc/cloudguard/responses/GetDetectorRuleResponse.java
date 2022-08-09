@@ -74,6 +74,7 @@ public class GetDetectorRuleResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "opcNextPage",
@@ -81,11 +82,12 @@ public class GetDetectorRuleResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private GetDetectorRuleResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.DetectorRule detectorRule) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
@@ -97,6 +99,13 @@ public class GetDetectorRuleResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -178,6 +187,7 @@ public class GetDetectorRuleResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(GetDetectorRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
@@ -192,7 +202,7 @@ public class GetDetectorRuleResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public GetDetectorRuleResponse build() {
             return new GetDetectorRuleResponse(
-                    __httpStatusCode__, etag, opcRequestId, opcNextPage, detectorRule);
+                    __httpStatusCode__, headers, etag, opcRequestId, opcNextPage, detectorRule);
         }
     }
 

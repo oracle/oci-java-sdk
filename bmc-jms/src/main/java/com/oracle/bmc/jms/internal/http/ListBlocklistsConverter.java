@@ -152,8 +152,8 @@ public class ListBlocklistsConverter {
                                         builder =
                                                 com.oracle.bmc.jms.responses.ListBlocklistsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.blocklistCollection(response.getItem());
 

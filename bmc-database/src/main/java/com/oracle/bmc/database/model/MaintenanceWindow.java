@@ -20,7 +20,7 @@ package com.oracle.bmc.database.model;
     builder = MaintenanceWindow.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MaintenanceWindow {
+public final class MaintenanceWindow extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "preference",
@@ -226,36 +226,53 @@ public final class MaintenanceWindow {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MaintenanceWindow build() {
-            MaintenanceWindow __instance__ =
+            MaintenanceWindow model =
                     new MaintenanceWindow(
-                            preference,
-                            patchingMode,
-                            isCustomActionTimeoutEnabled,
-                            customActionTimeoutInMins,
-                            months,
-                            weeksOfMonth,
-                            daysOfWeek,
-                            hoursOfDay,
-                            leadTimeInWeeks);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.preference,
+                            this.patchingMode,
+                            this.isCustomActionTimeoutEnabled,
+                            this.customActionTimeoutInMins,
+                            this.months,
+                            this.weeksOfMonth,
+                            this.daysOfWeek,
+                            this.hoursOfDay,
+                            this.leadTimeInWeeks);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MaintenanceWindow o) {
-            Builder copiedBuilder =
-                    preference(o.getPreference())
-                            .patchingMode(o.getPatchingMode())
-                            .isCustomActionTimeoutEnabled(o.getIsCustomActionTimeoutEnabled())
-                            .customActionTimeoutInMins(o.getCustomActionTimeoutInMins())
-                            .months(o.getMonths())
-                            .weeksOfMonth(o.getWeeksOfMonth())
-                            .daysOfWeek(o.getDaysOfWeek())
-                            .hoursOfDay(o.getHoursOfDay())
-                            .leadTimeInWeeks(o.getLeadTimeInWeeks());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MaintenanceWindow model) {
+            if (model.wasPropertyExplicitlySet("preference")) {
+                this.preference(model.getPreference());
+            }
+            if (model.wasPropertyExplicitlySet("patchingMode")) {
+                this.patchingMode(model.getPatchingMode());
+            }
+            if (model.wasPropertyExplicitlySet("isCustomActionTimeoutEnabled")) {
+                this.isCustomActionTimeoutEnabled(model.getIsCustomActionTimeoutEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("customActionTimeoutInMins")) {
+                this.customActionTimeoutInMins(model.getCustomActionTimeoutInMins());
+            }
+            if (model.wasPropertyExplicitlySet("months")) {
+                this.months(model.getMonths());
+            }
+            if (model.wasPropertyExplicitlySet("weeksOfMonth")) {
+                this.weeksOfMonth(model.getWeeksOfMonth());
+            }
+            if (model.wasPropertyExplicitlySet("daysOfWeek")) {
+                this.daysOfWeek(model.getDaysOfWeek());
+            }
+            if (model.wasPropertyExplicitlySet("hoursOfDay")) {
+                this.hoursOfDay(model.getHoursOfDay());
+            }
+            if (model.wasPropertyExplicitlySet("leadTimeInWeeks")) {
+                this.leadTimeInWeeks(model.getLeadTimeInWeeks());
+            }
+            return this;
         }
     }
 
@@ -528,6 +545,7 @@ public final class MaintenanceWindow {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MaintenanceWindow(");
+        sb.append("super=").append(super.toString());
         sb.append("preference=").append(String.valueOf(this.preference));
         sb.append(", patchingMode=").append(String.valueOf(this.patchingMode));
         sb.append(", isCustomActionTimeoutEnabled=")
@@ -539,7 +557,6 @@ public final class MaintenanceWindow {
         sb.append(", daysOfWeek=").append(String.valueOf(this.daysOfWeek));
         sb.append(", hoursOfDay=").append(String.valueOf(this.hoursOfDay));
         sb.append(", leadTimeInWeeks=").append(String.valueOf(this.leadTimeInWeeks));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -565,7 +582,7 @@ public final class MaintenanceWindow {
                 && java.util.Objects.equals(this.daysOfWeek, other.daysOfWeek)
                 && java.util.Objects.equals(this.hoursOfDay, other.hoursOfDay)
                 && java.util.Objects.equals(this.leadTimeInWeeks, other.leadTimeInWeeks)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -591,16 +608,7 @@ public final class MaintenanceWindow {
         result =
                 (result * PRIME)
                         + (this.leadTimeInWeeks == null ? 43 : this.leadTimeInWeeks.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

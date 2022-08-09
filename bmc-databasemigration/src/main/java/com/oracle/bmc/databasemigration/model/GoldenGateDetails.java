@@ -20,7 +20,7 @@ package com.oracle.bmc.databasemigration.model;
     builder = GoldenGateDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GoldenGateDetails {
+public final class GoldenGateDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hub", "settings"})
     public GoldenGateDetails(GoldenGateHub hub, GoldenGateSettings settings) {
@@ -54,17 +54,22 @@ public final class GoldenGateDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GoldenGateDetails build() {
-            GoldenGateDetails __instance__ = new GoldenGateDetails(hub, settings);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            GoldenGateDetails model = new GoldenGateDetails(this.hub, this.settings);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GoldenGateDetails o) {
-            Builder copiedBuilder = hub(o.getHub()).settings(o.getSettings());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GoldenGateDetails model) {
+            if (model.wasPropertyExplicitlySet("hub")) {
+                this.hub(model.getHub());
+            }
+            if (model.wasPropertyExplicitlySet("settings")) {
+                this.settings(model.getSettings());
+            }
+            return this;
         }
     }
 
@@ -106,9 +111,9 @@ public final class GoldenGateDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GoldenGateDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("hub=").append(String.valueOf(this.hub));
         sb.append(", settings=").append(String.valueOf(this.settings));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -125,7 +130,7 @@ public final class GoldenGateDetails {
         GoldenGateDetails other = (GoldenGateDetails) o;
         return java.util.Objects.equals(this.hub, other.hub)
                 && java.util.Objects.equals(this.settings, other.settings)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -134,16 +139,7 @@ public final class GoldenGateDetails {
         int result = 1;
         result = (result * PRIME) + (this.hub == null ? 43 : this.hub.hashCode());
         result = (result * PRIME) + (this.settings == null ? 43 : this.settings.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

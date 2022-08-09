@@ -112,36 +112,53 @@ public final class ConditionalInputLink extends FlowPortLink {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConditionalInputLink build() {
-            ConditionalInputLink __instance__ =
+            ConditionalInputLink model =
                     new ConditionalInputLink(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            objectStatus,
-                            description,
-                            port,
-                            fromLink,
-                            fieldMap,
-                            condition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.objectStatus,
+                            this.description,
+                            this.port,
+                            this.fromLink,
+                            this.fieldMap,
+                            this.condition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConditionalInputLink o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .objectStatus(o.getObjectStatus())
-                            .description(o.getDescription())
-                            .port(o.getPort())
-                            .fromLink(o.getFromLink())
-                            .fieldMap(o.getFieldMap())
-                            .condition(o.getCondition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConditionalInputLink model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("fromLink")) {
+                this.fromLink(model.getFromLink());
+            }
+            if (model.wasPropertyExplicitlySet("fieldMap")) {
+                this.fieldMap(model.getFieldMap());
+            }
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            return this;
         }
     }
 
@@ -211,7 +228,6 @@ public final class ConditionalInputLink extends FlowPortLink {
         sb.append(", fromLink=").append(String.valueOf(this.fromLink));
         sb.append(", fieldMap=").append(String.valueOf(this.fieldMap));
         sb.append(", condition=").append(String.valueOf(this.condition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -229,8 +245,7 @@ public final class ConditionalInputLink extends FlowPortLink {
         return java.util.Objects.equals(this.fromLink, other.fromLink)
                 && java.util.Objects.equals(this.fieldMap, other.fieldMap)
                 && java.util.Objects.equals(this.condition, other.condition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -240,16 +255,6 @@ public final class ConditionalInputLink extends FlowPortLink {
         result = (result * PRIME) + (this.fromLink == null ? 43 : this.fromLink.hashCode());
         result = (result * PRIME) + (this.fieldMap == null ? 43 : this.fieldMap.hashCode());
         result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

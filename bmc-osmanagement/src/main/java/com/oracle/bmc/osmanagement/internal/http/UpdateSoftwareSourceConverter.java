@@ -115,8 +115,8 @@ public class UpdateSoftwareSourceConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .UpdateSoftwareSourceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.softwareSource(response.getItem());
 

@@ -112,8 +112,8 @@ public class UpdateRegistryConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .UpdateRegistryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.registry(response.getItem());
 

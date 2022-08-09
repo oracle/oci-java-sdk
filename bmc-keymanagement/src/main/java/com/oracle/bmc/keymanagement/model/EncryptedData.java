@@ -17,7 +17,7 @@ package com.oracle.bmc.keymanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EncryptedData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EncryptedData {
+public final class EncryptedData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "ciphertext",
@@ -120,22 +120,33 @@ public final class EncryptedData {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EncryptedData build() {
-            EncryptedData __instance__ =
-                    new EncryptedData(ciphertext, keyId, keyVersionId, encryptionAlgorithm);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            EncryptedData model =
+                    new EncryptedData(
+                            this.ciphertext,
+                            this.keyId,
+                            this.keyVersionId,
+                            this.encryptionAlgorithm);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EncryptedData o) {
-            Builder copiedBuilder =
-                    ciphertext(o.getCiphertext())
-                            .keyId(o.getKeyId())
-                            .keyVersionId(o.getKeyVersionId())
-                            .encryptionAlgorithm(o.getEncryptionAlgorithm());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EncryptedData model) {
+            if (model.wasPropertyExplicitlySet("ciphertext")) {
+                this.ciphertext(model.getCiphertext());
+            }
+            if (model.wasPropertyExplicitlySet("keyId")) {
+                this.keyId(model.getKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("keyVersionId")) {
+                this.keyVersionId(model.getKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionAlgorithm")) {
+                this.encryptionAlgorithm(model.getEncryptionAlgorithm());
+            }
+            return this;
         }
     }
 
@@ -286,11 +297,11 @@ public final class EncryptedData {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EncryptedData(");
+        sb.append("super=").append(super.toString());
         sb.append("ciphertext=").append(String.valueOf(this.ciphertext));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", keyVersionId=").append(String.valueOf(this.keyVersionId));
         sb.append(", encryptionAlgorithm=").append(String.valueOf(this.encryptionAlgorithm));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -309,7 +320,7 @@ public final class EncryptedData {
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.keyVersionId, other.keyVersionId)
                 && java.util.Objects.equals(this.encryptionAlgorithm, other.encryptionAlgorithm)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -324,16 +335,7 @@ public final class EncryptedData {
                         + (this.encryptionAlgorithm == null
                                 ? 43
                                 : this.encryptionAlgorithm.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

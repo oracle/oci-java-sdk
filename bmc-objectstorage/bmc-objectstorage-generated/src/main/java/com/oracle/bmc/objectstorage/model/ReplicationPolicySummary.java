@@ -19,7 +19,8 @@ package com.oracle.bmc.objectstorage.model;
     builder = ReplicationPolicySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReplicationPolicySummary {
+public final class ReplicationPolicySummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -198,34 +199,49 @@ public final class ReplicationPolicySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ReplicationPolicySummary build() {
-            ReplicationPolicySummary __instance__ =
+            ReplicationPolicySummary model =
                     new ReplicationPolicySummary(
-                            id,
-                            name,
-                            destinationRegionName,
-                            destinationBucketName,
-                            timeCreated,
-                            timeLastSync,
-                            status,
-                            statusMessage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.destinationRegionName,
+                            this.destinationBucketName,
+                            this.timeCreated,
+                            this.timeLastSync,
+                            this.status,
+                            this.statusMessage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ReplicationPolicySummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .destinationRegionName(o.getDestinationRegionName())
-                            .destinationBucketName(o.getDestinationBucketName())
-                            .timeCreated(o.getTimeCreated())
-                            .timeLastSync(o.getTimeLastSync())
-                            .status(o.getStatus())
-                            .statusMessage(o.getStatusMessage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ReplicationPolicySummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("destinationRegionName")) {
+                this.destinationRegionName(model.getDestinationRegionName());
+            }
+            if (model.wasPropertyExplicitlySet("destinationBucketName")) {
+                this.destinationBucketName(model.getDestinationBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSync")) {
+                this.timeLastSync(model.getTimeLastSync());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("statusMessage")) {
+                this.statusMessage(model.getStatusMessage());
+            }
+            return this;
         }
     }
 
@@ -426,6 +442,7 @@ public final class ReplicationPolicySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ReplicationPolicySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", destinationRegionName=").append(String.valueOf(this.destinationRegionName));
@@ -434,7 +451,6 @@ public final class ReplicationPolicySummary {
         sb.append(", timeLastSync=").append(String.valueOf(this.timeLastSync));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", statusMessage=").append(String.valueOf(this.statusMessage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -457,7 +473,7 @@ public final class ReplicationPolicySummary {
                 && java.util.Objects.equals(this.timeLastSync, other.timeLastSync)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.statusMessage, other.statusMessage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -482,16 +498,7 @@ public final class ReplicationPolicySummary {
         result =
                 (result * PRIME)
                         + (this.statusMessage == null ? 43 : this.statusMessage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

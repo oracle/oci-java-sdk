@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = EnableDatabaseManagementDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EnableDatabaseManagementDetails {
+public final class EnableDatabaseManagementDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -182,34 +183,49 @@ public final class EnableDatabaseManagementDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EnableDatabaseManagementDetails build() {
-            EnableDatabaseManagementDetails __instance__ =
+            EnableDatabaseManagementDetails model =
                     new EnableDatabaseManagementDetails(
-                            credentialDetails,
-                            privateEndPointId,
-                            managementType,
-                            serviceName,
-                            protocol,
-                            port,
-                            sslSecretId,
-                            role);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.credentialDetails,
+                            this.privateEndPointId,
+                            this.managementType,
+                            this.serviceName,
+                            this.protocol,
+                            this.port,
+                            this.sslSecretId,
+                            this.role);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EnableDatabaseManagementDetails o) {
-            Builder copiedBuilder =
-                    credentialDetails(o.getCredentialDetails())
-                            .privateEndPointId(o.getPrivateEndPointId())
-                            .managementType(o.getManagementType())
-                            .serviceName(o.getServiceName())
-                            .protocol(o.getProtocol())
-                            .port(o.getPort())
-                            .sslSecretId(o.getSslSecretId())
-                            .role(o.getRole());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EnableDatabaseManagementDetails model) {
+            if (model.wasPropertyExplicitlySet("credentialDetails")) {
+                this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndPointId")) {
+                this.privateEndPointId(model.getPrivateEndPointId());
+            }
+            if (model.wasPropertyExplicitlySet("managementType")) {
+                this.managementType(model.getManagementType());
+            }
+            if (model.wasPropertyExplicitlySet("serviceName")) {
+                this.serviceName(model.getServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("sslSecretId")) {
+                this.sslSecretId(model.getSslSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            return this;
         }
     }
 
@@ -449,6 +465,7 @@ public final class EnableDatabaseManagementDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EnableDatabaseManagementDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
         sb.append(", privateEndPointId=").append(String.valueOf(this.privateEndPointId));
         sb.append(", managementType=").append(String.valueOf(this.managementType));
@@ -457,7 +474,6 @@ public final class EnableDatabaseManagementDetails {
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", sslSecretId=").append(String.valueOf(this.sslSecretId));
         sb.append(", role=").append(String.valueOf(this.role));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -480,7 +496,7 @@ public final class EnableDatabaseManagementDetails {
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.sslSecretId, other.sslSecretId)
                 && java.util.Objects.equals(this.role, other.role)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -501,16 +517,7 @@ public final class EnableDatabaseManagementDetails {
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.sslSecretId == null ? 43 : this.sslSecretId.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

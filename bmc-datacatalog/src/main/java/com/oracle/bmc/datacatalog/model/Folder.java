@@ -21,7 +21,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Folder.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Folder {
+public final class Folder extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -496,64 +496,109 @@ public final class Folder {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Folder build() {
-            Folder __instance__ =
+            Folder model =
                     new Folder(
-                            key,
-                            displayName,
-                            businessName,
-                            description,
-                            parentFolderKey,
-                            typeKey,
-                            timeHarvested,
-                            objectRelationships,
-                            path,
-                            dataAssetKey,
-                            customPropertyMembers,
-                            properties,
-                            externalKey,
-                            timeCreated,
-                            timeUpdated,
-                            createdById,
-                            updatedById,
-                            timeExternal,
-                            lifecycleState,
-                            harvestStatus,
-                            lastJobKey,
-                            uri,
-                            objectStorageUrl);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.businessName,
+                            this.description,
+                            this.parentFolderKey,
+                            this.typeKey,
+                            this.timeHarvested,
+                            this.objectRelationships,
+                            this.path,
+                            this.dataAssetKey,
+                            this.customPropertyMembers,
+                            this.properties,
+                            this.externalKey,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.createdById,
+                            this.updatedById,
+                            this.timeExternal,
+                            this.lifecycleState,
+                            this.harvestStatus,
+                            this.lastJobKey,
+                            this.uri,
+                            this.objectStorageUrl);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Folder o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .businessName(o.getBusinessName())
-                            .description(o.getDescription())
-                            .parentFolderKey(o.getParentFolderKey())
-                            .typeKey(o.getTypeKey())
-                            .timeHarvested(o.getTimeHarvested())
-                            .objectRelationships(o.getObjectRelationships())
-                            .path(o.getPath())
-                            .dataAssetKey(o.getDataAssetKey())
-                            .customPropertyMembers(o.getCustomPropertyMembers())
-                            .properties(o.getProperties())
-                            .externalKey(o.getExternalKey())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .createdById(o.getCreatedById())
-                            .updatedById(o.getUpdatedById())
-                            .timeExternal(o.getTimeExternal())
-                            .lifecycleState(o.getLifecycleState())
-                            .harvestStatus(o.getHarvestStatus())
-                            .lastJobKey(o.getLastJobKey())
-                            .uri(o.getUri())
-                            .objectStorageUrl(o.getObjectStorageUrl());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Folder model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("businessName")) {
+                this.businessName(model.getBusinessName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("parentFolderKey")) {
+                this.parentFolderKey(model.getParentFolderKey());
+            }
+            if (model.wasPropertyExplicitlySet("typeKey")) {
+                this.typeKey(model.getTypeKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeHarvested")) {
+                this.timeHarvested(model.getTimeHarvested());
+            }
+            if (model.wasPropertyExplicitlySet("objectRelationships")) {
+                this.objectRelationships(model.getObjectRelationships());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("dataAssetKey")) {
+                this.dataAssetKey(model.getDataAssetKey());
+            }
+            if (model.wasPropertyExplicitlySet("customPropertyMembers")) {
+                this.customPropertyMembers(model.getCustomPropertyMembers());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("createdById")) {
+                this.createdById(model.getCreatedById());
+            }
+            if (model.wasPropertyExplicitlySet("updatedById")) {
+                this.updatedById(model.getUpdatedById());
+            }
+            if (model.wasPropertyExplicitlySet("timeExternal")) {
+                this.timeExternal(model.getTimeExternal());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("harvestStatus")) {
+                this.harvestStatus(model.getHarvestStatus());
+            }
+            if (model.wasPropertyExplicitlySet("lastJobKey")) {
+                this.lastJobKey(model.getLastJobKey());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("objectStorageUrl")) {
+                this.objectStorageUrl(model.getObjectStorageUrl());
+            }
+            return this;
         }
     }
 
@@ -925,6 +970,7 @@ public final class Folder {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Folder(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", businessName=").append(String.valueOf(this.businessName));
@@ -948,7 +994,6 @@ public final class Folder {
         sb.append(", lastJobKey=").append(String.valueOf(this.lastJobKey));
         sb.append(", uri=").append(String.valueOf(this.uri));
         sb.append(", objectStorageUrl=").append(String.valueOf(this.objectStorageUrl));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -986,7 +1031,7 @@ public final class Folder {
                 && java.util.Objects.equals(this.lastJobKey, other.lastJobKey)
                 && java.util.Objects.equals(this.uri, other.uri)
                 && java.util.Objects.equals(this.objectStorageUrl, other.objectStorageUrl)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1034,16 +1079,7 @@ public final class Folder {
         result =
                 (result * PRIME)
                         + (this.objectStorageUrl == null ? 43 : this.objectStorageUrl.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

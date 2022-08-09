@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = SqlTuningAdvisorTaskRecommendationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlTuningAdvisorTaskRecommendationSummary {
+public final class SqlTuningAdvisorTaskRecommendationSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlTuningAdvisorTaskId",
@@ -227,38 +228,57 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlTuningAdvisorTaskRecommendationSummary build() {
-            SqlTuningAdvisorTaskRecommendationSummary __instance__ =
+            SqlTuningAdvisorTaskRecommendationSummary model =
                     new SqlTuningAdvisorTaskRecommendationSummary(
-                            sqlTuningAdvisorTaskId,
-                            sqlTuningAdvisorTaskObjectId,
-                            recommendationKey,
-                            recommendationType,
-                            finding,
-                            recommendation,
-                            rationale,
-                            benefit,
-                            implementActionSql,
-                            isParallelExecution);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sqlTuningAdvisorTaskId,
+                            this.sqlTuningAdvisorTaskObjectId,
+                            this.recommendationKey,
+                            this.recommendationType,
+                            this.finding,
+                            this.recommendation,
+                            this.rationale,
+                            this.benefit,
+                            this.implementActionSql,
+                            this.isParallelExecution);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlTuningAdvisorTaskRecommendationSummary o) {
-            Builder copiedBuilder =
-                    sqlTuningAdvisorTaskId(o.getSqlTuningAdvisorTaskId())
-                            .sqlTuningAdvisorTaskObjectId(o.getSqlTuningAdvisorTaskObjectId())
-                            .recommendationKey(o.getRecommendationKey())
-                            .recommendationType(o.getRecommendationType())
-                            .finding(o.getFinding())
-                            .recommendation(o.getRecommendation())
-                            .rationale(o.getRationale())
-                            .benefit(o.getBenefit())
-                            .implementActionSql(o.getImplementActionSql())
-                            .isParallelExecution(o.getIsParallelExecution());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlTuningAdvisorTaskRecommendationSummary model) {
+            if (model.wasPropertyExplicitlySet("sqlTuningAdvisorTaskId")) {
+                this.sqlTuningAdvisorTaskId(model.getSqlTuningAdvisorTaskId());
+            }
+            if (model.wasPropertyExplicitlySet("sqlTuningAdvisorTaskObjectId")) {
+                this.sqlTuningAdvisorTaskObjectId(model.getSqlTuningAdvisorTaskObjectId());
+            }
+            if (model.wasPropertyExplicitlySet("recommendationKey")) {
+                this.recommendationKey(model.getRecommendationKey());
+            }
+            if (model.wasPropertyExplicitlySet("recommendationType")) {
+                this.recommendationType(model.getRecommendationType());
+            }
+            if (model.wasPropertyExplicitlySet("finding")) {
+                this.finding(model.getFinding());
+            }
+            if (model.wasPropertyExplicitlySet("recommendation")) {
+                this.recommendation(model.getRecommendation());
+            }
+            if (model.wasPropertyExplicitlySet("rationale")) {
+                this.rationale(model.getRationale());
+            }
+            if (model.wasPropertyExplicitlySet("benefit")) {
+                this.benefit(model.getBenefit());
+            }
+            if (model.wasPropertyExplicitlySet("implementActionSql")) {
+                this.implementActionSql(model.getImplementActionSql());
+            }
+            if (model.wasPropertyExplicitlySet("isParallelExecution")) {
+                this.isParallelExecution(model.getIsParallelExecution());
+            }
+            return this;
         }
     }
 
@@ -481,6 +501,7 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlTuningAdvisorTaskRecommendationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("sqlTuningAdvisorTaskId=").append(String.valueOf(this.sqlTuningAdvisorTaskId));
         sb.append(", sqlTuningAdvisorTaskObjectId=")
                 .append(String.valueOf(this.sqlTuningAdvisorTaskObjectId));
@@ -492,7 +513,6 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
         sb.append(", benefit=").append(String.valueOf(this.benefit));
         sb.append(", implementActionSql=").append(String.valueOf(this.implementActionSql));
         sb.append(", isParallelExecution=").append(String.valueOf(this.isParallelExecution));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -519,7 +539,7 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
                 && java.util.Objects.equals(this.benefit, other.benefit)
                 && java.util.Objects.equals(this.implementActionSql, other.implementActionSql)
                 && java.util.Objects.equals(this.isParallelExecution, other.isParallelExecution)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -560,16 +580,7 @@ public final class SqlTuningAdvisorTaskRecommendationSummary {
                         + (this.isParallelExecution == null
                                 ? 43
                                 : this.isParallelExecution.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

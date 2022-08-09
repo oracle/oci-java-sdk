@@ -256,8 +256,8 @@ public class ListJobMetricsConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListJobMetricsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.jobMetricCollection(response.getItem());
 

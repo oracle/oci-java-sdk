@@ -123,8 +123,8 @@ public class UpdateExternalDatabaseConnectorConverter {
                                                 com.oracle.bmc.database.responses
                                                         .UpdateExternalDatabaseConnectorResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.externalDatabaseConnector(response.getItem());
 

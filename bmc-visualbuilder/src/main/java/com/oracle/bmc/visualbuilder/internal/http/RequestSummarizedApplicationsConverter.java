@@ -128,8 +128,8 @@ public class RequestSummarizedApplicationsConverter {
                                                 com.oracle.bmc.visualbuilder.responses
                                                         .RequestSummarizedApplicationsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.applicationSummaryCollection(response.getItem());
 

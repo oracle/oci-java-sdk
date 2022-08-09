@@ -259,8 +259,8 @@ public class ListMaskingColumnsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListMaskingColumnsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.maskingColumnCollection(response.getItem());
 

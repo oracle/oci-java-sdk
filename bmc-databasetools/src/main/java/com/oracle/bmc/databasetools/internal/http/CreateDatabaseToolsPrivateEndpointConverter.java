@@ -119,8 +119,8 @@ public class CreateDatabaseToolsPrivateEndpointConverter {
                                                 com.oracle.bmc.databasetools.responses
                                                         .CreateDatabaseToolsPrivateEndpointResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseToolsPrivateEndpoint(response.getItem());
 

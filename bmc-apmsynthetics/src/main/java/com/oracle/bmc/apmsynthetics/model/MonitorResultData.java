@@ -19,7 +19,7 @@ package com.oracle.bmc.apmsynthetics.model;
     builder = MonitorResultData.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MonitorResultData {
+public final class MonitorResultData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "byteContent", "stringContent", "timestamp"})
     public MonitorResultData(
@@ -116,22 +116,30 @@ public final class MonitorResultData {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonitorResultData build() {
-            MonitorResultData __instance__ =
-                    new MonitorResultData(name, byteContent, stringContent, timestamp);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MonitorResultData model =
+                    new MonitorResultData(
+                            this.name, this.byteContent, this.stringContent, this.timestamp);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonitorResultData o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .byteContent(o.getByteContent())
-                            .stringContent(o.getStringContent())
-                            .timestamp(o.getTimestamp());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonitorResultData model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("byteContent")) {
+                this.byteContent(model.getByteContent());
+            }
+            if (model.wasPropertyExplicitlySet("stringContent")) {
+                this.stringContent(model.getStringContent());
+            }
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            return this;
         }
     }
 
@@ -229,6 +237,7 @@ public final class MonitorResultData {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MonitorResultData(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", byteContent=")
                 .append(
@@ -240,7 +249,6 @@ public final class MonitorResultData {
                                                 : ""))));
         sb.append(", stringContent=").append(String.valueOf(this.stringContent));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -259,7 +267,7 @@ public final class MonitorResultData {
                 && java.util.Arrays.equals(this.byteContent, other.byteContent)
                 && java.util.Objects.equals(this.stringContent, other.stringContent)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -272,16 +280,7 @@ public final class MonitorResultData {
                 (result * PRIME)
                         + (this.stringContent == null ? 43 : this.stringContent.hashCode());
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

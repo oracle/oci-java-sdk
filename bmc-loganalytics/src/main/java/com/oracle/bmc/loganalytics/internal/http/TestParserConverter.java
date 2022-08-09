@@ -132,8 +132,8 @@ public class TestParserConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .TestParserResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.parserTestResult(response.getItem());
 

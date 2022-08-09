@@ -19,7 +19,8 @@ package com.oracle.bmc.databasetools.model;
     builder = DatabaseToolsKeyStoreMySqlDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseToolsKeyStoreMySqlDetails {
+public final class DatabaseToolsKeyStoreMySqlDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"keyStoreType", "keyStoreContent", "keyStorePassword"})
     public DatabaseToolsKeyStoreMySqlDetails(
@@ -74,22 +75,27 @@ public final class DatabaseToolsKeyStoreMySqlDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseToolsKeyStoreMySqlDetails build() {
-            DatabaseToolsKeyStoreMySqlDetails __instance__ =
+            DatabaseToolsKeyStoreMySqlDetails model =
                     new DatabaseToolsKeyStoreMySqlDetails(
-                            keyStoreType, keyStoreContent, keyStorePassword);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.keyStoreType, this.keyStoreContent, this.keyStorePassword);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseToolsKeyStoreMySqlDetails o) {
-            Builder copiedBuilder =
-                    keyStoreType(o.getKeyStoreType())
-                            .keyStoreContent(o.getKeyStoreContent())
-                            .keyStorePassword(o.getKeyStorePassword());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseToolsKeyStoreMySqlDetails model) {
+            if (model.wasPropertyExplicitlySet("keyStoreType")) {
+                this.keyStoreType(model.getKeyStoreType());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreContent")) {
+                this.keyStoreContent(model.getKeyStoreContent());
+            }
+            if (model.wasPropertyExplicitlySet("keyStorePassword")) {
+                this.keyStorePassword(model.getKeyStorePassword());
+            }
+            return this;
         }
     }
 
@@ -145,10 +151,10 @@ public final class DatabaseToolsKeyStoreMySqlDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseToolsKeyStoreMySqlDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("keyStoreType=").append(String.valueOf(this.keyStoreType));
         sb.append(", keyStoreContent=").append(String.valueOf(this.keyStoreContent));
         sb.append(", keyStorePassword=").append(String.valueOf(this.keyStorePassword));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -166,7 +172,7 @@ public final class DatabaseToolsKeyStoreMySqlDetails {
         return java.util.Objects.equals(this.keyStoreType, other.keyStoreType)
                 && java.util.Objects.equals(this.keyStoreContent, other.keyStoreContent)
                 && java.util.Objects.equals(this.keyStorePassword, other.keyStorePassword)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -180,16 +186,7 @@ public final class DatabaseToolsKeyStoreMySqlDetails {
         result =
                 (result * PRIME)
                         + (this.keyStorePassword == null ? 43 : this.keyStorePassword.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

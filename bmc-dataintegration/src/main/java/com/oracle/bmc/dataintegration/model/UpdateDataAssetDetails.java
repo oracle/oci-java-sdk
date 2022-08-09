@@ -56,7 +56,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class UpdateDataAssetDetails {
+public class UpdateDataAssetDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -240,6 +240,7 @@ public class UpdateDataAssetDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDataAssetDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -273,7 +274,8 @@ public class UpdateDataAssetDetails {
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.externalKey, other.externalKey)
                 && java.util.Objects.equals(this.assetProperties, other.assetProperties)
-                && java.util.Objects.equals(this.registryMetadata, other.registryMetadata);
+                && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
+                && super.equals(other);
     }
 
     @Override
@@ -296,6 +298,7 @@ public class UpdateDataAssetDetails {
         result =
                 (result * PRIME)
                         + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

@@ -108,8 +108,8 @@ public class DownloadDiscoveryReportConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .DownloadDiscoveryReportResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

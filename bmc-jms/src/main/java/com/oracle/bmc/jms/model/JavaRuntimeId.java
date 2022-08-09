@@ -17,7 +17,7 @@ package com.oracle.bmc.jms.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JavaRuntimeId.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JavaRuntimeId {
+public final class JavaRuntimeId extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"version", "vendor", "distribution", "jreKey"})
     public JavaRuntimeId(String version, String vendor, String distribution, String jreKey) {
@@ -99,21 +99,29 @@ public final class JavaRuntimeId {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JavaRuntimeId build() {
-            JavaRuntimeId __instance__ = new JavaRuntimeId(version, vendor, distribution, jreKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            JavaRuntimeId model =
+                    new JavaRuntimeId(this.version, this.vendor, this.distribution, this.jreKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JavaRuntimeId o) {
-            Builder copiedBuilder =
-                    version(o.getVersion())
-                            .vendor(o.getVendor())
-                            .distribution(o.getDistribution())
-                            .jreKey(o.getJreKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JavaRuntimeId model) {
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("vendor")) {
+                this.vendor(model.getVendor());
+            }
+            if (model.wasPropertyExplicitlySet("distribution")) {
+                this.distribution(model.getDistribution());
+            }
+            if (model.wasPropertyExplicitlySet("jreKey")) {
+                this.jreKey(model.getJreKey());
+            }
+            return this;
         }
     }
 
@@ -197,11 +205,11 @@ public final class JavaRuntimeId {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JavaRuntimeId(");
+        sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(", vendor=").append(String.valueOf(this.vendor));
         sb.append(", distribution=").append(String.valueOf(this.distribution));
         sb.append(", jreKey=").append(String.valueOf(this.jreKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -220,7 +228,7 @@ public final class JavaRuntimeId {
                 && java.util.Objects.equals(this.vendor, other.vendor)
                 && java.util.Objects.equals(this.distribution, other.distribution)
                 && java.util.Objects.equals(this.jreKey, other.jreKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -231,16 +239,7 @@ public final class JavaRuntimeId {
         result = (result * PRIME) + (this.vendor == null ? 43 : this.vendor.hashCode());
         result = (result * PRIME) + (this.distribution == null ? 43 : this.distribution.hashCode());
         result = (result * PRIME) + (this.jreKey == null ? 43 : this.jreKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.osmanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SoftwareSource.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SoftwareSource {
+public final class SoftwareSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -459,62 +459,105 @@ public final class SoftwareSource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SoftwareSource build() {
-            SoftwareSource __instance__ =
+            SoftwareSource model =
                     new SoftwareSource(
-                            id,
-                            compartmentId,
-                            displayName,
-                            description,
-                            repoType,
-                            archType,
-                            url,
-                            parentId,
-                            parentName,
-                            checksumType,
-                            maintainerName,
-                            maintainerEmail,
-                            maintainerPhone,
-                            gpgKeyUrl,
-                            gpgKeyId,
-                            gpgKeyFingerprint,
-                            status,
-                            lifecycleState,
-                            packages,
-                            associatedManagedInstances,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.description,
+                            this.repoType,
+                            this.archType,
+                            this.url,
+                            this.parentId,
+                            this.parentName,
+                            this.checksumType,
+                            this.maintainerName,
+                            this.maintainerEmail,
+                            this.maintainerPhone,
+                            this.gpgKeyUrl,
+                            this.gpgKeyId,
+                            this.gpgKeyFingerprint,
+                            this.status,
+                            this.lifecycleState,
+                            this.packages,
+                            this.associatedManagedInstances,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SoftwareSource o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .repoType(o.getRepoType())
-                            .archType(o.getArchType())
-                            .url(o.getUrl())
-                            .parentId(o.getParentId())
-                            .parentName(o.getParentName())
-                            .checksumType(o.getChecksumType())
-                            .maintainerName(o.getMaintainerName())
-                            .maintainerEmail(o.getMaintainerEmail())
-                            .maintainerPhone(o.getMaintainerPhone())
-                            .gpgKeyUrl(o.getGpgKeyUrl())
-                            .gpgKeyId(o.getGpgKeyId())
-                            .gpgKeyFingerprint(o.getGpgKeyFingerprint())
-                            .status(o.getStatus())
-                            .lifecycleState(o.getLifecycleState())
-                            .packages(o.getPackages())
-                            .associatedManagedInstances(o.getAssociatedManagedInstances())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SoftwareSource model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("repoType")) {
+                this.repoType(model.getRepoType());
+            }
+            if (model.wasPropertyExplicitlySet("archType")) {
+                this.archType(model.getArchType());
+            }
+            if (model.wasPropertyExplicitlySet("url")) {
+                this.url(model.getUrl());
+            }
+            if (model.wasPropertyExplicitlySet("parentId")) {
+                this.parentId(model.getParentId());
+            }
+            if (model.wasPropertyExplicitlySet("parentName")) {
+                this.parentName(model.getParentName());
+            }
+            if (model.wasPropertyExplicitlySet("checksumType")) {
+                this.checksumType(model.getChecksumType());
+            }
+            if (model.wasPropertyExplicitlySet("maintainerName")) {
+                this.maintainerName(model.getMaintainerName());
+            }
+            if (model.wasPropertyExplicitlySet("maintainerEmail")) {
+                this.maintainerEmail(model.getMaintainerEmail());
+            }
+            if (model.wasPropertyExplicitlySet("maintainerPhone")) {
+                this.maintainerPhone(model.getMaintainerPhone());
+            }
+            if (model.wasPropertyExplicitlySet("gpgKeyUrl")) {
+                this.gpgKeyUrl(model.getGpgKeyUrl());
+            }
+            if (model.wasPropertyExplicitlySet("gpgKeyId")) {
+                this.gpgKeyId(model.getGpgKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("gpgKeyFingerprint")) {
+                this.gpgKeyFingerprint(model.getGpgKeyFingerprint());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("packages")) {
+                this.packages(model.getPackages());
+            }
+            if (model.wasPropertyExplicitlySet("associatedManagedInstances")) {
+                this.associatedManagedInstances(model.getAssociatedManagedInstances());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -907,6 +950,7 @@ public final class SoftwareSource {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SoftwareSource(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -930,7 +974,6 @@ public final class SoftwareSource {
                 .append(String.valueOf(this.associatedManagedInstances));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -968,7 +1011,7 @@ public final class SoftwareSource {
                         this.associatedManagedInstances, other.associatedManagedInstances)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1013,16 +1056,7 @@ public final class SoftwareSource {
                                 : this.associatedManagedInstances.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

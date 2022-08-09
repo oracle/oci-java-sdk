@@ -146,8 +146,8 @@ public class ListNetworkLoadBalancersPoliciesConverter {
                                                 com.oracle.bmc.networkloadbalancer.responses
                                                         .ListNetworkLoadBalancersPoliciesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkLoadBalancersPolicyCollection(response.getItem());
 

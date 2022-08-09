@@ -17,7 +17,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FolderTag.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FolderTag {
+public final class FolderTag extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "folderKey",
@@ -226,38 +226,57 @@ public final class FolderTag {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FolderTag build() {
-            FolderTag __instance__ =
+            FolderTag model =
                     new FolderTag(
-                            folderKey,
-                            key,
-                            name,
-                            termKey,
-                            termPath,
-                            termDescription,
-                            lifecycleState,
-                            timeCreated,
-                            createdById,
-                            uri);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.folderKey,
+                            this.key,
+                            this.name,
+                            this.termKey,
+                            this.termPath,
+                            this.termDescription,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.createdById,
+                            this.uri);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FolderTag o) {
-            Builder copiedBuilder =
-                    folderKey(o.getFolderKey())
-                            .key(o.getKey())
-                            .name(o.getName())
-                            .termKey(o.getTermKey())
-                            .termPath(o.getTermPath())
-                            .termDescription(o.getTermDescription())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .createdById(o.getCreatedById())
-                            .uri(o.getUri());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FolderTag model) {
+            if (model.wasPropertyExplicitlySet("folderKey")) {
+                this.folderKey(model.getFolderKey());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("termKey")) {
+                this.termKey(model.getTermKey());
+            }
+            if (model.wasPropertyExplicitlySet("termPath")) {
+                this.termPath(model.getTermPath());
+            }
+            if (model.wasPropertyExplicitlySet("termDescription")) {
+                this.termDescription(model.getTermDescription());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("createdById")) {
+                this.createdById(model.getCreatedById());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            return this;
         }
     }
 
@@ -429,6 +448,7 @@ public final class FolderTag {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FolderTag(");
+        sb.append("super=").append(super.toString());
         sb.append("folderKey=").append(String.valueOf(this.folderKey));
         sb.append(", key=").append(String.valueOf(this.key));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -439,7 +459,6 @@ public final class FolderTag {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", createdById=").append(String.valueOf(this.createdById));
         sb.append(", uri=").append(String.valueOf(this.uri));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -464,7 +483,7 @@ public final class FolderTag {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.createdById, other.createdById)
                 && java.util.Objects.equals(this.uri, other.uri)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -485,16 +504,7 @@ public final class FolderTag {
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.createdById == null ? 43 : this.createdById.hashCode());
         result = (result * PRIME) + (this.uri == null ? 43 : this.uri.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

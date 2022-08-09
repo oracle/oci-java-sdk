@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = ActivateTargetDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ActivateTargetDatabaseDetails {
+public final class ActivateTargetDatabaseDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"credentials"})
     public ActivateTargetDatabaseDetails(Credentials credentials) {
@@ -43,18 +44,20 @@ public final class ActivateTargetDatabaseDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ActivateTargetDatabaseDetails build() {
-            ActivateTargetDatabaseDetails __instance__ =
-                    new ActivateTargetDatabaseDetails(credentials);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ActivateTargetDatabaseDetails model =
+                    new ActivateTargetDatabaseDetails(this.credentials);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ActivateTargetDatabaseDetails o) {
-            Builder copiedBuilder = credentials(o.getCredentials());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ActivateTargetDatabaseDetails model) {
+            if (model.wasPropertyExplicitlySet("credentials")) {
+                this.credentials(model.getCredentials());
+            }
+            return this;
         }
     }
 
@@ -89,8 +92,8 @@ public final class ActivateTargetDatabaseDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ActivateTargetDatabaseDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("credentials=").append(String.valueOf(this.credentials));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -105,8 +108,7 @@ public final class ActivateTargetDatabaseDetails {
         }
 
         ActivateTargetDatabaseDetails other = (ActivateTargetDatabaseDetails) o;
-        return java.util.Objects.equals(this.credentials, other.credentials)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.credentials, other.credentials) && super.equals(other);
     }
 
     @Override
@@ -114,16 +116,7 @@ public final class ActivateTargetDatabaseDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -129,8 +129,8 @@ public class UpdateDbManagementPrivateEndpointConverter {
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .UpdateDbManagementPrivateEndpointResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dbManagementPrivateEndpoint(response.getItem());
 

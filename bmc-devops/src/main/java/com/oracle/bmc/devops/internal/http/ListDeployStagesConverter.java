@@ -173,8 +173,8 @@ public class ListDeployStagesConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .ListDeployStagesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deployStageCollection(response.getItem());
 

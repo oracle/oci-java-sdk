@@ -106,8 +106,8 @@ public class GetResourceProfileConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .GetResourceProfileResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceProfile(response.getItem());
 

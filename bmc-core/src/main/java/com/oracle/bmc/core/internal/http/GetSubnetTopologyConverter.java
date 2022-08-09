@@ -134,8 +134,8 @@ public class GetSubnetTopologyConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetSubnetTopologyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.subnetTopology(response.getItem());
 

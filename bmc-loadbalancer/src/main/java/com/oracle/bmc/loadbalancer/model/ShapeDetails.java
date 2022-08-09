@@ -18,7 +18,7 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ShapeDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ShapeDetails {
+public final class ShapeDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"minimumBandwidthInMbps", "maximumBandwidthInMbps"})
     public ShapeDetails(Integer minimumBandwidthInMbps, Integer maximumBandwidthInMbps) {
@@ -58,7 +58,7 @@ public final class ShapeDetails {
          * achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps
          * parameter.
          * <p>
-         * The values must be between minimumBandwidthInMbps and 8192 (8Gbps).
+         * The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
          * <p>
          * Example: {@code 1500}
          *
@@ -71,7 +71,7 @@ public final class ShapeDetails {
          * achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps
          * parameter.
          * <p>
-         * The values must be between minimumBandwidthInMbps and 8192 (8Gbps).
+         * The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
          * <p>
          * Example: {@code 1500}
          *
@@ -88,20 +88,23 @@ public final class ShapeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShapeDetails build() {
-            ShapeDetails __instance__ =
-                    new ShapeDetails(minimumBandwidthInMbps, maximumBandwidthInMbps);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ShapeDetails model =
+                    new ShapeDetails(this.minimumBandwidthInMbps, this.maximumBandwidthInMbps);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ShapeDetails o) {
-            Builder copiedBuilder =
-                    minimumBandwidthInMbps(o.getMinimumBandwidthInMbps())
-                            .maximumBandwidthInMbps(o.getMaximumBandwidthInMbps());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ShapeDetails model) {
+            if (model.wasPropertyExplicitlySet("minimumBandwidthInMbps")) {
+                this.minimumBandwidthInMbps(model.getMinimumBandwidthInMbps());
+            }
+            if (model.wasPropertyExplicitlySet("maximumBandwidthInMbps")) {
+                this.maximumBandwidthInMbps(model.getMaximumBandwidthInMbps());
+            }
+            return this;
         }
     }
 
@@ -143,7 +146,7 @@ public final class ShapeDetails {
      * achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps
      * parameter.
      * <p>
-     * The values must be between minimumBandwidthInMbps and 8192 (8Gbps).
+     * The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
      * <p>
      * Example: {@code 1500}
      *
@@ -156,7 +159,7 @@ public final class ShapeDetails {
      * achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps
      * parameter.
      * <p>
-     * The values must be between minimumBandwidthInMbps and 8192 (8Gbps).
+     * The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
      * <p>
      * Example: {@code 1500}
      *
@@ -179,9 +182,9 @@ public final class ShapeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ShapeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("minimumBandwidthInMbps=").append(String.valueOf(this.minimumBandwidthInMbps));
         sb.append(", maximumBandwidthInMbps=").append(String.valueOf(this.maximumBandwidthInMbps));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,7 +202,7 @@ public final class ShapeDetails {
         return java.util.Objects.equals(this.minimumBandwidthInMbps, other.minimumBandwidthInMbps)
                 && java.util.Objects.equals(
                         this.maximumBandwidthInMbps, other.maximumBandwidthInMbps)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -216,16 +219,7 @@ public final class ShapeDetails {
                         + (this.maximumBandwidthInMbps == null
                                 ? 43
                                 : this.maximumBandwidthInMbps.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -99,18 +99,22 @@ public final class DhcpDnsOption extends DhcpOption {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DhcpDnsOption build() {
-            DhcpDnsOption __instance__ = new DhcpDnsOption(customDnsServers, serverType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DhcpDnsOption model = new DhcpDnsOption(this.customDnsServers, this.serverType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DhcpDnsOption o) {
-            Builder copiedBuilder =
-                    customDnsServers(o.getCustomDnsServers()).serverType(o.getServerType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DhcpDnsOption model) {
+            if (model.wasPropertyExplicitlySet("customDnsServers")) {
+                this.customDnsServers(model.getCustomDnsServers());
+            }
+            if (model.wasPropertyExplicitlySet("serverType")) {
+                this.serverType(model.getServerType());
+            }
+            return this;
         }
     }
 
@@ -261,7 +265,6 @@ public final class DhcpDnsOption extends DhcpOption {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", customDnsServers=").append(String.valueOf(this.customDnsServers));
         sb.append(", serverType=").append(String.valueOf(this.serverType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -278,8 +281,7 @@ public final class DhcpDnsOption extends DhcpOption {
         DhcpDnsOption other = (DhcpDnsOption) o;
         return java.util.Objects.equals(this.customDnsServers, other.customDnsServers)
                 && java.util.Objects.equals(this.serverType, other.serverType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -290,16 +292,6 @@ public final class DhcpDnsOption extends DhcpOption {
                 (result * PRIME)
                         + (this.customDnsServers == null ? 43 : this.customDnsServers.hashCode());
         result = (result * PRIME) + (this.serverType == null ? 43 : this.serverType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -55,16 +55,18 @@ public class GetAccessRequestResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "accessRequest"
     })
     private GetAccessRequestResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.lockbox.model.AccessRequest accessRequest) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.accessRequest = accessRequest;
@@ -75,6 +77,13 @@ public class GetAccessRequestResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class GetAccessRequestResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetAccessRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             accessRequest(o.getAccessRequest());
@@ -148,7 +158,7 @@ public class GetAccessRequestResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public GetAccessRequestResponse build() {
             return new GetAccessRequestResponse(
-                    __httpStatusCode__, etag, opcRequestId, accessRequest);
+                    __httpStatusCode__, headers, etag, opcRequestId, accessRequest);
         }
     }
 

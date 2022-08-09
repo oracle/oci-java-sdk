@@ -112,7 +112,8 @@ public class StopChannelConverter {
 
                                 com.oracle.bmc.oda.responses.StopChannelResponse.Builder builder =
                                         com.oracle.bmc.oda.responses.StopChannelResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.channel(response.getItem());
 

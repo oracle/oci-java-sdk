@@ -117,8 +117,8 @@ public class RemoveTagNamespaceLockConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .RemoveTagNamespaceLockResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tagNamespace(response.getItem());
 

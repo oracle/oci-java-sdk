@@ -112,8 +112,8 @@ public class GetRefreshActivityConverter {
                                         builder =
                                                 com.oracle.bmc.fusionapps.responses
                                                         .GetRefreshActivityResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.refreshActivity(response.getItem());
 

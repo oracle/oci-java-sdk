@@ -19,7 +19,8 @@ package com.oracle.bmc.waas.model;
     builder = WaasPolicyCustomProtectionRuleSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WaasPolicyCustomProtectionRuleSummary {
+public final class WaasPolicyCustomProtectionRuleSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -124,24 +125,37 @@ public final class WaasPolicyCustomProtectionRuleSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WaasPolicyCustomProtectionRuleSummary build() {
-            WaasPolicyCustomProtectionRuleSummary __instance__ =
+            WaasPolicyCustomProtectionRuleSummary model =
                     new WaasPolicyCustomProtectionRuleSummary(
-                            id, displayName, action, modSecurityRuleIds, exclusions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.action,
+                            this.modSecurityRuleIds,
+                            this.exclusions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WaasPolicyCustomProtectionRuleSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .action(o.getAction())
-                            .modSecurityRuleIds(o.getModSecurityRuleIds())
-                            .exclusions(o.getExclusions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WaasPolicyCustomProtectionRuleSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("modSecurityRuleIds")) {
+                this.modSecurityRuleIds(model.getModSecurityRuleIds());
+            }
+            if (model.wasPropertyExplicitlySet("exclusions")) {
+                this.exclusions(model.getExclusions());
+            }
+            return this;
         }
     }
 
@@ -282,12 +296,12 @@ public final class WaasPolicyCustomProtectionRuleSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WaasPolicyCustomProtectionRuleSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", modSecurityRuleIds=").append(String.valueOf(this.modSecurityRuleIds));
         sb.append(", exclusions=").append(String.valueOf(this.exclusions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -307,7 +321,7 @@ public final class WaasPolicyCustomProtectionRuleSummary {
                 && java.util.Objects.equals(this.action, other.action)
                 && java.util.Objects.equals(this.modSecurityRuleIds, other.modSecurityRuleIds)
                 && java.util.Objects.equals(this.exclusions, other.exclusions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -323,16 +337,7 @@ public final class WaasPolicyCustomProtectionRuleSummary {
                                 ? 43
                                 : this.modSecurityRuleIds.hashCode());
         result = (result * PRIME) + (this.exclusions == null ? 43 : this.exclusions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

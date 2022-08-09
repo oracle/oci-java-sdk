@@ -106,8 +106,8 @@ public class GetReportDefinitionConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetReportDefinitionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.reportDefinition(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsLabelDefinition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsLabelDefinition {
+public final class LogAnalyticsLabelDefinition
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"editVersion", "isSystem", "sourceId", "labelName"})
     public LogAnalyticsLabelDefinition(
@@ -106,22 +107,30 @@ public final class LogAnalyticsLabelDefinition {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsLabelDefinition build() {
-            LogAnalyticsLabelDefinition __instance__ =
-                    new LogAnalyticsLabelDefinition(editVersion, isSystem, sourceId, labelName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LogAnalyticsLabelDefinition model =
+                    new LogAnalyticsLabelDefinition(
+                            this.editVersion, this.isSystem, this.sourceId, this.labelName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsLabelDefinition o) {
-            Builder copiedBuilder =
-                    editVersion(o.getEditVersion())
-                            .isSystem(o.getIsSystem())
-                            .sourceId(o.getSourceId())
-                            .labelName(o.getLabelName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsLabelDefinition model) {
+            if (model.wasPropertyExplicitlySet("editVersion")) {
+                this.editVersion(model.getEditVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("labelName")) {
+                this.labelName(model.getLabelName());
+            }
+            return this;
         }
     }
 
@@ -209,11 +218,11 @@ public final class LogAnalyticsLabelDefinition {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsLabelDefinition(");
+        sb.append("super=").append(super.toString());
         sb.append("editVersion=").append(String.valueOf(this.editVersion));
         sb.append(", isSystem=").append(String.valueOf(this.isSystem));
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", labelName=").append(String.valueOf(this.labelName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -232,7 +241,7 @@ public final class LogAnalyticsLabelDefinition {
                 && java.util.Objects.equals(this.isSystem, other.isSystem)
                 && java.util.Objects.equals(this.sourceId, other.sourceId)
                 && java.util.Objects.equals(this.labelName, other.labelName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -243,16 +252,7 @@ public final class LogAnalyticsLabelDefinition {
         result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
         result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
         result = (result * PRIME) + (this.labelName == null ? 43 : this.labelName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

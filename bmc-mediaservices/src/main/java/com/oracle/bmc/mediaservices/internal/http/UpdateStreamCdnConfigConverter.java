@@ -118,8 +118,8 @@ public class UpdateStreamCdnConfigConverter {
                                         builder =
                                                 com.oracle.bmc.mediaservices.responses
                                                         .UpdateStreamCdnConfigResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.streamCdnConfig(response.getItem());
 

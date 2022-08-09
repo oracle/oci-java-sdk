@@ -121,34 +121,49 @@ public final class CreateBitbucketServerAccessTokenConnectionDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateBitbucketServerAccessTokenConnectionDetails build() {
-            CreateBitbucketServerAccessTokenConnectionDetails __instance__ =
+            CreateBitbucketServerAccessTokenConnectionDetails model =
                     new CreateBitbucketServerAccessTokenConnectionDetails(
-                            description,
-                            displayName,
-                            projectId,
-                            freeformTags,
-                            definedTags,
-                            accessToken,
-                            baseUrl,
-                            tlsVerifyConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.projectId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.accessToken,
+                            this.baseUrl,
+                            this.tlsVerifyConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateBitbucketServerAccessTokenConnectionDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .projectId(o.getProjectId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .accessToken(o.getAccessToken())
-                            .baseUrl(o.getBaseUrl())
-                            .tlsVerifyConfig(o.getTlsVerifyConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateBitbucketServerAccessTokenConnectionDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("projectId")) {
+                this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("accessToken")) {
+                this.accessToken(model.getAccessToken());
+            }
+            if (model.wasPropertyExplicitlySet("baseUrl")) {
+                this.baseUrl(model.getBaseUrl());
+            }
+            if (model.wasPropertyExplicitlySet("tlsVerifyConfig")) {
+                this.tlsVerifyConfig(model.getTlsVerifyConfig());
+            }
+            return this;
         }
     }
 
@@ -231,7 +246,6 @@ public final class CreateBitbucketServerAccessTokenConnectionDetails
         sb.append(", accessToken=").append(String.valueOf(this.accessToken));
         sb.append(", baseUrl=").append(String.valueOf(this.baseUrl));
         sb.append(", tlsVerifyConfig=").append(String.valueOf(this.tlsVerifyConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -250,8 +264,7 @@ public final class CreateBitbucketServerAccessTokenConnectionDetails
         return java.util.Objects.equals(this.accessToken, other.accessToken)
                 && java.util.Objects.equals(this.baseUrl, other.baseUrl)
                 && java.util.Objects.equals(this.tlsVerifyConfig, other.tlsVerifyConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -263,16 +276,6 @@ public final class CreateBitbucketServerAccessTokenConnectionDetails
         result =
                 (result * PRIME)
                         + (this.tlsVerifyConfig == null ? 43 : this.tlsVerifyConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

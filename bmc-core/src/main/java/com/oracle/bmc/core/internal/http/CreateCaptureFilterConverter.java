@@ -102,8 +102,8 @@ public class CreateCaptureFilterConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .CreateCaptureFilterResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.captureFilter(response.getItem());
 

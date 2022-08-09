@@ -19,7 +19,7 @@ package com.oracle.bmc.core.model;
     builder = UpdateImageDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateImageDetails {
+public final class UpdateImageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTags",
@@ -162,28 +162,37 @@ public final class UpdateImageDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateImageDetails build() {
-            UpdateImageDetails __instance__ =
+            UpdateImageDetails model =
                     new UpdateImageDetails(
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            operatingSystem,
-                            operatingSystemVersion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.operatingSystem,
+                            this.operatingSystemVersion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateImageDetails o) {
-            Builder copiedBuilder =
-                    definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .operatingSystem(o.getOperatingSystem())
-                            .operatingSystemVersion(o.getOperatingSystemVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateImageDetails model) {
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystem")) {
+                this.operatingSystem(model.getOperatingSystem());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystemVersion")) {
+                this.operatingSystemVersion(model.getOperatingSystemVersion());
+            }
+            return this;
         }
     }
 
@@ -313,12 +322,12 @@ public final class UpdateImageDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateImageDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
         sb.append(", operatingSystemVersion=").append(String.valueOf(this.operatingSystemVersion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -339,7 +348,7 @@ public final class UpdateImageDetails {
                 && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
                 && java.util.Objects.equals(
                         this.operatingSystemVersion, other.operatingSystemVersion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -357,16 +366,7 @@ public final class UpdateImageDetails {
                         + (this.operatingSystemVersion == null
                                 ? 43
                                 : this.operatingSystemVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

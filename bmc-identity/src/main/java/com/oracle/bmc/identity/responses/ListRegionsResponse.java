@@ -38,12 +38,13 @@ public class ListRegionsResponse extends com.oracle.bmc.responses.BmcResponse {
         return items;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "items"})
     private ListRegionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             java.util.List<com.oracle.bmc.identity.model.Region> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.items = items;
     }
@@ -53,6 +54,13 @@ public class ListRegionsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +104,7 @@ public class ListRegionsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListRegionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
 
@@ -107,7 +116,7 @@ public class ListRegionsResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public ListRegionsResponse build() {
-            return new ListRegionsResponse(__httpStatusCode__, opcRequestId, items);
+            return new ListRegionsResponse(__httpStatusCode__, headers, opcRequestId, items);
         }
     }
 

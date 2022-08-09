@@ -115,8 +115,8 @@ public class GetDisApplicationConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .GetDisApplicationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.disApplication(response.getItem());
 

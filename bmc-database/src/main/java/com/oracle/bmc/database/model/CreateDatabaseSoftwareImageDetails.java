@@ -22,7 +22,8 @@ package com.oracle.bmc.database.model;
     builder = CreateDatabaseSoftwareImageDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateDatabaseSoftwareImageDetails {
+public final class CreateDatabaseSoftwareImageDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -260,41 +261,62 @@ public final class CreateDatabaseSoftwareImageDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDatabaseSoftwareImageDetails build() {
-            CreateDatabaseSoftwareImageDetails __instance__ =
+            CreateDatabaseSoftwareImageDetails model =
                     new CreateDatabaseSoftwareImageDetails(
-                            compartmentId,
-                            databaseVersion,
-                            displayName,
-                            imageShapeFamily,
-                            imageType,
-                            patchSet,
-                            databaseSoftwareImageOneOffPatches,
-                            lsInventory,
-                            freeformTags,
-                            definedTags,
-                            sourceDbHomeId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.databaseVersion,
+                            this.displayName,
+                            this.imageShapeFamily,
+                            this.imageType,
+                            this.patchSet,
+                            this.databaseSoftwareImageOneOffPatches,
+                            this.lsInventory,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.sourceDbHomeId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDatabaseSoftwareImageDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .databaseVersion(o.getDatabaseVersion())
-                            .displayName(o.getDisplayName())
-                            .imageShapeFamily(o.getImageShapeFamily())
-                            .imageType(o.getImageType())
-                            .patchSet(o.getPatchSet())
-                            .databaseSoftwareImageOneOffPatches(
-                                    o.getDatabaseSoftwareImageOneOffPatches())
-                            .lsInventory(o.getLsInventory())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .sourceDbHomeId(o.getSourceDbHomeId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDatabaseSoftwareImageDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("imageShapeFamily")) {
+                this.imageShapeFamily(model.getImageShapeFamily());
+            }
+            if (model.wasPropertyExplicitlySet("imageType")) {
+                this.imageType(model.getImageType());
+            }
+            if (model.wasPropertyExplicitlySet("patchSet")) {
+                this.patchSet(model.getPatchSet());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageOneOffPatches")) {
+                this.databaseSoftwareImageOneOffPatches(
+                        model.getDatabaseSoftwareImageOneOffPatches());
+            }
+            if (model.wasPropertyExplicitlySet("lsInventory")) {
+                this.lsInventory(model.getLsInventory());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDbHomeId")) {
+                this.sourceDbHomeId(model.getSourceDbHomeId());
+            }
+            return this;
         }
     }
 
@@ -559,6 +581,7 @@ public final class CreateDatabaseSoftwareImageDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDatabaseSoftwareImageDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -571,7 +594,6 @@ public final class CreateDatabaseSoftwareImageDetails {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", sourceDbHomeId=").append(String.valueOf(this.sourceDbHomeId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -599,7 +621,7 @@ public final class CreateDatabaseSoftwareImageDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.sourceDbHomeId, other.sourceDbHomeId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -629,16 +651,7 @@ public final class CreateDatabaseSoftwareImageDetails {
         result =
                 (result * PRIME)
                         + (this.sourceDbHomeId == null ? 43 : this.sourceDbHomeId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

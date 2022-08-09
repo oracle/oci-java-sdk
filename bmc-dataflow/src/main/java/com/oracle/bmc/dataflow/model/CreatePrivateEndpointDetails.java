@@ -20,7 +20,8 @@ package com.oracle.bmc.dataflow.model;
     builder = CreatePrivateEndpointDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreatePrivateEndpointDetails {
+public final class CreatePrivateEndpointDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -239,36 +240,53 @@ public final class CreatePrivateEndpointDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreatePrivateEndpointDetails build() {
-            CreatePrivateEndpointDetails __instance__ =
+            CreatePrivateEndpointDetails model =
                     new CreatePrivateEndpointDetails(
-                            compartmentId,
-                            definedTags,
-                            description,
-                            displayName,
-                            dnsZones,
-                            freeformTags,
-                            maxHostCount,
-                            nsgIds,
-                            subnetId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.definedTags,
+                            this.description,
+                            this.displayName,
+                            this.dnsZones,
+                            this.freeformTags,
+                            this.maxHostCount,
+                            this.nsgIds,
+                            this.subnetId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreatePrivateEndpointDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .dnsZones(o.getDnsZones())
-                            .freeformTags(o.getFreeformTags())
-                            .maxHostCount(o.getMaxHostCount())
-                            .nsgIds(o.getNsgIds())
-                            .subnetId(o.getSubnetId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreatePrivateEndpointDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("dnsZones")) {
+                this.dnsZones(model.getDnsZones());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("maxHostCount")) {
+                this.maxHostCount(model.getMaxHostCount());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            return this;
         }
     }
 
@@ -454,6 +472,7 @@ public final class CreatePrivateEndpointDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreatePrivateEndpointDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -463,7 +482,6 @@ public final class CreatePrivateEndpointDetails {
         sb.append(", maxHostCount=").append(String.valueOf(this.maxHostCount));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -487,7 +505,7 @@ public final class CreatePrivateEndpointDetails {
                 && java.util.Objects.equals(this.maxHostCount, other.maxHostCount)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -505,16 +523,7 @@ public final class CreatePrivateEndpointDetails {
         result = (result * PRIME) + (this.maxHostCount == null ? 43 : this.maxHostCount.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

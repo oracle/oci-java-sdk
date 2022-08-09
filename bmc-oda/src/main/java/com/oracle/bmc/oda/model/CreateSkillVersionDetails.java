@@ -129,36 +129,53 @@ public final class CreateSkillVersionDetails extends CreateSkillDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateSkillVersionDetails build() {
-            CreateSkillVersionDetails __instance__ =
+            CreateSkillVersionDetails model =
                     new CreateSkillVersionDetails(
-                            category,
-                            description,
-                            platformVersion,
-                            multilingualMode,
-                            primaryLanguageTag,
-                            freeformTags,
-                            definedTags,
-                            id,
-                            version);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.category,
+                            this.description,
+                            this.platformVersion,
+                            this.multilingualMode,
+                            this.primaryLanguageTag,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.id,
+                            this.version);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateSkillVersionDetails o) {
-            Builder copiedBuilder =
-                    category(o.getCategory())
-                            .description(o.getDescription())
-                            .platformVersion(o.getPlatformVersion())
-                            .multilingualMode(o.getMultilingualMode())
-                            .primaryLanguageTag(o.getPrimaryLanguageTag())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .id(o.getId())
-                            .version(o.getVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateSkillVersionDetails model) {
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("platformVersion")) {
+                this.platformVersion(model.getPlatformVersion());
+            }
+            if (model.wasPropertyExplicitlySet("multilingualMode")) {
+                this.multilingualMode(model.getMultilingualMode());
+            }
+            if (model.wasPropertyExplicitlySet("primaryLanguageTag")) {
+                this.primaryLanguageTag(model.getPrimaryLanguageTag());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            return this;
         }
     }
 
@@ -242,7 +259,6 @@ public final class CreateSkillVersionDetails extends CreateSkillDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", version=").append(String.valueOf(this.version));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -259,8 +275,7 @@ public final class CreateSkillVersionDetails extends CreateSkillDetails {
         CreateSkillVersionDetails other = (CreateSkillVersionDetails) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.version, other.version)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -269,16 +284,6 @@ public final class CreateSkillVersionDetails extends CreateSkillDetails {
         int result = super.hashCode();
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

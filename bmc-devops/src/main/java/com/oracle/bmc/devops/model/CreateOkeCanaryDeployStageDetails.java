@@ -129,38 +129,54 @@ public final class CreateOkeCanaryDeployStageDetails extends CreateDeployStageDe
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateOkeCanaryDeployStageDetails build() {
-            CreateOkeCanaryDeployStageDetails __instance__ =
+            CreateOkeCanaryDeployStageDetails model =
                     new CreateOkeCanaryDeployStageDetails(
-                            description,
-                            displayName,
-                            deployPipelineId,
-                            deployStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            okeClusterDeployEnvironmentId,
-                            kubernetesManifestDeployArtifactIds,
-                            canaryStrategy);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.deployPipelineId,
+                            this.deployStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.okeClusterDeployEnvironmentId,
+                            this.kubernetesManifestDeployArtifactIds,
+                            this.canaryStrategy);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateOkeCanaryDeployStageDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .deployPipelineId(o.getDeployPipelineId())
-                            .deployStagePredecessorCollection(
-                                    o.getDeployStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .okeClusterDeployEnvironmentId(o.getOkeClusterDeployEnvironmentId())
-                            .kubernetesManifestDeployArtifactIds(
-                                    o.getKubernetesManifestDeployArtifactIds())
-                            .canaryStrategy(o.getCanaryStrategy());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateOkeCanaryDeployStageDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessorCollection")) {
+                this.deployStagePredecessorCollection(model.getDeployStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("okeClusterDeployEnvironmentId")) {
+                this.okeClusterDeployEnvironmentId(model.getOkeClusterDeployEnvironmentId());
+            }
+            if (model.wasPropertyExplicitlySet("kubernetesManifestDeployArtifactIds")) {
+                this.kubernetesManifestDeployArtifactIds(
+                        model.getKubernetesManifestDeployArtifactIds());
+            }
+            if (model.wasPropertyExplicitlySet("canaryStrategy")) {
+                this.canaryStrategy(model.getCanaryStrategy());
+            }
+            return this;
         }
     }
 
@@ -252,7 +268,6 @@ public final class CreateOkeCanaryDeployStageDetails extends CreateDeployStageDe
         sb.append(", kubernetesManifestDeployArtifactIds=")
                 .append(String.valueOf(this.kubernetesManifestDeployArtifactIds));
         sb.append(", canaryStrategy=").append(String.valueOf(this.canaryStrategy));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -273,8 +288,7 @@ public final class CreateOkeCanaryDeployStageDetails extends CreateDeployStageDe
                         this.kubernetesManifestDeployArtifactIds,
                         other.kubernetesManifestDeployArtifactIds)
                 && java.util.Objects.equals(this.canaryStrategy, other.canaryStrategy)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -294,16 +308,6 @@ public final class CreateOkeCanaryDeployStageDetails extends CreateDeployStageDe
         result =
                 (result * PRIME)
                         + (this.canaryStrategy == null ? 43 : this.canaryStrategy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

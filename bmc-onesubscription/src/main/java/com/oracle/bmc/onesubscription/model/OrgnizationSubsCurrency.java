@@ -20,7 +20,8 @@ package com.oracle.bmc.onesubscription.model;
     builder = OrgnizationSubsCurrency.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OrgnizationSubsCurrency {
+public final class OrgnizationSubsCurrency
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "isoCode", "stdPrecision"})
     public OrgnizationSubsCurrency(String name, String isoCode, Long stdPrecision) {
@@ -91,19 +92,26 @@ public final class OrgnizationSubsCurrency {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OrgnizationSubsCurrency build() {
-            OrgnizationSubsCurrency __instance__ =
-                    new OrgnizationSubsCurrency(name, isoCode, stdPrecision);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OrgnizationSubsCurrency model =
+                    new OrgnizationSubsCurrency(this.name, this.isoCode, this.stdPrecision);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OrgnizationSubsCurrency o) {
-            Builder copiedBuilder =
-                    name(o.getName()).isoCode(o.getIsoCode()).stdPrecision(o.getStdPrecision());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OrgnizationSubsCurrency model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("isoCode")) {
+                this.isoCode(model.getIsoCode());
+            }
+            if (model.wasPropertyExplicitlySet("stdPrecision")) {
+                this.stdPrecision(model.getStdPrecision());
+            }
+            return this;
         }
     }
 
@@ -179,10 +187,10 @@ public final class OrgnizationSubsCurrency {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OrgnizationSubsCurrency(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", isoCode=").append(String.valueOf(this.isoCode));
         sb.append(", stdPrecision=").append(String.valueOf(this.stdPrecision));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -200,7 +208,7 @@ public final class OrgnizationSubsCurrency {
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.isoCode, other.isoCode)
                 && java.util.Objects.equals(this.stdPrecision, other.stdPrecision)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -210,16 +218,7 @@ public final class OrgnizationSubsCurrency {
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.isoCode == null ? 43 : this.isoCode.hashCode());
         result = (result * PRIME) + (this.stdPrecision == null ? 43 : this.stdPrecision.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

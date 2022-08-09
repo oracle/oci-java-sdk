@@ -173,7 +173,8 @@ public class ListChannelsConverter {
 
                                 com.oracle.bmc.oda.responses.ListChannelsResponse.Builder builder =
                                         com.oracle.bmc.oda.responses.ListChannelsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.channelCollection(response.getItem());
 

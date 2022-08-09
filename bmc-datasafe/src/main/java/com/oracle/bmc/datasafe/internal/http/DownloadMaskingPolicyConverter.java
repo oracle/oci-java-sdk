@@ -106,8 +106,8 @@ public class DownloadMaskingPolicyConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .DownloadMaskingPolicyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

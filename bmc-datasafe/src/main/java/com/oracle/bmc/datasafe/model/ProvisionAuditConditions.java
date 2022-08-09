@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = ProvisionAuditConditions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProvisionAuditConditions {
+public final class ProvisionAuditConditions
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "auditPolicyName",
@@ -116,26 +117,33 @@ public final class ProvisionAuditConditions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProvisionAuditConditions build() {
-            ProvisionAuditConditions __instance__ =
+            ProvisionAuditConditions model =
                     new ProvisionAuditConditions(
-                            auditPolicyName,
-                            isPrivUsersManagedByDataSafe,
-                            isEnabled,
-                            enableConditions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.auditPolicyName,
+                            this.isPrivUsersManagedByDataSafe,
+                            this.isEnabled,
+                            this.enableConditions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProvisionAuditConditions o) {
-            Builder copiedBuilder =
-                    auditPolicyName(o.getAuditPolicyName())
-                            .isPrivUsersManagedByDataSafe(o.getIsPrivUsersManagedByDataSafe())
-                            .isEnabled(o.getIsEnabled())
-                            .enableConditions(o.getEnableConditions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProvisionAuditConditions model) {
+            if (model.wasPropertyExplicitlySet("auditPolicyName")) {
+                this.auditPolicyName(model.getAuditPolicyName());
+            }
+            if (model.wasPropertyExplicitlySet("isPrivUsersManagedByDataSafe")) {
+                this.isPrivUsersManagedByDataSafe(model.getIsPrivUsersManagedByDataSafe());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("enableConditions")) {
+                this.enableConditions(model.getEnableConditions());
+            }
+            return this;
         }
     }
 
@@ -225,12 +233,12 @@ public final class ProvisionAuditConditions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProvisionAuditConditions(");
+        sb.append("super=").append(super.toString());
         sb.append("auditPolicyName=").append(String.valueOf(this.auditPolicyName));
         sb.append(", isPrivUsersManagedByDataSafe=")
                 .append(String.valueOf(this.isPrivUsersManagedByDataSafe));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", enableConditions=").append(String.valueOf(this.enableConditions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -250,7 +258,7 @@ public final class ProvisionAuditConditions {
                         this.isPrivUsersManagedByDataSafe, other.isPrivUsersManagedByDataSafe)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.enableConditions, other.enableConditions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -269,16 +277,7 @@ public final class ProvisionAuditConditions {
         result =
                 (result * PRIME)
                         + (this.enableConditions == null ? 43 : this.enableConditions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

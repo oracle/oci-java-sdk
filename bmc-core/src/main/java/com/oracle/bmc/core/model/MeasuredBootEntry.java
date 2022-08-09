@@ -21,7 +21,7 @@ package com.oracle.bmc.core.model;
     builder = MeasuredBootEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MeasuredBootEntry {
+public final class MeasuredBootEntry extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"pcrIndex", "value", "hashAlgorithm"})
     public MeasuredBootEntry(String pcrIndex, String value, String hashAlgorithm) {
@@ -86,20 +86,26 @@ public final class MeasuredBootEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MeasuredBootEntry build() {
-            MeasuredBootEntry __instance__ = new MeasuredBootEntry(pcrIndex, value, hashAlgorithm);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MeasuredBootEntry model =
+                    new MeasuredBootEntry(this.pcrIndex, this.value, this.hashAlgorithm);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MeasuredBootEntry o) {
-            Builder copiedBuilder =
-                    pcrIndex(o.getPcrIndex())
-                            .value(o.getValue())
-                            .hashAlgorithm(o.getHashAlgorithm());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MeasuredBootEntry model) {
+            if (model.wasPropertyExplicitlySet("pcrIndex")) {
+                this.pcrIndex(model.getPcrIndex());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("hashAlgorithm")) {
+                this.hashAlgorithm(model.getHashAlgorithm());
+            }
+            return this;
         }
     }
 
@@ -169,10 +175,10 @@ public final class MeasuredBootEntry {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MeasuredBootEntry(");
+        sb.append("super=").append(super.toString());
         sb.append("pcrIndex=").append(String.valueOf(this.pcrIndex));
         sb.append(", value=").append(String.valueOf(this.value));
         sb.append(", hashAlgorithm=").append(String.valueOf(this.hashAlgorithm));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,7 +196,7 @@ public final class MeasuredBootEntry {
         return java.util.Objects.equals(this.pcrIndex, other.pcrIndex)
                 && java.util.Objects.equals(this.value, other.value)
                 && java.util.Objects.equals(this.hashAlgorithm, other.hashAlgorithm)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -202,16 +208,7 @@ public final class MeasuredBootEntry {
         result =
                 (result * PRIME)
                         + (this.hashAlgorithm == null ? 43 : this.hashAlgorithm.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

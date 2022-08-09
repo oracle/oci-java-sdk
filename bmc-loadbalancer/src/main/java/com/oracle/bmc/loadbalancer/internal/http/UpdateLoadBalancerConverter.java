@@ -49,6 +49,10 @@ public class UpdateLoadBalancerConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
+        if (request.getIfMatch() != null) {
+            ib.header("if-match", request.getIfMatch());
+        }
+
         if (request.getOpcRetryToken() != null) {
             ib.header("opc-retry-token", request.getOpcRetryToken());
         }
@@ -105,8 +109,8 @@ public class UpdateLoadBalancerConverter {
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
                                                         .UpdateLoadBalancerResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

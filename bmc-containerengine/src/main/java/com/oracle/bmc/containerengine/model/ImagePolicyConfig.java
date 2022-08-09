@@ -19,7 +19,7 @@ package com.oracle.bmc.containerengine.model;
     builder = ImagePolicyConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImagePolicyConfig {
+public final class ImagePolicyConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isPolicyEnabled", "keyDetails"})
     public ImagePolicyConfig(Boolean isPolicyEnabled, java.util.List<KeyDetails> keyDetails) {
@@ -67,18 +67,22 @@ public final class ImagePolicyConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImagePolicyConfig build() {
-            ImagePolicyConfig __instance__ = new ImagePolicyConfig(isPolicyEnabled, keyDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ImagePolicyConfig model = new ImagePolicyConfig(this.isPolicyEnabled, this.keyDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImagePolicyConfig o) {
-            Builder copiedBuilder =
-                    isPolicyEnabled(o.getIsPolicyEnabled()).keyDetails(o.getKeyDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImagePolicyConfig model) {
+            if (model.wasPropertyExplicitlySet("isPolicyEnabled")) {
+                this.isPolicyEnabled(model.getIsPolicyEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("keyDetails")) {
+                this.keyDetails(model.getKeyDetails());
+            }
+            return this;
         }
     }
 
@@ -134,9 +138,9 @@ public final class ImagePolicyConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImagePolicyConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("isPolicyEnabled=").append(String.valueOf(this.isPolicyEnabled));
         sb.append(", keyDetails=").append(String.valueOf(this.keyDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,7 +157,7 @@ public final class ImagePolicyConfig {
         ImagePolicyConfig other = (ImagePolicyConfig) o;
         return java.util.Objects.equals(this.isPolicyEnabled, other.isPolicyEnabled)
                 && java.util.Objects.equals(this.keyDetails, other.keyDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -164,16 +168,7 @@ public final class ImagePolicyConfig {
                 (result * PRIME)
                         + (this.isPolicyEnabled == null ? 43 : this.isPolicyEnabled.hashCode());
         result = (result * PRIME) + (this.keyDetails == null ? 43 : this.keyDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

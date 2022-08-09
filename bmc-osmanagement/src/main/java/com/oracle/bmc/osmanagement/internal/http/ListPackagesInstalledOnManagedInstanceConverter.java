@@ -176,8 +176,8 @@ public class ListPackagesInstalledOnManagedInstanceConverter {
                                                 com.oracle.bmc.osmanagement.responses
                                                         .ListPackagesInstalledOnManagedInstanceResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

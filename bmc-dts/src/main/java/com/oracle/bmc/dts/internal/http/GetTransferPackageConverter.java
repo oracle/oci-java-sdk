@@ -104,8 +104,8 @@ public class GetTransferPackageConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .GetTransferPackageResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.transferPackage(response.getItem());
 

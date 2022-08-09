@@ -49,16 +49,18 @@ public class GetBuildPipelineStageResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "buildPipelineStage"
     })
     private GetBuildPipelineStageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.devops.model.BuildPipelineStage buildPipelineStage) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.buildPipelineStage = buildPipelineStage;
@@ -69,6 +71,13 @@ public class GetBuildPipelineStageResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -124,6 +133,7 @@ public class GetBuildPipelineStageResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(GetBuildPipelineStageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             buildPipelineStage(o.getBuildPipelineStage());
@@ -137,7 +147,7 @@ public class GetBuildPipelineStageResponse extends com.oracle.bmc.responses.BmcR
          */
         public GetBuildPipelineStageResponse build() {
             return new GetBuildPipelineStageResponse(
-                    __httpStatusCode__, etag, opcRequestId, buildPipelineStage);
+                    __httpStatusCode__, headers, etag, opcRequestId, buildPipelineStage);
         }
     }
 

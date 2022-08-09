@@ -17,7 +17,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Whitelist.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Whitelist {
+public final class Whitelist extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "addresses", "addressLists"})
     public Whitelist(
@@ -83,18 +83,25 @@ public final class Whitelist {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Whitelist build() {
-            Whitelist __instance__ = new Whitelist(name, addresses, addressLists);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Whitelist model = new Whitelist(this.name, this.addresses, this.addressLists);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Whitelist o) {
-            Builder copiedBuilder =
-                    name(o.getName()).addresses(o.getAddresses()).addressLists(o.getAddressLists());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Whitelist model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("addresses")) {
+                this.addresses(model.getAddresses());
+            }
+            if (model.wasPropertyExplicitlySet("addressLists")) {
+                this.addressLists(model.getAddressLists());
+            }
+            return this;
         }
     }
 
@@ -164,10 +171,10 @@ public final class Whitelist {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Whitelist(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", addresses=").append(String.valueOf(this.addresses));
         sb.append(", addressLists=").append(String.valueOf(this.addressLists));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -185,7 +192,7 @@ public final class Whitelist {
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.addresses, other.addresses)
                 && java.util.Objects.equals(this.addressLists, other.addressLists)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -195,16 +202,7 @@ public final class Whitelist {
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.addresses == null ? 43 : this.addresses.hashCode());
         result = (result * PRIME) + (this.addressLists == null ? 43 : this.addressLists.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

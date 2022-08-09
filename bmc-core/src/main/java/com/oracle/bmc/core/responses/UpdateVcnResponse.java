@@ -53,13 +53,20 @@ public class UpdateVcnResponse extends com.oracle.bmc.responses.BmcResponse {
         return vcn;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "vcn"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "vcn"
+    })
     private UpdateVcnResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.Vcn vcn) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.vcn = vcn;
@@ -70,6 +77,13 @@ public class UpdateVcnResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateVcnResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UpdateVcnResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             vcn(o.getVcn());
@@ -142,7 +157,7 @@ public class UpdateVcnResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public UpdateVcnResponse build() {
-            return new UpdateVcnResponse(__httpStatusCode__, etag, opcRequestId, vcn);
+            return new UpdateVcnResponse(__httpStatusCode__, headers, etag, opcRequestId, vcn);
         }
     }
 

@@ -55,16 +55,18 @@ public class CreateTermRelationshipResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "termRelationship"
     })
     private CreateTermRelationshipResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.TermRelationship termRelationship) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.termRelationship = termRelationship;
@@ -75,6 +77,13 @@ public class CreateTermRelationshipResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class CreateTermRelationshipResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(CreateTermRelationshipResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             termRelationship(o.getTermRelationship());
@@ -149,7 +159,7 @@ public class CreateTermRelationshipResponse extends com.oracle.bmc.responses.Bmc
          */
         public CreateTermRelationshipResponse build() {
             return new CreateTermRelationshipResponse(
-                    __httpStatusCode__, etag, opcRequestId, termRelationship);
+                    __httpStatusCode__, headers, etag, opcRequestId, termRelationship);
         }
     }
 

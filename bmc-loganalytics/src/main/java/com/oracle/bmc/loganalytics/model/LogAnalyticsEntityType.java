@@ -20,7 +20,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsEntityType.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsEntityType {
+public final class LogAnalyticsEntityType
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -244,39 +245,57 @@ public final class LogAnalyticsEntityType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsEntityType build() {
-            LogAnalyticsEntityType __instance__ =
+            LogAnalyticsEntityType model =
                     new LogAnalyticsEntityType(
-                            name,
-                            internalName,
-                            compartmentId,
-                            category,
-                            cloudType,
-                            properties,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            managementAgentEligibilityStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.internalName,
+                            this.compartmentId,
+                            this.category,
+                            this.cloudType,
+                            this.properties,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.managementAgentEligibilityStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsEntityType o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .internalName(o.getInternalName())
-                            .compartmentId(o.getCompartmentId())
-                            .category(o.getCategory())
-                            .cloudType(o.getCloudType())
-                            .properties(o.getProperties())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .managementAgentEligibilityStatus(
-                                    o.getManagementAgentEligibilityStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsEntityType model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("internalName")) {
+                this.internalName(model.getInternalName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("cloudType")) {
+                this.cloudType(model.getCloudType());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("managementAgentEligibilityStatus")) {
+                this.managementAgentEligibilityStatus(model.getManagementAgentEligibilityStatus());
+            }
+            return this;
         }
     }
 
@@ -512,6 +531,7 @@ public final class LogAnalyticsEntityType {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsEntityType(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", internalName=").append(String.valueOf(this.internalName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -523,7 +543,6 @@ public final class LogAnalyticsEntityType {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", managementAgentEligibilityStatus=")
                 .append(String.valueOf(this.managementAgentEligibilityStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -550,7 +569,7 @@ public final class LogAnalyticsEntityType {
                 && java.util.Objects.equals(
                         this.managementAgentEligibilityStatus,
                         other.managementAgentEligibilityStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -575,16 +594,7 @@ public final class LogAnalyticsEntityType {
                         + (this.managementAgentEligibilityStatus == null
                                 ? 43
                                 : this.managementAgentEligibilityStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

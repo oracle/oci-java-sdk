@@ -19,7 +19,7 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = OperationExecResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OperationExecResult {
+public final class OperationExecResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "executionStatus",
@@ -129,28 +129,37 @@ public final class OperationExecResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OperationExecResult build() {
-            OperationExecResult __instance__ =
+            OperationExecResult model =
                     new OperationExecResult(
-                            executionStatus,
-                            errorMessage,
-                            metrics,
-                            outputValues,
-                            isWhitelistedErrorMessage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.executionStatus,
+                            this.errorMessage,
+                            this.metrics,
+                            this.outputValues,
+                            this.isWhitelistedErrorMessage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OperationExecResult o) {
-            Builder copiedBuilder =
-                    executionStatus(o.getExecutionStatus())
-                            .errorMessage(o.getErrorMessage())
-                            .metrics(o.getMetrics())
-                            .outputValues(o.getOutputValues())
-                            .isWhitelistedErrorMessage(o.getIsWhitelistedErrorMessage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OperationExecResult model) {
+            if (model.wasPropertyExplicitlySet("executionStatus")) {
+                this.executionStatus(model.getExecutionStatus());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            if (model.wasPropertyExplicitlySet("metrics")) {
+                this.metrics(model.getMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("outputValues")) {
+                this.outputValues(model.getOutputValues());
+            }
+            if (model.wasPropertyExplicitlySet("isWhitelistedErrorMessage")) {
+                this.isWhitelistedErrorMessage(model.getIsWhitelistedErrorMessage());
+            }
+            return this;
         }
     }
 
@@ -298,13 +307,13 @@ public final class OperationExecResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OperationExecResult(");
+        sb.append("super=").append(super.toString());
         sb.append("executionStatus=").append(String.valueOf(this.executionStatus));
         sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
         sb.append(", metrics=").append(String.valueOf(this.metrics));
         sb.append(", outputValues=").append(String.valueOf(this.outputValues));
         sb.append(", isWhitelistedErrorMessage=")
                 .append(String.valueOf(this.isWhitelistedErrorMessage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -325,7 +334,7 @@ public final class OperationExecResult {
                 && java.util.Objects.equals(this.outputValues, other.outputValues)
                 && java.util.Objects.equals(
                         this.isWhitelistedErrorMessage, other.isWhitelistedErrorMessage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -343,16 +352,7 @@ public final class OperationExecResult {
                         + (this.isWhitelistedErrorMessage == null
                                 ? 43
                                 : this.isWhitelistedErrorMessage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

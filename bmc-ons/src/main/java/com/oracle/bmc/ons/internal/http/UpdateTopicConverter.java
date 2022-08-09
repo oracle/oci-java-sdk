@@ -104,7 +104,8 @@ public class UpdateTopicConverter {
 
                                 com.oracle.bmc.ons.responses.UpdateTopicResponse.Builder builder =
                                         com.oracle.bmc.ons.responses.UpdateTopicResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.notificationTopic(response.getItem());
 

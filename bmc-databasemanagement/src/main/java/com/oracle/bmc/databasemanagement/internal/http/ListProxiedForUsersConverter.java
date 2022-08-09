@@ -158,8 +158,8 @@ public class ListProxiedForUsersConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListProxiedForUsersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.proxiedForUserCollection(response.getItem());
 

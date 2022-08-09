@@ -86,30 +86,41 @@ public final class AnnouncementsPreferencesSummary extends BaseAnnouncementsPref
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AnnouncementsPreferencesSummary build() {
-            AnnouncementsPreferencesSummary __instance__ =
+            AnnouncementsPreferencesSummary model =
                     new AnnouncementsPreferencesSummary(
-                            compartmentId,
-                            id,
-                            isUnsubscribed,
-                            timeCreated,
-                            timeUpdated,
-                            preferenceType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.id,
+                            this.isUnsubscribed,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.preferenceType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AnnouncementsPreferencesSummary o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .id(o.getId())
-                            .isUnsubscribed(o.getIsUnsubscribed())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .preferenceType(o.getPreferenceType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AnnouncementsPreferencesSummary model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("isUnsubscribed")) {
+                this.isUnsubscribed(model.getIsUnsubscribed());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("preferenceType")) {
+                this.preferenceType(model.getPreferenceType());
+            }
+            return this;
         }
     }
 
@@ -149,7 +160,6 @@ public final class AnnouncementsPreferencesSummary extends BaseAnnouncementsPref
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AnnouncementsPreferencesSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -164,24 +174,13 @@ public final class AnnouncementsPreferencesSummary extends BaseAnnouncementsPref
         }
 
         AnnouncementsPreferencesSummary other = (AnnouncementsPreferencesSummary) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

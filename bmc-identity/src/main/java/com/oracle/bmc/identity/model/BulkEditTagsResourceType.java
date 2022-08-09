@@ -19,7 +19,8 @@ package com.oracle.bmc.identity.model;
     builder = BulkEditTagsResourceType.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BulkEditTagsResourceType {
+public final class BulkEditTagsResourceType
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceType", "metadataKeys"})
     public BulkEditTagsResourceType(String resourceType, java.util.List<String> metadataKeys) {
@@ -81,19 +82,23 @@ public final class BulkEditTagsResourceType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BulkEditTagsResourceType build() {
-            BulkEditTagsResourceType __instance__ =
-                    new BulkEditTagsResourceType(resourceType, metadataKeys);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BulkEditTagsResourceType model =
+                    new BulkEditTagsResourceType(this.resourceType, this.metadataKeys);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BulkEditTagsResourceType o) {
-            Builder copiedBuilder =
-                    resourceType(o.getResourceType()).metadataKeys(o.getMetadataKeys());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BulkEditTagsResourceType model) {
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("metadataKeys")) {
+                this.metadataKeys(model.getMetadataKeys());
+            }
+            return this;
         }
     }
 
@@ -163,9 +168,9 @@ public final class BulkEditTagsResourceType {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BulkEditTagsResourceType(");
+        sb.append("super=").append(super.toString());
         sb.append("resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", metadataKeys=").append(String.valueOf(this.metadataKeys));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -182,7 +187,7 @@ public final class BulkEditTagsResourceType {
         BulkEditTagsResourceType other = (BulkEditTagsResourceType) o;
         return java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.metadataKeys, other.metadataKeys)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -191,16 +196,7 @@ public final class BulkEditTagsResourceType {
         int result = 1;
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.metadataKeys == null ? 43 : this.metadataKeys.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

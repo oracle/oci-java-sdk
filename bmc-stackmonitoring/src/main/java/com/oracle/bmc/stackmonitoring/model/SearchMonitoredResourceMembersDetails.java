@@ -19,7 +19,8 @@ package com.oracle.bmc.stackmonitoring.model;
     builder = SearchMonitoredResourceMembersDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SearchMonitoredResourceMembersDetails {
+public final class SearchMonitoredResourceMembersDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"destinationResourceId", "limitLevel"})
     public SearchMonitoredResourceMembersDetails(String destinationResourceId, Integer limitLevel) {
@@ -67,20 +68,24 @@ public final class SearchMonitoredResourceMembersDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SearchMonitoredResourceMembersDetails build() {
-            SearchMonitoredResourceMembersDetails __instance__ =
-                    new SearchMonitoredResourceMembersDetails(destinationResourceId, limitLevel);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SearchMonitoredResourceMembersDetails model =
+                    new SearchMonitoredResourceMembersDetails(
+                            this.destinationResourceId, this.limitLevel);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SearchMonitoredResourceMembersDetails o) {
-            Builder copiedBuilder =
-                    destinationResourceId(o.getDestinationResourceId())
-                            .limitLevel(o.getLimitLevel());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SearchMonitoredResourceMembersDetails model) {
+            if (model.wasPropertyExplicitlySet("destinationResourceId")) {
+                this.destinationResourceId(model.getDestinationResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("limitLevel")) {
+                this.limitLevel(model.getLimitLevel());
+            }
+            return this;
         }
     }
 
@@ -136,9 +141,9 @@ public final class SearchMonitoredResourceMembersDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SearchMonitoredResourceMembersDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("destinationResourceId=").append(String.valueOf(this.destinationResourceId));
         sb.append(", limitLevel=").append(String.valueOf(this.limitLevel));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +160,7 @@ public final class SearchMonitoredResourceMembersDetails {
         SearchMonitoredResourceMembersDetails other = (SearchMonitoredResourceMembersDetails) o;
         return java.util.Objects.equals(this.destinationResourceId, other.destinationResourceId)
                 && java.util.Objects.equals(this.limitLevel, other.limitLevel)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +173,7 @@ public final class SearchMonitoredResourceMembersDetails {
                                 ? 43
                                 : this.destinationResourceId.hashCode());
         result = (result * PRIME) + (this.limitLevel == null ? 43 : this.limitLevel.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

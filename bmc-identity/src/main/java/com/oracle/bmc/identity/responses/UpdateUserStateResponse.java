@@ -51,13 +51,20 @@ public class UpdateUserStateResponse extends com.oracle.bmc.responses.BmcRespons
         return user;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "user"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "user"
+    })
     private UpdateUserStateResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.User user) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.user = user;
@@ -68,6 +75,13 @@ public class UpdateUserStateResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class UpdateUserStateResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(UpdateUserStateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             user(o.getUser());
@@ -138,7 +153,8 @@ public class UpdateUserStateResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public UpdateUserStateResponse build() {
-            return new UpdateUserStateResponse(__httpStatusCode__, opcRequestId, etag, user);
+            return new UpdateUserStateResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, user);
         }
     }
 

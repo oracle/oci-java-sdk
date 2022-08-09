@@ -114,8 +114,8 @@ public class UpdateDeployEnvironmentConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .UpdateDeployEnvironmentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deployEnvironment(response.getItem());
 

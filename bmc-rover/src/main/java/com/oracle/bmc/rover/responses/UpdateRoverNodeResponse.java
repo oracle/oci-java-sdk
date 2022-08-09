@@ -53,13 +53,20 @@ public class UpdateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
         return roverNode;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "roverNode"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "roverNode"
+    })
     private UpdateRoverNodeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.rover.model.RoverNode roverNode) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.roverNode = roverNode;
@@ -70,6 +77,13 @@ public class UpdateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(UpdateRoverNodeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             roverNode(o.getRoverNode());
@@ -142,7 +157,8 @@ public class UpdateRoverNodeResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public UpdateRoverNodeResponse build() {
-            return new UpdateRoverNodeResponse(__httpStatusCode__, etag, opcRequestId, roverNode);
+            return new UpdateRoverNodeResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, roverNode);
         }
     }
 

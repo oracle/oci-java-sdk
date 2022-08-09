@@ -113,8 +113,8 @@ public class RemoveExportDrgRouteDistributionConverter {
                                                 com.oracle.bmc.core.responses
                                                         .RemoveExportDrgRouteDistributionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.drgAttachment(response.getItem());
 

@@ -241,59 +241,98 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BuildStageSummary build() {
-            BuildStageSummary __instance__ =
+            BuildStageSummary model =
                     new BuildStageSummary(
-                            id,
-                            displayName,
-                            projectId,
-                            buildPipelineId,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            description,
-                            buildPipelineStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            image,
-                            buildSpecFile,
-                            stageExecutionTimeoutInSeconds,
-                            buildSourceCollection,
-                            primaryBuildSource,
-                            privateAccessConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.projectId,
+                            this.buildPipelineId,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.description,
+                            this.buildPipelineStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.image,
+                            this.buildSpecFile,
+                            this.stageExecutionTimeoutInSeconds,
+                            this.buildSourceCollection,
+                            this.primaryBuildSource,
+                            this.privateAccessConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BuildStageSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .projectId(o.getProjectId())
-                            .buildPipelineId(o.getBuildPipelineId())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .description(o.getDescription())
-                            .buildPipelineStagePredecessorCollection(
-                                    o.getBuildPipelineStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .image(o.getImage())
-                            .buildSpecFile(o.getBuildSpecFile())
-                            .stageExecutionTimeoutInSeconds(o.getStageExecutionTimeoutInSeconds())
-                            .buildSourceCollection(o.getBuildSourceCollection())
-                            .primaryBuildSource(o.getPrimaryBuildSource())
-                            .privateAccessConfig(o.getPrivateAccessConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BuildStageSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("projectId")) {
+                this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineId")) {
+                this.buildPipelineId(model.getBuildPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineStagePredecessorCollection")) {
+                this.buildPipelineStagePredecessorCollection(
+                        model.getBuildPipelineStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("image")) {
+                this.image(model.getImage());
+            }
+            if (model.wasPropertyExplicitlySet("buildSpecFile")) {
+                this.buildSpecFile(model.getBuildSpecFile());
+            }
+            if (model.wasPropertyExplicitlySet("stageExecutionTimeoutInSeconds")) {
+                this.stageExecutionTimeoutInSeconds(model.getStageExecutionTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("buildSourceCollection")) {
+                this.buildSourceCollection(model.getBuildSourceCollection());
+            }
+            if (model.wasPropertyExplicitlySet("primaryBuildSource")) {
+                this.primaryBuildSource(model.getPrimaryBuildSource());
+            }
+            if (model.wasPropertyExplicitlySet("privateAccessConfig")) {
+                this.privateAccessConfig(model.getPrivateAccessConfig());
+            }
+            return this;
         }
     }
 
@@ -444,7 +483,6 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
         sb.append(", buildSourceCollection=").append(String.valueOf(this.buildSourceCollection));
         sb.append(", primaryBuildSource=").append(String.valueOf(this.primaryBuildSource));
         sb.append(", privateAccessConfig=").append(String.valueOf(this.privateAccessConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -466,8 +504,7 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
                 && java.util.Objects.equals(this.buildSourceCollection, other.buildSourceCollection)
                 && java.util.Objects.equals(this.primaryBuildSource, other.primaryBuildSource)
                 && java.util.Objects.equals(this.privateAccessConfig, other.privateAccessConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -498,16 +535,6 @@ public final class BuildStageSummary extends BuildPipelineStageSummary {
                         + (this.privateAccessConfig == null
                                 ? 43
                                 : this.privateAccessConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.waas.model;
     builder = BlockChallengeSettings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BlockChallengeSettings {
+public final class BlockChallengeSettings
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "blockAction",
@@ -205,36 +206,53 @@ public final class BlockChallengeSettings {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BlockChallengeSettings build() {
-            BlockChallengeSettings __instance__ =
+            BlockChallengeSettings model =
                     new BlockChallengeSettings(
-                            blockAction,
-                            blockResponseCode,
-                            blockErrorPageMessage,
-                            blockErrorPageDescription,
-                            blockErrorPageCode,
-                            captchaTitle,
-                            captchaHeader,
-                            captchaFooter,
-                            captchaSubmitLabel);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.blockAction,
+                            this.blockResponseCode,
+                            this.blockErrorPageMessage,
+                            this.blockErrorPageDescription,
+                            this.blockErrorPageCode,
+                            this.captchaTitle,
+                            this.captchaHeader,
+                            this.captchaFooter,
+                            this.captchaSubmitLabel);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BlockChallengeSettings o) {
-            Builder copiedBuilder =
-                    blockAction(o.getBlockAction())
-                            .blockResponseCode(o.getBlockResponseCode())
-                            .blockErrorPageMessage(o.getBlockErrorPageMessage())
-                            .blockErrorPageDescription(o.getBlockErrorPageDescription())
-                            .blockErrorPageCode(o.getBlockErrorPageCode())
-                            .captchaTitle(o.getCaptchaTitle())
-                            .captchaHeader(o.getCaptchaHeader())
-                            .captchaFooter(o.getCaptchaFooter())
-                            .captchaSubmitLabel(o.getCaptchaSubmitLabel());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BlockChallengeSettings model) {
+            if (model.wasPropertyExplicitlySet("blockAction")) {
+                this.blockAction(model.getBlockAction());
+            }
+            if (model.wasPropertyExplicitlySet("blockResponseCode")) {
+                this.blockResponseCode(model.getBlockResponseCode());
+            }
+            if (model.wasPropertyExplicitlySet("blockErrorPageMessage")) {
+                this.blockErrorPageMessage(model.getBlockErrorPageMessage());
+            }
+            if (model.wasPropertyExplicitlySet("blockErrorPageDescription")) {
+                this.blockErrorPageDescription(model.getBlockErrorPageDescription());
+            }
+            if (model.wasPropertyExplicitlySet("blockErrorPageCode")) {
+                this.blockErrorPageCode(model.getBlockErrorPageCode());
+            }
+            if (model.wasPropertyExplicitlySet("captchaTitle")) {
+                this.captchaTitle(model.getCaptchaTitle());
+            }
+            if (model.wasPropertyExplicitlySet("captchaHeader")) {
+                this.captchaHeader(model.getCaptchaHeader());
+            }
+            if (model.wasPropertyExplicitlySet("captchaFooter")) {
+                this.captchaFooter(model.getCaptchaFooter());
+            }
+            if (model.wasPropertyExplicitlySet("captchaSubmitLabel")) {
+                this.captchaSubmitLabel(model.getCaptchaSubmitLabel());
+            }
+            return this;
         }
     }
 
@@ -437,6 +455,7 @@ public final class BlockChallengeSettings {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BlockChallengeSettings(");
+        sb.append("super=").append(super.toString());
         sb.append("blockAction=").append(String.valueOf(this.blockAction));
         sb.append(", blockResponseCode=").append(String.valueOf(this.blockResponseCode));
         sb.append(", blockErrorPageMessage=").append(String.valueOf(this.blockErrorPageMessage));
@@ -447,7 +466,6 @@ public final class BlockChallengeSettings {
         sb.append(", captchaHeader=").append(String.valueOf(this.captchaHeader));
         sb.append(", captchaFooter=").append(String.valueOf(this.captchaFooter));
         sb.append(", captchaSubmitLabel=").append(String.valueOf(this.captchaSubmitLabel));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -472,7 +490,7 @@ public final class BlockChallengeSettings {
                 && java.util.Objects.equals(this.captchaHeader, other.captchaHeader)
                 && java.util.Objects.equals(this.captchaFooter, other.captchaFooter)
                 && java.util.Objects.equals(this.captchaSubmitLabel, other.captchaSubmitLabel)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -510,16 +528,7 @@ public final class BlockChallengeSettings {
                         + (this.captchaSubmitLabel == null
                                 ? 43
                                 : this.captchaSubmitLabel.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

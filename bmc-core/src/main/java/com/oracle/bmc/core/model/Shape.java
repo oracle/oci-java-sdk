@@ -20,7 +20,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Shape.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Shape {
+public final class Shape extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "baselineOcpuUtilizations",
@@ -634,76 +634,133 @@ public final class Shape {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Shape build() {
-            Shape __instance__ =
+            Shape model =
                     new Shape(
-                            baselineOcpuUtilizations,
-                            minTotalBaselineOcpusRequired,
-                            shape,
-                            processorDescription,
-                            ocpus,
-                            memoryInGBs,
-                            networkPorts,
-                            networkingBandwidthInGbps,
-                            maxVnicAttachments,
-                            gpus,
-                            gpuDescription,
-                            localDisks,
-                            localDisksTotalSizeInGBs,
-                            localDiskDescription,
-                            rdmaPorts,
-                            rdmaBandwidthInGbps,
-                            isLiveMigrationSupported,
-                            ocpuOptions,
-                            memoryOptions,
-                            networkingBandwidthOptions,
-                            maxVnicAttachmentOptions,
-                            platformConfigOptions,
-                            isBilledForStoppedInstance,
-                            billingType,
-                            quotaNames,
-                            isSubcore,
-                            isFlexible,
-                            resizeCompatibleShapes,
-                            recommendedAlternatives);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.baselineOcpuUtilizations,
+                            this.minTotalBaselineOcpusRequired,
+                            this.shape,
+                            this.processorDescription,
+                            this.ocpus,
+                            this.memoryInGBs,
+                            this.networkPorts,
+                            this.networkingBandwidthInGbps,
+                            this.maxVnicAttachments,
+                            this.gpus,
+                            this.gpuDescription,
+                            this.localDisks,
+                            this.localDisksTotalSizeInGBs,
+                            this.localDiskDescription,
+                            this.rdmaPorts,
+                            this.rdmaBandwidthInGbps,
+                            this.isLiveMigrationSupported,
+                            this.ocpuOptions,
+                            this.memoryOptions,
+                            this.networkingBandwidthOptions,
+                            this.maxVnicAttachmentOptions,
+                            this.platformConfigOptions,
+                            this.isBilledForStoppedInstance,
+                            this.billingType,
+                            this.quotaNames,
+                            this.isSubcore,
+                            this.isFlexible,
+                            this.resizeCompatibleShapes,
+                            this.recommendedAlternatives);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Shape o) {
-            Builder copiedBuilder =
-                    baselineOcpuUtilizations(o.getBaselineOcpuUtilizations())
-                            .minTotalBaselineOcpusRequired(o.getMinTotalBaselineOcpusRequired())
-                            .shape(o.getShape())
-                            .processorDescription(o.getProcessorDescription())
-                            .ocpus(o.getOcpus())
-                            .memoryInGBs(o.getMemoryInGBs())
-                            .networkPorts(o.getNetworkPorts())
-                            .networkingBandwidthInGbps(o.getNetworkingBandwidthInGbps())
-                            .maxVnicAttachments(o.getMaxVnicAttachments())
-                            .gpus(o.getGpus())
-                            .gpuDescription(o.getGpuDescription())
-                            .localDisks(o.getLocalDisks())
-                            .localDisksTotalSizeInGBs(o.getLocalDisksTotalSizeInGBs())
-                            .localDiskDescription(o.getLocalDiskDescription())
-                            .rdmaPorts(o.getRdmaPorts())
-                            .rdmaBandwidthInGbps(o.getRdmaBandwidthInGbps())
-                            .isLiveMigrationSupported(o.getIsLiveMigrationSupported())
-                            .ocpuOptions(o.getOcpuOptions())
-                            .memoryOptions(o.getMemoryOptions())
-                            .networkingBandwidthOptions(o.getNetworkingBandwidthOptions())
-                            .maxVnicAttachmentOptions(o.getMaxVnicAttachmentOptions())
-                            .platformConfigOptions(o.getPlatformConfigOptions())
-                            .isBilledForStoppedInstance(o.getIsBilledForStoppedInstance())
-                            .billingType(o.getBillingType())
-                            .quotaNames(o.getQuotaNames())
-                            .isSubcore(o.getIsSubcore())
-                            .isFlexible(o.getIsFlexible())
-                            .resizeCompatibleShapes(o.getResizeCompatibleShapes())
-                            .recommendedAlternatives(o.getRecommendedAlternatives());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Shape model) {
+            if (model.wasPropertyExplicitlySet("baselineOcpuUtilizations")) {
+                this.baselineOcpuUtilizations(model.getBaselineOcpuUtilizations());
+            }
+            if (model.wasPropertyExplicitlySet("minTotalBaselineOcpusRequired")) {
+                this.minTotalBaselineOcpusRequired(model.getMinTotalBaselineOcpusRequired());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("processorDescription")) {
+                this.processorDescription(model.getProcessorDescription());
+            }
+            if (model.wasPropertyExplicitlySet("ocpus")) {
+                this.ocpus(model.getOcpus());
+            }
+            if (model.wasPropertyExplicitlySet("memoryInGBs")) {
+                this.memoryInGBs(model.getMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("networkPorts")) {
+                this.networkPorts(model.getNetworkPorts());
+            }
+            if (model.wasPropertyExplicitlySet("networkingBandwidthInGbps")) {
+                this.networkingBandwidthInGbps(model.getNetworkingBandwidthInGbps());
+            }
+            if (model.wasPropertyExplicitlySet("maxVnicAttachments")) {
+                this.maxVnicAttachments(model.getMaxVnicAttachments());
+            }
+            if (model.wasPropertyExplicitlySet("gpus")) {
+                this.gpus(model.getGpus());
+            }
+            if (model.wasPropertyExplicitlySet("gpuDescription")) {
+                this.gpuDescription(model.getGpuDescription());
+            }
+            if (model.wasPropertyExplicitlySet("localDisks")) {
+                this.localDisks(model.getLocalDisks());
+            }
+            if (model.wasPropertyExplicitlySet("localDisksTotalSizeInGBs")) {
+                this.localDisksTotalSizeInGBs(model.getLocalDisksTotalSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("localDiskDescription")) {
+                this.localDiskDescription(model.getLocalDiskDescription());
+            }
+            if (model.wasPropertyExplicitlySet("rdmaPorts")) {
+                this.rdmaPorts(model.getRdmaPorts());
+            }
+            if (model.wasPropertyExplicitlySet("rdmaBandwidthInGbps")) {
+                this.rdmaBandwidthInGbps(model.getRdmaBandwidthInGbps());
+            }
+            if (model.wasPropertyExplicitlySet("isLiveMigrationSupported")) {
+                this.isLiveMigrationSupported(model.getIsLiveMigrationSupported());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuOptions")) {
+                this.ocpuOptions(model.getOcpuOptions());
+            }
+            if (model.wasPropertyExplicitlySet("memoryOptions")) {
+                this.memoryOptions(model.getMemoryOptions());
+            }
+            if (model.wasPropertyExplicitlySet("networkingBandwidthOptions")) {
+                this.networkingBandwidthOptions(model.getNetworkingBandwidthOptions());
+            }
+            if (model.wasPropertyExplicitlySet("maxVnicAttachmentOptions")) {
+                this.maxVnicAttachmentOptions(model.getMaxVnicAttachmentOptions());
+            }
+            if (model.wasPropertyExplicitlySet("platformConfigOptions")) {
+                this.platformConfigOptions(model.getPlatformConfigOptions());
+            }
+            if (model.wasPropertyExplicitlySet("isBilledForStoppedInstance")) {
+                this.isBilledForStoppedInstance(model.getIsBilledForStoppedInstance());
+            }
+            if (model.wasPropertyExplicitlySet("billingType")) {
+                this.billingType(model.getBillingType());
+            }
+            if (model.wasPropertyExplicitlySet("quotaNames")) {
+                this.quotaNames(model.getQuotaNames());
+            }
+            if (model.wasPropertyExplicitlySet("isSubcore")) {
+                this.isSubcore(model.getIsSubcore());
+            }
+            if (model.wasPropertyExplicitlySet("isFlexible")) {
+                this.isFlexible(model.getIsFlexible());
+            }
+            if (model.wasPropertyExplicitlySet("resizeCompatibleShapes")) {
+                this.resizeCompatibleShapes(model.getResizeCompatibleShapes());
+            }
+            if (model.wasPropertyExplicitlySet("recommendedAlternatives")) {
+                this.recommendedAlternatives(model.getRecommendedAlternatives());
+            }
+            return this;
         }
     }
 
@@ -1278,6 +1335,7 @@ public final class Shape {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Shape(");
+        sb.append("super=").append(super.toString());
         sb.append("baselineOcpuUtilizations=")
                 .append(String.valueOf(this.baselineOcpuUtilizations));
         sb.append(", minTotalBaselineOcpusRequired=")
@@ -1316,7 +1374,6 @@ public final class Shape {
         sb.append(", resizeCompatibleShapes=").append(String.valueOf(this.resizeCompatibleShapes));
         sb.append(", recommendedAlternatives=")
                 .append(String.valueOf(this.recommendedAlternatives));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1370,7 +1427,7 @@ public final class Shape {
                         this.resizeCompatibleShapes, other.resizeCompatibleShapes)
                 && java.util.Objects.equals(
                         this.recommendedAlternatives, other.recommendedAlternatives)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1470,16 +1527,7 @@ public final class Shape {
                         + (this.recommendedAlternatives == null
                                 ? 43
                                 : this.recommendedAlternatives.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

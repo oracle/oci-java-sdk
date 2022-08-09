@@ -17,7 +17,7 @@ package com.oracle.bmc.cims.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IncidentSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IncidentSummary {
+public final class IncidentSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -137,32 +137,45 @@ public final class IncidentSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IncidentSummary build() {
-            IncidentSummary __instance__ =
+            IncidentSummary model =
                     new IncidentSummary(
-                            key,
-                            compartmentId,
-                            contactList,
-                            tenancyInformation,
-                            ticket,
-                            incidentType,
-                            problemType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.compartmentId,
+                            this.contactList,
+                            this.tenancyInformation,
+                            this.ticket,
+                            this.incidentType,
+                            this.problemType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IncidentSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .compartmentId(o.getCompartmentId())
-                            .contactList(o.getContactList())
-                            .tenancyInformation(o.getTenancyInformation())
-                            .ticket(o.getTicket())
-                            .incidentType(o.getIncidentType())
-                            .problemType(o.getProblemType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IncidentSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("contactList")) {
+                this.contactList(model.getContactList());
+            }
+            if (model.wasPropertyExplicitlySet("tenancyInformation")) {
+                this.tenancyInformation(model.getTenancyInformation());
+            }
+            if (model.wasPropertyExplicitlySet("ticket")) {
+                this.ticket(model.getTicket());
+            }
+            if (model.wasPropertyExplicitlySet("incidentType")) {
+                this.incidentType(model.getIncidentType());
+            }
+            if (model.wasPropertyExplicitlySet("problemType")) {
+                this.problemType(model.getProblemType());
+            }
+            return this;
         }
     }
 
@@ -260,6 +273,7 @@ public final class IncidentSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IncidentSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", contactList=").append(String.valueOf(this.contactList));
@@ -267,7 +281,6 @@ public final class IncidentSummary {
         sb.append(", ticket=").append(String.valueOf(this.ticket));
         sb.append(", incidentType=").append(String.valueOf(this.incidentType));
         sb.append(", problemType=").append(String.valueOf(this.problemType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -289,7 +302,7 @@ public final class IncidentSummary {
                 && java.util.Objects.equals(this.ticket, other.ticket)
                 && java.util.Objects.equals(this.incidentType, other.incidentType)
                 && java.util.Objects.equals(this.problemType, other.problemType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -309,16 +322,7 @@ public final class IncidentSummary {
         result = (result * PRIME) + (this.ticket == null ? 43 : this.ticket.hashCode());
         result = (result * PRIME) + (this.incidentType == null ? 43 : this.incidentType.hashCode());
         result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

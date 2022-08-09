@@ -67,21 +67,27 @@ public final class CreateStreamingServiceActionDetails extends ActionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateStreamingServiceActionDetails build() {
-            CreateStreamingServiceActionDetails __instance__ =
-                    new CreateStreamingServiceActionDetails(isEnabled, description, streamId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateStreamingServiceActionDetails model =
+                    new CreateStreamingServiceActionDetails(
+                            this.isEnabled, this.description, this.streamId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateStreamingServiceActionDetails o) {
-            Builder copiedBuilder =
-                    isEnabled(o.getIsEnabled())
-                            .description(o.getDescription())
-                            .streamId(o.getStreamId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateStreamingServiceActionDetails model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("streamId")) {
+                this.streamId(model.getStreamId());
+            }
+            return this;
         }
     }
 
@@ -134,7 +140,6 @@ public final class CreateStreamingServiceActionDetails extends ActionDetails {
         sb.append("CreateStreamingServiceActionDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", streamId=").append(String.valueOf(this.streamId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -149,9 +154,7 @@ public final class CreateStreamingServiceActionDetails extends ActionDetails {
         }
 
         CreateStreamingServiceActionDetails other = (CreateStreamingServiceActionDetails) o;
-        return java.util.Objects.equals(this.streamId, other.streamId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.streamId, other.streamId) && super.equals(other);
     }
 
     @Override
@@ -159,16 +162,6 @@ public final class CreateStreamingServiceActionDetails extends ActionDetails {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.streamId == null ? 43 : this.streamId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

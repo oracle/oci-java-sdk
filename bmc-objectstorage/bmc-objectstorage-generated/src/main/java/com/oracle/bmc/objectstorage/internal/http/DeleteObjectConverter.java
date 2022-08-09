@@ -119,8 +119,8 @@ public class DeleteObjectConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .DeleteObjectResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =

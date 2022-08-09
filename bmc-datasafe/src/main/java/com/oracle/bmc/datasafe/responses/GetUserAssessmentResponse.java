@@ -53,16 +53,18 @@ public class GetUserAssessmentResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "userAssessment"
     })
     private GetUserAssessmentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datasafe.model.UserAssessment userAssessment) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.userAssessment = userAssessment;
@@ -73,6 +75,13 @@ public class GetUserAssessmentResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +140,7 @@ public class GetUserAssessmentResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetUserAssessmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             userAssessment(o.getUserAssessment());
@@ -144,7 +154,7 @@ public class GetUserAssessmentResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public GetUserAssessmentResponse build() {
             return new GetUserAssessmentResponse(
-                    __httpStatusCode__, etag, opcRequestId, userAssessment);
+                    __httpStatusCode__, headers, etag, opcRequestId, userAssessment);
         }
     }
 

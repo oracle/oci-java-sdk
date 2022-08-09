@@ -17,7 +17,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AttributeSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AttributeSummary {
+public final class AttributeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -591,74 +591,129 @@ public final class AttributeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AttributeSummary build() {
-            AttributeSummary __instance__ =
+            AttributeSummary model =
                     new AttributeSummary(
-                            key,
-                            displayName,
-                            businessName,
-                            description,
-                            entityKey,
-                            externalKey,
-                            length,
-                            position,
-                            precision,
-                            scale,
-                            isNullable,
-                            uri,
-                            lifecycleState,
-                            timeCreated,
-                            externalDataType,
-                            typeKey,
-                            minCollectionCount,
-                            maxCollectionCount,
-                            datatypeEntityKey,
-                            externalDatatypeEntityKey,
-                            parentAttributeKey,
-                            externalParentAttributeKey,
-                            path,
-                            customPropertyMembers,
-                            associatedRuleTypes,
-                            isDerivedAttribute,
-                            timeUpdated,
-                            properties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.businessName,
+                            this.description,
+                            this.entityKey,
+                            this.externalKey,
+                            this.length,
+                            this.position,
+                            this.precision,
+                            this.scale,
+                            this.isNullable,
+                            this.uri,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.externalDataType,
+                            this.typeKey,
+                            this.minCollectionCount,
+                            this.maxCollectionCount,
+                            this.datatypeEntityKey,
+                            this.externalDatatypeEntityKey,
+                            this.parentAttributeKey,
+                            this.externalParentAttributeKey,
+                            this.path,
+                            this.customPropertyMembers,
+                            this.associatedRuleTypes,
+                            this.isDerivedAttribute,
+                            this.timeUpdated,
+                            this.properties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AttributeSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .businessName(o.getBusinessName())
-                            .description(o.getDescription())
-                            .entityKey(o.getEntityKey())
-                            .externalKey(o.getExternalKey())
-                            .length(o.getLength())
-                            .position(o.getPosition())
-                            .precision(o.getPrecision())
-                            .scale(o.getScale())
-                            .isNullable(o.getIsNullable())
-                            .uri(o.getUri())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .externalDataType(o.getExternalDataType())
-                            .typeKey(o.getTypeKey())
-                            .minCollectionCount(o.getMinCollectionCount())
-                            .maxCollectionCount(o.getMaxCollectionCount())
-                            .datatypeEntityKey(o.getDatatypeEntityKey())
-                            .externalDatatypeEntityKey(o.getExternalDatatypeEntityKey())
-                            .parentAttributeKey(o.getParentAttributeKey())
-                            .externalParentAttributeKey(o.getExternalParentAttributeKey())
-                            .path(o.getPath())
-                            .customPropertyMembers(o.getCustomPropertyMembers())
-                            .associatedRuleTypes(o.getAssociatedRuleTypes())
-                            .isDerivedAttribute(o.getIsDerivedAttribute())
-                            .timeUpdated(o.getTimeUpdated())
-                            .properties(o.getProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AttributeSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("businessName")) {
+                this.businessName(model.getBusinessName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("entityKey")) {
+                this.entityKey(model.getEntityKey());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("length")) {
+                this.length(model.getLength());
+            }
+            if (model.wasPropertyExplicitlySet("position")) {
+                this.position(model.getPosition());
+            }
+            if (model.wasPropertyExplicitlySet("precision")) {
+                this.precision(model.getPrecision());
+            }
+            if (model.wasPropertyExplicitlySet("scale")) {
+                this.scale(model.getScale());
+            }
+            if (model.wasPropertyExplicitlySet("isNullable")) {
+                this.isNullable(model.getIsNullable());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("externalDataType")) {
+                this.externalDataType(model.getExternalDataType());
+            }
+            if (model.wasPropertyExplicitlySet("typeKey")) {
+                this.typeKey(model.getTypeKey());
+            }
+            if (model.wasPropertyExplicitlySet("minCollectionCount")) {
+                this.minCollectionCount(model.getMinCollectionCount());
+            }
+            if (model.wasPropertyExplicitlySet("maxCollectionCount")) {
+                this.maxCollectionCount(model.getMaxCollectionCount());
+            }
+            if (model.wasPropertyExplicitlySet("datatypeEntityKey")) {
+                this.datatypeEntityKey(model.getDatatypeEntityKey());
+            }
+            if (model.wasPropertyExplicitlySet("externalDatatypeEntityKey")) {
+                this.externalDatatypeEntityKey(model.getExternalDatatypeEntityKey());
+            }
+            if (model.wasPropertyExplicitlySet("parentAttributeKey")) {
+                this.parentAttributeKey(model.getParentAttributeKey());
+            }
+            if (model.wasPropertyExplicitlySet("externalParentAttributeKey")) {
+                this.externalParentAttributeKey(model.getExternalParentAttributeKey());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("customPropertyMembers")) {
+                this.customPropertyMembers(model.getCustomPropertyMembers());
+            }
+            if (model.wasPropertyExplicitlySet("associatedRuleTypes")) {
+                this.associatedRuleTypes(model.getAssociatedRuleTypes());
+            }
+            if (model.wasPropertyExplicitlySet("isDerivedAttribute")) {
+                this.isDerivedAttribute(model.getIsDerivedAttribute());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            return this;
         }
     }
 
@@ -1104,6 +1159,7 @@ public final class AttributeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AttributeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", businessName=").append(String.valueOf(this.businessName));
@@ -1134,7 +1190,6 @@ public final class AttributeSummary {
         sb.append(", isDerivedAttribute=").append(String.valueOf(this.isDerivedAttribute));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", properties=").append(String.valueOf(this.properties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1179,7 +1234,7 @@ public final class AttributeSummary {
                 && java.util.Objects.equals(this.isDerivedAttribute, other.isDerivedAttribute)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.properties, other.properties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1252,16 +1307,7 @@ public final class AttributeSummary {
                                 : this.isDerivedAttribute.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

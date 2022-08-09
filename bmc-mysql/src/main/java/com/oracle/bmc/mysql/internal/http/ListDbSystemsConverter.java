@@ -198,8 +198,8 @@ public class ListDbSystemsConverter {
                                         builder =
                                                 com.oracle.bmc.mysql.responses.ListDbSystemsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

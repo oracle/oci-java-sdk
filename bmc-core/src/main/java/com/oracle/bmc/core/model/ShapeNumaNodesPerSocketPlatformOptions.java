@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = ShapeNumaNodesPerSocketPlatformOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ShapeNumaNodesPerSocketPlatformOptions {
+public final class ShapeNumaNodesPerSocketPlatformOptions
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"allowedValues", "defaultValue"})
     public ShapeNumaNodesPerSocketPlatformOptions(
@@ -73,19 +74,24 @@ public final class ShapeNumaNodesPerSocketPlatformOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShapeNumaNodesPerSocketPlatformOptions build() {
-            ShapeNumaNodesPerSocketPlatformOptions __instance__ =
-                    new ShapeNumaNodesPerSocketPlatformOptions(allowedValues, defaultValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ShapeNumaNodesPerSocketPlatformOptions model =
+                    new ShapeNumaNodesPerSocketPlatformOptions(
+                            this.allowedValues, this.defaultValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ShapeNumaNodesPerSocketPlatformOptions o) {
-            Builder copiedBuilder =
-                    allowedValues(o.getAllowedValues()).defaultValue(o.getDefaultValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ShapeNumaNodesPerSocketPlatformOptions model) {
+            if (model.wasPropertyExplicitlySet("allowedValues")) {
+                this.allowedValues(model.getAllowedValues());
+            }
+            if (model.wasPropertyExplicitlySet("defaultValue")) {
+                this.defaultValue(model.getDefaultValue());
+            }
+            return this;
         }
     }
 
@@ -194,9 +200,9 @@ public final class ShapeNumaNodesPerSocketPlatformOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ShapeNumaNodesPerSocketPlatformOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("allowedValues=").append(String.valueOf(this.allowedValues));
         sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -213,7 +219,7 @@ public final class ShapeNumaNodesPerSocketPlatformOptions {
         ShapeNumaNodesPerSocketPlatformOptions other = (ShapeNumaNodesPerSocketPlatformOptions) o;
         return java.util.Objects.equals(this.allowedValues, other.allowedValues)
                 && java.util.Objects.equals(this.defaultValue, other.defaultValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -224,16 +230,7 @@ public final class ShapeNumaNodesPerSocketPlatformOptions {
                 (result * PRIME)
                         + (this.allowedValues == null ? 43 : this.allowedValues.hashCode());
         result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -154,8 +154,8 @@ public class ListProfilesConverter {
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
                                                         .ListProfilesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.profileCollection(response.getItem());
 

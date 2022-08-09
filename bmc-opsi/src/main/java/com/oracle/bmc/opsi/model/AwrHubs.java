@@ -17,7 +17,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AwrHubs.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwrHubs {
+public final class AwrHubs extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"awrHubs"})
     public AwrHubs(Object awrHubs) {
@@ -48,17 +48,19 @@ public final class AwrHubs {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrHubs build() {
-            AwrHubs __instance__ = new AwrHubs(awrHubs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AwrHubs model = new AwrHubs(this.awrHubs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrHubs o) {
-            Builder copiedBuilder = awrHubs(o.getAwrHubs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrHubs model) {
+            if (model.wasPropertyExplicitlySet("awrHubs")) {
+                this.awrHubs(model.getAwrHubs());
+            }
+            return this;
         }
     }
 
@@ -100,8 +102,8 @@ public final class AwrHubs {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrHubs(");
+        sb.append("super=").append(super.toString());
         sb.append("awrHubs=").append(String.valueOf(this.awrHubs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -116,8 +118,7 @@ public final class AwrHubs {
         }
 
         AwrHubs other = (AwrHubs) o;
-        return java.util.Objects.equals(this.awrHubs, other.awrHubs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.awrHubs, other.awrHubs) && super.equals(other);
     }
 
     @Override
@@ -125,16 +126,7 @@ public final class AwrHubs {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.awrHubs == null ? 43 : this.awrHubs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

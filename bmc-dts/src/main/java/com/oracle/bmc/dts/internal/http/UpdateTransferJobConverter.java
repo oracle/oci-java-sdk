@@ -108,8 +108,8 @@ public class UpdateTransferJobConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .UpdateTransferJobResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.transferJob(response.getItem());
 

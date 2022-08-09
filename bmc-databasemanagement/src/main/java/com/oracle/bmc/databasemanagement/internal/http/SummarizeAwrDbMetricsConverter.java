@@ -211,8 +211,8 @@ public class SummarizeAwrDbMetricsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .SummarizeAwrDbMetricsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDbMetricCollection(response.getItem());
 

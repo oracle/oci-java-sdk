@@ -142,8 +142,8 @@ public class UpdateDomainRecordsConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses
                                                         .UpdateDomainRecordsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.recordCollection(response.getItem());
 

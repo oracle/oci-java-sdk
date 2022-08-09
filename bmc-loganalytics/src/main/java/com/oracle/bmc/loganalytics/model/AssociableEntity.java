@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AssociableEntity.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AssociableEntity {
+public final class AssociableEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "entityId",
@@ -186,34 +186,49 @@ public final class AssociableEntity {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AssociableEntity build() {
-            AssociableEntity __instance__ =
+            AssociableEntity model =
                     new AssociableEntity(
-                            entityId,
-                            entityName,
-                            entityTypeName,
-                            entityTypeDisplayName,
-                            host,
-                            agentId,
-                            eligibilityStatus,
-                            ineligibilityDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.entityId,
+                            this.entityName,
+                            this.entityTypeName,
+                            this.entityTypeDisplayName,
+                            this.host,
+                            this.agentId,
+                            this.eligibilityStatus,
+                            this.ineligibilityDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AssociableEntity o) {
-            Builder copiedBuilder =
-                    entityId(o.getEntityId())
-                            .entityName(o.getEntityName())
-                            .entityTypeName(o.getEntityTypeName())
-                            .entityTypeDisplayName(o.getEntityTypeDisplayName())
-                            .host(o.getHost())
-                            .agentId(o.getAgentId())
-                            .eligibilityStatus(o.getEligibilityStatus())
-                            .ineligibilityDetails(o.getIneligibilityDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AssociableEntity model) {
+            if (model.wasPropertyExplicitlySet("entityId")) {
+                this.entityId(model.getEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("entityName")) {
+                this.entityName(model.getEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("entityTypeName")) {
+                this.entityTypeName(model.getEntityTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("entityTypeDisplayName")) {
+                this.entityTypeDisplayName(model.getEntityTypeDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("host")) {
+                this.host(model.getHost());
+            }
+            if (model.wasPropertyExplicitlySet("agentId")) {
+                this.agentId(model.getAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("eligibilityStatus")) {
+                this.eligibilityStatus(model.getEligibilityStatus());
+            }
+            if (model.wasPropertyExplicitlySet("ineligibilityDetails")) {
+                this.ineligibilityDetails(model.getIneligibilityDetails());
+            }
+            return this;
         }
     }
 
@@ -404,6 +419,7 @@ public final class AssociableEntity {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AssociableEntity(");
+        sb.append("super=").append(super.toString());
         sb.append("entityId=").append(String.valueOf(this.entityId));
         sb.append(", entityName=").append(String.valueOf(this.entityName));
         sb.append(", entityTypeName=").append(String.valueOf(this.entityTypeName));
@@ -412,7 +428,6 @@ public final class AssociableEntity {
         sb.append(", agentId=").append(String.valueOf(this.agentId));
         sb.append(", eligibilityStatus=").append(String.valueOf(this.eligibilityStatus));
         sb.append(", ineligibilityDetails=").append(String.valueOf(this.ineligibilityDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -435,7 +450,7 @@ public final class AssociableEntity {
                 && java.util.Objects.equals(this.agentId, other.agentId)
                 && java.util.Objects.equals(this.eligibilityStatus, other.eligibilityStatus)
                 && java.util.Objects.equals(this.ineligibilityDetails, other.ineligibilityDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -462,16 +477,7 @@ public final class AssociableEntity {
                         + (this.ineligibilityDetails == null
                                 ? 43
                                 : this.ineligibilityDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

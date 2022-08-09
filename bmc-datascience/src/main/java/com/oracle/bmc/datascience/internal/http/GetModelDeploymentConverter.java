@@ -106,8 +106,8 @@ public class GetModelDeploymentConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .GetModelDeploymentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.modelDeployment(response.getItem());
 

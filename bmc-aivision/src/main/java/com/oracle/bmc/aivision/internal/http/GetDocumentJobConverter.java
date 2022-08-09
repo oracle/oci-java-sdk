@@ -103,8 +103,8 @@ public class GetDocumentJobConverter {
                                         builder =
                                                 com.oracle.bmc.aivision.responses
                                                         .GetDocumentJobResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.documentJob(response.getItem());
 

@@ -188,50 +188,81 @@ public final class KernelOopsEvent extends Event {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KernelOopsEvent build() {
-            KernelOopsEvent __instance__ =
+            KernelOopsEvent model =
                     new KernelOopsEvent(
-                            id,
-                            instanceId,
-                            compartmentId,
-                            tenancyId,
-                            summary,
-                            timestamp,
-                            eventFingerprint,
-                            count,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            reason,
-                            timeFirstOccurred,
-                            vmcore,
-                            content,
-                            system);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.instanceId,
+                            this.compartmentId,
+                            this.tenancyId,
+                            this.summary,
+                            this.timestamp,
+                            this.eventFingerprint,
+                            this.count,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.reason,
+                            this.timeFirstOccurred,
+                            this.vmcore,
+                            this.content,
+                            this.system);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(KernelOopsEvent o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .instanceId(o.getInstanceId())
-                            .compartmentId(o.getCompartmentId())
-                            .tenancyId(o.getTenancyId())
-                            .summary(o.getSummary())
-                            .timestamp(o.getTimestamp())
-                            .eventFingerprint(o.getEventFingerprint())
-                            .count(o.getCount())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .reason(o.getReason())
-                            .timeFirstOccurred(o.getTimeFirstOccurred())
-                            .vmcore(o.getVmcore())
-                            .content(o.getContent())
-                            .system(o.getSystem());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(KernelOopsEvent model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("tenancyId")) {
+                this.tenancyId(model.getTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("summary")) {
+                this.summary(model.getSummary());
+            }
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("eventFingerprint")) {
+                this.eventFingerprint(model.getEventFingerprint());
+            }
+            if (model.wasPropertyExplicitlySet("count")) {
+                this.count(model.getCount());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("reason")) {
+                this.reason(model.getReason());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstOccurred")) {
+                this.timeFirstOccurred(model.getTimeFirstOccurred());
+            }
+            if (model.wasPropertyExplicitlySet("vmcore")) {
+                this.vmcore(model.getVmcore());
+            }
+            if (model.wasPropertyExplicitlySet("content")) {
+                this.content(model.getContent());
+            }
+            if (model.wasPropertyExplicitlySet("system")) {
+                this.system(model.getSystem());
+            }
+            return this;
         }
     }
 
@@ -351,7 +382,6 @@ public final class KernelOopsEvent extends Event {
         sb.append(", vmcore=").append(String.valueOf(this.vmcore));
         sb.append(", content=").append(String.valueOf(this.content));
         sb.append(", system=").append(String.valueOf(this.system));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -371,8 +401,7 @@ public final class KernelOopsEvent extends Event {
                 && java.util.Objects.equals(this.vmcore, other.vmcore)
                 && java.util.Objects.equals(this.content, other.content)
                 && java.util.Objects.equals(this.system, other.system)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -386,16 +415,6 @@ public final class KernelOopsEvent extends Event {
         result = (result * PRIME) + (this.vmcore == null ? 43 : this.vmcore.hashCode());
         result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
         result = (result * PRIME) + (this.system == null ? 43 : this.system.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

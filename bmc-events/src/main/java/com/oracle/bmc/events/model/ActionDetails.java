@@ -37,7 +37,7 @@ package com.oracle.bmc.events.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ActionDetails {
+public class ActionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled", "description"})
     protected ActionDetails(Boolean isEnabled, String description) {
@@ -97,6 +97,7 @@ public class ActionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ActionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
@@ -114,7 +115,8 @@ public class ActionDetails {
 
         ActionDetails other = (ActionDetails) o;
         return java.util.Objects.equals(this.isEnabled, other.isEnabled)
-                && java.util.Objects.equals(this.description, other.description);
+                && java.util.Objects.equals(this.description, other.description)
+                && super.equals(other);
     }
 
     @Override
@@ -123,6 +125,7 @@ public class ActionDetails {
         int result = 1;
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

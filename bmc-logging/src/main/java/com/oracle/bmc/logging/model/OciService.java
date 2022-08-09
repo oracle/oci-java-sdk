@@ -94,21 +94,29 @@ public final class OciService extends Source {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OciService build() {
-            OciService __instance__ = new OciService(service, resource, category, parameters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OciService model =
+                    new OciService(this.service, this.resource, this.category, this.parameters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OciService o) {
-            Builder copiedBuilder =
-                    service(o.getService())
-                            .resource(o.getResource())
-                            .category(o.getCategory())
-                            .parameters(o.getParameters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OciService model) {
+            if (model.wasPropertyExplicitlySet("service")) {
+                this.service(model.getService());
+            }
+            if (model.wasPropertyExplicitlySet("resource")) {
+                this.resource(model.getResource());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            return this;
         }
     }
 
@@ -210,7 +218,6 @@ public final class OciService extends Source {
         sb.append(", resource=").append(String.valueOf(this.resource));
         sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -229,8 +236,7 @@ public final class OciService extends Source {
                 && java.util.Objects.equals(this.resource, other.resource)
                 && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.parameters, other.parameters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -241,16 +247,6 @@ public final class OciService extends Source {
         result = (result * PRIME) + (this.resource == null ? 43 : this.resource.hashCode());
         result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

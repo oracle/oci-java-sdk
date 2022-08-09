@@ -19,7 +19,8 @@ package com.oracle.bmc.identity.model;
     builder = StandardTagDefinitionTemplate.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StandardTagDefinitionTemplate {
+public final class StandardTagDefinitionTemplate
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -148,30 +149,41 @@ public final class StandardTagDefinitionTemplate {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StandardTagDefinitionTemplate build() {
-            StandardTagDefinitionTemplate __instance__ =
+            StandardTagDefinitionTemplate model =
                     new StandardTagDefinitionTemplate(
-                            description,
-                            tagDefinitionName,
-                            type,
-                            possibleValues,
-                            isCostTracking,
-                            enumMutability);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.tagDefinitionName,
+                            this.type,
+                            this.possibleValues,
+                            this.isCostTracking,
+                            this.enumMutability);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StandardTagDefinitionTemplate o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .tagDefinitionName(o.getTagDefinitionName())
-                            .type(o.getType())
-                            .possibleValues(o.getPossibleValues())
-                            .isCostTracking(o.getIsCostTracking())
-                            .enumMutability(o.getEnumMutability());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StandardTagDefinitionTemplate model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("tagDefinitionName")) {
+                this.tagDefinitionName(model.getTagDefinitionName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("possibleValues")) {
+                this.possibleValues(model.getPossibleValues());
+            }
+            if (model.wasPropertyExplicitlySet("isCostTracking")) {
+                this.isCostTracking(model.getIsCostTracking());
+            }
+            if (model.wasPropertyExplicitlySet("enumMutability")) {
+                this.enumMutability(model.getEnumMutability());
+            }
+            return this;
         }
     }
 
@@ -378,13 +390,13 @@ public final class StandardTagDefinitionTemplate {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StandardTagDefinitionTemplate(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", tagDefinitionName=").append(String.valueOf(this.tagDefinitionName));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", possibleValues=").append(String.valueOf(this.possibleValues));
         sb.append(", isCostTracking=").append(String.valueOf(this.isCostTracking));
         sb.append(", enumMutability=").append(String.valueOf(this.enumMutability));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -405,7 +417,7 @@ public final class StandardTagDefinitionTemplate {
                 && java.util.Objects.equals(this.possibleValues, other.possibleValues)
                 && java.util.Objects.equals(this.isCostTracking, other.isCostTracking)
                 && java.util.Objects.equals(this.enumMutability, other.enumMutability)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -426,16 +438,7 @@ public final class StandardTagDefinitionTemplate {
         result =
                 (result * PRIME)
                         + (this.enumMutability == null ? 43 : this.enumMutability.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -62,17 +62,19 @@ public class SummarizeSqlResponseTimeDistributionsResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "sqlResponseTimeDistributionAggregationCollection"
     })
     private SummarizeSqlResponseTimeDistributionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.opsi.model.SqlResponseTimeDistributionAggregationCollection
                     sqlResponseTimeDistributionAggregationCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.sqlResponseTimeDistributionAggregationCollection =
@@ -84,6 +86,13 @@ public class SummarizeSqlResponseTimeDistributionsResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -152,6 +161,7 @@ public class SummarizeSqlResponseTimeDistributionsResponse
          */
         public Builder copy(SummarizeSqlResponseTimeDistributionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             sqlResponseTimeDistributionAggregationCollection(
@@ -167,6 +177,7 @@ public class SummarizeSqlResponseTimeDistributionsResponse
         public SummarizeSqlResponseTimeDistributionsResponse build() {
             return new SummarizeSqlResponseTimeDistributionsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     sqlResponseTimeDistributionAggregationCollection);

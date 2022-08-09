@@ -24,7 +24,7 @@ package com.oracle.bmc.datasafe.model;
     builder = AuditSpecification.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuditSpecification {
+public final class AuditSpecification extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "auditPolicyName",
@@ -250,40 +250,61 @@ public final class AuditSpecification {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuditSpecification build() {
-            AuditSpecification __instance__ =
+            AuditSpecification model =
                     new AuditSpecification(
-                            auditPolicyName,
-                            databasePolicyNames,
-                            auditPolicyCategory,
-                            enableStatus,
-                            partiallyEnabledMsg,
-                            isEnabledForAllUsers,
-                            isViewOnly,
-                            isSeededInTarget,
-                            isSeededInDataSafe,
-                            isCreated,
-                            enabledEntities);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.auditPolicyName,
+                            this.databasePolicyNames,
+                            this.auditPolicyCategory,
+                            this.enableStatus,
+                            this.partiallyEnabledMsg,
+                            this.isEnabledForAllUsers,
+                            this.isViewOnly,
+                            this.isSeededInTarget,
+                            this.isSeededInDataSafe,
+                            this.isCreated,
+                            this.enabledEntities);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AuditSpecification o) {
-            Builder copiedBuilder =
-                    auditPolicyName(o.getAuditPolicyName())
-                            .databasePolicyNames(o.getDatabasePolicyNames())
-                            .auditPolicyCategory(o.getAuditPolicyCategory())
-                            .enableStatus(o.getEnableStatus())
-                            .partiallyEnabledMsg(o.getPartiallyEnabledMsg())
-                            .isEnabledForAllUsers(o.getIsEnabledForAllUsers())
-                            .isViewOnly(o.getIsViewOnly())
-                            .isSeededInTarget(o.getIsSeededInTarget())
-                            .isSeededInDataSafe(o.getIsSeededInDataSafe())
-                            .isCreated(o.getIsCreated())
-                            .enabledEntities(o.getEnabledEntities());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AuditSpecification model) {
+            if (model.wasPropertyExplicitlySet("auditPolicyName")) {
+                this.auditPolicyName(model.getAuditPolicyName());
+            }
+            if (model.wasPropertyExplicitlySet("databasePolicyNames")) {
+                this.databasePolicyNames(model.getDatabasePolicyNames());
+            }
+            if (model.wasPropertyExplicitlySet("auditPolicyCategory")) {
+                this.auditPolicyCategory(model.getAuditPolicyCategory());
+            }
+            if (model.wasPropertyExplicitlySet("enableStatus")) {
+                this.enableStatus(model.getEnableStatus());
+            }
+            if (model.wasPropertyExplicitlySet("partiallyEnabledMsg")) {
+                this.partiallyEnabledMsg(model.getPartiallyEnabledMsg());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabledForAllUsers")) {
+                this.isEnabledForAllUsers(model.getIsEnabledForAllUsers());
+            }
+            if (model.wasPropertyExplicitlySet("isViewOnly")) {
+                this.isViewOnly(model.getIsViewOnly());
+            }
+            if (model.wasPropertyExplicitlySet("isSeededInTarget")) {
+                this.isSeededInTarget(model.getIsSeededInTarget());
+            }
+            if (model.wasPropertyExplicitlySet("isSeededInDataSafe")) {
+                this.isSeededInDataSafe(model.getIsSeededInDataSafe());
+            }
+            if (model.wasPropertyExplicitlySet("isCreated")) {
+                this.isCreated(model.getIsCreated());
+            }
+            if (model.wasPropertyExplicitlySet("enabledEntities")) {
+                this.enabledEntities(model.getEnabledEntities());
+            }
+            return this;
         }
     }
 
@@ -568,6 +589,7 @@ public final class AuditSpecification {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuditSpecification(");
+        sb.append("super=").append(super.toString());
         sb.append("auditPolicyName=").append(String.valueOf(this.auditPolicyName));
         sb.append(", databasePolicyNames=").append(String.valueOf(this.databasePolicyNames));
         sb.append(", auditPolicyCategory=").append(String.valueOf(this.auditPolicyCategory));
@@ -579,7 +601,6 @@ public final class AuditSpecification {
         sb.append(", isSeededInDataSafe=").append(String.valueOf(this.isSeededInDataSafe));
         sb.append(", isCreated=").append(String.valueOf(this.isCreated));
         sb.append(", enabledEntities=").append(String.valueOf(this.enabledEntities));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -605,7 +626,7 @@ public final class AuditSpecification {
                 && java.util.Objects.equals(this.isSeededInDataSafe, other.isSeededInDataSafe)
                 && java.util.Objects.equals(this.isCreated, other.isCreated)
                 && java.util.Objects.equals(this.enabledEntities, other.enabledEntities)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -649,16 +670,7 @@ public final class AuditSpecification {
         result =
                 (result * PRIME)
                         + (this.enabledEntities == null ? 43 : this.enabledEntities.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

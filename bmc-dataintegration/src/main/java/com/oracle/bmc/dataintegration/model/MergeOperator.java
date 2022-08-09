@@ -165,44 +165,69 @@ public final class MergeOperator extends Operator {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MergeOperator build() {
-            MergeOperator __instance__ =
+            MergeOperator model =
                     new MergeOperator(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            inputPorts,
-                            outputPorts,
-                            objectStatus,
-                            identifier,
-                            parameters,
-                            opConfigValues,
-                            triggerRule);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.inputPorts,
+                            this.outputPorts,
+                            this.objectStatus,
+                            this.identifier,
+                            this.parameters,
+                            this.opConfigValues,
+                            this.triggerRule);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MergeOperator o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .inputPorts(o.getInputPorts())
-                            .outputPorts(o.getOutputPorts())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .parameters(o.getParameters())
-                            .opConfigValues(o.getOpConfigValues())
-                            .triggerRule(o.getTriggerRule());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MergeOperator model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("inputPorts")) {
+                this.inputPorts(model.getInputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("outputPorts")) {
+                this.outputPorts(model.getOutputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("opConfigValues")) {
+                this.opConfigValues(model.getOpConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("triggerRule")) {
+                this.triggerRule(model.getTriggerRule());
+            }
+            return this;
         }
     }
 
@@ -346,7 +371,6 @@ public final class MergeOperator extends Operator {
         sb.append("MergeOperator(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", triggerRule=").append(String.valueOf(this.triggerRule));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -361,9 +385,7 @@ public final class MergeOperator extends Operator {
         }
 
         MergeOperator other = (MergeOperator) o;
-        return java.util.Objects.equals(this.triggerRule, other.triggerRule)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.triggerRule, other.triggerRule) && super.equals(other);
     }
 
     @Override
@@ -371,16 +393,6 @@ public final class MergeOperator extends Operator {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.triggerRule == null ? 43 : this.triggerRule.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

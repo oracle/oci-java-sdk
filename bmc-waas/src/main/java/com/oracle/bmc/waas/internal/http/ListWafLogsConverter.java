@@ -290,7 +290,8 @@ public class ListWafLogsConverter {
 
                                 com.oracle.bmc.waas.responses.ListWafLogsResponse.Builder builder =
                                         com.oracle.bmc.waas.responses.ListWafLogsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

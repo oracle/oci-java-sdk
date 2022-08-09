@@ -17,7 +17,7 @@ package com.oracle.bmc.aivision.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DocumentField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DocumentField {
+public final class DocumentField extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldType", "fieldLabel", "fieldName", "fieldValue"})
     public DocumentField(
@@ -82,22 +82,30 @@ public final class DocumentField {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DocumentField build() {
-            DocumentField __instance__ =
-                    new DocumentField(fieldType, fieldLabel, fieldName, fieldValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DocumentField model =
+                    new DocumentField(
+                            this.fieldType, this.fieldLabel, this.fieldName, this.fieldValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DocumentField o) {
-            Builder copiedBuilder =
-                    fieldType(o.getFieldType())
-                            .fieldLabel(o.getFieldLabel())
-                            .fieldName(o.getFieldName())
-                            .fieldValue(o.getFieldValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DocumentField model) {
+            if (model.wasPropertyExplicitlySet("fieldType")) {
+                this.fieldType(model.getFieldType());
+            }
+            if (model.wasPropertyExplicitlySet("fieldLabel")) {
+                this.fieldLabel(model.getFieldLabel());
+            }
+            if (model.wasPropertyExplicitlySet("fieldName")) {
+                this.fieldName(model.getFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("fieldValue")) {
+                this.fieldValue(model.getFieldValue());
+            }
+            return this;
         }
     }
 
@@ -210,11 +218,11 @@ public final class DocumentField {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DocumentField(");
+        sb.append("super=").append(super.toString());
         sb.append("fieldType=").append(String.valueOf(this.fieldType));
         sb.append(", fieldLabel=").append(String.valueOf(this.fieldLabel));
         sb.append(", fieldName=").append(String.valueOf(this.fieldName));
         sb.append(", fieldValue=").append(String.valueOf(this.fieldValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -233,7 +241,7 @@ public final class DocumentField {
                 && java.util.Objects.equals(this.fieldLabel, other.fieldLabel)
                 && java.util.Objects.equals(this.fieldName, other.fieldName)
                 && java.util.Objects.equals(this.fieldValue, other.fieldValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -244,16 +252,7 @@ public final class DocumentField {
         result = (result * PRIME) + (this.fieldLabel == null ? 43 : this.fieldLabel.hashCode());
         result = (result * PRIME) + (this.fieldName == null ? 43 : this.fieldName.hashCode());
         result = (result * PRIME) + (this.fieldValue == null ? 43 : this.fieldValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

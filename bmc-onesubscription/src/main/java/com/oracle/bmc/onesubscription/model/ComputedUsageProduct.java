@@ -20,7 +20,7 @@ package com.oracle.bmc.onesubscription.model;
     builder = ComputedUsageProduct.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ComputedUsageProduct {
+public final class ComputedUsageProduct extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "partNumber",
@@ -182,32 +182,45 @@ public final class ComputedUsageProduct {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputedUsageProduct build() {
-            ComputedUsageProduct __instance__ =
+            ComputedUsageProduct model =
                     new ComputedUsageProduct(
-                            partNumber,
-                            name,
-                            unitOfMeasure,
-                            provisioningGroup,
-                            billingCategory,
-                            productCategory,
-                            ucmRateCardPartType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.partNumber,
+                            this.name,
+                            this.unitOfMeasure,
+                            this.provisioningGroup,
+                            this.billingCategory,
+                            this.productCategory,
+                            this.ucmRateCardPartType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputedUsageProduct o) {
-            Builder copiedBuilder =
-                    partNumber(o.getPartNumber())
-                            .name(o.getName())
-                            .unitOfMeasure(o.getUnitOfMeasure())
-                            .provisioningGroup(o.getProvisioningGroup())
-                            .billingCategory(o.getBillingCategory())
-                            .productCategory(o.getProductCategory())
-                            .ucmRateCardPartType(o.getUcmRateCardPartType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputedUsageProduct model) {
+            if (model.wasPropertyExplicitlySet("partNumber")) {
+                this.partNumber(model.getPartNumber());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("unitOfMeasure")) {
+                this.unitOfMeasure(model.getUnitOfMeasure());
+            }
+            if (model.wasPropertyExplicitlySet("provisioningGroup")) {
+                this.provisioningGroup(model.getProvisioningGroup());
+            }
+            if (model.wasPropertyExplicitlySet("billingCategory")) {
+                this.billingCategory(model.getBillingCategory());
+            }
+            if (model.wasPropertyExplicitlySet("productCategory")) {
+                this.productCategory(model.getProductCategory());
+            }
+            if (model.wasPropertyExplicitlySet("ucmRateCardPartType")) {
+                this.ucmRateCardPartType(model.getUcmRateCardPartType());
+            }
+            return this;
         }
     }
 
@@ -347,6 +360,7 @@ public final class ComputedUsageProduct {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ComputedUsageProduct(");
+        sb.append("super=").append(super.toString());
         sb.append("partNumber=").append(String.valueOf(this.partNumber));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", unitOfMeasure=").append(String.valueOf(this.unitOfMeasure));
@@ -354,7 +368,6 @@ public final class ComputedUsageProduct {
         sb.append(", billingCategory=").append(String.valueOf(this.billingCategory));
         sb.append(", productCategory=").append(String.valueOf(this.productCategory));
         sb.append(", ucmRateCardPartType=").append(String.valueOf(this.ucmRateCardPartType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -376,7 +389,7 @@ public final class ComputedUsageProduct {
                 && java.util.Objects.equals(this.billingCategory, other.billingCategory)
                 && java.util.Objects.equals(this.productCategory, other.productCategory)
                 && java.util.Objects.equals(this.ucmRateCardPartType, other.ucmRateCardPartType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -402,16 +415,7 @@ public final class ComputedUsageProduct {
                         + (this.ucmRateCardPartType == null
                                 ? 43
                                 : this.ucmRateCardPartType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

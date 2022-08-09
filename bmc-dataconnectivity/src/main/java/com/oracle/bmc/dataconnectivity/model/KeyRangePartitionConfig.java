@@ -57,19 +57,23 @@ public final class KeyRangePartitionConfig extends PartitionConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KeyRangePartitionConfig build() {
-            KeyRangePartitionConfig __instance__ =
-                    new KeyRangePartitionConfig(partitionNumber, keyRange);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            KeyRangePartitionConfig model =
+                    new KeyRangePartitionConfig(this.partitionNumber, this.keyRange);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(KeyRangePartitionConfig o) {
-            Builder copiedBuilder =
-                    partitionNumber(o.getPartitionNumber()).keyRange(o.getKeyRange());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(KeyRangePartitionConfig model) {
+            if (model.wasPropertyExplicitlySet("partitionNumber")) {
+                this.partitionNumber(model.getPartitionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("keyRange")) {
+                this.keyRange(model.getKeyRange());
+            }
+            return this;
         }
     }
 
@@ -128,7 +132,6 @@ public final class KeyRangePartitionConfig extends PartitionConfig {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", partitionNumber=").append(String.valueOf(this.partitionNumber));
         sb.append(", keyRange=").append(String.valueOf(this.keyRange));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -145,8 +148,7 @@ public final class KeyRangePartitionConfig extends PartitionConfig {
         KeyRangePartitionConfig other = (KeyRangePartitionConfig) o;
         return java.util.Objects.equals(this.partitionNumber, other.partitionNumber)
                 && java.util.Objects.equals(this.keyRange, other.keyRange)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -157,16 +159,6 @@ public final class KeyRangePartitionConfig extends PartitionConfig {
                 (result * PRIME)
                         + (this.partitionNumber == null ? 43 : this.partitionNumber.hashCode());
         result = (result * PRIME) + (this.keyRange == null ? 43 : this.keyRange.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -60,16 +60,18 @@ public class ListResourceProfilesResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "resourceProfileCollection"
     })
     private ListResourceProfilesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.ResourceProfileCollection resourceProfileCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.resourceProfileCollection = resourceProfileCollection;
@@ -80,6 +82,13 @@ public class ListResourceProfilesResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -146,6 +155,7 @@ public class ListResourceProfilesResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(ListResourceProfilesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             resourceProfileCollection(o.getResourceProfileCollection());
@@ -159,7 +169,11 @@ public class ListResourceProfilesResponse extends com.oracle.bmc.responses.BmcRe
          */
         public ListResourceProfilesResponse build() {
             return new ListResourceProfilesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, resourceProfileCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    resourceProfileCollection);
         }
     }
 

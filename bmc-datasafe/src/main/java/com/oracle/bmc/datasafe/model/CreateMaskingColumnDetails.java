@@ -40,7 +40,8 @@ package com.oracle.bmc.datasafe.model;
     builder = CreateMaskingColumnDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateMaskingColumnDetails {
+public final class CreateMaskingColumnDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "schemaName",
@@ -251,34 +252,49 @@ public final class CreateMaskingColumnDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateMaskingColumnDetails build() {
-            CreateMaskingColumnDetails __instance__ =
+            CreateMaskingColumnDetails model =
                     new CreateMaskingColumnDetails(
-                            schemaName,
-                            objectName,
-                            objectType,
-                            columnName,
-                            maskingColumnGroup,
-                            sensitiveTypeId,
-                            isMaskingEnabled,
-                            maskingFormats);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.schemaName,
+                            this.objectName,
+                            this.objectType,
+                            this.columnName,
+                            this.maskingColumnGroup,
+                            this.sensitiveTypeId,
+                            this.isMaskingEnabled,
+                            this.maskingFormats);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateMaskingColumnDetails o) {
-            Builder copiedBuilder =
-                    schemaName(o.getSchemaName())
-                            .objectName(o.getObjectName())
-                            .objectType(o.getObjectType())
-                            .columnName(o.getColumnName())
-                            .maskingColumnGroup(o.getMaskingColumnGroup())
-                            .sensitiveTypeId(o.getSensitiveTypeId())
-                            .isMaskingEnabled(o.getIsMaskingEnabled())
-                            .maskingFormats(o.getMaskingFormats());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateMaskingColumnDetails model) {
+            if (model.wasPropertyExplicitlySet("schemaName")) {
+                this.schemaName(model.getSchemaName());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("columnName")) {
+                this.columnName(model.getColumnName());
+            }
+            if (model.wasPropertyExplicitlySet("maskingColumnGroup")) {
+                this.maskingColumnGroup(model.getMaskingColumnGroup());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveTypeId")) {
+                this.sensitiveTypeId(model.getSensitiveTypeId());
+            }
+            if (model.wasPropertyExplicitlySet("isMaskingEnabled")) {
+                this.isMaskingEnabled(model.getIsMaskingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("maskingFormats")) {
+                this.maskingFormats(model.getMaskingFormats());
+            }
+            return this;
         }
     }
 
@@ -462,6 +478,7 @@ public final class CreateMaskingColumnDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateMaskingColumnDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("schemaName=").append(String.valueOf(this.schemaName));
         sb.append(", objectName=").append(String.valueOf(this.objectName));
         sb.append(", objectType=").append(String.valueOf(this.objectType));
@@ -470,7 +487,6 @@ public final class CreateMaskingColumnDetails {
         sb.append(", sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
         sb.append(", isMaskingEnabled=").append(String.valueOf(this.isMaskingEnabled));
         sb.append(", maskingFormats=").append(String.valueOf(this.maskingFormats));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -493,7 +509,7 @@ public final class CreateMaskingColumnDetails {
                 && java.util.Objects.equals(this.sensitiveTypeId, other.sensitiveTypeId)
                 && java.util.Objects.equals(this.isMaskingEnabled, other.isMaskingEnabled)
                 && java.util.Objects.equals(this.maskingFormats, other.maskingFormats)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -518,16 +534,7 @@ public final class CreateMaskingColumnDetails {
         result =
                 (result * PRIME)
                         + (this.maskingFormats == null ? 43 : this.maskingFormats.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

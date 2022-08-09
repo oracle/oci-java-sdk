@@ -157,8 +157,8 @@ public class GetQueryResultConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetQueryResultResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.queryAggregation(response.getItem());
 

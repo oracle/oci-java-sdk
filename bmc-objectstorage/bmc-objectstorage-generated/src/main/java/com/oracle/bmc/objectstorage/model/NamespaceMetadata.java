@@ -20,7 +20,7 @@ package com.oracle.bmc.objectstorage.model;
     builder = NamespaceMetadata.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class NamespaceMetadata {
+public final class NamespaceMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "namespace",
@@ -90,22 +90,29 @@ public final class NamespaceMetadata {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NamespaceMetadata build() {
-            NamespaceMetadata __instance__ =
+            NamespaceMetadata model =
                     new NamespaceMetadata(
-                            namespace, defaultS3CompartmentId, defaultSwiftCompartmentId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.namespace,
+                            this.defaultS3CompartmentId,
+                            this.defaultSwiftCompartmentId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NamespaceMetadata o) {
-            Builder copiedBuilder =
-                    namespace(o.getNamespace())
-                            .defaultS3CompartmentId(o.getDefaultS3CompartmentId())
-                            .defaultSwiftCompartmentId(o.getDefaultSwiftCompartmentId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NamespaceMetadata model) {
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("defaultS3CompartmentId")) {
+                this.defaultS3CompartmentId(model.getDefaultS3CompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("defaultSwiftCompartmentId")) {
+                this.defaultSwiftCompartmentId(model.getDefaultSwiftCompartmentId());
+            }
+            return this;
         }
     }
 
@@ -175,11 +182,11 @@ public final class NamespaceMetadata {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NamespaceMetadata(");
+        sb.append("super=").append(super.toString());
         sb.append("namespace=").append(String.valueOf(this.namespace));
         sb.append(", defaultS3CompartmentId=").append(String.valueOf(this.defaultS3CompartmentId));
         sb.append(", defaultSwiftCompartmentId=")
                 .append(String.valueOf(this.defaultSwiftCompartmentId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,7 +206,7 @@ public final class NamespaceMetadata {
                         this.defaultS3CompartmentId, other.defaultS3CompartmentId)
                 && java.util.Objects.equals(
                         this.defaultSwiftCompartmentId, other.defaultSwiftCompartmentId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -217,16 +224,7 @@ public final class NamespaceMetadata {
                         + (this.defaultSwiftCompartmentId == null
                                 ? 43
                                 : this.defaultSwiftCompartmentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

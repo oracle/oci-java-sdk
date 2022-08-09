@@ -53,13 +53,20 @@ public class GetFolderTagResponse extends com.oracle.bmc.responses.BmcResponse {
         return folderTag;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "folderTag"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "folderTag"
+    })
     private GetFolderTagResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.FolderTag folderTag) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.folderTag = folderTag;
@@ -70,6 +77,13 @@ public class GetFolderTagResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetFolderTagResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetFolderTagResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             folderTag(o.getFolderTag());
@@ -142,7 +157,8 @@ public class GetFolderTagResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetFolderTagResponse build() {
-            return new GetFolderTagResponse(__httpStatusCode__, etag, opcRequestId, folderTag);
+            return new GetFolderTagResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, folderTag);
         }
     }
 

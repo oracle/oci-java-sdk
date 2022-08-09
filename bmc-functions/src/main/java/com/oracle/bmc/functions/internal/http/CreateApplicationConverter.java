@@ -100,8 +100,8 @@ public class CreateApplicationConverter {
                                         builder =
                                                 com.oracle.bmc.functions.responses
                                                         .CreateApplicationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.application(response.getItem());
 

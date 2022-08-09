@@ -55,16 +55,18 @@ public class GetStreamCdnConfigResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "streamCdnConfig"
     })
     private GetStreamCdnConfigResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.mediaservices.model.StreamCdnConfig streamCdnConfig) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.streamCdnConfig = streamCdnConfig;
@@ -75,6 +77,13 @@ public class GetStreamCdnConfigResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetStreamCdnConfigResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetStreamCdnConfigResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             streamCdnConfig(o.getStreamCdnConfig());
@@ -149,7 +159,7 @@ public class GetStreamCdnConfigResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetStreamCdnConfigResponse build() {
             return new GetStreamCdnConfigResponse(
-                    __httpStatusCode__, etag, opcRequestId, streamCdnConfig);
+                    __httpStatusCode__, headers, etag, opcRequestId, streamCdnConfig);
         }
     }
 

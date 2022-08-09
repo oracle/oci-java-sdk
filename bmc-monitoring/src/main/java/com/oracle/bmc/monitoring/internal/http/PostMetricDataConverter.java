@@ -103,8 +103,8 @@ public class PostMetricDataConverter {
                                         builder =
                                                 com.oracle.bmc.monitoring.responses
                                                         .PostMetricDataResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.postMetricDataResponseDetails(response.getItem());
 

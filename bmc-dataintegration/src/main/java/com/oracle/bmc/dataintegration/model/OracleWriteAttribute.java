@@ -80,21 +80,26 @@ public final class OracleWriteAttribute extends AbstractWriteAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OracleWriteAttribute build() {
-            OracleWriteAttribute __instance__ =
-                    new OracleWriteAttribute(batchSize, isTruncate, isolationLevel);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OracleWriteAttribute model =
+                    new OracleWriteAttribute(this.batchSize, this.isTruncate, this.isolationLevel);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OracleWriteAttribute o) {
-            Builder copiedBuilder =
-                    batchSize(o.getBatchSize())
-                            .isTruncate(o.getIsTruncate())
-                            .isolationLevel(o.getIsolationLevel());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OracleWriteAttribute model) {
+            if (model.wasPropertyExplicitlySet("batchSize")) {
+                this.batchSize(model.getBatchSize());
+            }
+            if (model.wasPropertyExplicitlySet("isTruncate")) {
+                this.isTruncate(model.getIsTruncate());
+            }
+            if (model.wasPropertyExplicitlySet("isolationLevel")) {
+                this.isolationLevel(model.getIsolationLevel());
+            }
+            return this;
         }
     }
 
@@ -176,7 +181,6 @@ public final class OracleWriteAttribute extends AbstractWriteAttribute {
         sb.append(", batchSize=").append(String.valueOf(this.batchSize));
         sb.append(", isTruncate=").append(String.valueOf(this.isTruncate));
         sb.append(", isolationLevel=").append(String.valueOf(this.isolationLevel));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -194,8 +198,7 @@ public final class OracleWriteAttribute extends AbstractWriteAttribute {
         return java.util.Objects.equals(this.batchSize, other.batchSize)
                 && java.util.Objects.equals(this.isTruncate, other.isTruncate)
                 && java.util.Objects.equals(this.isolationLevel, other.isolationLevel)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -207,16 +210,6 @@ public final class OracleWriteAttribute extends AbstractWriteAttribute {
         result =
                 (result * PRIME)
                         + (this.isolationLevel == null ? 43 : this.isolationLevel.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

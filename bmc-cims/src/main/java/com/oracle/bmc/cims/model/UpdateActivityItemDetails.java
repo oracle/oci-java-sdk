@@ -67,18 +67,23 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateActivityItemDetails build() {
-            UpdateActivityItemDetails __instance__ =
-                    new UpdateActivityItemDetails(comments, activityType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateActivityItemDetails model =
+                    new UpdateActivityItemDetails(this.comments, this.activityType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateActivityItemDetails o) {
-            Builder copiedBuilder = comments(o.getComments()).activityType(o.getActivityType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateActivityItemDetails model) {
+            if (model.wasPropertyExplicitlySet("comments")) {
+                this.comments(model.getComments());
+            }
+            if (model.wasPropertyExplicitlySet("activityType")) {
+                this.activityType(model.getActivityType());
+            }
+            return this;
         }
     }
 
@@ -181,7 +186,6 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", comments=").append(String.valueOf(this.comments));
         sb.append(", activityType=").append(String.valueOf(this.activityType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -198,8 +202,7 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
         UpdateActivityItemDetails other = (UpdateActivityItemDetails) o;
         return java.util.Objects.equals(this.comments, other.comments)
                 && java.util.Objects.equals(this.activityType, other.activityType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -208,16 +211,6 @@ public final class UpdateActivityItemDetails extends UpdateItemDetails {
         int result = super.hashCode();
         result = (result * PRIME) + (this.comments == null ? 43 : this.comments.hashCode());
         result = (result * PRIME) + (this.activityType == null ? 43 : this.activityType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

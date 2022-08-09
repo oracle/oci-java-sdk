@@ -19,7 +19,7 @@ package com.oracle.bmc.fusionapps.model;
     builder = MaintenancePolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MaintenancePolicy {
+public final class MaintenancePolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"monthlyPatchingOverride", "environmentMaintenanceOverride"})
     public MaintenancePolicy(
@@ -70,20 +70,24 @@ public final class MaintenancePolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MaintenancePolicy build() {
-            MaintenancePolicy __instance__ =
-                    new MaintenancePolicy(monthlyPatchingOverride, environmentMaintenanceOverride);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MaintenancePolicy model =
+                    new MaintenancePolicy(
+                            this.monthlyPatchingOverride, this.environmentMaintenanceOverride);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MaintenancePolicy o) {
-            Builder copiedBuilder =
-                    monthlyPatchingOverride(o.getMonthlyPatchingOverride())
-                            .environmentMaintenanceOverride(o.getEnvironmentMaintenanceOverride());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MaintenancePolicy model) {
+            if (model.wasPropertyExplicitlySet("monthlyPatchingOverride")) {
+                this.monthlyPatchingOverride(model.getMonthlyPatchingOverride());
+            }
+            if (model.wasPropertyExplicitlySet("environmentMaintenanceOverride")) {
+                this.environmentMaintenanceOverride(model.getEnvironmentMaintenanceOverride());
+            }
+            return this;
         }
     }
 
@@ -211,10 +215,10 @@ public final class MaintenancePolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MaintenancePolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("monthlyPatchingOverride=").append(String.valueOf(this.monthlyPatchingOverride));
         sb.append(", environmentMaintenanceOverride=")
                 .append(String.valueOf(this.environmentMaintenanceOverride));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -232,7 +236,7 @@ public final class MaintenancePolicy {
         return java.util.Objects.equals(this.monthlyPatchingOverride, other.monthlyPatchingOverride)
                 && java.util.Objects.equals(
                         this.environmentMaintenanceOverride, other.environmentMaintenanceOverride)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -249,16 +253,7 @@ public final class MaintenancePolicy {
                         + (this.environmentMaintenanceOverride == null
                                 ? 43
                                 : this.environmentMaintenanceOverride.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

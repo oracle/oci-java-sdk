@@ -17,7 +17,7 @@ package com.oracle.bmc.cims.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Contact.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Contact {
+public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "contactName",
@@ -105,22 +105,33 @@ public final class Contact {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Contact build() {
-            Contact __instance__ =
-                    new Contact(contactName, contactEmail, contactPhone, contactType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Contact model =
+                    new Contact(
+                            this.contactName,
+                            this.contactEmail,
+                            this.contactPhone,
+                            this.contactType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Contact o) {
-            Builder copiedBuilder =
-                    contactName(o.getContactName())
-                            .contactEmail(o.getContactEmail())
-                            .contactPhone(o.getContactPhone())
-                            .contactType(o.getContactType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Contact model) {
+            if (model.wasPropertyExplicitlySet("contactName")) {
+                this.contactName(model.getContactName());
+            }
+            if (model.wasPropertyExplicitlySet("contactEmail")) {
+                this.contactEmail(model.getContactEmail());
+            }
+            if (model.wasPropertyExplicitlySet("contactPhone")) {
+                this.contactPhone(model.getContactPhone());
+            }
+            if (model.wasPropertyExplicitlySet("contactType")) {
+                this.contactType(model.getContactType());
+            }
+            return this;
         }
     }
 
@@ -255,11 +266,11 @@ public final class Contact {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Contact(");
+        sb.append("super=").append(super.toString());
         sb.append("contactName=").append(String.valueOf(this.contactName));
         sb.append(", contactEmail=").append(String.valueOf(this.contactEmail));
         sb.append(", contactPhone=").append(String.valueOf(this.contactPhone));
         sb.append(", contactType=").append(String.valueOf(this.contactType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -278,7 +289,7 @@ public final class Contact {
                 && java.util.Objects.equals(this.contactEmail, other.contactEmail)
                 && java.util.Objects.equals(this.contactPhone, other.contactPhone)
                 && java.util.Objects.equals(this.contactType, other.contactType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -289,16 +300,7 @@ public final class Contact {
         result = (result * PRIME) + (this.contactEmail == null ? 43 : this.contactEmail.hashCode());
         result = (result * PRIME) + (this.contactPhone == null ? 43 : this.contactPhone.hashCode());
         result = (result * PRIME) + (this.contactType == null ? 43 : this.contactType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

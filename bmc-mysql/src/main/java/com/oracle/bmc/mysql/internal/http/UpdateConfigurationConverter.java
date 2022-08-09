@@ -108,8 +108,8 @@ public class UpdateConfigurationConverter {
                                         builder =
                                                 com.oracle.bmc.mysql.responses
                                                         .UpdateConfigurationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.configuration(response.getItem());
 

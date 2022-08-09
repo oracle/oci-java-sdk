@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = UpdateCloudExadataInfrastructureDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateCloudExadataInfrastructureDetails {
+public final class UpdateCloudExadataInfrastructureDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -176,32 +177,45 @@ public final class UpdateCloudExadataInfrastructureDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateCloudExadataInfrastructureDetails build() {
-            UpdateCloudExadataInfrastructureDetails __instance__ =
+            UpdateCloudExadataInfrastructureDetails model =
                     new UpdateCloudExadataInfrastructureDetails(
-                            displayName,
-                            maintenanceWindow,
-                            computeCount,
-                            storageCount,
-                            freeformTags,
-                            definedTags,
-                            customerContacts);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.maintenanceWindow,
+                            this.computeCount,
+                            this.storageCount,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.customerContacts);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateCloudExadataInfrastructureDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .maintenanceWindow(o.getMaintenanceWindow())
-                            .computeCount(o.getComputeCount())
-                            .storageCount(o.getStorageCount())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .customerContacts(o.getCustomerContacts());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateCloudExadataInfrastructureDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
+                this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("computeCount")) {
+                this.computeCount(model.getComputeCount());
+            }
+            if (model.wasPropertyExplicitlySet("storageCount")) {
+                this.storageCount(model.getStorageCount());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("customerContacts")) {
+                this.customerContacts(model.getCustomerContacts());
+            }
+            return this;
         }
     }
 
@@ -334,6 +348,7 @@ public final class UpdateCloudExadataInfrastructureDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateCloudExadataInfrastructureDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
@@ -341,7 +356,6 @@ public final class UpdateCloudExadataInfrastructureDetails {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -363,7 +377,7 @@ public final class UpdateCloudExadataInfrastructureDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -381,16 +395,7 @@ public final class UpdateCloudExadataInfrastructureDetails {
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

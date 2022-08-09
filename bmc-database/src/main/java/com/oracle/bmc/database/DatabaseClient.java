@@ -6463,6 +6463,44 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public GetMaintenanceRunHistoryResponse getMaintenanceRunHistory(
+            GetMaintenanceRunHistoryRequest request) {
+        LOG.trace("Called getMaintenanceRunHistory");
+        final GetMaintenanceRunHistoryRequest interceptedRequest =
+                GetMaintenanceRunHistoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMaintenanceRunHistoryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetMaintenanceRunHistory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRunHistory/GetMaintenanceRunHistory");
+        java.util.function.Function<javax.ws.rs.core.Response, GetMaintenanceRunHistoryResponse>
+                transformer =
+                        GetMaintenanceRunHistoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetPdbConversionHistoryEntryResponse getPdbConversionHistoryEntry(
             GetPdbConversionHistoryEntryRequest request) {
         LOG.trace("Called getPdbConversionHistoryEntry");
@@ -8582,6 +8620,44 @@ public class DatabaseClient implements Database {
                         "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStoreSummary/ListKeyStores");
         java.util.function.Function<javax.ws.rs.core.Response, ListKeyStoresResponse> transformer =
                 ListKeyStoresConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListMaintenanceRunHistoryResponse listMaintenanceRunHistory(
+            ListMaintenanceRunHistoryRequest request) {
+        LOG.trace("Called listMaintenanceRunHistory");
+        final ListMaintenanceRunHistoryRequest interceptedRequest =
+                ListMaintenanceRunHistoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMaintenanceRunHistoryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListMaintenanceRunHistory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRunHistory/ListMaintenanceRunHistory");
+        java.util.function.Function<javax.ws.rs.core.Response, ListMaintenanceRunHistoryResponse>
+                transformer =
+                        ListMaintenanceRunHistoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

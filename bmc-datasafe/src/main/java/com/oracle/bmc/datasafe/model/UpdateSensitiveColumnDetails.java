@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = UpdateSensitiveColumnDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateSensitiveColumnDetails {
+public final class UpdateSensitiveColumnDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dataType",
@@ -205,32 +206,45 @@ public final class UpdateSensitiveColumnDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSensitiveColumnDetails build() {
-            UpdateSensitiveColumnDetails __instance__ =
+            UpdateSensitiveColumnDetails model =
                     new UpdateSensitiveColumnDetails(
-                            dataType,
-                            status,
-                            sensitiveTypeId,
-                            parentColumnKeys,
-                            relationType,
-                            appDefinedChildColumnKeys,
-                            dbDefinedChildColumnKeys);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dataType,
+                            this.status,
+                            this.sensitiveTypeId,
+                            this.parentColumnKeys,
+                            this.relationType,
+                            this.appDefinedChildColumnKeys,
+                            this.dbDefinedChildColumnKeys);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateSensitiveColumnDetails o) {
-            Builder copiedBuilder =
-                    dataType(o.getDataType())
-                            .status(o.getStatus())
-                            .sensitiveTypeId(o.getSensitiveTypeId())
-                            .parentColumnKeys(o.getParentColumnKeys())
-                            .relationType(o.getRelationType())
-                            .appDefinedChildColumnKeys(o.getAppDefinedChildColumnKeys())
-                            .dbDefinedChildColumnKeys(o.getDbDefinedChildColumnKeys());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateSensitiveColumnDetails model) {
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveTypeId")) {
+                this.sensitiveTypeId(model.getSensitiveTypeId());
+            }
+            if (model.wasPropertyExplicitlySet("parentColumnKeys")) {
+                this.parentColumnKeys(model.getParentColumnKeys());
+            }
+            if (model.wasPropertyExplicitlySet("relationType")) {
+                this.relationType(model.getRelationType());
+            }
+            if (model.wasPropertyExplicitlySet("appDefinedChildColumnKeys")) {
+                this.appDefinedChildColumnKeys(model.getAppDefinedChildColumnKeys());
+            }
+            if (model.wasPropertyExplicitlySet("dbDefinedChildColumnKeys")) {
+                this.dbDefinedChildColumnKeys(model.getDbDefinedChildColumnKeys());
+            }
+            return this;
         }
     }
 
@@ -471,6 +485,7 @@ public final class UpdateSensitiveColumnDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateSensitiveColumnDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("dataType=").append(String.valueOf(this.dataType));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
@@ -480,7 +495,6 @@ public final class UpdateSensitiveColumnDetails {
                 .append(String.valueOf(this.appDefinedChildColumnKeys));
         sb.append(", dbDefinedChildColumnKeys=")
                 .append(String.valueOf(this.dbDefinedChildColumnKeys));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -504,7 +518,7 @@ public final class UpdateSensitiveColumnDetails {
                         this.appDefinedChildColumnKeys, other.appDefinedChildColumnKeys)
                 && java.util.Objects.equals(
                         this.dbDefinedChildColumnKeys, other.dbDefinedChildColumnKeys)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -530,16 +544,7 @@ public final class UpdateSensitiveColumnDetails {
                         + (this.dbDefinedChildColumnKeys == null
                                 ? 43
                                 : this.dbDefinedChildColumnKeys.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

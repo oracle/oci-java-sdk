@@ -130,8 +130,8 @@ public class UpdateManagementSavedSearchConverter {
                                                 com.oracle.bmc.managementdashboard.responses
                                                         .UpdateManagementSavedSearchResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managementSavedSearch(response.getItem());
 

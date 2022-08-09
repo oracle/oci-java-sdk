@@ -19,7 +19,7 @@ package com.oracle.bmc.osmanagement.model;
     builder = WindowsUpdateSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WindowsUpdateSummary {
+public final class WindowsUpdateSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -135,29 +135,37 @@ public final class WindowsUpdateSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WindowsUpdateSummary build() {
-            WindowsUpdateSummary __instance__ =
+            WindowsUpdateSummary model =
                     new WindowsUpdateSummary(
-                            displayName,
-                            name,
-                            updateType,
-                            installable,
-                            isRebootRequiredForInstallation);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.name,
+                            this.updateType,
+                            this.installable,
+                            this.isRebootRequiredForInstallation);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WindowsUpdateSummary o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .name(o.getName())
-                            .updateType(o.getUpdateType())
-                            .installable(o.getInstallable())
-                            .isRebootRequiredForInstallation(
-                                    o.getIsRebootRequiredForInstallation());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WindowsUpdateSummary model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("updateType")) {
+                this.updateType(model.getUpdateType());
+            }
+            if (model.wasPropertyExplicitlySet("installable")) {
+                this.installable(model.getInstallable());
+            }
+            if (model.wasPropertyExplicitlySet("isRebootRequiredForInstallation")) {
+                this.isRebootRequiredForInstallation(model.getIsRebootRequiredForInstallation());
+            }
+            return this;
         }
     }
 
@@ -261,13 +269,13 @@ public final class WindowsUpdateSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WindowsUpdateSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", updateType=").append(String.valueOf(this.updateType));
         sb.append(", installable=").append(String.valueOf(this.installable));
         sb.append(", isRebootRequiredForInstallation=")
                 .append(String.valueOf(this.isRebootRequiredForInstallation));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -288,7 +296,7 @@ public final class WindowsUpdateSummary {
                 && java.util.Objects.equals(this.installable, other.installable)
                 && java.util.Objects.equals(
                         this.isRebootRequiredForInstallation, other.isRebootRequiredForInstallation)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -304,16 +312,7 @@ public final class WindowsUpdateSummary {
                         + (this.isRebootRequiredForInstallation == null
                                 ? 43
                                 : this.isRebootRequiredForInstallation.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

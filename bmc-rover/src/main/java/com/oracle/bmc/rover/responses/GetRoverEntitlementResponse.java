@@ -49,16 +49,18 @@ public class GetRoverEntitlementResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "roverEntitlement"
     })
     private GetRoverEntitlementResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.rover.model.RoverEntitlement roverEntitlement) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.roverEntitlement = roverEntitlement;
@@ -69,6 +71,13 @@ public class GetRoverEntitlementResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -124,6 +133,7 @@ public class GetRoverEntitlementResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(GetRoverEntitlementResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             roverEntitlement(o.getRoverEntitlement());
@@ -137,7 +147,7 @@ public class GetRoverEntitlementResponse extends com.oracle.bmc.responses.BmcRes
          */
         public GetRoverEntitlementResponse build() {
             return new GetRoverEntitlementResponse(
-                    __httpStatusCode__, opcRequestId, etag, roverEntitlement);
+                    __httpStatusCode__, headers, opcRequestId, etag, roverEntitlement);
         }
     }
 

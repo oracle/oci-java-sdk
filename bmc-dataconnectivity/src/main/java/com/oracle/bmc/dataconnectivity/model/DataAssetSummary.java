@@ -17,7 +17,7 @@ package com.oracle.bmc.dataconnectivity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataAssetSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataAssetSummary {
+public final class DataAssetSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -327,52 +327,85 @@ public final class DataAssetSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataAssetSummary build() {
-            DataAssetSummary __instance__ =
+            DataAssetSummary model =
                     new DataAssetSummary(
-                            key,
-                            modelVersion,
-                            modelType,
-                            name,
-                            description,
-                            objectStatus,
-                            objectVersion,
-                            identifier,
-                            externalKey,
-                            assetProperties,
-                            properties,
-                            type,
-                            nativeTypeSystem,
-                            registryMetadata,
-                            metadata,
-                            defaultConnection,
-                            endPoints);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.modelType,
+                            this.name,
+                            this.description,
+                            this.objectStatus,
+                            this.objectVersion,
+                            this.identifier,
+                            this.externalKey,
+                            this.assetProperties,
+                            this.properties,
+                            this.type,
+                            this.nativeTypeSystem,
+                            this.registryMetadata,
+                            this.metadata,
+                            this.defaultConnection,
+                            this.endPoints);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataAssetSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .modelType(o.getModelType())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectStatus(o.getObjectStatus())
-                            .objectVersion(o.getObjectVersion())
-                            .identifier(o.getIdentifier())
-                            .externalKey(o.getExternalKey())
-                            .assetProperties(o.getAssetProperties())
-                            .properties(o.getProperties())
-                            .type(o.getType())
-                            .nativeTypeSystem(o.getNativeTypeSystem())
-                            .registryMetadata(o.getRegistryMetadata())
-                            .metadata(o.getMetadata())
-                            .defaultConnection(o.getDefaultConnection())
-                            .endPoints(o.getEndPoints());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataAssetSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("assetProperties")) {
+                this.assetProperties(model.getAssetProperties());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("nativeTypeSystem")) {
+                this.nativeTypeSystem(model.getNativeTypeSystem());
+            }
+            if (model.wasPropertyExplicitlySet("registryMetadata")) {
+                this.registryMetadata(model.getRegistryMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("defaultConnection")) {
+                this.defaultConnection(model.getDefaultConnection());
+            }
+            if (model.wasPropertyExplicitlySet("endPoints")) {
+                this.endPoints(model.getEndPoints());
+            }
+            return this;
         }
     }
 
@@ -610,6 +643,7 @@ public final class DataAssetSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataAssetSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
@@ -627,7 +661,6 @@ public final class DataAssetSummary {
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", defaultConnection=").append(String.valueOf(this.defaultConnection));
         sb.append(", endPoints=").append(String.valueOf(this.endPoints));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -659,7 +692,7 @@ public final class DataAssetSummary {
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.defaultConnection, other.defaultConnection)
                 && java.util.Objects.equals(this.endPoints, other.endPoints)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -693,16 +726,7 @@ public final class DataAssetSummary {
                 (result * PRIME)
                         + (this.defaultConnection == null ? 43 : this.defaultConnection.hashCode());
         result = (result * PRIME) + (this.endPoints == null ? 43 : this.endPoints.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

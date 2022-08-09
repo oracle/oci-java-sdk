@@ -131,34 +131,49 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LinkCommandDescriptor build() {
-            LinkCommandDescriptor __instance__ =
+            LinkCommandDescriptor model =
                     new LinkCommandDescriptor(
-                            displayQueryString,
-                            internalQueryString,
-                            category,
-                            referencedFields,
-                            declaredFields,
-                            shouldIncludeNulls,
-                            shouldIncludeTrends,
-                            span);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayQueryString,
+                            this.internalQueryString,
+                            this.category,
+                            this.referencedFields,
+                            this.declaredFields,
+                            this.shouldIncludeNulls,
+                            this.shouldIncludeTrends,
+                            this.span);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LinkCommandDescriptor o) {
-            Builder copiedBuilder =
-                    displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString())
-                            .category(o.getCategory())
-                            .referencedFields(o.getReferencedFields())
-                            .declaredFields(o.getDeclaredFields())
-                            .shouldIncludeNulls(o.getShouldIncludeNulls())
-                            .shouldIncludeTrends(o.getShouldIncludeTrends())
-                            .span(o.getSpan());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LinkCommandDescriptor model) {
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("referencedFields")) {
+                this.referencedFields(model.getReferencedFields());
+            }
+            if (model.wasPropertyExplicitlySet("declaredFields")) {
+                this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("shouldIncludeNulls")) {
+                this.shouldIncludeNulls(model.getShouldIncludeNulls());
+            }
+            if (model.wasPropertyExplicitlySet("shouldIncludeTrends")) {
+                this.shouldIncludeTrends(model.getShouldIncludeTrends());
+            }
+            if (model.wasPropertyExplicitlySet("span")) {
+                this.span(model.getSpan());
+            }
+            return this;
         }
     }
 
@@ -254,7 +269,6 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
         sb.append(", shouldIncludeNulls=").append(String.valueOf(this.shouldIncludeNulls));
         sb.append(", shouldIncludeTrends=").append(String.valueOf(this.shouldIncludeTrends));
         sb.append(", span=").append(String.valueOf(this.span));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -272,8 +286,7 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
         return java.util.Objects.equals(this.shouldIncludeNulls, other.shouldIncludeNulls)
                 && java.util.Objects.equals(this.shouldIncludeTrends, other.shouldIncludeTrends)
                 && java.util.Objects.equals(this.span, other.span)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -291,16 +304,6 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
                                 ? 43
                                 : this.shouldIncludeTrends.hashCode());
         result = (result * PRIME) + (this.span == null ? 43 : this.span.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -120,8 +120,8 @@ public class StartSqlTuningTaskConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .StartSqlTuningTaskResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sqlTuningTaskReturn(response.getItem());
 

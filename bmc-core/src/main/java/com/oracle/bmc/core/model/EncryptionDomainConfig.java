@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = EncryptionDomainConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EncryptionDomainConfig {
+public final class EncryptionDomainConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"oracleTrafficSelector", "cpeTrafficSelector"})
     public EncryptionDomainConfig(
@@ -69,20 +70,23 @@ public final class EncryptionDomainConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EncryptionDomainConfig build() {
-            EncryptionDomainConfig __instance__ =
-                    new EncryptionDomainConfig(oracleTrafficSelector, cpeTrafficSelector);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            EncryptionDomainConfig model =
+                    new EncryptionDomainConfig(this.oracleTrafficSelector, this.cpeTrafficSelector);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EncryptionDomainConfig o) {
-            Builder copiedBuilder =
-                    oracleTrafficSelector(o.getOracleTrafficSelector())
-                            .cpeTrafficSelector(o.getCpeTrafficSelector());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EncryptionDomainConfig model) {
+            if (model.wasPropertyExplicitlySet("oracleTrafficSelector")) {
+                this.oracleTrafficSelector(model.getOracleTrafficSelector());
+            }
+            if (model.wasPropertyExplicitlySet("cpeTrafficSelector")) {
+                this.cpeTrafficSelector(model.getCpeTrafficSelector());
+            }
+            return this;
         }
     }
 
@@ -138,9 +142,9 @@ public final class EncryptionDomainConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EncryptionDomainConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("oracleTrafficSelector=").append(String.valueOf(this.oracleTrafficSelector));
         sb.append(", cpeTrafficSelector=").append(String.valueOf(this.cpeTrafficSelector));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -157,7 +161,7 @@ public final class EncryptionDomainConfig {
         EncryptionDomainConfig other = (EncryptionDomainConfig) o;
         return java.util.Objects.equals(this.oracleTrafficSelector, other.oracleTrafficSelector)
                 && java.util.Objects.equals(this.cpeTrafficSelector, other.cpeTrafficSelector)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -174,16 +178,7 @@ public final class EncryptionDomainConfig {
                         + (this.cpeTrafficSelector == null
                                 ? 43
                                 : this.cpeTrafficSelector.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

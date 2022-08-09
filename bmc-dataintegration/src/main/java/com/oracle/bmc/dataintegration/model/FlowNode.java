@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FlowNode.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FlowNode {
+public final class FlowNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -232,42 +232,65 @@ public final class FlowNode {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FlowNode build() {
-            FlowNode __instance__ =
+            FlowNode model =
                     new FlowNode(
-                            key,
-                            modelType,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            inputLinks,
-                            outputLinks,
-                            operator,
-                            uiProperties,
-                            configProviderDelegate,
-                            objectStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelType,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.inputLinks,
+                            this.outputLinks,
+                            this.operator,
+                            this.uiProperties,
+                            this.configProviderDelegate,
+                            this.objectStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FlowNode o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelType(o.getModelType())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .inputLinks(o.getInputLinks())
-                            .outputLinks(o.getOutputLinks())
-                            .operator(o.getOperator())
-                            .uiProperties(o.getUiProperties())
-                            .configProviderDelegate(o.getConfigProviderDelegate())
-                            .objectStatus(o.getObjectStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FlowNode model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("inputLinks")) {
+                this.inputLinks(model.getInputLinks());
+            }
+            if (model.wasPropertyExplicitlySet("outputLinks")) {
+                this.outputLinks(model.getOutputLinks());
+            }
+            if (model.wasPropertyExplicitlySet("operator")) {
+                this.operator(model.getOperator());
+            }
+            if (model.wasPropertyExplicitlySet("uiProperties")) {
+                this.uiProperties(model.getUiProperties());
+            }
+            if (model.wasPropertyExplicitlySet("configProviderDelegate")) {
+                this.configProviderDelegate(model.getConfigProviderDelegate());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            return this;
         }
     }
 
@@ -435,6 +458,7 @@ public final class FlowNode {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FlowNode(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
@@ -447,7 +471,6 @@ public final class FlowNode {
         sb.append(", uiProperties=").append(String.valueOf(this.uiProperties));
         sb.append(", configProviderDelegate=").append(String.valueOf(this.configProviderDelegate));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -475,7 +498,7 @@ public final class FlowNode {
                 && java.util.Objects.equals(
                         this.configProviderDelegate, other.configProviderDelegate)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -498,16 +521,7 @@ public final class FlowNode {
                                 ? 43
                                 : this.configProviderDelegate.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

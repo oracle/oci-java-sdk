@@ -120,8 +120,8 @@ public class AddVirtualMachineToVmClusterConverter {
                                                 com.oracle.bmc.database.responses
                                                         .AddVirtualMachineToVmClusterResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.vmCluster(response.getItem());
 

@@ -52,7 +52,7 @@ package com.oracle.bmc.filestorage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Export.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Export {
+public final class Export extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "exportOptions",
@@ -268,32 +268,45 @@ public final class Export {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Export build() {
-            Export __instance__ =
+            Export model =
                     new Export(
-                            exportOptions,
-                            exportSetId,
-                            fileSystemId,
-                            id,
-                            lifecycleState,
-                            path,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.exportOptions,
+                            this.exportSetId,
+                            this.fileSystemId,
+                            this.id,
+                            this.lifecycleState,
+                            this.path,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Export o) {
-            Builder copiedBuilder =
-                    exportOptions(o.getExportOptions())
-                            .exportSetId(o.getExportSetId())
-                            .fileSystemId(o.getFileSystemId())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
-                            .path(o.getPath())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Export model) {
+            if (model.wasPropertyExplicitlySet("exportOptions")) {
+                this.exportOptions(model.getExportOptions());
+            }
+            if (model.wasPropertyExplicitlySet("exportSetId")) {
+                this.exportSetId(model.getExportSetId());
+            }
+            if (model.wasPropertyExplicitlySet("fileSystemId")) {
+                this.fileSystemId(model.getFileSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -537,6 +550,7 @@ public final class Export {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Export(");
+        sb.append("super=").append(super.toString());
         sb.append("exportOptions=").append(String.valueOf(this.exportOptions));
         sb.append(", exportSetId=").append(String.valueOf(this.exportSetId));
         sb.append(", fileSystemId=").append(String.valueOf(this.fileSystemId));
@@ -544,7 +558,6 @@ public final class Export {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", path=").append(String.valueOf(this.path));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -566,7 +579,7 @@ public final class Export {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.path, other.path)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -584,16 +597,7 @@ public final class Export {
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -140,8 +140,8 @@ public class RecommendationsConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .RecommendationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.recommendationCollection(response.getItem());
 

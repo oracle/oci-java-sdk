@@ -186,8 +186,8 @@ public class ListDisApplicationsConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .ListDisApplicationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.disApplicationSummaryCollection(response.getItem());
 

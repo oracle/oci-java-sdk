@@ -110,8 +110,8 @@ public class UpdateApplicationConverter {
                                         builder =
                                                 com.oracle.bmc.functions.responses
                                                         .UpdateApplicationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.application(response.getItem());
 

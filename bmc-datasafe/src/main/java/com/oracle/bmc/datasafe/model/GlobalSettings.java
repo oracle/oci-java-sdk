@@ -18,7 +18,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GlobalSettings.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GlobalSettings {
+public final class GlobalSettings extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isPaidUsage",
@@ -88,21 +88,29 @@ public final class GlobalSettings {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GlobalSettings build() {
-            GlobalSettings __instance__ =
-                    new GlobalSettings(isPaidUsage, onlineRetentionPeriod, offlineRetentionPeriod);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            GlobalSettings model =
+                    new GlobalSettings(
+                            this.isPaidUsage,
+                            this.onlineRetentionPeriod,
+                            this.offlineRetentionPeriod);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GlobalSettings o) {
-            Builder copiedBuilder =
-                    isPaidUsage(o.getIsPaidUsage())
-                            .onlineRetentionPeriod(o.getOnlineRetentionPeriod())
-                            .offlineRetentionPeriod(o.getOfflineRetentionPeriod());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GlobalSettings model) {
+            if (model.wasPropertyExplicitlySet("isPaidUsage")) {
+                this.isPaidUsage(model.getIsPaidUsage());
+            }
+            if (model.wasPropertyExplicitlySet("onlineRetentionPeriod")) {
+                this.onlineRetentionPeriod(model.getOnlineRetentionPeriod());
+            }
+            if (model.wasPropertyExplicitlySet("offlineRetentionPeriod")) {
+                this.offlineRetentionPeriod(model.getOfflineRetentionPeriod());
+            }
+            return this;
         }
     }
 
@@ -172,10 +180,10 @@ public final class GlobalSettings {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GlobalSettings(");
+        sb.append("super=").append(super.toString());
         sb.append("isPaidUsage=").append(String.valueOf(this.isPaidUsage));
         sb.append(", onlineRetentionPeriod=").append(String.valueOf(this.onlineRetentionPeriod));
         sb.append(", offlineRetentionPeriod=").append(String.valueOf(this.offlineRetentionPeriod));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -194,7 +202,7 @@ public final class GlobalSettings {
                 && java.util.Objects.equals(this.onlineRetentionPeriod, other.onlineRetentionPeriod)
                 && java.util.Objects.equals(
                         this.offlineRetentionPeriod, other.offlineRetentionPeriod)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -212,16 +220,7 @@ public final class GlobalSettings {
                         + (this.offlineRetentionPeriod == null
                                 ? 43
                                 : this.offlineRetentionPeriod.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

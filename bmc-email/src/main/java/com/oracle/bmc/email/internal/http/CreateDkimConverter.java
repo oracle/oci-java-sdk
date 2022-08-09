@@ -97,7 +97,8 @@ public class CreateDkimConverter {
 
                                 com.oracle.bmc.email.responses.CreateDkimResponse.Builder builder =
                                         com.oracle.bmc.email.responses.CreateDkimResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.dkim(response.getItem());
 

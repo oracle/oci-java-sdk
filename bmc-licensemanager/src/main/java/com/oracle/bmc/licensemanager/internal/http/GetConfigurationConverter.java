@@ -110,8 +110,8 @@ public class GetConfigurationConverter {
                                         builder =
                                                 com.oracle.bmc.licensemanager.responses
                                                         .GetConfigurationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.configuration(response.getItem());
 

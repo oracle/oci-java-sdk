@@ -117,8 +117,8 @@ public class UpdateRemotePeeringConnectionConverter {
                                                 com.oracle.bmc.core.responses
                                                         .UpdateRemotePeeringConnectionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.remotePeeringConnection(response.getItem());
 

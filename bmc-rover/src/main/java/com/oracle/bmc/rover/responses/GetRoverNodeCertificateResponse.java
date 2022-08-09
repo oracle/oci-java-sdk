@@ -55,16 +55,18 @@ public class GetRoverNodeCertificateResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "roverNodeCertificate"
     })
     private GetRoverNodeCertificateResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.rover.model.RoverNodeCertificate roverNodeCertificate) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.roverNodeCertificate = roverNodeCertificate;
@@ -75,6 +77,13 @@ public class GetRoverNodeCertificateResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetRoverNodeCertificateResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(GetRoverNodeCertificateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             roverNodeCertificate(o.getRoverNodeCertificate());
@@ -149,7 +159,7 @@ public class GetRoverNodeCertificateResponse extends com.oracle.bmc.responses.Bm
          */
         public GetRoverNodeCertificateResponse build() {
             return new GetRoverNodeCertificateResponse(
-                    __httpStatusCode__, etag, opcRequestId, roverNodeCertificate);
+                    __httpStatusCode__, headers, etag, opcRequestId, roverNodeCertificate);
         }
     }
 

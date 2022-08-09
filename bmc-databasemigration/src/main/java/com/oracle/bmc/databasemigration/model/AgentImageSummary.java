@@ -20,7 +20,7 @@ package com.oracle.bmc.databasemigration.model;
     builder = AgentImageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AgentImageSummary {
+public final class AgentImageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"version", "downloadUrl"})
     public AgentImageSummary(String version, String downloadUrl) {
@@ -72,17 +72,22 @@ public final class AgentImageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AgentImageSummary build() {
-            AgentImageSummary __instance__ = new AgentImageSummary(version, downloadUrl);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AgentImageSummary model = new AgentImageSummary(this.version, this.downloadUrl);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AgentImageSummary o) {
-            Builder copiedBuilder = version(o.getVersion()).downloadUrl(o.getDownloadUrl());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AgentImageSummary model) {
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("downloadUrl")) {
+                this.downloadUrl(model.getDownloadUrl());
+            }
+            return this;
         }
     }
 
@@ -142,9 +147,9 @@ public final class AgentImageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AgentImageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(", downloadUrl=").append(String.valueOf(this.downloadUrl));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -161,7 +166,7 @@ public final class AgentImageSummary {
         AgentImageSummary other = (AgentImageSummary) o;
         return java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.downloadUrl, other.downloadUrl)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -170,16 +175,7 @@ public final class AgentImageSummary {
         int result = 1;
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.downloadUrl == null ? 43 : this.downloadUrl.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

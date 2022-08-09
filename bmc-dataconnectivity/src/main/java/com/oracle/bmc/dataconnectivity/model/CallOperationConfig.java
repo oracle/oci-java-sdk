@@ -19,7 +19,7 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = CallOperationConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CallOperationConfig {
+public final class CallOperationConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "inFields",
@@ -103,22 +103,33 @@ public final class CallOperationConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CallOperationConfig build() {
-            CallOperationConfig __instance__ =
-                    new CallOperationConfig(inFields, outFields, callAttribute, pushDownOperations);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CallOperationConfig model =
+                    new CallOperationConfig(
+                            this.inFields,
+                            this.outFields,
+                            this.callAttribute,
+                            this.pushDownOperations);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CallOperationConfig o) {
-            Builder copiedBuilder =
-                    inFields(o.getInFields())
-                            .outFields(o.getOutFields())
-                            .callAttribute(o.getCallAttribute())
-                            .pushDownOperations(o.getPushDownOperations());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CallOperationConfig model) {
+            if (model.wasPropertyExplicitlySet("inFields")) {
+                this.inFields(model.getInFields());
+            }
+            if (model.wasPropertyExplicitlySet("outFields")) {
+                this.outFields(model.getOutFields());
+            }
+            if (model.wasPropertyExplicitlySet("callAttribute")) {
+                this.callAttribute(model.getCallAttribute());
+            }
+            if (model.wasPropertyExplicitlySet("pushDownOperations")) {
+                this.pushDownOperations(model.getPushDownOperations());
+            }
+            return this;
         }
     }
 
@@ -195,11 +206,11 @@ public final class CallOperationConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CallOperationConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("inFields=").append(String.valueOf(this.inFields));
         sb.append(", outFields=").append(String.valueOf(this.outFields));
         sb.append(", callAttribute=").append(String.valueOf(this.callAttribute));
         sb.append(", pushDownOperations=").append(String.valueOf(this.pushDownOperations));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -218,7 +229,7 @@ public final class CallOperationConfig {
                 && java.util.Objects.equals(this.outFields, other.outFields)
                 && java.util.Objects.equals(this.callAttribute, other.callAttribute)
                 && java.util.Objects.equals(this.pushDownOperations, other.pushDownOperations)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -235,16 +246,7 @@ public final class CallOperationConfig {
                         + (this.pushDownOperations == null
                                 ? 43
                                 : this.pushDownOperations.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

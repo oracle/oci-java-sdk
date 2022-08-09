@@ -28,7 +28,8 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ExadataConfigurationSummary {
+public class ExadataConfigurationSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "exadataInsightId",
@@ -193,6 +194,7 @@ public class ExadataConfigurationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExadataConfigurationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("exadataInsightId=").append(String.valueOf(this.exadataInsightId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", exadataName=").append(String.valueOf(this.exadataName));
@@ -222,7 +224,8 @@ public class ExadataConfigurationSummary {
                 && java.util.Objects.equals(this.exadataType, other.exadataType)
                 && java.util.Objects.equals(this.exadataRackType, other.exadataRackType)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.freeformTags, other.freeformTags);
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && super.equals(other);
     }
 
     @Override
@@ -247,6 +250,7 @@ public class ExadataConfigurationSummary {
                         + (this.exadataRackType == null ? 43 : this.exadataRackType.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

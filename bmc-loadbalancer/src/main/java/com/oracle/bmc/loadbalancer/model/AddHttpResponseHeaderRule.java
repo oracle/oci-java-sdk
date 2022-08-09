@@ -93,17 +93,23 @@ public final class AddHttpResponseHeaderRule extends Rule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddHttpResponseHeaderRule build() {
-            AddHttpResponseHeaderRule __instance__ = new AddHttpResponseHeaderRule(header, value);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AddHttpResponseHeaderRule model =
+                    new AddHttpResponseHeaderRule(this.header, this.value);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddHttpResponseHeaderRule o) {
-            Builder copiedBuilder = header(o.getHeader()).value(o.getValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddHttpResponseHeaderRule model) {
+            if (model.wasPropertyExplicitlySet("header")) {
+                this.header(model.getHeader());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            return this;
         }
     }
 
@@ -187,7 +193,6 @@ public final class AddHttpResponseHeaderRule extends Rule {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", header=").append(String.valueOf(this.header));
         sb.append(", value=").append(String.valueOf(this.value));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -204,8 +209,7 @@ public final class AddHttpResponseHeaderRule extends Rule {
         AddHttpResponseHeaderRule other = (AddHttpResponseHeaderRule) o;
         return java.util.Objects.equals(this.header, other.header)
                 && java.util.Objects.equals(this.value, other.value)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -214,16 +218,6 @@ public final class AddHttpResponseHeaderRule extends Rule {
         int result = super.hashCode();
         result = (result * PRIME) + (this.header == null ? 43 : this.header.hashCode());
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

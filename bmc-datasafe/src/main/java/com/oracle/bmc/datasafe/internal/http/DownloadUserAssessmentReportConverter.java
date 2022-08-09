@@ -118,8 +118,8 @@ public class DownloadUserAssessmentReportConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .DownloadUserAssessmentReportResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

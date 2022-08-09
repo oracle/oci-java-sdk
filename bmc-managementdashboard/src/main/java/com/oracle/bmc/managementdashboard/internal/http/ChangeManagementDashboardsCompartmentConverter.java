@@ -135,8 +135,8 @@ public class ChangeManagementDashboardsCompartmentConverter {
                                                 com.oracle.bmc.managementdashboard.responses
                                                         .ChangeManagementDashboardsCompartmentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managementDashboard(response.getItem());
 

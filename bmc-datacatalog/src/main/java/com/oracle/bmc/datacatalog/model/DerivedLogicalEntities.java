@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = DerivedLogicalEntities.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DerivedLogicalEntities {
+public final class DerivedLogicalEntities
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "realizedExpression", "filesInLogicalGrouping"})
     public DerivedLogicalEntities(
@@ -85,21 +86,27 @@ public final class DerivedLogicalEntities {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DerivedLogicalEntities build() {
-            DerivedLogicalEntities __instance__ =
-                    new DerivedLogicalEntities(name, realizedExpression, filesInLogicalGrouping);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DerivedLogicalEntities model =
+                    new DerivedLogicalEntities(
+                            this.name, this.realizedExpression, this.filesInLogicalGrouping);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DerivedLogicalEntities o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .realizedExpression(o.getRealizedExpression())
-                            .filesInLogicalGrouping(o.getFilesInLogicalGrouping());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DerivedLogicalEntities model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("realizedExpression")) {
+                this.realizedExpression(model.getRealizedExpression());
+            }
+            if (model.wasPropertyExplicitlySet("filesInLogicalGrouping")) {
+                this.filesInLogicalGrouping(model.getFilesInLogicalGrouping());
+            }
+            return this;
         }
     }
 
@@ -169,10 +176,10 @@ public final class DerivedLogicalEntities {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DerivedLogicalEntities(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", realizedExpression=").append(String.valueOf(this.realizedExpression));
         sb.append(", filesInLogicalGrouping=").append(String.valueOf(this.filesInLogicalGrouping));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -191,7 +198,7 @@ public final class DerivedLogicalEntities {
                 && java.util.Objects.equals(this.realizedExpression, other.realizedExpression)
                 && java.util.Objects.equals(
                         this.filesInLogicalGrouping, other.filesInLogicalGrouping)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -209,16 +216,7 @@ public final class DerivedLogicalEntities {
                         + (this.filesInLogicalGrouping == null
                                 ? 43
                                 : this.filesInLogicalGrouping.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

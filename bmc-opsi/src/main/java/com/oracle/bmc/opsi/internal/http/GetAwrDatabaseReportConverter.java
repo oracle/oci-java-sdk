@@ -171,8 +171,8 @@ public class GetAwrDatabaseReportConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .GetAwrDatabaseReportResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDatabaseReport(response.getItem());
 

@@ -167,8 +167,8 @@ public class ListPdbConversionHistoryEntriesConverter {
                                                 com.oracle.bmc.database.responses
                                                         .ListPdbConversionHistoryEntriesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

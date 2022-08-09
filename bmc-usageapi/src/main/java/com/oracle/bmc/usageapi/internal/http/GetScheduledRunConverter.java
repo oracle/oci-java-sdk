@@ -104,8 +104,8 @@ public class GetScheduledRunConverter {
                                         builder =
                                                 com.oracle.bmc.usageapi.responses
                                                         .GetScheduledRunResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.scheduledRun(response.getItem());
 

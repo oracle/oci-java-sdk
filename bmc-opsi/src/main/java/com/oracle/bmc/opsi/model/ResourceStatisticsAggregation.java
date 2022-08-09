@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = ResourceStatisticsAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceStatisticsAggregation {
+public final class ResourceStatisticsAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"databaseDetails", "currentStatistics"})
     public ResourceStatisticsAggregation(
@@ -54,20 +55,23 @@ public final class ResourceStatisticsAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceStatisticsAggregation build() {
-            ResourceStatisticsAggregation __instance__ =
-                    new ResourceStatisticsAggregation(databaseDetails, currentStatistics);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ResourceStatisticsAggregation model =
+                    new ResourceStatisticsAggregation(this.databaseDetails, this.currentStatistics);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResourceStatisticsAggregation o) {
-            Builder copiedBuilder =
-                    databaseDetails(o.getDatabaseDetails())
-                            .currentStatistics(o.getCurrentStatistics());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResourceStatisticsAggregation model) {
+            if (model.wasPropertyExplicitlySet("databaseDetails")) {
+                this.databaseDetails(model.getDatabaseDetails());
+            }
+            if (model.wasPropertyExplicitlySet("currentStatistics")) {
+                this.currentStatistics(model.getCurrentStatistics());
+            }
+            return this;
         }
     }
 
@@ -109,9 +113,9 @@ public final class ResourceStatisticsAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResourceStatisticsAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("databaseDetails=").append(String.valueOf(this.databaseDetails));
         sb.append(", currentStatistics=").append(String.valueOf(this.currentStatistics));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -128,7 +132,7 @@ public final class ResourceStatisticsAggregation {
         ResourceStatisticsAggregation other = (ResourceStatisticsAggregation) o;
         return java.util.Objects.equals(this.databaseDetails, other.databaseDetails)
                 && java.util.Objects.equals(this.currentStatistics, other.currentStatistics)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -141,16 +145,7 @@ public final class ResourceStatisticsAggregation {
         result =
                 (result * PRIME)
                         + (this.currentStatistics == null ? 43 : this.currentStatistics.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

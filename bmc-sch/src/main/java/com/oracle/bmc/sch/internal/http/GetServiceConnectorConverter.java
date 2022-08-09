@@ -103,8 +103,8 @@ public class GetServiceConnectorConverter {
                                         builder =
                                                 com.oracle.bmc.sch.responses
                                                         .GetServiceConnectorResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.serviceConnector(response.getItem());
 

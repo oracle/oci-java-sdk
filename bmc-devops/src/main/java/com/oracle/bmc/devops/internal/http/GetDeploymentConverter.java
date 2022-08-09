@@ -102,8 +102,8 @@ public class GetDeploymentConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .GetDeploymentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deployment(response.getItem());
 

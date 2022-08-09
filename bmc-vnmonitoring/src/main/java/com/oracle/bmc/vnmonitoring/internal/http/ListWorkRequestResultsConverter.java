@@ -137,8 +137,8 @@ public class ListWorkRequestResultsConverter {
                                         builder =
                                                 com.oracle.bmc.vnmonitoring.responses
                                                         .ListWorkRequestResultsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.workRequestResultCollection(response.getItem());
 

@@ -124,8 +124,8 @@ public class UpdateCustomPropertyConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .UpdateCustomPropertyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.customProperty(response.getItem());
 

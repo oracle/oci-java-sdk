@@ -118,8 +118,8 @@ public class PutRepositoryRefConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .PutRepositoryRefResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.repositoryRef(response.getItem());
 

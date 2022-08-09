@@ -19,7 +19,7 @@ package com.oracle.bmc.ocvp.model;
     builder = CreateSddcDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateSddcDetails {
+public final class CreateSddcDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "computeAvailabilityDomain",
@@ -32,6 +32,7 @@ public final class CreateSddcDetails {
         "isHcxEnabled",
         "hcxVlanId",
         "isHcxEnterpriseEnabled",
+        "isSingleHostSddc",
         "sshAuthorizedKeys",
         "workloadNetworkCidr",
         "provisioningSubnetId",
@@ -62,6 +63,7 @@ public final class CreateSddcDetails {
             Boolean isHcxEnabled,
             String hcxVlanId,
             Boolean isHcxEnterpriseEnabled,
+            Boolean isSingleHostSddc,
             String sshAuthorizedKeys,
             String workloadNetworkCidr,
             String provisioningSubnetId,
@@ -91,6 +93,7 @@ public final class CreateSddcDetails {
         this.isHcxEnabled = isHcxEnabled;
         this.hcxVlanId = hcxVlanId;
         this.isHcxEnterpriseEnabled = isHcxEnterpriseEnabled;
+        this.isSingleHostSddc = isSingleHostSddc;
         this.sshAuthorizedKeys = sshAuthorizedKeys;
         this.workloadNetworkCidr = workloadNetworkCidr;
         this.provisioningSubnetId = provisioningSubnetId;
@@ -221,10 +224,11 @@ public final class CreateSddcDetails {
         }
         /**
          * The number of ESXi hosts to create in the SDDC. You can add more hosts later
-         * (see {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}).
+         * (see {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}). Creating
+         * a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
          * <p>
-         **Note:** If you later delete EXSi hosts from the SDDC to total less than 3,
-         * you are still billed for the 3 minimum recommended ESXi hosts. Also,
+         **Note:** If you later delete EXSi hosts from a production SDDC to total less
+         * than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also,
          * you cannot add more VMware workloads to the SDDC until it again has at least
          * 3 ESXi hosts.
          *
@@ -234,10 +238,11 @@ public final class CreateSddcDetails {
 
         /**
          * The number of ESXi hosts to create in the SDDC. You can add more hosts later
-         * (see {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}).
+         * (see {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}). Creating
+         * a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
          * <p>
-         **Note:** If you later delete EXSi hosts from the SDDC to total less than 3,
-         * you are still billed for the 3 minimum recommended ESXi hosts. Also,
+         **Note:** If you later delete EXSi hosts from a production SDDC to total less
+         * than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also,
          * you cannot add more VMware workloads to the SDDC until it again has at least
          * 3 ESXi hosts.
          *
@@ -323,6 +328,24 @@ public final class CreateSddcDetails {
         public Builder isHcxEnterpriseEnabled(Boolean isHcxEnterpriseEnabled) {
             this.isHcxEnterpriseEnabled = isHcxEnterpriseEnabled;
             this.__explicitlySet__.add("isHcxEnterpriseEnabled");
+            return this;
+        }
+        /**
+         * Indicates whether this SDDC is designated for only single ESXi host.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSingleHostSddc")
+        private Boolean isSingleHostSddc;
+
+        /**
+         * Indicates whether this SDDC is designated for only single ESXi host.
+         *
+         * @param isSingleHostSddc the value to set
+         * @return this builder
+         **/
+        public Builder isSingleHostSddc(Boolean isSingleHostSddc) {
+            this.isSingleHostSddc = isSingleHostSddc;
+            this.__explicitlySet__.add("isSingleHostSddc");
             return this;
         }
         /**
@@ -699,74 +722,133 @@ public final class CreateSddcDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateSddcDetails build() {
-            CreateSddcDetails __instance__ =
+            CreateSddcDetails model =
                     new CreateSddcDetails(
-                            computeAvailabilityDomain,
-                            displayName,
-                            vmwareSoftwareVersion,
-                            compartmentId,
-                            instanceDisplayNamePrefix,
-                            esxiHostsCount,
-                            initialSku,
-                            isHcxEnabled,
-                            hcxVlanId,
-                            isHcxEnterpriseEnabled,
-                            sshAuthorizedKeys,
-                            workloadNetworkCidr,
-                            provisioningSubnetId,
-                            vsphereVlanId,
-                            vmotionVlanId,
-                            vsanVlanId,
-                            nsxVTepVlanId,
-                            nsxEdgeVTepVlanId,
-                            nsxEdgeUplink1VlanId,
-                            nsxEdgeUplink2VlanId,
-                            replicationVlanId,
-                            provisioningVlanId,
-                            initialHostShapeName,
-                            initialHostOcpuCount,
-                            isShieldedInstanceEnabled,
-                            capacityReservationId,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.computeAvailabilityDomain,
+                            this.displayName,
+                            this.vmwareSoftwareVersion,
+                            this.compartmentId,
+                            this.instanceDisplayNamePrefix,
+                            this.esxiHostsCount,
+                            this.initialSku,
+                            this.isHcxEnabled,
+                            this.hcxVlanId,
+                            this.isHcxEnterpriseEnabled,
+                            this.isSingleHostSddc,
+                            this.sshAuthorizedKeys,
+                            this.workloadNetworkCidr,
+                            this.provisioningSubnetId,
+                            this.vsphereVlanId,
+                            this.vmotionVlanId,
+                            this.vsanVlanId,
+                            this.nsxVTepVlanId,
+                            this.nsxEdgeVTepVlanId,
+                            this.nsxEdgeUplink1VlanId,
+                            this.nsxEdgeUplink2VlanId,
+                            this.replicationVlanId,
+                            this.provisioningVlanId,
+                            this.initialHostShapeName,
+                            this.initialHostOcpuCount,
+                            this.isShieldedInstanceEnabled,
+                            this.capacityReservationId,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateSddcDetails o) {
-            Builder copiedBuilder =
-                    computeAvailabilityDomain(o.getComputeAvailabilityDomain())
-                            .displayName(o.getDisplayName())
-                            .vmwareSoftwareVersion(o.getVmwareSoftwareVersion())
-                            .compartmentId(o.getCompartmentId())
-                            .instanceDisplayNamePrefix(o.getInstanceDisplayNamePrefix())
-                            .esxiHostsCount(o.getEsxiHostsCount())
-                            .initialSku(o.getInitialSku())
-                            .isHcxEnabled(o.getIsHcxEnabled())
-                            .hcxVlanId(o.getHcxVlanId())
-                            .isHcxEnterpriseEnabled(o.getIsHcxEnterpriseEnabled())
-                            .sshAuthorizedKeys(o.getSshAuthorizedKeys())
-                            .workloadNetworkCidr(o.getWorkloadNetworkCidr())
-                            .provisioningSubnetId(o.getProvisioningSubnetId())
-                            .vsphereVlanId(o.getVsphereVlanId())
-                            .vmotionVlanId(o.getVmotionVlanId())
-                            .vsanVlanId(o.getVsanVlanId())
-                            .nsxVTepVlanId(o.getNsxVTepVlanId())
-                            .nsxEdgeVTepVlanId(o.getNsxEdgeVTepVlanId())
-                            .nsxEdgeUplink1VlanId(o.getNsxEdgeUplink1VlanId())
-                            .nsxEdgeUplink2VlanId(o.getNsxEdgeUplink2VlanId())
-                            .replicationVlanId(o.getReplicationVlanId())
-                            .provisioningVlanId(o.getProvisioningVlanId())
-                            .initialHostShapeName(o.getInitialHostShapeName())
-                            .initialHostOcpuCount(o.getInitialHostOcpuCount())
-                            .isShieldedInstanceEnabled(o.getIsShieldedInstanceEnabled())
-                            .capacityReservationId(o.getCapacityReservationId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateSddcDetails model) {
+            if (model.wasPropertyExplicitlySet("computeAvailabilityDomain")) {
+                this.computeAvailabilityDomain(model.getComputeAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("vmwareSoftwareVersion")) {
+                this.vmwareSoftwareVersion(model.getVmwareSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("instanceDisplayNamePrefix")) {
+                this.instanceDisplayNamePrefix(model.getInstanceDisplayNamePrefix());
+            }
+            if (model.wasPropertyExplicitlySet("esxiHostsCount")) {
+                this.esxiHostsCount(model.getEsxiHostsCount());
+            }
+            if (model.wasPropertyExplicitlySet("initialSku")) {
+                this.initialSku(model.getInitialSku());
+            }
+            if (model.wasPropertyExplicitlySet("isHcxEnabled")) {
+                this.isHcxEnabled(model.getIsHcxEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("hcxVlanId")) {
+                this.hcxVlanId(model.getHcxVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("isHcxEnterpriseEnabled")) {
+                this.isHcxEnterpriseEnabled(model.getIsHcxEnterpriseEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isSingleHostSddc")) {
+                this.isSingleHostSddc(model.getIsSingleHostSddc());
+            }
+            if (model.wasPropertyExplicitlySet("sshAuthorizedKeys")) {
+                this.sshAuthorizedKeys(model.getSshAuthorizedKeys());
+            }
+            if (model.wasPropertyExplicitlySet("workloadNetworkCidr")) {
+                this.workloadNetworkCidr(model.getWorkloadNetworkCidr());
+            }
+            if (model.wasPropertyExplicitlySet("provisioningSubnetId")) {
+                this.provisioningSubnetId(model.getProvisioningSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("vsphereVlanId")) {
+                this.vsphereVlanId(model.getVsphereVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("vmotionVlanId")) {
+                this.vmotionVlanId(model.getVmotionVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("vsanVlanId")) {
+                this.vsanVlanId(model.getVsanVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxVTepVlanId")) {
+                this.nsxVTepVlanId(model.getNsxVTepVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxEdgeVTepVlanId")) {
+                this.nsxEdgeVTepVlanId(model.getNsxEdgeVTepVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxEdgeUplink1VlanId")) {
+                this.nsxEdgeUplink1VlanId(model.getNsxEdgeUplink1VlanId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxEdgeUplink2VlanId")) {
+                this.nsxEdgeUplink2VlanId(model.getNsxEdgeUplink2VlanId());
+            }
+            if (model.wasPropertyExplicitlySet("replicationVlanId")) {
+                this.replicationVlanId(model.getReplicationVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("provisioningVlanId")) {
+                this.provisioningVlanId(model.getProvisioningVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("initialHostShapeName")) {
+                this.initialHostShapeName(model.getInitialHostShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("initialHostOcpuCount")) {
+                this.initialHostOcpuCount(model.getInitialHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("isShieldedInstanceEnabled")) {
+                this.isShieldedInstanceEnabled(model.getIsShieldedInstanceEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationId")) {
+                this.capacityReservationId(model.getCapacityReservationId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -879,10 +961,11 @@ public final class CreateSddcDetails {
 
     /**
      * The number of ESXi hosts to create in the SDDC. You can add more hosts later
-     * (see {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}).
+     * (see {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}). Creating
+     * a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      * <p>
-     **Note:** If you later delete EXSi hosts from the SDDC to total less than 3,
-     * you are still billed for the 3 minimum recommended ESXi hosts. Also,
+     **Note:** If you later delete EXSi hosts from a production SDDC to total less
+     * than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also,
      * you cannot add more VMware workloads to the SDDC until it again has at least
      * 3 ESXi hosts.
      *
@@ -892,10 +975,11 @@ public final class CreateSddcDetails {
 
     /**
      * The number of ESXi hosts to create in the SDDC. You can add more hosts later
-     * (see {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}).
+     * (see {@link #createEsxiHost(CreateEsxiHostRequest) createEsxiHost}). Creating
+     * a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
      * <p>
-     **Note:** If you later delete EXSi hosts from the SDDC to total less than 3,
-     * you are still billed for the 3 minimum recommended ESXi hosts. Also,
+     **Note:** If you later delete EXSi hosts from a production SDDC to total less
+     * than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also,
      * you cannot add more VMware workloads to the SDDC until it again has at least
      * 3 ESXi hosts.
      *
@@ -971,6 +1055,22 @@ public final class CreateSddcDetails {
      **/
     public Boolean getIsHcxEnterpriseEnabled() {
         return isHcxEnterpriseEnabled;
+    }
+
+    /**
+     * Indicates whether this SDDC is designated for only single ESXi host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSingleHostSddc")
+    private final Boolean isSingleHostSddc;
+
+    /**
+     * Indicates whether this SDDC is designated for only single ESXi host.
+     *
+     * @return the value
+     **/
+    public Boolean getIsSingleHostSddc() {
+        return isSingleHostSddc;
     }
 
     /**
@@ -1318,6 +1418,7 @@ public final class CreateSddcDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateSddcDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("computeAvailabilityDomain=")
                 .append(String.valueOf(this.computeAvailabilityDomain));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -1330,6 +1431,7 @@ public final class CreateSddcDetails {
         sb.append(", isHcxEnabled=").append(String.valueOf(this.isHcxEnabled));
         sb.append(", hcxVlanId=").append(String.valueOf(this.hcxVlanId));
         sb.append(", isHcxEnterpriseEnabled=").append(String.valueOf(this.isHcxEnterpriseEnabled));
+        sb.append(", isSingleHostSddc=").append(String.valueOf(this.isSingleHostSddc));
         sb.append(", sshAuthorizedKeys=").append(String.valueOf(this.sshAuthorizedKeys));
         sb.append(", workloadNetworkCidr=").append(String.valueOf(this.workloadNetworkCidr));
         sb.append(", provisioningSubnetId=").append(String.valueOf(this.provisioningSubnetId));
@@ -1349,7 +1451,6 @@ public final class CreateSddcDetails {
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1377,6 +1478,7 @@ public final class CreateSddcDetails {
                 && java.util.Objects.equals(this.hcxVlanId, other.hcxVlanId)
                 && java.util.Objects.equals(
                         this.isHcxEnterpriseEnabled, other.isHcxEnterpriseEnabled)
+                && java.util.Objects.equals(this.isSingleHostSddc, other.isSingleHostSddc)
                 && java.util.Objects.equals(this.sshAuthorizedKeys, other.sshAuthorizedKeys)
                 && java.util.Objects.equals(this.workloadNetworkCidr, other.workloadNetworkCidr)
                 && java.util.Objects.equals(this.provisioningSubnetId, other.provisioningSubnetId)
@@ -1396,7 +1498,7 @@ public final class CreateSddcDetails {
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1433,6 +1535,9 @@ public final class CreateSddcDetails {
                         + (this.isHcxEnterpriseEnabled == null
                                 ? 43
                                 : this.isHcxEnterpriseEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSingleHostSddc == null ? 43 : this.isSingleHostSddc.hashCode());
         result =
                 (result * PRIME)
                         + (this.sshAuthorizedKeys == null ? 43 : this.sshAuthorizedKeys.hashCode());
@@ -1499,16 +1604,7 @@ public final class CreateSddcDetails {
                                 : this.capacityReservationId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

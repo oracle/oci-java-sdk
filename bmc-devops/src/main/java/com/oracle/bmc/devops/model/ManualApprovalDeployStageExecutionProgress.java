@@ -107,35 +107,50 @@ public final class ManualApprovalDeployStageExecutionProgress extends DeployStag
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManualApprovalDeployStageExecutionProgress build() {
-            ManualApprovalDeployStageExecutionProgress __instance__ =
+            ManualApprovalDeployStageExecutionProgress model =
                     new ManualApprovalDeployStageExecutionProgress(
-                            deployStageDisplayName,
-                            deployStageId,
-                            timeStarted,
-                            timeFinished,
-                            status,
-                            deployStagePredecessors,
-                            deployStageExecutionProgressDetails,
-                            approvalActions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.deployStageDisplayName,
+                            this.deployStageId,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.status,
+                            this.deployStagePredecessors,
+                            this.deployStageExecutionProgressDetails,
+                            this.approvalActions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManualApprovalDeployStageExecutionProgress o) {
-            Builder copiedBuilder =
-                    deployStageDisplayName(o.getDeployStageDisplayName())
-                            .deployStageId(o.getDeployStageId())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .status(o.getStatus())
-                            .deployStagePredecessors(o.getDeployStagePredecessors())
-                            .deployStageExecutionProgressDetails(
-                                    o.getDeployStageExecutionProgressDetails())
-                            .approvalActions(o.getApprovalActions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManualApprovalDeployStageExecutionProgress model) {
+            if (model.wasPropertyExplicitlySet("deployStageDisplayName")) {
+                this.deployStageDisplayName(model.getDeployStageDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployStageId")) {
+                this.deployStageId(model.getDeployStageId());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessors")) {
+                this.deployStagePredecessors(model.getDeployStagePredecessors());
+            }
+            if (model.wasPropertyExplicitlySet("deployStageExecutionProgressDetails")) {
+                this.deployStageExecutionProgressDetails(
+                        model.getDeployStageExecutionProgressDetails());
+            }
+            if (model.wasPropertyExplicitlySet("approvalActions")) {
+                this.approvalActions(model.getApprovalActions());
+            }
+            return this;
         }
     }
 
@@ -193,7 +208,6 @@ public final class ManualApprovalDeployStageExecutionProgress extends DeployStag
         sb.append("ManualApprovalDeployStageExecutionProgress(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", approvalActions=").append(String.valueOf(this.approvalActions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -210,8 +224,7 @@ public final class ManualApprovalDeployStageExecutionProgress extends DeployStag
         ManualApprovalDeployStageExecutionProgress other =
                 (ManualApprovalDeployStageExecutionProgress) o;
         return java.util.Objects.equals(this.approvalActions, other.approvalActions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -221,16 +234,6 @@ public final class ManualApprovalDeployStageExecutionProgress extends DeployStag
         result =
                 (result * PRIME)
                         + (this.approvalActions == null ? 43 : this.approvalActions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

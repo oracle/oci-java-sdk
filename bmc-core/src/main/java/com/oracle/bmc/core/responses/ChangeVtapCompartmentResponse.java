@@ -61,13 +61,18 @@ public class ChangeVtapCompartmentResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "opcWorkRequestId"
     })
     private ChangeVtapCompartmentResponse(
-            int __httpStatusCode__, String etag, String opcRequestId, String opcWorkRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String etag,
+            String opcRequestId,
+            String opcWorkRequestId) {
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
@@ -78,6 +83,13 @@ public class ChangeVtapCompartmentResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +156,7 @@ public class ChangeVtapCompartmentResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(ChangeVtapCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
@@ -157,7 +170,7 @@ public class ChangeVtapCompartmentResponse extends com.oracle.bmc.responses.BmcR
          */
         public ChangeVtapCompartmentResponse build() {
             return new ChangeVtapCompartmentResponse(
-                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId);
+                    __httpStatusCode__, headers, etag, opcRequestId, opcWorkRequestId);
         }
     }
 

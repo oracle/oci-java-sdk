@@ -159,8 +159,8 @@ public class ListVaultReplicasConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .ListVaultReplicasResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

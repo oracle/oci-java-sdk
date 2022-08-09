@@ -19,7 +19,8 @@ package com.oracle.bmc.artifacts.model;
     builder = ContainerImageSignatureCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ContainerImageSignatureCollection {
+public final class ContainerImageSignatureCollection
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items", "remainingItemsCount"})
     public ContainerImageSignatureCollection(
@@ -68,19 +69,23 @@ public final class ContainerImageSignatureCollection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ContainerImageSignatureCollection build() {
-            ContainerImageSignatureCollection __instance__ =
-                    new ContainerImageSignatureCollection(items, remainingItemsCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ContainerImageSignatureCollection model =
+                    new ContainerImageSignatureCollection(this.items, this.remainingItemsCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ContainerImageSignatureCollection o) {
-            Builder copiedBuilder =
-                    items(o.getItems()).remainingItemsCount(o.getRemainingItemsCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ContainerImageSignatureCollection model) {
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            if (model.wasPropertyExplicitlySet("remainingItemsCount")) {
+                this.remainingItemsCount(model.getRemainingItemsCount());
+            }
+            return this;
         }
     }
 
@@ -136,9 +141,9 @@ public final class ContainerImageSignatureCollection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ContainerImageSignatureCollection(");
+        sb.append("super=").append(super.toString());
         sb.append("items=").append(String.valueOf(this.items));
         sb.append(", remainingItemsCount=").append(String.valueOf(this.remainingItemsCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +160,7 @@ public final class ContainerImageSignatureCollection {
         ContainerImageSignatureCollection other = (ContainerImageSignatureCollection) o;
         return java.util.Objects.equals(this.items, other.items)
                 && java.util.Objects.equals(this.remainingItemsCount, other.remainingItemsCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +173,7 @@ public final class ContainerImageSignatureCollection {
                         + (this.remainingItemsCount == null
                                 ? 43
                                 : this.remainingItemsCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

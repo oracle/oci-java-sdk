@@ -18,7 +18,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProfileDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProfileDetails {
+public final class ProfileDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "numUsers",
@@ -242,40 +242,61 @@ public final class ProfileDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProfileDetails build() {
-            ProfileDetails __instance__ =
+            ProfileDetails model =
                     new ProfileDetails(
-                            numUsers,
-                            connectTime,
-                            failedLoginAttempts,
-                            idleTime,
-                            inactiveAccountTime,
-                            passwordGraceTime,
-                            passwordLifeTime,
-                            passwordLockTime,
-                            passwordReuseTime,
-                            passwordReuseMax,
-                            passwordVerifyFunction);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.numUsers,
+                            this.connectTime,
+                            this.failedLoginAttempts,
+                            this.idleTime,
+                            this.inactiveAccountTime,
+                            this.passwordGraceTime,
+                            this.passwordLifeTime,
+                            this.passwordLockTime,
+                            this.passwordReuseTime,
+                            this.passwordReuseMax,
+                            this.passwordVerifyFunction);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProfileDetails o) {
-            Builder copiedBuilder =
-                    numUsers(o.getNumUsers())
-                            .connectTime(o.getConnectTime())
-                            .failedLoginAttempts(o.getFailedLoginAttempts())
-                            .idleTime(o.getIdleTime())
-                            .inactiveAccountTime(o.getInactiveAccountTime())
-                            .passwordGraceTime(o.getPasswordGraceTime())
-                            .passwordLifeTime(o.getPasswordLifeTime())
-                            .passwordLockTime(o.getPasswordLockTime())
-                            .passwordReuseTime(o.getPasswordReuseTime())
-                            .passwordReuseMax(o.getPasswordReuseMax())
-                            .passwordVerifyFunction(o.getPasswordVerifyFunction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProfileDetails model) {
+            if (model.wasPropertyExplicitlySet("numUsers")) {
+                this.numUsers(model.getNumUsers());
+            }
+            if (model.wasPropertyExplicitlySet("connectTime")) {
+                this.connectTime(model.getConnectTime());
+            }
+            if (model.wasPropertyExplicitlySet("failedLoginAttempts")) {
+                this.failedLoginAttempts(model.getFailedLoginAttempts());
+            }
+            if (model.wasPropertyExplicitlySet("idleTime")) {
+                this.idleTime(model.getIdleTime());
+            }
+            if (model.wasPropertyExplicitlySet("inactiveAccountTime")) {
+                this.inactiveAccountTime(model.getInactiveAccountTime());
+            }
+            if (model.wasPropertyExplicitlySet("passwordGraceTime")) {
+                this.passwordGraceTime(model.getPasswordGraceTime());
+            }
+            if (model.wasPropertyExplicitlySet("passwordLifeTime")) {
+                this.passwordLifeTime(model.getPasswordLifeTime());
+            }
+            if (model.wasPropertyExplicitlySet("passwordLockTime")) {
+                this.passwordLockTime(model.getPasswordLockTime());
+            }
+            if (model.wasPropertyExplicitlySet("passwordReuseTime")) {
+                this.passwordReuseTime(model.getPasswordReuseTime());
+            }
+            if (model.wasPropertyExplicitlySet("passwordReuseMax")) {
+                this.passwordReuseMax(model.getPasswordReuseMax());
+            }
+            if (model.wasPropertyExplicitlySet("passwordVerifyFunction")) {
+                this.passwordVerifyFunction(model.getPasswordVerifyFunction());
+            }
+            return this;
         }
     }
 
@@ -457,6 +478,7 @@ public final class ProfileDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProfileDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("numUsers=").append(String.valueOf(this.numUsers));
         sb.append(", connectTime=").append(String.valueOf(this.connectTime));
         sb.append(", failedLoginAttempts=").append(String.valueOf(this.failedLoginAttempts));
@@ -468,7 +490,6 @@ public final class ProfileDetails {
         sb.append(", passwordReuseTime=").append(String.valueOf(this.passwordReuseTime));
         sb.append(", passwordReuseMax=").append(String.valueOf(this.passwordReuseMax));
         sb.append(", passwordVerifyFunction=").append(String.valueOf(this.passwordVerifyFunction));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -495,7 +516,7 @@ public final class ProfileDetails {
                 && java.util.Objects.equals(this.passwordReuseMax, other.passwordReuseMax)
                 && java.util.Objects.equals(
                         this.passwordVerifyFunction, other.passwordVerifyFunction)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -535,16 +556,7 @@ public final class ProfileDetails {
                         + (this.passwordVerifyFunction == null
                                 ? 43
                                 : this.passwordVerifyFunction.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

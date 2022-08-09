@@ -201,8 +201,8 @@ public class ListExcludedObjectsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .ListExcludedObjectsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.excludedObjectSummaryCollection(response.getItem());
 

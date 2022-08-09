@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = ValidatePatternResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ValidatePatternResult {
+public final class ValidatePatternResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "message",
@@ -130,24 +131,37 @@ public final class ValidatePatternResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ValidatePatternResult build() {
-            ValidatePatternResult __instance__ =
+            ValidatePatternResult model =
                     new ValidatePatternResult(
-                            message, status, expression, filePathPrefix, derivedLogicalEntities);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.message,
+                            this.status,
+                            this.expression,
+                            this.filePathPrefix,
+                            this.derivedLogicalEntities);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ValidatePatternResult o) {
-            Builder copiedBuilder =
-                    message(o.getMessage())
-                            .status(o.getStatus())
-                            .expression(o.getExpression())
-                            .filePathPrefix(o.getFilePathPrefix())
-                            .derivedLogicalEntities(o.getDerivedLogicalEntities());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ValidatePatternResult model) {
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("expression")) {
+                this.expression(model.getExpression());
+            }
+            if (model.wasPropertyExplicitlySet("filePathPrefix")) {
+                this.filePathPrefix(model.getFilePathPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("derivedLogicalEntities")) {
+                this.derivedLogicalEntities(model.getDerivedLogicalEntities());
+            }
+            return this;
         }
     }
 
@@ -245,12 +259,12 @@ public final class ValidatePatternResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ValidatePatternResult(");
+        sb.append("super=").append(super.toString());
         sb.append("message=").append(String.valueOf(this.message));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", expression=").append(String.valueOf(this.expression));
         sb.append(", filePathPrefix=").append(String.valueOf(this.filePathPrefix));
         sb.append(", derivedLogicalEntities=").append(String.valueOf(this.derivedLogicalEntities));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -271,7 +285,7 @@ public final class ValidatePatternResult {
                 && java.util.Objects.equals(this.filePathPrefix, other.filePathPrefix)
                 && java.util.Objects.equals(
                         this.derivedLogicalEntities, other.derivedLogicalEntities)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -289,16 +303,7 @@ public final class ValidatePatternResult {
                         + (this.derivedLogicalEntities == null
                                 ? 43
                                 : this.derivedLogicalEntities.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

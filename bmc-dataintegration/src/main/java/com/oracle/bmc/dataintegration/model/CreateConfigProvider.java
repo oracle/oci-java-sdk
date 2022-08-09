@@ -19,7 +19,7 @@ package com.oracle.bmc.dataintegration.model;
     builder = CreateConfigProvider.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateConfigProvider {
+public final class CreateConfigProvider extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"bindings"})
     public CreateConfigProvider(java.util.Map<String, ParameterValue> bindings) {
@@ -50,17 +50,19 @@ public final class CreateConfigProvider {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateConfigProvider build() {
-            CreateConfigProvider __instance__ = new CreateConfigProvider(bindings);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateConfigProvider model = new CreateConfigProvider(this.bindings);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateConfigProvider o) {
-            Builder copiedBuilder = bindings(o.getBindings());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateConfigProvider model) {
+            if (model.wasPropertyExplicitlySet("bindings")) {
+                this.bindings(model.getBindings());
+            }
+            return this;
         }
     }
 
@@ -102,8 +104,8 @@ public final class CreateConfigProvider {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateConfigProvider(");
+        sb.append("super=").append(super.toString());
         sb.append("bindings=").append(String.valueOf(this.bindings));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -118,8 +120,7 @@ public final class CreateConfigProvider {
         }
 
         CreateConfigProvider other = (CreateConfigProvider) o;
-        return java.util.Objects.equals(this.bindings, other.bindings)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.bindings, other.bindings) && super.equals(other);
     }
 
     @Override
@@ -127,16 +128,7 @@ public final class CreateConfigProvider {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.bindings == null ? 43 : this.bindings.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

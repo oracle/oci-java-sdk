@@ -97,8 +97,8 @@ public class CreateFunctionConverter {
                                         builder =
                                                 com.oracle.bmc.functions.responses
                                                         .CreateFunctionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.function(response.getItem());
 

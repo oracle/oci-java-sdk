@@ -117,6 +117,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "contentLength",
@@ -127,6 +128,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetRunLogResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             Long contentLength,
@@ -134,7 +136,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
             String contentEncoding,
             java.util.Map<String, String> opcMeta,
             java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.contentLength = contentLength;
@@ -149,6 +151,13 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -279,6 +288,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetRunLogResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             contentLength(o.getContentLength());
@@ -297,6 +307,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
         public GetRunLogResponse build() {
             return new GetRunLogResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     etag,
                     contentLength,

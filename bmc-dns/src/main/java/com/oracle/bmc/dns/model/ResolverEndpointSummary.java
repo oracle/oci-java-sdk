@@ -31,7 +31,7 @@ package com.oracle.bmc.dns.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ResolverEndpointSummary {
+public class ResolverEndpointSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -308,6 +308,7 @@ public class ResolverEndpointSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResolverEndpointSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", forwardingAddress=").append(String.valueOf(this.forwardingAddress));
         sb.append(", isForwarding=").append(String.valueOf(this.isForwarding));
@@ -341,7 +342,8 @@ public class ResolverEndpointSummary {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.self, other.self);
+                && java.util.Objects.equals(this.self, other.self)
+                && super.equals(other);
     }
 
     @Override
@@ -366,6 +368,7 @@ public class ResolverEndpointSummary {
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.self == null ? 43 : this.self.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

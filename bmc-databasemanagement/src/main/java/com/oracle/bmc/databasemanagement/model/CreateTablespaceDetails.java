@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = CreateTablespaceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateTablespaceDetails {
+public final class CreateTablespaceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -468,60 +469,101 @@ public final class CreateTablespaceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateTablespaceDetails build() {
-            CreateTablespaceDetails __instance__ =
+            CreateTablespaceDetails model =
                     new CreateTablespaceDetails(
-                            credentialDetails,
-                            name,
-                            type,
-                            isBigfile,
-                            dataFiles,
-                            fileCount,
-                            fileSize,
-                            isReusable,
-                            isAutoExtensible,
-                            autoExtendNextSize,
-                            autoExtendMaxSize,
-                            isMaxSizeUnlimited,
-                            blockSizeInKilobytes,
-                            isEncrypted,
-                            encryptionAlgorithm,
-                            defaultCompress,
-                            status,
-                            extentManagement,
-                            extentUniformSize,
-                            segmentManagement,
-                            isDefault);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.credentialDetails,
+                            this.name,
+                            this.type,
+                            this.isBigfile,
+                            this.dataFiles,
+                            this.fileCount,
+                            this.fileSize,
+                            this.isReusable,
+                            this.isAutoExtensible,
+                            this.autoExtendNextSize,
+                            this.autoExtendMaxSize,
+                            this.isMaxSizeUnlimited,
+                            this.blockSizeInKilobytes,
+                            this.isEncrypted,
+                            this.encryptionAlgorithm,
+                            this.defaultCompress,
+                            this.status,
+                            this.extentManagement,
+                            this.extentUniformSize,
+                            this.segmentManagement,
+                            this.isDefault);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateTablespaceDetails o) {
-            Builder copiedBuilder =
-                    credentialDetails(o.getCredentialDetails())
-                            .name(o.getName())
-                            .type(o.getType())
-                            .isBigfile(o.getIsBigfile())
-                            .dataFiles(o.getDataFiles())
-                            .fileCount(o.getFileCount())
-                            .fileSize(o.getFileSize())
-                            .isReusable(o.getIsReusable())
-                            .isAutoExtensible(o.getIsAutoExtensible())
-                            .autoExtendNextSize(o.getAutoExtendNextSize())
-                            .autoExtendMaxSize(o.getAutoExtendMaxSize())
-                            .isMaxSizeUnlimited(o.getIsMaxSizeUnlimited())
-                            .blockSizeInKilobytes(o.getBlockSizeInKilobytes())
-                            .isEncrypted(o.getIsEncrypted())
-                            .encryptionAlgorithm(o.getEncryptionAlgorithm())
-                            .defaultCompress(o.getDefaultCompress())
-                            .status(o.getStatus())
-                            .extentManagement(o.getExtentManagement())
-                            .extentUniformSize(o.getExtentUniformSize())
-                            .segmentManagement(o.getSegmentManagement())
-                            .isDefault(o.getIsDefault());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateTablespaceDetails model) {
+            if (model.wasPropertyExplicitlySet("credentialDetails")) {
+                this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("isBigfile")) {
+                this.isBigfile(model.getIsBigfile());
+            }
+            if (model.wasPropertyExplicitlySet("dataFiles")) {
+                this.dataFiles(model.getDataFiles());
+            }
+            if (model.wasPropertyExplicitlySet("fileCount")) {
+                this.fileCount(model.getFileCount());
+            }
+            if (model.wasPropertyExplicitlySet("fileSize")) {
+                this.fileSize(model.getFileSize());
+            }
+            if (model.wasPropertyExplicitlySet("isReusable")) {
+                this.isReusable(model.getIsReusable());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoExtensible")) {
+                this.isAutoExtensible(model.getIsAutoExtensible());
+            }
+            if (model.wasPropertyExplicitlySet("autoExtendNextSize")) {
+                this.autoExtendNextSize(model.getAutoExtendNextSize());
+            }
+            if (model.wasPropertyExplicitlySet("autoExtendMaxSize")) {
+                this.autoExtendMaxSize(model.getAutoExtendMaxSize());
+            }
+            if (model.wasPropertyExplicitlySet("isMaxSizeUnlimited")) {
+                this.isMaxSizeUnlimited(model.getIsMaxSizeUnlimited());
+            }
+            if (model.wasPropertyExplicitlySet("blockSizeInKilobytes")) {
+                this.blockSizeInKilobytes(model.getBlockSizeInKilobytes());
+            }
+            if (model.wasPropertyExplicitlySet("isEncrypted")) {
+                this.isEncrypted(model.getIsEncrypted());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionAlgorithm")) {
+                this.encryptionAlgorithm(model.getEncryptionAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("defaultCompress")) {
+                this.defaultCompress(model.getDefaultCompress());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("extentManagement")) {
+                this.extentManagement(model.getExtentManagement());
+            }
+            if (model.wasPropertyExplicitlySet("extentUniformSize")) {
+                this.extentUniformSize(model.getExtentUniformSize());
+            }
+            if (model.wasPropertyExplicitlySet("segmentManagement")) {
+                this.segmentManagement(model.getSegmentManagement());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            return this;
         }
     }
 
@@ -1058,6 +1100,7 @@ public final class CreateTablespaceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateTablespaceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -1079,7 +1122,6 @@ public final class CreateTablespaceDetails {
         sb.append(", extentUniformSize=").append(String.valueOf(this.extentUniformSize));
         sb.append(", segmentManagement=").append(String.valueOf(this.segmentManagement));
         sb.append(", isDefault=").append(String.valueOf(this.isDefault));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1115,7 +1157,7 @@ public final class CreateTablespaceDetails {
                 && java.util.Objects.equals(this.extentUniformSize, other.extentUniformSize)
                 && java.util.Objects.equals(this.segmentManagement, other.segmentManagement)
                 && java.util.Objects.equals(this.isDefault, other.isDefault)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1173,16 +1215,7 @@ public final class CreateTablespaceDetails {
                 (result * PRIME)
                         + (this.segmentManagement == null ? 43 : this.segmentManagement.hashCode());
         result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

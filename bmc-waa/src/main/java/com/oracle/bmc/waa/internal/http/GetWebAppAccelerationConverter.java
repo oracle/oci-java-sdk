@@ -106,8 +106,8 @@ public class GetWebAppAccelerationConverter {
                                         builder =
                                                 com.oracle.bmc.waa.responses
                                                         .GetWebAppAccelerationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.webAppAcceleration(response.getItem());
 

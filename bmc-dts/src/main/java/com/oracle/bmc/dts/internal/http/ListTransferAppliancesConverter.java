@@ -112,8 +112,8 @@ public class ListTransferAppliancesConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .ListTransferAppliancesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.multipleTransferAppliances(response.getItem());
 

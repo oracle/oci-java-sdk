@@ -123,8 +123,8 @@ public class GetLogAnalyticsLogGroupsSummaryConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetLogAnalyticsLogGroupsSummaryResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logGroupSummaryReport(response.getItem());
 

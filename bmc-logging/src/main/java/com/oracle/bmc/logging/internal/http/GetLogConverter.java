@@ -102,7 +102,8 @@ public class GetLogConverter {
 
                                 com.oracle.bmc.logging.responses.GetLogResponse.Builder builder =
                                         com.oracle.bmc.logging.responses.GetLogResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.log(response.getItem());
 

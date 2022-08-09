@@ -17,7 +17,7 @@ package com.oracle.bmc.keymanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Key.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Key {
+public final class Key extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -345,48 +345,77 @@ public final class Key {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Key build() {
-            Key __instance__ =
+            Key model =
                     new Key(
-                            compartmentId,
-                            currentKeyVersion,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            id,
-                            keyShape,
-                            protectionMode,
-                            lifecycleState,
-                            timeCreated,
-                            timeOfDeletion,
-                            vaultId,
-                            restoredFromKeyId,
-                            replicaDetails,
-                            isPrimary);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.currentKeyVersion,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.id,
+                            this.keyShape,
+                            this.protectionMode,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeOfDeletion,
+                            this.vaultId,
+                            this.restoredFromKeyId,
+                            this.replicaDetails,
+                            this.isPrimary);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Key o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .currentKeyVersion(o.getCurrentKeyVersion())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .keyShape(o.getKeyShape())
-                            .protectionMode(o.getProtectionMode())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeOfDeletion(o.getTimeOfDeletion())
-                            .vaultId(o.getVaultId())
-                            .restoredFromKeyId(o.getRestoredFromKeyId())
-                            .replicaDetails(o.getReplicaDetails())
-                            .isPrimary(o.getIsPrimary());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Key model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("currentKeyVersion")) {
+                this.currentKeyVersion(model.getCurrentKeyVersion());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("keyShape")) {
+                this.keyShape(model.getKeyShape());
+            }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfDeletion")) {
+                this.timeOfDeletion(model.getTimeOfDeletion());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("restoredFromKeyId")) {
+                this.restoredFromKeyId(model.getRestoredFromKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("replicaDetails")) {
+                this.replicaDetails(model.getReplicaDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isPrimary")) {
+                this.isPrimary(model.getIsPrimary());
+            }
+            return this;
         }
     }
 
@@ -766,6 +795,7 @@ public final class Key {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Key(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", currentKeyVersion=").append(String.valueOf(this.currentKeyVersion));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -781,7 +811,6 @@ public final class Key {
         sb.append(", restoredFromKeyId=").append(String.valueOf(this.restoredFromKeyId));
         sb.append(", replicaDetails=").append(String.valueOf(this.replicaDetails));
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -811,7 +840,7 @@ public final class Key {
                 && java.util.Objects.equals(this.restoredFromKeyId, other.restoredFromKeyId)
                 && java.util.Objects.equals(this.replicaDetails, other.replicaDetails)
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -847,16 +876,7 @@ public final class Key {
                 (result * PRIME)
                         + (this.replicaDetails == null ? 43 : this.replicaDetails.hashCode());
         result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

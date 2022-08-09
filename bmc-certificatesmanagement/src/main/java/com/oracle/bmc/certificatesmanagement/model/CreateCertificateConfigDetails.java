@@ -36,7 +36,8 @@ package com.oracle.bmc.certificatesmanagement.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateCertificateConfigDetails {
+public class CreateCertificateConfigDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"versionName"})
     protected CreateCertificateConfigDetails(String versionName) {
@@ -71,6 +72,7 @@ public class CreateCertificateConfigDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateCertificateConfigDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("versionName=").append(String.valueOf(this.versionName));
         sb.append(")");
         return sb.toString();
@@ -86,7 +88,7 @@ public class CreateCertificateConfigDetails {
         }
 
         CreateCertificateConfigDetails other = (CreateCertificateConfigDetails) o;
-        return java.util.Objects.equals(this.versionName, other.versionName);
+        return java.util.Objects.equals(this.versionName, other.versionName) && super.equals(other);
     }
 
     @Override
@@ -94,6 +96,7 @@ public class CreateCertificateConfigDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.versionName == null ? 43 : this.versionName.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

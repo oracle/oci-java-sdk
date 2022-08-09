@@ -98,7 +98,8 @@ public class CreateTopicConverter {
 
                                 com.oracle.bmc.ons.responses.CreateTopicResponse.Builder builder =
                                         com.oracle.bmc.ons.responses.CreateTopicResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.notificationTopic(response.getItem());
 

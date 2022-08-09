@@ -55,16 +55,18 @@ public class GetVirtualServiceResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "virtualService"
     })
     private GetVirtualServiceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.servicemesh.model.VirtualService virtualService) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.virtualService = virtualService;
@@ -75,6 +77,13 @@ public class GetVirtualServiceResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetVirtualServiceResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetVirtualServiceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             virtualService(o.getVirtualService());
@@ -149,7 +159,7 @@ public class GetVirtualServiceResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public GetVirtualServiceResponse build() {
             return new GetVirtualServiceResponse(
-                    __httpStatusCode__, etag, opcRequestId, virtualService);
+                    __httpStatusCode__, headers, etag, opcRequestId, virtualService);
         }
     }
 

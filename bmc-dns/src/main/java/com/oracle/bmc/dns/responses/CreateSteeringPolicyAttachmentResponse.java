@@ -74,6 +74,7 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "eTag",
         "location",
         "opcRequestId",
@@ -81,11 +82,12 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
     })
     private CreateSteeringPolicyAttachmentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String eTag,
             String location,
             String opcRequestId,
             com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.eTag = eTag;
         this.location = location;
         this.opcRequestId = opcRequestId;
@@ -97,6 +99,13 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -179,6 +188,7 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
          */
         public Builder copy(CreateSteeringPolicyAttachmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             eTag(o.getETag());
             location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
@@ -193,7 +203,12 @@ public class CreateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
          */
         public CreateSteeringPolicyAttachmentResponse build() {
             return new CreateSteeringPolicyAttachmentResponse(
-                    __httpStatusCode__, eTag, location, opcRequestId, steeringPolicyAttachment);
+                    __httpStatusCode__,
+                    headers,
+                    eTag,
+                    location,
+                    opcRequestId,
+                    steeringPolicyAttachment);
         }
     }
 

@@ -179,8 +179,8 @@ public class ListEventsConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .ListEventsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.eventCollection(response.getItem());
 

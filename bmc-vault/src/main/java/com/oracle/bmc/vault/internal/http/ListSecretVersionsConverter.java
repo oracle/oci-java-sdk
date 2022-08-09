@@ -145,8 +145,8 @@ public class ListSecretVersionsConverter {
                                         builder =
                                                 com.oracle.bmc.vault.responses
                                                         .ListSecretVersionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

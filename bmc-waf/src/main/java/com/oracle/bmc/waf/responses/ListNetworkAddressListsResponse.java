@@ -59,16 +59,18 @@ public class ListNetworkAddressListsResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "networkAddressListCollection"
     })
     private ListNetworkAddressListsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.waf.model.NetworkAddressListCollection networkAddressListCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.networkAddressListCollection = networkAddressListCollection;
@@ -79,6 +81,13 @@ public class ListNetworkAddressListsResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -145,6 +154,7 @@ public class ListNetworkAddressListsResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(ListNetworkAddressListsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             networkAddressListCollection(o.getNetworkAddressListCollection());
@@ -158,7 +168,11 @@ public class ListNetworkAddressListsResponse extends com.oracle.bmc.responses.Bm
          */
         public ListNetworkAddressListsResponse build() {
             return new ListNetworkAddressListsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, networkAddressListCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    networkAddressListCollection);
         }
     }
 

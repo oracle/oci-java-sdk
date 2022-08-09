@@ -1597,6 +1597,130 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public GetOptimizerStatisticsAdvisorExecutionResponse getOptimizerStatisticsAdvisorExecution(
+            GetOptimizerStatisticsAdvisorExecutionRequest request) {
+        LOG.trace("Called getOptimizerStatisticsAdvisorExecution");
+        final GetOptimizerStatisticsAdvisorExecutionRequest interceptedRequest =
+                GetOptimizerStatisticsAdvisorExecutionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOptimizerStatisticsAdvisorExecutionConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetOptimizerStatisticsAdvisorExecution",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetOptimizerStatisticsAdvisorExecution");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetOptimizerStatisticsAdvisorExecutionResponse>
+                transformer =
+                        GetOptimizerStatisticsAdvisorExecutionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetOptimizerStatisticsAdvisorExecutionScriptResponse
+            getOptimizerStatisticsAdvisorExecutionScript(
+                    GetOptimizerStatisticsAdvisorExecutionScriptRequest request) {
+        LOG.trace("Called getOptimizerStatisticsAdvisorExecutionScript");
+        final GetOptimizerStatisticsAdvisorExecutionScriptRequest interceptedRequest =
+                GetOptimizerStatisticsAdvisorExecutionScriptConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOptimizerStatisticsAdvisorExecutionScriptConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetOptimizerStatisticsAdvisorExecutionScript",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetOptimizerStatisticsAdvisorExecutionScript");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        GetOptimizerStatisticsAdvisorExecutionScriptResponse>
+                transformer =
+                        GetOptimizerStatisticsAdvisorExecutionScriptConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetOptimizerStatisticsCollectionOperationResponse
+            getOptimizerStatisticsCollectionOperation(
+                    GetOptimizerStatisticsCollectionOperationRequest request) {
+        LOG.trace("Called getOptimizerStatisticsCollectionOperation");
+        final GetOptimizerStatisticsCollectionOperationRequest interceptedRequest =
+                GetOptimizerStatisticsCollectionOperationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOptimizerStatisticsCollectionOperationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetOptimizerStatisticsCollectionOperation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetOptimizerStatisticsCollectionOperation");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        GetOptimizerStatisticsCollectionOperationResponse>
+                transformer =
+                        GetOptimizerStatisticsCollectionOperationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetPdbMetricsResponse getPdbMetrics(GetPdbMetricsRequest request) {
         LOG.trace("Called getPdbMetrics");
         final GetPdbMetricsRequest interceptedRequest =
@@ -1730,6 +1854,54 @@ public class DbManagementClient implements DbManagement {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ImplementOptimizerStatisticsAdvisorRecommendationsResponse
+            implementOptimizerStatisticsAdvisorRecommendations(
+                    ImplementOptimizerStatisticsAdvisorRecommendationsRequest request) {
+        LOG.trace("Called implementOptimizerStatisticsAdvisorRecommendations");
+        final ImplementOptimizerStatisticsAdvisorRecommendationsRequest interceptedRequest =
+                ImplementOptimizerStatisticsAdvisorRecommendationsConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImplementOptimizerStatisticsAdvisorRecommendationsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ImplementOptimizerStatisticsAdvisorRecommendations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ImplementOptimizerStatisticsAdvisorRecommendations");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ImplementOptimizerStatisticsAdvisorRecommendationsResponse>
+                transformer =
+                        ImplementOptimizerStatisticsAdvisorRecommendationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getImplementOptimizerStatisticsAdvisorRecommendationsDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -2255,6 +2427,131 @@ public class DbManagementClient implements DbManagement {
     }
 
     @Override
+    public ListOptimizerStatisticsAdvisorExecutionsResponse
+            listOptimizerStatisticsAdvisorExecutions(
+                    ListOptimizerStatisticsAdvisorExecutionsRequest request) {
+        LOG.trace("Called listOptimizerStatisticsAdvisorExecutions");
+        final ListOptimizerStatisticsAdvisorExecutionsRequest interceptedRequest =
+                ListOptimizerStatisticsAdvisorExecutionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOptimizerStatisticsAdvisorExecutionsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListOptimizerStatisticsAdvisorExecutions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListOptimizerStatisticsAdvisorExecutions");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOptimizerStatisticsAdvisorExecutionsResponse>
+                transformer =
+                        ListOptimizerStatisticsAdvisorExecutionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListOptimizerStatisticsCollectionAggregationsResponse
+            listOptimizerStatisticsCollectionAggregations(
+                    ListOptimizerStatisticsCollectionAggregationsRequest request) {
+        LOG.trace("Called listOptimizerStatisticsCollectionAggregations");
+        final ListOptimizerStatisticsCollectionAggregationsRequest interceptedRequest =
+                ListOptimizerStatisticsCollectionAggregationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOptimizerStatisticsCollectionAggregationsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListOptimizerStatisticsCollectionAggregations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListOptimizerStatisticsCollectionAggregations");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListOptimizerStatisticsCollectionAggregationsResponse>
+                transformer =
+                        ListOptimizerStatisticsCollectionAggregationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListOptimizerStatisticsCollectionOperationsResponse
+            listOptimizerStatisticsCollectionOperations(
+                    ListOptimizerStatisticsCollectionOperationsRequest request) {
+        LOG.trace("Called listOptimizerStatisticsCollectionOperations");
+        final ListOptimizerStatisticsCollectionOperationsRequest interceptedRequest =
+                ListOptimizerStatisticsCollectionOperationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOptimizerStatisticsCollectionOperationsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListOptimizerStatisticsCollectionOperations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListOptimizerStatisticsCollectionOperations");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListOptimizerStatisticsCollectionOperationsResponse>
+                transformer =
+                        ListOptimizerStatisticsCollectionOperationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListProxiedForUsersResponse listProxiedForUsers(ListProxiedForUsersRequest request) {
         LOG.trace("Called listProxiedForUsers");
         final ListProxiedForUsersRequest interceptedRequest =
@@ -2381,6 +2678,43 @@ public class DbManagementClient implements DbManagement {
         java.util.function.Function<javax.ws.rs.core.Response, ListSystemPrivilegesResponse>
                 transformer =
                         ListSystemPrivilegesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListTableStatisticsResponse listTableStatistics(ListTableStatisticsRequest request) {
+        LOG.trace("Called listTableStatistics");
+        final ListTableStatisticsRequest interceptedRequest =
+                ListTableStatisticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTableStatisticsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ListTableStatistics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListTableStatistics");
+        java.util.function.Function<javax.ws.rs.core.Response, ListTableStatisticsResponse>
+                transformer =
+                        ListTableStatisticsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,

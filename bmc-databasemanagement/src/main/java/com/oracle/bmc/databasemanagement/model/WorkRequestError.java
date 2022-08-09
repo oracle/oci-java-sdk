@@ -17,7 +17,7 @@ package com.oracle.bmc.databasemanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequestError.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestError {
+public final class WorkRequestError extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -152,24 +152,41 @@ public final class WorkRequestError {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestError build() {
-            WorkRequestError __instance__ =
-                    new WorkRequestError(id, workRequestId, code, message, isRetryable, timestamp);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            WorkRequestError model =
+                    new WorkRequestError(
+                            this.id,
+                            this.workRequestId,
+                            this.code,
+                            this.message,
+                            this.isRetryable,
+                            this.timestamp);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkRequestError o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .workRequestId(o.getWorkRequestId())
-                            .code(o.getCode())
-                            .message(o.getMessage())
-                            .isRetryable(o.getIsRetryable())
-                            .timestamp(o.getTimestamp());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkRequestError model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("workRequestId")) {
+                this.workRequestId(model.getWorkRequestId());
+            }
+            if (model.wasPropertyExplicitlySet("code")) {
+                this.code(model.getCode());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("isRetryable")) {
+                this.isRetryable(model.getIsRetryable());
+            }
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            return this;
         }
     }
 
@@ -287,13 +304,13 @@ public final class WorkRequestError {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkRequestError(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
         sb.append(", code=").append(String.valueOf(this.code));
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", isRetryable=").append(String.valueOf(this.isRetryable));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -314,7 +331,7 @@ public final class WorkRequestError {
                 && java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.isRetryable, other.isRetryable)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -329,16 +346,7 @@ public final class WorkRequestError {
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
         result = (result * PRIME) + (this.isRetryable == null ? 43 : this.isRetryable.hashCode());
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

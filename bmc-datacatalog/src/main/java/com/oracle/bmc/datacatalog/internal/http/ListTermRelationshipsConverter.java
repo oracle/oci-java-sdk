@@ -187,8 +187,8 @@ public class ListTermRelationshipsConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListTermRelationshipsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.termRelationshipCollection(response.getItem());
 

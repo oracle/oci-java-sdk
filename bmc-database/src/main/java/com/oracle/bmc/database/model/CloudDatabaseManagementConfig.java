@@ -19,7 +19,8 @@ package com.oracle.bmc.database.model;
     builder = CloudDatabaseManagementConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CloudDatabaseManagementConfig {
+public final class CloudDatabaseManagementConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"managementStatus", "managementType"})
     public CloudDatabaseManagementConfig(
@@ -68,19 +69,23 @@ public final class CloudDatabaseManagementConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CloudDatabaseManagementConfig build() {
-            CloudDatabaseManagementConfig __instance__ =
-                    new CloudDatabaseManagementConfig(managementStatus, managementType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CloudDatabaseManagementConfig model =
+                    new CloudDatabaseManagementConfig(this.managementStatus, this.managementType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CloudDatabaseManagementConfig o) {
-            Builder copiedBuilder =
-                    managementStatus(o.getManagementStatus()).managementType(o.getManagementType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CloudDatabaseManagementConfig model) {
+            if (model.wasPropertyExplicitlySet("managementStatus")) {
+                this.managementStatus(model.getManagementStatus());
+            }
+            if (model.wasPropertyExplicitlySet("managementType")) {
+                this.managementType(model.getManagementType());
+            }
+            return this;
         }
     }
 
@@ -238,9 +243,9 @@ public final class CloudDatabaseManagementConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CloudDatabaseManagementConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("managementStatus=").append(String.valueOf(this.managementStatus));
         sb.append(", managementType=").append(String.valueOf(this.managementType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -257,7 +262,7 @@ public final class CloudDatabaseManagementConfig {
         CloudDatabaseManagementConfig other = (CloudDatabaseManagementConfig) o;
         return java.util.Objects.equals(this.managementStatus, other.managementStatus)
                 && java.util.Objects.equals(this.managementType, other.managementType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -270,16 +275,7 @@ public final class CloudDatabaseManagementConfig {
         result =
                 (result * PRIME)
                         + (this.managementType == null ? 43 : this.managementType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

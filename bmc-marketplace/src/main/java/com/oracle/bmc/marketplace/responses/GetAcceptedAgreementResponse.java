@@ -55,16 +55,18 @@ public class GetAcceptedAgreementResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "acceptedAgreement"
     })
     private GetAcceptedAgreementResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.marketplace.model.AcceptedAgreement acceptedAgreement) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.acceptedAgreement = acceptedAgreement;
@@ -75,6 +77,13 @@ public class GetAcceptedAgreementResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetAcceptedAgreementResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(GetAcceptedAgreementResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             acceptedAgreement(o.getAcceptedAgreement());
@@ -149,7 +159,7 @@ public class GetAcceptedAgreementResponse extends com.oracle.bmc.responses.BmcRe
          */
         public GetAcceptedAgreementResponse build() {
             return new GetAcceptedAgreementResponse(
-                    __httpStatusCode__, opcRequestId, etag, acceptedAgreement);
+                    __httpStatusCode__, headers, opcRequestId, etag, acceptedAgreement);
         }
     }
 

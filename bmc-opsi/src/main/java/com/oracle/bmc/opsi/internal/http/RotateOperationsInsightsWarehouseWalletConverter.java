@@ -114,8 +114,8 @@ public class RotateOperationsInsightsWarehouseWalletConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .RotateOperationsInsightsWarehouseWalletResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

@@ -189,8 +189,8 @@ public class ListLabelsConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListLabelsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsLabelCollection(response.getItem());
 

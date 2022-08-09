@@ -102,8 +102,8 @@ public class GetExportConverter {
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
                                                         .GetExportResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.export(response.getItem());
 

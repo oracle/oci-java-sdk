@@ -188,8 +188,8 @@ public class SummarizeAttentionLogCountsConverter {
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .SummarizeAttentionLogCountsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.attentionLogCountsCollection(response.getItem());
 

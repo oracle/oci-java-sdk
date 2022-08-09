@@ -59,16 +59,18 @@ public class ListRolesResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "roleCollection"
     })
     private ListRolesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.RoleCollection roleCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.roleCollection = roleCollection;
@@ -79,6 +81,13 @@ public class ListRolesResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListRolesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListRolesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             roleCollection(o.getRoleCollection());
@@ -157,7 +167,7 @@ public class ListRolesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListRolesResponse build() {
             return new ListRolesResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, roleCollection);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, roleCollection);
         }
     }
 

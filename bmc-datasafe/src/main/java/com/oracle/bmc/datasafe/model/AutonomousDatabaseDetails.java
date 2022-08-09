@@ -56,20 +56,24 @@ public final class AutonomousDatabaseDetails extends DatabaseDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseDetails build() {
-            AutonomousDatabaseDetails __instance__ =
-                    new AutonomousDatabaseDetails(infrastructureType, autonomousDatabaseId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AutonomousDatabaseDetails model =
+                    new AutonomousDatabaseDetails(
+                            this.infrastructureType, this.autonomousDatabaseId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDatabaseDetails o) {
-            Builder copiedBuilder =
-                    infrastructureType(o.getInfrastructureType())
-                            .autonomousDatabaseId(o.getAutonomousDatabaseId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousDatabaseDetails model) {
+            if (model.wasPropertyExplicitlySet("infrastructureType")) {
+                this.infrastructureType(model.getInfrastructureType());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousDatabaseId")) {
+                this.autonomousDatabaseId(model.getAutonomousDatabaseId());
+            }
+            return this;
         }
     }
 
@@ -120,7 +124,6 @@ public final class AutonomousDatabaseDetails extends DatabaseDetails {
         sb.append("AutonomousDatabaseDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", autonomousDatabaseId=").append(String.valueOf(this.autonomousDatabaseId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -136,8 +139,7 @@ public final class AutonomousDatabaseDetails extends DatabaseDetails {
 
         AutonomousDatabaseDetails other = (AutonomousDatabaseDetails) o;
         return java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -149,16 +151,6 @@ public final class AutonomousDatabaseDetails extends DatabaseDetails {
                         + (this.autonomousDatabaseId == null
                                 ? 43
                                 : this.autonomousDatabaseId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

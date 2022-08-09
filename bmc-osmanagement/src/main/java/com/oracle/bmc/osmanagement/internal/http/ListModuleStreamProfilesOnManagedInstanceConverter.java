@@ -201,8 +201,8 @@ public class ListModuleStreamProfilesOnManagedInstanceConverter {
                                                 com.oracle.bmc.osmanagement.responses
                                                         .ListModuleStreamProfilesOnManagedInstanceResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

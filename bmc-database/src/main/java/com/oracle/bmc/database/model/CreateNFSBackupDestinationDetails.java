@@ -97,30 +97,41 @@ public final class CreateNFSBackupDestinationDetails extends CreateBackupDestina
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateNFSBackupDestinationDetails build() {
-            CreateNFSBackupDestinationDetails __instance__ =
+            CreateNFSBackupDestinationDetails model =
                     new CreateNFSBackupDestinationDetails(
-                            displayName,
-                            compartmentId,
-                            freeformTags,
-                            definedTags,
-                            localMountPointPath,
-                            mountTypeDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.compartmentId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.localMountPointPath,
+                            this.mountTypeDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateNFSBackupDestinationDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .localMountPointPath(o.getLocalMountPointPath())
-                            .mountTypeDetails(o.getMountTypeDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateNFSBackupDestinationDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("localMountPointPath")) {
+                this.localMountPointPath(model.getLocalMountPointPath());
+            }
+            if (model.wasPropertyExplicitlySet("mountTypeDetails")) {
+                this.mountTypeDetails(model.getMountTypeDetails());
+            }
+            return this;
         }
     }
 
@@ -189,7 +200,6 @@ public final class CreateNFSBackupDestinationDetails extends CreateBackupDestina
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", localMountPointPath=").append(String.valueOf(this.localMountPointPath));
         sb.append(", mountTypeDetails=").append(String.valueOf(this.mountTypeDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -206,8 +216,7 @@ public final class CreateNFSBackupDestinationDetails extends CreateBackupDestina
         CreateNFSBackupDestinationDetails other = (CreateNFSBackupDestinationDetails) o;
         return java.util.Objects.equals(this.localMountPointPath, other.localMountPointPath)
                 && java.util.Objects.equals(this.mountTypeDetails, other.mountTypeDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -222,16 +231,6 @@ public final class CreateNFSBackupDestinationDetails extends CreateBackupDestina
         result =
                 (result * PRIME)
                         + (this.mountTypeDetails == null ? 43 : this.mountTypeDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

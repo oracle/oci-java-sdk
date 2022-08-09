@@ -117,8 +117,8 @@ public class GetPrivateApplicationPackageConverter {
                                                 com.oracle.bmc.servicecatalog.responses
                                                         .GetPrivateApplicationPackageResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.privateApplicationPackage(response.getItem());
 

@@ -143,8 +143,8 @@ public class ListImpactedResourcesConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListImpactedResourcesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.impactedResourceCollection(response.getItem());
 

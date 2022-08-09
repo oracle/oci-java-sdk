@@ -62,17 +62,22 @@ public final class TcpApplication extends Application {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TcpApplication build() {
-            TcpApplication __instance__ = new TcpApplication(minimumPort, maximumPort);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TcpApplication model = new TcpApplication(this.minimumPort, this.maximumPort);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TcpApplication o) {
-            Builder copiedBuilder = minimumPort(o.getMinimumPort()).maximumPort(o.getMaximumPort());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TcpApplication model) {
+            if (model.wasPropertyExplicitlySet("minimumPort")) {
+                this.minimumPort(model.getMinimumPort());
+            }
+            if (model.wasPropertyExplicitlySet("maximumPort")) {
+                this.maximumPort(model.getMaximumPort());
+            }
+            return this;
         }
     }
 
@@ -138,7 +143,6 @@ public final class TcpApplication extends Application {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", minimumPort=").append(String.valueOf(this.minimumPort));
         sb.append(", maximumPort=").append(String.valueOf(this.maximumPort));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,8 +159,7 @@ public final class TcpApplication extends Application {
         TcpApplication other = (TcpApplication) o;
         return java.util.Objects.equals(this.minimumPort, other.minimumPort)
                 && java.util.Objects.equals(this.maximumPort, other.maximumPort)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -165,16 +168,6 @@ public final class TcpApplication extends Application {
         int result = super.hashCode();
         result = (result * PRIME) + (this.minimumPort == null ? 43 : this.minimumPort.hashCode());
         result = (result * PRIME) + (this.maximumPort == null ? 43 : this.maximumPort.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

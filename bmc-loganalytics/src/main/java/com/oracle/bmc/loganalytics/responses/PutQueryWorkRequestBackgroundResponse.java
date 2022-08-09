@@ -72,6 +72,7 @@ public class PutQueryWorkRequestBackgroundResponse extends com.oracle.bmc.respon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "queryWorkRequest",
@@ -79,11 +80,12 @@ public class PutQueryWorkRequestBackgroundResponse extends com.oracle.bmc.respon
     })
     private PutQueryWorkRequestBackgroundResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest,
             boolean isNotModified) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.queryWorkRequest = queryWorkRequest;
@@ -95,6 +97,13 @@ public class PutQueryWorkRequestBackgroundResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -174,6 +183,7 @@ public class PutQueryWorkRequestBackgroundResponse extends com.oracle.bmc.respon
          */
         public Builder copy(PutQueryWorkRequestBackgroundResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             queryWorkRequest(o.getQueryWorkRequest());
@@ -187,7 +197,12 @@ public class PutQueryWorkRequestBackgroundResponse extends com.oracle.bmc.respon
          */
         public PutQueryWorkRequestBackgroundResponse build() {
             return new PutQueryWorkRequestBackgroundResponse(
-                    __httpStatusCode__, etag, opcRequestId, queryWorkRequest, isNotModified);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    queryWorkRequest,
+                    isNotModified);
         }
     }
 

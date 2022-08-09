@@ -101,8 +101,8 @@ public class GetNetworkSourceConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .GetNetworkSourceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkSources(response.getItem());
 

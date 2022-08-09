@@ -18,7 +18,7 @@ package com.oracle.bmc.identitydataplane.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PasswordPolicy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PasswordPolicy {
+public final class PasswordPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "minimumPasswordLength",
@@ -147,30 +147,41 @@ public final class PasswordPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PasswordPolicy build() {
-            PasswordPolicy __instance__ =
+            PasswordPolicy model =
                     new PasswordPolicy(
-                            minimumPasswordLength,
-                            isUppercaseCharactersRequired,
-                            isLowercaseCharactersRequired,
-                            isNumericCharactersRequired,
-                            isSpecialCharactersRequired,
-                            isUsernameContainmentAllowed);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.minimumPasswordLength,
+                            this.isUppercaseCharactersRequired,
+                            this.isLowercaseCharactersRequired,
+                            this.isNumericCharactersRequired,
+                            this.isSpecialCharactersRequired,
+                            this.isUsernameContainmentAllowed);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PasswordPolicy o) {
-            Builder copiedBuilder =
-                    minimumPasswordLength(o.getMinimumPasswordLength())
-                            .isUppercaseCharactersRequired(o.getIsUppercaseCharactersRequired())
-                            .isLowercaseCharactersRequired(o.getIsLowercaseCharactersRequired())
-                            .isNumericCharactersRequired(o.getIsNumericCharactersRequired())
-                            .isSpecialCharactersRequired(o.getIsSpecialCharactersRequired())
-                            .isUsernameContainmentAllowed(o.getIsUsernameContainmentAllowed());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PasswordPolicy model) {
+            if (model.wasPropertyExplicitlySet("minimumPasswordLength")) {
+                this.minimumPasswordLength(model.getMinimumPasswordLength());
+            }
+            if (model.wasPropertyExplicitlySet("isUppercaseCharactersRequired")) {
+                this.isUppercaseCharactersRequired(model.getIsUppercaseCharactersRequired());
+            }
+            if (model.wasPropertyExplicitlySet("isLowercaseCharactersRequired")) {
+                this.isLowercaseCharactersRequired(model.getIsLowercaseCharactersRequired());
+            }
+            if (model.wasPropertyExplicitlySet("isNumericCharactersRequired")) {
+                this.isNumericCharactersRequired(model.getIsNumericCharactersRequired());
+            }
+            if (model.wasPropertyExplicitlySet("isSpecialCharactersRequired")) {
+                this.isSpecialCharactersRequired(model.getIsSpecialCharactersRequired());
+            }
+            if (model.wasPropertyExplicitlySet("isUsernameContainmentAllowed")) {
+                this.isUsernameContainmentAllowed(model.getIsUsernameContainmentAllowed());
+            }
+            return this;
         }
     }
 
@@ -282,6 +293,7 @@ public final class PasswordPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PasswordPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("minimumPasswordLength=").append(String.valueOf(this.minimumPasswordLength));
         sb.append(", isUppercaseCharactersRequired=")
                 .append(String.valueOf(this.isUppercaseCharactersRequired));
@@ -293,7 +305,6 @@ public final class PasswordPolicy {
                 .append(String.valueOf(this.isSpecialCharactersRequired));
         sb.append(", isUsernameContainmentAllowed=")
                 .append(String.valueOf(this.isUsernameContainmentAllowed));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -319,7 +330,7 @@ public final class PasswordPolicy {
                         this.isSpecialCharactersRequired, other.isSpecialCharactersRequired)
                 && java.util.Objects.equals(
                         this.isUsernameContainmentAllowed, other.isUsernameContainmentAllowed)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -356,16 +367,7 @@ public final class PasswordPolicy {
                         + (this.isUsernameContainmentAllowed == null
                                 ? 43
                                 : this.isUsernameContainmentAllowed.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

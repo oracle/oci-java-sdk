@@ -23,7 +23,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Service.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Service {
+public final class Service extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"cidrBlock", "description", "id", "name"})
     public Service(String cidrBlock, String description, String id, String name) {
@@ -139,21 +139,28 @@ public final class Service {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Service build() {
-            Service __instance__ = new Service(cidrBlock, description, id, name);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Service model = new Service(this.cidrBlock, this.description, this.id, this.name);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Service o) {
-            Builder copiedBuilder =
-                    cidrBlock(o.getCidrBlock())
-                            .description(o.getDescription())
-                            .id(o.getId())
-                            .name(o.getName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Service model) {
+            if (model.wasPropertyExplicitlySet("cidrBlock")) {
+                this.cidrBlock(model.getCidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            return this;
         }
     }
 
@@ -271,11 +278,11 @@ public final class Service {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Service(");
+        sb.append("super=").append(super.toString());
         sb.append("cidrBlock=").append(String.valueOf(this.cidrBlock));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -294,7 +301,7 @@ public final class Service {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -305,16 +312,7 @@ public final class Service {
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

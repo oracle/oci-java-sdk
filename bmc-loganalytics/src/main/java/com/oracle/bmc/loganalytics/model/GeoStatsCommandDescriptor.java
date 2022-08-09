@@ -131,34 +131,49 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GeoStatsCommandDescriptor build() {
-            GeoStatsCommandDescriptor __instance__ =
+            GeoStatsCommandDescriptor model =
                     new GeoStatsCommandDescriptor(
-                            displayQueryString,
-                            internalQueryString,
-                            category,
-                            referencedFields,
-                            declaredFields,
-                            include,
-                            groupByFields,
-                            functions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayQueryString,
+                            this.internalQueryString,
+                            this.category,
+                            this.referencedFields,
+                            this.declaredFields,
+                            this.include,
+                            this.groupByFields,
+                            this.functions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GeoStatsCommandDescriptor o) {
-            Builder copiedBuilder =
-                    displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString())
-                            .category(o.getCategory())
-                            .referencedFields(o.getReferencedFields())
-                            .declaredFields(o.getDeclaredFields())
-                            .include(o.getInclude())
-                            .groupByFields(o.getGroupByFields())
-                            .functions(o.getFunctions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GeoStatsCommandDescriptor model) {
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("referencedFields")) {
+                this.referencedFields(model.getReferencedFields());
+            }
+            if (model.wasPropertyExplicitlySet("declaredFields")) {
+                this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("include")) {
+                this.include(model.getInclude());
+            }
+            if (model.wasPropertyExplicitlySet("groupByFields")) {
+                this.groupByFields(model.getGroupByFields());
+            }
+            if (model.wasPropertyExplicitlySet("functions")) {
+                this.functions(model.getFunctions());
+            }
+            return this;
         }
     }
 
@@ -304,7 +319,6 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
         sb.append(", include=").append(String.valueOf(this.include));
         sb.append(", groupByFields=").append(String.valueOf(this.groupByFields));
         sb.append(", functions=").append(String.valueOf(this.functions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -322,8 +336,7 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
         return java.util.Objects.equals(this.include, other.include)
                 && java.util.Objects.equals(this.groupByFields, other.groupByFields)
                 && java.util.Objects.equals(this.functions, other.functions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -335,16 +348,6 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
                 (result * PRIME)
                         + (this.groupByFields == null ? 43 : this.groupByFields.hashCode());
         result = (result * PRIME) + (this.functions == null ? 43 : this.functions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

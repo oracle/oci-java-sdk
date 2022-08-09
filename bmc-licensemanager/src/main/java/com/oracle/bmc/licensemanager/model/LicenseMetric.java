@@ -17,7 +17,7 @@ package com.oracle.bmc.licensemanager.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LicenseMetric.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LicenseMetric {
+public final class LicenseMetric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "totalProductLicenseCount",
@@ -117,27 +117,34 @@ public final class LicenseMetric {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LicenseMetric build() {
-            LicenseMetric __instance__ =
+            LicenseMetric model =
                     new LicenseMetric(
-                            totalProductLicenseCount,
-                            totalByolInstanceCount,
-                            totalLicenseIncludedInstanceCount,
-                            licenseRecordExpiringSoonCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.totalProductLicenseCount,
+                            this.totalByolInstanceCount,
+                            this.totalLicenseIncludedInstanceCount,
+                            this.licenseRecordExpiringSoonCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LicenseMetric o) {
-            Builder copiedBuilder =
-                    totalProductLicenseCount(o.getTotalProductLicenseCount())
-                            .totalByolInstanceCount(o.getTotalByolInstanceCount())
-                            .totalLicenseIncludedInstanceCount(
-                                    o.getTotalLicenseIncludedInstanceCount())
-                            .licenseRecordExpiringSoonCount(o.getLicenseRecordExpiringSoonCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LicenseMetric model) {
+            if (model.wasPropertyExplicitlySet("totalProductLicenseCount")) {
+                this.totalProductLicenseCount(model.getTotalProductLicenseCount());
+            }
+            if (model.wasPropertyExplicitlySet("totalByolInstanceCount")) {
+                this.totalByolInstanceCount(model.getTotalByolInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("totalLicenseIncludedInstanceCount")) {
+                this.totalLicenseIncludedInstanceCount(
+                        model.getTotalLicenseIncludedInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("licenseRecordExpiringSoonCount")) {
+                this.licenseRecordExpiringSoonCount(model.getLicenseRecordExpiringSoonCount());
+            }
+            return this;
         }
     }
 
@@ -229,6 +236,7 @@ public final class LicenseMetric {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LicenseMetric(");
+        sb.append("super=").append(super.toString());
         sb.append("totalProductLicenseCount=")
                 .append(String.valueOf(this.totalProductLicenseCount));
         sb.append(", totalByolInstanceCount=").append(String.valueOf(this.totalByolInstanceCount));
@@ -236,7 +244,6 @@ public final class LicenseMetric {
                 .append(String.valueOf(this.totalLicenseIncludedInstanceCount));
         sb.append(", licenseRecordExpiringSoonCount=")
                 .append(String.valueOf(this.licenseRecordExpiringSoonCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -260,7 +267,7 @@ public final class LicenseMetric {
                         other.totalLicenseIncludedInstanceCount)
                 && java.util.Objects.equals(
                         this.licenseRecordExpiringSoonCount, other.licenseRecordExpiringSoonCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -287,16 +294,7 @@ public final class LicenseMetric {
                         + (this.licenseRecordExpiringSoonCount == null
                                 ? 43
                                 : this.licenseRecordExpiringSoonCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

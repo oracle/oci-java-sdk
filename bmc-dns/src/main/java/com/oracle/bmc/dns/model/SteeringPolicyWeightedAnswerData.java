@@ -19,7 +19,8 @@ package com.oracle.bmc.dns.model;
     builder = SteeringPolicyWeightedAnswerData.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SteeringPolicyWeightedAnswerData {
+public final class SteeringPolicyWeightedAnswerData
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"answerCondition", "value"})
     public SteeringPolicyWeightedAnswerData(String answerCondition, Integer value) {
@@ -73,18 +74,23 @@ public final class SteeringPolicyWeightedAnswerData {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SteeringPolicyWeightedAnswerData build() {
-            SteeringPolicyWeightedAnswerData __instance__ =
-                    new SteeringPolicyWeightedAnswerData(answerCondition, value);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SteeringPolicyWeightedAnswerData model =
+                    new SteeringPolicyWeightedAnswerData(this.answerCondition, this.value);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SteeringPolicyWeightedAnswerData o) {
-            Builder copiedBuilder = answerCondition(o.getAnswerCondition()).value(o.getValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SteeringPolicyWeightedAnswerData model) {
+            if (model.wasPropertyExplicitlySet("answerCondition")) {
+                this.answerCondition(model.getAnswerCondition());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            return this;
         }
     }
 
@@ -146,9 +152,9 @@ public final class SteeringPolicyWeightedAnswerData {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SteeringPolicyWeightedAnswerData(");
+        sb.append("super=").append(super.toString());
         sb.append("answerCondition=").append(String.valueOf(this.answerCondition));
         sb.append(", value=").append(String.valueOf(this.value));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -165,7 +171,7 @@ public final class SteeringPolicyWeightedAnswerData {
         SteeringPolicyWeightedAnswerData other = (SteeringPolicyWeightedAnswerData) o;
         return java.util.Objects.equals(this.answerCondition, other.answerCondition)
                 && java.util.Objects.equals(this.value, other.value)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -176,16 +182,7 @@ public final class SteeringPolicyWeightedAnswerData {
                 (result * PRIME)
                         + (this.answerCondition == null ? 43 : this.answerCondition.hashCode());
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

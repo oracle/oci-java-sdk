@@ -20,7 +20,8 @@ package com.oracle.bmc.mysql.model;
     builder = PointInTimeRecoveryDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PointInTimeRecoveryDetails {
+public final class PointInTimeRecoveryDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeEarliestRecoveryPoint", "timeLatestRecoveryPoint"})
     public PointInTimeRecoveryDetails(
@@ -73,21 +74,24 @@ public final class PointInTimeRecoveryDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PointInTimeRecoveryDetails build() {
-            PointInTimeRecoveryDetails __instance__ =
+            PointInTimeRecoveryDetails model =
                     new PointInTimeRecoveryDetails(
-                            timeEarliestRecoveryPoint, timeLatestRecoveryPoint);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeEarliestRecoveryPoint, this.timeLatestRecoveryPoint);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PointInTimeRecoveryDetails o) {
-            Builder copiedBuilder =
-                    timeEarliestRecoveryPoint(o.getTimeEarliestRecoveryPoint())
-                            .timeLatestRecoveryPoint(o.getTimeLatestRecoveryPoint());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PointInTimeRecoveryDetails model) {
+            if (model.wasPropertyExplicitlySet("timeEarliestRecoveryPoint")) {
+                this.timeEarliestRecoveryPoint(model.getTimeEarliestRecoveryPoint());
+            }
+            if (model.wasPropertyExplicitlySet("timeLatestRecoveryPoint")) {
+                this.timeLatestRecoveryPoint(model.getTimeLatestRecoveryPoint());
+            }
+            return this;
         }
     }
 
@@ -147,11 +151,11 @@ public final class PointInTimeRecoveryDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PointInTimeRecoveryDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("timeEarliestRecoveryPoint=")
                 .append(String.valueOf(this.timeEarliestRecoveryPoint));
         sb.append(", timeLatestRecoveryPoint=")
                 .append(String.valueOf(this.timeLatestRecoveryPoint));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -170,7 +174,7 @@ public final class PointInTimeRecoveryDetails {
                         this.timeEarliestRecoveryPoint, other.timeEarliestRecoveryPoint)
                 && java.util.Objects.equals(
                         this.timeLatestRecoveryPoint, other.timeLatestRecoveryPoint)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -187,16 +191,7 @@ public final class PointInTimeRecoveryDetails {
                         + (this.timeLatestRecoveryPoint == null
                                 ? 43
                                 : this.timeLatestRecoveryPoint.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

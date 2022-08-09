@@ -32,7 +32,7 @@ package com.oracle.bmc.apigateway.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class StaticPublicKey {
+public class StaticPublicKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"kid"})
     protected StaticPublicKey(String kid) {
@@ -71,6 +71,7 @@ public class StaticPublicKey {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StaticPublicKey(");
+        sb.append("super=").append(super.toString());
         sb.append("kid=").append(String.valueOf(this.kid));
         sb.append(")");
         return sb.toString();
@@ -86,7 +87,7 @@ public class StaticPublicKey {
         }
 
         StaticPublicKey other = (StaticPublicKey) o;
-        return java.util.Objects.equals(this.kid, other.kid);
+        return java.util.Objects.equals(this.kid, other.kid) && super.equals(other);
     }
 
     @Override
@@ -94,6 +95,7 @@ public class StaticPublicKey {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.kid == null ? 43 : this.kid.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

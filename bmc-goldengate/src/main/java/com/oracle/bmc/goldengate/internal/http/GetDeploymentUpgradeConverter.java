@@ -110,8 +110,8 @@ public class GetDeploymentUpgradeConverter {
                                         builder =
                                                 com.oracle.bmc.goldengate.responses
                                                         .GetDeploymentUpgradeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deploymentUpgrade(response.getItem());
 

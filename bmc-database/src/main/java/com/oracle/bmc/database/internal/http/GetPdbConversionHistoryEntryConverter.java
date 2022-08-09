@@ -120,8 +120,8 @@ public class GetPdbConversionHistoryEntryConverter {
                                                 com.oracle.bmc.database.responses
                                                         .GetPdbConversionHistoryEntryResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pdbConversionHistoryEntry(response.getItem());
 

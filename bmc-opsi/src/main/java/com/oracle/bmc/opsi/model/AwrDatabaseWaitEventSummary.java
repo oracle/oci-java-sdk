@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = AwrDatabaseWaitEventSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwrDatabaseWaitEventSummary {
+public final class AwrDatabaseWaitEventSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -154,30 +155,41 @@ public final class AwrDatabaseWaitEventSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrDatabaseWaitEventSummary build() {
-            AwrDatabaseWaitEventSummary __instance__ =
+            AwrDatabaseWaitEventSummary model =
                     new AwrDatabaseWaitEventSummary(
-                            name,
-                            timeBegin,
-                            timeEnd,
-                            waitsPerSec,
-                            avgWaitTimePerSec,
-                            snapshotIdentifier);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.timeBegin,
+                            this.timeEnd,
+                            this.waitsPerSec,
+                            this.avgWaitTimePerSec,
+                            this.snapshotIdentifier);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrDatabaseWaitEventSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .timeBegin(o.getTimeBegin())
-                            .timeEnd(o.getTimeEnd())
-                            .waitsPerSec(o.getWaitsPerSec())
-                            .avgWaitTimePerSec(o.getAvgWaitTimePerSec())
-                            .snapshotIdentifier(o.getSnapshotIdentifier());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrDatabaseWaitEventSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("timeBegin")) {
+                this.timeBegin(model.getTimeBegin());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("waitsPerSec")) {
+                this.waitsPerSec(model.getWaitsPerSec());
+            }
+            if (model.wasPropertyExplicitlySet("avgWaitTimePerSec")) {
+                this.avgWaitTimePerSec(model.getAvgWaitTimePerSec());
+            }
+            if (model.wasPropertyExplicitlySet("snapshotIdentifier")) {
+                this.snapshotIdentifier(model.getSnapshotIdentifier());
+            }
+            return this;
         }
     }
 
@@ -295,13 +307,13 @@ public final class AwrDatabaseWaitEventSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrDatabaseWaitEventSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", timeBegin=").append(String.valueOf(this.timeBegin));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", waitsPerSec=").append(String.valueOf(this.waitsPerSec));
         sb.append(", avgWaitTimePerSec=").append(String.valueOf(this.avgWaitTimePerSec));
         sb.append(", snapshotIdentifier=").append(String.valueOf(this.snapshotIdentifier));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -322,7 +334,7 @@ public final class AwrDatabaseWaitEventSummary {
                 && java.util.Objects.equals(this.waitsPerSec, other.waitsPerSec)
                 && java.util.Objects.equals(this.avgWaitTimePerSec, other.avgWaitTimePerSec)
                 && java.util.Objects.equals(this.snapshotIdentifier, other.snapshotIdentifier)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -341,16 +353,7 @@ public final class AwrDatabaseWaitEventSummary {
                         + (this.snapshotIdentifier == null
                                 ? 43
                                 : this.snapshotIdentifier.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

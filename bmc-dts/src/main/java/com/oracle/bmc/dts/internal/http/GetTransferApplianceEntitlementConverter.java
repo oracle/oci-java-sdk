@@ -117,8 +117,8 @@ public class GetTransferApplianceEntitlementConverter {
                                                 com.oracle.bmc.dts.responses
                                                         .GetTransferApplianceEntitlementResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.transferApplianceEntitlement(response.getItem());
 

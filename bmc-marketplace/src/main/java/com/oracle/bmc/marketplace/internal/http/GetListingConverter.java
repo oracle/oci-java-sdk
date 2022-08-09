@@ -110,8 +110,8 @@ public class GetListingConverter {
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
                                                         .GetListingResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.listing(response.getItem());
 

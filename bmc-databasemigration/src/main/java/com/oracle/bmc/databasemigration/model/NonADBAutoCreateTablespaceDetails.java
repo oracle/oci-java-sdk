@@ -87,21 +87,27 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NonADBAutoCreateTablespaceDetails build() {
-            NonADBAutoCreateTablespaceDetails __instance__ =
-                    new NonADBAutoCreateTablespaceDetails(isAutoCreate, isBigFile, extendSizeInMBs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NonADBAutoCreateTablespaceDetails model =
+                    new NonADBAutoCreateTablespaceDetails(
+                            this.isAutoCreate, this.isBigFile, this.extendSizeInMBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NonADBAutoCreateTablespaceDetails o) {
-            Builder copiedBuilder =
-                    isAutoCreate(o.getIsAutoCreate())
-                            .isBigFile(o.getIsBigFile())
-                            .extendSizeInMBs(o.getExtendSizeInMBs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NonADBAutoCreateTablespaceDetails model) {
+            if (model.wasPropertyExplicitlySet("isAutoCreate")) {
+                this.isAutoCreate(model.getIsAutoCreate());
+            }
+            if (model.wasPropertyExplicitlySet("isBigFile")) {
+                this.isBigFile(model.getIsBigFile());
+            }
+            if (model.wasPropertyExplicitlySet("extendSizeInMBs")) {
+                this.extendSizeInMBs(model.getExtendSizeInMBs());
+            }
+            return this;
         }
     }
 
@@ -190,7 +196,6 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
         sb.append(", isAutoCreate=").append(String.valueOf(this.isAutoCreate));
         sb.append(", isBigFile=").append(String.valueOf(this.isBigFile));
         sb.append(", extendSizeInMBs=").append(String.valueOf(this.extendSizeInMBs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -208,8 +213,7 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
         return java.util.Objects.equals(this.isAutoCreate, other.isAutoCreate)
                 && java.util.Objects.equals(this.isBigFile, other.isBigFile)
                 && java.util.Objects.equals(this.extendSizeInMBs, other.extendSizeInMBs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -221,16 +225,6 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
         result =
                 (result * PRIME)
                         + (this.extendSizeInMBs == null ? 43 : this.extendSizeInMBs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

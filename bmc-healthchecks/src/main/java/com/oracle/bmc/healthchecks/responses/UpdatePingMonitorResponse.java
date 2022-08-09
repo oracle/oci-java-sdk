@@ -53,13 +53,20 @@ public class UpdatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
         return pingMonitor;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "pingMonitor"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "pingMonitor"
+    })
     private UpdatePingMonitorResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.healthchecks.model.PingMonitor pingMonitor) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.pingMonitor = pingMonitor;
@@ -70,6 +77,13 @@ public class UpdatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(UpdatePingMonitorResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             pingMonitor(o.getPingMonitor());
@@ -143,7 +158,7 @@ public class UpdatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public UpdatePingMonitorResponse build() {
             return new UpdatePingMonitorResponse(
-                    __httpStatusCode__, opcRequestId, etag, pingMonitor);
+                    __httpStatusCode__, headers, opcRequestId, etag, pingMonitor);
         }
     }
 

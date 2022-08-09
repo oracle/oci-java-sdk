@@ -103,7 +103,8 @@ public class GetRefConverter {
 
                                 com.oracle.bmc.devops.responses.GetRefResponse.Builder builder =
                                         com.oracle.bmc.devops.responses.GetRefResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.repositoryRef(response.getItem());
 

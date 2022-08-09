@@ -23,7 +23,7 @@ package com.oracle.bmc.jms.model;
     builder = ManagedInstanceUsage.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ManagedInstanceUsage {
+public final class ManagedInstanceUsage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "managedInstanceId",
@@ -279,42 +279,65 @@ public final class ManagedInstanceUsage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagedInstanceUsage build() {
-            ManagedInstanceUsage __instance__ =
+            ManagedInstanceUsage model =
                     new ManagedInstanceUsage(
-                            managedInstanceId,
-                            managedInstanceType,
-                            hostname,
-                            hostId,
-                            operatingSystem,
-                            approximateApplicationCount,
-                            approximateInstallationCount,
-                            approximateJreCount,
-                            timeStart,
-                            timeEnd,
-                            timeFirstSeen,
-                            timeLastSeen);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.managedInstanceId,
+                            this.managedInstanceType,
+                            this.hostname,
+                            this.hostId,
+                            this.operatingSystem,
+                            this.approximateApplicationCount,
+                            this.approximateInstallationCount,
+                            this.approximateJreCount,
+                            this.timeStart,
+                            this.timeEnd,
+                            this.timeFirstSeen,
+                            this.timeLastSeen);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManagedInstanceUsage o) {
-            Builder copiedBuilder =
-                    managedInstanceId(o.getManagedInstanceId())
-                            .managedInstanceType(o.getManagedInstanceType())
-                            .hostname(o.getHostname())
-                            .hostId(o.getHostId())
-                            .operatingSystem(o.getOperatingSystem())
-                            .approximateApplicationCount(o.getApproximateApplicationCount())
-                            .approximateInstallationCount(o.getApproximateInstallationCount())
-                            .approximateJreCount(o.getApproximateJreCount())
-                            .timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd())
-                            .timeFirstSeen(o.getTimeFirstSeen())
-                            .timeLastSeen(o.getTimeLastSeen());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManagedInstanceUsage model) {
+            if (model.wasPropertyExplicitlySet("managedInstanceId")) {
+                this.managedInstanceId(model.getManagedInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("managedInstanceType")) {
+                this.managedInstanceType(model.getManagedInstanceType());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("hostId")) {
+                this.hostId(model.getHostId());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystem")) {
+                this.operatingSystem(model.getOperatingSystem());
+            }
+            if (model.wasPropertyExplicitlySet("approximateApplicationCount")) {
+                this.approximateApplicationCount(model.getApproximateApplicationCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateInstallationCount")) {
+                this.approximateInstallationCount(model.getApproximateInstallationCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateJreCount")) {
+                this.approximateJreCount(model.getApproximateJreCount());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstSeen")) {
+                this.timeFirstSeen(model.getTimeFirstSeen());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSeen")) {
+                this.timeLastSeen(model.getTimeLastSeen());
+            }
+            return this;
         }
     }
 
@@ -523,6 +546,7 @@ public final class ManagedInstanceUsage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagedInstanceUsage(");
+        sb.append("super=").append(super.toString());
         sb.append("managedInstanceId=").append(String.valueOf(this.managedInstanceId));
         sb.append(", managedInstanceType=").append(String.valueOf(this.managedInstanceType));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
@@ -537,7 +561,6 @@ public final class ManagedInstanceUsage {
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
         sb.append(", timeLastSeen=").append(String.valueOf(this.timeLastSeen));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -566,7 +589,7 @@ public final class ManagedInstanceUsage {
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
                 && java.util.Objects.equals(this.timeLastSeen, other.timeLastSeen)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -607,16 +630,7 @@ public final class ManagedInstanceUsage {
                 (result * PRIME)
                         + (this.timeFirstSeen == null ? 43 : this.timeFirstSeen.hashCode());
         result = (result * PRIME) + (this.timeLastSeen == null ? 43 : this.timeLastSeen.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

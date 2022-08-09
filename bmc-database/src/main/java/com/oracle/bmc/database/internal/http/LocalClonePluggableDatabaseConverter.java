@@ -124,8 +124,8 @@ public class LocalClonePluggableDatabaseConverter {
                                                 com.oracle.bmc.database.responses
                                                         .LocalClonePluggableDatabaseResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pluggableDatabase(response.getItem());
 

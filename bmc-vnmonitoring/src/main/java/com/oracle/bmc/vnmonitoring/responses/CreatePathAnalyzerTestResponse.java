@@ -55,16 +55,18 @@ public class CreatePathAnalyzerTestResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "pathAnalyzerTest"
     })
     private CreatePathAnalyzerTestResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.vnmonitoring.model.PathAnalyzerTest pathAnalyzerTest) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.pathAnalyzerTest = pathAnalyzerTest;
@@ -75,6 +77,13 @@ public class CreatePathAnalyzerTestResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class CreatePathAnalyzerTestResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(CreatePathAnalyzerTestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             pathAnalyzerTest(o.getPathAnalyzerTest());
@@ -149,7 +159,7 @@ public class CreatePathAnalyzerTestResponse extends com.oracle.bmc.responses.Bmc
          */
         public CreatePathAnalyzerTestResponse build() {
             return new CreatePathAnalyzerTestResponse(
-                    __httpStatusCode__, etag, opcRequestId, pathAnalyzerTest);
+                    __httpStatusCode__, headers, etag, opcRequestId, pathAnalyzerTest);
         }
     }
 

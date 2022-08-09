@@ -8087,6 +8087,54 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetMaintenanceRunHistoryResponse> getMaintenanceRunHistory(
+            GetMaintenanceRunHistoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMaintenanceRunHistoryRequest, GetMaintenanceRunHistoryResponse>
+                    handler) {
+        LOG.trace("Called async getMaintenanceRunHistory");
+        final GetMaintenanceRunHistoryRequest interceptedRequest =
+                GetMaintenanceRunHistoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMaintenanceRunHistoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetMaintenanceRunHistory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRunHistory/GetMaintenanceRunHistory");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetMaintenanceRunHistoryResponse>
+                transformer =
+                        GetMaintenanceRunHistoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMaintenanceRunHistoryRequest, GetMaintenanceRunHistoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMaintenanceRunHistoryRequest, GetMaintenanceRunHistoryResponse>,
+                        java.util.concurrent.Future<GetMaintenanceRunHistoryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMaintenanceRunHistoryRequest, GetMaintenanceRunHistoryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPdbConversionHistoryEntryResponse>
             getPdbConversionHistoryEntry(
                     GetPdbConversionHistoryEntryRequest request,
@@ -10857,6 +10905,55 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListKeyStoresRequest, ListKeyStoresResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMaintenanceRunHistoryResponse> listMaintenanceRunHistory(
+            ListMaintenanceRunHistoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMaintenanceRunHistoryRequest, ListMaintenanceRunHistoryResponse>
+                    handler) {
+        LOG.trace("Called async listMaintenanceRunHistory");
+        final ListMaintenanceRunHistoryRequest interceptedRequest =
+                ListMaintenanceRunHistoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMaintenanceRunHistoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListMaintenanceRunHistory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRunHistory/ListMaintenanceRunHistory");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMaintenanceRunHistoryResponse>
+                transformer =
+                        ListMaintenanceRunHistoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMaintenanceRunHistoryRequest, ListMaintenanceRunHistoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMaintenanceRunHistoryRequest,
+                                ListMaintenanceRunHistoryResponse>,
+                        java.util.concurrent.Future<ListMaintenanceRunHistoryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMaintenanceRunHistoryRequest, ListMaintenanceRunHistoryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

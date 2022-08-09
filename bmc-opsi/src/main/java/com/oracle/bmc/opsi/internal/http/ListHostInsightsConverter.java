@@ -211,8 +211,8 @@ public class ListHostInsightsConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .ListHostInsightsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.hostInsightSummaryCollection(response.getItem());
 

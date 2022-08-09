@@ -123,8 +123,8 @@ public class IngestHostMetricsConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .IngestHostMetricsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.ingestHostMetricsResponseDetails(response.getItem());
 

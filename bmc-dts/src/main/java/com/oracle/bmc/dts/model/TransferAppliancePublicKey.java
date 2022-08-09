@@ -19,7 +19,8 @@ package com.oracle.bmc.dts.model;
     builder = TransferAppliancePublicKey.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TransferAppliancePublicKey {
+public final class TransferAppliancePublicKey
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"publicKey"})
     public TransferAppliancePublicKey(String publicKey) {
@@ -43,17 +44,19 @@ public final class TransferAppliancePublicKey {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TransferAppliancePublicKey build() {
-            TransferAppliancePublicKey __instance__ = new TransferAppliancePublicKey(publicKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TransferAppliancePublicKey model = new TransferAppliancePublicKey(this.publicKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TransferAppliancePublicKey o) {
-            Builder copiedBuilder = publicKey(o.getPublicKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TransferAppliancePublicKey model) {
+            if (model.wasPropertyExplicitlySet("publicKey")) {
+                this.publicKey(model.getPublicKey());
+            }
+            return this;
         }
     }
 
@@ -88,8 +91,8 @@ public final class TransferAppliancePublicKey {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TransferAppliancePublicKey(");
+        sb.append("super=").append(super.toString());
         sb.append("publicKey=").append(String.valueOf(this.publicKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -104,8 +107,7 @@ public final class TransferAppliancePublicKey {
         }
 
         TransferAppliancePublicKey other = (TransferAppliancePublicKey) o;
-        return java.util.Objects.equals(this.publicKey, other.publicKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.publicKey, other.publicKey) && super.equals(other);
     }
 
     @Override
@@ -113,16 +115,7 @@ public final class TransferAppliancePublicKey {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.publicKey == null ? 43 : this.publicKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

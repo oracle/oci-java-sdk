@@ -82,21 +82,26 @@ public final class CreateNewInstanceDetails extends CreateServiceAttachmentDetai
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateNewInstanceDetails build() {
-            CreateNewInstanceDetails __instance__ =
-                    new CreateNewInstanceDetails(details, freeformTags, definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateNewInstanceDetails model =
+                    new CreateNewInstanceDetails(this.details, this.freeformTags, this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateNewInstanceDetails o) {
-            Builder copiedBuilder =
-                    details(o.getDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateNewInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("details")) {
+                this.details(model.getDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -182,7 +187,6 @@ public final class CreateNewInstanceDetails extends CreateServiceAttachmentDetai
         sb.append(", details=").append(String.valueOf(this.details));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -200,8 +204,7 @@ public final class CreateNewInstanceDetails extends CreateServiceAttachmentDetai
         return java.util.Objects.equals(this.details, other.details)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -211,16 +214,6 @@ public final class CreateNewInstanceDetails extends CreateServiceAttachmentDetai
         result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

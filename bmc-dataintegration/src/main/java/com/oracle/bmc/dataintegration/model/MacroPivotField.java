@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MacroPivotField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MacroPivotField {
+public final class MacroPivotField extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isUseSourceType",
@@ -106,23 +106,37 @@ public final class MacroPivotField {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MacroPivotField build() {
-            MacroPivotField __instance__ =
-                    new MacroPivotField(isUseSourceType, expr, useType, type, columnNamePattern);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MacroPivotField model =
+                    new MacroPivotField(
+                            this.isUseSourceType,
+                            this.expr,
+                            this.useType,
+                            this.type,
+                            this.columnNamePattern);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MacroPivotField o) {
-            Builder copiedBuilder =
-                    isUseSourceType(o.getIsUseSourceType())
-                            .expr(o.getExpr())
-                            .useType(o.getUseType())
-                            .type(o.getType())
-                            .columnNamePattern(o.getColumnNamePattern());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MacroPivotField model) {
+            if (model.wasPropertyExplicitlySet("isUseSourceType")) {
+                this.isUseSourceType(model.getIsUseSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("expr")) {
+                this.expr(model.getExpr());
+            }
+            if (model.wasPropertyExplicitlySet("useType")) {
+                this.useType(model.getUseType());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("columnNamePattern")) {
+                this.columnNamePattern(model.getColumnNamePattern());
+            }
+            return this;
         }
     }
 
@@ -199,12 +213,12 @@ public final class MacroPivotField {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MacroPivotField(");
+        sb.append("super=").append(super.toString());
         sb.append("isUseSourceType=").append(String.valueOf(this.isUseSourceType));
         sb.append(", expr=").append(String.valueOf(this.expr));
         sb.append(", useType=").append(String.valueOf(this.useType));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", columnNamePattern=").append(String.valueOf(this.columnNamePattern));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -224,7 +238,7 @@ public final class MacroPivotField {
                 && java.util.Objects.equals(this.useType, other.useType)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.columnNamePattern, other.columnNamePattern)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -240,16 +254,7 @@ public final class MacroPivotField {
         result =
                 (result * PRIME)
                         + (this.columnNamePattern == null ? 43 : this.columnNamePattern.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -183,8 +183,8 @@ public class ListExternalPublicationValidationsConverter {
                                                 com.oracle.bmc.dataintegration.responses
                                                         .ListExternalPublicationValidationsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.externalPublicationValidationSummaryCollection(
                                         response.getItem());

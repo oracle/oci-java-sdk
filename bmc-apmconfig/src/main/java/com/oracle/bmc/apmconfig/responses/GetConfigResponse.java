@@ -53,13 +53,20 @@ public class GetConfigResponse extends com.oracle.bmc.responses.BmcResponse {
         return config;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "config"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "config"
+    })
     private GetConfigResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.apmconfig.model.Config config) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.config = config;
@@ -70,6 +77,13 @@ public class GetConfigResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetConfigResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetConfigResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             config(o.getConfig());
@@ -142,7 +157,7 @@ public class GetConfigResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetConfigResponse build() {
-            return new GetConfigResponse(__httpStatusCode__, etag, opcRequestId, config);
+            return new GetConfigResponse(__httpStatusCode__, headers, etag, opcRequestId, config);
         }
     }
 

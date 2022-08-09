@@ -109,8 +109,8 @@ public class CreateSoftwareSourceConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .CreateSoftwareSourceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.softwareSource(response.getItem());
 

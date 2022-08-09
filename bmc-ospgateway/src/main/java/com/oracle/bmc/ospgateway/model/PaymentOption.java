@@ -32,7 +32,7 @@ package com.oracle.bmc.ospgateway.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class PaymentOption {
+public class PaymentOption extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"walletInstrumentId", "walletTransactionId"})
     protected PaymentOption(String walletInstrumentId, String walletTransactionId) {
@@ -82,6 +82,7 @@ public class PaymentOption {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PaymentOption(");
+        sb.append("super=").append(super.toString());
         sb.append("walletInstrumentId=").append(String.valueOf(this.walletInstrumentId));
         sb.append(", walletTransactionId=").append(String.valueOf(this.walletTransactionId));
         sb.append(")");
@@ -99,7 +100,8 @@ public class PaymentOption {
 
         PaymentOption other = (PaymentOption) o;
         return java.util.Objects.equals(this.walletInstrumentId, other.walletInstrumentId)
-                && java.util.Objects.equals(this.walletTransactionId, other.walletTransactionId);
+                && java.util.Objects.equals(this.walletTransactionId, other.walletTransactionId)
+                && super.equals(other);
     }
 
     @Override
@@ -116,6 +118,7 @@ public class PaymentOption {
                         + (this.walletTransactionId == null
                                 ? 43
                                 : this.walletTransactionId.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

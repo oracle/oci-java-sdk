@@ -51,13 +51,20 @@ public class GetStreamPoolResponse extends com.oracle.bmc.responses.BmcResponse 
         return streamPool;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "streamPool"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "streamPool"
+    })
     private GetStreamPoolResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.streaming.model.StreamPool streamPool) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.streamPool = streamPool;
@@ -68,6 +75,13 @@ public class GetStreamPoolResponse extends com.oracle.bmc.responses.BmcResponse 
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class GetStreamPoolResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public Builder copy(GetStreamPoolResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             streamPool(o.getStreamPool());
@@ -138,7 +153,8 @@ public class GetStreamPoolResponse extends com.oracle.bmc.responses.BmcResponse 
          * @return the response object
          */
         public GetStreamPoolResponse build() {
-            return new GetStreamPoolResponse(__httpStatusCode__, opcRequestId, etag, streamPool);
+            return new GetStreamPoolResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, streamPool);
         }
     }
 

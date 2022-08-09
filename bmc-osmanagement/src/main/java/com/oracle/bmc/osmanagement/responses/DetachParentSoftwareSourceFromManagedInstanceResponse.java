@@ -26,10 +26,12 @@ public class DetachParentSoftwareSourceFromManagedInstanceResponse
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
     private DetachParentSoftwareSourceFromManagedInstanceResponse(
-            int __httpStatusCode__, String opcRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
@@ -38,6 +40,13 @@ public class DetachParentSoftwareSourceFromManagedInstanceResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -66,6 +75,7 @@ public class DetachParentSoftwareSourceFromManagedInstanceResponse
          */
         public Builder copy(DetachParentSoftwareSourceFromManagedInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
 
             return this;
@@ -77,7 +87,7 @@ public class DetachParentSoftwareSourceFromManagedInstanceResponse
          */
         public DetachParentSoftwareSourceFromManagedInstanceResponse build() {
             return new DetachParentSoftwareSourceFromManagedInstanceResponse(
-                    __httpStatusCode__, opcRequestId);
+                    __httpStatusCode__, headers, opcRequestId);
         }
     }
 

@@ -19,19 +19,25 @@ package com.oracle.bmc.integration.model;
     builder = CustomEndpointDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CustomEndpointDetails {
+public final class CustomEndpointDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "hostname",
         "certificateSecretId",
-        "certificateSecretVersion"
+        "certificateSecretVersion",
+        "alias"
     })
     public CustomEndpointDetails(
-            String hostname, String certificateSecretId, Integer certificateSecretVersion) {
+            String hostname,
+            String certificateSecretId,
+            Integer certificateSecretVersion,
+            String alias) {
         super();
         this.hostname = hostname;
         this.certificateSecretId = certificateSecretId;
         this.certificateSecretVersion = certificateSecretVersion;
+        this.alias = alias;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -88,27 +94,56 @@ public final class CustomEndpointDetails {
             this.__explicitlySet__.add("certificateSecretVersion");
             return this;
         }
+        /**
+         * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("alias")
+        private String alias;
+
+        /**
+         * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         *
+         * @param alias the value to set
+         * @return this builder
+         **/
+        public Builder alias(String alias) {
+            this.alias = alias;
+            this.__explicitlySet__.add("alias");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CustomEndpointDetails build() {
-            CustomEndpointDetails __instance__ =
+            CustomEndpointDetails model =
                     new CustomEndpointDetails(
-                            hostname, certificateSecretId, certificateSecretVersion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.hostname,
+                            this.certificateSecretId,
+                            this.certificateSecretVersion,
+                            this.alias);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CustomEndpointDetails o) {
-            Builder copiedBuilder =
-                    hostname(o.getHostname())
-                            .certificateSecretId(o.getCertificateSecretId())
-                            .certificateSecretVersion(o.getCertificateSecretVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CustomEndpointDetails model) {
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("certificateSecretId")) {
+                this.certificateSecretId(model.getCertificateSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("certificateSecretVersion")) {
+                this.certificateSecretVersion(model.getCertificateSecretVersion());
+            }
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
+            }
+            return this;
         }
     }
 
@@ -169,6 +204,22 @@ public final class CustomEndpointDetails {
         return certificateSecretVersion;
     }
 
+    /**
+     * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("alias")
+    private final String alias;
+
+    /**
+     * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+     *
+     * @return the value
+     **/
+    public String getAlias() {
+        return alias;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -182,11 +233,12 @@ public final class CustomEndpointDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CustomEndpointDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("hostname=").append(String.valueOf(this.hostname));
         sb.append(", certificateSecretId=").append(String.valueOf(this.certificateSecretId));
         sb.append(", certificateSecretVersion=")
                 .append(String.valueOf(this.certificateSecretVersion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(", alias=").append(String.valueOf(this.alias));
         sb.append(")");
         return sb.toString();
     }
@@ -205,7 +257,8 @@ public final class CustomEndpointDetails {
                 && java.util.Objects.equals(this.certificateSecretId, other.certificateSecretId)
                 && java.util.Objects.equals(
                         this.certificateSecretVersion, other.certificateSecretVersion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && java.util.Objects.equals(this.alias, other.alias)
+                && super.equals(other);
     }
 
     @Override
@@ -223,16 +276,8 @@ public final class CustomEndpointDetails {
                         + (this.certificateSecretVersion == null
                                 ? 43
                                 : this.certificateSecretVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

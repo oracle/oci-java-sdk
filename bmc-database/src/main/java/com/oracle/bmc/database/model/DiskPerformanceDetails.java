@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = DiskPerformanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DiskPerformanceDetails {
+public final class DiskPerformanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"diskIops", "diskThroughputInMbps"})
     public DiskPerformanceDetails(Float diskIops, Float diskThroughputInMbps) {
@@ -68,19 +69,23 @@ public final class DiskPerformanceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DiskPerformanceDetails build() {
-            DiskPerformanceDetails __instance__ =
-                    new DiskPerformanceDetails(diskIops, diskThroughputInMbps);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DiskPerformanceDetails model =
+                    new DiskPerformanceDetails(this.diskIops, this.diskThroughputInMbps);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DiskPerformanceDetails o) {
-            Builder copiedBuilder =
-                    diskIops(o.getDiskIops()).diskThroughputInMbps(o.getDiskThroughputInMbps());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DiskPerformanceDetails model) {
+            if (model.wasPropertyExplicitlySet("diskIops")) {
+                this.diskIops(model.getDiskIops());
+            }
+            if (model.wasPropertyExplicitlySet("diskThroughputInMbps")) {
+                this.diskThroughputInMbps(model.getDiskThroughputInMbps());
+            }
+            return this;
         }
     }
 
@@ -136,9 +141,9 @@ public final class DiskPerformanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DiskPerformanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("diskIops=").append(String.valueOf(this.diskIops));
         sb.append(", diskThroughputInMbps=").append(String.valueOf(this.diskThroughputInMbps));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +160,7 @@ public final class DiskPerformanceDetails {
         DiskPerformanceDetails other = (DiskPerformanceDetails) o;
         return java.util.Objects.equals(this.diskIops, other.diskIops)
                 && java.util.Objects.equals(this.diskThroughputInMbps, other.diskThroughputInMbps)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +173,7 @@ public final class DiskPerformanceDetails {
                         + (this.diskThroughputInMbps == null
                                 ? 43
                                 : this.diskThroughputInMbps.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

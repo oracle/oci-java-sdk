@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = FieldSummaryReport.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FieldSummaryReport {
+public final class FieldSummaryReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"nonOobCount", "oobCount", "usageDetails"})
     public FieldSummaryReport(
@@ -85,21 +85,26 @@ public final class FieldSummaryReport {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FieldSummaryReport build() {
-            FieldSummaryReport __instance__ =
-                    new FieldSummaryReport(nonOobCount, oobCount, usageDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FieldSummaryReport model =
+                    new FieldSummaryReport(this.nonOobCount, this.oobCount, this.usageDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FieldSummaryReport o) {
-            Builder copiedBuilder =
-                    nonOobCount(o.getNonOobCount())
-                            .oobCount(o.getOobCount())
-                            .usageDetails(o.getUsageDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FieldSummaryReport model) {
+            if (model.wasPropertyExplicitlySet("nonOobCount")) {
+                this.nonOobCount(model.getNonOobCount());
+            }
+            if (model.wasPropertyExplicitlySet("oobCount")) {
+                this.oobCount(model.getOobCount());
+            }
+            if (model.wasPropertyExplicitlySet("usageDetails")) {
+                this.usageDetails(model.getUsageDetails());
+            }
+            return this;
         }
     }
 
@@ -169,10 +174,10 @@ public final class FieldSummaryReport {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FieldSummaryReport(");
+        sb.append("super=").append(super.toString());
         sb.append("nonOobCount=").append(String.valueOf(this.nonOobCount));
         sb.append(", oobCount=").append(String.valueOf(this.oobCount));
         sb.append(", usageDetails=").append(String.valueOf(this.usageDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,7 +195,7 @@ public final class FieldSummaryReport {
         return java.util.Objects.equals(this.nonOobCount, other.nonOobCount)
                 && java.util.Objects.equals(this.oobCount, other.oobCount)
                 && java.util.Objects.equals(this.usageDetails, other.usageDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -200,16 +205,7 @@ public final class FieldSummaryReport {
         result = (result * PRIME) + (this.nonOobCount == null ? 43 : this.nonOobCount.hashCode());
         result = (result * PRIME) + (this.oobCount == null ? 43 : this.oobCount.hashCode());
         result = (result * PRIME) + (this.usageDetails == null ? 43 : this.usageDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

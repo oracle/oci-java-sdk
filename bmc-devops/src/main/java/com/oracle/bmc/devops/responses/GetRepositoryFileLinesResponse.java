@@ -62,6 +62,7 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "sunset",
@@ -69,11 +70,12 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
     })
     private GetRepositoryFileLinesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             String sunset,
             com.oracle.bmc.devops.model.RepositoryFileLines repositoryFileLines) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.sunset = sunset;
@@ -85,6 +87,13 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -155,6 +164,7 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(GetRepositoryFileLinesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             sunset(o.getSunset());
@@ -169,7 +179,7 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
          */
         public GetRepositoryFileLinesResponse build() {
             return new GetRepositoryFileLinesResponse(
-                    __httpStatusCode__, opcRequestId, etag, sunset, repositoryFileLines);
+                    __httpStatusCode__, headers, opcRequestId, etag, sunset, repositoryFileLines);
         }
     }
 

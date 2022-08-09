@@ -20,7 +20,7 @@ package com.oracle.bmc.apmtraces.model;
     builder = TraceServiceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TraceServiceSummary {
+public final class TraceServiceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"spanServiceName", "totalSpans", "errorSpans"})
     public TraceServiceSummary(String spanServiceName, Long totalSpans, Long errorSpans) {
@@ -91,21 +91,26 @@ public final class TraceServiceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TraceServiceSummary build() {
-            TraceServiceSummary __instance__ =
-                    new TraceServiceSummary(spanServiceName, totalSpans, errorSpans);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TraceServiceSummary model =
+                    new TraceServiceSummary(this.spanServiceName, this.totalSpans, this.errorSpans);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TraceServiceSummary o) {
-            Builder copiedBuilder =
-                    spanServiceName(o.getSpanServiceName())
-                            .totalSpans(o.getTotalSpans())
-                            .errorSpans(o.getErrorSpans());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TraceServiceSummary model) {
+            if (model.wasPropertyExplicitlySet("spanServiceName")) {
+                this.spanServiceName(model.getSpanServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("totalSpans")) {
+                this.totalSpans(model.getTotalSpans());
+            }
+            if (model.wasPropertyExplicitlySet("errorSpans")) {
+                this.errorSpans(model.getErrorSpans());
+            }
+            return this;
         }
     }
 
@@ -181,10 +186,10 @@ public final class TraceServiceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TraceServiceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("spanServiceName=").append(String.valueOf(this.spanServiceName));
         sb.append(", totalSpans=").append(String.valueOf(this.totalSpans));
         sb.append(", errorSpans=").append(String.valueOf(this.errorSpans));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -202,7 +207,7 @@ public final class TraceServiceSummary {
         return java.util.Objects.equals(this.spanServiceName, other.spanServiceName)
                 && java.util.Objects.equals(this.totalSpans, other.totalSpans)
                 && java.util.Objects.equals(this.errorSpans, other.errorSpans)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -214,16 +219,7 @@ public final class TraceServiceSummary {
                         + (this.spanServiceName == null ? 43 : this.spanServiceName.hashCode());
         result = (result * PRIME) + (this.totalSpans == null ? 43 : this.totalSpans.hashCode());
         result = (result * PRIME) + (this.errorSpans == null ? 43 : this.errorSpans.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

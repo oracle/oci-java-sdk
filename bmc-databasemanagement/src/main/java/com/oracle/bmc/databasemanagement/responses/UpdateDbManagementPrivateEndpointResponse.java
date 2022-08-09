@@ -58,17 +58,19 @@ public class UpdateDbManagementPrivateEndpointResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "dbManagementPrivateEndpoint"
     })
     private UpdateDbManagementPrivateEndpointResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
                     dbManagementPrivateEndpoint) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.dbManagementPrivateEndpoint = dbManagementPrivateEndpoint;
@@ -79,6 +81,13 @@ public class UpdateDbManagementPrivateEndpointResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -142,6 +151,7 @@ public class UpdateDbManagementPrivateEndpointResponse
          */
         public Builder copy(UpdateDbManagementPrivateEndpointResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             dbManagementPrivateEndpoint(o.getDbManagementPrivateEndpoint());
@@ -155,7 +165,7 @@ public class UpdateDbManagementPrivateEndpointResponse
          */
         public UpdateDbManagementPrivateEndpointResponse build() {
             return new UpdateDbManagementPrivateEndpointResponse(
-                    __httpStatusCode__, opcRequestId, etag, dbManagementPrivateEndpoint);
+                    __httpStatusCode__, headers, opcRequestId, etag, dbManagementPrivateEndpoint);
         }
     }
 

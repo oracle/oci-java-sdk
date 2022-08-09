@@ -102,8 +102,8 @@ public class GetBlockVolumeReplicaConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetBlockVolumeReplicaResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.blockVolumeReplica(response.getItem());
 

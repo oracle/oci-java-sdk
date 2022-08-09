@@ -144,8 +144,8 @@ public class ListUserGroupMembershipsConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .ListUserGroupMembershipsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

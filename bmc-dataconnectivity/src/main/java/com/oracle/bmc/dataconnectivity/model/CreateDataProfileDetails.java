@@ -19,7 +19,8 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = CreateDataProfileDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateDataProfileDetails {
+public final class CreateDataProfileDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "readOperationConfig",
@@ -106,30 +107,41 @@ public final class CreateDataProfileDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDataProfileDetails build() {
-            CreateDataProfileDetails __instance__ =
+            CreateDataProfileDetails model =
                     new CreateDataProfileDetails(
-                            readOperationConfig,
-                            dataAsset,
-                            connection,
-                            schema,
-                            dataEntity,
-                            profileConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.readOperationConfig,
+                            this.dataAsset,
+                            this.connection,
+                            this.schema,
+                            this.dataEntity,
+                            this.profileConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDataProfileDetails o) {
-            Builder copiedBuilder =
-                    readOperationConfig(o.getReadOperationConfig())
-                            .dataAsset(o.getDataAsset())
-                            .connection(o.getConnection())
-                            .schema(o.getSchema())
-                            .dataEntity(o.getDataEntity())
-                            .profileConfig(o.getProfileConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDataProfileDetails model) {
+            if (model.wasPropertyExplicitlySet("readOperationConfig")) {
+                this.readOperationConfig(model.getReadOperationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("dataAsset")) {
+                this.dataAsset(model.getDataAsset());
+            }
+            if (model.wasPropertyExplicitlySet("connection")) {
+                this.connection(model.getConnection());
+            }
+            if (model.wasPropertyExplicitlySet("schema")) {
+                this.schema(model.getSchema());
+            }
+            if (model.wasPropertyExplicitlySet("dataEntity")) {
+                this.dataEntity(model.getDataEntity());
+            }
+            if (model.wasPropertyExplicitlySet("profileConfig")) {
+                this.profileConfig(model.getProfileConfig());
+            }
+            return this;
         }
     }
 
@@ -199,13 +211,13 @@ public final class CreateDataProfileDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDataProfileDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("readOperationConfig=").append(String.valueOf(this.readOperationConfig));
         sb.append(", dataAsset=").append(String.valueOf(this.dataAsset));
         sb.append(", connection=").append(String.valueOf(this.connection));
         sb.append(", schema=").append(String.valueOf(this.schema));
         sb.append(", dataEntity=").append(String.valueOf(this.dataEntity));
         sb.append(", profileConfig=").append(String.valueOf(this.profileConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -226,7 +238,7 @@ public final class CreateDataProfileDetails {
                 && java.util.Objects.equals(this.schema, other.schema)
                 && java.util.Objects.equals(this.dataEntity, other.dataEntity)
                 && java.util.Objects.equals(this.profileConfig, other.profileConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -245,16 +257,7 @@ public final class CreateDataProfileDetails {
         result =
                 (result * PRIME)
                         + (this.profileConfig == null ? 43 : this.profileConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

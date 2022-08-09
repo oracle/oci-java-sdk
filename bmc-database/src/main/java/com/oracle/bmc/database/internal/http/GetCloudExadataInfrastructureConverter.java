@@ -115,8 +115,8 @@ public class GetCloudExadataInfrastructureConverter {
                                                 com.oracle.bmc.database.responses
                                                         .GetCloudExadataInfrastructureResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.cloudExadataInfrastructure(response.getItem());
 

@@ -100,19 +100,24 @@ public final class DeterministicEncryptionFormatEntry extends FormatEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DeterministicEncryptionFormatEntry build() {
-            DeterministicEncryptionFormatEntry __instance__ =
-                    new DeterministicEncryptionFormatEntry(description, regularExpression);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DeterministicEncryptionFormatEntry model =
+                    new DeterministicEncryptionFormatEntry(
+                            this.description, this.regularExpression);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeterministicEncryptionFormatEntry o) {
-            Builder copiedBuilder =
-                    description(o.getDescription()).regularExpression(o.getRegularExpression());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DeterministicEncryptionFormatEntry model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("regularExpression")) {
+                this.regularExpression(model.getRegularExpression());
+            }
+            return this;
         }
     }
 
@@ -196,7 +201,6 @@ public final class DeterministicEncryptionFormatEntry extends FormatEntry {
         sb.append("DeterministicEncryptionFormatEntry(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", regularExpression=").append(String.valueOf(this.regularExpression));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -212,8 +216,7 @@ public final class DeterministicEncryptionFormatEntry extends FormatEntry {
 
         DeterministicEncryptionFormatEntry other = (DeterministicEncryptionFormatEntry) o;
         return java.util.Objects.equals(this.regularExpression, other.regularExpression)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -223,16 +226,6 @@ public final class DeterministicEncryptionFormatEntry extends FormatEntry {
         result =
                 (result * PRIME)
                         + (this.regularExpression == null ? 43 : this.regularExpression.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

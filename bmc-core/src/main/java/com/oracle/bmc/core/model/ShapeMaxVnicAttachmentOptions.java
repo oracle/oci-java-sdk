@@ -22,7 +22,8 @@ package com.oracle.bmc.core.model;
     builder = ShapeMaxVnicAttachmentOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ShapeMaxVnicAttachmentOptions {
+public final class ShapeMaxVnicAttachmentOptions
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"min", "max", "defaultPerOcpu"})
     public ShapeMaxVnicAttachmentOptions(Integer min, Float max, Float defaultPerOcpu) {
@@ -93,19 +94,26 @@ public final class ShapeMaxVnicAttachmentOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShapeMaxVnicAttachmentOptions build() {
-            ShapeMaxVnicAttachmentOptions __instance__ =
-                    new ShapeMaxVnicAttachmentOptions(min, max, defaultPerOcpu);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ShapeMaxVnicAttachmentOptions model =
+                    new ShapeMaxVnicAttachmentOptions(this.min, this.max, this.defaultPerOcpu);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ShapeMaxVnicAttachmentOptions o) {
-            Builder copiedBuilder =
-                    min(o.getMin()).max(o.getMax()).defaultPerOcpu(o.getDefaultPerOcpu());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ShapeMaxVnicAttachmentOptions model) {
+            if (model.wasPropertyExplicitlySet("min")) {
+                this.min(model.getMin());
+            }
+            if (model.wasPropertyExplicitlySet("max")) {
+                this.max(model.getMax());
+            }
+            if (model.wasPropertyExplicitlySet("defaultPerOcpu")) {
+                this.defaultPerOcpu(model.getDefaultPerOcpu());
+            }
+            return this;
         }
     }
 
@@ -181,10 +189,10 @@ public final class ShapeMaxVnicAttachmentOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ShapeMaxVnicAttachmentOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("min=").append(String.valueOf(this.min));
         sb.append(", max=").append(String.valueOf(this.max));
         sb.append(", defaultPerOcpu=").append(String.valueOf(this.defaultPerOcpu));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -202,7 +210,7 @@ public final class ShapeMaxVnicAttachmentOptions {
         return java.util.Objects.equals(this.min, other.min)
                 && java.util.Objects.equals(this.max, other.max)
                 && java.util.Objects.equals(this.defaultPerOcpu, other.defaultPerOcpu)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -214,16 +222,7 @@ public final class ShapeMaxVnicAttachmentOptions {
         result =
                 (result * PRIME)
                         + (this.defaultPerOcpu == null ? 43 : this.defaultPerOcpu.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

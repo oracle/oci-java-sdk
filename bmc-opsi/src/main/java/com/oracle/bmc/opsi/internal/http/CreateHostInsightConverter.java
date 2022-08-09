@@ -102,8 +102,8 @@ public class CreateHostInsightConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .CreateHostInsightResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.hostInsight(response.getItem());
 

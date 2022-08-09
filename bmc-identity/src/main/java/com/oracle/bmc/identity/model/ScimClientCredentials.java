@@ -20,7 +20,8 @@ package com.oracle.bmc.identity.model;
     builder = ScimClientCredentials.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ScimClientCredentials {
+public final class ScimClientCredentials
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"clientId", "clientSecret"})
     public ScimClientCredentials(String clientId, String clientSecret) {
@@ -68,17 +69,23 @@ public final class ScimClientCredentials {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScimClientCredentials build() {
-            ScimClientCredentials __instance__ = new ScimClientCredentials(clientId, clientSecret);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ScimClientCredentials model =
+                    new ScimClientCredentials(this.clientId, this.clientSecret);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ScimClientCredentials o) {
-            Builder copiedBuilder = clientId(o.getClientId()).clientSecret(o.getClientSecret());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ScimClientCredentials model) {
+            if (model.wasPropertyExplicitlySet("clientId")) {
+                this.clientId(model.getClientId());
+            }
+            if (model.wasPropertyExplicitlySet("clientSecret")) {
+                this.clientSecret(model.getClientSecret());
+            }
+            return this;
         }
     }
 
@@ -134,9 +141,9 @@ public final class ScimClientCredentials {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ScimClientCredentials(");
+        sb.append("super=").append(super.toString());
         sb.append("clientId=").append(String.valueOf(this.clientId));
         sb.append(", clientSecret=").append(String.valueOf(this.clientSecret));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,7 +160,7 @@ public final class ScimClientCredentials {
         ScimClientCredentials other = (ScimClientCredentials) o;
         return java.util.Objects.equals(this.clientId, other.clientId)
                 && java.util.Objects.equals(this.clientSecret, other.clientSecret)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -162,16 +169,7 @@ public final class ScimClientCredentials {
         int result = 1;
         result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
         result = (result * PRIME) + (this.clientSecret == null ? 43 : this.clientSecret.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

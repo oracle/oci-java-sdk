@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = DiscoveryJobResultSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DiscoveryJobResultSummary {
+public final class DiscoveryJobResultSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -355,48 +356,77 @@ public final class DiscoveryJobResultSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DiscoveryJobResultSummary build() {
-            DiscoveryJobResultSummary __instance__ =
+            DiscoveryJobResultSummary model =
                     new DiscoveryJobResultSummary(
-                            key,
-                            discoveryType,
-                            sensitiveColumnkey,
-                            schemaName,
-                            objectName,
-                            columnName,
-                            objectType,
-                            dataType,
-                            sensitiveTypeId,
-                            parentColumnKeys,
-                            relationType,
-                            estimatedDataValueCount,
-                            sampleDataValues,
-                            plannedAction,
-                            isResultApplied);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.discoveryType,
+                            this.sensitiveColumnkey,
+                            this.schemaName,
+                            this.objectName,
+                            this.columnName,
+                            this.objectType,
+                            this.dataType,
+                            this.sensitiveTypeId,
+                            this.parentColumnKeys,
+                            this.relationType,
+                            this.estimatedDataValueCount,
+                            this.sampleDataValues,
+                            this.plannedAction,
+                            this.isResultApplied);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DiscoveryJobResultSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .discoveryType(o.getDiscoveryType())
-                            .sensitiveColumnkey(o.getSensitiveColumnkey())
-                            .schemaName(o.getSchemaName())
-                            .objectName(o.getObjectName())
-                            .columnName(o.getColumnName())
-                            .objectType(o.getObjectType())
-                            .dataType(o.getDataType())
-                            .sensitiveTypeId(o.getSensitiveTypeId())
-                            .parentColumnKeys(o.getParentColumnKeys())
-                            .relationType(o.getRelationType())
-                            .estimatedDataValueCount(o.getEstimatedDataValueCount())
-                            .sampleDataValues(o.getSampleDataValues())
-                            .plannedAction(o.getPlannedAction())
-                            .isResultApplied(o.getIsResultApplied());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DiscoveryJobResultSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("discoveryType")) {
+                this.discoveryType(model.getDiscoveryType());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveColumnkey")) {
+                this.sensitiveColumnkey(model.getSensitiveColumnkey());
+            }
+            if (model.wasPropertyExplicitlySet("schemaName")) {
+                this.schemaName(model.getSchemaName());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("columnName")) {
+                this.columnName(model.getColumnName());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveTypeId")) {
+                this.sensitiveTypeId(model.getSensitiveTypeId());
+            }
+            if (model.wasPropertyExplicitlySet("parentColumnKeys")) {
+                this.parentColumnKeys(model.getParentColumnKeys());
+            }
+            if (model.wasPropertyExplicitlySet("relationType")) {
+                this.relationType(model.getRelationType());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedDataValueCount")) {
+                this.estimatedDataValueCount(model.getEstimatedDataValueCount());
+            }
+            if (model.wasPropertyExplicitlySet("sampleDataValues")) {
+                this.sampleDataValues(model.getSampleDataValues());
+            }
+            if (model.wasPropertyExplicitlySet("plannedAction")) {
+                this.plannedAction(model.getPlannedAction());
+            }
+            if (model.wasPropertyExplicitlySet("isResultApplied")) {
+                this.isResultApplied(model.getIsResultApplied());
+            }
+            return this;
         }
     }
 
@@ -770,6 +800,7 @@ public final class DiscoveryJobResultSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DiscoveryJobResultSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", discoveryType=").append(String.valueOf(this.discoveryType));
         sb.append(", sensitiveColumnkey=").append(String.valueOf(this.sensitiveColumnkey));
@@ -786,7 +817,6 @@ public final class DiscoveryJobResultSummary {
         sb.append(", sampleDataValues=").append(String.valueOf(this.sampleDataValues));
         sb.append(", plannedAction=").append(String.valueOf(this.plannedAction));
         sb.append(", isResultApplied=").append(String.valueOf(this.isResultApplied));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -817,7 +847,7 @@ public final class DiscoveryJobResultSummary {
                 && java.util.Objects.equals(this.sampleDataValues, other.sampleDataValues)
                 && java.util.Objects.equals(this.plannedAction, other.plannedAction)
                 && java.util.Objects.equals(this.isResultApplied, other.isResultApplied)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -859,16 +889,7 @@ public final class DiscoveryJobResultSummary {
         result =
                 (result * PRIME)
                         + (this.isResultApplied == null ? 43 : this.isResultApplied.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.devops.model;
     builder = RepositoryMirrorRecord.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RepositoryMirrorRecord {
+public final class RepositoryMirrorRecord
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "mirrorStatus",
@@ -139,24 +140,37 @@ public final class RepositoryMirrorRecord {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RepositoryMirrorRecord build() {
-            RepositoryMirrorRecord __instance__ =
+            RepositoryMirrorRecord model =
                     new RepositoryMirrorRecord(
-                            mirrorStatus, workRequestId, timeEnqueued, timeStarted, timeEnded);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.mirrorStatus,
+                            this.workRequestId,
+                            this.timeEnqueued,
+                            this.timeStarted,
+                            this.timeEnded);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RepositoryMirrorRecord o) {
-            Builder copiedBuilder =
-                    mirrorStatus(o.getMirrorStatus())
-                            .workRequestId(o.getWorkRequestId())
-                            .timeEnqueued(o.getTimeEnqueued())
-                            .timeStarted(o.getTimeStarted())
-                            .timeEnded(o.getTimeEnded());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RepositoryMirrorRecord model) {
+            if (model.wasPropertyExplicitlySet("mirrorStatus")) {
+                this.mirrorStatus(model.getMirrorStatus());
+            }
+            if (model.wasPropertyExplicitlySet("workRequestId")) {
+                this.workRequestId(model.getWorkRequestId());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnqueued")) {
+                this.timeEnqueued(model.getTimeEnqueued());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnded")) {
+                this.timeEnded(model.getTimeEnded());
+            }
+            return this;
         }
     }
 
@@ -320,12 +334,12 @@ public final class RepositoryMirrorRecord {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RepositoryMirrorRecord(");
+        sb.append("super=").append(super.toString());
         sb.append("mirrorStatus=").append(String.valueOf(this.mirrorStatus));
         sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
         sb.append(", timeEnqueued=").append(String.valueOf(this.timeEnqueued));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -345,7 +359,7 @@ public final class RepositoryMirrorRecord {
                 && java.util.Objects.equals(this.timeEnqueued, other.timeEnqueued)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -359,16 +373,7 @@ public final class RepositoryMirrorRecord {
         result = (result * PRIME) + (this.timeEnqueued == null ? 43 : this.timeEnqueued.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

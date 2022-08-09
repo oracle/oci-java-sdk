@@ -124,8 +124,8 @@ public class GetLogAnalyticsEmBridgeSummaryConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetLogAnalyticsEmBridgeSummaryResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsEmBridgeSummaryReport(response.getItem());
 

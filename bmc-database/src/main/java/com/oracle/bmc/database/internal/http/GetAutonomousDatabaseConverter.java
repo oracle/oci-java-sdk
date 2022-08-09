@@ -107,8 +107,8 @@ public class GetAutonomousDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetAutonomousDatabaseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autonomousDatabase(response.getItem());
 

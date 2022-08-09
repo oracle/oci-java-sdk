@@ -20,7 +20,8 @@ package com.oracle.bmc.waf.model;
     builder = ProtectionCapabilityExclusions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProtectionCapabilityExclusions {
+public final class ProtectionCapabilityExclusions
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"requestCookies", "args"})
     public ProtectionCapabilityExclusions(
@@ -77,18 +78,23 @@ public final class ProtectionCapabilityExclusions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProtectionCapabilityExclusions build() {
-            ProtectionCapabilityExclusions __instance__ =
-                    new ProtectionCapabilityExclusions(requestCookies, args);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ProtectionCapabilityExclusions model =
+                    new ProtectionCapabilityExclusions(this.requestCookies, this.args);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProtectionCapabilityExclusions o) {
-            Builder copiedBuilder = requestCookies(o.getRequestCookies()).args(o.getArgs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProtectionCapabilityExclusions model) {
+            if (model.wasPropertyExplicitlySet("requestCookies")) {
+                this.requestCookies(model.getRequestCookies());
+            }
+            if (model.wasPropertyExplicitlySet("args")) {
+                this.args(model.getArgs());
+            }
+            return this;
         }
     }
 
@@ -152,9 +158,9 @@ public final class ProtectionCapabilityExclusions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProtectionCapabilityExclusions(");
+        sb.append("super=").append(super.toString());
         sb.append("requestCookies=").append(String.valueOf(this.requestCookies));
         sb.append(", args=").append(String.valueOf(this.args));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -171,7 +177,7 @@ public final class ProtectionCapabilityExclusions {
         ProtectionCapabilityExclusions other = (ProtectionCapabilityExclusions) o;
         return java.util.Objects.equals(this.requestCookies, other.requestCookies)
                 && java.util.Objects.equals(this.args, other.args)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -182,16 +188,7 @@ public final class ProtectionCapabilityExclusions {
                 (result * PRIME)
                         + (this.requestCookies == null ? 43 : this.requestCookies.hashCode());
         result = (result * PRIME) + (this.args == null ? 43 : this.args.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

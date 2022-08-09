@@ -32,7 +32,7 @@ package com.oracle.bmc.devops.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class RepositoryRefSummary {
+public class RepositoryRefSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "refName",
@@ -138,6 +138,7 @@ public class RepositoryRefSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RepositoryRefSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("refName=").append(String.valueOf(this.refName));
         sb.append(", fullRefName=").append(String.valueOf(this.fullRefName));
         sb.append(", repositoryId=").append(String.valueOf(this.repositoryId));
@@ -161,7 +162,8 @@ public class RepositoryRefSummary {
                 && java.util.Objects.equals(this.fullRefName, other.fullRefName)
                 && java.util.Objects.equals(this.repositoryId, other.repositoryId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.definedTags, other.definedTags);
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && super.equals(other);
     }
 
     @Override
@@ -173,6 +175,7 @@ public class RepositoryRefSummary {
         result = (result * PRIME) + (this.repositoryId == null ? 43 : this.repositoryId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

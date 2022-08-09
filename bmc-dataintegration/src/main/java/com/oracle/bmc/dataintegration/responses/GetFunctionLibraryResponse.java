@@ -55,16 +55,18 @@ public class GetFunctionLibraryResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "functionLibrary"
     })
     private GetFunctionLibraryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.FunctionLibrary functionLibrary) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.functionLibrary = functionLibrary;
@@ -75,6 +77,13 @@ public class GetFunctionLibraryResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetFunctionLibraryResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetFunctionLibraryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             functionLibrary(o.getFunctionLibrary());
@@ -149,7 +159,7 @@ public class GetFunctionLibraryResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetFunctionLibraryResponse build() {
             return new GetFunctionLibraryResponse(
-                    __httpStatusCode__, etag, opcRequestId, functionLibrary);
+                    __httpStatusCode__, headers, etag, opcRequestId, functionLibrary);
         }
     }
 

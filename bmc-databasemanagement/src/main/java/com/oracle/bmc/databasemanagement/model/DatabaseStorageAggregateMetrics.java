@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = DatabaseStorageAggregateMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseStorageAggregateMetrics {
+public final class DatabaseStorageAggregateMetrics
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "storageAllocated",
@@ -78,22 +79,27 @@ public final class DatabaseStorageAggregateMetrics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseStorageAggregateMetrics build() {
-            DatabaseStorageAggregateMetrics __instance__ =
+            DatabaseStorageAggregateMetrics model =
                     new DatabaseStorageAggregateMetrics(
-                            storageAllocated, storageUsed, storageUsedByTableSpace);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.storageAllocated, this.storageUsed, this.storageUsedByTableSpace);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseStorageAggregateMetrics o) {
-            Builder copiedBuilder =
-                    storageAllocated(o.getStorageAllocated())
-                            .storageUsed(o.getStorageUsed())
-                            .storageUsedByTableSpace(o.getStorageUsedByTableSpace());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseStorageAggregateMetrics model) {
+            if (model.wasPropertyExplicitlySet("storageAllocated")) {
+                this.storageAllocated(model.getStorageAllocated());
+            }
+            if (model.wasPropertyExplicitlySet("storageUsed")) {
+                this.storageUsed(model.getStorageUsed());
+            }
+            if (model.wasPropertyExplicitlySet("storageUsedByTableSpace")) {
+                this.storageUsedByTableSpace(model.getStorageUsedByTableSpace());
+            }
+            return this;
         }
     }
 
@@ -149,11 +155,11 @@ public final class DatabaseStorageAggregateMetrics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseStorageAggregateMetrics(");
+        sb.append("super=").append(super.toString());
         sb.append("storageAllocated=").append(String.valueOf(this.storageAllocated));
         sb.append(", storageUsed=").append(String.valueOf(this.storageUsed));
         sb.append(", storageUsedByTableSpace=")
                 .append(String.valueOf(this.storageUsedByTableSpace));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -172,7 +178,7 @@ public final class DatabaseStorageAggregateMetrics {
                 && java.util.Objects.equals(this.storageUsed, other.storageUsed)
                 && java.util.Objects.equals(
                         this.storageUsedByTableSpace, other.storageUsedByTableSpace)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -188,16 +194,7 @@ public final class DatabaseStorageAggregateMetrics {
                         + (this.storageUsedByTableSpace == null
                                 ? 43
                                 : this.storageUsedByTableSpace.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

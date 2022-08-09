@@ -124,8 +124,8 @@ public class TestConnectionConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .TestConnectionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.validateConnectionResult(response.getItem());
 

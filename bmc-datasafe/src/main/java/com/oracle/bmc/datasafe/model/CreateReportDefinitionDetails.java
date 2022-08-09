@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = CreateReportDefinitionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateReportDefinitionDetails {
+public final class CreateReportDefinitionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -237,38 +238,57 @@ public final class CreateReportDefinitionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateReportDefinitionDetails build() {
-            CreateReportDefinitionDetails __instance__ =
+            CreateReportDefinitionDetails model =
                     new CreateReportDefinitionDetails(
-                            compartmentId,
-                            displayName,
-                            parentId,
-                            description,
-                            columnInfo,
-                            columnFilters,
-                            columnSortings,
-                            summary,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.displayName,
+                            this.parentId,
+                            this.description,
+                            this.columnInfo,
+                            this.columnFilters,
+                            this.columnSortings,
+                            this.summary,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateReportDefinitionDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .parentId(o.getParentId())
-                            .description(o.getDescription())
-                            .columnInfo(o.getColumnInfo())
-                            .columnFilters(o.getColumnFilters())
-                            .columnSortings(o.getColumnSortings())
-                            .summary(o.getSummary())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateReportDefinitionDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("parentId")) {
+                this.parentId(model.getParentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("columnInfo")) {
+                this.columnInfo(model.getColumnInfo());
+            }
+            if (model.wasPropertyExplicitlySet("columnFilters")) {
+                this.columnFilters(model.getColumnFilters());
+            }
+            if (model.wasPropertyExplicitlySet("columnSortings")) {
+                this.columnSortings(model.getColumnSortings());
+            }
+            if (model.wasPropertyExplicitlySet("summary")) {
+                this.summary(model.getSummary());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -448,6 +468,7 @@ public final class CreateReportDefinitionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateReportDefinitionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", parentId=").append(String.valueOf(this.parentId));
@@ -458,7 +479,6 @@ public final class CreateReportDefinitionDetails {
         sb.append(", summary=").append(String.valueOf(this.summary));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -483,7 +503,7 @@ public final class CreateReportDefinitionDetails {
                 && java.util.Objects.equals(this.summary, other.summary)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -506,16 +526,7 @@ public final class CreateReportDefinitionDetails {
         result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

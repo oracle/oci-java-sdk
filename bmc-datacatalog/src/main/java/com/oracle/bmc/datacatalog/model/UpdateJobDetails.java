@@ -17,7 +17,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateJobDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateJobDetails {
+public final class UpdateJobDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -154,30 +154,41 @@ public final class UpdateJobDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateJobDetails build() {
-            UpdateJobDetails __instance__ =
+            UpdateJobDetails model =
                     new UpdateJobDetails(
-                            displayName,
-                            description,
-                            scheduleCronExpression,
-                            timeScheduleBegin,
-                            timeScheduleEnd,
-                            connectionKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.description,
+                            this.scheduleCronExpression,
+                            this.timeScheduleBegin,
+                            this.timeScheduleEnd,
+                            this.connectionKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateJobDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .scheduleCronExpression(o.getScheduleCronExpression())
-                            .timeScheduleBegin(o.getTimeScheduleBegin())
-                            .timeScheduleEnd(o.getTimeScheduleEnd())
-                            .connectionKey(o.getConnectionKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateJobDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("scheduleCronExpression")) {
+                this.scheduleCronExpression(model.getScheduleCronExpression());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduleBegin")) {
+                this.timeScheduleBegin(model.getTimeScheduleBegin());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduleEnd")) {
+                this.timeScheduleEnd(model.getTimeScheduleEnd());
+            }
+            if (model.wasPropertyExplicitlySet("connectionKey")) {
+                this.connectionKey(model.getConnectionKey());
+            }
+            return this;
         }
     }
 
@@ -297,13 +308,13 @@ public final class UpdateJobDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateJobDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", scheduleCronExpression=").append(String.valueOf(this.scheduleCronExpression));
         sb.append(", timeScheduleBegin=").append(String.valueOf(this.timeScheduleBegin));
         sb.append(", timeScheduleEnd=").append(String.valueOf(this.timeScheduleEnd));
         sb.append(", connectionKey=").append(String.valueOf(this.connectionKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -325,7 +336,7 @@ public final class UpdateJobDetails {
                 && java.util.Objects.equals(this.timeScheduleBegin, other.timeScheduleBegin)
                 && java.util.Objects.equals(this.timeScheduleEnd, other.timeScheduleEnd)
                 && java.util.Objects.equals(this.connectionKey, other.connectionKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -348,16 +359,7 @@ public final class UpdateJobDetails {
         result =
                 (result * PRIME)
                         + (this.connectionKey == null ? 43 : this.connectionKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

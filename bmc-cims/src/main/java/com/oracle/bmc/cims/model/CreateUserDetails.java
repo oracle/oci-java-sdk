@@ -19,7 +19,7 @@ package com.oracle.bmc.cims.model;
     builder = CreateUserDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateUserDetails {
+public final class CreateUserDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -186,34 +186,49 @@ public final class CreateUserDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateUserDetails build() {
-            CreateUserDetails __instance__ =
+            CreateUserDetails model =
                     new CreateUserDetails(
-                            compartmentId,
-                            firstName,
-                            lastName,
-                            country,
-                            csi,
-                            phone,
-                            timezone,
-                            organizationName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.firstName,
+                            this.lastName,
+                            this.country,
+                            this.csi,
+                            this.phone,
+                            this.timezone,
+                            this.organizationName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateUserDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .firstName(o.getFirstName())
-                            .lastName(o.getLastName())
-                            .country(o.getCountry())
-                            .csi(o.getCsi())
-                            .phone(o.getPhone())
-                            .timezone(o.getTimezone())
-                            .organizationName(o.getOrganizationName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateUserDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("firstName")) {
+                this.firstName(model.getFirstName());
+            }
+            if (model.wasPropertyExplicitlySet("lastName")) {
+                this.lastName(model.getLastName());
+            }
+            if (model.wasPropertyExplicitlySet("country")) {
+                this.country(model.getCountry());
+            }
+            if (model.wasPropertyExplicitlySet("csi")) {
+                this.csi(model.getCsi());
+            }
+            if (model.wasPropertyExplicitlySet("phone")) {
+                this.phone(model.getPhone());
+            }
+            if (model.wasPropertyExplicitlySet("timezone")) {
+                this.timezone(model.getTimezone());
+            }
+            if (model.wasPropertyExplicitlySet("organizationName")) {
+                this.organizationName(model.getOrganizationName());
+            }
+            return this;
         }
     }
 
@@ -353,6 +368,7 @@ public final class CreateUserDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateUserDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", firstName=").append(String.valueOf(this.firstName));
         sb.append(", lastName=").append(String.valueOf(this.lastName));
@@ -361,7 +377,6 @@ public final class CreateUserDetails {
         sb.append(", phone=").append(String.valueOf(this.phone));
         sb.append(", timezone=").append(String.valueOf(this.timezone));
         sb.append(", organizationName=").append(String.valueOf(this.organizationName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -384,7 +399,7 @@ public final class CreateUserDetails {
                 && java.util.Objects.equals(this.phone, other.phone)
                 && java.util.Objects.equals(this.timezone, other.timezone)
                 && java.util.Objects.equals(this.organizationName, other.organizationName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -403,16 +418,7 @@ public final class CreateUserDetails {
         result =
                 (result * PRIME)
                         + (this.organizationName == null ? 43 : this.organizationName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

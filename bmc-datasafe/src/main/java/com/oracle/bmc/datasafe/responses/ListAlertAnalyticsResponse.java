@@ -53,16 +53,18 @@ public class ListAlertAnalyticsResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "alertAnalyticsCollection"
     })
     private ListAlertAnalyticsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.datasafe.model.AlertAnalyticsCollection alertAnalyticsCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.alertAnalyticsCollection = alertAnalyticsCollection;
@@ -73,6 +75,13 @@ public class ListAlertAnalyticsResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class ListAlertAnalyticsResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(ListAlertAnalyticsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             alertAnalyticsCollection(o.getAlertAnalyticsCollection());
@@ -145,7 +155,11 @@ public class ListAlertAnalyticsResponse extends com.oracle.bmc.responses.BmcResp
          */
         public ListAlertAnalyticsResponse build() {
             return new ListAlertAnalyticsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, alertAnalyticsCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    alertAnalyticsCollection);
         }
     }
 

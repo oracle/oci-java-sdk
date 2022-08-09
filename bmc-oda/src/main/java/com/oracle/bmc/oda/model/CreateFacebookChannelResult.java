@@ -181,45 +181,70 @@ public final class CreateFacebookChannelResult extends CreateChannelResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateFacebookChannelResult build() {
-            CreateFacebookChannelResult __instance__ =
+            CreateFacebookChannelResult model =
                     new CreateFacebookChannelResult(
-                            id,
-                            name,
-                            description,
-                            category,
-                            sessionExpiryDurationInMilliseconds,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            freeformTags,
-                            definedTags,
-                            verifyToken,
-                            botId,
-                            webhookUrl);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.description,
+                            this.category,
+                            this.sessionExpiryDurationInMilliseconds,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.verifyToken,
+                            this.botId,
+                            this.webhookUrl);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateFacebookChannelResult o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .category(o.getCategory())
-                            .sessionExpiryDurationInMilliseconds(
-                                    o.getSessionExpiryDurationInMilliseconds())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .verifyToken(o.getVerifyToken())
-                            .botId(o.getBotId())
-                            .webhookUrl(o.getWebhookUrl());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateFacebookChannelResult model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpiryDurationInMilliseconds")) {
+                this.sessionExpiryDurationInMilliseconds(
+                        model.getSessionExpiryDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("verifyToken")) {
+                this.verifyToken(model.getVerifyToken());
+            }
+            if (model.wasPropertyExplicitlySet("botId")) {
+                this.botId(model.getBotId());
+            }
+            if (model.wasPropertyExplicitlySet("webhookUrl")) {
+                this.webhookUrl(model.getWebhookUrl());
+            }
+            return this;
         }
     }
 
@@ -334,7 +359,6 @@ public final class CreateFacebookChannelResult extends CreateChannelResult {
         sb.append(", verifyToken=").append(String.valueOf(this.verifyToken));
         sb.append(", botId=").append(String.valueOf(this.botId));
         sb.append(", webhookUrl=").append(String.valueOf(this.webhookUrl));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -352,8 +376,7 @@ public final class CreateFacebookChannelResult extends CreateChannelResult {
         return java.util.Objects.equals(this.verifyToken, other.verifyToken)
                 && java.util.Objects.equals(this.botId, other.botId)
                 && java.util.Objects.equals(this.webhookUrl, other.webhookUrl)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -363,16 +386,6 @@ public final class CreateFacebookChannelResult extends CreateChannelResult {
         result = (result * PRIME) + (this.verifyToken == null ? 43 : this.verifyToken.hashCode());
         result = (result * PRIME) + (this.botId == null ? 43 : this.botId.hashCode());
         result = (result * PRIME) + (this.webhookUrl == null ? 43 : this.webhookUrl.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

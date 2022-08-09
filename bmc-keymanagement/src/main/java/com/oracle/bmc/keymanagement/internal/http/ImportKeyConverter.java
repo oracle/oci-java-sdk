@@ -101,8 +101,8 @@ public class ImportKeyConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .ImportKeyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.key(response.getItem());
 

@@ -179,8 +179,8 @@ public class ListFunctionLibrariesConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .ListFunctionLibrariesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.functionLibrarySummaryCollection(response.getItem());
 

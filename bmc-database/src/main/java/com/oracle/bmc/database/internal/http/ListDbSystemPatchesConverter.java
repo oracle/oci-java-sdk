@@ -125,8 +125,8 @@ public class ListDbSystemPatchesConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListDbSystemPatchesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

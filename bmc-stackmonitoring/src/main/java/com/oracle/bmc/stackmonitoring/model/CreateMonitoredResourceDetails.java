@@ -19,7 +19,8 @@ package com.oracle.bmc.stackmonitoring.model;
     builder = CreateMonitoredResourceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateMonitoredResourceDetails {
+public final class CreateMonitoredResourceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -222,40 +223,61 @@ public final class CreateMonitoredResourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateMonitoredResourceDetails build() {
-            CreateMonitoredResourceDetails __instance__ =
+            CreateMonitoredResourceDetails model =
                     new CreateMonitoredResourceDetails(
-                            name,
-                            displayName,
-                            type,
-                            compartmentId,
-                            hostName,
-                            managementAgentId,
-                            resourceTimeZone,
-                            properties,
-                            databaseConnectionDetails,
-                            credentials,
-                            aliases);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.displayName,
+                            this.type,
+                            this.compartmentId,
+                            this.hostName,
+                            this.managementAgentId,
+                            this.resourceTimeZone,
+                            this.properties,
+                            this.databaseConnectionDetails,
+                            this.credentials,
+                            this.aliases);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateMonitoredResourceDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .displayName(o.getDisplayName())
-                            .type(o.getType())
-                            .compartmentId(o.getCompartmentId())
-                            .hostName(o.getHostName())
-                            .managementAgentId(o.getManagementAgentId())
-                            .resourceTimeZone(o.getResourceTimeZone())
-                            .properties(o.getProperties())
-                            .databaseConnectionDetails(o.getDatabaseConnectionDetails())
-                            .credentials(o.getCredentials())
-                            .aliases(o.getAliases());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateMonitoredResourceDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("hostName")) {
+                this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("managementAgentId")) {
+                this.managementAgentId(model.getManagementAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceTimeZone")) {
+                this.resourceTimeZone(model.getResourceTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            if (model.wasPropertyExplicitlySet("databaseConnectionDetails")) {
+                this.databaseConnectionDetails(model.getDatabaseConnectionDetails());
+            }
+            if (model.wasPropertyExplicitlySet("credentials")) {
+                this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("aliases")) {
+                this.aliases(model.getAliases());
+            }
+            return this;
         }
     }
 
@@ -416,6 +438,7 @@ public final class CreateMonitoredResourceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateMonitoredResourceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -428,7 +451,6 @@ public final class CreateMonitoredResourceDetails {
                 .append(String.valueOf(this.databaseConnectionDetails));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
         sb.append(", aliases=").append(String.valueOf(this.aliases));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -455,7 +477,7 @@ public final class CreateMonitoredResourceDetails {
                         this.databaseConnectionDetails, other.databaseConnectionDetails)
                 && java.util.Objects.equals(this.credentials, other.credentials)
                 && java.util.Objects.equals(this.aliases, other.aliases)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -483,16 +505,7 @@ public final class CreateMonitoredResourceDetails {
                                 : this.databaseConnectionDetails.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
         result = (result * PRIME) + (this.aliases == null ? 43 : this.aliases.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

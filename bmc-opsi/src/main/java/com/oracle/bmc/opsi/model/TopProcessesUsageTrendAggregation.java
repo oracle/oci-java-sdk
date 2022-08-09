@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = TopProcessesUsageTrendAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TopProcessesUsageTrendAggregation {
+public final class TopProcessesUsageTrendAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"command", "usageData"})
     public TopProcessesUsageTrendAggregation(
@@ -68,18 +69,23 @@ public final class TopProcessesUsageTrendAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TopProcessesUsageTrendAggregation build() {
-            TopProcessesUsageTrendAggregation __instance__ =
-                    new TopProcessesUsageTrendAggregation(command, usageData);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TopProcessesUsageTrendAggregation model =
+                    new TopProcessesUsageTrendAggregation(this.command, this.usageData);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TopProcessesUsageTrendAggregation o) {
-            Builder copiedBuilder = command(o.getCommand()).usageData(o.getUsageData());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TopProcessesUsageTrendAggregation model) {
+            if (model.wasPropertyExplicitlySet("command")) {
+                this.command(model.getCommand());
+            }
+            if (model.wasPropertyExplicitlySet("usageData")) {
+                this.usageData(model.getUsageData());
+            }
+            return this;
         }
     }
 
@@ -135,9 +141,9 @@ public final class TopProcessesUsageTrendAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TopProcessesUsageTrendAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("command=").append(String.valueOf(this.command));
         sb.append(", usageData=").append(String.valueOf(this.usageData));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,7 +160,7 @@ public final class TopProcessesUsageTrendAggregation {
         TopProcessesUsageTrendAggregation other = (TopProcessesUsageTrendAggregation) o;
         return java.util.Objects.equals(this.command, other.command)
                 && java.util.Objects.equals(this.usageData, other.usageData)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -163,16 +169,7 @@ public final class TopProcessesUsageTrendAggregation {
         int result = 1;
         result = (result * PRIME) + (this.command == null ? 43 : this.command.hashCode());
         result = (result * PRIME) + (this.usageData == null ? 43 : this.usageData.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

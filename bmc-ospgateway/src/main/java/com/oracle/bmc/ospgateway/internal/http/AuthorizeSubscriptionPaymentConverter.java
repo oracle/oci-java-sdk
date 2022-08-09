@@ -141,8 +141,8 @@ public class AuthorizeSubscriptionPaymentConverter {
                                                 com.oracle.bmc.ospgateway.responses
                                                         .AuthorizeSubscriptionPaymentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.authorizeSubscriptionPaymentReceipt(response.getItem());
 

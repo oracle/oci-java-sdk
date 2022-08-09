@@ -118,8 +118,8 @@ public class EvaluateMigrationConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .EvaluateMigrationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.job(response.getItem());
 

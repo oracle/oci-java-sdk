@@ -105,8 +105,8 @@ public class GetAuthenticationPolicyConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .GetAuthenticationPolicyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.authenticationPolicy(response.getItem());
 

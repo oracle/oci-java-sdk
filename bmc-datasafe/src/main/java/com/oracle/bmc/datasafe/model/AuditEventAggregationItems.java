@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = AuditEventAggregationItems.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuditEventAggregationItems {
+public final class AuditEventAggregationItems
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -141,25 +142,41 @@ public final class AuditEventAggregationItems {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuditEventAggregationItems build() {
-            AuditEventAggregationItems __instance__ =
+            AuditEventAggregationItems model =
                     new AuditEventAggregationItems(
-                            displayName, metricName, timeStarted, timeEnded, count, dimensions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.metricName,
+                            this.timeStarted,
+                            this.timeEnded,
+                            this.count,
+                            this.dimensions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AuditEventAggregationItems o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .metricName(o.getMetricName())
-                            .timeStarted(o.getTimeStarted())
-                            .timeEnded(o.getTimeEnded())
-                            .count(o.getCount())
-                            .dimensions(o.getDimensions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AuditEventAggregationItems model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("metricName")) {
+                this.metricName(model.getMetricName());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnded")) {
+                this.timeEnded(model.getTimeEnded());
+            }
+            if (model.wasPropertyExplicitlySet("count")) {
+                this.count(model.getCount());
+            }
+            if (model.wasPropertyExplicitlySet("dimensions")) {
+                this.dimensions(model.getDimensions());
+            }
+            return this;
         }
     }
 
@@ -264,13 +281,13 @@ public final class AuditEventAggregationItems {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuditEventAggregationItems(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", metricName=").append(String.valueOf(this.metricName));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
         sb.append(", count=").append(String.valueOf(this.count));
         sb.append(", dimensions=").append(String.valueOf(this.dimensions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -291,7 +308,7 @@ public final class AuditEventAggregationItems {
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
                 && java.util.Objects.equals(this.count, other.count)
                 && java.util.Objects.equals(this.dimensions, other.dimensions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -304,16 +321,7 @@ public final class AuditEventAggregationItems {
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
         result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
         result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

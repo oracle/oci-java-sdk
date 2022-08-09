@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = MetricBasedVerticalScaleUpConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MetricBasedVerticalScaleUpConfig {
+public final class MetricBasedVerticalScaleUpConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "metric",
@@ -124,28 +125,37 @@ public final class MetricBasedVerticalScaleUpConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MetricBasedVerticalScaleUpConfig build() {
-            MetricBasedVerticalScaleUpConfig __instance__ =
+            MetricBasedVerticalScaleUpConfig model =
                     new MetricBasedVerticalScaleUpConfig(
-                            metric,
-                            maxOcpusPerNode,
-                            maxMemoryPerNode,
-                            ocpuStepSize,
-                            memoryStepSize);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.metric,
+                            this.maxOcpusPerNode,
+                            this.maxMemoryPerNode,
+                            this.ocpuStepSize,
+                            this.memoryStepSize);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MetricBasedVerticalScaleUpConfig o) {
-            Builder copiedBuilder =
-                    metric(o.getMetric())
-                            .maxOcpusPerNode(o.getMaxOcpusPerNode())
-                            .maxMemoryPerNode(o.getMaxMemoryPerNode())
-                            .ocpuStepSize(o.getOcpuStepSize())
-                            .memoryStepSize(o.getMemoryStepSize());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MetricBasedVerticalScaleUpConfig model) {
+            if (model.wasPropertyExplicitlySet("metric")) {
+                this.metric(model.getMetric());
+            }
+            if (model.wasPropertyExplicitlySet("maxOcpusPerNode")) {
+                this.maxOcpusPerNode(model.getMaxOcpusPerNode());
+            }
+            if (model.wasPropertyExplicitlySet("maxMemoryPerNode")) {
+                this.maxMemoryPerNode(model.getMaxMemoryPerNode());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuStepSize")) {
+                this.ocpuStepSize(model.getOcpuStepSize());
+            }
+            if (model.wasPropertyExplicitlySet("memoryStepSize")) {
+                this.memoryStepSize(model.getMemoryStepSize());
+            }
+            return this;
         }
     }
 
@@ -238,12 +248,12 @@ public final class MetricBasedVerticalScaleUpConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MetricBasedVerticalScaleUpConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("metric=").append(String.valueOf(this.metric));
         sb.append(", maxOcpusPerNode=").append(String.valueOf(this.maxOcpusPerNode));
         sb.append(", maxMemoryPerNode=").append(String.valueOf(this.maxMemoryPerNode));
         sb.append(", ocpuStepSize=").append(String.valueOf(this.ocpuStepSize));
         sb.append(", memoryStepSize=").append(String.valueOf(this.memoryStepSize));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -263,7 +273,7 @@ public final class MetricBasedVerticalScaleUpConfig {
                 && java.util.Objects.equals(this.maxMemoryPerNode, other.maxMemoryPerNode)
                 && java.util.Objects.equals(this.ocpuStepSize, other.ocpuStepSize)
                 && java.util.Objects.equals(this.memoryStepSize, other.memoryStepSize)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -281,16 +291,7 @@ public final class MetricBasedVerticalScaleUpConfig {
         result =
                 (result * PRIME)
                         + (this.memoryStepSize == null ? 43 : this.memoryStepSize.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

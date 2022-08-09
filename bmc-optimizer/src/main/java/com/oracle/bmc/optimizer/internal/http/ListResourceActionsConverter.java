@@ -188,8 +188,8 @@ public class ListResourceActionsConverter {
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
                                                         .ListResourceActionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceActionCollection(response.getItem());
 

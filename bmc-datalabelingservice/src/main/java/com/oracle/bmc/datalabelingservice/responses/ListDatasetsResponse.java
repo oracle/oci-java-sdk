@@ -59,16 +59,18 @@ public class ListDatasetsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "datasetCollection"
     })
     private ListDatasetsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.datalabelingservice.model.DatasetCollection datasetCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.datasetCollection = datasetCollection;
@@ -79,6 +81,13 @@ public class ListDatasetsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListDatasetsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListDatasetsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             datasetCollection(o.getDatasetCollection());
@@ -157,7 +167,7 @@ public class ListDatasetsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListDatasetsResponse build() {
             return new ListDatasetsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, datasetCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, datasetCollection);
         }
     }
 

@@ -64,19 +64,23 @@ public final class AssetMetadataEntryDetails extends IngestStreamDistributionCha
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AssetMetadataEntryDetails build() {
-            AssetMetadataEntryDetails __instance__ =
-                    new AssetMetadataEntryDetails(mediaAssetId, compartmentId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AssetMetadataEntryDetails model =
+                    new AssetMetadataEntryDetails(this.mediaAssetId, this.compartmentId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AssetMetadataEntryDetails o) {
-            Builder copiedBuilder =
-                    mediaAssetId(o.getMediaAssetId()).compartmentId(o.getCompartmentId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AssetMetadataEntryDetails model) {
+            if (model.wasPropertyExplicitlySet("mediaAssetId")) {
+                this.mediaAssetId(model.getMediaAssetId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            return this;
         }
     }
 
@@ -142,7 +146,6 @@ public final class AssetMetadataEntryDetails extends IngestStreamDistributionCha
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", mediaAssetId=").append(String.valueOf(this.mediaAssetId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,8 +162,7 @@ public final class AssetMetadataEntryDetails extends IngestStreamDistributionCha
         AssetMetadataEntryDetails other = (AssetMetadataEntryDetails) o;
         return java.util.Objects.equals(this.mediaAssetId, other.mediaAssetId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -171,16 +173,6 @@ public final class AssetMetadataEntryDetails extends IngestStreamDistributionCha
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

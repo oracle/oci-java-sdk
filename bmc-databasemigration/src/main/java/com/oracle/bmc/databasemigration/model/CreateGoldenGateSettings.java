@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemigration.model;
     builder = CreateGoldenGateSettings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateGoldenGateSettings {
+public final class CreateGoldenGateSettings
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"extract", "replicat", "acceptableLag"})
     public CreateGoldenGateSettings(
@@ -74,21 +75,26 @@ public final class CreateGoldenGateSettings {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateGoldenGateSettings build() {
-            CreateGoldenGateSettings __instance__ =
-                    new CreateGoldenGateSettings(extract, replicat, acceptableLag);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateGoldenGateSettings model =
+                    new CreateGoldenGateSettings(this.extract, this.replicat, this.acceptableLag);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateGoldenGateSettings o) {
-            Builder copiedBuilder =
-                    extract(o.getExtract())
-                            .replicat(o.getReplicat())
-                            .acceptableLag(o.getAcceptableLag());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateGoldenGateSettings model) {
+            if (model.wasPropertyExplicitlySet("extract")) {
+                this.extract(model.getExtract());
+            }
+            if (model.wasPropertyExplicitlySet("replicat")) {
+                this.replicat(model.getReplicat());
+            }
+            if (model.wasPropertyExplicitlySet("acceptableLag")) {
+                this.acceptableLag(model.getAcceptableLag());
+            }
+            return this;
         }
     }
 
@@ -146,10 +152,10 @@ public final class CreateGoldenGateSettings {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateGoldenGateSettings(");
+        sb.append("super=").append(super.toString());
         sb.append("extract=").append(String.valueOf(this.extract));
         sb.append(", replicat=").append(String.valueOf(this.replicat));
         sb.append(", acceptableLag=").append(String.valueOf(this.acceptableLag));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -167,7 +173,7 @@ public final class CreateGoldenGateSettings {
         return java.util.Objects.equals(this.extract, other.extract)
                 && java.util.Objects.equals(this.replicat, other.replicat)
                 && java.util.Objects.equals(this.acceptableLag, other.acceptableLag)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -179,16 +185,7 @@ public final class CreateGoldenGateSettings {
         result =
                 (result * PRIME)
                         + (this.acceptableLag == null ? 43 : this.acceptableLag.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

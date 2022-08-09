@@ -20,7 +20,8 @@ package com.oracle.bmc.objectstorage.model;
     builder = SSECustomerKeyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SSECustomerKeyDetails {
+public final class SSECustomerKeyDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"algorithm", "key", "keySha256"})
     public SSECustomerKeyDetails(Algorithm algorithm, String key, String keySha256) {
@@ -93,19 +94,26 @@ public final class SSECustomerKeyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SSECustomerKeyDetails build() {
-            SSECustomerKeyDetails __instance__ =
-                    new SSECustomerKeyDetails(algorithm, key, keySha256);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SSECustomerKeyDetails model =
+                    new SSECustomerKeyDetails(this.algorithm, this.key, this.keySha256);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SSECustomerKeyDetails o) {
-            Builder copiedBuilder =
-                    algorithm(o.getAlgorithm()).key(o.getKey()).keySha256(o.getKeySha256());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SSECustomerKeyDetails model) {
+            if (model.wasPropertyExplicitlySet("algorithm")) {
+                this.algorithm(model.getAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("keySha256")) {
+                this.keySha256(model.getKeySha256());
+            }
+            return this;
         }
     }
 
@@ -218,10 +226,10 @@ public final class SSECustomerKeyDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SSECustomerKeyDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("algorithm=").append(String.valueOf(this.algorithm));
         sb.append(", key=").append(String.valueOf(this.key));
         sb.append(", keySha256=").append(String.valueOf(this.keySha256));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -239,7 +247,7 @@ public final class SSECustomerKeyDetails {
         return java.util.Objects.equals(this.algorithm, other.algorithm)
                 && java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.keySha256, other.keySha256)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -249,16 +257,7 @@ public final class SSECustomerKeyDetails {
         result = (result * PRIME) + (this.algorithm == null ? 43 : this.algorithm.hashCode());
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.keySha256 == null ? 43 : this.keySha256.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

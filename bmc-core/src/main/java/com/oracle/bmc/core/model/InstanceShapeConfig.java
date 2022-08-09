@@ -21,7 +21,7 @@ package com.oracle.bmc.core.model;
     builder = InstanceShapeConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceShapeConfig {
+public final class InstanceShapeConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "ocpus",
@@ -291,40 +291,61 @@ public final class InstanceShapeConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceShapeConfig build() {
-            InstanceShapeConfig __instance__ =
+            InstanceShapeConfig model =
                     new InstanceShapeConfig(
-                            ocpus,
-                            memoryInGBs,
-                            baselineOcpuUtilization,
-                            processorDescription,
-                            networkingBandwidthInGbps,
-                            maxVnicAttachments,
-                            gpus,
-                            gpuDescription,
-                            localDisks,
-                            localDisksTotalSizeInGBs,
-                            localDiskDescription);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.ocpus,
+                            this.memoryInGBs,
+                            this.baselineOcpuUtilization,
+                            this.processorDescription,
+                            this.networkingBandwidthInGbps,
+                            this.maxVnicAttachments,
+                            this.gpus,
+                            this.gpuDescription,
+                            this.localDisks,
+                            this.localDisksTotalSizeInGBs,
+                            this.localDiskDescription);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceShapeConfig o) {
-            Builder copiedBuilder =
-                    ocpus(o.getOcpus())
-                            .memoryInGBs(o.getMemoryInGBs())
-                            .baselineOcpuUtilization(o.getBaselineOcpuUtilization())
-                            .processorDescription(o.getProcessorDescription())
-                            .networkingBandwidthInGbps(o.getNetworkingBandwidthInGbps())
-                            .maxVnicAttachments(o.getMaxVnicAttachments())
-                            .gpus(o.getGpus())
-                            .gpuDescription(o.getGpuDescription())
-                            .localDisks(o.getLocalDisks())
-                            .localDisksTotalSizeInGBs(o.getLocalDisksTotalSizeInGBs())
-                            .localDiskDescription(o.getLocalDiskDescription());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceShapeConfig model) {
+            if (model.wasPropertyExplicitlySet("ocpus")) {
+                this.ocpus(model.getOcpus());
+            }
+            if (model.wasPropertyExplicitlySet("memoryInGBs")) {
+                this.memoryInGBs(model.getMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("baselineOcpuUtilization")) {
+                this.baselineOcpuUtilization(model.getBaselineOcpuUtilization());
+            }
+            if (model.wasPropertyExplicitlySet("processorDescription")) {
+                this.processorDescription(model.getProcessorDescription());
+            }
+            if (model.wasPropertyExplicitlySet("networkingBandwidthInGbps")) {
+                this.networkingBandwidthInGbps(model.getNetworkingBandwidthInGbps());
+            }
+            if (model.wasPropertyExplicitlySet("maxVnicAttachments")) {
+                this.maxVnicAttachments(model.getMaxVnicAttachments());
+            }
+            if (model.wasPropertyExplicitlySet("gpus")) {
+                this.gpus(model.getGpus());
+            }
+            if (model.wasPropertyExplicitlySet("gpuDescription")) {
+                this.gpuDescription(model.getGpuDescription());
+            }
+            if (model.wasPropertyExplicitlySet("localDisks")) {
+                this.localDisks(model.getLocalDisks());
+            }
+            if (model.wasPropertyExplicitlySet("localDisksTotalSizeInGBs")) {
+                this.localDisksTotalSizeInGBs(model.getLocalDisksTotalSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("localDiskDescription")) {
+                this.localDiskDescription(model.getLocalDiskDescription());
+            }
+            return this;
         }
     }
 
@@ -608,6 +629,7 @@ public final class InstanceShapeConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceShapeConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("ocpus=").append(String.valueOf(this.ocpus));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
         sb.append(", baselineOcpuUtilization=")
@@ -622,7 +644,6 @@ public final class InstanceShapeConfig {
         sb.append(", localDisksTotalSizeInGBs=")
                 .append(String.valueOf(this.localDisksTotalSizeInGBs));
         sb.append(", localDiskDescription=").append(String.valueOf(this.localDiskDescription));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -651,7 +672,7 @@ public final class InstanceShapeConfig {
                 && java.util.Objects.equals(
                         this.localDisksTotalSizeInGBs, other.localDisksTotalSizeInGBs)
                 && java.util.Objects.equals(this.localDiskDescription, other.localDiskDescription)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -695,16 +716,7 @@ public final class InstanceShapeConfig {
                         + (this.localDiskDescription == null
                                 ? 43
                                 : this.localDiskDescription.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

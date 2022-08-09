@@ -55,16 +55,18 @@ public class CreateMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "mediaWorkflow"
     })
     private CreateMediaWorkflowResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.mediaservices.model.MediaWorkflow mediaWorkflow) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.mediaWorkflow = mediaWorkflow;
@@ -75,6 +77,13 @@ public class CreateMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class CreateMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(CreateMediaWorkflowResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             mediaWorkflow(o.getMediaWorkflow());
@@ -149,7 +159,7 @@ public class CreateMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRes
          */
         public CreateMediaWorkflowResponse build() {
             return new CreateMediaWorkflowResponse(
-                    __httpStatusCode__, etag, opcRequestId, mediaWorkflow);
+                    __httpStatusCode__, headers, etag, opcRequestId, mediaWorkflow);
         }
     }
 

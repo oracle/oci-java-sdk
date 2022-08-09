@@ -57,17 +57,19 @@ public class GetAppCatalogListingAgreementsResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "appCatalogListingResourceVersionAgreements"
     })
     private GetAppCatalogListingAgreementsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.AppCatalogListingResourceVersionAgreements
                     appCatalogListingResourceVersionAgreements) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.appCatalogListingResourceVersionAgreements =
@@ -79,6 +81,13 @@ public class GetAppCatalogListingAgreementsResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -143,6 +152,7 @@ public class GetAppCatalogListingAgreementsResponse extends com.oracle.bmc.respo
          */
         public Builder copy(GetAppCatalogListingAgreementsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             appCatalogListingResourceVersionAgreements(
@@ -158,6 +168,7 @@ public class GetAppCatalogListingAgreementsResponse extends com.oracle.bmc.respo
         public GetAppCatalogListingAgreementsResponse build() {
             return new GetAppCatalogListingAgreementsResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcRequestId,
                     appCatalogListingResourceVersionAgreements);

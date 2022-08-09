@@ -50,20 +50,23 @@ public final class NoRouteRoutingAction extends RoutingAction {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NoRouteRoutingAction build() {
-            NoRouteRoutingAction __instance__ =
-                    new NoRouteRoutingAction(actionType, noRouteRoutingActionDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NoRouteRoutingAction model =
+                    new NoRouteRoutingAction(this.actionType, this.noRouteRoutingActionDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NoRouteRoutingAction o) {
-            Builder copiedBuilder =
-                    actionType(o.getActionType())
-                            .noRouteRoutingActionDetails(o.getNoRouteRoutingActionDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NoRouteRoutingAction model) {
+            if (model.wasPropertyExplicitlySet("actionType")) {
+                this.actionType(model.getActionType());
+            }
+            if (model.wasPropertyExplicitlySet("noRouteRoutingActionDetails")) {
+                this.noRouteRoutingActionDetails(model.getNoRouteRoutingActionDetails());
+            }
+            return this;
         }
     }
 
@@ -108,7 +111,6 @@ public final class NoRouteRoutingAction extends RoutingAction {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", noRouteRoutingActionDetails=")
                 .append(String.valueOf(this.noRouteRoutingActionDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -125,8 +127,7 @@ public final class NoRouteRoutingAction extends RoutingAction {
         NoRouteRoutingAction other = (NoRouteRoutingAction) o;
         return java.util.Objects.equals(
                         this.noRouteRoutingActionDetails, other.noRouteRoutingActionDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -138,16 +139,6 @@ public final class NoRouteRoutingAction extends RoutingAction {
                         + (this.noRouteRoutingActionDetails == null
                                 ? 43
                                 : this.noRouteRoutingActionDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

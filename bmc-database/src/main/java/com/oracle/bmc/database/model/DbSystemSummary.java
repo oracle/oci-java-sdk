@@ -39,7 +39,7 @@ package com.oracle.bmc.database.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystemSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DbSystemSummary {
+public final class DbSystemSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -1019,111 +1019,202 @@ public final class DbSystemSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbSystemSummary build() {
-            DbSystemSummary __instance__ =
+            DbSystemSummary model =
                     new DbSystemSummary(
-                            id,
-                            compartmentId,
-                            displayName,
-                            availabilityDomain,
-                            faultDomains,
-                            subnetId,
-                            backupSubnetId,
-                            nsgIds,
-                            backupNetworkNsgIds,
-                            memorySizeInGBs,
-                            storageVolumePerformanceMode,
-                            shape,
-                            dbSystemOptions,
-                            sshPublicKeys,
-                            timeZone,
-                            hostname,
-                            domain,
-                            kmsKeyId,
-                            version,
-                            cpuCoreCount,
-                            clusterName,
-                            dataStoragePercentage,
-                            databaseEdition,
-                            lastPatchHistoryEntryId,
-                            listenerPort,
-                            lifecycleState,
-                            timeCreated,
-                            lifecycleDetails,
-                            diskRedundancy,
-                            sparseDiskgroup,
-                            scanIpIds,
-                            vipIds,
-                            scanDnsRecordId,
-                            scanDnsName,
-                            zoneId,
-                            dataStorageSizeInGBs,
-                            recoStorageSizeInGB,
-                            nodeCount,
-                            licenseModel,
-                            maintenanceWindow,
-                            lastMaintenanceRunId,
-                            nextMaintenanceRunId,
-                            freeformTags,
-                            definedTags,
-                            sourceDbSystemId,
-                            pointInTimeDataDiskCloneTimestamp);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.availabilityDomain,
+                            this.faultDomains,
+                            this.subnetId,
+                            this.backupSubnetId,
+                            this.nsgIds,
+                            this.backupNetworkNsgIds,
+                            this.memorySizeInGBs,
+                            this.storageVolumePerformanceMode,
+                            this.shape,
+                            this.dbSystemOptions,
+                            this.sshPublicKeys,
+                            this.timeZone,
+                            this.hostname,
+                            this.domain,
+                            this.kmsKeyId,
+                            this.version,
+                            this.cpuCoreCount,
+                            this.clusterName,
+                            this.dataStoragePercentage,
+                            this.databaseEdition,
+                            this.lastPatchHistoryEntryId,
+                            this.listenerPort,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.lifecycleDetails,
+                            this.diskRedundancy,
+                            this.sparseDiskgroup,
+                            this.scanIpIds,
+                            this.vipIds,
+                            this.scanDnsRecordId,
+                            this.scanDnsName,
+                            this.zoneId,
+                            this.dataStorageSizeInGBs,
+                            this.recoStorageSizeInGB,
+                            this.nodeCount,
+                            this.licenseModel,
+                            this.maintenanceWindow,
+                            this.lastMaintenanceRunId,
+                            this.nextMaintenanceRunId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.sourceDbSystemId,
+                            this.pointInTimeDataDiskCloneTimestamp);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DbSystemSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .faultDomains(o.getFaultDomains())
-                            .subnetId(o.getSubnetId())
-                            .backupSubnetId(o.getBackupSubnetId())
-                            .nsgIds(o.getNsgIds())
-                            .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
-                            .memorySizeInGBs(o.getMemorySizeInGBs())
-                            .storageVolumePerformanceMode(o.getStorageVolumePerformanceMode())
-                            .shape(o.getShape())
-                            .dbSystemOptions(o.getDbSystemOptions())
-                            .sshPublicKeys(o.getSshPublicKeys())
-                            .timeZone(o.getTimeZone())
-                            .hostname(o.getHostname())
-                            .domain(o.getDomain())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .version(o.getVersion())
-                            .cpuCoreCount(o.getCpuCoreCount())
-                            .clusterName(o.getClusterName())
-                            .dataStoragePercentage(o.getDataStoragePercentage())
-                            .databaseEdition(o.getDatabaseEdition())
-                            .lastPatchHistoryEntryId(o.getLastPatchHistoryEntryId())
-                            .listenerPort(o.getListenerPort())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .diskRedundancy(o.getDiskRedundancy())
-                            .sparseDiskgroup(o.getSparseDiskgroup())
-                            .scanIpIds(o.getScanIpIds())
-                            .vipIds(o.getVipIds())
-                            .scanDnsRecordId(o.getScanDnsRecordId())
-                            .scanDnsName(o.getScanDnsName())
-                            .zoneId(o.getZoneId())
-                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
-                            .recoStorageSizeInGB(o.getRecoStorageSizeInGB())
-                            .nodeCount(o.getNodeCount())
-                            .licenseModel(o.getLicenseModel())
-                            .maintenanceWindow(o.getMaintenanceWindow())
-                            .lastMaintenanceRunId(o.getLastMaintenanceRunId())
-                            .nextMaintenanceRunId(o.getNextMaintenanceRunId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .sourceDbSystemId(o.getSourceDbSystemId())
-                            .pointInTimeDataDiskCloneTimestamp(
-                                    o.getPointInTimeDataDiskCloneTimestamp());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DbSystemSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomains")) {
+                this.faultDomains(model.getFaultDomains());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("backupSubnetId")) {
+                this.backupSubnetId(model.getBackupSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("backupNetworkNsgIds")) {
+                this.backupNetworkNsgIds(model.getBackupNetworkNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
+                this.memorySizeInGBs(model.getMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("storageVolumePerformanceMode")) {
+                this.storageVolumePerformanceMode(model.getStorageVolumePerformanceMode());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("dbSystemOptions")) {
+                this.dbSystemOptions(model.getDbSystemOptions());
+            }
+            if (model.wasPropertyExplicitlySet("sshPublicKeys")) {
+                this.sshPublicKeys(model.getSshPublicKeys());
+            }
+            if (model.wasPropertyExplicitlySet("timeZone")) {
+                this.timeZone(model.getTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("domain")) {
+                this.domain(model.getDomain());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("clusterName")) {
+                this.clusterName(model.getClusterName());
+            }
+            if (model.wasPropertyExplicitlySet("dataStoragePercentage")) {
+                this.dataStoragePercentage(model.getDataStoragePercentage());
+            }
+            if (model.wasPropertyExplicitlySet("databaseEdition")) {
+                this.databaseEdition(model.getDatabaseEdition());
+            }
+            if (model.wasPropertyExplicitlySet("lastPatchHistoryEntryId")) {
+                this.lastPatchHistoryEntryId(model.getLastPatchHistoryEntryId());
+            }
+            if (model.wasPropertyExplicitlySet("listenerPort")) {
+                this.listenerPort(model.getListenerPort());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("diskRedundancy")) {
+                this.diskRedundancy(model.getDiskRedundancy());
+            }
+            if (model.wasPropertyExplicitlySet("sparseDiskgroup")) {
+                this.sparseDiskgroup(model.getSparseDiskgroup());
+            }
+            if (model.wasPropertyExplicitlySet("scanIpIds")) {
+                this.scanIpIds(model.getScanIpIds());
+            }
+            if (model.wasPropertyExplicitlySet("vipIds")) {
+                this.vipIds(model.getVipIds());
+            }
+            if (model.wasPropertyExplicitlySet("scanDnsRecordId")) {
+                this.scanDnsRecordId(model.getScanDnsRecordId());
+            }
+            if (model.wasPropertyExplicitlySet("scanDnsName")) {
+                this.scanDnsName(model.getScanDnsName());
+            }
+            if (model.wasPropertyExplicitlySet("zoneId")) {
+                this.zoneId(model.getZoneId());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
+                this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("recoStorageSizeInGB")) {
+                this.recoStorageSizeInGB(model.getRecoStorageSizeInGB());
+            }
+            if (model.wasPropertyExplicitlySet("nodeCount")) {
+                this.nodeCount(model.getNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
+                this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("lastMaintenanceRunId")) {
+                this.lastMaintenanceRunId(model.getLastMaintenanceRunId());
+            }
+            if (model.wasPropertyExplicitlySet("nextMaintenanceRunId")) {
+                this.nextMaintenanceRunId(model.getNextMaintenanceRunId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDbSystemId")) {
+                this.sourceDbSystemId(model.getSourceDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("pointInTimeDataDiskCloneTimestamp")) {
+                this.pointInTimeDataDiskCloneTimestamp(
+                        model.getPointInTimeDataDiskCloneTimestamp());
+            }
+            return this;
         }
     }
 
@@ -2139,6 +2230,7 @@ public final class DbSystemSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DbSystemSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -2188,7 +2280,6 @@ public final class DbSystemSummary {
         sb.append(", sourceDbSystemId=").append(String.valueOf(this.sourceDbSystemId));
         sb.append(", pointInTimeDataDiskCloneTimestamp=")
                 .append(String.valueOf(this.pointInTimeDataDiskCloneTimestamp));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -2253,7 +2344,7 @@ public final class DbSystemSummary {
                 && java.util.Objects.equals(
                         this.pointInTimeDataDiskCloneTimestamp,
                         other.pointInTimeDataDiskCloneTimestamp)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -2372,16 +2463,7 @@ public final class DbSystemSummary {
                         + (this.pointInTimeDataDiskCloneTimestamp == null
                                 ? 43
                                 : this.pointInTimeDataDiskCloneTimestamp.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

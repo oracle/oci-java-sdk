@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = UpdateSecurityListDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateSecurityListDetails {
+public final class UpdateSecurityListDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTags",
@@ -151,28 +152,37 @@ public final class UpdateSecurityListDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSecurityListDetails build() {
-            UpdateSecurityListDetails __instance__ =
+            UpdateSecurityListDetails model =
                     new UpdateSecurityListDetails(
-                            definedTags,
-                            displayName,
-                            egressSecurityRules,
-                            freeformTags,
-                            ingressSecurityRules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.definedTags,
+                            this.displayName,
+                            this.egressSecurityRules,
+                            this.freeformTags,
+                            this.ingressSecurityRules);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateSecurityListDetails o) {
-            Builder copiedBuilder =
-                    definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .egressSecurityRules(o.getEgressSecurityRules())
-                            .freeformTags(o.getFreeformTags())
-                            .ingressSecurityRules(o.getIngressSecurityRules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateSecurityListDetails model) {
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("egressSecurityRules")) {
+                this.egressSecurityRules(model.getEgressSecurityRules());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("ingressSecurityRules")) {
+                this.ingressSecurityRules(model.getIngressSecurityRules());
+            }
+            return this;
         }
     }
 
@@ -290,12 +300,12 @@ public final class UpdateSecurityListDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateSecurityListDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", egressSecurityRules=").append(String.valueOf(this.egressSecurityRules));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", ingressSecurityRules=").append(String.valueOf(this.ingressSecurityRules));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -315,7 +325,7 @@ public final class UpdateSecurityListDetails {
                 && java.util.Objects.equals(this.egressSecurityRules, other.egressSecurityRules)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.ingressSecurityRules, other.ingressSecurityRules)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -335,16 +345,7 @@ public final class UpdateSecurityListDetails {
                         + (this.ingressSecurityRules == null
                                 ? 43
                                 : this.ingressSecurityRules.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

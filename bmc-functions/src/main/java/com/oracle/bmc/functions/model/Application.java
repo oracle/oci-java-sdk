@@ -18,7 +18,7 @@ package com.oracle.bmc.functions.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Application.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Application {
+public final class Application extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -348,46 +348,73 @@ public final class Application {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Application build() {
-            Application __instance__ =
+            Application model =
                     new Application(
-                            id,
-                            compartmentId,
-                            displayName,
-                            lifecycleState,
-                            config,
-                            subnetIds,
-                            networkSecurityGroupIds,
-                            syslogUrl,
-                            traceConfig,
-                            freeformTags,
-                            definedTags,
-                            timeCreated,
-                            timeUpdated,
-                            imagePolicyConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.lifecycleState,
+                            this.config,
+                            this.subnetIds,
+                            this.networkSecurityGroupIds,
+                            this.syslogUrl,
+                            this.traceConfig,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.imagePolicyConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Application o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .lifecycleState(o.getLifecycleState())
-                            .config(o.getConfig())
-                            .subnetIds(o.getSubnetIds())
-                            .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
-                            .syslogUrl(o.getSyslogUrl())
-                            .traceConfig(o.getTraceConfig())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .imagePolicyConfig(o.getImagePolicyConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Application model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("config")) {
+                this.config(model.getConfig());
+            }
+            if (model.wasPropertyExplicitlySet("subnetIds")) {
+                this.subnetIds(model.getSubnetIds());
+            }
+            if (model.wasPropertyExplicitlySet("networkSecurityGroupIds")) {
+                this.networkSecurityGroupIds(model.getNetworkSecurityGroupIds());
+            }
+            if (model.wasPropertyExplicitlySet("syslogUrl")) {
+                this.syslogUrl(model.getSyslogUrl());
+            }
+            if (model.wasPropertyExplicitlySet("traceConfig")) {
+                this.traceConfig(model.getTraceConfig());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("imagePolicyConfig")) {
+                this.imagePolicyConfig(model.getImagePolicyConfig());
+            }
+            return this;
         }
     }
 
@@ -713,6 +740,7 @@ public final class Application {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Application(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -728,7 +756,6 @@ public final class Application {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", imagePolicyConfig=").append(String.valueOf(this.imagePolicyConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -758,7 +785,7 @@ public final class Application {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.imagePolicyConfig, other.imagePolicyConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -789,16 +816,7 @@ public final class Application {
         result =
                 (result * PRIME)
                         + (this.imagePolicyConfig == null ? 43 : this.imagePolicyConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

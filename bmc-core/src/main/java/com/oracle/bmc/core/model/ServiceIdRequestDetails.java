@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = ServiceIdRequestDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ServiceIdRequestDetails {
+public final class ServiceIdRequestDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"serviceId"})
     public ServiceIdRequestDetails(String serviceId) {
@@ -52,17 +53,19 @@ public final class ServiceIdRequestDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ServiceIdRequestDetails build() {
-            ServiceIdRequestDetails __instance__ = new ServiceIdRequestDetails(serviceId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ServiceIdRequestDetails model = new ServiceIdRequestDetails(this.serviceId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ServiceIdRequestDetails o) {
-            Builder copiedBuilder = serviceId(o.getServiceId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ServiceIdRequestDetails model) {
+            if (model.wasPropertyExplicitlySet("serviceId")) {
+                this.serviceId(model.getServiceId());
+            }
+            return this;
         }
     }
 
@@ -106,8 +109,8 @@ public final class ServiceIdRequestDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ServiceIdRequestDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("serviceId=").append(String.valueOf(this.serviceId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -122,8 +125,7 @@ public final class ServiceIdRequestDetails {
         }
 
         ServiceIdRequestDetails other = (ServiceIdRequestDetails) o;
-        return java.util.Objects.equals(this.serviceId, other.serviceId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.serviceId, other.serviceId) && super.equals(other);
     }
 
     @Override
@@ -131,16 +133,7 @@ public final class ServiceIdRequestDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.serviceId == null ? 43 : this.serviceId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

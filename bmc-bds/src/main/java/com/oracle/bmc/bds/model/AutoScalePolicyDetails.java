@@ -48,7 +48,7 @@ package com.oracle.bmc.bds.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AutoScalePolicyDetails {
+public class AutoScalePolicyDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"triggerType", "actionType"})
     protected AutoScalePolicyDetails(TriggerType triggerType, ActionType actionType) {
@@ -194,6 +194,7 @@ public class AutoScalePolicyDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutoScalePolicyDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("triggerType=").append(String.valueOf(this.triggerType));
         sb.append(", actionType=").append(String.valueOf(this.actionType));
         sb.append(")");
@@ -211,7 +212,8 @@ public class AutoScalePolicyDetails {
 
         AutoScalePolicyDetails other = (AutoScalePolicyDetails) o;
         return java.util.Objects.equals(this.triggerType, other.triggerType)
-                && java.util.Objects.equals(this.actionType, other.actionType);
+                && java.util.Objects.equals(this.actionType, other.actionType)
+                && super.equals(other);
     }
 
     @Override
@@ -220,6 +222,7 @@ public class AutoScalePolicyDetails {
         int result = 1;
         result = (result * PRIME) + (this.triggerType == null ? 43 : this.triggerType.hashCode());
         result = (result * PRIME) + (this.actionType == null ? 43 : this.actionType.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

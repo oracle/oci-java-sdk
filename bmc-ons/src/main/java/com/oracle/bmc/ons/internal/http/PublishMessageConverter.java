@@ -106,8 +106,8 @@ public class PublishMessageConverter {
                                         builder =
                                                 com.oracle.bmc.ons.responses.PublishMessageResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.publishResult(response.getItem());
 

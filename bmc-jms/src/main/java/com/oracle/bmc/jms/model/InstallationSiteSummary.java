@@ -21,7 +21,8 @@ package com.oracle.bmc.jms.model;
     builder = InstallationSiteSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstallationSiteSummary {
+public final class InstallationSiteSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "installationKey",
@@ -222,38 +223,57 @@ public final class InstallationSiteSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstallationSiteSummary build() {
-            InstallationSiteSummary __instance__ =
+            InstallationSiteSummary model =
                     new InstallationSiteSummary(
-                            installationKey,
-                            managedInstanceId,
-                            jre,
-                            securityStatus,
-                            path,
-                            operatingSystem,
-                            approximateApplicationCount,
-                            timeLastSeen,
-                            blocklist,
-                            lifecycleState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.installationKey,
+                            this.managedInstanceId,
+                            this.jre,
+                            this.securityStatus,
+                            this.path,
+                            this.operatingSystem,
+                            this.approximateApplicationCount,
+                            this.timeLastSeen,
+                            this.blocklist,
+                            this.lifecycleState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstallationSiteSummary o) {
-            Builder copiedBuilder =
-                    installationKey(o.getInstallationKey())
-                            .managedInstanceId(o.getManagedInstanceId())
-                            .jre(o.getJre())
-                            .securityStatus(o.getSecurityStatus())
-                            .path(o.getPath())
-                            .operatingSystem(o.getOperatingSystem())
-                            .approximateApplicationCount(o.getApproximateApplicationCount())
-                            .timeLastSeen(o.getTimeLastSeen())
-                            .blocklist(o.getBlocklist())
-                            .lifecycleState(o.getLifecycleState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstallationSiteSummary model) {
+            if (model.wasPropertyExplicitlySet("installationKey")) {
+                this.installationKey(model.getInstallationKey());
+            }
+            if (model.wasPropertyExplicitlySet("managedInstanceId")) {
+                this.managedInstanceId(model.getManagedInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("jre")) {
+                this.jre(model.getJre());
+            }
+            if (model.wasPropertyExplicitlySet("securityStatus")) {
+                this.securityStatus(model.getSecurityStatus());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystem")) {
+                this.operatingSystem(model.getOperatingSystem());
+            }
+            if (model.wasPropertyExplicitlySet("approximateApplicationCount")) {
+                this.approximateApplicationCount(model.getApproximateApplicationCount());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSeen")) {
+                this.timeLastSeen(model.getTimeLastSeen());
+            }
+            if (model.wasPropertyExplicitlySet("blocklist")) {
+                this.blocklist(model.getBlocklist());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            return this;
         }
     }
 
@@ -417,6 +437,7 @@ public final class InstallationSiteSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstallationSiteSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("installationKey=").append(String.valueOf(this.installationKey));
         sb.append(", managedInstanceId=").append(String.valueOf(this.managedInstanceId));
         sb.append(", jre=").append(String.valueOf(this.jre));
@@ -428,7 +449,6 @@ public final class InstallationSiteSummary {
         sb.append(", timeLastSeen=").append(String.valueOf(this.timeLastSeen));
         sb.append(", blocklist=").append(String.valueOf(this.blocklist));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -454,7 +474,7 @@ public final class InstallationSiteSummary {
                 && java.util.Objects.equals(this.timeLastSeen, other.timeLastSeen)
                 && java.util.Objects.equals(this.blocklist, other.blocklist)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -485,16 +505,7 @@ public final class InstallationSiteSummary {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

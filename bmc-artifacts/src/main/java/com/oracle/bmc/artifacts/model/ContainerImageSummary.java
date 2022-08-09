@@ -19,7 +19,8 @@ package com.oracle.bmc.artifacts.model;
     builder = ContainerImageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ContainerImageSummary {
+public final class ContainerImageSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -221,36 +222,53 @@ public final class ContainerImageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ContainerImageSummary build() {
-            ContainerImageSummary __instance__ =
+            ContainerImageSummary model =
                     new ContainerImageSummary(
-                            compartmentId,
-                            digest,
-                            displayName,
-                            id,
-                            lifecycleState,
-                            repositoryId,
-                            repositoryName,
-                            timeCreated,
-                            version);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.digest,
+                            this.displayName,
+                            this.id,
+                            this.lifecycleState,
+                            this.repositoryId,
+                            this.repositoryName,
+                            this.timeCreated,
+                            this.version);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ContainerImageSummary o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .digest(o.getDigest())
-                            .displayName(o.getDisplayName())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
-                            .repositoryId(o.getRepositoryId())
-                            .repositoryName(o.getRepositoryName())
-                            .timeCreated(o.getTimeCreated())
-                            .version(o.getVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ContainerImageSummary model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("digest")) {
+                this.digest(model.getDigest());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("repositoryId")) {
+                this.repositoryId(model.getRepositoryId());
+            }
+            if (model.wasPropertyExplicitlySet("repositoryName")) {
+                this.repositoryName(model.getRepositoryName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            return this;
         }
     }
 
@@ -420,6 +438,7 @@ public final class ContainerImageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ContainerImageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", digest=").append(String.valueOf(this.digest));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -429,7 +448,6 @@ public final class ContainerImageSummary {
         sb.append(", repositoryName=").append(String.valueOf(this.repositoryName));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", version=").append(String.valueOf(this.version));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -453,7 +471,7 @@ public final class ContainerImageSummary {
                 && java.util.Objects.equals(this.repositoryName, other.repositoryName)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.version, other.version)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -475,16 +493,7 @@ public final class ContainerImageSummary {
                         + (this.repositoryName == null ? 43 : this.repositoryName.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

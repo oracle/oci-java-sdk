@@ -114,8 +114,8 @@ public class CreateDatabaseRegistrationConverter {
                                                 com.oracle.bmc.goldengate.responses
                                                         .CreateDatabaseRegistrationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseRegistration(response.getItem());
 

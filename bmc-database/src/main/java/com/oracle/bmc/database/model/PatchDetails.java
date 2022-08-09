@@ -20,7 +20,7 @@ package com.oracle.bmc.database.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PatchDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PatchDetails {
+public final class PatchDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"patchId", "databaseSoftwareImageId", "action"})
     public PatchDetails(String patchId, String databaseSoftwareImageId, Action action) {
@@ -85,20 +85,26 @@ public final class PatchDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PatchDetails build() {
-            PatchDetails __instance__ = new PatchDetails(patchId, databaseSoftwareImageId, action);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PatchDetails model =
+                    new PatchDetails(this.patchId, this.databaseSoftwareImageId, this.action);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PatchDetails o) {
-            Builder copiedBuilder =
-                    patchId(o.getPatchId())
-                            .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
-                            .action(o.getAction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PatchDetails model) {
+            if (model.wasPropertyExplicitlySet("patchId")) {
+                this.patchId(model.getPatchId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
+                this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            return this;
         }
     }
 
@@ -203,11 +209,11 @@ public final class PatchDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PatchDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("patchId=").append(String.valueOf(this.patchId));
         sb.append(", databaseSoftwareImageId=")
                 .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(", action=").append(String.valueOf(this.action));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -226,7 +232,7 @@ public final class PatchDetails {
                 && java.util.Objects.equals(
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && java.util.Objects.equals(this.action, other.action)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -240,16 +246,7 @@ public final class PatchDetails {
                                 ? 43
                                 : this.databaseSoftwareImageId.hashCode());
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

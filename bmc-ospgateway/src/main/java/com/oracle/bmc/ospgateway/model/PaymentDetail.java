@@ -36,7 +36,7 @@ package com.oracle.bmc.ospgateway.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class PaymentDetail {
+public class PaymentDetail extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timePaidOn", "paidBy", "amountPaid"})
     protected PaymentDetail(
@@ -102,6 +102,7 @@ public class PaymentDetail {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PaymentDetail(");
+        sb.append("super=").append(super.toString());
         sb.append("timePaidOn=").append(String.valueOf(this.timePaidOn));
         sb.append(", paidBy=").append(String.valueOf(this.paidBy));
         sb.append(", amountPaid=").append(String.valueOf(this.amountPaid));
@@ -121,7 +122,8 @@ public class PaymentDetail {
         PaymentDetail other = (PaymentDetail) o;
         return java.util.Objects.equals(this.timePaidOn, other.timePaidOn)
                 && java.util.Objects.equals(this.paidBy, other.paidBy)
-                && java.util.Objects.equals(this.amountPaid, other.amountPaid);
+                && java.util.Objects.equals(this.amountPaid, other.amountPaid)
+                && super.equals(other);
     }
 
     @Override
@@ -131,6 +133,7 @@ public class PaymentDetail {
         result = (result * PRIME) + (this.timePaidOn == null ? 43 : this.timePaidOn.hashCode());
         result = (result * PRIME) + (this.paidBy == null ? 43 : this.paidBy.hashCode());
         result = (result * PRIME) + (this.amountPaid == null ? 43 : this.amountPaid.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

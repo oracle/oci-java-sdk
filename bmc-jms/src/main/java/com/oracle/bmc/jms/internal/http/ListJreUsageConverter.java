@@ -175,7 +175,8 @@ public class ListJreUsageConverter {
 
                                 com.oracle.bmc.jms.responses.ListJreUsageResponse.Builder builder =
                                         com.oracle.bmc.jms.responses.ListJreUsageResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.jreUsageCollection(response.getItem());
 

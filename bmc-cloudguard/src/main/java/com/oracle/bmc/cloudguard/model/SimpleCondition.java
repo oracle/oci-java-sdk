@@ -94,22 +94,29 @@ public final class SimpleCondition extends Condition {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SimpleCondition build() {
-            SimpleCondition __instance__ =
-                    new SimpleCondition(parameter, operator, value, valueType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SimpleCondition model =
+                    new SimpleCondition(this.parameter, this.operator, this.value, this.valueType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SimpleCondition o) {
-            Builder copiedBuilder =
-                    parameter(o.getParameter())
-                            .operator(o.getOperator())
-                            .value(o.getValue())
-                            .valueType(o.getValueType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SimpleCondition model) {
+            if (model.wasPropertyExplicitlySet("parameter")) {
+                this.parameter(model.getParameter());
+            }
+            if (model.wasPropertyExplicitlySet("operator")) {
+                this.operator(model.getOperator());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("valueType")) {
+                this.valueType(model.getValueType());
+            }
+            return this;
         }
     }
 
@@ -208,7 +215,6 @@ public final class SimpleCondition extends Condition {
         sb.append(", operator=").append(String.valueOf(this.operator));
         sb.append(", value=").append(String.valueOf(this.value));
         sb.append(", valueType=").append(String.valueOf(this.valueType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -227,8 +233,7 @@ public final class SimpleCondition extends Condition {
                 && java.util.Objects.equals(this.operator, other.operator)
                 && java.util.Objects.equals(this.value, other.value)
                 && java.util.Objects.equals(this.valueType, other.valueType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -239,16 +244,6 @@ public final class SimpleCondition extends Condition {
         result = (result * PRIME) + (this.operator == null ? 43 : this.operator.hashCode());
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
         result = (result * PRIME) + (this.valueType == null ? 43 : this.valueType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

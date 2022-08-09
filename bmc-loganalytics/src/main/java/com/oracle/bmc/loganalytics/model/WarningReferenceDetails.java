@@ -22,7 +22,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = WarningReferenceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WarningReferenceDetails {
+public final class WarningReferenceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"warningReferences"})
     public WarningReferenceDetails(java.util.List<String> warningReferences) {
@@ -59,17 +60,19 @@ public final class WarningReferenceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WarningReferenceDetails build() {
-            WarningReferenceDetails __instance__ = new WarningReferenceDetails(warningReferences);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            WarningReferenceDetails model = new WarningReferenceDetails(this.warningReferences);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WarningReferenceDetails o) {
-            Builder copiedBuilder = warningReferences(o.getWarningReferences());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WarningReferenceDetails model) {
+            if (model.wasPropertyExplicitlySet("warningReferences")) {
+                this.warningReferences(model.getWarningReferences());
+            }
+            return this;
         }
     }
 
@@ -117,8 +120,8 @@ public final class WarningReferenceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WarningReferenceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("warningReferences=").append(String.valueOf(this.warningReferences));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -134,7 +137,7 @@ public final class WarningReferenceDetails {
 
         WarningReferenceDetails other = (WarningReferenceDetails) o;
         return java.util.Objects.equals(this.warningReferences, other.warningReferences)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -144,16 +147,7 @@ public final class WarningReferenceDetails {
         result =
                 (result * PRIME)
                         + (this.warningReferences == null ? 43 : this.warningReferences.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

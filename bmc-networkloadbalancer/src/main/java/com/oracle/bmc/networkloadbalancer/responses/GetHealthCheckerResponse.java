@@ -55,16 +55,18 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "healthChecker"
     })
     private GetHealthCheckerResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.networkloadbalancer.model.HealthChecker healthChecker) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.healthChecker = healthChecker;
@@ -75,6 +77,13 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetHealthCheckerResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             healthChecker(o.getHealthChecker());
@@ -149,7 +159,7 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public GetHealthCheckerResponse build() {
             return new GetHealthCheckerResponse(
-                    __httpStatusCode__, opcRequestId, etag, healthChecker);
+                    __httpStatusCode__, headers, opcRequestId, etag, healthChecker);
         }
     }
 

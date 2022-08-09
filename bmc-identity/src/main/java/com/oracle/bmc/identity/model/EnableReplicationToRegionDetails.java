@@ -19,7 +19,8 @@ package com.oracle.bmc.identity.model;
     builder = EnableReplicationToRegionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EnableReplicationToRegionDetails {
+public final class EnableReplicationToRegionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"replicaRegion"})
     public EnableReplicationToRegionDetails(String replicaRegion) {
@@ -60,18 +61,20 @@ public final class EnableReplicationToRegionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EnableReplicationToRegionDetails build() {
-            EnableReplicationToRegionDetails __instance__ =
-                    new EnableReplicationToRegionDetails(replicaRegion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            EnableReplicationToRegionDetails model =
+                    new EnableReplicationToRegionDetails(this.replicaRegion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EnableReplicationToRegionDetails o) {
-            Builder copiedBuilder = replicaRegion(o.getReplicaRegion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EnableReplicationToRegionDetails model) {
+            if (model.wasPropertyExplicitlySet("replicaRegion")) {
+                this.replicaRegion(model.getReplicaRegion());
+            }
+            return this;
         }
     }
 
@@ -123,8 +126,8 @@ public final class EnableReplicationToRegionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EnableReplicationToRegionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("replicaRegion=").append(String.valueOf(this.replicaRegion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -140,7 +143,7 @@ public final class EnableReplicationToRegionDetails {
 
         EnableReplicationToRegionDetails other = (EnableReplicationToRegionDetails) o;
         return java.util.Objects.equals(this.replicaRegion, other.replicaRegion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -150,16 +153,7 @@ public final class EnableReplicationToRegionDetails {
         result =
                 (result * PRIME)
                         + (this.replicaRegion == null ? 43 : this.replicaRegion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

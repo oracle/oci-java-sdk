@@ -19,7 +19,8 @@ package com.oracle.bmc.blockchain.model;
     builder = ScaledPlatformMeteringPreview.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ScaledPlatformMeteringPreview {
+public final class ScaledPlatformMeteringPreview
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "totalOcpuAllocation",
@@ -129,28 +130,37 @@ public final class ScaledPlatformMeteringPreview {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScaledPlatformMeteringPreview build() {
-            ScaledPlatformMeteringPreview __instance__ =
+            ScaledPlatformMeteringPreview model =
                     new ScaledPlatformMeteringPreview(
-                            totalOcpuAllocation,
-                            totalOcpuAllocationPostScaling,
-                            storageMeteredUnits,
-                            extraStorageMeteredUnits,
-                            storageMeteredUnitsPostScaling);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.totalOcpuAllocation,
+                            this.totalOcpuAllocationPostScaling,
+                            this.storageMeteredUnits,
+                            this.extraStorageMeteredUnits,
+                            this.storageMeteredUnitsPostScaling);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ScaledPlatformMeteringPreview o) {
-            Builder copiedBuilder =
-                    totalOcpuAllocation(o.getTotalOcpuAllocation())
-                            .totalOcpuAllocationPostScaling(o.getTotalOcpuAllocationPostScaling())
-                            .storageMeteredUnits(o.getStorageMeteredUnits())
-                            .extraStorageMeteredUnits(o.getExtraStorageMeteredUnits())
-                            .storageMeteredUnitsPostScaling(o.getStorageMeteredUnitsPostScaling());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ScaledPlatformMeteringPreview model) {
+            if (model.wasPropertyExplicitlySet("totalOcpuAllocation")) {
+                this.totalOcpuAllocation(model.getTotalOcpuAllocation());
+            }
+            if (model.wasPropertyExplicitlySet("totalOcpuAllocationPostScaling")) {
+                this.totalOcpuAllocationPostScaling(model.getTotalOcpuAllocationPostScaling());
+            }
+            if (model.wasPropertyExplicitlySet("storageMeteredUnits")) {
+                this.storageMeteredUnits(model.getStorageMeteredUnits());
+            }
+            if (model.wasPropertyExplicitlySet("extraStorageMeteredUnits")) {
+                this.extraStorageMeteredUnits(model.getExtraStorageMeteredUnits());
+            }
+            if (model.wasPropertyExplicitlySet("storageMeteredUnitsPostScaling")) {
+                this.storageMeteredUnitsPostScaling(model.getStorageMeteredUnitsPostScaling());
+            }
+            return this;
         }
     }
 
@@ -248,6 +258,7 @@ public final class ScaledPlatformMeteringPreview {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ScaledPlatformMeteringPreview(");
+        sb.append("super=").append(super.toString());
         sb.append("totalOcpuAllocation=").append(String.valueOf(this.totalOcpuAllocation));
         sb.append(", totalOcpuAllocationPostScaling=")
                 .append(String.valueOf(this.totalOcpuAllocationPostScaling));
@@ -256,7 +267,6 @@ public final class ScaledPlatformMeteringPreview {
                 .append(String.valueOf(this.extraStorageMeteredUnits));
         sb.append(", storageMeteredUnitsPostScaling=")
                 .append(String.valueOf(this.storageMeteredUnitsPostScaling));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -279,7 +289,7 @@ public final class ScaledPlatformMeteringPreview {
                         this.extraStorageMeteredUnits, other.extraStorageMeteredUnits)
                 && java.util.Objects.equals(
                         this.storageMeteredUnitsPostScaling, other.storageMeteredUnitsPostScaling)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -311,16 +321,7 @@ public final class ScaledPlatformMeteringPreview {
                         + (this.storageMeteredUnitsPostScaling == null
                                 ? 43
                                 : this.storageMeteredUnitsPostScaling.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

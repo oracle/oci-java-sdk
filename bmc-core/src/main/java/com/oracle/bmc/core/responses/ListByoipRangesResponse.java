@@ -59,16 +59,18 @@ public class ListByoipRangesResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "byoipRangeCollection"
     })
     private ListByoipRangesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.core.model.ByoipRangeCollection byoipRangeCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.byoipRangeCollection = byoipRangeCollection;
@@ -79,6 +81,13 @@ public class ListByoipRangesResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListByoipRangesResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(ListByoipRangesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             byoipRangeCollection(o.getByoipRangeCollection());
@@ -157,7 +167,7 @@ public class ListByoipRangesResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public ListByoipRangesResponse build() {
             return new ListByoipRangesResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, byoipRangeCollection);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, byoipRangeCollection);
         }
     }
 

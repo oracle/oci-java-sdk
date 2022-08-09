@@ -180,8 +180,8 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeDatabaseInsightTablespaceUsageTrendResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder
                                         .summarizeDatabaseInsightTablespaceUsageTrendAggregationCollection(

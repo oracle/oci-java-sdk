@@ -102,8 +102,8 @@ public class AddUserToGroupConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .AddUserToGroupResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.userGroupMembership(response.getItem());
 

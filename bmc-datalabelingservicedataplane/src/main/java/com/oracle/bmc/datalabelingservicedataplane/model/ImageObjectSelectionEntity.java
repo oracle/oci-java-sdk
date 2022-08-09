@@ -77,21 +77,27 @@ public final class ImageObjectSelectionEntity extends Entity {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageObjectSelectionEntity build() {
-            ImageObjectSelectionEntity __instance__ =
-                    new ImageObjectSelectionEntity(labels, boundingPolygon, extendedMetadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ImageObjectSelectionEntity model =
+                    new ImageObjectSelectionEntity(
+                            this.labels, this.boundingPolygon, this.extendedMetadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImageObjectSelectionEntity o) {
-            Builder copiedBuilder =
-                    labels(o.getLabels())
-                            .boundingPolygon(o.getBoundingPolygon())
-                            .extendedMetadata(o.getExtendedMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImageObjectSelectionEntity model) {
+            if (model.wasPropertyExplicitlySet("labels")) {
+                this.labels(model.getLabels());
+            }
+            if (model.wasPropertyExplicitlySet("boundingPolygon")) {
+                this.boundingPolygon(model.getBoundingPolygon());
+            }
+            if (model.wasPropertyExplicitlySet("extendedMetadata")) {
+                this.extendedMetadata(model.getExtendedMetadata());
+            }
+            return this;
         }
     }
 
@@ -173,7 +179,6 @@ public final class ImageObjectSelectionEntity extends Entity {
         sb.append(", labels=").append(String.valueOf(this.labels));
         sb.append(", boundingPolygon=").append(String.valueOf(this.boundingPolygon));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -191,8 +196,7 @@ public final class ImageObjectSelectionEntity extends Entity {
         return java.util.Objects.equals(this.labels, other.labels)
                 && java.util.Objects.equals(this.boundingPolygon, other.boundingPolygon)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -206,16 +210,6 @@ public final class ImageObjectSelectionEntity extends Entity {
         result =
                 (result * PRIME)
                         + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

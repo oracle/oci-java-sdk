@@ -144,8 +144,8 @@ public class SearchMonitoredResourceAssociationsConverter {
                                                 com.oracle.bmc.stackmonitoring.responses
                                                         .SearchMonitoredResourceAssociationsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.monitoredResourceAssociationsCollection(response.getItem());
 

@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = RemoveVcnIpv6CidrDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RemoveVcnIpv6CidrDetails {
+public final class RemoveVcnIpv6CidrDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ipv6CidrBlock"})
     public RemoveVcnIpv6CidrDetails(String ipv6CidrBlock) {
@@ -61,17 +62,19 @@ public final class RemoveVcnIpv6CidrDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RemoveVcnIpv6CidrDetails build() {
-            RemoveVcnIpv6CidrDetails __instance__ = new RemoveVcnIpv6CidrDetails(ipv6CidrBlock);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RemoveVcnIpv6CidrDetails model = new RemoveVcnIpv6CidrDetails(this.ipv6CidrBlock);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RemoveVcnIpv6CidrDetails o) {
-            Builder copiedBuilder = ipv6CidrBlock(o.getIpv6CidrBlock());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RemoveVcnIpv6CidrDetails model) {
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlock")) {
+                this.ipv6CidrBlock(model.getIpv6CidrBlock());
+            }
+            return this;
         }
     }
 
@@ -123,8 +126,8 @@ public final class RemoveVcnIpv6CidrDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RemoveVcnIpv6CidrDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("ipv6CidrBlock=").append(String.valueOf(this.ipv6CidrBlock));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -140,7 +143,7 @@ public final class RemoveVcnIpv6CidrDetails {
 
         RemoveVcnIpv6CidrDetails other = (RemoveVcnIpv6CidrDetails) o;
         return java.util.Objects.equals(this.ipv6CidrBlock, other.ipv6CidrBlock)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -150,16 +153,7 @@ public final class RemoveVcnIpv6CidrDetails {
         result =
                 (result * PRIME)
                         + (this.ipv6CidrBlock == null ? 43 : this.ipv6CidrBlock.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

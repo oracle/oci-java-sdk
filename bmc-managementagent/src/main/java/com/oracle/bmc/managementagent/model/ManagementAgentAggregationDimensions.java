@@ -19,7 +19,8 @@ package com.oracle.bmc.managementagent.model;
     builder = ManagementAgentAggregationDimensions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ManagementAgentAggregationDimensions {
+public final class ManagementAgentAggregationDimensions
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityStatus",
@@ -129,24 +130,37 @@ public final class ManagementAgentAggregationDimensions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagementAgentAggregationDimensions build() {
-            ManagementAgentAggregationDimensions __instance__ =
+            ManagementAgentAggregationDimensions model =
                     new ManagementAgentAggregationDimensions(
-                            availabilityStatus, platformType, version, hasPlugins, installType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityStatus,
+                            this.platformType,
+                            this.version,
+                            this.hasPlugins,
+                            this.installType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManagementAgentAggregationDimensions o) {
-            Builder copiedBuilder =
-                    availabilityStatus(o.getAvailabilityStatus())
-                            .platformType(o.getPlatformType())
-                            .version(o.getVersion())
-                            .hasPlugins(o.getHasPlugins())
-                            .installType(o.getInstallType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManagementAgentAggregationDimensions model) {
+            if (model.wasPropertyExplicitlySet("availabilityStatus")) {
+                this.availabilityStatus(model.getAvailabilityStatus());
+            }
+            if (model.wasPropertyExplicitlySet("platformType")) {
+                this.platformType(model.getPlatformType());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("hasPlugins")) {
+                this.hasPlugins(model.getHasPlugins());
+            }
+            if (model.wasPropertyExplicitlySet("installType")) {
+                this.installType(model.getInstallType());
+            }
+            return this;
         }
     }
 
@@ -244,12 +258,12 @@ public final class ManagementAgentAggregationDimensions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagementAgentAggregationDimensions(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityStatus=").append(String.valueOf(this.availabilityStatus));
         sb.append(", platformType=").append(String.valueOf(this.platformType));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", hasPlugins=").append(String.valueOf(this.hasPlugins));
         sb.append(", installType=").append(String.valueOf(this.installType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -269,7 +283,7 @@ public final class ManagementAgentAggregationDimensions {
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.hasPlugins, other.hasPlugins)
                 && java.util.Objects.equals(this.installType, other.installType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -285,16 +299,7 @@ public final class ManagementAgentAggregationDimensions {
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.hasPlugins == null ? 43 : this.hasPlugins.hashCode());
         result = (result * PRIME) + (this.installType == null ? 43 : this.installType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

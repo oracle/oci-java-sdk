@@ -100,8 +100,8 @@ public class GetAlarmConverter {
                                         builder =
                                                 com.oracle.bmc.monitoring.responses.GetAlarmResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.alarm(response.getItem());
 

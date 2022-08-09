@@ -158,46 +158,73 @@ public final class ConnectionFromAmazonS3Details extends ConnectionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConnectionFromAmazonS3Details build() {
-            ConnectionFromAmazonS3Details __instance__ =
+            ConnectionFromAmazonS3Details model =
                     new ConnectionFromAmazonS3Details(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            objectStatus,
-                            identifier,
-                            primarySchema,
-                            connectionProperties,
-                            isDefault,
-                            metadata,
-                            accessKey,
-                            secretKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.objectStatus,
+                            this.identifier,
+                            this.primarySchema,
+                            this.connectionProperties,
+                            this.isDefault,
+                            this.metadata,
+                            this.accessKey,
+                            this.secretKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConnectionFromAmazonS3Details o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .primarySchema(o.getPrimarySchema())
-                            .connectionProperties(o.getConnectionProperties())
-                            .isDefault(o.getIsDefault())
-                            .metadata(o.getMetadata())
-                            .accessKey(o.getAccessKey())
-                            .secretKey(o.getSecretKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConnectionFromAmazonS3Details model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("primarySchema")) {
+                this.primarySchema(model.getPrimarySchema());
+            }
+            if (model.wasPropertyExplicitlySet("connectionProperties")) {
+                this.connectionProperties(model.getConnectionProperties());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("accessKey")) {
+                this.accessKey(model.getAccessKey());
+            }
+            if (model.wasPropertyExplicitlySet("secretKey")) {
+                this.secretKey(model.getSecretKey());
+            }
+            return this;
         }
     }
 
@@ -275,7 +302,6 @@ public final class ConnectionFromAmazonS3Details extends ConnectionDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", accessKey=").append(String.valueOf(this.accessKey));
         sb.append(", secretKey=").append(String.valueOf(this.secretKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -292,8 +318,7 @@ public final class ConnectionFromAmazonS3Details extends ConnectionDetails {
         ConnectionFromAmazonS3Details other = (ConnectionFromAmazonS3Details) o;
         return java.util.Objects.equals(this.accessKey, other.accessKey)
                 && java.util.Objects.equals(this.secretKey, other.secretKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -302,16 +327,6 @@ public final class ConnectionFromAmazonS3Details extends ConnectionDetails {
         int result = super.hashCode();
         result = (result * PRIME) + (this.accessKey == null ? 43 : this.accessKey.hashCode());
         result = (result * PRIME) + (this.secretKey == null ? 43 : this.secretKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

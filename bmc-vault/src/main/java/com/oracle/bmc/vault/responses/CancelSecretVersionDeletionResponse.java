@@ -38,10 +38,13 @@ public class CancelSecretVersionDeletionResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "etag", "opcRequestId"})
     private CancelSecretVersionDeletionResponse(
-            int __httpStatusCode__, String etag, String opcRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String etag,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
     }
@@ -51,6 +54,13 @@ public class CancelSecretVersionDeletionResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -94,6 +104,7 @@ public class CancelSecretVersionDeletionResponse extends com.oracle.bmc.response
          */
         public Builder copy(CancelSecretVersionDeletionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
 
@@ -105,7 +116,8 @@ public class CancelSecretVersionDeletionResponse extends com.oracle.bmc.response
          * @return the response object
          */
         public CancelSecretVersionDeletionResponse build() {
-            return new CancelSecretVersionDeletionResponse(__httpStatusCode__, etag, opcRequestId);
+            return new CancelSecretVersionDeletionResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId);
         }
     }
 

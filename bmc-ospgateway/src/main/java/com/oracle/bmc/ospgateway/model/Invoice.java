@@ -17,7 +17,7 @@ package com.oracle.bmc.ospgateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Invoice.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Invoice {
+public final class Invoice extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "invoiceId",
@@ -486,68 +486,117 @@ public final class Invoice {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Invoice build() {
-            Invoice __instance__ =
+            Invoice model =
                     new Invoice(
-                            invoiceId,
-                            invoiceNumber,
-                            internalInvoiceId,
-                            isCreditCardPayable,
-                            timeInvoice,
-                            tax,
-                            invoiceAmount,
-                            invoiceAmountDue,
-                            invoiceAmountCredited,
-                            invoiceAmountAdjusted,
-                            invoiceAmountApplied,
-                            currency,
-                            invoiceType,
-                            timeInvoiceDue,
-                            invoiceRefNumber,
-                            invoicePoNumber,
-                            invoiceStatus,
-                            preferredEmail,
-                            isPdfEmailAvailable,
-                            isDisplayDownloadPdf,
-                            isPayable,
-                            paymentTerms,
-                            lastPaymentDetail,
-                            billToAddress,
-                            subscriptionIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.invoiceId,
+                            this.invoiceNumber,
+                            this.internalInvoiceId,
+                            this.isCreditCardPayable,
+                            this.timeInvoice,
+                            this.tax,
+                            this.invoiceAmount,
+                            this.invoiceAmountDue,
+                            this.invoiceAmountCredited,
+                            this.invoiceAmountAdjusted,
+                            this.invoiceAmountApplied,
+                            this.currency,
+                            this.invoiceType,
+                            this.timeInvoiceDue,
+                            this.invoiceRefNumber,
+                            this.invoicePoNumber,
+                            this.invoiceStatus,
+                            this.preferredEmail,
+                            this.isPdfEmailAvailable,
+                            this.isDisplayDownloadPdf,
+                            this.isPayable,
+                            this.paymentTerms,
+                            this.lastPaymentDetail,
+                            this.billToAddress,
+                            this.subscriptionIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Invoice o) {
-            Builder copiedBuilder =
-                    invoiceId(o.getInvoiceId())
-                            .invoiceNumber(o.getInvoiceNumber())
-                            .internalInvoiceId(o.getInternalInvoiceId())
-                            .isCreditCardPayable(o.getIsCreditCardPayable())
-                            .timeInvoice(o.getTimeInvoice())
-                            .tax(o.getTax())
-                            .invoiceAmount(o.getInvoiceAmount())
-                            .invoiceAmountDue(o.getInvoiceAmountDue())
-                            .invoiceAmountCredited(o.getInvoiceAmountCredited())
-                            .invoiceAmountAdjusted(o.getInvoiceAmountAdjusted())
-                            .invoiceAmountApplied(o.getInvoiceAmountApplied())
-                            .currency(o.getCurrency())
-                            .invoiceType(o.getInvoiceType())
-                            .timeInvoiceDue(o.getTimeInvoiceDue())
-                            .invoiceRefNumber(o.getInvoiceRefNumber())
-                            .invoicePoNumber(o.getInvoicePoNumber())
-                            .invoiceStatus(o.getInvoiceStatus())
-                            .preferredEmail(o.getPreferredEmail())
-                            .isPdfEmailAvailable(o.getIsPdfEmailAvailable())
-                            .isDisplayDownloadPdf(o.getIsDisplayDownloadPdf())
-                            .isPayable(o.getIsPayable())
-                            .paymentTerms(o.getPaymentTerms())
-                            .lastPaymentDetail(o.getLastPaymentDetail())
-                            .billToAddress(o.getBillToAddress())
-                            .subscriptionIds(o.getSubscriptionIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Invoice model) {
+            if (model.wasPropertyExplicitlySet("invoiceId")) {
+                this.invoiceId(model.getInvoiceId());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceNumber")) {
+                this.invoiceNumber(model.getInvoiceNumber());
+            }
+            if (model.wasPropertyExplicitlySet("internalInvoiceId")) {
+                this.internalInvoiceId(model.getInternalInvoiceId());
+            }
+            if (model.wasPropertyExplicitlySet("isCreditCardPayable")) {
+                this.isCreditCardPayable(model.getIsCreditCardPayable());
+            }
+            if (model.wasPropertyExplicitlySet("timeInvoice")) {
+                this.timeInvoice(model.getTimeInvoice());
+            }
+            if (model.wasPropertyExplicitlySet("tax")) {
+                this.tax(model.getTax());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceAmount")) {
+                this.invoiceAmount(model.getInvoiceAmount());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceAmountDue")) {
+                this.invoiceAmountDue(model.getInvoiceAmountDue());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceAmountCredited")) {
+                this.invoiceAmountCredited(model.getInvoiceAmountCredited());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceAmountAdjusted")) {
+                this.invoiceAmountAdjusted(model.getInvoiceAmountAdjusted());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceAmountApplied")) {
+                this.invoiceAmountApplied(model.getInvoiceAmountApplied());
+            }
+            if (model.wasPropertyExplicitlySet("currency")) {
+                this.currency(model.getCurrency());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceType")) {
+                this.invoiceType(model.getInvoiceType());
+            }
+            if (model.wasPropertyExplicitlySet("timeInvoiceDue")) {
+                this.timeInvoiceDue(model.getTimeInvoiceDue());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceRefNumber")) {
+                this.invoiceRefNumber(model.getInvoiceRefNumber());
+            }
+            if (model.wasPropertyExplicitlySet("invoicePoNumber")) {
+                this.invoicePoNumber(model.getInvoicePoNumber());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceStatus")) {
+                this.invoiceStatus(model.getInvoiceStatus());
+            }
+            if (model.wasPropertyExplicitlySet("preferredEmail")) {
+                this.preferredEmail(model.getPreferredEmail());
+            }
+            if (model.wasPropertyExplicitlySet("isPdfEmailAvailable")) {
+                this.isPdfEmailAvailable(model.getIsPdfEmailAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("isDisplayDownloadPdf")) {
+                this.isDisplayDownloadPdf(model.getIsDisplayDownloadPdf());
+            }
+            if (model.wasPropertyExplicitlySet("isPayable")) {
+                this.isPayable(model.getIsPayable());
+            }
+            if (model.wasPropertyExplicitlySet("paymentTerms")) {
+                this.paymentTerms(model.getPaymentTerms());
+            }
+            if (model.wasPropertyExplicitlySet("lastPaymentDetail")) {
+                this.lastPaymentDetail(model.getLastPaymentDetail());
+            }
+            if (model.wasPropertyExplicitlySet("billToAddress")) {
+                this.billToAddress(model.getBillToAddress());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionIds")) {
+                this.subscriptionIds(model.getSubscriptionIds());
+            }
+            return this;
         }
     }
 
@@ -1008,6 +1057,7 @@ public final class Invoice {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Invoice(");
+        sb.append("super=").append(super.toString());
         sb.append("invoiceId=").append(String.valueOf(this.invoiceId));
         sb.append(", invoiceNumber=").append(String.valueOf(this.invoiceNumber));
         sb.append(", internalInvoiceId=").append(String.valueOf(this.internalInvoiceId));
@@ -1033,7 +1083,6 @@ public final class Invoice {
         sb.append(", lastPaymentDetail=").append(String.valueOf(this.lastPaymentDetail));
         sb.append(", billToAddress=").append(String.valueOf(this.billToAddress));
         sb.append(", subscriptionIds=").append(String.valueOf(this.subscriptionIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1073,7 +1122,7 @@ public final class Invoice {
                 && java.util.Objects.equals(this.lastPaymentDetail, other.lastPaymentDetail)
                 && java.util.Objects.equals(this.billToAddress, other.billToAddress)
                 && java.util.Objects.equals(this.subscriptionIds, other.subscriptionIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1153,16 +1202,7 @@ public final class Invoice {
         result =
                 (result * PRIME)
                         + (this.subscriptionIds == null ? 43 : this.subscriptionIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

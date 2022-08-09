@@ -55,16 +55,18 @@ public class GetEnrollmentStatusResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "enrollmentStatus"
     })
     private GetEnrollmentStatusResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.optimizer.model.EnrollmentStatus enrollmentStatus) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.enrollmentStatus = enrollmentStatus;
@@ -75,6 +77,13 @@ public class GetEnrollmentStatusResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetEnrollmentStatusResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(GetEnrollmentStatusResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             enrollmentStatus(o.getEnrollmentStatus());
@@ -149,7 +159,7 @@ public class GetEnrollmentStatusResponse extends com.oracle.bmc.responses.BmcRes
          */
         public GetEnrollmentStatusResponse build() {
             return new GetEnrollmentStatusResponse(
-                    __httpStatusCode__, etag, opcRequestId, enrollmentStatus);
+                    __httpStatusCode__, headers, etag, opcRequestId, enrollmentStatus);
         }
     }
 

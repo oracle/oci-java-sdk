@@ -32,7 +32,7 @@ package com.oracle.bmc.devops.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DeliveredArtifact {
+public class DeliveredArtifact extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"deployArtifactId", "outputArtifactName"})
     protected DeliveredArtifact(String deployArtifactId, String outputArtifactName) {
@@ -82,6 +82,7 @@ public class DeliveredArtifact {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DeliveredArtifact(");
+        sb.append("super=").append(super.toString());
         sb.append("deployArtifactId=").append(String.valueOf(this.deployArtifactId));
         sb.append(", outputArtifactName=").append(String.valueOf(this.outputArtifactName));
         sb.append(")");
@@ -99,7 +100,8 @@ public class DeliveredArtifact {
 
         DeliveredArtifact other = (DeliveredArtifact) o;
         return java.util.Objects.equals(this.deployArtifactId, other.deployArtifactId)
-                && java.util.Objects.equals(this.outputArtifactName, other.outputArtifactName);
+                && java.util.Objects.equals(this.outputArtifactName, other.outputArtifactName)
+                && super.equals(other);
     }
 
     @Override
@@ -114,6 +116,7 @@ public class DeliveredArtifact {
                         + (this.outputArtifactName == null
                                 ? 43
                                 : this.outputArtifactName.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

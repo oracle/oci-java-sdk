@@ -38,12 +38,18 @@ public class SuggestMatchesResponse extends com.oracle.bmc.responses.BmcResponse
         return suggestResults;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "suggestResults"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "suggestResults"
+    })
     private SuggestMatchesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.SuggestResults suggestResults) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.suggestResults = suggestResults;
     }
@@ -53,6 +59,13 @@ public class SuggestMatchesResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class SuggestMatchesResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(SuggestMatchesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             suggestResults(o.getSuggestResults());
 
@@ -108,7 +122,8 @@ public class SuggestMatchesResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public SuggestMatchesResponse build() {
-            return new SuggestMatchesResponse(__httpStatusCode__, opcRequestId, suggestResults);
+            return new SuggestMatchesResponse(
+                    __httpStatusCode__, headers, opcRequestId, suggestResults);
         }
     }
 

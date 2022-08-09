@@ -163,6 +163,14 @@ public class SummarizeManagedInstanceUsageConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getHostnameContains() != null) {
+            target =
+                    target.queryParam(
+                            "hostnameContains",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHostnameContains()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -236,8 +244,8 @@ public class SummarizeManagedInstanceUsageConverter {
                                                 com.oracle.bmc.jms.responses
                                                         .SummarizeManagedInstanceUsageResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managedInstanceUsageCollection(response.getItem());
 

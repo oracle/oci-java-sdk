@@ -170,8 +170,8 @@ public class ListOperatorControlsConverter {
                                         builder =
                                                 com.oracle.bmc.operatoraccesscontrol.responses
                                                         .ListOperatorControlsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.operatorControlCollection(response.getItem());
 

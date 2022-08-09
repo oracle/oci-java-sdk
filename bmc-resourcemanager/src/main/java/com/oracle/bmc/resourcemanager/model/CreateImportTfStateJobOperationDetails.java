@@ -59,21 +59,24 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateImportTfStateJobOperationDetails build() {
-            CreateImportTfStateJobOperationDetails __instance__ =
+            CreateImportTfStateJobOperationDetails model =
                     new CreateImportTfStateJobOperationDetails(
-                            isProviderUpgradeRequired, tfStateBase64Encoded);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isProviderUpgradeRequired, this.tfStateBase64Encoded);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateImportTfStateJobOperationDetails o) {
-            Builder copiedBuilder =
-                    isProviderUpgradeRequired(o.getIsProviderUpgradeRequired())
-                            .tfStateBase64Encoded(o.getTfStateBase64Encoded());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateImportTfStateJobOperationDetails model) {
+            if (model.wasPropertyExplicitlySet("isProviderUpgradeRequired")) {
+                this.isProviderUpgradeRequired(model.getIsProviderUpgradeRequired());
+            }
+            if (model.wasPropertyExplicitlySet("tfStateBase64Encoded")) {
+                this.tfStateBase64Encoded(model.getTfStateBase64Encoded());
+            }
+            return this;
         }
     }
 
@@ -135,7 +138,6 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
                                                         + this.tfStateBase64Encoded.length
                                                         + "])"
                                                 : ""))));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -151,8 +153,7 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
 
         CreateImportTfStateJobOperationDetails other = (CreateImportTfStateJobOperationDetails) o;
         return java.util.Arrays.equals(this.tfStateBase64Encoded, other.tfStateBase64Encoded)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -160,16 +161,6 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + java.util.Arrays.hashCode(this.tfStateBase64Encoded);
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -109,8 +109,8 @@ public class SuggestConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .SuggestResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.suggestOutput(response.getItem());
 

@@ -113,8 +113,8 @@ public class CancelBuildRunConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .CancelBuildRunResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.buildRun(response.getItem());
 

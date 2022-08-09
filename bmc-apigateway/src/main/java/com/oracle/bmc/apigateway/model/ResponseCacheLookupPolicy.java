@@ -29,7 +29,7 @@ package com.oracle.bmc.apigateway.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ResponseCacheLookupPolicy {
+public class ResponseCacheLookupPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled", "isPrivateCachingEnabled"})
     protected ResponseCacheLookupPolicy(Boolean isEnabled, Boolean isPrivateCachingEnabled) {
@@ -93,6 +93,7 @@ public class ResponseCacheLookupPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResponseCacheLookupPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", isPrivateCachingEnabled=")
                 .append(String.valueOf(this.isPrivateCachingEnabled));
@@ -112,7 +113,8 @@ public class ResponseCacheLookupPolicy {
         ResponseCacheLookupPolicy other = (ResponseCacheLookupPolicy) o;
         return java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(
-                        this.isPrivateCachingEnabled, other.isPrivateCachingEnabled);
+                        this.isPrivateCachingEnabled, other.isPrivateCachingEnabled)
+                && super.equals(other);
     }
 
     @Override
@@ -125,6 +127,7 @@ public class ResponseCacheLookupPolicy {
                         + (this.isPrivateCachingEnabled == null
                                 ? 43
                                 : this.isPrivateCachingEnabled.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

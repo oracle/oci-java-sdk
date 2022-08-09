@@ -179,8 +179,8 @@ public class ListDataFlowValidationsConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .ListDataFlowValidationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataFlowValidationSummaryCollection(response.getItem());
 

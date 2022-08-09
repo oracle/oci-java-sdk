@@ -19,7 +19,8 @@ package com.oracle.bmc.identity.model;
     builder = StandardTagNamespaceTemplateSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StandardTagNamespaceTemplateSummary {
+public final class StandardTagNamespaceTemplateSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"description", "standardTagNamespaceName", "status"})
     public StandardTagNamespaceTemplateSummary(
@@ -85,22 +86,27 @@ public final class StandardTagNamespaceTemplateSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StandardTagNamespaceTemplateSummary build() {
-            StandardTagNamespaceTemplateSummary __instance__ =
+            StandardTagNamespaceTemplateSummary model =
                     new StandardTagNamespaceTemplateSummary(
-                            description, standardTagNamespaceName, status);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description, this.standardTagNamespaceName, this.status);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StandardTagNamespaceTemplateSummary o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .standardTagNamespaceName(o.getStandardTagNamespaceName())
-                            .status(o.getStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StandardTagNamespaceTemplateSummary model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("standardTagNamespaceName")) {
+                this.standardTagNamespaceName(model.getStandardTagNamespaceName());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            return this;
         }
     }
 
@@ -170,11 +176,11 @@ public final class StandardTagNamespaceTemplateSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StandardTagNamespaceTemplateSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", standardTagNamespaceName=")
                 .append(String.valueOf(this.standardTagNamespaceName));
         sb.append(", status=").append(String.valueOf(this.status));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -193,7 +199,7 @@ public final class StandardTagNamespaceTemplateSummary {
                 && java.util.Objects.equals(
                         this.standardTagNamespaceName, other.standardTagNamespaceName)
                 && java.util.Objects.equals(this.status, other.status)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -207,16 +213,7 @@ public final class StandardTagNamespaceTemplateSummary {
                                 ? 43
                                 : this.standardTagNamespaceName.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

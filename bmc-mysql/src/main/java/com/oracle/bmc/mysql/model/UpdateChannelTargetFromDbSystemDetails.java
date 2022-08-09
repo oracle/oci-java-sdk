@@ -70,19 +70,24 @@ public final class UpdateChannelTargetFromDbSystemDetails extends UpdateChannelT
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateChannelTargetFromDbSystemDetails build() {
-            UpdateChannelTargetFromDbSystemDetails __instance__ =
-                    new UpdateChannelTargetFromDbSystemDetails(channelName, applierUsername);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateChannelTargetFromDbSystemDetails model =
+                    new UpdateChannelTargetFromDbSystemDetails(
+                            this.channelName, this.applierUsername);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateChannelTargetFromDbSystemDetails o) {
-            Builder copiedBuilder =
-                    channelName(o.getChannelName()).applierUsername(o.getApplierUsername());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateChannelTargetFromDbSystemDetails model) {
+            if (model.wasPropertyExplicitlySet("channelName")) {
+                this.channelName(model.getChannelName());
+            }
+            if (model.wasPropertyExplicitlySet("applierUsername")) {
+                this.applierUsername(model.getApplierUsername());
+            }
+            return this;
         }
     }
 
@@ -154,7 +159,6 @@ public final class UpdateChannelTargetFromDbSystemDetails extends UpdateChannelT
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", channelName=").append(String.valueOf(this.channelName));
         sb.append(", applierUsername=").append(String.valueOf(this.applierUsername));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -171,8 +175,7 @@ public final class UpdateChannelTargetFromDbSystemDetails extends UpdateChannelT
         UpdateChannelTargetFromDbSystemDetails other = (UpdateChannelTargetFromDbSystemDetails) o;
         return java.util.Objects.equals(this.channelName, other.channelName)
                 && java.util.Objects.equals(this.applierUsername, other.applierUsername)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -183,16 +186,6 @@ public final class UpdateChannelTargetFromDbSystemDetails extends UpdateChannelT
         result =
                 (result * PRIME)
                         + (this.applierUsername == null ? 43 : this.applierUsername.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

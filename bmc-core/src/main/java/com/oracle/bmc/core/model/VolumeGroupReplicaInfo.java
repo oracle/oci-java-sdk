@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = VolumeGroupReplicaInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VolumeGroupReplicaInfo {
+public final class VolumeGroupReplicaInfo
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "volumeGroupReplicaId", "availabilityDomain"})
     public VolumeGroupReplicaInfo(
@@ -95,22 +96,27 @@ public final class VolumeGroupReplicaInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VolumeGroupReplicaInfo build() {
-            VolumeGroupReplicaInfo __instance__ =
+            VolumeGroupReplicaInfo model =
                     new VolumeGroupReplicaInfo(
-                            displayName, volumeGroupReplicaId, availabilityDomain);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName, this.volumeGroupReplicaId, this.availabilityDomain);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VolumeGroupReplicaInfo o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .volumeGroupReplicaId(o.getVolumeGroupReplicaId())
-                            .availabilityDomain(o.getAvailabilityDomain());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VolumeGroupReplicaInfo model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("volumeGroupReplicaId")) {
+                this.volumeGroupReplicaId(model.getVolumeGroupReplicaId());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            return this;
         }
     }
 
@@ -190,10 +196,10 @@ public final class VolumeGroupReplicaInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VolumeGroupReplicaInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", volumeGroupReplicaId=").append(String.valueOf(this.volumeGroupReplicaId));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -211,7 +217,7 @@ public final class VolumeGroupReplicaInfo {
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.volumeGroupReplicaId, other.volumeGroupReplicaId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -229,16 +235,7 @@ public final class VolumeGroupReplicaInfo {
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -32,7 +32,7 @@ package com.oracle.bmc.apigateway.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AuthenticationPolicy {
+public class AuthenticationPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isAnonymousAccessAllowed"})
     protected AuthenticationPolicy(Boolean isAnonymousAccessAllowed) {
@@ -71,6 +71,7 @@ public class AuthenticationPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuthenticationPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("isAnonymousAccessAllowed=")
                 .append(String.valueOf(this.isAnonymousAccessAllowed));
         sb.append(")");
@@ -88,7 +89,8 @@ public class AuthenticationPolicy {
 
         AuthenticationPolicy other = (AuthenticationPolicy) o;
         return java.util.Objects.equals(
-                this.isAnonymousAccessAllowed, other.isAnonymousAccessAllowed);
+                        this.isAnonymousAccessAllowed, other.isAnonymousAccessAllowed)
+                && super.equals(other);
     }
 
     @Override
@@ -100,6 +102,7 @@ public class AuthenticationPolicy {
                         + (this.isAnonymousAccessAllowed == null
                                 ? 43
                                 : this.isAnonymousAccessAllowed.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

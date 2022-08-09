@@ -17,7 +17,7 @@ package com.oracle.bmc.usageapi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CostAnalysisUI.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CostAnalysisUI {
+public final class CostAnalysisUI extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"graph", "isCumulativeGraph"})
     public CostAnalysisUI(Graph graph, Boolean isCumulativeGraph) {
@@ -65,17 +65,22 @@ public final class CostAnalysisUI {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CostAnalysisUI build() {
-            CostAnalysisUI __instance__ = new CostAnalysisUI(graph, isCumulativeGraph);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CostAnalysisUI model = new CostAnalysisUI(this.graph, this.isCumulativeGraph);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CostAnalysisUI o) {
-            Builder copiedBuilder = graph(o.getGraph()).isCumulativeGraph(o.getIsCumulativeGraph());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CostAnalysisUI model) {
+            if (model.wasPropertyExplicitlySet("graph")) {
+                this.graph(model.getGraph());
+            }
+            if (model.wasPropertyExplicitlySet("isCumulativeGraph")) {
+                this.isCumulativeGraph(model.getIsCumulativeGraph());
+            }
+            return this;
         }
     }
 
@@ -179,9 +184,9 @@ public final class CostAnalysisUI {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CostAnalysisUI(");
+        sb.append("super=").append(super.toString());
         sb.append("graph=").append(String.valueOf(this.graph));
         sb.append(", isCumulativeGraph=").append(String.valueOf(this.isCumulativeGraph));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -198,7 +203,7 @@ public final class CostAnalysisUI {
         CostAnalysisUI other = (CostAnalysisUI) o;
         return java.util.Objects.equals(this.graph, other.graph)
                 && java.util.Objects.equals(this.isCumulativeGraph, other.isCumulativeGraph)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -209,16 +214,7 @@ public final class CostAnalysisUI {
         result =
                 (result * PRIME)
                         + (this.isCumulativeGraph == null ? 43 : this.isCumulativeGraph.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

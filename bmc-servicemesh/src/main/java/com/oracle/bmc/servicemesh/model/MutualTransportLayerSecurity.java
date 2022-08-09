@@ -20,7 +20,8 @@ package com.oracle.bmc.servicemesh.model;
     builder = MutualTransportLayerSecurity.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MutualTransportLayerSecurity {
+public final class MutualTransportLayerSecurity
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"certificateId", "maximumValidity", "mode"})
     public MutualTransportLayerSecurity(String certificateId, Integer maximumValidity, Mode mode) {
@@ -101,21 +102,27 @@ public final class MutualTransportLayerSecurity {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MutualTransportLayerSecurity build() {
-            MutualTransportLayerSecurity __instance__ =
-                    new MutualTransportLayerSecurity(certificateId, maximumValidity, mode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MutualTransportLayerSecurity model =
+                    new MutualTransportLayerSecurity(
+                            this.certificateId, this.maximumValidity, this.mode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MutualTransportLayerSecurity o) {
-            Builder copiedBuilder =
-                    certificateId(o.getCertificateId())
-                            .maximumValidity(o.getMaximumValidity())
-                            .mode(o.getMode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MutualTransportLayerSecurity model) {
+            if (model.wasPropertyExplicitlySet("certificateId")) {
+                this.certificateId(model.getCertificateId());
+            }
+            if (model.wasPropertyExplicitlySet("maximumValidity")) {
+                this.maximumValidity(model.getMaximumValidity());
+            }
+            if (model.wasPropertyExplicitlySet("mode")) {
+                this.mode(model.getMode());
+            }
+            return this;
         }
     }
 
@@ -251,10 +258,10 @@ public final class MutualTransportLayerSecurity {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MutualTransportLayerSecurity(");
+        sb.append("super=").append(super.toString());
         sb.append("certificateId=").append(String.valueOf(this.certificateId));
         sb.append(", maximumValidity=").append(String.valueOf(this.maximumValidity));
         sb.append(", mode=").append(String.valueOf(this.mode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -272,7 +279,7 @@ public final class MutualTransportLayerSecurity {
         return java.util.Objects.equals(this.certificateId, other.certificateId)
                 && java.util.Objects.equals(this.maximumValidity, other.maximumValidity)
                 && java.util.Objects.equals(this.mode, other.mode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -286,16 +293,7 @@ public final class MutualTransportLayerSecurity {
                 (result * PRIME)
                         + (this.maximumValidity == null ? 43 : this.maximumValidity.hashCode());
         result = (result * PRIME) + (this.mode == null ? 43 : this.mode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

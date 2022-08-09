@@ -129,8 +129,8 @@ public class ListWorkRequestLogsConverter {
                                         builder =
                                                 com.oracle.bmc.aianomalydetection.responses
                                                         .ListWorkRequestLogsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.workRequestLogEntryCollection(response.getItem());
 

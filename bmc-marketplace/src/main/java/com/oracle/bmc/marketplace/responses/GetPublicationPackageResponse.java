@@ -55,16 +55,18 @@ public class GetPublicationPackageResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "publicationPackage"
     })
     private GetPublicationPackageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.marketplace.model.PublicationPackage publicationPackage) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.publicationPackage = publicationPackage;
@@ -75,6 +77,13 @@ public class GetPublicationPackageResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetPublicationPackageResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(GetPublicationPackageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             publicationPackage(o.getPublicationPackage());
@@ -149,7 +159,7 @@ public class GetPublicationPackageResponse extends com.oracle.bmc.responses.BmcR
          */
         public GetPublicationPackageResponse build() {
             return new GetPublicationPackageResponse(
-                    __httpStatusCode__, etag, opcRequestId, publicationPackage);
+                    __httpStatusCode__, headers, etag, opcRequestId, publicationPackage);
         }
     }
 

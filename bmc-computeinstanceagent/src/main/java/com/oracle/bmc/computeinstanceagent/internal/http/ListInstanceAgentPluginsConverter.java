@@ -179,8 +179,8 @@ public class ListInstanceAgentPluginsConverter {
                                         builder =
                                                 com.oracle.bmc.computeinstanceagent.responses
                                                         .ListInstanceAgentPluginsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

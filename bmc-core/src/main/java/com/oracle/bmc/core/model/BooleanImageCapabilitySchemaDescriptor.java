@@ -56,18 +56,23 @@ public final class BooleanImageCapabilitySchemaDescriptor extends ImageCapabilit
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BooleanImageCapabilitySchemaDescriptor build() {
-            BooleanImageCapabilitySchemaDescriptor __instance__ =
-                    new BooleanImageCapabilitySchemaDescriptor(source, defaultValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BooleanImageCapabilitySchemaDescriptor model =
+                    new BooleanImageCapabilitySchemaDescriptor(this.source, this.defaultValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BooleanImageCapabilitySchemaDescriptor o) {
-            Builder copiedBuilder = source(o.getSource()).defaultValue(o.getDefaultValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BooleanImageCapabilitySchemaDescriptor model) {
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("defaultValue")) {
+                this.defaultValue(model.getDefaultValue());
+            }
+            return this;
         }
     }
 
@@ -117,7 +122,6 @@ public final class BooleanImageCapabilitySchemaDescriptor extends ImageCapabilit
         sb.append("BooleanImageCapabilitySchemaDescriptor(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -133,8 +137,7 @@ public final class BooleanImageCapabilitySchemaDescriptor extends ImageCapabilit
 
         BooleanImageCapabilitySchemaDescriptor other = (BooleanImageCapabilitySchemaDescriptor) o;
         return java.util.Objects.equals(this.defaultValue, other.defaultValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -142,16 +145,6 @@ public final class BooleanImageCapabilitySchemaDescriptor extends ImageCapabilit
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

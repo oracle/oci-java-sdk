@@ -161,8 +161,8 @@ public class ListSqlTuningSetsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListSqlTuningSetsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sqlTuningSetCollection(response.getItem());
 

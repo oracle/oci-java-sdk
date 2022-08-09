@@ -127,8 +127,8 @@ public class RequestSecurityScoresConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .RequestSecurityScoresResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityScoreAggregationCollection(response.getItem());
 

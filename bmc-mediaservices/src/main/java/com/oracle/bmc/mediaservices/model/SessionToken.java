@@ -17,7 +17,7 @@ package com.oracle.bmc.mediaservices.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SessionToken.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SessionToken {
+public final class SessionToken extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"token"})
     public SessionToken(String token) {
@@ -48,17 +48,19 @@ public final class SessionToken {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SessionToken build() {
-            SessionToken __instance__ = new SessionToken(token);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SessionToken model = new SessionToken(this.token);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SessionToken o) {
-            Builder copiedBuilder = token(o.getToken());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SessionToken model) {
+            if (model.wasPropertyExplicitlySet("token")) {
+                this.token(model.getToken());
+            }
+            return this;
         }
     }
 
@@ -100,8 +102,8 @@ public final class SessionToken {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SessionToken(");
+        sb.append("super=").append(super.toString());
         sb.append("token=").append(String.valueOf(this.token));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -116,8 +118,7 @@ public final class SessionToken {
         }
 
         SessionToken other = (SessionToken) o;
-        return java.util.Objects.equals(this.token, other.token)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.token, other.token) && super.equals(other);
     }
 
     @Override
@@ -125,16 +126,7 @@ public final class SessionToken {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.token == null ? 43 : this.token.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

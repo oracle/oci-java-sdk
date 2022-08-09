@@ -139,8 +139,8 @@ public class ListFastConnectProviderVirtualCircuitBandwidthShapesConverter {
                                                 com.oracle.bmc.core.responses
                                                         .ListFastConnectProviderVirtualCircuitBandwidthShapesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

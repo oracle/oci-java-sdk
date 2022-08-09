@@ -116,32 +116,45 @@ public final class CreateStandardTaskDetails extends CreateScheduledTaskDetails 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateStandardTaskDetails build() {
-            CreateStandardTaskDetails __instance__ =
+            CreateStandardTaskDetails model =
                     new CreateStandardTaskDetails(
-                            compartmentId,
-                            displayName,
-                            freeformTags,
-                            definedTags,
-                            taskType,
-                            schedules,
-                            action);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.displayName,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.taskType,
+                            this.schedules,
+                            this.action);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateStandardTaskDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .taskType(o.getTaskType())
-                            .schedules(o.getSchedules())
-                            .action(o.getAction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateStandardTaskDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("taskType")) {
+                this.taskType(model.getTaskType());
+            }
+            if (model.wasPropertyExplicitlySet("schedules")) {
+                this.schedules(model.getSchedules());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            return this;
         }
     }
 
@@ -227,7 +240,6 @@ public final class CreateStandardTaskDetails extends CreateScheduledTaskDetails 
         sb.append(", taskType=").append(String.valueOf(this.taskType));
         sb.append(", schedules=").append(String.valueOf(this.schedules));
         sb.append(", action=").append(String.valueOf(this.action));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -245,8 +257,7 @@ public final class CreateStandardTaskDetails extends CreateScheduledTaskDetails 
         return java.util.Objects.equals(this.taskType, other.taskType)
                 && java.util.Objects.equals(this.schedules, other.schedules)
                 && java.util.Objects.equals(this.action, other.action)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -256,16 +267,6 @@ public final class CreateStandardTaskDetails extends CreateScheduledTaskDetails 
         result = (result * PRIME) + (this.taskType == null ? 43 : this.taskType.hashCode());
         result = (result * PRIME) + (this.schedules == null ? 43 : this.schedules.hashCode());
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -154,8 +154,8 @@ public class ListAuditProfileAnalyticsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListAuditProfileAnalyticsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.auditProfileAnalyticCollection(response.getItem());
 

@@ -127,8 +127,8 @@ public class UpdateDetectorRecipeDetectorRuleConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .UpdateDetectorRecipeDetectorRuleResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.detectorRecipeDetectorRule(response.getItem());
 

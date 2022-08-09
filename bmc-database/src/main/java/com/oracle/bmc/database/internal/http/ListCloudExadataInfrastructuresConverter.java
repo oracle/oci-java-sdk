@@ -167,8 +167,8 @@ public class ListCloudExadataInfrastructuresConverter {
                                                 com.oracle.bmc.database.responses
                                                         .ListCloudExadataInfrastructuresResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

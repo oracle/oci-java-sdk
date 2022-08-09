@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = SqlTuningTaskPlanStats.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlTuningTaskPlanStats {
+public final class SqlTuningTaskPlanStats
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"planType", "planStats", "planStatus"})
     public SqlTuningTaskPlanStats(
@@ -92,21 +93,26 @@ public final class SqlTuningTaskPlanStats {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlTuningTaskPlanStats build() {
-            SqlTuningTaskPlanStats __instance__ =
-                    new SqlTuningTaskPlanStats(planType, planStats, planStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SqlTuningTaskPlanStats model =
+                    new SqlTuningTaskPlanStats(this.planType, this.planStats, this.planStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlTuningTaskPlanStats o) {
-            Builder copiedBuilder =
-                    planType(o.getPlanType())
-                            .planStats(o.getPlanStats())
-                            .planStatus(o.getPlanStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlTuningTaskPlanStats model) {
+            if (model.wasPropertyExplicitlySet("planType")) {
+                this.planType(model.getPlanType());
+            }
+            if (model.wasPropertyExplicitlySet("planStats")) {
+                this.planStats(model.getPlanStats());
+            }
+            if (model.wasPropertyExplicitlySet("planStatus")) {
+                this.planStatus(model.getPlanStatus());
+            }
+            return this;
         }
     }
 
@@ -231,10 +237,10 @@ public final class SqlTuningTaskPlanStats {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlTuningTaskPlanStats(");
+        sb.append("super=").append(super.toString());
         sb.append("planType=").append(String.valueOf(this.planType));
         sb.append(", planStats=").append(String.valueOf(this.planStats));
         sb.append(", planStatus=").append(String.valueOf(this.planStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -252,7 +258,7 @@ public final class SqlTuningTaskPlanStats {
         return java.util.Objects.equals(this.planType, other.planType)
                 && java.util.Objects.equals(this.planStats, other.planStats)
                 && java.util.Objects.equals(this.planStatus, other.planStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -262,16 +268,7 @@ public final class SqlTuningTaskPlanStats {
         result = (result * PRIME) + (this.planType == null ? 43 : this.planType.hashCode());
         result = (result * PRIME) + (this.planStats == null ? 43 : this.planStats.hashCode());
         result = (result * PRIME) + (this.planStatus == null ? 43 : this.planStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

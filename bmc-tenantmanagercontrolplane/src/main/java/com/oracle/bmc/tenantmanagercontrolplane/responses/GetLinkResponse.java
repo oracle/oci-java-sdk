@@ -53,13 +53,20 @@ public class GetLinkResponse extends com.oracle.bmc.responses.BmcResponse {
         return link;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "link"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "link"
+    })
     private GetLinkResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.tenantmanagercontrolplane.model.Link link) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.link = link;
@@ -70,6 +77,13 @@ public class GetLinkResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetLinkResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetLinkResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             link(o.getLink());
@@ -142,7 +157,7 @@ public class GetLinkResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetLinkResponse build() {
-            return new GetLinkResponse(__httpStatusCode__, etag, opcRequestId, link);
+            return new GetLinkResponse(__httpStatusCode__, headers, etag, opcRequestId, link);
         }
     }
 

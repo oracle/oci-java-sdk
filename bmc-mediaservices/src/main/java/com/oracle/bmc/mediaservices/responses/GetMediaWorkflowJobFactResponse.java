@@ -55,16 +55,18 @@ public class GetMediaWorkflowJobFactResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "mediaWorkflowJobFact"
     })
     private GetMediaWorkflowJobFactResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.mediaservices.model.MediaWorkflowJobFact mediaWorkflowJobFact) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.mediaWorkflowJobFact = mediaWorkflowJobFact;
@@ -75,6 +77,13 @@ public class GetMediaWorkflowJobFactResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetMediaWorkflowJobFactResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(GetMediaWorkflowJobFactResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             mediaWorkflowJobFact(o.getMediaWorkflowJobFact());
@@ -149,7 +159,7 @@ public class GetMediaWorkflowJobFactResponse extends com.oracle.bmc.responses.Bm
          */
         public GetMediaWorkflowJobFactResponse build() {
             return new GetMediaWorkflowJobFactResponse(
-                    __httpStatusCode__, etag, opcRequestId, mediaWorkflowJobFact);
+                    __httpStatusCode__, headers, etag, opcRequestId, mediaWorkflowJobFact);
         }
     }
 

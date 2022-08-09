@@ -363,62 +363,105 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataEntityFromDataStoreEntityDetails build() {
-            DataEntityFromDataStoreEntityDetails __instance__ =
+            DataEntityFromDataStoreEntityDetails model =
                     new DataEntityFromDataStoreEntityDetails(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            externalKey,
-                            shape,
-                            shapeId,
-                            types,
-                            entityType,
-                            otherTypeLabel,
-                            uniqueKeys,
-                            foreignKeys,
-                            resourceName,
-                            objectStatus,
-                            identifier,
-                            filters,
-                            isEffectiveDateDisabled,
-                            isFlexDataStore,
-                            isSilentError,
-                            supportsIncremental);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.externalKey,
+                            this.shape,
+                            this.shapeId,
+                            this.types,
+                            this.entityType,
+                            this.otherTypeLabel,
+                            this.uniqueKeys,
+                            this.foreignKeys,
+                            this.resourceName,
+                            this.objectStatus,
+                            this.identifier,
+                            this.filters,
+                            this.isEffectiveDateDisabled,
+                            this.isFlexDataStore,
+                            this.isSilentError,
+                            this.supportsIncremental);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataEntityFromDataStoreEntityDetails o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .externalKey(o.getExternalKey())
-                            .shape(o.getShape())
-                            .shapeId(o.getShapeId())
-                            .types(o.getTypes())
-                            .entityType(o.getEntityType())
-                            .otherTypeLabel(o.getOtherTypeLabel())
-                            .uniqueKeys(o.getUniqueKeys())
-                            .foreignKeys(o.getForeignKeys())
-                            .resourceName(o.getResourceName())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .filters(o.getFilters())
-                            .isEffectiveDateDisabled(o.getIsEffectiveDateDisabled())
-                            .isFlexDataStore(o.getIsFlexDataStore())
-                            .isSilentError(o.getIsSilentError())
-                            .supportsIncremental(o.getSupportsIncremental());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataEntityFromDataStoreEntityDetails model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("shapeId")) {
+                this.shapeId(model.getShapeId());
+            }
+            if (model.wasPropertyExplicitlySet("types")) {
+                this.types(model.getTypes());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("otherTypeLabel")) {
+                this.otherTypeLabel(model.getOtherTypeLabel());
+            }
+            if (model.wasPropertyExplicitlySet("uniqueKeys")) {
+                this.uniqueKeys(model.getUniqueKeys());
+            }
+            if (model.wasPropertyExplicitlySet("foreignKeys")) {
+                this.foreignKeys(model.getForeignKeys());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("filters")) {
+                this.filters(model.getFilters());
+            }
+            if (model.wasPropertyExplicitlySet("isEffectiveDateDisabled")) {
+                this.isEffectiveDateDisabled(model.getIsEffectiveDateDisabled());
+            }
+            if (model.wasPropertyExplicitlySet("isFlexDataStore")) {
+                this.isFlexDataStore(model.getIsFlexDataStore());
+            }
+            if (model.wasPropertyExplicitlySet("isSilentError")) {
+                this.isSilentError(model.getIsSilentError());
+            }
+            if (model.wasPropertyExplicitlySet("supportsIncremental")) {
+                this.supportsIncremental(model.getSupportsIncremental());
+            }
+            return this;
         }
     }
 
@@ -846,7 +889,6 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
         sb.append(", isFlexDataStore=").append(String.valueOf(this.isFlexDataStore));
         sb.append(", isSilentError=").append(String.valueOf(this.isSilentError));
         sb.append(", supportsIncremental=").append(String.valueOf(this.supportsIncremental));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -884,8 +926,7 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
                 && java.util.Objects.equals(this.isFlexDataStore, other.isFlexDataStore)
                 && java.util.Objects.equals(this.isSilentError, other.isSilentError)
                 && java.util.Objects.equals(this.supportsIncremental, other.supportsIncremental)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -930,16 +971,6 @@ public final class DataEntityFromDataStoreEntityDetails extends DataEntityDetail
                         + (this.supportsIncremental == null
                                 ? 43
                                 : this.supportsIncremental.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -175,8 +175,8 @@ public class ListIngressGatewaysConverter {
                                         builder =
                                                 com.oracle.bmc.servicemesh.responses
                                                         .ListIngressGatewaysResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.ingressGatewayCollection(response.getItem());
 

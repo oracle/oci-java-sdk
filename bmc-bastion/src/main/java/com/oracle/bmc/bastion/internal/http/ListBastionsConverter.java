@@ -169,8 +169,8 @@ public class ListBastionsConverter {
                                         builder =
                                                 com.oracle.bmc.bastion.responses
                                                         .ListBastionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

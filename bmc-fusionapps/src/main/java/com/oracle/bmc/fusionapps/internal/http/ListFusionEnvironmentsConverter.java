@@ -168,8 +168,8 @@ public class ListFusionEnvironmentsConverter {
                                         builder =
                                                 com.oracle.bmc.fusionapps.responses
                                                         .ListFusionEnvironmentsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.fusionEnvironmentCollection(response.getItem());
 

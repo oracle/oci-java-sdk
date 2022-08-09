@@ -120,8 +120,8 @@ public class GetUserAssessmentComparisonConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetUserAssessmentComparisonResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.userAssessmentComparison(response.getItem());
 

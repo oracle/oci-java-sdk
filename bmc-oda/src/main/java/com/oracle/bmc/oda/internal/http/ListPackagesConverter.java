@@ -173,7 +173,8 @@ public class ListPackagesConverter {
 
                                 com.oracle.bmc.oda.responses.ListPackagesResponse.Builder builder =
                                         com.oracle.bmc.oda.responses.ListPackagesResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

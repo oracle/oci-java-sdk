@@ -19,7 +19,8 @@ package com.oracle.bmc.waas.model;
     builder = CertificateSubjectName.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CertificateSubjectName {
+public final class CertificateSubjectName
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "country",
@@ -167,32 +168,45 @@ public final class CertificateSubjectName {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CertificateSubjectName build() {
-            CertificateSubjectName __instance__ =
+            CertificateSubjectName model =
                     new CertificateSubjectName(
-                            country,
-                            stateProvince,
-                            locality,
-                            organization,
-                            organizationalUnit,
-                            commonName,
-                            emailAddress);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.country,
+                            this.stateProvince,
+                            this.locality,
+                            this.organization,
+                            this.organizationalUnit,
+                            this.commonName,
+                            this.emailAddress);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CertificateSubjectName o) {
-            Builder copiedBuilder =
-                    country(o.getCountry())
-                            .stateProvince(o.getStateProvince())
-                            .locality(o.getLocality())
-                            .organization(o.getOrganization())
-                            .organizationalUnit(o.getOrganizationalUnit())
-                            .commonName(o.getCommonName())
-                            .emailAddress(o.getEmailAddress());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CertificateSubjectName model) {
+            if (model.wasPropertyExplicitlySet("country")) {
+                this.country(model.getCountry());
+            }
+            if (model.wasPropertyExplicitlySet("stateProvince")) {
+                this.stateProvince(model.getStateProvince());
+            }
+            if (model.wasPropertyExplicitlySet("locality")) {
+                this.locality(model.getLocality());
+            }
+            if (model.wasPropertyExplicitlySet("organization")) {
+                this.organization(model.getOrganization());
+            }
+            if (model.wasPropertyExplicitlySet("organizationalUnit")) {
+                this.organizationalUnit(model.getOrganizationalUnit());
+            }
+            if (model.wasPropertyExplicitlySet("commonName")) {
+                this.commonName(model.getCommonName());
+            }
+            if (model.wasPropertyExplicitlySet("emailAddress")) {
+                this.emailAddress(model.getEmailAddress());
+            }
+            return this;
         }
     }
 
@@ -318,6 +332,7 @@ public final class CertificateSubjectName {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CertificateSubjectName(");
+        sb.append("super=").append(super.toString());
         sb.append("country=").append(String.valueOf(this.country));
         sb.append(", stateProvince=").append(String.valueOf(this.stateProvince));
         sb.append(", locality=").append(String.valueOf(this.locality));
@@ -325,7 +340,6 @@ public final class CertificateSubjectName {
         sb.append(", organizationalUnit=").append(String.valueOf(this.organizationalUnit));
         sb.append(", commonName=").append(String.valueOf(this.commonName));
         sb.append(", emailAddress=").append(String.valueOf(this.emailAddress));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -347,7 +361,7 @@ public final class CertificateSubjectName {
                 && java.util.Objects.equals(this.organizationalUnit, other.organizationalUnit)
                 && java.util.Objects.equals(this.commonName, other.commonName)
                 && java.util.Objects.equals(this.emailAddress, other.emailAddress)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -367,16 +381,7 @@ public final class CertificateSubjectName {
                                 : this.organizationalUnit.hashCode());
         result = (result * PRIME) + (this.commonName == null ? 43 : this.commonName.hashCode());
         result = (result * PRIME) + (this.emailAddress == null ? 43 : this.emailAddress.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

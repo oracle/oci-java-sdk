@@ -268,6 +268,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcClientRequestId",
         "opcRequestId",
         "eTag",
@@ -289,6 +290,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private HeadObjectResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             String eTag,
@@ -307,7 +309,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             java.util.Date timeOfArchival,
             String versionId,
             boolean isNotModified) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
         this.eTag = eTag;
@@ -333,6 +335,13 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -635,6 +644,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(HeadObjectResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             eTag(o.getETag());
@@ -664,6 +674,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         public HeadObjectResponse build() {
             return new HeadObjectResponse(
                     __httpStatusCode__,
+                    headers,
                     opcClientRequestId,
                     opcRequestId,
                     eTag,

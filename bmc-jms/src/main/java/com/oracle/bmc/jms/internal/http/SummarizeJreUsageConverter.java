@@ -221,8 +221,8 @@ public class SummarizeJreUsageConverter {
                                         builder =
                                                 com.oracle.bmc.jms.responses
                                                         .SummarizeJreUsageResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.jreUsageCollection(response.getItem());
 

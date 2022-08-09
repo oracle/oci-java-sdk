@@ -124,19 +124,26 @@ public final class ExtendHttpRequestHeaderValueRule extends Rule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExtendHttpRequestHeaderValueRule build() {
-            ExtendHttpRequestHeaderValueRule __instance__ =
-                    new ExtendHttpRequestHeaderValueRule(header, prefix, suffix);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExtendHttpRequestHeaderValueRule model =
+                    new ExtendHttpRequestHeaderValueRule(this.header, this.prefix, this.suffix);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExtendHttpRequestHeaderValueRule o) {
-            Builder copiedBuilder =
-                    header(o.getHeader()).prefix(o.getPrefix()).suffix(o.getSuffix());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExtendHttpRequestHeaderValueRule model) {
+            if (model.wasPropertyExplicitlySet("header")) {
+                this.header(model.getHeader());
+            }
+            if (model.wasPropertyExplicitlySet("prefix")) {
+                this.prefix(model.getPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("suffix")) {
+                this.suffix(model.getSuffix());
+            }
+            return this;
         }
     }
 
@@ -248,7 +255,6 @@ public final class ExtendHttpRequestHeaderValueRule extends Rule {
         sb.append(", header=").append(String.valueOf(this.header));
         sb.append(", prefix=").append(String.valueOf(this.prefix));
         sb.append(", suffix=").append(String.valueOf(this.suffix));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -266,8 +272,7 @@ public final class ExtendHttpRequestHeaderValueRule extends Rule {
         return java.util.Objects.equals(this.header, other.header)
                 && java.util.Objects.equals(this.prefix, other.prefix)
                 && java.util.Objects.equals(this.suffix, other.suffix)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -277,16 +282,6 @@ public final class ExtendHttpRequestHeaderValueRule extends Rule {
         result = (result * PRIME) + (this.header == null ? 43 : this.header.hashCode());
         result = (result * PRIME) + (this.prefix == null ? 43 : this.prefix.hashCode());
         result = (result * PRIME) + (this.suffix == null ? 43 : this.suffix.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EventType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EventType {
+public final class EventType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "eventTypeName",
@@ -129,23 +129,37 @@ public final class EventType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EventType build() {
-            EventType __instance__ =
-                    new EventType(eventTypeName, specVersion, isEnabled, isSystem, timeUpdated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            EventType model =
+                    new EventType(
+                            this.eventTypeName,
+                            this.specVersion,
+                            this.isEnabled,
+                            this.isSystem,
+                            this.timeUpdated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EventType o) {
-            Builder copiedBuilder =
-                    eventTypeName(o.getEventTypeName())
-                            .specVersion(o.getSpecVersion())
-                            .isEnabled(o.getIsEnabled())
-                            .isSystem(o.getIsSystem())
-                            .timeUpdated(o.getTimeUpdated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EventType model) {
+            if (model.wasPropertyExplicitlySet("eventTypeName")) {
+                this.eventTypeName(model.getEventTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("specVersion")) {
+                this.specVersion(model.getSpecVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            return this;
         }
     }
 
@@ -245,12 +259,12 @@ public final class EventType {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EventType(");
+        sb.append("super=").append(super.toString());
         sb.append("eventTypeName=").append(String.valueOf(this.eventTypeName));
         sb.append(", specVersion=").append(String.valueOf(this.specVersion));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", isSystem=").append(String.valueOf(this.isSystem));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -270,7 +284,7 @@ public final class EventType {
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.isSystem, other.isSystem)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -284,16 +298,7 @@ public final class EventType {
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

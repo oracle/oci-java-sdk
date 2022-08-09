@@ -19,7 +19,7 @@ package com.oracle.bmc.osmanagement.model;
     builder = SoftwarePackageFile.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SoftwarePackageFile {
+public final class SoftwarePackageFile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "path",
@@ -152,25 +152,41 @@ public final class SoftwarePackageFile {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SoftwarePackageFile build() {
-            SoftwarePackageFile __instance__ =
+            SoftwarePackageFile model =
                     new SoftwarePackageFile(
-                            path, type, timeModified, checksum, checksumType, sizeInBytes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.path,
+                            this.type,
+                            this.timeModified,
+                            this.checksum,
+                            this.checksumType,
+                            this.sizeInBytes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SoftwarePackageFile o) {
-            Builder copiedBuilder =
-                    path(o.getPath())
-                            .type(o.getType())
-                            .timeModified(o.getTimeModified())
-                            .checksum(o.getChecksum())
-                            .checksumType(o.getChecksumType())
-                            .sizeInBytes(o.getSizeInBytes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SoftwarePackageFile model) {
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("timeModified")) {
+                this.timeModified(model.getTimeModified());
+            }
+            if (model.wasPropertyExplicitlySet("checksum")) {
+                this.checksum(model.getChecksum());
+            }
+            if (model.wasPropertyExplicitlySet("checksumType")) {
+                this.checksumType(model.getChecksumType());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInBytes")) {
+                this.sizeInBytes(model.getSizeInBytes());
+            }
+            return this;
         }
     }
 
@@ -286,13 +302,13 @@ public final class SoftwarePackageFile {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SoftwarePackageFile(");
+        sb.append("super=").append(super.toString());
         sb.append("path=").append(String.valueOf(this.path));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", timeModified=").append(String.valueOf(this.timeModified));
         sb.append(", checksum=").append(String.valueOf(this.checksum));
         sb.append(", checksumType=").append(String.valueOf(this.checksumType));
         sb.append(", sizeInBytes=").append(String.valueOf(this.sizeInBytes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -313,7 +329,7 @@ public final class SoftwarePackageFile {
                 && java.util.Objects.equals(this.checksum, other.checksum)
                 && java.util.Objects.equals(this.checksumType, other.checksumType)
                 && java.util.Objects.equals(this.sizeInBytes, other.sizeInBytes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -326,16 +342,7 @@ public final class SoftwarePackageFile {
         result = (result * PRIME) + (this.checksum == null ? 43 : this.checksum.hashCode());
         result = (result * PRIME) + (this.checksumType == null ? 43 : this.checksumType.hashCode());
         result = (result * PRIME) + (this.sizeInBytes == null ? 43 : this.sizeInBytes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

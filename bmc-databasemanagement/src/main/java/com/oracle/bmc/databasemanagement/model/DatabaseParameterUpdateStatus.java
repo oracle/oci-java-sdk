@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = DatabaseParameterUpdateStatus.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseParameterUpdateStatus {
+public final class DatabaseParameterUpdateStatus
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"status", "errorCode", "errorMessage"})
     public DatabaseParameterUpdateStatus(Status status, String errorCode, String errorMessage) {
@@ -92,21 +93,27 @@ public final class DatabaseParameterUpdateStatus {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseParameterUpdateStatus build() {
-            DatabaseParameterUpdateStatus __instance__ =
-                    new DatabaseParameterUpdateStatus(status, errorCode, errorMessage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DatabaseParameterUpdateStatus model =
+                    new DatabaseParameterUpdateStatus(
+                            this.status, this.errorCode, this.errorMessage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseParameterUpdateStatus o) {
-            Builder copiedBuilder =
-                    status(o.getStatus())
-                            .errorCode(o.getErrorCode())
-                            .errorMessage(o.getErrorMessage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseParameterUpdateStatus model) {
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("errorCode")) {
+                this.errorCode(model.getErrorCode());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            return this;
         }
     }
 
@@ -231,10 +238,10 @@ public final class DatabaseParameterUpdateStatus {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseParameterUpdateStatus(");
+        sb.append("super=").append(super.toString());
         sb.append("status=").append(String.valueOf(this.status));
         sb.append(", errorCode=").append(String.valueOf(this.errorCode));
         sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -252,7 +259,7 @@ public final class DatabaseParameterUpdateStatus {
         return java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.errorCode, other.errorCode)
                 && java.util.Objects.equals(this.errorMessage, other.errorMessage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -262,16 +269,7 @@ public final class DatabaseParameterUpdateStatus {
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.errorCode == null ? 43 : this.errorCode.hashCode());
         result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

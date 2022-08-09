@@ -19,7 +19,8 @@ package com.oracle.bmc.identitydataplane.model;
     builder = X509FederationRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class X509FederationRequest {
+public final class X509FederationRequest
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"certificate", "publicKey", "intermediateCertificates"})
     public X509FederationRequest(
@@ -93,21 +94,27 @@ public final class X509FederationRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public X509FederationRequest build() {
-            X509FederationRequest __instance__ =
-                    new X509FederationRequest(certificate, publicKey, intermediateCertificates);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            X509FederationRequest model =
+                    new X509FederationRequest(
+                            this.certificate, this.publicKey, this.intermediateCertificates);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(X509FederationRequest o) {
-            Builder copiedBuilder =
-                    certificate(o.getCertificate())
-                            .publicKey(o.getPublicKey())
-                            .intermediateCertificates(o.getIntermediateCertificates());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(X509FederationRequest model) {
+            if (model.wasPropertyExplicitlySet("certificate")) {
+                this.certificate(model.getCertificate());
+            }
+            if (model.wasPropertyExplicitlySet("publicKey")) {
+                this.publicKey(model.getPublicKey());
+            }
+            if (model.wasPropertyExplicitlySet("intermediateCertificates")) {
+                this.intermediateCertificates(model.getIntermediateCertificates());
+            }
+            return this;
         }
     }
 
@@ -185,11 +192,11 @@ public final class X509FederationRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("X509FederationRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("certificate=").append(String.valueOf(this.certificate));
         sb.append(", publicKey=").append(String.valueOf(this.publicKey));
         sb.append(", intermediateCertificates=")
                 .append(String.valueOf(this.intermediateCertificates));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -208,7 +215,7 @@ public final class X509FederationRequest {
                 && java.util.Objects.equals(this.publicKey, other.publicKey)
                 && java.util.Objects.equals(
                         this.intermediateCertificates, other.intermediateCertificates)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -222,16 +229,7 @@ public final class X509FederationRequest {
                         + (this.intermediateCertificates == null
                                 ? 43
                                 : this.intermediateCertificates.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

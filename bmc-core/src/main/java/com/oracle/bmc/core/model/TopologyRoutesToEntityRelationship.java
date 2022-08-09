@@ -61,19 +61,27 @@ public final class TopologyRoutesToEntityRelationship extends TopologyEntityRela
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TopologyRoutesToEntityRelationship build() {
-            TopologyRoutesToEntityRelationship __instance__ =
-                    new TopologyRoutesToEntityRelationship(id1, id2, routeRuleDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TopologyRoutesToEntityRelationship model =
+                    new TopologyRoutesToEntityRelationship(
+                            this.id1, this.id2, this.routeRuleDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TopologyRoutesToEntityRelationship o) {
-            Builder copiedBuilder =
-                    id1(o.getId1()).id2(o.getId2()).routeRuleDetails(o.getRouteRuleDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TopologyRoutesToEntityRelationship model) {
+            if (model.wasPropertyExplicitlySet("id1")) {
+                this.id1(model.getId1());
+            }
+            if (model.wasPropertyExplicitlySet("id2")) {
+                this.id2(model.getId2());
+            }
+            if (model.wasPropertyExplicitlySet("routeRuleDetails")) {
+                this.routeRuleDetails(model.getRouteRuleDetails());
+            }
+            return this;
         }
     }
 
@@ -117,7 +125,6 @@ public final class TopologyRoutesToEntityRelationship extends TopologyEntityRela
         sb.append("TopologyRoutesToEntityRelationship(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", routeRuleDetails=").append(String.valueOf(this.routeRuleDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -133,8 +140,7 @@ public final class TopologyRoutesToEntityRelationship extends TopologyEntityRela
 
         TopologyRoutesToEntityRelationship other = (TopologyRoutesToEntityRelationship) o;
         return java.util.Objects.equals(this.routeRuleDetails, other.routeRuleDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -144,16 +150,6 @@ public final class TopologyRoutesToEntityRelationship extends TopologyEntityRela
         result =
                 (result * PRIME)
                         + (this.routeRuleDetails == null ? 43 : this.routeRuleDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

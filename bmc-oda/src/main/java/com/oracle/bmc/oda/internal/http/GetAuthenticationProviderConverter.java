@@ -113,8 +113,8 @@ public class GetAuthenticationProviderConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses
                                                         .GetAuthenticationProviderResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.authenticationProvider(response.getItem());
 

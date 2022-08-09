@@ -106,8 +106,8 @@ public class GetPeerConverter {
                                         builder =
                                                 com.oracle.bmc.blockchain.responses.GetPeerResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.peer(response.getItem());
 

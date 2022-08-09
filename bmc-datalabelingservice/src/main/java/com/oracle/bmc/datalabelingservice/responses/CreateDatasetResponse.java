@@ -100,6 +100,7 @@ public class CreateDatasetResponse extends com.oracle.bmc.responses.BmcResponse 
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "location",
         "contentLocation",
@@ -109,13 +110,14 @@ public class CreateDatasetResponse extends com.oracle.bmc.responses.BmcResponse 
     })
     private CreateDatasetResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String location,
             String contentLocation,
             String opcWorkRequestId,
             String opcRequestId,
             com.oracle.bmc.datalabelingservice.model.Dataset dataset) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.location = location;
         this.contentLocation = contentLocation;
@@ -129,6 +131,13 @@ public class CreateDatasetResponse extends com.oracle.bmc.responses.BmcResponse 
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -240,6 +249,7 @@ public class CreateDatasetResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public Builder copy(CreateDatasetResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             location(o.getLocation());
             contentLocation(o.getContentLocation());
@@ -257,6 +267,7 @@ public class CreateDatasetResponse extends com.oracle.bmc.responses.BmcResponse 
         public CreateDatasetResponse build() {
             return new CreateDatasetResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     location,
                     contentLocation,

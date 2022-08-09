@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = UpdateTablespaceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateTablespaceDetails {
+public final class UpdateTablespaceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -235,38 +236,57 @@ public final class UpdateTablespaceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateTablespaceDetails build() {
-            UpdateTablespaceDetails __instance__ =
+            UpdateTablespaceDetails model =
                     new UpdateTablespaceDetails(
-                            credentialDetails,
-                            name,
-                            type,
-                            fileSize,
-                            status,
-                            isAutoExtensible,
-                            autoExtendNextSize,
-                            autoExtendMaxSize,
-                            isMaxSizeUnlimited,
-                            isDefault);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.credentialDetails,
+                            this.name,
+                            this.type,
+                            this.fileSize,
+                            this.status,
+                            this.isAutoExtensible,
+                            this.autoExtendNextSize,
+                            this.autoExtendMaxSize,
+                            this.isMaxSizeUnlimited,
+                            this.isDefault);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateTablespaceDetails o) {
-            Builder copiedBuilder =
-                    credentialDetails(o.getCredentialDetails())
-                            .name(o.getName())
-                            .type(o.getType())
-                            .fileSize(o.getFileSize())
-                            .status(o.getStatus())
-                            .isAutoExtensible(o.getIsAutoExtensible())
-                            .autoExtendNextSize(o.getAutoExtendNextSize())
-                            .autoExtendMaxSize(o.getAutoExtendMaxSize())
-                            .isMaxSizeUnlimited(o.getIsMaxSizeUnlimited())
-                            .isDefault(o.getIsDefault());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateTablespaceDetails model) {
+            if (model.wasPropertyExplicitlySet("credentialDetails")) {
+                this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("fileSize")) {
+                this.fileSize(model.getFileSize());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoExtensible")) {
+                this.isAutoExtensible(model.getIsAutoExtensible());
+            }
+            if (model.wasPropertyExplicitlySet("autoExtendNextSize")) {
+                this.autoExtendNextSize(model.getAutoExtendNextSize());
+            }
+            if (model.wasPropertyExplicitlySet("autoExtendMaxSize")) {
+                this.autoExtendMaxSize(model.getAutoExtendMaxSize());
+            }
+            if (model.wasPropertyExplicitlySet("isMaxSizeUnlimited")) {
+                this.isMaxSizeUnlimited(model.getIsMaxSizeUnlimited());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            return this;
         }
     }
 
@@ -517,6 +537,7 @@ public final class UpdateTablespaceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateTablespaceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -527,7 +548,6 @@ public final class UpdateTablespaceDetails {
         sb.append(", autoExtendMaxSize=").append(String.valueOf(this.autoExtendMaxSize));
         sb.append(", isMaxSizeUnlimited=").append(String.valueOf(this.isMaxSizeUnlimited));
         sb.append(", isDefault=").append(String.valueOf(this.isDefault));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -552,7 +572,7 @@ public final class UpdateTablespaceDetails {
                 && java.util.Objects.equals(this.autoExtendMaxSize, other.autoExtendMaxSize)
                 && java.util.Objects.equals(this.isMaxSizeUnlimited, other.isMaxSizeUnlimited)
                 && java.util.Objects.equals(this.isDefault, other.isDefault)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -583,16 +603,7 @@ public final class UpdateTablespaceDetails {
                                 ? 43
                                 : this.isMaxSizeUnlimited.hashCode());
         result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

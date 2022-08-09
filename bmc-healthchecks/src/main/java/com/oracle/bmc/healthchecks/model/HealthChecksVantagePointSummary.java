@@ -19,7 +19,8 @@ package com.oracle.bmc.healthchecks.model;
     builder = HealthChecksVantagePointSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HealthChecksVantagePointSummary {
+public final class HealthChecksVantagePointSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "providerName", "name", "geo", "routing"})
     public HealthChecksVantagePointSummary(
@@ -146,24 +147,33 @@ public final class HealthChecksVantagePointSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HealthChecksVantagePointSummary build() {
-            HealthChecksVantagePointSummary __instance__ =
+            HealthChecksVantagePointSummary model =
                     new HealthChecksVantagePointSummary(
-                            displayName, providerName, name, geo, routing);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName, this.providerName, this.name, this.geo, this.routing);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HealthChecksVantagePointSummary o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .providerName(o.getProviderName())
-                            .name(o.getName())
-                            .geo(o.getGeo())
-                            .routing(o.getRouting());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HealthChecksVantagePointSummary model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("providerName")) {
+                this.providerName(model.getProviderName());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("geo")) {
+                this.geo(model.getGeo());
+            }
+            if (model.wasPropertyExplicitlySet("routing")) {
+                this.routing(model.getRouting());
+            }
+            return this;
         }
     }
 
@@ -284,12 +294,12 @@ public final class HealthChecksVantagePointSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HealthChecksVantagePointSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", providerName=").append(String.valueOf(this.providerName));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", geo=").append(String.valueOf(this.geo));
         sb.append(", routing=").append(String.valueOf(this.routing));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -309,7 +319,7 @@ public final class HealthChecksVantagePointSummary {
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.geo, other.geo)
                 && java.util.Objects.equals(this.routing, other.routing)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -321,16 +331,7 @@ public final class HealthChecksVantagePointSummary {
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.geo == null ? 43 : this.geo.hashCode());
         result = (result * PRIME) + (this.routing == null ? 43 : this.routing.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

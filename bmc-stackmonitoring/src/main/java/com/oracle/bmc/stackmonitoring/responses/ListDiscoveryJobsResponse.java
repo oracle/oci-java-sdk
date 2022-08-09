@@ -59,16 +59,18 @@ public class ListDiscoveryJobsResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "discoveryJobCollection"
     })
     private ListDiscoveryJobsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.stackmonitoring.model.DiscoveryJobCollection discoveryJobCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.discoveryJobCollection = discoveryJobCollection;
@@ -79,6 +81,13 @@ public class ListDiscoveryJobsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -145,6 +154,7 @@ public class ListDiscoveryJobsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(ListDiscoveryJobsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             discoveryJobCollection(o.getDiscoveryJobCollection());
@@ -158,7 +168,7 @@ public class ListDiscoveryJobsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public ListDiscoveryJobsResponse build() {
             return new ListDiscoveryJobsResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, discoveryJobCollection);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, discoveryJobCollection);
         }
     }
 

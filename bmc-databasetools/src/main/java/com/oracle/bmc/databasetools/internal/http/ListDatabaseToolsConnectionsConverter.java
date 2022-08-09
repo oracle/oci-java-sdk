@@ -172,8 +172,8 @@ public class ListDatabaseToolsConnectionsConverter {
                                                 com.oracle.bmc.databasetools.responses
                                                         .ListDatabaseToolsConnectionsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseToolsConnectionCollection(response.getItem());
 

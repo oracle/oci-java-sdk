@@ -91,21 +91,27 @@ public final class StickyCookieLoadBalancingMethod extends LoadBalancingMethod {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StickyCookieLoadBalancingMethod build() {
-            StickyCookieLoadBalancingMethod __instance__ =
-                    new StickyCookieLoadBalancingMethod(name, domain, expirationTimeInSeconds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StickyCookieLoadBalancingMethod model =
+                    new StickyCookieLoadBalancingMethod(
+                            this.name, this.domain, this.expirationTimeInSeconds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StickyCookieLoadBalancingMethod o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .domain(o.getDomain())
-                            .expirationTimeInSeconds(o.getExpirationTimeInSeconds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StickyCookieLoadBalancingMethod model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("domain")) {
+                this.domain(model.getDomain());
+            }
+            if (model.wasPropertyExplicitlySet("expirationTimeInSeconds")) {
+                this.expirationTimeInSeconds(model.getExpirationTimeInSeconds());
+            }
+            return this;
         }
     }
 
@@ -199,7 +205,6 @@ public final class StickyCookieLoadBalancingMethod extends LoadBalancingMethod {
         sb.append(", domain=").append(String.valueOf(this.domain));
         sb.append(", expirationTimeInSeconds=")
                 .append(String.valueOf(this.expirationTimeInSeconds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -218,8 +223,7 @@ public final class StickyCookieLoadBalancingMethod extends LoadBalancingMethod {
                 && java.util.Objects.equals(this.domain, other.domain)
                 && java.util.Objects.equals(
                         this.expirationTimeInSeconds, other.expirationTimeInSeconds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -233,16 +237,6 @@ public final class StickyCookieLoadBalancingMethod extends LoadBalancingMethod {
                         + (this.expirationTimeInSeconds == null
                                 ? 43
                                 : this.expirationTimeInSeconds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

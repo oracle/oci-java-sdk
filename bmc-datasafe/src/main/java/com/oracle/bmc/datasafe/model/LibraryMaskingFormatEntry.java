@@ -61,20 +61,23 @@ public final class LibraryMaskingFormatEntry extends FormatEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LibraryMaskingFormatEntry build() {
-            LibraryMaskingFormatEntry __instance__ =
-                    new LibraryMaskingFormatEntry(description, libraryMaskingFormatId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LibraryMaskingFormatEntry model =
+                    new LibraryMaskingFormatEntry(this.description, this.libraryMaskingFormatId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LibraryMaskingFormatEntry o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .libraryMaskingFormatId(o.getLibraryMaskingFormatId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LibraryMaskingFormatEntry model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("libraryMaskingFormatId")) {
+                this.libraryMaskingFormatId(model.getLibraryMaskingFormatId());
+            }
+            return this;
         }
     }
 
@@ -124,7 +127,6 @@ public final class LibraryMaskingFormatEntry extends FormatEntry {
         sb.append("LibraryMaskingFormatEntry(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", libraryMaskingFormatId=").append(String.valueOf(this.libraryMaskingFormatId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -140,8 +142,7 @@ public final class LibraryMaskingFormatEntry extends FormatEntry {
 
         LibraryMaskingFormatEntry other = (LibraryMaskingFormatEntry) o;
         return java.util.Objects.equals(this.libraryMaskingFormatId, other.libraryMaskingFormatId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -153,16 +154,6 @@ public final class LibraryMaskingFormatEntry extends FormatEntry {
                         + (this.libraryMaskingFormatId == null
                                 ? 43
                                 : this.libraryMaskingFormatId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

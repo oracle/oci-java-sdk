@@ -164,8 +164,8 @@ public class ListConsoleHistoriesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListConsoleHistoriesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

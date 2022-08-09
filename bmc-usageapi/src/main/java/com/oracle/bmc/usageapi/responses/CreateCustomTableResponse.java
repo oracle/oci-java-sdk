@@ -51,13 +51,20 @@ public class CreateCustomTableResponse extends com.oracle.bmc.responses.BmcRespo
         return customTable;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "customTable"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "customTable"
+    })
     private CreateCustomTableResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.usageapi.model.CustomTable customTable) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.customTable = customTable;
@@ -68,6 +75,13 @@ public class CreateCustomTableResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class CreateCustomTableResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(CreateCustomTableResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             customTable(o.getCustomTable());
@@ -139,7 +154,7 @@ public class CreateCustomTableResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public CreateCustomTableResponse build() {
             return new CreateCustomTableResponse(
-                    __httpStatusCode__, opcRequestId, etag, customTable);
+                    __httpStatusCode__, headers, opcRequestId, etag, customTable);
         }
     }
 

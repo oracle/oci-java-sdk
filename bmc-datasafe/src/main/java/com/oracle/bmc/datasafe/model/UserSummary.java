@@ -20,7 +20,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UserSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UserSummary {
+public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -277,42 +277,65 @@ public final class UserSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UserSummary build() {
-            UserSummary __instance__ =
+            UserSummary model =
                     new UserSummary(
-                            key,
-                            userName,
-                            userCategory,
-                            accountStatus,
-                            targetId,
-                            timeLastLogin,
-                            timeUserCreated,
-                            authenticationType,
-                            userProfile,
-                            timePasswordChanged,
-                            userTypes,
-                            adminRoles);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.userName,
+                            this.userCategory,
+                            this.accountStatus,
+                            this.targetId,
+                            this.timeLastLogin,
+                            this.timeUserCreated,
+                            this.authenticationType,
+                            this.userProfile,
+                            this.timePasswordChanged,
+                            this.userTypes,
+                            this.adminRoles);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UserSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .userName(o.getUserName())
-                            .userCategory(o.getUserCategory())
-                            .accountStatus(o.getAccountStatus())
-                            .targetId(o.getTargetId())
-                            .timeLastLogin(o.getTimeLastLogin())
-                            .timeUserCreated(o.getTimeUserCreated())
-                            .authenticationType(o.getAuthenticationType())
-                            .userProfile(o.getUserProfile())
-                            .timePasswordChanged(o.getTimePasswordChanged())
-                            .userTypes(o.getUserTypes())
-                            .adminRoles(o.getAdminRoles());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UserSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("userCategory")) {
+                this.userCategory(model.getUserCategory());
+            }
+            if (model.wasPropertyExplicitlySet("accountStatus")) {
+                this.accountStatus(model.getAccountStatus());
+            }
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastLogin")) {
+                this.timeLastLogin(model.getTimeLastLogin());
+            }
+            if (model.wasPropertyExplicitlySet("timeUserCreated")) {
+                this.timeUserCreated(model.getTimeUserCreated());
+            }
+            if (model.wasPropertyExplicitlySet("authenticationType")) {
+                this.authenticationType(model.getAuthenticationType());
+            }
+            if (model.wasPropertyExplicitlySet("userProfile")) {
+                this.userProfile(model.getUserProfile());
+            }
+            if (model.wasPropertyExplicitlySet("timePasswordChanged")) {
+                this.timePasswordChanged(model.getTimePasswordChanged());
+            }
+            if (model.wasPropertyExplicitlySet("userTypes")) {
+                this.userTypes(model.getUserTypes());
+            }
+            if (model.wasPropertyExplicitlySet("adminRoles")) {
+                this.adminRoles(model.getAdminRoles());
+            }
+            return this;
         }
     }
 
@@ -770,6 +793,7 @@ public final class UserSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UserSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", userCategory=").append(String.valueOf(this.userCategory));
@@ -782,7 +806,6 @@ public final class UserSummary {
         sb.append(", timePasswordChanged=").append(String.valueOf(this.timePasswordChanged));
         sb.append(", userTypes=").append(String.valueOf(this.userTypes));
         sb.append(", adminRoles=").append(String.valueOf(this.adminRoles));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -809,7 +832,7 @@ public final class UserSummary {
                 && java.util.Objects.equals(this.timePasswordChanged, other.timePasswordChanged)
                 && java.util.Objects.equals(this.userTypes, other.userTypes)
                 && java.util.Objects.equals(this.adminRoles, other.adminRoles)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -842,16 +865,7 @@ public final class UserSummary {
                                 : this.timePasswordChanged.hashCode());
         result = (result * PRIME) + (this.userTypes == null ? 43 : this.userTypes.hashCode());
         result = (result * PRIME) + (this.adminRoles == null ? 43 : this.adminRoles.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = CompareContentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CompareContentDetails {
+public final class CompareContentDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"content1", "content2"})
     public CompareContentDetails(String content1, String content2) {
@@ -67,17 +68,22 @@ public final class CompareContentDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CompareContentDetails build() {
-            CompareContentDetails __instance__ = new CompareContentDetails(content1, content2);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CompareContentDetails model = new CompareContentDetails(this.content1, this.content2);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CompareContentDetails o) {
-            Builder copiedBuilder = content1(o.getContent1()).content2(o.getContent2());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CompareContentDetails model) {
+            if (model.wasPropertyExplicitlySet("content1")) {
+                this.content1(model.getContent1());
+            }
+            if (model.wasPropertyExplicitlySet("content2")) {
+                this.content2(model.getContent2());
+            }
+            return this;
         }
     }
 
@@ -133,9 +139,9 @@ public final class CompareContentDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CompareContentDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("content1=").append(String.valueOf(this.content1));
         sb.append(", content2=").append(String.valueOf(this.content2));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +158,7 @@ public final class CompareContentDetails {
         CompareContentDetails other = (CompareContentDetails) o;
         return java.util.Objects.equals(this.content1, other.content1)
                 && java.util.Objects.equals(this.content2, other.content2)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +167,7 @@ public final class CompareContentDetails {
         int result = 1;
         result = (result * PRIME) + (this.content1 == null ? 43 : this.content1.hashCode());
         result = (result * PRIME) + (this.content2 == null ? 43 : this.content2.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

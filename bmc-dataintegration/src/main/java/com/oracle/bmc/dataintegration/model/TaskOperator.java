@@ -275,60 +275,101 @@ public final class TaskOperator extends Operator {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TaskOperator build() {
-            TaskOperator __instance__ =
+            TaskOperator model =
                     new TaskOperator(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            inputPorts,
-                            outputPorts,
-                            objectStatus,
-                            identifier,
-                            parameters,
-                            opConfigValues,
-                            retryAttempts,
-                            retryDelayUnit,
-                            retryDelay,
-                            expectedDuration,
-                            expectedDurationUnit,
-                            taskType,
-                            task,
-                            triggerRule,
-                            configProviderDelegate);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.inputPorts,
+                            this.outputPorts,
+                            this.objectStatus,
+                            this.identifier,
+                            this.parameters,
+                            this.opConfigValues,
+                            this.retryAttempts,
+                            this.retryDelayUnit,
+                            this.retryDelay,
+                            this.expectedDuration,
+                            this.expectedDurationUnit,
+                            this.taskType,
+                            this.task,
+                            this.triggerRule,
+                            this.configProviderDelegate);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TaskOperator o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .inputPorts(o.getInputPorts())
-                            .outputPorts(o.getOutputPorts())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .parameters(o.getParameters())
-                            .opConfigValues(o.getOpConfigValues())
-                            .retryAttempts(o.getRetryAttempts())
-                            .retryDelayUnit(o.getRetryDelayUnit())
-                            .retryDelay(o.getRetryDelay())
-                            .expectedDuration(o.getExpectedDuration())
-                            .expectedDurationUnit(o.getExpectedDurationUnit())
-                            .taskType(o.getTaskType())
-                            .task(o.getTask())
-                            .triggerRule(o.getTriggerRule())
-                            .configProviderDelegate(o.getConfigProviderDelegate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TaskOperator model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("inputPorts")) {
+                this.inputPorts(model.getInputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("outputPorts")) {
+                this.outputPorts(model.getOutputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("opConfigValues")) {
+                this.opConfigValues(model.getOpConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("retryAttempts")) {
+                this.retryAttempts(model.getRetryAttempts());
+            }
+            if (model.wasPropertyExplicitlySet("retryDelayUnit")) {
+                this.retryDelayUnit(model.getRetryDelayUnit());
+            }
+            if (model.wasPropertyExplicitlySet("retryDelay")) {
+                this.retryDelay(model.getRetryDelay());
+            }
+            if (model.wasPropertyExplicitlySet("expectedDuration")) {
+                this.expectedDuration(model.getExpectedDuration());
+            }
+            if (model.wasPropertyExplicitlySet("expectedDurationUnit")) {
+                this.expectedDurationUnit(model.getExpectedDurationUnit());
+            }
+            if (model.wasPropertyExplicitlySet("taskType")) {
+                this.taskType(model.getTaskType());
+            }
+            if (model.wasPropertyExplicitlySet("task")) {
+                this.task(model.getTask());
+            }
+            if (model.wasPropertyExplicitlySet("triggerRule")) {
+                this.triggerRule(model.getTriggerRule());
+            }
+            if (model.wasPropertyExplicitlySet("configProviderDelegate")) {
+                this.configProviderDelegate(model.getConfigProviderDelegate());
+            }
+            return this;
         }
     }
 
@@ -738,7 +779,6 @@ public final class TaskOperator extends Operator {
         sb.append(", task=").append(String.valueOf(this.task));
         sb.append(", triggerRule=").append(String.valueOf(this.triggerRule));
         sb.append(", configProviderDelegate=").append(String.valueOf(this.configProviderDelegate));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -763,8 +803,7 @@ public final class TaskOperator extends Operator {
                 && java.util.Objects.equals(this.triggerRule, other.triggerRule)
                 && java.util.Objects.equals(
                         this.configProviderDelegate, other.configProviderDelegate)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -794,16 +833,6 @@ public final class TaskOperator extends Operator {
                         + (this.configProviderDelegate == null
                                 ? 43
                                 : this.configProviderDelegate.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,7 @@ package com.oracle.bmc.dts.model;
     builder = NewTransferDevice.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class NewTransferDevice {
+public final class NewTransferDevice extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "label",
@@ -118,32 +118,45 @@ public final class NewTransferDevice {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NewTransferDevice build() {
-            NewTransferDevice __instance__ =
+            NewTransferDevice model =
                     new NewTransferDevice(
-                            label,
-                            serialNumber,
-                            iscsiIQN,
-                            lifecycleState,
-                            encryptionPassphrase,
-                            transferJobId,
-                            creationTime);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.label,
+                            this.serialNumber,
+                            this.iscsiIQN,
+                            this.lifecycleState,
+                            this.encryptionPassphrase,
+                            this.transferJobId,
+                            this.creationTime);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NewTransferDevice o) {
-            Builder copiedBuilder =
-                    label(o.getLabel())
-                            .serialNumber(o.getSerialNumber())
-                            .iscsiIQN(o.getIscsiIQN())
-                            .lifecycleState(o.getLifecycleState())
-                            .encryptionPassphrase(o.getEncryptionPassphrase())
-                            .transferJobId(o.getTransferJobId())
-                            .creationTime(o.getCreationTime());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NewTransferDevice model) {
+            if (model.wasPropertyExplicitlySet("label")) {
+                this.label(model.getLabel());
+            }
+            if (model.wasPropertyExplicitlySet("serialNumber")) {
+                this.serialNumber(model.getSerialNumber());
+            }
+            if (model.wasPropertyExplicitlySet("iscsiIQN")) {
+                this.iscsiIQN(model.getIscsiIQN());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionPassphrase")) {
+                this.encryptionPassphrase(model.getEncryptionPassphrase());
+            }
+            if (model.wasPropertyExplicitlySet("transferJobId")) {
+                this.transferJobId(model.getTransferJobId());
+            }
+            if (model.wasPropertyExplicitlySet("creationTime")) {
+                this.creationTime(model.getCreationTime());
+            }
+            return this;
         }
     }
 
@@ -267,6 +280,7 @@ public final class NewTransferDevice {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NewTransferDevice(");
+        sb.append("super=").append(super.toString());
         sb.append("label=").append(String.valueOf(this.label));
         sb.append(", serialNumber=").append(String.valueOf(this.serialNumber));
         sb.append(", iscsiIQN=").append(String.valueOf(this.iscsiIQN));
@@ -274,7 +288,6 @@ public final class NewTransferDevice {
         sb.append(", encryptionPassphrase=").append(String.valueOf(this.encryptionPassphrase));
         sb.append(", transferJobId=").append(String.valueOf(this.transferJobId));
         sb.append(", creationTime=").append(String.valueOf(this.creationTime));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -296,7 +309,7 @@ public final class NewTransferDevice {
                 && java.util.Objects.equals(this.encryptionPassphrase, other.encryptionPassphrase)
                 && java.util.Objects.equals(this.transferJobId, other.transferJobId)
                 && java.util.Objects.equals(this.creationTime, other.creationTime)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -318,16 +331,7 @@ public final class NewTransferDevice {
                 (result * PRIME)
                         + (this.transferJobId == null ? 43 : this.transferJobId.hashCode());
         result = (result * PRIME) + (this.creationTime == null ? 43 : this.creationTime.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

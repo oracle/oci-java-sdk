@@ -233,54 +233,89 @@ public final class SensitiveTypePattern extends SensitiveType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SensitiveTypePattern build() {
-            SensitiveTypePattern __instance__ =
+            SensitiveTypePattern model =
                     new SensitiveTypePattern(
-                            id,
-                            displayName,
-                            compartmentId,
-                            lifecycleState,
-                            shortName,
-                            source,
-                            timeCreated,
-                            timeUpdated,
-                            description,
-                            parentCategoryId,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            namePattern,
-                            commentPattern,
-                            dataPattern,
-                            searchType,
-                            defaultMaskingFormatId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.compartmentId,
+                            this.lifecycleState,
+                            this.shortName,
+                            this.source,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.description,
+                            this.parentCategoryId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.namePattern,
+                            this.commentPattern,
+                            this.dataPattern,
+                            this.searchType,
+                            this.defaultMaskingFormatId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SensitiveTypePattern o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .lifecycleState(o.getLifecycleState())
-                            .shortName(o.getShortName())
-                            .source(o.getSource())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .description(o.getDescription())
-                            .parentCategoryId(o.getParentCategoryId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .namePattern(o.getNamePattern())
-                            .commentPattern(o.getCommentPattern())
-                            .dataPattern(o.getDataPattern())
-                            .searchType(o.getSearchType())
-                            .defaultMaskingFormatId(o.getDefaultMaskingFormatId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SensitiveTypePattern model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("shortName")) {
+                this.shortName(model.getShortName());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("parentCategoryId")) {
+                this.parentCategoryId(model.getParentCategoryId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("namePattern")) {
+                this.namePattern(model.getNamePattern());
+            }
+            if (model.wasPropertyExplicitlySet("commentPattern")) {
+                this.commentPattern(model.getCommentPattern());
+            }
+            if (model.wasPropertyExplicitlySet("dataPattern")) {
+                this.dataPattern(model.getDataPattern());
+            }
+            if (model.wasPropertyExplicitlySet("searchType")) {
+                this.searchType(model.getSearchType());
+            }
+            if (model.wasPropertyExplicitlySet("defaultMaskingFormatId")) {
+                this.defaultMaskingFormatId(model.getDefaultMaskingFormatId());
+            }
+            return this;
         }
     }
 
@@ -479,7 +514,6 @@ public final class SensitiveTypePattern extends SensitiveType {
         sb.append(", dataPattern=").append(String.valueOf(this.dataPattern));
         sb.append(", searchType=").append(String.valueOf(this.searchType));
         sb.append(", defaultMaskingFormatId=").append(String.valueOf(this.defaultMaskingFormatId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -500,8 +534,7 @@ public final class SensitiveTypePattern extends SensitiveType {
                 && java.util.Objects.equals(this.searchType, other.searchType)
                 && java.util.Objects.equals(
                         this.defaultMaskingFormatId, other.defaultMaskingFormatId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -519,16 +552,6 @@ public final class SensitiveTypePattern extends SensitiveType {
                         + (this.defaultMaskingFormatId == null
                                 ? 43
                                 : this.defaultMaskingFormatId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

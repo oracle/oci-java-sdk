@@ -24,7 +24,8 @@ package com.oracle.bmc.dns.model;
     builder = UpdateSteeringPolicyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateSteeringPolicyDetails {
+public final class UpdateSteeringPolicyDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -336,34 +337,49 @@ public final class UpdateSteeringPolicyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSteeringPolicyDetails build() {
-            UpdateSteeringPolicyDetails __instance__ =
+            UpdateSteeringPolicyDetails model =
                     new UpdateSteeringPolicyDetails(
-                            displayName,
-                            ttl,
-                            healthCheckMonitorId,
-                            template,
-                            freeformTags,
-                            definedTags,
-                            answers,
-                            rules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.ttl,
+                            this.healthCheckMonitorId,
+                            this.template,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.answers,
+                            this.rules);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateSteeringPolicyDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .ttl(o.getTtl())
-                            .healthCheckMonitorId(o.getHealthCheckMonitorId())
-                            .template(o.getTemplate())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .answers(o.getAnswers())
-                            .rules(o.getRules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateSteeringPolicyDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("ttl")) {
+                this.ttl(model.getTtl());
+            }
+            if (model.wasPropertyExplicitlySet("healthCheckMonitorId")) {
+                this.healthCheckMonitorId(model.getHealthCheckMonitorId());
+            }
+            if (model.wasPropertyExplicitlySet("template")) {
+                this.template(model.getTemplate());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("answers")) {
+                this.answers(model.getAnswers());
+            }
+            if (model.wasPropertyExplicitlySet("rules")) {
+                this.rules(model.getRules());
+            }
+            return this;
         }
     }
 
@@ -727,6 +743,7 @@ public final class UpdateSteeringPolicyDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateSteeringPolicyDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", ttl=").append(String.valueOf(this.ttl));
         sb.append(", healthCheckMonitorId=").append(String.valueOf(this.healthCheckMonitorId));
@@ -735,7 +752,6 @@ public final class UpdateSteeringPolicyDetails {
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", answers=").append(String.valueOf(this.answers));
         sb.append(", rules=").append(String.valueOf(this.rules));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -758,7 +774,7 @@ public final class UpdateSteeringPolicyDetails {
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.answers, other.answers)
                 && java.util.Objects.equals(this.rules, other.rules)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -777,16 +793,7 @@ public final class UpdateSteeringPolicyDetails {
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.answers == null ? 43 : this.answers.hashCode());
         result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

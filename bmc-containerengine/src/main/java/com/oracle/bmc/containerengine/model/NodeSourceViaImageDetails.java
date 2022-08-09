@@ -64,19 +64,23 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NodeSourceViaImageDetails build() {
-            NodeSourceViaImageDetails __instance__ =
-                    new NodeSourceViaImageDetails(imageId, bootVolumeSizeInGBs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NodeSourceViaImageDetails model =
+                    new NodeSourceViaImageDetails(this.imageId, this.bootVolumeSizeInGBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NodeSourceViaImageDetails o) {
-            Builder copiedBuilder =
-                    imageId(o.getImageId()).bootVolumeSizeInGBs(o.getBootVolumeSizeInGBs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NodeSourceViaImageDetails model) {
+            if (model.wasPropertyExplicitlySet("imageId")) {
+                this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("bootVolumeSizeInGBs")) {
+                this.bootVolumeSizeInGBs(model.getBootVolumeSizeInGBs());
+            }
+            return this;
         }
     }
 
@@ -142,7 +146,6 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
         sb.append(", bootVolumeSizeInGBs=").append(String.valueOf(this.bootVolumeSizeInGBs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,8 +162,7 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
         NodeSourceViaImageDetails other = (NodeSourceViaImageDetails) o;
         return java.util.Objects.equals(this.imageId, other.imageId)
                 && java.util.Objects.equals(this.bootVolumeSizeInGBs, other.bootVolumeSizeInGBs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -173,16 +175,6 @@ public final class NodeSourceViaImageDetails extends NodeSourceDetails {
                         + (this.bootVolumeSizeInGBs == null
                                 ? 43
                                 : this.bootVolumeSizeInGBs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

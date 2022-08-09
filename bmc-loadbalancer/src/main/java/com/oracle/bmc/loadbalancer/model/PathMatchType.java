@@ -17,7 +17,7 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PathMatchType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PathMatchType {
+public final class PathMatchType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"matchType"})
     public PathMatchType(MatchType matchType) {
@@ -76,17 +76,19 @@ public final class PathMatchType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PathMatchType build() {
-            PathMatchType __instance__ = new PathMatchType(matchType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PathMatchType model = new PathMatchType(this.matchType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PathMatchType o) {
-            Builder copiedBuilder = matchType(o.getMatchType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PathMatchType model) {
+            if (model.wasPropertyExplicitlySet("matchType")) {
+                this.matchType(model.getMatchType());
+            }
+            return this;
         }
     }
 
@@ -220,8 +222,8 @@ public final class PathMatchType {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PathMatchType(");
+        sb.append("super=").append(super.toString());
         sb.append("matchType=").append(String.valueOf(this.matchType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -236,8 +238,7 @@ public final class PathMatchType {
         }
 
         PathMatchType other = (PathMatchType) o;
-        return java.util.Objects.equals(this.matchType, other.matchType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.matchType, other.matchType) && super.equals(other);
     }
 
     @Override
@@ -245,16 +246,7 @@ public final class PathMatchType {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.matchType == null ? 43 : this.matchType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

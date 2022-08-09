@@ -49,16 +49,18 @@ public class CreateCustomProtectionRuleResponse extends com.oracle.bmc.responses
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "customProtectionRule"
     })
     private CreateCustomProtectionRuleResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.waas.model.CustomProtectionRule customProtectionRule) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.customProtectionRule = customProtectionRule;
@@ -69,6 +71,13 @@ public class CreateCustomProtectionRuleResponse extends com.oracle.bmc.responses
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -124,6 +133,7 @@ public class CreateCustomProtectionRuleResponse extends com.oracle.bmc.responses
          */
         public Builder copy(CreateCustomProtectionRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             customProtectionRule(o.getCustomProtectionRule());
@@ -137,7 +147,7 @@ public class CreateCustomProtectionRuleResponse extends com.oracle.bmc.responses
          */
         public CreateCustomProtectionRuleResponse build() {
             return new CreateCustomProtectionRuleResponse(
-                    __httpStatusCode__, opcRequestId, etag, customProtectionRule);
+                    __httpStatusCode__, headers, opcRequestId, etag, customProtectionRule);
         }
     }
 

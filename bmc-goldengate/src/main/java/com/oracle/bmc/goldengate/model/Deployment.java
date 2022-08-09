@@ -18,7 +18,7 @@ package com.oracle.bmc.goldengate.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Deployment.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Deployment {
+public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -662,79 +662,138 @@ public final class Deployment {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Deployment build() {
-            Deployment __instance__ =
+            Deployment model =
                     new Deployment(
-                            id,
-                            displayName,
-                            description,
-                            compartmentId,
-                            deploymentBackupId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleSubState,
-                            lifecycleDetails,
-                            freeformTags,
-                            definedTags,
-                            isHealthy,
-                            subnetId,
-                            fqdn,
-                            licenseModel,
-                            cpuCoreCount,
-                            isAutoScalingEnabled,
-                            nsgIds,
-                            isPublic,
-                            publicIpAddress,
-                            privateIpAddress,
-                            deploymentUrl,
-                            systemTags,
-                            isLatestVersion,
-                            timeUpgradeRequired,
-                            storageUtilizationInBytes,
-                            isStorageUtilizationLimitExceeded,
-                            deploymentType,
-                            oggData);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.description,
+                            this.compartmentId,
+                            this.deploymentBackupId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleSubState,
+                            this.lifecycleDetails,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.isHealthy,
+                            this.subnetId,
+                            this.fqdn,
+                            this.licenseModel,
+                            this.cpuCoreCount,
+                            this.isAutoScalingEnabled,
+                            this.nsgIds,
+                            this.isPublic,
+                            this.publicIpAddress,
+                            this.privateIpAddress,
+                            this.deploymentUrl,
+                            this.systemTags,
+                            this.isLatestVersion,
+                            this.timeUpgradeRequired,
+                            this.storageUtilizationInBytes,
+                            this.isStorageUtilizationLimitExceeded,
+                            this.deploymentType,
+                            this.oggData);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Deployment o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .compartmentId(o.getCompartmentId())
-                            .deploymentBackupId(o.getDeploymentBackupId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleSubState(o.getLifecycleSubState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .isHealthy(o.getIsHealthy())
-                            .subnetId(o.getSubnetId())
-                            .fqdn(o.getFqdn())
-                            .licenseModel(o.getLicenseModel())
-                            .cpuCoreCount(o.getCpuCoreCount())
-                            .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
-                            .nsgIds(o.getNsgIds())
-                            .isPublic(o.getIsPublic())
-                            .publicIpAddress(o.getPublicIpAddress())
-                            .privateIpAddress(o.getPrivateIpAddress())
-                            .deploymentUrl(o.getDeploymentUrl())
-                            .systemTags(o.getSystemTags())
-                            .isLatestVersion(o.getIsLatestVersion())
-                            .timeUpgradeRequired(o.getTimeUpgradeRequired())
-                            .storageUtilizationInBytes(o.getStorageUtilizationInBytes())
-                            .isStorageUtilizationLimitExceeded(
-                                    o.getIsStorageUtilizationLimitExceeded())
-                            .deploymentType(o.getDeploymentType())
-                            .oggData(o.getOggData());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Deployment model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentBackupId")) {
+                this.deploymentBackupId(model.getDeploymentBackupId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleSubState")) {
+                this.lifecycleSubState(model.getLifecycleSubState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("isHealthy")) {
+                this.isHealthy(model.getIsHealthy());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("fqdn")) {
+                this.fqdn(model.getFqdn());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
+                this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("isPublic")) {
+                this.isPublic(model.getIsPublic());
+            }
+            if (model.wasPropertyExplicitlySet("publicIpAddress")) {
+                this.publicIpAddress(model.getPublicIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("privateIpAddress")) {
+                this.privateIpAddress(model.getPrivateIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentUrl")) {
+                this.deploymentUrl(model.getDeploymentUrl());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("isLatestVersion")) {
+                this.isLatestVersion(model.getIsLatestVersion());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpgradeRequired")) {
+                this.timeUpgradeRequired(model.getTimeUpgradeRequired());
+            }
+            if (model.wasPropertyExplicitlySet("storageUtilizationInBytes")) {
+                this.storageUtilizationInBytes(model.getStorageUtilizationInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("isStorageUtilizationLimitExceeded")) {
+                this.isStorageUtilizationLimitExceeded(
+                        model.getIsStorageUtilizationLimitExceeded());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentType")) {
+                this.deploymentType(model.getDeploymentType());
+            }
+            if (model.wasPropertyExplicitlySet("oggData")) {
+                this.oggData(model.getOggData());
+            }
+            return this;
         }
     }
 
@@ -1239,6 +1298,7 @@ public final class Deployment {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Deployment(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -1271,7 +1331,6 @@ public final class Deployment {
                 .append(String.valueOf(this.isStorageUtilizationLimitExceeded));
         sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
         sb.append(", oggData=").append(String.valueOf(this.oggData));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1319,7 +1378,7 @@ public final class Deployment {
                         other.isStorageUtilizationLimitExceeded)
                 && java.util.Objects.equals(this.deploymentType, other.deploymentType)
                 && java.util.Objects.equals(this.oggData, other.oggData)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1394,16 +1453,7 @@ public final class Deployment {
                 (result * PRIME)
                         + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
         result = (result * PRIME) + (this.oggData == null ? 43 : this.oggData.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

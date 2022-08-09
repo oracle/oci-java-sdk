@@ -57,17 +57,19 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "monitoredResourceAssociation"
     })
     private AssociateMonitoredResourcesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.stackmonitoring.model.MonitoredResourceAssociation
                     monitoredResourceAssociation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.monitoredResourceAssociation = monitoredResourceAssociation;
@@ -78,6 +80,13 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -141,6 +150,7 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
          */
         public Builder copy(AssociateMonitoredResourcesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             monitoredResourceAssociation(o.getMonitoredResourceAssociation());
@@ -154,7 +164,7 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
          */
         public AssociateMonitoredResourcesResponse build() {
             return new AssociateMonitoredResourcesResponse(
-                    __httpStatusCode__, etag, opcRequestId, monitoredResourceAssociation);
+                    __httpStatusCode__, headers, etag, opcRequestId, monitoredResourceAssociation);
         }
     }
 

@@ -165,8 +165,8 @@ public class ListCategoriesConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListCategoriesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsCategoryCollection(response.getItem());
 

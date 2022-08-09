@@ -141,8 +141,8 @@ public class ListMetricsConverter {
                                         builder =
                                                 com.oracle.bmc.monitoring.responses
                                                         .ListMetricsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

@@ -143,8 +143,8 @@ public class ListResourceActionQueryableFieldsConverter {
                                                 com.oracle.bmc.optimizer.responses
                                                         .ListResourceActionQueryableFieldsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.queryableFieldCollection(response.getItem());
 

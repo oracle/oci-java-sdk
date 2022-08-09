@@ -208,8 +208,8 @@ public class ListFolderTagsConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListFolderTagsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.folderTagCollection(response.getItem());
 

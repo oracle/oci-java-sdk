@@ -19,7 +19,8 @@ package com.oracle.bmc.aivision.model;
     builder = CreateDocumentJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateDocumentJobDetails {
+public final class CreateDocumentJobDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "inputLocation",
@@ -172,34 +173,49 @@ public final class CreateDocumentJobDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDocumentJobDetails build() {
-            CreateDocumentJobDetails __instance__ =
+            CreateDocumentJobDetails model =
                     new CreateDocumentJobDetails(
-                            inputLocation,
-                            features,
-                            outputLocation,
-                            compartmentId,
-                            displayName,
-                            language,
-                            documentType,
-                            isZipOutputEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.inputLocation,
+                            this.features,
+                            this.outputLocation,
+                            this.compartmentId,
+                            this.displayName,
+                            this.language,
+                            this.documentType,
+                            this.isZipOutputEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDocumentJobDetails o) {
-            Builder copiedBuilder =
-                    inputLocation(o.getInputLocation())
-                            .features(o.getFeatures())
-                            .outputLocation(o.getOutputLocation())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .language(o.getLanguage())
-                            .documentType(o.getDocumentType())
-                            .isZipOutputEnabled(o.getIsZipOutputEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDocumentJobDetails model) {
+            if (model.wasPropertyExplicitlySet("inputLocation")) {
+                this.inputLocation(model.getInputLocation());
+            }
+            if (model.wasPropertyExplicitlySet("features")) {
+                this.features(model.getFeatures());
+            }
+            if (model.wasPropertyExplicitlySet("outputLocation")) {
+                this.outputLocation(model.getOutputLocation());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("language")) {
+                this.language(model.getLanguage());
+            }
+            if (model.wasPropertyExplicitlySet("documentType")) {
+                this.documentType(model.getDocumentType());
+            }
+            if (model.wasPropertyExplicitlySet("isZipOutputEnabled")) {
+                this.isZipOutputEnabled(model.getIsZipOutputEnabled());
+            }
+            return this;
         }
     }
 
@@ -325,6 +341,7 @@ public final class CreateDocumentJobDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDocumentJobDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("inputLocation=").append(String.valueOf(this.inputLocation));
         sb.append(", features=").append(String.valueOf(this.features));
         sb.append(", outputLocation=").append(String.valueOf(this.outputLocation));
@@ -333,7 +350,6 @@ public final class CreateDocumentJobDetails {
         sb.append(", language=").append(String.valueOf(this.language));
         sb.append(", documentType=").append(String.valueOf(this.documentType));
         sb.append(", isZipOutputEnabled=").append(String.valueOf(this.isZipOutputEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -356,7 +372,7 @@ public final class CreateDocumentJobDetails {
                 && java.util.Objects.equals(this.language, other.language)
                 && java.util.Objects.equals(this.documentType, other.documentType)
                 && java.util.Objects.equals(this.isZipOutputEnabled, other.isZipOutputEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -381,16 +397,7 @@ public final class CreateDocumentJobDetails {
                         + (this.isZipOutputEnabled == null
                                 ? 43
                                 : this.isZipOutputEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

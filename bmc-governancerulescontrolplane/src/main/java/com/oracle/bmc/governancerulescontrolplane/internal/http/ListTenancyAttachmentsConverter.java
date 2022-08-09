@@ -184,8 +184,8 @@ public class ListTenancyAttachmentsConverter {
                                         builder =
                                                 com.oracle.bmc.governancerulescontrolplane.responses
                                                         .ListTenancyAttachmentsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tenancyAttachmentCollection(response.getItem());
 

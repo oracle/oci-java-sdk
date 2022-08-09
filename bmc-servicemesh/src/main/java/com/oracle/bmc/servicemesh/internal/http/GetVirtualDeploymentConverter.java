@@ -110,8 +110,8 @@ public class GetVirtualDeploymentConverter {
                                         builder =
                                                 com.oracle.bmc.servicemesh.responses
                                                         .GetVirtualDeploymentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.virtualDeployment(response.getItem());
 

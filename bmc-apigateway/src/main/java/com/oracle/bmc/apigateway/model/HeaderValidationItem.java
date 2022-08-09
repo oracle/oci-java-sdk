@@ -19,7 +19,7 @@ package com.oracle.bmc.apigateway.model;
     builder = HeaderValidationItem.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HeaderValidationItem {
+public final class HeaderValidationItem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"required", "name"})
     public HeaderValidationItem(Boolean required, String name) {
@@ -67,17 +67,22 @@ public final class HeaderValidationItem {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HeaderValidationItem build() {
-            HeaderValidationItem __instance__ = new HeaderValidationItem(required, name);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HeaderValidationItem model = new HeaderValidationItem(this.required, this.name);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HeaderValidationItem o) {
-            Builder copiedBuilder = required(o.getRequired()).name(o.getName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HeaderValidationItem model) {
+            if (model.wasPropertyExplicitlySet("required")) {
+                this.required(model.getRequired());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            return this;
         }
     }
 
@@ -133,9 +138,9 @@ public final class HeaderValidationItem {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HeaderValidationItem(");
+        sb.append("super=").append(super.toString());
         sb.append("required=").append(String.valueOf(this.required));
         sb.append(", name=").append(String.valueOf(this.name));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +157,7 @@ public final class HeaderValidationItem {
         HeaderValidationItem other = (HeaderValidationItem) o;
         return java.util.Objects.equals(this.required, other.required)
                 && java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +166,7 @@ public final class HeaderValidationItem {
         int result = 1;
         result = (result * PRIME) + (this.required == null ? 43 : this.required.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

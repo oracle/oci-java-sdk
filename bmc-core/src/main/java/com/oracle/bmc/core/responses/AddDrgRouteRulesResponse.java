@@ -38,12 +38,13 @@ public class AddDrgRouteRulesResponse extends com.oracle.bmc.responses.BmcRespon
         return items;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "items"})
     private AddDrgRouteRulesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             java.util.List<com.oracle.bmc.core.model.DrgRouteRule> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.items = items;
     }
@@ -53,6 +54,13 @@ public class AddDrgRouteRulesResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +104,7 @@ public class AddDrgRouteRulesResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(AddDrgRouteRulesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
 
@@ -107,7 +116,7 @@ public class AddDrgRouteRulesResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public AddDrgRouteRulesResponse build() {
-            return new AddDrgRouteRulesResponse(__httpStatusCode__, opcRequestId, items);
+            return new AddDrgRouteRulesResponse(__httpStatusCode__, headers, opcRequestId, items);
         }
     }
 

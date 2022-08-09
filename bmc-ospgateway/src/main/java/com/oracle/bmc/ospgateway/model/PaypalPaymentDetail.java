@@ -90,24 +90,37 @@ public final class PaypalPaymentDetail extends PaymentDetail {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PaypalPaymentDetail build() {
-            PaypalPaymentDetail __instance__ =
+            PaypalPaymentDetail model =
                     new PaypalPaymentDetail(
-                            timePaidOn, paidBy, amountPaid, paypalId, paypalReference);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timePaidOn,
+                            this.paidBy,
+                            this.amountPaid,
+                            this.paypalId,
+                            this.paypalReference);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PaypalPaymentDetail o) {
-            Builder copiedBuilder =
-                    timePaidOn(o.getTimePaidOn())
-                            .paidBy(o.getPaidBy())
-                            .amountPaid(o.getAmountPaid())
-                            .paypalId(o.getPaypalId())
-                            .paypalReference(o.getPaypalReference());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PaypalPaymentDetail model) {
+            if (model.wasPropertyExplicitlySet("timePaidOn")) {
+                this.timePaidOn(model.getTimePaidOn());
+            }
+            if (model.wasPropertyExplicitlySet("paidBy")) {
+                this.paidBy(model.getPaidBy());
+            }
+            if (model.wasPropertyExplicitlySet("amountPaid")) {
+                this.amountPaid(model.getAmountPaid());
+            }
+            if (model.wasPropertyExplicitlySet("paypalId")) {
+                this.paypalId(model.getPaypalId());
+            }
+            if (model.wasPropertyExplicitlySet("paypalReference")) {
+                this.paypalReference(model.getPaypalReference());
+            }
+            return this;
         }
     }
 
@@ -178,7 +191,6 @@ public final class PaypalPaymentDetail extends PaymentDetail {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", paypalId=").append(String.valueOf(this.paypalId));
         sb.append(", paypalReference=").append(String.valueOf(this.paypalReference));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -195,8 +207,7 @@ public final class PaypalPaymentDetail extends PaymentDetail {
         PaypalPaymentDetail other = (PaypalPaymentDetail) o;
         return java.util.Objects.equals(this.paypalId, other.paypalId)
                 && java.util.Objects.equals(this.paypalReference, other.paypalReference)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -207,16 +218,6 @@ public final class PaypalPaymentDetail extends PaymentDetail {
         result =
                 (result * PRIME)
                         + (this.paypalReference == null ? 43 : this.paypalReference.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

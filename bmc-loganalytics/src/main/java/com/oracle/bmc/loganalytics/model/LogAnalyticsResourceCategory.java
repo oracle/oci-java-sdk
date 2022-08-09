@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsResourceCategory.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsResourceCategory {
+public final class LogAnalyticsResourceCategory
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceId", "resourceType", "categoryName", "isSystem"})
     public LogAnalyticsResourceCategory(
@@ -106,23 +107,30 @@ public final class LogAnalyticsResourceCategory {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsResourceCategory build() {
-            LogAnalyticsResourceCategory __instance__ =
+            LogAnalyticsResourceCategory model =
                     new LogAnalyticsResourceCategory(
-                            resourceId, resourceType, categoryName, isSystem);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.resourceId, this.resourceType, this.categoryName, this.isSystem);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsResourceCategory o) {
-            Builder copiedBuilder =
-                    resourceId(o.getResourceId())
-                            .resourceType(o.getResourceType())
-                            .categoryName(o.getCategoryName())
-                            .isSystem(o.getIsSystem());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsResourceCategory model) {
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("categoryName")) {
+                this.categoryName(model.getCategoryName());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            return this;
         }
     }
 
@@ -210,11 +218,11 @@ public final class LogAnalyticsResourceCategory {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsResourceCategory(");
+        sb.append("super=").append(super.toString());
         sb.append("resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", categoryName=").append(String.valueOf(this.categoryName));
         sb.append(", isSystem=").append(String.valueOf(this.isSystem));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -233,7 +241,7 @@ public final class LogAnalyticsResourceCategory {
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.categoryName, other.categoryName)
                 && java.util.Objects.equals(this.isSystem, other.isSystem)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -244,16 +252,7 @@ public final class LogAnalyticsResourceCategory {
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.categoryName == null ? 43 : this.categoryName.hashCode());
         result = (result * PRIME) + (this.isSystem == null ? 43 : this.isSystem.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -55,16 +55,18 @@ public class ListJobLogsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "jobLogCollection"
     })
     private ListJobLogsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.datacatalog.model.JobLogCollection jobLogCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.jobLogCollection = jobLogCollection;
@@ -75,6 +77,13 @@ public class ListJobLogsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class ListJobLogsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListJobLogsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             jobLogCollection(o.getJobLogCollection());
@@ -149,7 +159,7 @@ public class ListJobLogsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListJobLogsResponse build() {
             return new ListJobLogsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, jobLogCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, jobLogCollection);
         }
     }
 

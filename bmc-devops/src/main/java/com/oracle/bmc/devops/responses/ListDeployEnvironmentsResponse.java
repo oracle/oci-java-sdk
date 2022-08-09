@@ -50,16 +50,18 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "deployEnvironmentCollection"
     })
     private ListDeployEnvironmentsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.devops.model.DeployEnvironmentCollection deployEnvironmentCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.deployEnvironmentCollection = deployEnvironmentCollection;
@@ -70,6 +72,13 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +135,7 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(ListDeployEnvironmentsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             deployEnvironmentCollection(o.getDeployEnvironmentCollection());
@@ -139,7 +149,11 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
          */
         public ListDeployEnvironmentsResponse build() {
             return new ListDeployEnvironmentsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, deployEnvironmentCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    deployEnvironmentCollection);
         }
     }
 

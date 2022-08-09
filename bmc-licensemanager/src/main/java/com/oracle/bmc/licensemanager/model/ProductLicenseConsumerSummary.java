@@ -20,7 +20,8 @@ package com.oracle.bmc.licensemanager.model;
     builder = ProductLicenseConsumerSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProductLicenseConsumerSummary {
+public final class ProductLicenseConsumerSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceId",
@@ -263,42 +264,65 @@ public final class ProductLicenseConsumerSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProductLicenseConsumerSummary build() {
-            ProductLicenseConsumerSummary __instance__ =
+            ProductLicenseConsumerSummary model =
                     new ProductLicenseConsumerSummary(
-                            resourceId,
-                            resourceName,
-                            productName,
-                            resourceCompartmentId,
-                            resourceCompartmentName,
-                            resourceUnitType,
-                            resourceUnitCount,
-                            licenseUnitType,
-                            licenseUnitsConsumed,
-                            isBaseLicenseAvailable,
-                            areAllOptionsAvailable,
-                            missingProducts);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.resourceId,
+                            this.resourceName,
+                            this.productName,
+                            this.resourceCompartmentId,
+                            this.resourceCompartmentName,
+                            this.resourceUnitType,
+                            this.resourceUnitCount,
+                            this.licenseUnitType,
+                            this.licenseUnitsConsumed,
+                            this.isBaseLicenseAvailable,
+                            this.areAllOptionsAvailable,
+                            this.missingProducts);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProductLicenseConsumerSummary o) {
-            Builder copiedBuilder =
-                    resourceId(o.getResourceId())
-                            .resourceName(o.getResourceName())
-                            .productName(o.getProductName())
-                            .resourceCompartmentId(o.getResourceCompartmentId())
-                            .resourceCompartmentName(o.getResourceCompartmentName())
-                            .resourceUnitType(o.getResourceUnitType())
-                            .resourceUnitCount(o.getResourceUnitCount())
-                            .licenseUnitType(o.getLicenseUnitType())
-                            .licenseUnitsConsumed(o.getLicenseUnitsConsumed())
-                            .isBaseLicenseAvailable(o.getIsBaseLicenseAvailable())
-                            .areAllOptionsAvailable(o.getAreAllOptionsAvailable())
-                            .missingProducts(o.getMissingProducts());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProductLicenseConsumerSummary model) {
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("productName")) {
+                this.productName(model.getProductName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceCompartmentId")) {
+                this.resourceCompartmentId(model.getResourceCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceCompartmentName")) {
+                this.resourceCompartmentName(model.getResourceCompartmentName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceUnitType")) {
+                this.resourceUnitType(model.getResourceUnitType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceUnitCount")) {
+                this.resourceUnitCount(model.getResourceUnitCount());
+            }
+            if (model.wasPropertyExplicitlySet("licenseUnitType")) {
+                this.licenseUnitType(model.getLicenseUnitType());
+            }
+            if (model.wasPropertyExplicitlySet("licenseUnitsConsumed")) {
+                this.licenseUnitsConsumed(model.getLicenseUnitsConsumed());
+            }
+            if (model.wasPropertyExplicitlySet("isBaseLicenseAvailable")) {
+                this.isBaseLicenseAvailable(model.getIsBaseLicenseAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("areAllOptionsAvailable")) {
+                this.areAllOptionsAvailable(model.getAreAllOptionsAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("missingProducts")) {
+                this.missingProducts(model.getMissingProducts());
+            }
+            return this;
         }
     }
 
@@ -494,6 +518,7 @@ public final class ProductLicenseConsumerSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProductLicenseConsumerSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
         sb.append(", productName=").append(String.valueOf(this.productName));
@@ -507,7 +532,6 @@ public final class ProductLicenseConsumerSummary {
         sb.append(", isBaseLicenseAvailable=").append(String.valueOf(this.isBaseLicenseAvailable));
         sb.append(", areAllOptionsAvailable=").append(String.valueOf(this.areAllOptionsAvailable));
         sb.append(", missingProducts=").append(String.valueOf(this.missingProducts));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -537,7 +561,7 @@ public final class ProductLicenseConsumerSummary {
                 && java.util.Objects.equals(
                         this.areAllOptionsAvailable, other.areAllOptionsAvailable)
                 && java.util.Objects.equals(this.missingProducts, other.missingProducts)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -584,16 +608,7 @@ public final class ProductLicenseConsumerSummary {
         result =
                 (result * PRIME)
                         + (this.missingProducts == null ? 43 : this.missingProducts.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

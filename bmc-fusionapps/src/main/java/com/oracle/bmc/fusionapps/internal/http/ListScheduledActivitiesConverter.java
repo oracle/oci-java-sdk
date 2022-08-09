@@ -186,8 +186,8 @@ public class ListScheduledActivitiesConverter {
                                         builder =
                                                 com.oracle.bmc.fusionapps.responses
                                                         .ListScheduledActivitiesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.scheduledActivityCollection(response.getItem());
 

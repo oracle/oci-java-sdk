@@ -19,7 +19,8 @@ package com.oracle.bmc.operatoraccesscontrol.model;
     builder = AccessRequestHistorySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AccessRequestHistorySummary {
+public final class AccessRequestHistorySummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "lifecycleState",
@@ -169,32 +170,45 @@ public final class AccessRequestHistorySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AccessRequestHistorySummary build() {
-            AccessRequestHistorySummary __instance__ =
+            AccessRequestHistorySummary model =
                     new AccessRequestHistorySummary(
-                            lifecycleState,
-                            userId,
-                            description,
-                            duration,
-                            isAutoApproved,
-                            actionsList,
-                            timeOfAction);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.lifecycleState,
+                            this.userId,
+                            this.description,
+                            this.duration,
+                            this.isAutoApproved,
+                            this.actionsList,
+                            this.timeOfAction);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AccessRequestHistorySummary o) {
-            Builder copiedBuilder =
-                    lifecycleState(o.getLifecycleState())
-                            .userId(o.getUserId())
-                            .description(o.getDescription())
-                            .duration(o.getDuration())
-                            .isAutoApproved(o.getIsAutoApproved())
-                            .actionsList(o.getActionsList())
-                            .timeOfAction(o.getTimeOfAction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AccessRequestHistorySummary model) {
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("duration")) {
+                this.duration(model.getDuration());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoApproved")) {
+                this.isAutoApproved(model.getIsAutoApproved());
+            }
+            if (model.wasPropertyExplicitlySet("actionsList")) {
+                this.actionsList(model.getActionsList());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfAction")) {
+                this.timeOfAction(model.getTimeOfAction());
+            }
+            return this;
         }
     }
 
@@ -322,6 +336,7 @@ public final class AccessRequestHistorySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AccessRequestHistorySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", userId=").append(String.valueOf(this.userId));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -329,7 +344,6 @@ public final class AccessRequestHistorySummary {
         sb.append(", isAutoApproved=").append(String.valueOf(this.isAutoApproved));
         sb.append(", actionsList=").append(String.valueOf(this.actionsList));
         sb.append(", timeOfAction=").append(String.valueOf(this.timeOfAction));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -351,7 +365,7 @@ public final class AccessRequestHistorySummary {
                 && java.util.Objects.equals(this.isAutoApproved, other.isAutoApproved)
                 && java.util.Objects.equals(this.actionsList, other.actionsList)
                 && java.util.Objects.equals(this.timeOfAction, other.timeOfAction)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -369,16 +383,7 @@ public final class AccessRequestHistorySummary {
                         + (this.isAutoApproved == null ? 43 : this.isAutoApproved.hashCode());
         result = (result * PRIME) + (this.actionsList == null ? 43 : this.actionsList.hashCode());
         result = (result * PRIME) + (this.timeOfAction == null ? 43 : this.timeOfAction.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

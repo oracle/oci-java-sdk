@@ -51,13 +51,20 @@ public class GetQuotaResponse extends com.oracle.bmc.responses.BmcResponse {
         return quota;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "quota"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "quota"
+    })
     private GetQuotaResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.limits.model.Quota quota) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.quota = quota;
@@ -68,6 +75,13 @@ public class GetQuotaResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class GetQuotaResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetQuotaResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             quota(o.getQuota());
@@ -138,7 +153,7 @@ public class GetQuotaResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetQuotaResponse build() {
-            return new GetQuotaResponse(__httpStatusCode__, opcRequestId, etag, quota);
+            return new GetQuotaResponse(__httpStatusCode__, headers, opcRequestId, etag, quota);
         }
     }
 

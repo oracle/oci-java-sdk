@@ -19,7 +19,7 @@ package com.oracle.bmc.blockchain.model;
     builder = CreatePeerDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreatePeerDetails {
+public final class CreatePeerDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"role", "alias", "ocpuAllocationParam", "ad"})
     public CreatePeerDetails(
@@ -98,22 +98,29 @@ public final class CreatePeerDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreatePeerDetails build() {
-            CreatePeerDetails __instance__ =
-                    new CreatePeerDetails(role, alias, ocpuAllocationParam, ad);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreatePeerDetails model =
+                    new CreatePeerDetails(this.role, this.alias, this.ocpuAllocationParam, this.ad);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreatePeerDetails o) {
-            Builder copiedBuilder =
-                    role(o.getRole())
-                            .alias(o.getAlias())
-                            .ocpuAllocationParam(o.getOcpuAllocationParam())
-                            .ad(o.getAd());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreatePeerDetails model) {
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuAllocationParam")) {
+                this.ocpuAllocationParam(model.getOcpuAllocationParam());
+            }
+            if (model.wasPropertyExplicitlySet("ad")) {
+                this.ad(model.getAd());
+            }
+            return this;
         }
     }
 
@@ -190,11 +197,11 @@ public final class CreatePeerDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreatePeerDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("role=").append(String.valueOf(this.role));
         sb.append(", alias=").append(String.valueOf(this.alias));
         sb.append(", ocpuAllocationParam=").append(String.valueOf(this.ocpuAllocationParam));
         sb.append(", ad=").append(String.valueOf(this.ad));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -213,7 +220,7 @@ public final class CreatePeerDetails {
                 && java.util.Objects.equals(this.alias, other.alias)
                 && java.util.Objects.equals(this.ocpuAllocationParam, other.ocpuAllocationParam)
                 && java.util.Objects.equals(this.ad, other.ad)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -228,16 +235,7 @@ public final class CreatePeerDetails {
                                 ? 43
                                 : this.ocpuAllocationParam.hashCode());
         result = (result * PRIME) + (this.ad == null ? 43 : this.ad.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

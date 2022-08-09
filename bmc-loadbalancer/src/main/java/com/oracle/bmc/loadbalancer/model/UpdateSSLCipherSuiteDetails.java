@@ -22,7 +22,8 @@ package com.oracle.bmc.loadbalancer.model;
     builder = UpdateSSLCipherSuiteDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateSSLCipherSuiteDetails {
+public final class UpdateSSLCipherSuiteDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ciphers"})
     public UpdateSSLCipherSuiteDetails(java.util.List<String> ciphers) {
@@ -265,17 +266,19 @@ public final class UpdateSSLCipherSuiteDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSSLCipherSuiteDetails build() {
-            UpdateSSLCipherSuiteDetails __instance__ = new UpdateSSLCipherSuiteDetails(ciphers);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateSSLCipherSuiteDetails model = new UpdateSSLCipherSuiteDetails(this.ciphers);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateSSLCipherSuiteDetails o) {
-            Builder copiedBuilder = ciphers(o.getCiphers());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateSSLCipherSuiteDetails model) {
+            if (model.wasPropertyExplicitlySet("ciphers")) {
+                this.ciphers(model.getCiphers());
+            }
+            return this;
         }
     }
 
@@ -529,8 +532,8 @@ public final class UpdateSSLCipherSuiteDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateSSLCipherSuiteDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("ciphers=").append(String.valueOf(this.ciphers));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -545,8 +548,7 @@ public final class UpdateSSLCipherSuiteDetails {
         }
 
         UpdateSSLCipherSuiteDetails other = (UpdateSSLCipherSuiteDetails) o;
-        return java.util.Objects.equals(this.ciphers, other.ciphers)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.ciphers, other.ciphers) && super.equals(other);
     }
 
     @Override
@@ -554,16 +556,7 @@ public final class UpdateSSLCipherSuiteDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.ciphers == null ? 43 : this.ciphers.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

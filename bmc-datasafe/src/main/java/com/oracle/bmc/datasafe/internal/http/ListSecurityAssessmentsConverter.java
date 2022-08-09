@@ -243,8 +243,8 @@ public class ListSecurityAssessmentsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListSecurityAssessmentsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

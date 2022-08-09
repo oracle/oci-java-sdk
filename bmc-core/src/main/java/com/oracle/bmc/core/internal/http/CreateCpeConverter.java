@@ -92,7 +92,8 @@ public class CreateCpeConverter {
 
                                 com.oracle.bmc.core.responses.CreateCpeResponse.Builder builder =
                                         com.oracle.bmc.core.responses.CreateCpeResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.cpe(response.getItem());
 

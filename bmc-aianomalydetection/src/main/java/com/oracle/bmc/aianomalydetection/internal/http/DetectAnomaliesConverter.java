@@ -115,8 +115,8 @@ public class DetectAnomaliesConverter {
                                         builder =
                                                 com.oracle.bmc.aianomalydetection.responses
                                                         .DetectAnomaliesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.anomalyDetectResult(response.getItem());
 

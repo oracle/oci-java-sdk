@@ -17,7 +17,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobMetricSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobMetricSummary {
+public final class JobMetricSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -272,42 +272,65 @@ public final class JobMetricSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobMetricSummary build() {
-            JobMetricSummary __instance__ =
+            JobMetricSummary model =
                     new JobMetricSummary(
-                            key,
-                            description,
-                            jobExecutionKey,
-                            uri,
-                            timeCreated,
-                            timeInserted,
-                            category,
-                            displayName,
-                            subCategory,
-                            unit,
-                            value,
-                            batchKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.description,
+                            this.jobExecutionKey,
+                            this.uri,
+                            this.timeCreated,
+                            this.timeInserted,
+                            this.category,
+                            this.displayName,
+                            this.subCategory,
+                            this.unit,
+                            this.value,
+                            this.batchKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JobMetricSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .description(o.getDescription())
-                            .jobExecutionKey(o.getJobExecutionKey())
-                            .uri(o.getUri())
-                            .timeCreated(o.getTimeCreated())
-                            .timeInserted(o.getTimeInserted())
-                            .category(o.getCategory())
-                            .displayName(o.getDisplayName())
-                            .subCategory(o.getSubCategory())
-                            .unit(o.getUnit())
-                            .value(o.getValue())
-                            .batchKey(o.getBatchKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JobMetricSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("jobExecutionKey")) {
+                this.jobExecutionKey(model.getJobExecutionKey());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeInserted")) {
+                this.timeInserted(model.getTimeInserted());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("subCategory")) {
+                this.subCategory(model.getSubCategory());
+            }
+            if (model.wasPropertyExplicitlySet("unit")) {
+                this.unit(model.getUnit());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("batchKey")) {
+                this.batchKey(model.getBatchKey());
+            }
+            return this;
         }
     }
 
@@ -515,6 +538,7 @@ public final class JobMetricSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JobMetricSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", jobExecutionKey=").append(String.valueOf(this.jobExecutionKey));
@@ -527,7 +551,6 @@ public final class JobMetricSummary {
         sb.append(", unit=").append(String.valueOf(this.unit));
         sb.append(", value=").append(String.valueOf(this.value));
         sb.append(", batchKey=").append(String.valueOf(this.batchKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -554,7 +577,7 @@ public final class JobMetricSummary {
                 && java.util.Objects.equals(this.unit, other.unit)
                 && java.util.Objects.equals(this.value, other.value)
                 && java.util.Objects.equals(this.batchKey, other.batchKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -575,16 +598,7 @@ public final class JobMetricSummary {
         result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
         result = (result * PRIME) + (this.batchKey == null ? 43 : this.batchKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

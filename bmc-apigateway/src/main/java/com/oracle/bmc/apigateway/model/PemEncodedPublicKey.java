@@ -56,17 +56,22 @@ public final class PemEncodedPublicKey extends StaticPublicKey {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PemEncodedPublicKey build() {
-            PemEncodedPublicKey __instance__ = new PemEncodedPublicKey(kid, key);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PemEncodedPublicKey model = new PemEncodedPublicKey(this.kid, this.key);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PemEncodedPublicKey o) {
-            Builder copiedBuilder = kid(o.getKid()).key(o.getKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PemEncodedPublicKey model) {
+            if (model.wasPropertyExplicitlySet("kid")) {
+                this.kid(model.getKid());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            return this;
         }
     }
 
@@ -116,7 +121,6 @@ public final class PemEncodedPublicKey extends StaticPublicKey {
         sb.append("PemEncodedPublicKey(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", key=").append(String.valueOf(this.key));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -131,9 +135,7 @@ public final class PemEncodedPublicKey extends StaticPublicKey {
         }
 
         PemEncodedPublicKey other = (PemEncodedPublicKey) o;
-        return java.util.Objects.equals(this.key, other.key)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.key, other.key) && super.equals(other);
     }
 
     @Override
@@ -141,16 +143,6 @@ public final class PemEncodedPublicKey extends StaticPublicKey {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

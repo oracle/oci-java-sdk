@@ -51,13 +51,20 @@ public class ScheduleKeyDeletionResponse extends com.oracle.bmc.responses.BmcRes
         return key;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "key"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "key"
+    })
     private ScheduleKeyDeletionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.keymanagement.model.Key key) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.key = key;
@@ -68,6 +75,13 @@ public class ScheduleKeyDeletionResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class ScheduleKeyDeletionResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ScheduleKeyDeletionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             key(o.getKey());
@@ -138,7 +153,8 @@ public class ScheduleKeyDeletionResponse extends com.oracle.bmc.responses.BmcRes
          * @return the response object
          */
         public ScheduleKeyDeletionResponse build() {
-            return new ScheduleKeyDeletionResponse(__httpStatusCode__, etag, opcRequestId, key);
+            return new ScheduleKeyDeletionResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, key);
         }
     }
 

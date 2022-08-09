@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = FileValidationResponse.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FileValidationResponse {
+public final class FileValidationResponse
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"inputFile", "objectLocation", "files"})
     public FileValidationResponse(
@@ -85,21 +86,26 @@ public final class FileValidationResponse {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FileValidationResponse build() {
-            FileValidationResponse __instance__ =
-                    new FileValidationResponse(inputFile, objectLocation, files);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FileValidationResponse model =
+                    new FileValidationResponse(this.inputFile, this.objectLocation, this.files);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FileValidationResponse o) {
-            Builder copiedBuilder =
-                    inputFile(o.getInputFile())
-                            .objectLocation(o.getObjectLocation())
-                            .files(o.getFiles());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FileValidationResponse model) {
+            if (model.wasPropertyExplicitlySet("inputFile")) {
+                this.inputFile(model.getInputFile());
+            }
+            if (model.wasPropertyExplicitlySet("objectLocation")) {
+                this.objectLocation(model.getObjectLocation());
+            }
+            if (model.wasPropertyExplicitlySet("files")) {
+                this.files(model.getFiles());
+            }
+            return this;
         }
     }
 
@@ -169,10 +175,10 @@ public final class FileValidationResponse {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FileValidationResponse(");
+        sb.append("super=").append(super.toString());
         sb.append("inputFile=").append(String.valueOf(this.inputFile));
         sb.append(", objectLocation=").append(String.valueOf(this.objectLocation));
         sb.append(", files=").append(String.valueOf(this.files));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,7 +196,7 @@ public final class FileValidationResponse {
         return java.util.Objects.equals(this.inputFile, other.inputFile)
                 && java.util.Objects.equals(this.objectLocation, other.objectLocation)
                 && java.util.Objects.equals(this.files, other.files)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -202,16 +208,7 @@ public final class FileValidationResponse {
                 (result * PRIME)
                         + (this.objectLocation == null ? 43 : this.objectLocation.hashCode());
         result = (result * PRIME) + (this.files == null ? 43 : this.files.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

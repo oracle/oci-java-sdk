@@ -33,7 +33,7 @@ package com.oracle.bmc.marketplace.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class SearchListingsDetails {
+public class SearchListingsDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"matchingContextType"})
     protected SearchListingsDetails(MatchingContextTypeEnum matchingContextType) {
@@ -70,6 +70,7 @@ public class SearchListingsDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SearchListingsDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("matchingContextType=").append(String.valueOf(this.matchingContextType));
         sb.append(")");
         return sb.toString();
@@ -85,7 +86,8 @@ public class SearchListingsDetails {
         }
 
         SearchListingsDetails other = (SearchListingsDetails) o;
-        return java.util.Objects.equals(this.matchingContextType, other.matchingContextType);
+        return java.util.Objects.equals(this.matchingContextType, other.matchingContextType)
+                && super.equals(other);
     }
 
     @Override
@@ -97,6 +99,7 @@ public class SearchListingsDetails {
                         + (this.matchingContextType == null
                                 ? 43
                                 : this.matchingContextType.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

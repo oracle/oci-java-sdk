@@ -111,8 +111,8 @@ public class DownloadSensitiveDataModelConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .DownloadSensitiveDataModelResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

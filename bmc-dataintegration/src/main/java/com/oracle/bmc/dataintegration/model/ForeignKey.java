@@ -160,36 +160,53 @@ public final class ForeignKey extends Key {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ForeignKey build() {
-            ForeignKey __instance__ =
+            ForeignKey model =
                     new ForeignKey(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            attributeRefs,
-                            updateRule,
-                            deleteRule,
-                            referenceUniqueKey,
-                            objectStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.attributeRefs,
+                            this.updateRule,
+                            this.deleteRule,
+                            this.referenceUniqueKey,
+                            this.objectStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ForeignKey o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .attributeRefs(o.getAttributeRefs())
-                            .updateRule(o.getUpdateRule())
-                            .deleteRule(o.getDeleteRule())
-                            .referenceUniqueKey(o.getReferenceUniqueKey())
-                            .objectStatus(o.getObjectStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ForeignKey model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("attributeRefs")) {
+                this.attributeRefs(model.getAttributeRefs());
+            }
+            if (model.wasPropertyExplicitlySet("updateRule")) {
+                this.updateRule(model.getUpdateRule());
+            }
+            if (model.wasPropertyExplicitlySet("deleteRule")) {
+                this.deleteRule(model.getDeleteRule());
+            }
+            if (model.wasPropertyExplicitlySet("referenceUniqueKey")) {
+                this.referenceUniqueKey(model.getReferenceUniqueKey());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            return this;
         }
     }
 
@@ -362,7 +379,6 @@ public final class ForeignKey extends Key {
         sb.append(", deleteRule=").append(String.valueOf(this.deleteRule));
         sb.append(", referenceUniqueKey=").append(String.valueOf(this.referenceUniqueKey));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -386,8 +402,7 @@ public final class ForeignKey extends Key {
                 && java.util.Objects.equals(this.deleteRule, other.deleteRule)
                 && java.util.Objects.equals(this.referenceUniqueKey, other.referenceUniqueKey)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -409,16 +424,6 @@ public final class ForeignKey extends Key {
                                 ? 43
                                 : this.referenceUniqueKey.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

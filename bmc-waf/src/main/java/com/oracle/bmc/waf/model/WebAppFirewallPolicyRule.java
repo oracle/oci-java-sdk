@@ -36,7 +36,7 @@ package com.oracle.bmc.waf.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class WebAppFirewallPolicyRule {
+public class WebAppFirewallPolicyRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "conditionLanguage", "condition", "actionName"})
     protected WebAppFirewallPolicyRule(
@@ -162,6 +162,7 @@ public class WebAppFirewallPolicyRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WebAppFirewallPolicyRule(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", conditionLanguage=").append(String.valueOf(this.conditionLanguage));
         sb.append(", condition=").append(String.valueOf(this.condition));
@@ -183,7 +184,8 @@ public class WebAppFirewallPolicyRule {
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.conditionLanguage, other.conditionLanguage)
                 && java.util.Objects.equals(this.condition, other.condition)
-                && java.util.Objects.equals(this.actionName, other.actionName);
+                && java.util.Objects.equals(this.actionName, other.actionName)
+                && super.equals(other);
     }
 
     @Override
@@ -196,6 +198,7 @@ public class WebAppFirewallPolicyRule {
                         + (this.conditionLanguage == null ? 43 : this.conditionLanguage.hashCode());
         result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
         result = (result * PRIME) + (this.actionName == null ? 43 : this.actionName.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.adm.model;
     builder = ApplicationDependency.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApplicationDependency {
+public final class ApplicationDependency
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"gav", "nodeId", "applicationDependencyNodeIds"})
     public ApplicationDependency(
@@ -86,21 +87,27 @@ public final class ApplicationDependency {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApplicationDependency build() {
-            ApplicationDependency __instance__ =
-                    new ApplicationDependency(gav, nodeId, applicationDependencyNodeIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ApplicationDependency model =
+                    new ApplicationDependency(
+                            this.gav, this.nodeId, this.applicationDependencyNodeIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApplicationDependency o) {
-            Builder copiedBuilder =
-                    gav(o.getGav())
-                            .nodeId(o.getNodeId())
-                            .applicationDependencyNodeIds(o.getApplicationDependencyNodeIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApplicationDependency model) {
+            if (model.wasPropertyExplicitlySet("gav")) {
+                this.gav(model.getGav());
+            }
+            if (model.wasPropertyExplicitlySet("nodeId")) {
+                this.nodeId(model.getNodeId());
+            }
+            if (model.wasPropertyExplicitlySet("applicationDependencyNodeIds")) {
+                this.applicationDependencyNodeIds(model.getApplicationDependencyNodeIds());
+            }
+            return this;
         }
     }
 
@@ -170,11 +177,11 @@ public final class ApplicationDependency {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApplicationDependency(");
+        sb.append("super=").append(super.toString());
         sb.append("gav=").append(String.valueOf(this.gav));
         sb.append(", nodeId=").append(String.valueOf(this.nodeId));
         sb.append(", applicationDependencyNodeIds=")
                 .append(String.valueOf(this.applicationDependencyNodeIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -193,7 +200,7 @@ public final class ApplicationDependency {
                 && java.util.Objects.equals(this.nodeId, other.nodeId)
                 && java.util.Objects.equals(
                         this.applicationDependencyNodeIds, other.applicationDependencyNodeIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -207,16 +214,7 @@ public final class ApplicationDependency {
                         + (this.applicationDependencyNodeIds == null
                                 ? 43
                                 : this.applicationDependencyNodeIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

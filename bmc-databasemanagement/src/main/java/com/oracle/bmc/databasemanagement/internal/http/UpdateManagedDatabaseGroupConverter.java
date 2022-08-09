@@ -123,8 +123,8 @@ public class UpdateManagedDatabaseGroupConverter {
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .UpdateManagedDatabaseGroupResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managedDatabaseGroup(response.getItem());
 

@@ -49,16 +49,18 @@ public class UpdateTransferPackageResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "transferPackage"
     })
     private UpdateTransferPackageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.dts.model.TransferPackage transferPackage) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.transferPackage = transferPackage;
@@ -69,6 +71,13 @@ public class UpdateTransferPackageResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -123,6 +132,7 @@ public class UpdateTransferPackageResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(UpdateTransferPackageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             transferPackage(o.getTransferPackage());
@@ -136,7 +146,7 @@ public class UpdateTransferPackageResponse extends com.oracle.bmc.responses.BmcR
          */
         public UpdateTransferPackageResponse build() {
             return new UpdateTransferPackageResponse(
-                    __httpStatusCode__, opcRequestId, etag, transferPackage);
+                    __httpStatusCode__, headers, opcRequestId, etag, transferPackage);
         }
     }
 

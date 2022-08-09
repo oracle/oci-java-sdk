@@ -19,7 +19,8 @@ package com.oracle.bmc.dataintegration.model;
     builder = ResourceConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceConfiguration {
+public final class ResourceConfiguration
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sparkVersion",
@@ -107,23 +108,33 @@ public final class ResourceConfiguration {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceConfiguration build() {
-            ResourceConfiguration __instance__ =
+            ResourceConfiguration model =
                     new ResourceConfiguration(
-                            sparkVersion, driverShape, executorShape, totalExecutors);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sparkVersion,
+                            this.driverShape,
+                            this.executorShape,
+                            this.totalExecutors);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResourceConfiguration o) {
-            Builder copiedBuilder =
-                    sparkVersion(o.getSparkVersion())
-                            .driverShape(o.getDriverShape())
-                            .executorShape(o.getExecutorShape())
-                            .totalExecutors(o.getTotalExecutors());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResourceConfiguration model) {
+            if (model.wasPropertyExplicitlySet("sparkVersion")) {
+                this.sparkVersion(model.getSparkVersion());
+            }
+            if (model.wasPropertyExplicitlySet("driverShape")) {
+                this.driverShape(model.getDriverShape());
+            }
+            if (model.wasPropertyExplicitlySet("executorShape")) {
+                this.executorShape(model.getExecutorShape());
+            }
+            if (model.wasPropertyExplicitlySet("totalExecutors")) {
+                this.totalExecutors(model.getTotalExecutors());
+            }
+            return this;
         }
     }
 
@@ -207,11 +218,11 @@ public final class ResourceConfiguration {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResourceConfiguration(");
+        sb.append("super=").append(super.toString());
         sb.append("sparkVersion=").append(String.valueOf(this.sparkVersion));
         sb.append(", driverShape=").append(String.valueOf(this.driverShape));
         sb.append(", executorShape=").append(String.valueOf(this.executorShape));
         sb.append(", totalExecutors=").append(String.valueOf(this.totalExecutors));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -230,7 +241,7 @@ public final class ResourceConfiguration {
                 && java.util.Objects.equals(this.driverShape, other.driverShape)
                 && java.util.Objects.equals(this.executorShape, other.executorShape)
                 && java.util.Objects.equals(this.totalExecutors, other.totalExecutors)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -245,16 +256,7 @@ public final class ResourceConfiguration {
         result =
                 (result * PRIME)
                         + (this.totalExecutors == null ? 43 : this.totalExecutors.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

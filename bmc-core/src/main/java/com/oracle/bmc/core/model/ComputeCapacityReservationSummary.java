@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = ComputeCapacityReservationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ComputeCapacityReservationSummary {
+public final class ComputeCapacityReservationSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -289,40 +290,61 @@ public final class ComputeCapacityReservationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputeCapacityReservationSummary build() {
-            ComputeCapacityReservationSummary __instance__ =
+            ComputeCapacityReservationSummary model =
                     new ComputeCapacityReservationSummary(
-                            id,
-                            compartmentId,
-                            displayName,
-                            definedTags,
-                            freeformTags,
-                            lifecycleState,
-                            availabilityDomain,
-                            reservedInstanceCount,
-                            usedInstanceCount,
-                            isDefaultReservation,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.lifecycleState,
+                            this.availabilityDomain,
+                            this.reservedInstanceCount,
+                            this.usedInstanceCount,
+                            this.isDefaultReservation,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputeCapacityReservationSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .lifecycleState(o.getLifecycleState())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .reservedInstanceCount(o.getReservedInstanceCount())
-                            .usedInstanceCount(o.getUsedInstanceCount())
-                            .isDefaultReservation(o.getIsDefaultReservation())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputeCapacityReservationSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("reservedInstanceCount")) {
+                this.reservedInstanceCount(model.getReservedInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("usedInstanceCount")) {
+                this.usedInstanceCount(model.getUsedInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("isDefaultReservation")) {
+                this.isDefaultReservation(model.getIsDefaultReservation());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -548,6 +570,7 @@ public final class ComputeCapacityReservationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ComputeCapacityReservationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -559,7 +582,6 @@ public final class ComputeCapacityReservationSummary {
         sb.append(", usedInstanceCount=").append(String.valueOf(this.usedInstanceCount));
         sb.append(", isDefaultReservation=").append(String.valueOf(this.isDefaultReservation));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -585,7 +607,7 @@ public final class ComputeCapacityReservationSummary {
                 && java.util.Objects.equals(this.usedInstanceCount, other.usedInstanceCount)
                 && java.util.Objects.equals(this.isDefaultReservation, other.isDefaultReservation)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -621,16 +643,7 @@ public final class ComputeCapacityReservationSummary {
                                 ? 43
                                 : this.isDefaultReservation.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -18,7 +18,7 @@ package com.oracle.bmc.database.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ScanDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ScanDetails {
+public final class ScanDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "hostname",
@@ -128,24 +128,37 @@ public final class ScanDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScanDetails build() {
-            ScanDetails __instance__ =
+            ScanDetails model =
                     new ScanDetails(
-                            hostname, port, scanListenerPortTcp, scanListenerPortTcpSsl, ips);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.hostname,
+                            this.port,
+                            this.scanListenerPortTcp,
+                            this.scanListenerPortTcpSsl,
+                            this.ips);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ScanDetails o) {
-            Builder copiedBuilder =
-                    hostname(o.getHostname())
-                            .port(o.getPort())
-                            .scanListenerPortTcp(o.getScanListenerPortTcp())
-                            .scanListenerPortTcpSsl(o.getScanListenerPortTcpSsl())
-                            .ips(o.getIps());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ScanDetails model) {
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortTcp")) {
+                this.scanListenerPortTcp(model.getScanListenerPortTcp());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortTcpSsl")) {
+                this.scanListenerPortTcpSsl(model.getScanListenerPortTcpSsl());
+            }
+            if (model.wasPropertyExplicitlySet("ips")) {
+                this.ips(model.getIps());
+            }
+            return this;
         }
     }
 
@@ -243,12 +256,12 @@ public final class ScanDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ScanDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("hostname=").append(String.valueOf(this.hostname));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", scanListenerPortTcp=").append(String.valueOf(this.scanListenerPortTcp));
         sb.append(", scanListenerPortTcpSsl=").append(String.valueOf(this.scanListenerPortTcpSsl));
         sb.append(", ips=").append(String.valueOf(this.ips));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -269,7 +282,7 @@ public final class ScanDetails {
                 && java.util.Objects.equals(
                         this.scanListenerPortTcpSsl, other.scanListenerPortTcpSsl)
                 && java.util.Objects.equals(this.ips, other.ips)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -289,16 +302,7 @@ public final class ScanDetails {
                                 ? 43
                                 : this.scanListenerPortTcpSsl.hashCode());
         result = (result * PRIME) + (this.ips == null ? 43 : this.ips.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

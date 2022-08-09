@@ -53,13 +53,20 @@ public class GetHostInsightResponse extends com.oracle.bmc.responses.BmcResponse
         return hostInsight;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "hostInsight"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "hostInsight"
+    })
     private GetHostInsightResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.opsi.model.HostInsight hostInsight) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.hostInsight = hostInsight;
@@ -70,6 +77,13 @@ public class GetHostInsightResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetHostInsightResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetHostInsightResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             hostInsight(o.getHostInsight());
@@ -142,7 +157,8 @@ public class GetHostInsightResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetHostInsightResponse build() {
-            return new GetHostInsightResponse(__httpStatusCode__, etag, opcRequestId, hostInsight);
+            return new GetHostInsightResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, hostInsight);
         }
     }
 

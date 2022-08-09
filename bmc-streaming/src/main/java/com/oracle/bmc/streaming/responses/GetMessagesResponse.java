@@ -53,16 +53,18 @@ public class GetMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextCursor",
         "opcRequestId",
         "items"
     })
     private GetMessagesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextCursor,
             String opcRequestId,
             java.util.List<com.oracle.bmc.streaming.model.Message> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextCursor = opcNextCursor;
         this.opcRequestId = opcRequestId;
         this.items = items;
@@ -73,6 +75,13 @@ public class GetMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +140,7 @@ public class GetMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetMessagesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextCursor(o.getOpcNextCursor());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
@@ -143,7 +153,8 @@ public class GetMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetMessagesResponse build() {
-            return new GetMessagesResponse(__httpStatusCode__, opcNextCursor, opcRequestId, items);
+            return new GetMessagesResponse(
+                    __httpStatusCode__, headers, opcNextCursor, opcRequestId, items);
         }
     }
 

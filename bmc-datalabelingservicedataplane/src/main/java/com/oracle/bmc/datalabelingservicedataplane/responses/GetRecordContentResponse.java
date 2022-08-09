@@ -128,6 +128,7 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "contentLength",
@@ -139,6 +140,7 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private GetRecordContentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Long contentLength,
@@ -147,7 +149,7 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
             String cacheControl,
             java.io.InputStream inputStream,
             boolean isNotModified) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.contentLength = contentLength;
@@ -163,6 +165,13 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -305,6 +314,7 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetRecordContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             contentLength(o.getContentLength());
@@ -323,6 +333,7 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
         public GetRecordContentResponse build() {
             return new GetRecordContentResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcRequestId,
                     contentLength,

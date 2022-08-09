@@ -120,8 +120,8 @@ public class GetClusterMigrateToNativeVcnStatusConverter {
                                                 com.oracle.bmc.containerengine.responses
                                                         .GetClusterMigrateToNativeVcnStatusResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.clusterMigrateToNativeVcnStatus(response.getItem());
 

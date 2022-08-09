@@ -55,16 +55,18 @@ public class UpdateServiceGatewayResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "serviceGateway"
     })
     private UpdateServiceGatewayResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.ServiceGateway serviceGateway) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.serviceGateway = serviceGateway;
@@ -75,6 +77,13 @@ public class UpdateServiceGatewayResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class UpdateServiceGatewayResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(UpdateServiceGatewayResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             serviceGateway(o.getServiceGateway());
@@ -148,7 +158,7 @@ public class UpdateServiceGatewayResponse extends com.oracle.bmc.responses.BmcRe
          */
         public UpdateServiceGatewayResponse build() {
             return new UpdateServiceGatewayResponse(
-                    __httpStatusCode__, etag, opcRequestId, serviceGateway);
+                    __httpStatusCode__, headers, etag, opcRequestId, serviceGateway);
         }
     }
 

@@ -53,16 +53,18 @@ public class GetMaskingColumnResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "maskingColumn"
     })
     private GetMaskingColumnResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datasafe.model.MaskingColumn maskingColumn) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.maskingColumn = maskingColumn;
@@ -73,6 +75,13 @@ public class GetMaskingColumnResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +140,7 @@ public class GetMaskingColumnResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetMaskingColumnResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             maskingColumn(o.getMaskingColumn());
@@ -144,7 +154,7 @@ public class GetMaskingColumnResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public GetMaskingColumnResponse build() {
             return new GetMaskingColumnResponse(
-                    __httpStatusCode__, etag, opcRequestId, maskingColumn);
+                    __httpStatusCode__, headers, etag, opcRequestId, maskingColumn);
         }
     }
 

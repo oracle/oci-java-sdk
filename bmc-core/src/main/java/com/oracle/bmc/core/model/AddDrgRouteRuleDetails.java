@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = AddDrgRouteRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddDrgRouteRuleDetails {
+public final class AddDrgRouteRuleDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"destinationType", "destination", "nextHopDrgAttachmentId"})
     public AddDrgRouteRuleDetails(
@@ -108,22 +109,27 @@ public final class AddDrgRouteRuleDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddDrgRouteRuleDetails build() {
-            AddDrgRouteRuleDetails __instance__ =
+            AddDrgRouteRuleDetails model =
                     new AddDrgRouteRuleDetails(
-                            destinationType, destination, nextHopDrgAttachmentId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.destinationType, this.destination, this.nextHopDrgAttachmentId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddDrgRouteRuleDetails o) {
-            Builder copiedBuilder =
-                    destinationType(o.getDestinationType())
-                            .destination(o.getDestination())
-                            .nextHopDrgAttachmentId(o.getNextHopDrgAttachmentId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddDrgRouteRuleDetails model) {
+            if (model.wasPropertyExplicitlySet("destinationType")) {
+                this.destinationType(model.getDestinationType());
+            }
+            if (model.wasPropertyExplicitlySet("destination")) {
+                this.destination(model.getDestination());
+            }
+            if (model.wasPropertyExplicitlySet("nextHopDrgAttachmentId")) {
+                this.nextHopDrgAttachmentId(model.getNextHopDrgAttachmentId());
+            }
+            return this;
         }
     }
 
@@ -252,10 +258,10 @@ public final class AddDrgRouteRuleDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddDrgRouteRuleDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("destinationType=").append(String.valueOf(this.destinationType));
         sb.append(", destination=").append(String.valueOf(this.destination));
         sb.append(", nextHopDrgAttachmentId=").append(String.valueOf(this.nextHopDrgAttachmentId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -274,7 +280,7 @@ public final class AddDrgRouteRuleDetails {
                 && java.util.Objects.equals(this.destination, other.destination)
                 && java.util.Objects.equals(
                         this.nextHopDrgAttachmentId, other.nextHopDrgAttachmentId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -290,16 +296,7 @@ public final class AddDrgRouteRuleDetails {
                         + (this.nextHopDrgAttachmentId == null
                                 ? 43
                                 : this.nextHopDrgAttachmentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

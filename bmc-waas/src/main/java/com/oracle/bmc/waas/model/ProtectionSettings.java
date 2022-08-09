@@ -19,7 +19,7 @@ package com.oracle.bmc.waas.model;
     builder = ProtectionSettings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProtectionSettings {
+public final class ProtectionSettings extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "blockAction",
@@ -339,44 +339,69 @@ public final class ProtectionSettings {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProtectionSettings build() {
-            ProtectionSettings __instance__ =
+            ProtectionSettings model =
                     new ProtectionSettings(
-                            blockAction,
-                            blockResponseCode,
-                            blockErrorPageMessage,
-                            blockErrorPageCode,
-                            blockErrorPageDescription,
-                            maxArgumentCount,
-                            maxNameLengthPerArgument,
-                            maxTotalNameLengthOfArguments,
-                            recommendationsPeriodInDays,
-                            isResponseInspected,
-                            maxResponseSizeInKiB,
-                            allowedHttpMethods,
-                            mediaTypes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.blockAction,
+                            this.blockResponseCode,
+                            this.blockErrorPageMessage,
+                            this.blockErrorPageCode,
+                            this.blockErrorPageDescription,
+                            this.maxArgumentCount,
+                            this.maxNameLengthPerArgument,
+                            this.maxTotalNameLengthOfArguments,
+                            this.recommendationsPeriodInDays,
+                            this.isResponseInspected,
+                            this.maxResponseSizeInKiB,
+                            this.allowedHttpMethods,
+                            this.mediaTypes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProtectionSettings o) {
-            Builder copiedBuilder =
-                    blockAction(o.getBlockAction())
-                            .blockResponseCode(o.getBlockResponseCode())
-                            .blockErrorPageMessage(o.getBlockErrorPageMessage())
-                            .blockErrorPageCode(o.getBlockErrorPageCode())
-                            .blockErrorPageDescription(o.getBlockErrorPageDescription())
-                            .maxArgumentCount(o.getMaxArgumentCount())
-                            .maxNameLengthPerArgument(o.getMaxNameLengthPerArgument())
-                            .maxTotalNameLengthOfArguments(o.getMaxTotalNameLengthOfArguments())
-                            .recommendationsPeriodInDays(o.getRecommendationsPeriodInDays())
-                            .isResponseInspected(o.getIsResponseInspected())
-                            .maxResponseSizeInKiB(o.getMaxResponseSizeInKiB())
-                            .allowedHttpMethods(o.getAllowedHttpMethods())
-                            .mediaTypes(o.getMediaTypes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProtectionSettings model) {
+            if (model.wasPropertyExplicitlySet("blockAction")) {
+                this.blockAction(model.getBlockAction());
+            }
+            if (model.wasPropertyExplicitlySet("blockResponseCode")) {
+                this.blockResponseCode(model.getBlockResponseCode());
+            }
+            if (model.wasPropertyExplicitlySet("blockErrorPageMessage")) {
+                this.blockErrorPageMessage(model.getBlockErrorPageMessage());
+            }
+            if (model.wasPropertyExplicitlySet("blockErrorPageCode")) {
+                this.blockErrorPageCode(model.getBlockErrorPageCode());
+            }
+            if (model.wasPropertyExplicitlySet("blockErrorPageDescription")) {
+                this.blockErrorPageDescription(model.getBlockErrorPageDescription());
+            }
+            if (model.wasPropertyExplicitlySet("maxArgumentCount")) {
+                this.maxArgumentCount(model.getMaxArgumentCount());
+            }
+            if (model.wasPropertyExplicitlySet("maxNameLengthPerArgument")) {
+                this.maxNameLengthPerArgument(model.getMaxNameLengthPerArgument());
+            }
+            if (model.wasPropertyExplicitlySet("maxTotalNameLengthOfArguments")) {
+                this.maxTotalNameLengthOfArguments(model.getMaxTotalNameLengthOfArguments());
+            }
+            if (model.wasPropertyExplicitlySet("recommendationsPeriodInDays")) {
+                this.recommendationsPeriodInDays(model.getRecommendationsPeriodInDays());
+            }
+            if (model.wasPropertyExplicitlySet("isResponseInspected")) {
+                this.isResponseInspected(model.getIsResponseInspected());
+            }
+            if (model.wasPropertyExplicitlySet("maxResponseSizeInKiB")) {
+                this.maxResponseSizeInKiB(model.getMaxResponseSizeInKiB());
+            }
+            if (model.wasPropertyExplicitlySet("allowedHttpMethods")) {
+                this.allowedHttpMethods(model.getAllowedHttpMethods());
+            }
+            if (model.wasPropertyExplicitlySet("mediaTypes")) {
+                this.mediaTypes(model.getMediaTypes());
+            }
+            return this;
         }
     }
 
@@ -747,6 +772,7 @@ public final class ProtectionSettings {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProtectionSettings(");
+        sb.append("super=").append(super.toString());
         sb.append("blockAction=").append(String.valueOf(this.blockAction));
         sb.append(", blockResponseCode=").append(String.valueOf(this.blockResponseCode));
         sb.append(", blockErrorPageMessage=").append(String.valueOf(this.blockErrorPageMessage));
@@ -764,7 +790,6 @@ public final class ProtectionSettings {
         sb.append(", maxResponseSizeInKiB=").append(String.valueOf(this.maxResponseSizeInKiB));
         sb.append(", allowedHttpMethods=").append(String.valueOf(this.allowedHttpMethods));
         sb.append(", mediaTypes=").append(String.valueOf(this.mediaTypes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -796,7 +821,7 @@ public final class ProtectionSettings {
                 && java.util.Objects.equals(this.maxResponseSizeInKiB, other.maxResponseSizeInKiB)
                 && java.util.Objects.equals(this.allowedHttpMethods, other.allowedHttpMethods)
                 && java.util.Objects.equals(this.mediaTypes, other.mediaTypes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -856,16 +881,7 @@ public final class ProtectionSettings {
                                 ? 43
                                 : this.allowedHttpMethods.hashCode());
         result = (result * PRIME) + (this.mediaTypes == null ? 43 : this.mediaTypes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

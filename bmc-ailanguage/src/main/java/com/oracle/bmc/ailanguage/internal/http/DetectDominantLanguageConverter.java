@@ -111,8 +111,8 @@ public class DetectDominantLanguageConverter {
                                         builder =
                                                 com.oracle.bmc.ailanguage.responses
                                                         .DetectDominantLanguageResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.detectDominantLanguageResult(response.getItem());
 

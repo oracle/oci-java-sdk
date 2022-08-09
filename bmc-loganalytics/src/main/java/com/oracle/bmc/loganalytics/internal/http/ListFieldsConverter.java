@@ -205,8 +205,8 @@ public class ListFieldsConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListFieldsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsFieldCollection(response.getItem());
 

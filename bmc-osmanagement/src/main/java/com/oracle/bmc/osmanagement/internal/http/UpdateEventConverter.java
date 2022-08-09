@@ -119,8 +119,8 @@ public class UpdateEventConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .UpdateEventResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.event(response.getItem());
 

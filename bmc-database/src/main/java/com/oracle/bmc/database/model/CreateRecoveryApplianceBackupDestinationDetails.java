@@ -101,30 +101,41 @@ public final class CreateRecoveryApplianceBackupDestinationDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateRecoveryApplianceBackupDestinationDetails build() {
-            CreateRecoveryApplianceBackupDestinationDetails __instance__ =
+            CreateRecoveryApplianceBackupDestinationDetails model =
                     new CreateRecoveryApplianceBackupDestinationDetails(
-                            displayName,
-                            compartmentId,
-                            freeformTags,
-                            definedTags,
-                            connectionString,
-                            vpcUsers);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.compartmentId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.connectionString,
+                            this.vpcUsers);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateRecoveryApplianceBackupDestinationDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .connectionString(o.getConnectionString())
-                            .vpcUsers(o.getVpcUsers());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateRecoveryApplianceBackupDestinationDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("connectionString")) {
+                this.connectionString(model.getConnectionString());
+            }
+            if (model.wasPropertyExplicitlySet("vpcUsers")) {
+                this.vpcUsers(model.getVpcUsers());
+            }
+            return this;
         }
     }
 
@@ -196,7 +207,6 @@ public final class CreateRecoveryApplianceBackupDestinationDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", vpcUsers=").append(String.valueOf(this.vpcUsers));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -214,8 +224,7 @@ public final class CreateRecoveryApplianceBackupDestinationDetails
                 (CreateRecoveryApplianceBackupDestinationDetails) o;
         return java.util.Objects.equals(this.connectionString, other.connectionString)
                 && java.util.Objects.equals(this.vpcUsers, other.vpcUsers)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -226,16 +235,6 @@ public final class CreateRecoveryApplianceBackupDestinationDetails
                 (result * PRIME)
                         + (this.connectionString == null ? 43 : this.connectionString.hashCode());
         result = (result * PRIME) + (this.vpcUsers == null ? 43 : this.vpcUsers.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

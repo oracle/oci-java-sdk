@@ -136,38 +136,54 @@ public final class UpdateOkeDeployStageDetails extends UpdateDeployStageDetails 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateOkeDeployStageDetails build() {
-            UpdateOkeDeployStageDetails __instance__ =
+            UpdateOkeDeployStageDetails model =
                     new UpdateOkeDeployStageDetails(
-                            description,
-                            displayName,
-                            deployStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            okeClusterDeployEnvironmentId,
-                            kubernetesManifestDeployArtifactIds,
-                            namespace,
-                            rollbackPolicy);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.deployStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.okeClusterDeployEnvironmentId,
+                            this.kubernetesManifestDeployArtifactIds,
+                            this.namespace,
+                            this.rollbackPolicy);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateOkeDeployStageDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .deployStagePredecessorCollection(
-                                    o.getDeployStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .okeClusterDeployEnvironmentId(o.getOkeClusterDeployEnvironmentId())
-                            .kubernetesManifestDeployArtifactIds(
-                                    o.getKubernetesManifestDeployArtifactIds())
-                            .namespace(o.getNamespace())
-                            .rollbackPolicy(o.getRollbackPolicy());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateOkeDeployStageDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessorCollection")) {
+                this.deployStagePredecessorCollection(model.getDeployStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("okeClusterDeployEnvironmentId")) {
+                this.okeClusterDeployEnvironmentId(model.getOkeClusterDeployEnvironmentId());
+            }
+            if (model.wasPropertyExplicitlySet("kubernetesManifestDeployArtifactIds")) {
+                this.kubernetesManifestDeployArtifactIds(
+                        model.getKubernetesManifestDeployArtifactIds());
+            }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("rollbackPolicy")) {
+                this.rollbackPolicy(model.getRollbackPolicy());
+            }
+            return this;
         }
     }
 
@@ -274,7 +290,6 @@ public final class UpdateOkeDeployStageDetails extends UpdateDeployStageDetails 
                 .append(String.valueOf(this.kubernetesManifestDeployArtifactIds));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", rollbackPolicy=").append(String.valueOf(this.rollbackPolicy));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -296,8 +311,7 @@ public final class UpdateOkeDeployStageDetails extends UpdateDeployStageDetails 
                         other.kubernetesManifestDeployArtifactIds)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.rollbackPolicy, other.rollbackPolicy)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -318,16 +332,6 @@ public final class UpdateOkeDeployStageDetails extends UpdateDeployStageDetails 
         result =
                 (result * PRIME)
                         + (this.rollbackPolicy == null ? 43 : this.rollbackPolicy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

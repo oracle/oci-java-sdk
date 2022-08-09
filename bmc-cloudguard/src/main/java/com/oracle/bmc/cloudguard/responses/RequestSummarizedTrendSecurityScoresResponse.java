@@ -62,17 +62,19 @@ public class RequestSummarizedTrendSecurityScoresResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "securityScoreTrendAggregationCollection"
     })
     private RequestSummarizedTrendSecurityScoresResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.SecurityScoreTrendAggregationCollection
                     securityScoreTrendAggregationCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.securityScoreTrendAggregationCollection = securityScoreTrendAggregationCollection;
@@ -83,6 +85,13 @@ public class RequestSummarizedTrendSecurityScoresResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -150,6 +159,7 @@ public class RequestSummarizedTrendSecurityScoresResponse
          */
         public Builder copy(RequestSummarizedTrendSecurityScoresResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             securityScoreTrendAggregationCollection(o.getSecurityScoreTrendAggregationCollection());
@@ -164,6 +174,7 @@ public class RequestSummarizedTrendSecurityScoresResponse
         public RequestSummarizedTrendSecurityScoresResponse build() {
             return new RequestSummarizedTrendSecurityScoresResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     securityScoreTrendAggregationCollection);

@@ -176,8 +176,8 @@ public class ListAnnouncementSubscriptionsConverter {
                                                 com.oracle.bmc.announcementsservice.responses
                                                         .ListAnnouncementSubscriptionsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.announcementSubscriptionCollection(response.getItem());
 

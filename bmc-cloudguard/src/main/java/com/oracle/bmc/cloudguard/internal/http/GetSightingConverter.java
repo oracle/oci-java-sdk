@@ -102,8 +102,8 @@ public class GetSightingConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .GetSightingResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sighting(response.getItem());
 

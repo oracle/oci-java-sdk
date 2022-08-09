@@ -19,7 +19,8 @@ package com.oracle.bmc.containerengine.model;
     builder = NodeEvictionNodePoolSettings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class NodeEvictionNodePoolSettings {
+public final class NodeEvictionNodePoolSettings
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"evictionGraceDuration", "isForceDeleteAfterGraceDuration"})
     public NodeEvictionNodePoolSettings(
@@ -72,22 +73,24 @@ public final class NodeEvictionNodePoolSettings {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NodeEvictionNodePoolSettings build() {
-            NodeEvictionNodePoolSettings __instance__ =
+            NodeEvictionNodePoolSettings model =
                     new NodeEvictionNodePoolSettings(
-                            evictionGraceDuration, isForceDeleteAfterGraceDuration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.evictionGraceDuration, this.isForceDeleteAfterGraceDuration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NodeEvictionNodePoolSettings o) {
-            Builder copiedBuilder =
-                    evictionGraceDuration(o.getEvictionGraceDuration())
-                            .isForceDeleteAfterGraceDuration(
-                                    o.getIsForceDeleteAfterGraceDuration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NodeEvictionNodePoolSettings model) {
+            if (model.wasPropertyExplicitlySet("evictionGraceDuration")) {
+                this.evictionGraceDuration(model.getEvictionGraceDuration());
+            }
+            if (model.wasPropertyExplicitlySet("isForceDeleteAfterGraceDuration")) {
+                this.isForceDeleteAfterGraceDuration(model.getIsForceDeleteAfterGraceDuration());
+            }
+            return this;
         }
     }
 
@@ -147,10 +150,10 @@ public final class NodeEvictionNodePoolSettings {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NodeEvictionNodePoolSettings(");
+        sb.append("super=").append(super.toString());
         sb.append("evictionGraceDuration=").append(String.valueOf(this.evictionGraceDuration));
         sb.append(", isForceDeleteAfterGraceDuration=")
                 .append(String.valueOf(this.isForceDeleteAfterGraceDuration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -168,7 +171,7 @@ public final class NodeEvictionNodePoolSettings {
         return java.util.Objects.equals(this.evictionGraceDuration, other.evictionGraceDuration)
                 && java.util.Objects.equals(
                         this.isForceDeleteAfterGraceDuration, other.isForceDeleteAfterGraceDuration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -185,16 +188,7 @@ public final class NodeEvictionNodePoolSettings {
                         + (this.isForceDeleteAfterGraceDuration == null
                                 ? 43
                                 : this.isForceDeleteAfterGraceDuration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

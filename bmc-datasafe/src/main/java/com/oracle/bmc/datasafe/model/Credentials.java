@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Credentials.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Credentials {
+public final class Credentials extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userName", "password"})
     public Credentials(String userName, String password) {
@@ -65,17 +65,22 @@ public final class Credentials {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Credentials build() {
-            Credentials __instance__ = new Credentials(userName, password);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Credentials model = new Credentials(this.userName, this.password);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Credentials o) {
-            Builder copiedBuilder = userName(o.getUserName()).password(o.getPassword());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Credentials model) {
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class Credentials {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Credentials(");
+        sb.append("super=").append(super.toString());
         sb.append("userName=").append(String.valueOf(this.userName));
         sb.append(", password=").append(String.valueOf(this.password));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class Credentials {
         Credentials other = (Credentials) o;
         return java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.password, other.password)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class Credentials {
         int result = 1;
         result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

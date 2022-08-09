@@ -21,7 +21,8 @@ package com.oracle.bmc.apmsynthetics.model;
     builder = MonitorStatusCountMap.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MonitorStatusCountMap {
+public final class MonitorStatusCountMap
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"total", "enabled", "disabled", "invalid"})
     public MonitorStatusCountMap(
@@ -104,22 +105,30 @@ public final class MonitorStatusCountMap {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonitorStatusCountMap build() {
-            MonitorStatusCountMap __instance__ =
-                    new MonitorStatusCountMap(total, enabled, disabled, invalid);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MonitorStatusCountMap model =
+                    new MonitorStatusCountMap(
+                            this.total, this.enabled, this.disabled, this.invalid);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MonitorStatusCountMap o) {
-            Builder copiedBuilder =
-                    total(o.getTotal())
-                            .enabled(o.getEnabled())
-                            .disabled(o.getDisabled())
-                            .invalid(o.getInvalid());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MonitorStatusCountMap model) {
+            if (model.wasPropertyExplicitlySet("total")) {
+                this.total(model.getTotal());
+            }
+            if (model.wasPropertyExplicitlySet("enabled")) {
+                this.enabled(model.getEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("disabled")) {
+                this.disabled(model.getDisabled());
+            }
+            if (model.wasPropertyExplicitlySet("invalid")) {
+                this.invalid(model.getInvalid());
+            }
+            return this;
         }
     }
 
@@ -203,11 +212,11 @@ public final class MonitorStatusCountMap {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MonitorStatusCountMap(");
+        sb.append("super=").append(super.toString());
         sb.append("total=").append(String.valueOf(this.total));
         sb.append(", enabled=").append(String.valueOf(this.enabled));
         sb.append(", disabled=").append(String.valueOf(this.disabled));
         sb.append(", invalid=").append(String.valueOf(this.invalid));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -226,7 +235,7 @@ public final class MonitorStatusCountMap {
                 && java.util.Objects.equals(this.enabled, other.enabled)
                 && java.util.Objects.equals(this.disabled, other.disabled)
                 && java.util.Objects.equals(this.invalid, other.invalid)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -237,16 +246,7 @@ public final class MonitorStatusCountMap {
         result = (result * PRIME) + (this.enabled == null ? 43 : this.enabled.hashCode());
         result = (result * PRIME) + (this.disabled == null ? 43 : this.disabled.hashCode());
         result = (result * PRIME) + (this.invalid == null ? 43 : this.invalid.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -129,8 +129,8 @@ public class ListJobShapesConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .ListJobShapesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

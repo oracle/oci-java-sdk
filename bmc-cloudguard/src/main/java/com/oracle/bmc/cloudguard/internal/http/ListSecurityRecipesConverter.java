@@ -166,8 +166,8 @@ public class ListSecurityRecipesConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListSecurityRecipesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityRecipeCollection(response.getItem());
 

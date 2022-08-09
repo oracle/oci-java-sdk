@@ -103,7 +103,8 @@ public class GetBdsApiKeyConverter {
 
                                 com.oracle.bmc.bds.responses.GetBdsApiKeyResponse.Builder builder =
                                         com.oracle.bmc.bds.responses.GetBdsApiKeyResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.bdsApiKey(response.getItem());
 

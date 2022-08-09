@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = ExtractLogHeaderResults.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExtractLogHeaderResults {
+public final class ExtractLogHeaderResults
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"jsonPaths", "xmlPaths", "headerPaths"})
     public ExtractLogHeaderResults(
@@ -87,21 +88,26 @@ public final class ExtractLogHeaderResults {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExtractLogHeaderResults build() {
-            ExtractLogHeaderResults __instance__ =
-                    new ExtractLogHeaderResults(jsonPaths, xmlPaths, headerPaths);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExtractLogHeaderResults model =
+                    new ExtractLogHeaderResults(this.jsonPaths, this.xmlPaths, this.headerPaths);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExtractLogHeaderResults o) {
-            Builder copiedBuilder =
-                    jsonPaths(o.getJsonPaths())
-                            .xmlPaths(o.getXmlPaths())
-                            .headerPaths(o.getHeaderPaths());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExtractLogHeaderResults model) {
+            if (model.wasPropertyExplicitlySet("jsonPaths")) {
+                this.jsonPaths(model.getJsonPaths());
+            }
+            if (model.wasPropertyExplicitlySet("xmlPaths")) {
+                this.xmlPaths(model.getXmlPaths());
+            }
+            if (model.wasPropertyExplicitlySet("headerPaths")) {
+                this.headerPaths(model.getHeaderPaths());
+            }
+            return this;
         }
     }
 
@@ -171,10 +177,10 @@ public final class ExtractLogHeaderResults {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExtractLogHeaderResults(");
+        sb.append("super=").append(super.toString());
         sb.append("jsonPaths=").append(String.valueOf(this.jsonPaths));
         sb.append(", xmlPaths=").append(String.valueOf(this.xmlPaths));
         sb.append(", headerPaths=").append(String.valueOf(this.headerPaths));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,7 +198,7 @@ public final class ExtractLogHeaderResults {
         return java.util.Objects.equals(this.jsonPaths, other.jsonPaths)
                 && java.util.Objects.equals(this.xmlPaths, other.xmlPaths)
                 && java.util.Objects.equals(this.headerPaths, other.headerPaths)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -202,16 +208,7 @@ public final class ExtractLogHeaderResults {
         result = (result * PRIME) + (this.jsonPaths == null ? 43 : this.jsonPaths.hashCode());
         result = (result * PRIME) + (this.xmlPaths == null ? 43 : this.xmlPaths.hashCode());
         result = (result * PRIME) + (this.headerPaths == null ? 43 : this.headerPaths.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

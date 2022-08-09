@@ -18,7 +18,7 @@ package com.oracle.bmc.apigateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MutualTlsDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MutualTlsDetails {
+public final class MutualTlsDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isVerifiedCertificateRequired", "allowedSans"})
     public MutualTlsDetails(
@@ -67,20 +67,23 @@ public final class MutualTlsDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MutualTlsDetails build() {
-            MutualTlsDetails __instance__ =
-                    new MutualTlsDetails(isVerifiedCertificateRequired, allowedSans);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MutualTlsDetails model =
+                    new MutualTlsDetails(this.isVerifiedCertificateRequired, this.allowedSans);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MutualTlsDetails o) {
-            Builder copiedBuilder =
-                    isVerifiedCertificateRequired(o.getIsVerifiedCertificateRequired())
-                            .allowedSans(o.getAllowedSans());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MutualTlsDetails model) {
+            if (model.wasPropertyExplicitlySet("isVerifiedCertificateRequired")) {
+                this.isVerifiedCertificateRequired(model.getIsVerifiedCertificateRequired());
+            }
+            if (model.wasPropertyExplicitlySet("allowedSans")) {
+                this.allowedSans(model.getAllowedSans());
+            }
+            return this;
         }
     }
 
@@ -136,10 +139,10 @@ public final class MutualTlsDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MutualTlsDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isVerifiedCertificateRequired=")
                 .append(String.valueOf(this.isVerifiedCertificateRequired));
         sb.append(", allowedSans=").append(String.valueOf(this.allowedSans));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -157,7 +160,7 @@ public final class MutualTlsDetails {
         return java.util.Objects.equals(
                         this.isVerifiedCertificateRequired, other.isVerifiedCertificateRequired)
                 && java.util.Objects.equals(this.allowedSans, other.allowedSans)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -170,16 +173,7 @@ public final class MutualTlsDetails {
                                 ? 43
                                 : this.isVerifiedCertificateRequired.hashCode());
         result = (result * PRIME) + (this.allowedSans == null ? 43 : this.allowedSans.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

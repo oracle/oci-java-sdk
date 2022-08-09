@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsLookupFields.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsLookupFields {
+public final class LogAnalyticsLookupFields
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "commonFieldName",
@@ -169,32 +170,45 @@ public final class LogAnalyticsLookupFields {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsLookupFields build() {
-            LogAnalyticsLookupFields __instance__ =
+            LogAnalyticsLookupFields model =
                     new LogAnalyticsLookupFields(
-                            commonFieldName,
-                            defaultMatchValue,
-                            displayName,
-                            isCommonField,
-                            matchOperator,
-                            name,
-                            position);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.commonFieldName,
+                            this.defaultMatchValue,
+                            this.displayName,
+                            this.isCommonField,
+                            this.matchOperator,
+                            this.name,
+                            this.position);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsLookupFields o) {
-            Builder copiedBuilder =
-                    commonFieldName(o.getCommonFieldName())
-                            .defaultMatchValue(o.getDefaultMatchValue())
-                            .displayName(o.getDisplayName())
-                            .isCommonField(o.getIsCommonField())
-                            .matchOperator(o.getMatchOperator())
-                            .name(o.getName())
-                            .position(o.getPosition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsLookupFields model) {
+            if (model.wasPropertyExplicitlySet("commonFieldName")) {
+                this.commonFieldName(model.getCommonFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("defaultMatchValue")) {
+                this.defaultMatchValue(model.getDefaultMatchValue());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isCommonField")) {
+                this.isCommonField(model.getIsCommonField());
+            }
+            if (model.wasPropertyExplicitlySet("matchOperator")) {
+                this.matchOperator(model.getMatchOperator());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("position")) {
+                this.position(model.getPosition());
+            }
+            return this;
         }
     }
 
@@ -322,6 +336,7 @@ public final class LogAnalyticsLookupFields {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsLookupFields(");
+        sb.append("super=").append(super.toString());
         sb.append("commonFieldName=").append(String.valueOf(this.commonFieldName));
         sb.append(", defaultMatchValue=").append(String.valueOf(this.defaultMatchValue));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -329,7 +344,6 @@ public final class LogAnalyticsLookupFields {
         sb.append(", matchOperator=").append(String.valueOf(this.matchOperator));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", position=").append(String.valueOf(this.position));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -351,7 +365,7 @@ public final class LogAnalyticsLookupFields {
                 && java.util.Objects.equals(this.matchOperator, other.matchOperator)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.position, other.position)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -373,16 +387,7 @@ public final class LogAnalyticsLookupFields {
                         + (this.matchOperator == null ? 43 : this.matchOperator.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.position == null ? 43 : this.position.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

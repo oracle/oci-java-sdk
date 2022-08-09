@@ -19,7 +19,7 @@ package com.oracle.bmc.marketplace.model;
     builder = PublicationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PublicationSummary {
+public final class PublicationSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "lifecycleState",
@@ -226,38 +226,57 @@ public final class PublicationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PublicationSummary build() {
-            PublicationSummary __instance__ =
+            PublicationSummary model =
                     new PublicationSummary(
-                            lifecycleState,
-                            compartmentId,
-                            id,
-                            name,
-                            shortDescription,
-                            icon,
-                            packageType,
-                            supportedOperatingSystems,
-                            listingType,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.lifecycleState,
+                            this.compartmentId,
+                            this.id,
+                            this.name,
+                            this.shortDescription,
+                            this.icon,
+                            this.packageType,
+                            this.supportedOperatingSystems,
+                            this.listingType,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PublicationSummary o) {
-            Builder copiedBuilder =
-                    lifecycleState(o.getLifecycleState())
-                            .compartmentId(o.getCompartmentId())
-                            .id(o.getId())
-                            .name(o.getName())
-                            .shortDescription(o.getShortDescription())
-                            .icon(o.getIcon())
-                            .packageType(o.getPackageType())
-                            .supportedOperatingSystems(o.getSupportedOperatingSystems())
-                            .listingType(o.getListingType())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PublicationSummary model) {
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("shortDescription")) {
+                this.shortDescription(model.getShortDescription());
+            }
+            if (model.wasPropertyExplicitlySet("icon")) {
+                this.icon(model.getIcon());
+            }
+            if (model.wasPropertyExplicitlySet("packageType")) {
+                this.packageType(model.getPackageType());
+            }
+            if (model.wasPropertyExplicitlySet("supportedOperatingSystems")) {
+                this.supportedOperatingSystems(model.getSupportedOperatingSystems());
+            }
+            if (model.wasPropertyExplicitlySet("listingType")) {
+                this.listingType(model.getListingType());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -426,6 +445,7 @@ public final class PublicationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PublicationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", id=").append(String.valueOf(this.id));
@@ -437,7 +457,6 @@ public final class PublicationSummary {
                 .append(String.valueOf(this.supportedOperatingSystems));
         sb.append(", listingType=").append(String.valueOf(this.listingType));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -463,7 +482,7 @@ public final class PublicationSummary {
                         this.supportedOperatingSystems, other.supportedOperatingSystems)
                 && java.util.Objects.equals(this.listingType, other.listingType)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -490,16 +509,7 @@ public final class PublicationSummary {
                                 : this.supportedOperatingSystems.hashCode());
         result = (result * PRIME) + (this.listingType == null ? 43 : this.listingType.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

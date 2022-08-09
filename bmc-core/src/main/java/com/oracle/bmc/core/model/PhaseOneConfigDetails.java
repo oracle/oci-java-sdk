@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = PhaseOneConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PhaseOneConfigDetails {
+public final class PhaseOneConfigDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isCustomPhaseOneConfig",
@@ -137,28 +138,37 @@ public final class PhaseOneConfigDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PhaseOneConfigDetails build() {
-            PhaseOneConfigDetails __instance__ =
+            PhaseOneConfigDetails model =
                     new PhaseOneConfigDetails(
-                            isCustomPhaseOneConfig,
-                            authenticationAlgorithm,
-                            encryptionAlgorithm,
-                            diffieHelmanGroup,
-                            lifetimeInSeconds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isCustomPhaseOneConfig,
+                            this.authenticationAlgorithm,
+                            this.encryptionAlgorithm,
+                            this.diffieHelmanGroup,
+                            this.lifetimeInSeconds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PhaseOneConfigDetails o) {
-            Builder copiedBuilder =
-                    isCustomPhaseOneConfig(o.getIsCustomPhaseOneConfig())
-                            .authenticationAlgorithm(o.getAuthenticationAlgorithm())
-                            .encryptionAlgorithm(o.getEncryptionAlgorithm())
-                            .diffieHelmanGroup(o.getDiffieHelmanGroup())
-                            .lifetimeInSeconds(o.getLifetimeInSeconds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PhaseOneConfigDetails model) {
+            if (model.wasPropertyExplicitlySet("isCustomPhaseOneConfig")) {
+                this.isCustomPhaseOneConfig(model.getIsCustomPhaseOneConfig());
+            }
+            if (model.wasPropertyExplicitlySet("authenticationAlgorithm")) {
+                this.authenticationAlgorithm(model.getAuthenticationAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionAlgorithm")) {
+                this.encryptionAlgorithm(model.getEncryptionAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("diffieHelmanGroup")) {
+                this.diffieHelmanGroup(model.getDiffieHelmanGroup());
+            }
+            if (model.wasPropertyExplicitlySet("lifetimeInSeconds")) {
+                this.lifetimeInSeconds(model.getLifetimeInSeconds());
+            }
+            return this;
         }
     }
 
@@ -378,13 +388,13 @@ public final class PhaseOneConfigDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PhaseOneConfigDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isCustomPhaseOneConfig=").append(String.valueOf(this.isCustomPhaseOneConfig));
         sb.append(", authenticationAlgorithm=")
                 .append(String.valueOf(this.authenticationAlgorithm));
         sb.append(", encryptionAlgorithm=").append(String.valueOf(this.encryptionAlgorithm));
         sb.append(", diffieHelmanGroup=").append(String.valueOf(this.diffieHelmanGroup));
         sb.append(", lifetimeInSeconds=").append(String.valueOf(this.lifetimeInSeconds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -405,7 +415,7 @@ public final class PhaseOneConfigDetails {
                 && java.util.Objects.equals(this.encryptionAlgorithm, other.encryptionAlgorithm)
                 && java.util.Objects.equals(this.diffieHelmanGroup, other.diffieHelmanGroup)
                 && java.util.Objects.equals(this.lifetimeInSeconds, other.lifetimeInSeconds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -433,16 +443,7 @@ public final class PhaseOneConfigDetails {
         result =
                 (result * PRIME)
                         + (this.lifetimeInSeconds == null ? 43 : this.lifetimeInSeconds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

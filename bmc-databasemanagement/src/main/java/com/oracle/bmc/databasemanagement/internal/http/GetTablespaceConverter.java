@@ -114,8 +114,8 @@ public class GetTablespaceConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .GetTablespaceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tablespace(response.getItem());
 

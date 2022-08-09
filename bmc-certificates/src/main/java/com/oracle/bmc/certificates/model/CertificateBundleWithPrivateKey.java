@@ -162,44 +162,69 @@ public final class CertificateBundleWithPrivateKey extends CertificateBundle {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CertificateBundleWithPrivateKey build() {
-            CertificateBundleWithPrivateKey __instance__ =
+            CertificateBundleWithPrivateKey model =
                     new CertificateBundleWithPrivateKey(
-                            certificateId,
-                            certificateName,
-                            versionNumber,
-                            serialNumber,
-                            certificatePem,
-                            certChainPem,
-                            timeCreated,
-                            validity,
-                            versionName,
-                            stages,
-                            revocationStatus,
-                            privateKeyPem,
-                            privateKeyPemPassphrase);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.certificateId,
+                            this.certificateName,
+                            this.versionNumber,
+                            this.serialNumber,
+                            this.certificatePem,
+                            this.certChainPem,
+                            this.timeCreated,
+                            this.validity,
+                            this.versionName,
+                            this.stages,
+                            this.revocationStatus,
+                            this.privateKeyPem,
+                            this.privateKeyPemPassphrase);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CertificateBundleWithPrivateKey o) {
-            Builder copiedBuilder =
-                    certificateId(o.getCertificateId())
-                            .certificateName(o.getCertificateName())
-                            .versionNumber(o.getVersionNumber())
-                            .serialNumber(o.getSerialNumber())
-                            .certificatePem(o.getCertificatePem())
-                            .certChainPem(o.getCertChainPem())
-                            .timeCreated(o.getTimeCreated())
-                            .validity(o.getValidity())
-                            .versionName(o.getVersionName())
-                            .stages(o.getStages())
-                            .revocationStatus(o.getRevocationStatus())
-                            .privateKeyPem(o.getPrivateKeyPem())
-                            .privateKeyPemPassphrase(o.getPrivateKeyPemPassphrase());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CertificateBundleWithPrivateKey model) {
+            if (model.wasPropertyExplicitlySet("certificateId")) {
+                this.certificateId(model.getCertificateId());
+            }
+            if (model.wasPropertyExplicitlySet("certificateName")) {
+                this.certificateName(model.getCertificateName());
+            }
+            if (model.wasPropertyExplicitlySet("versionNumber")) {
+                this.versionNumber(model.getVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("serialNumber")) {
+                this.serialNumber(model.getSerialNumber());
+            }
+            if (model.wasPropertyExplicitlySet("certificatePem")) {
+                this.certificatePem(model.getCertificatePem());
+            }
+            if (model.wasPropertyExplicitlySet("certChainPem")) {
+                this.certChainPem(model.getCertChainPem());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("validity")) {
+                this.validity(model.getValidity());
+            }
+            if (model.wasPropertyExplicitlySet("versionName")) {
+                this.versionName(model.getVersionName());
+            }
+            if (model.wasPropertyExplicitlySet("stages")) {
+                this.stages(model.getStages());
+            }
+            if (model.wasPropertyExplicitlySet("revocationStatus")) {
+                this.revocationStatus(model.getRevocationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("privateKeyPem")) {
+                this.privateKeyPem(model.getPrivateKeyPem());
+            }
+            if (model.wasPropertyExplicitlySet("privateKeyPemPassphrase")) {
+                this.privateKeyPemPassphrase(model.getPrivateKeyPemPassphrase());
+            }
+            return this;
         }
     }
 
@@ -290,7 +315,6 @@ public final class CertificateBundleWithPrivateKey extends CertificateBundle {
         sb.append(", privateKeyPem=").append(String.valueOf(this.privateKeyPem));
         sb.append(", privateKeyPemPassphrase=")
                 .append(String.valueOf(this.privateKeyPemPassphrase));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -308,8 +332,7 @@ public final class CertificateBundleWithPrivateKey extends CertificateBundle {
         return java.util.Objects.equals(this.privateKeyPem, other.privateKeyPem)
                 && java.util.Objects.equals(
                         this.privateKeyPemPassphrase, other.privateKeyPemPassphrase)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -324,16 +347,6 @@ public final class CertificateBundleWithPrivateKey extends CertificateBundle {
                         + (this.privateKeyPemPassphrase == null
                                 ? 43
                                 : this.privateKeyPemPassphrase.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

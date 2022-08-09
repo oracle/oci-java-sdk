@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = AllowedParameterValue.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AllowedParameterValue {
+public final class AllowedParameterValue
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ordinal", "value", "isDefault"})
     public AllowedParameterValue(java.math.BigDecimal ordinal, String value, Boolean isDefault) {
@@ -84,19 +85,26 @@ public final class AllowedParameterValue {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AllowedParameterValue build() {
-            AllowedParameterValue __instance__ =
-                    new AllowedParameterValue(ordinal, value, isDefault);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AllowedParameterValue model =
+                    new AllowedParameterValue(this.ordinal, this.value, this.isDefault);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AllowedParameterValue o) {
-            Builder copiedBuilder =
-                    ordinal(o.getOrdinal()).value(o.getValue()).isDefault(o.getIsDefault());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AllowedParameterValue model) {
+            if (model.wasPropertyExplicitlySet("ordinal")) {
+                this.ordinal(model.getOrdinal());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            return this;
         }
     }
 
@@ -166,10 +174,10 @@ public final class AllowedParameterValue {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AllowedParameterValue(");
+        sb.append("super=").append(super.toString());
         sb.append("ordinal=").append(String.valueOf(this.ordinal));
         sb.append(", value=").append(String.valueOf(this.value));
         sb.append(", isDefault=").append(String.valueOf(this.isDefault));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -187,7 +195,7 @@ public final class AllowedParameterValue {
         return java.util.Objects.equals(this.ordinal, other.ordinal)
                 && java.util.Objects.equals(this.value, other.value)
                 && java.util.Objects.equals(this.isDefault, other.isDefault)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -197,16 +205,7 @@ public final class AllowedParameterValue {
         result = (result * PRIME) + (this.ordinal == null ? 43 : this.ordinal.hashCode());
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
         result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

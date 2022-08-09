@@ -53,17 +53,19 @@ public final class OccSourceDetails extends SourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OccSourceDetails build() {
-            OccSourceDetails __instance__ = new OccSourceDetails(computeAccount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OccSourceDetails model = new OccSourceDetails(this.computeAccount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OccSourceDetails o) {
-            Builder copiedBuilder = computeAccount(o.getComputeAccount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OccSourceDetails model) {
+            if (model.wasPropertyExplicitlySet("computeAccount")) {
+                this.computeAccount(model.getComputeAccount());
+            }
+            return this;
         }
     }
 
@@ -119,7 +121,6 @@ public final class OccSourceDetails extends SourceDetails {
         sb.append("OccSourceDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", computeAccount=").append(String.valueOf(this.computeAccount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -135,8 +136,7 @@ public final class OccSourceDetails extends SourceDetails {
 
         OccSourceDetails other = (OccSourceDetails) o;
         return java.util.Objects.equals(this.computeAccount, other.computeAccount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -146,16 +146,6 @@ public final class OccSourceDetails extends SourceDetails {
         result =
                 (result * PRIME)
                         + (this.computeAccount == null ? 43 : this.computeAccount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

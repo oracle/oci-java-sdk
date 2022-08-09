@@ -112,8 +112,8 @@ public class GetVmClusterPatchHistoryEntryConverter {
                                                 com.oracle.bmc.database.responses
                                                         .GetVmClusterPatchHistoryEntryResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.patchHistoryEntry(response.getItem());
 

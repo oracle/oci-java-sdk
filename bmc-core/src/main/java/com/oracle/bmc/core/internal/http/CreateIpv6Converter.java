@@ -96,7 +96,8 @@ public class CreateIpv6Converter {
 
                                 com.oracle.bmc.core.responses.CreateIpv6Response.Builder builder =
                                         com.oracle.bmc.core.responses.CreateIpv6Response.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.ipv6(response.getItem());
 

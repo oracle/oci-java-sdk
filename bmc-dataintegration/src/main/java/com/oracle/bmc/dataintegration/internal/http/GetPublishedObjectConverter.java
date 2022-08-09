@@ -130,8 +130,8 @@ public class GetPublishedObjectConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .GetPublishedObjectResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.publishedObject(response.getItem());
 

@@ -183,8 +183,8 @@ public class ListApplicationDependencyVulnerabilitiesConverter {
                                                 com.oracle.bmc.adm.responses
                                                         .ListApplicationDependencyVulnerabilitiesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.applicationDependencyVulnerabilityCollection(
                                         response.getItem());

@@ -53,13 +53,20 @@ public class UpdateJobResponse extends com.oracle.bmc.responses.BmcResponse {
         return job;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "job"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "job"
+    })
     private UpdateJobResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datascience.model.Job job) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.job = job;
@@ -70,6 +77,13 @@ public class UpdateJobResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateJobResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UpdateJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             job(o.getJob());
@@ -142,7 +157,7 @@ public class UpdateJobResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public UpdateJobResponse build() {
-            return new UpdateJobResponse(__httpStatusCode__, etag, opcRequestId, job);
+            return new UpdateJobResponse(__httpStatusCode__, headers, etag, opcRequestId, job);
         }
     }
 

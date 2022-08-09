@@ -163,44 +163,69 @@ public final class UpdateConnectionFromJdbc extends UpdateConnectionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateConnectionFromJdbc build() {
-            UpdateConnectionFromJdbc __instance__ =
+            UpdateConnectionFromJdbc model =
                     new UpdateConnectionFromJdbc(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectStatus,
-                            objectVersion,
-                            identifier,
-                            connectionProperties,
-                            registryMetadata,
-                            username,
-                            password,
-                            passwordSecret);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectStatus,
+                            this.objectVersion,
+                            this.identifier,
+                            this.connectionProperties,
+                            this.registryMetadata,
+                            this.username,
+                            this.password,
+                            this.passwordSecret);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateConnectionFromJdbc o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectStatus(o.getObjectStatus())
-                            .objectVersion(o.getObjectVersion())
-                            .identifier(o.getIdentifier())
-                            .connectionProperties(o.getConnectionProperties())
-                            .registryMetadata(o.getRegistryMetadata())
-                            .username(o.getUsername())
-                            .password(o.getPassword())
-                            .passwordSecret(o.getPasswordSecret());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateConnectionFromJdbc model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("connectionProperties")) {
+                this.connectionProperties(model.getConnectionProperties());
+            }
+            if (model.wasPropertyExplicitlySet("registryMetadata")) {
+                this.registryMetadata(model.getRegistryMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecret")) {
+                this.passwordSecret(model.getPasswordSecret());
+            }
+            return this;
         }
     }
 
@@ -298,7 +323,6 @@ public final class UpdateConnectionFromJdbc extends UpdateConnectionDetails {
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append(String.valueOf(this.password));
         sb.append(", passwordSecret=").append(String.valueOf(this.passwordSecret));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -316,8 +340,7 @@ public final class UpdateConnectionFromJdbc extends UpdateConnectionDetails {
         return java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.passwordSecret, other.passwordSecret)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -329,16 +352,6 @@ public final class UpdateConnectionFromJdbc extends UpdateConnectionDetails {
         result =
                 (result * PRIME)
                         + (this.passwordSecret == null ? 43 : this.passwordSecret.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

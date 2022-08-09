@@ -178,8 +178,8 @@ public class ListWindowsUpdatesInstalledOnManagedInstanceConverter {
                                                 com.oracle.bmc.osmanagement.responses
                                                         .ListWindowsUpdatesInstalledOnManagedInstanceResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

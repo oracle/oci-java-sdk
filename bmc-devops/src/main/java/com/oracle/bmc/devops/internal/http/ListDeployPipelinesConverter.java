@@ -174,8 +174,8 @@ public class ListDeployPipelinesConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .ListDeployPipelinesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deployPipelineCollection(response.getItem());
 

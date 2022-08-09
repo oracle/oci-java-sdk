@@ -54,20 +54,24 @@ public final class UpdateMetricBasedVerticalScalingPolicyDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateMetricBasedVerticalScalingPolicyDetails build() {
-            UpdateMetricBasedVerticalScalingPolicyDetails __instance__ =
+            UpdateMetricBasedVerticalScalingPolicyDetails model =
                     new UpdateMetricBasedVerticalScalingPolicyDetails(
-                            scaleUpConfig, scaleDownConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.scaleUpConfig, this.scaleDownConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateMetricBasedVerticalScalingPolicyDetails o) {
-            Builder copiedBuilder =
-                    scaleUpConfig(o.getScaleUpConfig()).scaleDownConfig(o.getScaleDownConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateMetricBasedVerticalScalingPolicyDetails model) {
+            if (model.wasPropertyExplicitlySet("scaleUpConfig")) {
+                this.scaleUpConfig(model.getScaleUpConfig());
+            }
+            if (model.wasPropertyExplicitlySet("scaleDownConfig")) {
+                this.scaleDownConfig(model.getScaleDownConfig());
+            }
+            return this;
         }
     }
 
@@ -121,7 +125,6 @@ public final class UpdateMetricBasedVerticalScalingPolicyDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", scaleUpConfig=").append(String.valueOf(this.scaleUpConfig));
         sb.append(", scaleDownConfig=").append(String.valueOf(this.scaleDownConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -139,8 +142,7 @@ public final class UpdateMetricBasedVerticalScalingPolicyDetails
                 (UpdateMetricBasedVerticalScalingPolicyDetails) o;
         return java.util.Objects.equals(this.scaleUpConfig, other.scaleUpConfig)
                 && java.util.Objects.equals(this.scaleDownConfig, other.scaleDownConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -153,16 +155,6 @@ public final class UpdateMetricBasedVerticalScalingPolicyDetails
         result =
                 (result * PRIME)
                         + (this.scaleDownConfig == null ? 43 : this.scaleDownConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

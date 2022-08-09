@@ -21,7 +21,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = ParseConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ParseConnectionDetails {
+public final class ParseConnectionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "connectionDetail",
@@ -105,23 +106,33 @@ public final class ParseConnectionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ParseConnectionDetails build() {
-            ParseConnectionDetails __instance__ =
+            ParseConnectionDetails model =
                     new ParseConnectionDetails(
-                            connectionDetail, connectionPayload, walletSecretId, walletSecretName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.connectionDetail,
+                            this.connectionPayload,
+                            this.walletSecretId,
+                            this.walletSecretName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ParseConnectionDetails o) {
-            Builder copiedBuilder =
-                    connectionDetail(o.getConnectionDetail())
-                            .connectionPayload(o.getConnectionPayload())
-                            .walletSecretId(o.getWalletSecretId())
-                            .walletSecretName(o.getWalletSecretName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ParseConnectionDetails model) {
+            if (model.wasPropertyExplicitlySet("connectionDetail")) {
+                this.connectionDetail(model.getConnectionDetail());
+            }
+            if (model.wasPropertyExplicitlySet("connectionPayload")) {
+                this.connectionPayload(model.getConnectionPayload());
+            }
+            if (model.wasPropertyExplicitlySet("walletSecretId")) {
+                this.walletSecretId(model.getWalletSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("walletSecretName")) {
+                this.walletSecretName(model.getWalletSecretName());
+            }
+            return this;
         }
     }
 
@@ -198,6 +209,7 @@ public final class ParseConnectionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ParseConnectionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("connectionDetail=").append(String.valueOf(this.connectionDetail));
         sb.append(", connectionPayload=")
                 .append(
@@ -209,7 +221,6 @@ public final class ParseConnectionDetails {
                                                 : ""))));
         sb.append(", walletSecretId=").append(String.valueOf(this.walletSecretId));
         sb.append(", walletSecretName=").append(String.valueOf(this.walletSecretName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -228,7 +239,7 @@ public final class ParseConnectionDetails {
                 && java.util.Arrays.equals(this.connectionPayload, other.connectionPayload)
                 && java.util.Objects.equals(this.walletSecretId, other.walletSecretId)
                 && java.util.Objects.equals(this.walletSecretName, other.walletSecretName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -245,16 +256,7 @@ public final class ParseConnectionDetails {
         result =
                 (result * PRIME)
                         + (this.walletSecretName == null ? 43 : this.walletSecretName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

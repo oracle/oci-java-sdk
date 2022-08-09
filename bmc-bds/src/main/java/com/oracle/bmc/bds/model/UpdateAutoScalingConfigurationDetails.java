@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = UpdateAutoScalingConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateAutoScalingConfigurationDetails {
+public final class UpdateAutoScalingConfigurationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -115,24 +116,37 @@ public final class UpdateAutoScalingConfigurationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAutoScalingConfigurationDetails build() {
-            UpdateAutoScalingConfigurationDetails __instance__ =
+            UpdateAutoScalingConfigurationDetails model =
                     new UpdateAutoScalingConfigurationDetails(
-                            displayName, isEnabled, clusterAdminPassword, policy, policyDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.isEnabled,
+                            this.clusterAdminPassword,
+                            this.policy,
+                            this.policyDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateAutoScalingConfigurationDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .isEnabled(o.getIsEnabled())
-                            .clusterAdminPassword(o.getClusterAdminPassword())
-                            .policy(o.getPolicy())
-                            .policyDetails(o.getPolicyDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateAutoScalingConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
+                this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("policy")) {
+                this.policy(model.getPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("policyDetails")) {
+                this.policyDetails(model.getPolicyDetails());
+            }
+            return this;
         }
     }
 
@@ -216,12 +230,12 @@ public final class UpdateAutoScalingConfigurationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateAutoScalingConfigurationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
         sb.append(", policy=").append(String.valueOf(this.policy));
         sb.append(", policyDetails=").append(String.valueOf(this.policyDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -241,7 +255,7 @@ public final class UpdateAutoScalingConfigurationDetails {
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
                 && java.util.Objects.equals(this.policy, other.policy)
                 && java.util.Objects.equals(this.policyDetails, other.policyDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -259,16 +273,7 @@ public final class UpdateAutoScalingConfigurationDetails {
         result =
                 (result * PRIME)
                         + (this.policyDetails == null ? 43 : this.policyDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

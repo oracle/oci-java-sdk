@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = DataObjectQueryTimeFilters.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataObjectQueryTimeFilters {
+public final class DataObjectQueryTimeFilters
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timePeriod", "timeStart", "timeEnd"})
     public DataObjectQueryTimeFilters(
@@ -103,21 +104,26 @@ public final class DataObjectQueryTimeFilters {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataObjectQueryTimeFilters build() {
-            DataObjectQueryTimeFilters __instance__ =
-                    new DataObjectQueryTimeFilters(timePeriod, timeStart, timeEnd);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DataObjectQueryTimeFilters model =
+                    new DataObjectQueryTimeFilters(this.timePeriod, this.timeStart, this.timeEnd);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataObjectQueryTimeFilters o) {
-            Builder copiedBuilder =
-                    timePeriod(o.getTimePeriod())
-                            .timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataObjectQueryTimeFilters model) {
+            if (model.wasPropertyExplicitlySet("timePeriod")) {
+                this.timePeriod(model.getTimePeriod());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            return this;
         }
     }
 
@@ -205,10 +211,10 @@ public final class DataObjectQueryTimeFilters {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataObjectQueryTimeFilters(");
+        sb.append("super=").append(super.toString());
         sb.append("timePeriod=").append(String.valueOf(this.timePeriod));
         sb.append(", timeStart=").append(String.valueOf(this.timeStart));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -226,7 +232,7 @@ public final class DataObjectQueryTimeFilters {
         return java.util.Objects.equals(this.timePeriod, other.timePeriod)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -236,16 +242,7 @@ public final class DataObjectQueryTimeFilters {
         result = (result * PRIME) + (this.timePeriod == null ? 43 : this.timePeriod.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

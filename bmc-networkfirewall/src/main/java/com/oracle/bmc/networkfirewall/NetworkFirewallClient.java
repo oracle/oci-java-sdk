@@ -540,7 +540,10 @@ public class NetworkFirewallClient implements NetworkFirewall {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "NetworkFirewall", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "NetworkFirewall",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/CancelWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -579,7 +582,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "ChangeNetworkFirewallCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/ChangeNetworkFirewallCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkFirewallCompartmentResponse>
                 transformer =
@@ -625,7 +628,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "ChangeNetworkFirewallPolicyCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/ChangeNetworkFirewallPolicyCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkFirewallPolicyCompartmentResponse>
                 transformer =
@@ -670,7 +673,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "CreateNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/CreateNetworkFirewall");
         java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkFirewallResponse>
                 transformer =
                         CreateNetworkFirewallConverter.fromResponse(
@@ -713,7 +716,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "CreateNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/CreateNetworkFirewallPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkFirewallPolicyResponse>
                 transformer =
                         CreateNetworkFirewallPolicyConverter.fromResponse(
@@ -756,7 +759,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "DeleteNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/DeleteNetworkFirewall");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkFirewallResponse>
                 transformer =
                         DeleteNetworkFirewallConverter.fromResponse(
@@ -795,7 +798,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "DeleteNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/DeleteNetworkFirewallPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkFirewallPolicyResponse>
                 transformer =
                         DeleteNetworkFirewallPolicyConverter.fromResponse(
@@ -830,7 +833,10 @@ public class NetworkFirewallClient implements NetworkFirewall {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "NetworkFirewall", "GetNetworkFirewall", ib.getRequestUri().toString(), "");
+                        "NetworkFirewall",
+                        "GetNetworkFirewall",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/GetNetworkFirewall");
         java.util.function.Function<javax.ws.rs.core.Response, GetNetworkFirewallResponse>
                 transformer =
                         GetNetworkFirewallConverter.fromResponse(
@@ -868,7 +874,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "GetNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/GetNetworkFirewallPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, GetNetworkFirewallPolicyResponse>
                 transformer =
                         GetNetworkFirewallPolicyConverter.fromResponse(
@@ -902,7 +908,10 @@ public class NetworkFirewallClient implements NetworkFirewall {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "NetworkFirewall", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "NetworkFirewall",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -938,7 +947,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "ListNetworkFirewallPolicies",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/ListNetworkFirewallPolicies");
         java.util.function.Function<javax.ws.rs.core.Response, ListNetworkFirewallPoliciesResponse>
                 transformer =
                         ListNetworkFirewallPoliciesConverter.fromResponse(
@@ -975,7 +984,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "ListNetworkFirewalls",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/ListNetworkFirewalls");
         java.util.function.Function<javax.ws.rs.core.Response, ListNetworkFirewallsResponse>
                 transformer =
                         ListNetworkFirewallsConverter.fromResponse(
@@ -1013,7 +1022,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1050,7 +1059,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1084,7 +1093,10 @@ public class NetworkFirewallClient implements NetworkFirewall {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "NetworkFirewall", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "NetworkFirewall",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1122,7 +1134,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "UpdateNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/UpdateNetworkFirewall");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkFirewallResponse>
                 transformer =
                         UpdateNetworkFirewallConverter.fromResponse(
@@ -1164,7 +1176,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "UpdateNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/UpdateNetworkFirewallPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkFirewallPolicyResponse>
                 transformer =
                         UpdateNetworkFirewallPolicyConverter.fromResponse(

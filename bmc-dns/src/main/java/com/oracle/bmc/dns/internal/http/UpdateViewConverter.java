@@ -114,7 +114,8 @@ public class UpdateViewConverter {
 
                                 com.oracle.bmc.dns.responses.UpdateViewResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.UpdateViewResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.view(response.getItem());
 

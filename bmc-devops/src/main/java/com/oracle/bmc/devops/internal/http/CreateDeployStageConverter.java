@@ -102,8 +102,8 @@ public class CreateDeployStageConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .CreateDeployStageResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deployStage(response.getItem());
 

@@ -57,17 +57,19 @@ public class CreateExecuteOperationJobResponse extends com.oracle.bmc.responses.
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "executeOperationJobDetails"
     })
     private CreateExecuteOperationJobResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataconnectivity.model.ExecuteOperationJobDetails
                     executeOperationJobDetails) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.executeOperationJobDetails = executeOperationJobDetails;
@@ -78,6 +80,13 @@ public class CreateExecuteOperationJobResponse extends com.oracle.bmc.responses.
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -141,6 +150,7 @@ public class CreateExecuteOperationJobResponse extends com.oracle.bmc.responses.
          */
         public Builder copy(CreateExecuteOperationJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             executeOperationJobDetails(o.getExecuteOperationJobDetails());
@@ -154,7 +164,7 @@ public class CreateExecuteOperationJobResponse extends com.oracle.bmc.responses.
          */
         public CreateExecuteOperationJobResponse build() {
             return new CreateExecuteOperationJobResponse(
-                    __httpStatusCode__, etag, opcRequestId, executeOperationJobDetails);
+                    __httpStatusCode__, headers, etag, opcRequestId, executeOperationJobDetails);
         }
     }
 

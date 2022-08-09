@@ -102,8 +102,8 @@ public class GetTaggingWorkRequestConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .GetTaggingWorkRequestResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.taggingWorkRequest(response.getItem());
 

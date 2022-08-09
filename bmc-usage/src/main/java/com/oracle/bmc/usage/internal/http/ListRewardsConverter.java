@@ -109,7 +109,8 @@ public class ListRewardsConverter {
 
                                 com.oracle.bmc.usage.responses.ListRewardsResponse.Builder builder =
                                         com.oracle.bmc.usage.responses.ListRewardsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.rewardCollection(response.getItem());
 

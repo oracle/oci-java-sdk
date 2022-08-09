@@ -81,22 +81,29 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecurityZoneTargetDetails build() {
-            SecurityZoneTargetDetails __instance__ =
+            SecurityZoneTargetDetails model =
                     new SecurityZoneTargetDetails(
-                            securityZoneId, securityZoneDisplayName, targetSecurityZoneRecipes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.securityZoneId,
+                            this.securityZoneDisplayName,
+                            this.targetSecurityZoneRecipes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SecurityZoneTargetDetails o) {
-            Builder copiedBuilder =
-                    securityZoneId(o.getSecurityZoneId())
-                            .securityZoneDisplayName(o.getSecurityZoneDisplayName())
-                            .targetSecurityZoneRecipes(o.getTargetSecurityZoneRecipes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SecurityZoneTargetDetails model) {
+            if (model.wasPropertyExplicitlySet("securityZoneId")) {
+                this.securityZoneId(model.getSecurityZoneId());
+            }
+            if (model.wasPropertyExplicitlySet("securityZoneDisplayName")) {
+                this.securityZoneDisplayName(model.getSecurityZoneDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("targetSecurityZoneRecipes")) {
+                this.targetSecurityZoneRecipes(model.getTargetSecurityZoneRecipes());
+            }
+            return this;
         }
     }
 
@@ -183,7 +190,6 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
                 .append(String.valueOf(this.securityZoneDisplayName));
         sb.append(", targetSecurityZoneRecipes=")
                 .append(String.valueOf(this.targetSecurityZoneRecipes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -203,8 +209,7 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
                         this.securityZoneDisplayName, other.securityZoneDisplayName)
                 && java.util.Objects.equals(
                         this.targetSecurityZoneRecipes, other.targetSecurityZoneRecipes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -224,16 +229,6 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
                         + (this.targetSecurityZoneRecipes == null
                                 ? 43
                                 : this.targetSecurityZoneRecipes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

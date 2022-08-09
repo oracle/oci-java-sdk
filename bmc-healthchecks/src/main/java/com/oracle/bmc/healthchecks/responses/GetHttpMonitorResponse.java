@@ -74,6 +74,7 @@ public class GetHttpMonitorResponse extends com.oracle.bmc.responses.BmcResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "httpMonitor",
@@ -81,11 +82,12 @@ public class GetHttpMonitorResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private GetHttpMonitorResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.healthchecks.model.HttpMonitor httpMonitor,
             boolean isNotModified) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.httpMonitor = httpMonitor;
@@ -97,6 +99,13 @@ public class GetHttpMonitorResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -177,6 +186,7 @@ public class GetHttpMonitorResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetHttpMonitorResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             httpMonitor(o.getHttpMonitor());
@@ -190,7 +200,7 @@ public class GetHttpMonitorResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public GetHttpMonitorResponse build() {
             return new GetHttpMonitorResponse(
-                    __httpStatusCode__, opcRequestId, etag, httpMonitor, isNotModified);
+                    __httpStatusCode__, headers, opcRequestId, etag, httpMonitor, isNotModified);
         }
     }
 

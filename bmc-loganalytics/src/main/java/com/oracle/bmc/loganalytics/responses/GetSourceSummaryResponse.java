@@ -36,12 +36,18 @@ public class GetSourceSummaryResponse extends com.oracle.bmc.responses.BmcRespon
         return sourceSummaryReport;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "sourceSummaryReport"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "sourceSummaryReport"
+    })
     private GetSourceSummaryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.SourceSummaryReport sourceSummaryReport) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.sourceSummaryReport = sourceSummaryReport;
     }
@@ -51,6 +57,13 @@ public class GetSourceSummaryResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -93,6 +106,7 @@ public class GetSourceSummaryResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetSourceSummaryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             sourceSummaryReport(o.getSourceSummaryReport());
 
@@ -105,7 +119,7 @@ public class GetSourceSummaryResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public GetSourceSummaryResponse build() {
             return new GetSourceSummaryResponse(
-                    __httpStatusCode__, opcRequestId, sourceSummaryReport);
+                    __httpStatusCode__, headers, opcRequestId, sourceSummaryReport);
         }
     }
 

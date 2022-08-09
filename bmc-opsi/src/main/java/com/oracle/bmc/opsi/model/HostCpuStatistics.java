@@ -77,24 +77,37 @@ public final class HostCpuStatistics extends HostResourceStatistics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostCpuStatistics build() {
-            HostCpuStatistics __instance__ =
+            HostCpuStatistics model =
                     new HostCpuStatistics(
-                            usage, capacity, utilizationPercent, usageChangePercent, load);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.usage,
+                            this.capacity,
+                            this.utilizationPercent,
+                            this.usageChangePercent,
+                            this.load);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostCpuStatistics o) {
-            Builder copiedBuilder =
-                    usage(o.getUsage())
-                            .capacity(o.getCapacity())
-                            .utilizationPercent(o.getUtilizationPercent())
-                            .usageChangePercent(o.getUsageChangePercent())
-                            .load(o.getLoad());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostCpuStatistics model) {
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
+            }
+            if (model.wasPropertyExplicitlySet("capacity")) {
+                this.capacity(model.getCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("utilizationPercent")) {
+                this.utilizationPercent(model.getUtilizationPercent());
+            }
+            if (model.wasPropertyExplicitlySet("usageChangePercent")) {
+                this.usageChangePercent(model.getUsageChangePercent());
+            }
+            if (model.wasPropertyExplicitlySet("load")) {
+                this.load(model.getLoad());
+            }
+            return this;
         }
     }
 
@@ -142,7 +155,6 @@ public final class HostCpuStatistics extends HostResourceStatistics {
         sb.append("HostCpuStatistics(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", load=").append(String.valueOf(this.load));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -157,9 +169,7 @@ public final class HostCpuStatistics extends HostResourceStatistics {
         }
 
         HostCpuStatistics other = (HostCpuStatistics) o;
-        return java.util.Objects.equals(this.load, other.load)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.load, other.load) && super.equals(other);
     }
 
     @Override
@@ -167,16 +177,6 @@ public final class HostCpuStatistics extends HostResourceStatistics {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.load == null ? 43 : this.load.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.cloudguard.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OperatorSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OperatorSummary {
+public final class OperatorSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -165,32 +165,45 @@ public final class OperatorSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OperatorSummary build() {
-            OperatorSummary __instance__ =
+            OperatorSummary model =
                     new OperatorSummary(
-                            name,
-                            displayName,
-                            datatype,
-                            managedListtype,
-                            filterType,
-                            operators,
-                            multiListTypes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.displayName,
+                            this.datatype,
+                            this.managedListtype,
+                            this.filterType,
+                            this.operators,
+                            this.multiListTypes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OperatorSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .displayName(o.getDisplayName())
-                            .datatype(o.getDatatype())
-                            .managedListtype(o.getManagedListtype())
-                            .filterType(o.getFilterType())
-                            .operators(o.getOperators())
-                            .multiListTypes(o.getMultiListTypes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OperatorSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("datatype")) {
+                this.datatype(model.getDatatype());
+            }
+            if (model.wasPropertyExplicitlySet("managedListtype")) {
+                this.managedListtype(model.getManagedListtype());
+            }
+            if (model.wasPropertyExplicitlySet("filterType")) {
+                this.filterType(model.getFilterType());
+            }
+            if (model.wasPropertyExplicitlySet("operators")) {
+                this.operators(model.getOperators());
+            }
+            if (model.wasPropertyExplicitlySet("multiListTypes")) {
+                this.multiListTypes(model.getMultiListTypes());
+            }
+            return this;
         }
     }
 
@@ -316,6 +329,7 @@ public final class OperatorSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OperatorSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", datatype=").append(String.valueOf(this.datatype));
@@ -323,7 +337,6 @@ public final class OperatorSummary {
         sb.append(", filterType=").append(String.valueOf(this.filterType));
         sb.append(", operators=").append(String.valueOf(this.operators));
         sb.append(", multiListTypes=").append(String.valueOf(this.multiListTypes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -345,7 +358,7 @@ public final class OperatorSummary {
                 && java.util.Objects.equals(this.filterType, other.filterType)
                 && java.util.Objects.equals(this.operators, other.operators)
                 && java.util.Objects.equals(this.multiListTypes, other.multiListTypes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -363,16 +376,7 @@ public final class OperatorSummary {
         result =
                 (result * PRIME)
                         + (this.multiListTypes == null ? 43 : this.multiListTypes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

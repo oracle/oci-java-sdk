@@ -113,8 +113,8 @@ public class AddTagDefaultLockConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .AddTagDefaultLockResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tagDefault(response.getItem());
 

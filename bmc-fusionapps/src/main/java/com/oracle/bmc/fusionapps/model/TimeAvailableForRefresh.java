@@ -19,7 +19,8 @@ package com.oracle.bmc.fusionapps.model;
     builder = TimeAvailableForRefresh.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TimeAvailableForRefresh {
+public final class TimeAvailableForRefresh
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeAvailableForRefresh"})
     public TimeAvailableForRefresh(java.util.Date timeAvailableForRefresh) {
@@ -50,18 +51,20 @@ public final class TimeAvailableForRefresh {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TimeAvailableForRefresh build() {
-            TimeAvailableForRefresh __instance__ =
-                    new TimeAvailableForRefresh(timeAvailableForRefresh);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TimeAvailableForRefresh model =
+                    new TimeAvailableForRefresh(this.timeAvailableForRefresh);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TimeAvailableForRefresh o) {
-            Builder copiedBuilder = timeAvailableForRefresh(o.getTimeAvailableForRefresh());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TimeAvailableForRefresh model) {
+            if (model.wasPropertyExplicitlySet("timeAvailableForRefresh")) {
+                this.timeAvailableForRefresh(model.getTimeAvailableForRefresh());
+            }
+            return this;
         }
     }
 
@@ -103,8 +106,8 @@ public final class TimeAvailableForRefresh {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TimeAvailableForRefresh(");
+        sb.append("super=").append(super.toString());
         sb.append("timeAvailableForRefresh=").append(String.valueOf(this.timeAvailableForRefresh));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -120,7 +123,7 @@ public final class TimeAvailableForRefresh {
 
         TimeAvailableForRefresh other = (TimeAvailableForRefresh) o;
         return java.util.Objects.equals(this.timeAvailableForRefresh, other.timeAvailableForRefresh)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -132,16 +135,7 @@ public final class TimeAvailableForRefresh {
                         + (this.timeAvailableForRefresh == null
                                 ? 43
                                 : this.timeAvailableForRefresh.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

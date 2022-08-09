@@ -20,7 +20,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SensitiveColumn.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SensitiveColumn {
+public final class SensitiveColumn extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -493,62 +493,105 @@ public final class SensitiveColumn {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SensitiveColumn build() {
-            SensitiveColumn __instance__ =
+            SensitiveColumn model =
                     new SensitiveColumn(
-                            key,
-                            sensitiveDataModelId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            appName,
-                            schemaName,
-                            objectName,
-                            columnName,
-                            objectType,
-                            dataType,
-                            status,
-                            sensitiveTypeId,
-                            source,
-                            parentColumnKeys,
-                            relationType,
-                            estimatedDataValueCount,
-                            sampleDataValues,
-                            appDefinedChildColumnKeys,
-                            dbDefinedChildColumnKeys,
-                            columnGroups);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.sensitiveDataModelId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.appName,
+                            this.schemaName,
+                            this.objectName,
+                            this.columnName,
+                            this.objectType,
+                            this.dataType,
+                            this.status,
+                            this.sensitiveTypeId,
+                            this.source,
+                            this.parentColumnKeys,
+                            this.relationType,
+                            this.estimatedDataValueCount,
+                            this.sampleDataValues,
+                            this.appDefinedChildColumnKeys,
+                            this.dbDefinedChildColumnKeys,
+                            this.columnGroups);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SensitiveColumn o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .sensitiveDataModelId(o.getSensitiveDataModelId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .appName(o.getAppName())
-                            .schemaName(o.getSchemaName())
-                            .objectName(o.getObjectName())
-                            .columnName(o.getColumnName())
-                            .objectType(o.getObjectType())
-                            .dataType(o.getDataType())
-                            .status(o.getStatus())
-                            .sensitiveTypeId(o.getSensitiveTypeId())
-                            .source(o.getSource())
-                            .parentColumnKeys(o.getParentColumnKeys())
-                            .relationType(o.getRelationType())
-                            .estimatedDataValueCount(o.getEstimatedDataValueCount())
-                            .sampleDataValues(o.getSampleDataValues())
-                            .appDefinedChildColumnKeys(o.getAppDefinedChildColumnKeys())
-                            .dbDefinedChildColumnKeys(o.getDbDefinedChildColumnKeys())
-                            .columnGroups(o.getColumnGroups());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SensitiveColumn model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveDataModelId")) {
+                this.sensitiveDataModelId(model.getSensitiveDataModelId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("appName")) {
+                this.appName(model.getAppName());
+            }
+            if (model.wasPropertyExplicitlySet("schemaName")) {
+                this.schemaName(model.getSchemaName());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("columnName")) {
+                this.columnName(model.getColumnName());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveTypeId")) {
+                this.sensitiveTypeId(model.getSensitiveTypeId());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("parentColumnKeys")) {
+                this.parentColumnKeys(model.getParentColumnKeys());
+            }
+            if (model.wasPropertyExplicitlySet("relationType")) {
+                this.relationType(model.getRelationType());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedDataValueCount")) {
+                this.estimatedDataValueCount(model.getEstimatedDataValueCount());
+            }
+            if (model.wasPropertyExplicitlySet("sampleDataValues")) {
+                this.sampleDataValues(model.getSampleDataValues());
+            }
+            if (model.wasPropertyExplicitlySet("appDefinedChildColumnKeys")) {
+                this.appDefinedChildColumnKeys(model.getAppDefinedChildColumnKeys());
+            }
+            if (model.wasPropertyExplicitlySet("dbDefinedChildColumnKeys")) {
+                this.dbDefinedChildColumnKeys(model.getDbDefinedChildColumnKeys());
+            }
+            if (model.wasPropertyExplicitlySet("columnGroups")) {
+                this.columnGroups(model.getColumnGroups());
+            }
+            return this;
         }
     }
 
@@ -1123,6 +1166,7 @@ public final class SensitiveColumn {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SensitiveColumn(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", sensitiveDataModelId=").append(String.valueOf(this.sensitiveDataModelId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -1148,7 +1192,6 @@ public final class SensitiveColumn {
         sb.append(", dbDefinedChildColumnKeys=")
                 .append(String.valueOf(this.dbDefinedChildColumnKeys));
         sb.append(", columnGroups=").append(String.valueOf(this.columnGroups));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1188,7 +1231,7 @@ public final class SensitiveColumn {
                 && java.util.Objects.equals(
                         this.dbDefinedChildColumnKeys, other.dbDefinedChildColumnKeys)
                 && java.util.Objects.equals(this.columnGroups, other.columnGroups)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1243,16 +1286,7 @@ public final class SensitiveColumn {
                                 ? 43
                                 : this.dbDefinedChildColumnKeys.hashCode());
         result = (result * PRIME) + (this.columnGroups == null ? 43 : this.columnGroups.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

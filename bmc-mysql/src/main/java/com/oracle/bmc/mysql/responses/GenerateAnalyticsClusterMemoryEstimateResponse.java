@@ -58,17 +58,19 @@ public class GenerateAnalyticsClusterMemoryEstimateResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcWorkRequestId",
         "analyticsClusterMemoryEstimate"
     })
     private GenerateAnalyticsClusterMemoryEstimateResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcWorkRequestId,
             com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
                     analyticsClusterMemoryEstimate) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
         this.analyticsClusterMemoryEstimate = analyticsClusterMemoryEstimate;
@@ -79,6 +81,13 @@ public class GenerateAnalyticsClusterMemoryEstimateResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -142,6 +151,7 @@ public class GenerateAnalyticsClusterMemoryEstimateResponse
          */
         public Builder copy(GenerateAnalyticsClusterMemoryEstimateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
             analyticsClusterMemoryEstimate(o.getAnalyticsClusterMemoryEstimate());
@@ -156,6 +166,7 @@ public class GenerateAnalyticsClusterMemoryEstimateResponse
         public GenerateAnalyticsClusterMemoryEstimateResponse build() {
             return new GenerateAnalyticsClusterMemoryEstimateResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcWorkRequestId,
                     analyticsClusterMemoryEstimate);

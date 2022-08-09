@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = PeerAutonomousContainerDatabaseBackupConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PeerAutonomousContainerDatabaseBackupConfig {
+public final class PeerAutonomousContainerDatabaseBackupConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"backupDestinationDetails", "recoveryWindowInDays"})
     public PeerAutonomousContainerDatabaseBackupConfig(
@@ -77,21 +78,24 @@ public final class PeerAutonomousContainerDatabaseBackupConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PeerAutonomousContainerDatabaseBackupConfig build() {
-            PeerAutonomousContainerDatabaseBackupConfig __instance__ =
+            PeerAutonomousContainerDatabaseBackupConfig model =
                     new PeerAutonomousContainerDatabaseBackupConfig(
-                            backupDestinationDetails, recoveryWindowInDays);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.backupDestinationDetails, this.recoveryWindowInDays);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PeerAutonomousContainerDatabaseBackupConfig o) {
-            Builder copiedBuilder =
-                    backupDestinationDetails(o.getBackupDestinationDetails())
-                            .recoveryWindowInDays(o.getRecoveryWindowInDays());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PeerAutonomousContainerDatabaseBackupConfig model) {
+            if (model.wasPropertyExplicitlySet("backupDestinationDetails")) {
+                this.backupDestinationDetails(model.getBackupDestinationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("recoveryWindowInDays")) {
+                this.recoveryWindowInDays(model.getRecoveryWindowInDays());
+            }
+            return this;
         }
     }
 
@@ -153,10 +157,10 @@ public final class PeerAutonomousContainerDatabaseBackupConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PeerAutonomousContainerDatabaseBackupConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("backupDestinationDetails=")
                 .append(String.valueOf(this.backupDestinationDetails));
         sb.append(", recoveryWindowInDays=").append(String.valueOf(this.recoveryWindowInDays));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -175,7 +179,7 @@ public final class PeerAutonomousContainerDatabaseBackupConfig {
         return java.util.Objects.equals(
                         this.backupDestinationDetails, other.backupDestinationDetails)
                 && java.util.Objects.equals(this.recoveryWindowInDays, other.recoveryWindowInDays)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -192,16 +196,7 @@ public final class PeerAutonomousContainerDatabaseBackupConfig {
                         + (this.recoveryWindowInDays == null
                                 ? 43
                                 : this.recoveryWindowInDays.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

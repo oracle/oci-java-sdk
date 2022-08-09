@@ -19,7 +19,7 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = ExecuteOperationJob.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExecuteOperationJob {
+public final class ExecuteOperationJob extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationStatus",
@@ -129,28 +129,37 @@ public final class ExecuteOperationJob {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExecuteOperationJob build() {
-            ExecuteOperationJob __instance__ =
+            ExecuteOperationJob model =
                     new ExecuteOperationJob(
-                            operationStatus,
-                            errorMessage,
-                            operationName,
-                            outParams,
-                            operationResult);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.operationStatus,
+                            this.errorMessage,
+                            this.operationName,
+                            this.outParams,
+                            this.operationResult);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExecuteOperationJob o) {
-            Builder copiedBuilder =
-                    operationStatus(o.getOperationStatus())
-                            .errorMessage(o.getErrorMessage())
-                            .operationName(o.getOperationName())
-                            .outParams(o.getOutParams())
-                            .operationResult(o.getOperationResult());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExecuteOperationJob model) {
+            if (model.wasPropertyExplicitlySet("operationStatus")) {
+                this.operationStatus(model.getOperationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("errorMessage")) {
+                this.errorMessage(model.getErrorMessage());
+            }
+            if (model.wasPropertyExplicitlySet("operationName")) {
+                this.operationName(model.getOperationName());
+            }
+            if (model.wasPropertyExplicitlySet("outParams")) {
+                this.outParams(model.getOutParams());
+            }
+            if (model.wasPropertyExplicitlySet("operationResult")) {
+                this.operationResult(model.getOperationResult());
+            }
+            return this;
         }
     }
 
@@ -248,12 +257,12 @@ public final class ExecuteOperationJob {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExecuteOperationJob(");
+        sb.append("super=").append(super.toString());
         sb.append("operationStatus=").append(String.valueOf(this.operationStatus));
         sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
         sb.append(", operationName=").append(String.valueOf(this.operationName));
         sb.append(", outParams=").append(String.valueOf(this.outParams));
         sb.append(", operationResult=").append(String.valueOf(this.operationResult));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -273,7 +282,7 @@ public final class ExecuteOperationJob {
                 && java.util.Objects.equals(this.operationName, other.operationName)
                 && java.util.Objects.equals(this.outParams, other.outParams)
                 && java.util.Objects.equals(this.operationResult, other.operationResult)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -291,16 +300,7 @@ public final class ExecuteOperationJob {
         result =
                 (result * PRIME)
                         + (this.operationResult == null ? 43 : this.operationResult.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

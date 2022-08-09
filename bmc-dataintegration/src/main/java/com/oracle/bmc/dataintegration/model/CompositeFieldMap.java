@@ -122,32 +122,45 @@ public final class CompositeFieldMap extends FieldMap {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CompositeFieldMap build() {
-            CompositeFieldMap __instance__ =
+            CompositeFieldMap model =
                     new CompositeFieldMap(
-                            description,
-                            key,
-                            modelVersion,
-                            parentRef,
-                            configValues,
-                            objectStatus,
-                            fieldMaps);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.configValues,
+                            this.objectStatus,
+                            this.fieldMaps);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CompositeFieldMap o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .configValues(o.getConfigValues())
-                            .objectStatus(o.getObjectStatus())
-                            .fieldMaps(o.getFieldMaps());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CompositeFieldMap model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("fieldMaps")) {
+                this.fieldMaps(model.getFieldMaps());
+            }
+            return this;
         }
     }
 
@@ -270,7 +283,6 @@ public final class CompositeFieldMap extends FieldMap {
         sb.append(", configValues=").append(String.valueOf(this.configValues));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(", fieldMaps=").append(String.valueOf(this.fieldMaps));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -291,8 +303,7 @@ public final class CompositeFieldMap extends FieldMap {
                 && java.util.Objects.equals(this.configValues, other.configValues)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.fieldMaps, other.fieldMaps)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -305,16 +316,6 @@ public final class CompositeFieldMap extends FieldMap {
         result = (result * PRIME) + (this.configValues == null ? 43 : this.configValues.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         result = (result * PRIME) + (this.fieldMaps == null ? 43 : this.fieldMaps.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -116,8 +116,8 @@ public class GetServiceAttachmentConverter {
                                         builder =
                                                 com.oracle.bmc.fusionapps.responses
                                                         .GetServiceAttachmentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.serviceAttachment(response.getItem());
 

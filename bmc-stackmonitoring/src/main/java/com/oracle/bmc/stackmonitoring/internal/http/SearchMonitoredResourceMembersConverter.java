@@ -161,8 +161,8 @@ public class SearchMonitoredResourceMembersConverter {
                                                 com.oracle.bmc.stackmonitoring.responses
                                                         .SearchMonitoredResourceMembersResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.monitoredResourceMembersCollection(response.getItem());
 

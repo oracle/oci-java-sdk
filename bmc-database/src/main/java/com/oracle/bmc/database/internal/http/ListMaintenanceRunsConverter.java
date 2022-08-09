@@ -190,8 +190,8 @@ public class ListMaintenanceRunsConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListMaintenanceRunsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

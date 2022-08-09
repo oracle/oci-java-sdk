@@ -126,24 +126,41 @@ public final class ExternalStorage extends ConnectorAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExternalStorage build() {
-            ExternalStorage __instance__ =
-                    new ExternalStorage(storageId, storageName, host, tenancyId, namespace, bucket);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExternalStorage model =
+                    new ExternalStorage(
+                            this.storageId,
+                            this.storageName,
+                            this.host,
+                            this.tenancyId,
+                            this.namespace,
+                            this.bucket);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExternalStorage o) {
-            Builder copiedBuilder =
-                    storageId(o.getStorageId())
-                            .storageName(o.getStorageName())
-                            .host(o.getHost())
-                            .tenancyId(o.getTenancyId())
-                            .namespace(o.getNamespace())
-                            .bucket(o.getBucket());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExternalStorage model) {
+            if (model.wasPropertyExplicitlySet("storageId")) {
+                this.storageId(model.getStorageId());
+            }
+            if (model.wasPropertyExplicitlySet("storageName")) {
+                this.storageName(model.getStorageName());
+            }
+            if (model.wasPropertyExplicitlySet("host")) {
+                this.host(model.getHost());
+            }
+            if (model.wasPropertyExplicitlySet("tenancyId")) {
+                this.tenancyId(model.getTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("bucket")) {
+                this.bucket(model.getBucket());
+            }
+            return this;
         }
     }
 
@@ -279,7 +296,6 @@ public final class ExternalStorage extends ConnectorAttribute {
         sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", bucket=").append(String.valueOf(this.bucket));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -300,8 +316,7 @@ public final class ExternalStorage extends ConnectorAttribute {
                 && java.util.Objects.equals(this.tenancyId, other.tenancyId)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.bucket, other.bucket)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -314,16 +329,6 @@ public final class ExternalStorage extends ConnectorAttribute {
         result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result = (result * PRIME) + (this.bucket == null ? 43 : this.bucket.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

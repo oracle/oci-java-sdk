@@ -117,36 +117,53 @@ public final class ConfiguredType extends BaseType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConfiguredType build() {
-            ConfiguredType __instance__ =
+            ConfiguredType model =
                     new ConfiguredType(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            objectStatus,
-                            description,
-                            wrappedType,
-                            configValues,
-                            configDefinition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.objectStatus,
+                            this.description,
+                            this.wrappedType,
+                            this.configValues,
+                            this.configDefinition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConfiguredType o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .objectStatus(o.getObjectStatus())
-                            .description(o.getDescription())
-                            .wrappedType(o.getWrappedType())
-                            .configValues(o.getConfigValues())
-                            .configDefinition(o.getConfigDefinition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ConfiguredType model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("wrappedType")) {
+                this.wrappedType(model.getWrappedType());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("configDefinition")) {
+                this.configDefinition(model.getConfigDefinition());
+            }
+            return this;
         }
     }
 
@@ -223,7 +240,6 @@ public final class ConfiguredType extends BaseType {
         sb.append(", wrappedType=").append(String.valueOf(this.wrappedType));
         sb.append(", configValues=").append(String.valueOf(this.configValues));
         sb.append(", configDefinition=").append(String.valueOf(this.configDefinition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -241,8 +257,7 @@ public final class ConfiguredType extends BaseType {
         return java.util.Objects.equals(this.wrappedType, other.wrappedType)
                 && java.util.Objects.equals(this.configValues, other.configValues)
                 && java.util.Objects.equals(this.configDefinition, other.configDefinition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -254,16 +269,6 @@ public final class ConfiguredType extends BaseType {
         result =
                 (result * PRIME)
                         + (this.configDefinition == null ? 43 : this.configDefinition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

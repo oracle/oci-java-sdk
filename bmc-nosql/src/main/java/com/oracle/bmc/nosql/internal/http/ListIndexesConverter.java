@@ -157,7 +157,8 @@ public class ListIndexesConverter {
 
                                 com.oracle.bmc.nosql.responses.ListIndexesResponse.Builder builder =
                                         com.oracle.bmc.nosql.responses.ListIndexesResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.indexCollection(response.getItem());
 

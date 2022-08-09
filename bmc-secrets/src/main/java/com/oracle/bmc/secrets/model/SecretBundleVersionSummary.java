@@ -20,7 +20,8 @@ package com.oracle.bmc.secrets.model;
     builder = SecretBundleVersionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SecretBundleVersionSummary {
+public final class SecretBundleVersionSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "secretId",
@@ -178,32 +179,45 @@ public final class SecretBundleVersionSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecretBundleVersionSummary build() {
-            SecretBundleVersionSummary __instance__ =
+            SecretBundleVersionSummary model =
                     new SecretBundleVersionSummary(
-                            secretId,
-                            timeCreated,
-                            versionNumber,
-                            versionName,
-                            timeOfDeletion,
-                            timeOfExpiry,
-                            stages);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.secretId,
+                            this.timeCreated,
+                            this.versionNumber,
+                            this.versionName,
+                            this.timeOfDeletion,
+                            this.timeOfExpiry,
+                            this.stages);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SecretBundleVersionSummary o) {
-            Builder copiedBuilder =
-                    secretId(o.getSecretId())
-                            .timeCreated(o.getTimeCreated())
-                            .versionNumber(o.getVersionNumber())
-                            .versionName(o.getVersionName())
-                            .timeOfDeletion(o.getTimeOfDeletion())
-                            .timeOfExpiry(o.getTimeOfExpiry())
-                            .stages(o.getStages());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SecretBundleVersionSummary model) {
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("versionNumber")) {
+                this.versionNumber(model.getVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("versionName")) {
+                this.versionName(model.getVersionName());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfDeletion")) {
+                this.timeOfDeletion(model.getTimeOfDeletion());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfExpiry")) {
+                this.timeOfExpiry(model.getTimeOfExpiry());
+            }
+            if (model.wasPropertyExplicitlySet("stages")) {
+                this.stages(model.getStages());
+            }
+            return this;
         }
     }
 
@@ -388,6 +402,7 @@ public final class SecretBundleVersionSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SecretBundleVersionSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("secretId=").append(String.valueOf(this.secretId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", versionNumber=").append(String.valueOf(this.versionNumber));
@@ -395,7 +410,6 @@ public final class SecretBundleVersionSummary {
         sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
         sb.append(", timeOfExpiry=").append(String.valueOf(this.timeOfExpiry));
         sb.append(", stages=").append(String.valueOf(this.stages));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -417,7 +431,7 @@ public final class SecretBundleVersionSummary {
                 && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
                 && java.util.Objects.equals(this.timeOfExpiry, other.timeOfExpiry)
                 && java.util.Objects.equals(this.stages, other.stages)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -435,16 +449,7 @@ public final class SecretBundleVersionSummary {
                         + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
         result = (result * PRIME) + (this.timeOfExpiry == null ? 43 : this.timeOfExpiry.hashCode());
         result = (result * PRIME) + (this.stages == null ? 43 : this.stages.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

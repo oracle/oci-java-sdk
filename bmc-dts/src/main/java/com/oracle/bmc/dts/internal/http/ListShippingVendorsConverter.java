@@ -92,8 +92,8 @@ public class ListShippingVendorsConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .ListShippingVendorsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.shippingVendors(response.getItem());
 

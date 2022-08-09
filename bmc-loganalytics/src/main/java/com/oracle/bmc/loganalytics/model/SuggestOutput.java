@@ -18,7 +18,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SuggestOutput.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SuggestOutput {
+public final class SuggestOutput extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "position",
@@ -180,26 +180,45 @@ public final class SuggestOutput {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SuggestOutput build() {
-            SuggestOutput __instance__ =
+            SuggestOutput model =
                     new SuggestOutput(
-                            position, commands, fields, fieldValues, terms, options, examples);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.position,
+                            this.commands,
+                            this.fields,
+                            this.fieldValues,
+                            this.terms,
+                            this.options,
+                            this.examples);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SuggestOutput o) {
-            Builder copiedBuilder =
-                    position(o.getPosition())
-                            .commands(o.getCommands())
-                            .fields(o.getFields())
-                            .fieldValues(o.getFieldValues())
-                            .terms(o.getTerms())
-                            .options(o.getOptions())
-                            .examples(o.getExamples());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SuggestOutput model) {
+            if (model.wasPropertyExplicitlySet("position")) {
+                this.position(model.getPosition());
+            }
+            if (model.wasPropertyExplicitlySet("commands")) {
+                this.commands(model.getCommands());
+            }
+            if (model.wasPropertyExplicitlySet("fields")) {
+                this.fields(model.getFields());
+            }
+            if (model.wasPropertyExplicitlySet("fieldValues")) {
+                this.fieldValues(model.getFieldValues());
+            }
+            if (model.wasPropertyExplicitlySet("terms")) {
+                this.terms(model.getTerms());
+            }
+            if (model.wasPropertyExplicitlySet("options")) {
+                this.options(model.getOptions());
+            }
+            if (model.wasPropertyExplicitlySet("examples")) {
+                this.examples(model.getExamples());
+            }
+            return this;
         }
     }
 
@@ -339,6 +358,7 @@ public final class SuggestOutput {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SuggestOutput(");
+        sb.append("super=").append(super.toString());
         sb.append("position=").append(String.valueOf(this.position));
         sb.append(", commands=").append(String.valueOf(this.commands));
         sb.append(", fields=").append(String.valueOf(this.fields));
@@ -346,7 +366,6 @@ public final class SuggestOutput {
         sb.append(", terms=").append(String.valueOf(this.terms));
         sb.append(", options=").append(String.valueOf(this.options));
         sb.append(", examples=").append(String.valueOf(this.examples));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -368,7 +387,7 @@ public final class SuggestOutput {
                 && java.util.Objects.equals(this.terms, other.terms)
                 && java.util.Objects.equals(this.options, other.options)
                 && java.util.Objects.equals(this.examples, other.examples)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -382,16 +401,7 @@ public final class SuggestOutput {
         result = (result * PRIME) + (this.terms == null ? 43 : this.terms.hashCode());
         result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
         result = (result * PRIME) + (this.examples == null ? 43 : this.examples.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

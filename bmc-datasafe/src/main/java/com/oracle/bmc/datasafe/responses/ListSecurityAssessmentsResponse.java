@@ -72,6 +72,7 @@ public class ListSecurityAssessmentsResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opcPrevPage",
@@ -79,11 +80,12 @@ public class ListSecurityAssessmentsResponse extends com.oracle.bmc.responses.Bm
     })
     private ListSecurityAssessmentsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
             java.util.List<com.oracle.bmc.datasafe.model.SecurityAssessmentSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opcPrevPage = opcPrevPage;
@@ -95,6 +97,13 @@ public class ListSecurityAssessmentsResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -175,6 +184,7 @@ public class ListSecurityAssessmentsResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(ListSecurityAssessmentsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());
@@ -189,7 +199,7 @@ public class ListSecurityAssessmentsResponse extends com.oracle.bmc.responses.Bm
          */
         public ListSecurityAssessmentsResponse build() {
             return new ListSecurityAssessmentsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, opcPrevPage, items);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, opcPrevPage, items);
         }
     }
 

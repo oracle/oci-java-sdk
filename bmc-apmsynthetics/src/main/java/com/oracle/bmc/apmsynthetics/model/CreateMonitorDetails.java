@@ -19,7 +19,7 @@ package com.oracle.bmc.apmsynthetics.model;
     builder = CreateMonitorDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateMonitorDetails {
+public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -34,7 +34,10 @@ public final class CreateMonitorDetails {
         "scriptParameters",
         "configuration",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "isRunNow",
+        "schedulingPolicy",
+        "batchIntervalInSeconds"
     })
     public CreateMonitorDetails(
             String displayName,
@@ -49,7 +52,10 @@ public final class CreateMonitorDetails {
             java.util.List<MonitorScriptParameter> scriptParameters,
             MonitorConfiguration configuration,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isRunNow,
+            SchedulingPolicy schedulingPolicy,
+            Integer batchIntervalInSeconds) {
         super();
         this.displayName = displayName;
         this.monitorType = monitorType;
@@ -64,6 +70,9 @@ public final class CreateMonitorDetails {
         this.configuration = configuration;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.isRunNow = isRunNow;
+        this.schedulingPolicy = schedulingPolicy;
+        this.batchIntervalInSeconds = batchIntervalInSeconds;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -310,49 +319,134 @@ public final class CreateMonitorDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * If isRunNow is enabled, then the monitor will run now.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRunNow")
+        private Boolean isRunNow;
+
+        /**
+         * If isRunNow is enabled, then the monitor will run now.
+         * @param isRunNow the value to set
+         * @return this builder
+         **/
+        public Builder isRunNow(Boolean isRunNow) {
+            this.isRunNow = isRunNow;
+            this.__explicitlySet__.add("isRunNow");
+            return this;
+        }
+        /**
+         * Scheduling policy on Vantage points.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("schedulingPolicy")
+        private SchedulingPolicy schedulingPolicy;
+
+        /**
+         * Scheduling policy on Vantage points.
+         * @param schedulingPolicy the value to set
+         * @return this builder
+         **/
+        public Builder schedulingPolicy(SchedulingPolicy schedulingPolicy) {
+            this.schedulingPolicy = schedulingPolicy;
+            this.__explicitlySet__.add("schedulingPolicy");
+            return this;
+        }
+        /**
+         * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("batchIntervalInSeconds")
+        private Integer batchIntervalInSeconds;
+
+        /**
+         * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+         * @param batchIntervalInSeconds the value to set
+         * @return this builder
+         **/
+        public Builder batchIntervalInSeconds(Integer batchIntervalInSeconds) {
+            this.batchIntervalInSeconds = batchIntervalInSeconds;
+            this.__explicitlySet__.add("batchIntervalInSeconds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateMonitorDetails build() {
-            CreateMonitorDetails __instance__ =
+            CreateMonitorDetails model =
                     new CreateMonitorDetails(
-                            displayName,
-                            monitorType,
-                            vantagePoints,
-                            scriptId,
-                            status,
-                            repeatIntervalInSeconds,
-                            isRunOnce,
-                            timeoutInSeconds,
-                            target,
-                            scriptParameters,
-                            configuration,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.monitorType,
+                            this.vantagePoints,
+                            this.scriptId,
+                            this.status,
+                            this.repeatIntervalInSeconds,
+                            this.isRunOnce,
+                            this.timeoutInSeconds,
+                            this.target,
+                            this.scriptParameters,
+                            this.configuration,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.isRunNow,
+                            this.schedulingPolicy,
+                            this.batchIntervalInSeconds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateMonitorDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .monitorType(o.getMonitorType())
-                            .vantagePoints(o.getVantagePoints())
-                            .scriptId(o.getScriptId())
-                            .status(o.getStatus())
-                            .repeatIntervalInSeconds(o.getRepeatIntervalInSeconds())
-                            .isRunOnce(o.getIsRunOnce())
-                            .timeoutInSeconds(o.getTimeoutInSeconds())
-                            .target(o.getTarget())
-                            .scriptParameters(o.getScriptParameters())
-                            .configuration(o.getConfiguration())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateMonitorDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("monitorType")) {
+                this.monitorType(model.getMonitorType());
+            }
+            if (model.wasPropertyExplicitlySet("vantagePoints")) {
+                this.vantagePoints(model.getVantagePoints());
+            }
+            if (model.wasPropertyExplicitlySet("scriptId")) {
+                this.scriptId(model.getScriptId());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("repeatIntervalInSeconds")) {
+                this.repeatIntervalInSeconds(model.getRepeatIntervalInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("isRunOnce")) {
+                this.isRunOnce(model.getIsRunOnce());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInSeconds")) {
+                this.timeoutInSeconds(model.getTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("target")) {
+                this.target(model.getTarget());
+            }
+            if (model.wasPropertyExplicitlySet("scriptParameters")) {
+                this.scriptParameters(model.getScriptParameters());
+            }
+            if (model.wasPropertyExplicitlySet("configuration")) {
+                this.configuration(model.getConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("isRunNow")) {
+                this.isRunNow(model.getIsRunNow());
+            }
+            if (model.wasPropertyExplicitlySet("schedulingPolicy")) {
+                this.schedulingPolicy(model.getSchedulingPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("batchIntervalInSeconds")) {
+                this.batchIntervalInSeconds(model.getBatchIntervalInSeconds());
+            }
+            return this;
         }
     }
 
@@ -582,6 +676,48 @@ public final class CreateMonitorDetails {
         return definedTags;
     }
 
+    /**
+     * If isRunNow is enabled, then the monitor will run now.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRunNow")
+    private final Boolean isRunNow;
+
+    /**
+     * If isRunNow is enabled, then the monitor will run now.
+     * @return the value
+     **/
+    public Boolean getIsRunNow() {
+        return isRunNow;
+    }
+
+    /**
+     * Scheduling policy on Vantage points.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("schedulingPolicy")
+    private final SchedulingPolicy schedulingPolicy;
+
+    /**
+     * Scheduling policy on Vantage points.
+     * @return the value
+     **/
+    public SchedulingPolicy getSchedulingPolicy() {
+        return schedulingPolicy;
+    }
+
+    /**
+     * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("batchIntervalInSeconds")
+    private final Integer batchIntervalInSeconds;
+
+    /**
+     * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * @return the value
+     **/
+    public Integer getBatchIntervalInSeconds() {
+        return batchIntervalInSeconds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -595,6 +731,7 @@ public final class CreateMonitorDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateMonitorDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", monitorType=").append(String.valueOf(this.monitorType));
         sb.append(", vantagePoints=").append(String.valueOf(this.vantagePoints));
@@ -609,7 +746,9 @@ public final class CreateMonitorDetails {
         sb.append(", configuration=").append(String.valueOf(this.configuration));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
+        sb.append(", isRunNow=").append(String.valueOf(this.isRunNow));
+        sb.append(", schedulingPolicy=").append(String.valueOf(this.schedulingPolicy));
+        sb.append(", batchIntervalInSeconds=").append(String.valueOf(this.batchIntervalInSeconds));
         sb.append(")");
         return sb.toString();
     }
@@ -638,7 +777,11 @@ public final class CreateMonitorDetails {
                 && java.util.Objects.equals(this.configuration, other.configuration)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && java.util.Objects.equals(this.isRunNow, other.isRunNow)
+                && java.util.Objects.equals(this.schedulingPolicy, other.schedulingPolicy)
+                && java.util.Objects.equals(
+                        this.batchIntervalInSeconds, other.batchIntervalInSeconds)
+                && super.equals(other);
     }
 
     @Override
@@ -670,16 +813,16 @@ public final class CreateMonitorDetails {
                         + (this.configuration == null ? 43 : this.configuration.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.isRunNow == null ? 43 : this.isRunNow.hashCode());
         result =
                 (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+                        + (this.schedulingPolicy == null ? 43 : this.schedulingPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.batchIntervalInSeconds == null
+                                ? 43
+                                : this.batchIntervalInSeconds.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

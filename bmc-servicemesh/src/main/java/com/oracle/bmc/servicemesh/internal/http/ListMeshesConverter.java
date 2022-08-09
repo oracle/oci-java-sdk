@@ -162,8 +162,8 @@ public class ListMeshesConverter {
                                         builder =
                                                 com.oracle.bmc.servicemesh.responses
                                                         .ListMeshesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.meshCollection(response.getItem());
 

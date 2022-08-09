@@ -76,23 +76,27 @@ public final class CertificateAuthorityIssuanceExpiryRule extends CertificateAut
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CertificateAuthorityIssuanceExpiryRule build() {
-            CertificateAuthorityIssuanceExpiryRule __instance__ =
+            CertificateAuthorityIssuanceExpiryRule model =
                     new CertificateAuthorityIssuanceExpiryRule(
-                            leafCertificateMaxValidityDuration,
-                            certificateAuthorityMaxValidityDuration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.leafCertificateMaxValidityDuration,
+                            this.certificateAuthorityMaxValidityDuration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CertificateAuthorityIssuanceExpiryRule o) {
-            Builder copiedBuilder =
-                    leafCertificateMaxValidityDuration(o.getLeafCertificateMaxValidityDuration())
-                            .certificateAuthorityMaxValidityDuration(
-                                    o.getCertificateAuthorityMaxValidityDuration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CertificateAuthorityIssuanceExpiryRule model) {
+            if (model.wasPropertyExplicitlySet("leafCertificateMaxValidityDuration")) {
+                this.leafCertificateMaxValidityDuration(
+                        model.getLeafCertificateMaxValidityDuration());
+            }
+            if (model.wasPropertyExplicitlySet("certificateAuthorityMaxValidityDuration")) {
+                this.certificateAuthorityMaxValidityDuration(
+                        model.getCertificateAuthorityMaxValidityDuration());
+            }
+            return this;
         }
     }
 
@@ -170,7 +174,6 @@ public final class CertificateAuthorityIssuanceExpiryRule extends CertificateAut
                 .append(String.valueOf(this.leafCertificateMaxValidityDuration));
         sb.append(", certificateAuthorityMaxValidityDuration=")
                 .append(String.valueOf(this.certificateAuthorityMaxValidityDuration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -191,8 +194,7 @@ public final class CertificateAuthorityIssuanceExpiryRule extends CertificateAut
                 && java.util.Objects.equals(
                         this.certificateAuthorityMaxValidityDuration,
                         other.certificateAuthorityMaxValidityDuration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -209,16 +211,6 @@ public final class CertificateAuthorityIssuanceExpiryRule extends CertificateAut
                         + (this.certificateAuthorityMaxValidityDuration == null
                                 ? 43
                                 : this.certificateAuthorityMaxValidityDuration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

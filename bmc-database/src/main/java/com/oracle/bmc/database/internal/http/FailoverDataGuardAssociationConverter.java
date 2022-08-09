@@ -123,8 +123,8 @@ public class FailoverDataGuardAssociationConverter {
                                                 com.oracle.bmc.database.responses
                                                         .FailoverDataGuardAssociationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataGuardAssociation(response.getItem());
 

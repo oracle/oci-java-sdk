@@ -36,7 +36,8 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateTaskValidationDetails {
+public class CreateTaskValidationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -267,6 +268,7 @@ public class CreateTaskValidationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateTaskValidationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -309,7 +311,8 @@ public class CreateTaskValidationDetails {
                 && java.util.Objects.equals(this.opConfigValues, other.opConfigValues)
                 && java.util.Objects.equals(
                         this.configProviderDelegate, other.configProviderDelegate)
-                && java.util.Objects.equals(this.metadata, other.metadata);
+                && java.util.Objects.equals(this.metadata, other.metadata)
+                && super.equals(other);
     }
 
     @Override
@@ -338,6 +341,7 @@ public class CreateTaskValidationDetails {
                                 ? 43
                                 : this.configProviderDelegate.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

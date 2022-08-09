@@ -110,8 +110,8 @@ public class GetAcceptedAgreementConverter {
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
                                                         .GetAcceptedAgreementResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.acceptedAgreement(response.getItem());
 

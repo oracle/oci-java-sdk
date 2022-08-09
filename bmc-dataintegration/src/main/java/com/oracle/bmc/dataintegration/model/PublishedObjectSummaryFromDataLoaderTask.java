@@ -187,48 +187,77 @@ public final class PublishedObjectSummaryFromDataLoaderTask extends PublishedObj
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PublishedObjectSummaryFromDataLoaderTask build() {
-            PublishedObjectSummaryFromDataLoaderTask __instance__ =
+            PublishedObjectSummaryFromDataLoaderTask model =
                     new PublishedObjectSummaryFromDataLoaderTask(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            objectStatus,
-                            identifier,
-                            metadata,
-                            inputPorts,
-                            outputPorts,
-                            parameters,
-                            opConfigValues,
-                            configProviderDelegate,
-                            dataFlow);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.objectStatus,
+                            this.identifier,
+                            this.metadata,
+                            this.inputPorts,
+                            this.outputPorts,
+                            this.parameters,
+                            this.opConfigValues,
+                            this.configProviderDelegate,
+                            this.dataFlow);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PublishedObjectSummaryFromDataLoaderTask o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .metadata(o.getMetadata())
-                            .inputPorts(o.getInputPorts())
-                            .outputPorts(o.getOutputPorts())
-                            .parameters(o.getParameters())
-                            .opConfigValues(o.getOpConfigValues())
-                            .configProviderDelegate(o.getConfigProviderDelegate())
-                            .dataFlow(o.getDataFlow());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PublishedObjectSummaryFromDataLoaderTask model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("inputPorts")) {
+                this.inputPorts(model.getInputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("outputPorts")) {
+                this.outputPorts(model.getOutputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("opConfigValues")) {
+                this.opConfigValues(model.getOpConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("configProviderDelegate")) {
+                this.configProviderDelegate(model.getConfigProviderDelegate());
+            }
+            if (model.wasPropertyExplicitlySet("dataFlow")) {
+                this.dataFlow(model.getDataFlow());
+            }
+            return this;
         }
     }
 
@@ -361,7 +390,6 @@ public final class PublishedObjectSummaryFromDataLoaderTask extends PublishedObj
         sb.append(", opConfigValues=").append(String.valueOf(this.opConfigValues));
         sb.append(", configProviderDelegate=").append(String.valueOf(this.configProviderDelegate));
         sb.append(", dataFlow=").append(String.valueOf(this.dataFlow));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -384,8 +412,7 @@ public final class PublishedObjectSummaryFromDataLoaderTask extends PublishedObj
                 && java.util.Objects.equals(
                         this.configProviderDelegate, other.configProviderDelegate)
                 && java.util.Objects.equals(this.dataFlow, other.dataFlow)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -404,16 +431,6 @@ public final class PublishedObjectSummaryFromDataLoaderTask extends PublishedObj
                                 ? 43
                                 : this.configProviderDelegate.hashCode());
         result = (result * PRIME) + (this.dataFlow == null ? 43 : this.dataFlow.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

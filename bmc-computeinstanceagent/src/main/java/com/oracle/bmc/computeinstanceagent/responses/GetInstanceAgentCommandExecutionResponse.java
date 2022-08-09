@@ -57,17 +57,19 @@ public class GetInstanceAgentCommandExecutionResponse extends com.oracle.bmc.res
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "instanceAgentCommandExecution"
     })
     private GetInstanceAgentCommandExecutionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecution
                     instanceAgentCommandExecution) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.instanceAgentCommandExecution = instanceAgentCommandExecution;
@@ -78,6 +80,13 @@ public class GetInstanceAgentCommandExecutionResponse extends com.oracle.bmc.res
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -141,6 +150,7 @@ public class GetInstanceAgentCommandExecutionResponse extends com.oracle.bmc.res
          */
         public Builder copy(GetInstanceAgentCommandExecutionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             instanceAgentCommandExecution(o.getInstanceAgentCommandExecution());
@@ -154,7 +164,7 @@ public class GetInstanceAgentCommandExecutionResponse extends com.oracle.bmc.res
          */
         public GetInstanceAgentCommandExecutionResponse build() {
             return new GetInstanceAgentCommandExecutionResponse(
-                    __httpStatusCode__, etag, opcRequestId, instanceAgentCommandExecution);
+                    __httpStatusCode__, headers, etag, opcRequestId, instanceAgentCommandExecution);
         }
     }
 

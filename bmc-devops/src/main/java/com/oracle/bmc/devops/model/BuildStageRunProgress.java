@@ -219,50 +219,81 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BuildStageRunProgress build() {
-            BuildStageRunProgress __instance__ =
+            BuildStageRunProgress model =
                     new BuildStageRunProgress(
-                            stageDisplayName,
-                            buildPipelineStageId,
-                            timeStarted,
-                            timeFinished,
-                            status,
-                            buildPipelineStagePredecessors,
-                            actualBuildRunnerShape,
-                            actualBuildRunnerShapeConfig,
-                            image,
-                            buildSpecFile,
-                            stageExecutionTimeoutInSeconds,
-                            buildSourceCollection,
-                            primaryBuildSource,
-                            steps,
-                            exportedVariables,
-                            privateAccessConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.stageDisplayName,
+                            this.buildPipelineStageId,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.status,
+                            this.buildPipelineStagePredecessors,
+                            this.actualBuildRunnerShape,
+                            this.actualBuildRunnerShapeConfig,
+                            this.image,
+                            this.buildSpecFile,
+                            this.stageExecutionTimeoutInSeconds,
+                            this.buildSourceCollection,
+                            this.primaryBuildSource,
+                            this.steps,
+                            this.exportedVariables,
+                            this.privateAccessConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BuildStageRunProgress o) {
-            Builder copiedBuilder =
-                    stageDisplayName(o.getStageDisplayName())
-                            .buildPipelineStageId(o.getBuildPipelineStageId())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .status(o.getStatus())
-                            .buildPipelineStagePredecessors(o.getBuildPipelineStagePredecessors())
-                            .actualBuildRunnerShape(o.getActualBuildRunnerShape())
-                            .actualBuildRunnerShapeConfig(o.getActualBuildRunnerShapeConfig())
-                            .image(o.getImage())
-                            .buildSpecFile(o.getBuildSpecFile())
-                            .stageExecutionTimeoutInSeconds(o.getStageExecutionTimeoutInSeconds())
-                            .buildSourceCollection(o.getBuildSourceCollection())
-                            .primaryBuildSource(o.getPrimaryBuildSource())
-                            .steps(o.getSteps())
-                            .exportedVariables(o.getExportedVariables())
-                            .privateAccessConfig(o.getPrivateAccessConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BuildStageRunProgress model) {
+            if (model.wasPropertyExplicitlySet("stageDisplayName")) {
+                this.stageDisplayName(model.getStageDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineStageId")) {
+                this.buildPipelineStageId(model.getBuildPipelineStageId());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineStagePredecessors")) {
+                this.buildPipelineStagePredecessors(model.getBuildPipelineStagePredecessors());
+            }
+            if (model.wasPropertyExplicitlySet("actualBuildRunnerShape")) {
+                this.actualBuildRunnerShape(model.getActualBuildRunnerShape());
+            }
+            if (model.wasPropertyExplicitlySet("actualBuildRunnerShapeConfig")) {
+                this.actualBuildRunnerShapeConfig(model.getActualBuildRunnerShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("image")) {
+                this.image(model.getImage());
+            }
+            if (model.wasPropertyExplicitlySet("buildSpecFile")) {
+                this.buildSpecFile(model.getBuildSpecFile());
+            }
+            if (model.wasPropertyExplicitlySet("stageExecutionTimeoutInSeconds")) {
+                this.stageExecutionTimeoutInSeconds(model.getStageExecutionTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("buildSourceCollection")) {
+                this.buildSourceCollection(model.getBuildSourceCollection());
+            }
+            if (model.wasPropertyExplicitlySet("primaryBuildSource")) {
+                this.primaryBuildSource(model.getPrimaryBuildSource());
+            }
+            if (model.wasPropertyExplicitlySet("steps")) {
+                this.steps(model.getSteps());
+            }
+            if (model.wasPropertyExplicitlySet("exportedVariables")) {
+                this.exportedVariables(model.getExportedVariables());
+            }
+            if (model.wasPropertyExplicitlySet("privateAccessConfig")) {
+                this.privateAccessConfig(model.getPrivateAccessConfig());
+            }
+            return this;
         }
     }
 
@@ -498,7 +529,6 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
         sb.append(", steps=").append(String.valueOf(this.steps));
         sb.append(", exportedVariables=").append(String.valueOf(this.exportedVariables));
         sb.append(", privateAccessConfig=").append(String.valueOf(this.privateAccessConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -525,8 +555,7 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
                 && java.util.Objects.equals(this.steps, other.steps)
                 && java.util.Objects.equals(this.exportedVariables, other.exportedVariables)
                 && java.util.Objects.equals(this.privateAccessConfig, other.privateAccessConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -571,16 +600,6 @@ public final class BuildStageRunProgress extends BuildPipelineStageRunProgress {
                         + (this.privateAccessConfig == null
                                 ? 43
                                 : this.privateAccessConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

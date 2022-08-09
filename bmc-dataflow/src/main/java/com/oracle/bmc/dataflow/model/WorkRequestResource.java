@@ -20,7 +20,7 @@ package com.oracle.bmc.dataflow.model;
     builder = WorkRequestResource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestResource {
+public final class WorkRequestResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "actionType",
@@ -161,25 +161,41 @@ public final class WorkRequestResource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestResource build() {
-            WorkRequestResource __instance__ =
+            WorkRequestResource model =
                     new WorkRequestResource(
-                            actionType, id, resourceId, resourceType, resourceUri, workRequestid);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.actionType,
+                            this.id,
+                            this.resourceId,
+                            this.resourceType,
+                            this.resourceUri,
+                            this.workRequestid);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkRequestResource o) {
-            Builder copiedBuilder =
-                    actionType(o.getActionType())
-                            .id(o.getId())
-                            .resourceId(o.getResourceId())
-                            .resourceType(o.getResourceType())
-                            .resourceUri(o.getResourceUri())
-                            .workRequestid(o.getWorkRequestid());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkRequestResource model) {
+            if (model.wasPropertyExplicitlySet("actionType")) {
+                this.actionType(model.getActionType());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceUri")) {
+                this.resourceUri(model.getResourceUri());
+            }
+            if (model.wasPropertyExplicitlySet("workRequestid")) {
+                this.workRequestid(model.getWorkRequestid());
+            }
+            return this;
         }
     }
 
@@ -355,13 +371,13 @@ public final class WorkRequestResource {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkRequestResource(");
+        sb.append("super=").append(super.toString());
         sb.append("actionType=").append(String.valueOf(this.actionType));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", resourceUri=").append(String.valueOf(this.resourceUri));
         sb.append(", workRequestid=").append(String.valueOf(this.workRequestid));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -382,7 +398,7 @@ public final class WorkRequestResource {
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.resourceUri, other.resourceUri)
                 && java.util.Objects.equals(this.workRequestid, other.workRequestid)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -397,16 +413,7 @@ public final class WorkRequestResource {
         result =
                 (result * PRIME)
                         + (this.workRequestid == null ? 43 : this.workRequestid.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

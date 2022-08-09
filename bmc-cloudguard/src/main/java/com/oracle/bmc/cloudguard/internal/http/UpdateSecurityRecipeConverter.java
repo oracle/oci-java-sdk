@@ -114,8 +114,8 @@ public class UpdateSecurityRecipeConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .UpdateSecurityRecipeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityRecipe(response.getItem());
 

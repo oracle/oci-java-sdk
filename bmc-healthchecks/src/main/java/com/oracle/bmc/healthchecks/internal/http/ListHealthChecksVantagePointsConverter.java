@@ -162,8 +162,8 @@ public class ListHealthChecksVantagePointsConverter {
                                                 com.oracle.bmc.healthchecks.responses
                                                         .ListHealthChecksVantagePointsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

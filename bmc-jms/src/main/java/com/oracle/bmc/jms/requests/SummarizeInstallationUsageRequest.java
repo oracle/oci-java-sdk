@@ -202,6 +202,19 @@ public class SummarizeInstallationUsageRequest
     public java.util.List<com.oracle.bmc.jms.model.OsFamily> getOsFamily() {
         return osFamily;
     }
+    /**
+     * Filter the list with path contains the given value.
+     *
+     */
+    private String pathContains;
+
+    /**
+     * Filter the list with path contains the given value.
+     *
+     */
+    public String getPathContains() {
+        return pathContains;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -488,6 +501,23 @@ public class SummarizeInstallationUsageRequest
         }
 
         /**
+         * Filter the list with path contains the given value.
+         *
+         */
+        private String pathContains = null;
+
+        /**
+         * Filter the list with path contains the given value.
+         *
+         * @param pathContains the value to set
+         * @return this builder instance
+         */
+        public Builder pathContains(String pathContains) {
+            this.pathContains = pathContains;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -531,6 +561,7 @@ public class SummarizeInstallationUsageRequest
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             osFamily(o.getOsFamily());
+            pathContains(o.getPathContains());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -579,8 +610,9 @@ public class SummarizeInstallationUsageRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             request.osFamily = osFamily;
+            request.pathContains = pathContains;
             return request;
-            // new SummarizeInstallationUsageRequest(fleetId, jreVendor, jreDistribution, jreVersion, installationPath, applicationId, managedInstanceId, fields, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId, osFamily);
+            // new SummarizeInstallationUsageRequest(fleetId, jreVendor, jreDistribution, jreVersion, installationPath, applicationId, managedInstanceId, fields, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId, osFamily, pathContains);
         }
     }
 
@@ -605,7 +637,8 @@ public class SummarizeInstallationUsageRequest
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
-                .osFamily(osFamily);
+                .osFamily(osFamily)
+                .pathContains(pathContains);
     }
 
     /**
@@ -637,6 +670,7 @@ public class SummarizeInstallationUsageRequest
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",osFamily=").append(String.valueOf(this.osFamily));
+        sb.append(",pathContains=").append(String.valueOf(this.pathContains));
         sb.append(")");
         return sb.toString();
     }
@@ -667,7 +701,8 @@ public class SummarizeInstallationUsageRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.osFamily, other.osFamily);
+                && java.util.Objects.equals(this.osFamily, other.osFamily)
+                && java.util.Objects.equals(this.pathContains, other.pathContains);
     }
 
     @Override
@@ -698,6 +733,7 @@ public class SummarizeInstallationUsageRequest
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
+        result = (result * PRIME) + (this.pathContains == null ? 43 : this.pathContains.hashCode());
         return result;
     }
 }

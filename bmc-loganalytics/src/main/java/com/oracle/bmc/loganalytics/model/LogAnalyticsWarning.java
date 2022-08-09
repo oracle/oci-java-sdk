@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsWarning.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsWarning {
+public final class LogAnalyticsWarning extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "agentId",
@@ -534,70 +534,121 @@ public final class LogAnalyticsWarning {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsWarning build() {
-            LogAnalyticsWarning __instance__ =
+            LogAnalyticsWarning model =
                     new LogAnalyticsWarning(
-                            agentId,
-                            hostName,
-                            ruleDisplayName,
-                            sourceName,
-                            compartmentId,
-                            sourceDisplayName,
-                            entityName,
-                            timeCollected,
-                            warningId,
-                            timeOfInitialWarning,
-                            isActive,
-                            isSuppressed,
-                            timeOfLatestWarning,
-                            warningLevel,
-                            warningMessage,
-                            patternId,
-                            patternText,
-                            ruleId,
-                            sourceId,
-                            suppressedBy,
-                            entityId,
-                            entityType,
-                            entityTypeDisplayName,
-                            typeDisplayName,
-                            typeName,
-                            severity);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.agentId,
+                            this.hostName,
+                            this.ruleDisplayName,
+                            this.sourceName,
+                            this.compartmentId,
+                            this.sourceDisplayName,
+                            this.entityName,
+                            this.timeCollected,
+                            this.warningId,
+                            this.timeOfInitialWarning,
+                            this.isActive,
+                            this.isSuppressed,
+                            this.timeOfLatestWarning,
+                            this.warningLevel,
+                            this.warningMessage,
+                            this.patternId,
+                            this.patternText,
+                            this.ruleId,
+                            this.sourceId,
+                            this.suppressedBy,
+                            this.entityId,
+                            this.entityType,
+                            this.entityTypeDisplayName,
+                            this.typeDisplayName,
+                            this.typeName,
+                            this.severity);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsWarning o) {
-            Builder copiedBuilder =
-                    agentId(o.getAgentId())
-                            .hostName(o.getHostName())
-                            .ruleDisplayName(o.getRuleDisplayName())
-                            .sourceName(o.getSourceName())
-                            .compartmentId(o.getCompartmentId())
-                            .sourceDisplayName(o.getSourceDisplayName())
-                            .entityName(o.getEntityName())
-                            .timeCollected(o.getTimeCollected())
-                            .warningId(o.getWarningId())
-                            .timeOfInitialWarning(o.getTimeOfInitialWarning())
-                            .isActive(o.getIsActive())
-                            .isSuppressed(o.getIsSuppressed())
-                            .timeOfLatestWarning(o.getTimeOfLatestWarning())
-                            .warningLevel(o.getWarningLevel())
-                            .warningMessage(o.getWarningMessage())
-                            .patternId(o.getPatternId())
-                            .patternText(o.getPatternText())
-                            .ruleId(o.getRuleId())
-                            .sourceId(o.getSourceId())
-                            .suppressedBy(o.getSuppressedBy())
-                            .entityId(o.getEntityId())
-                            .entityType(o.getEntityType())
-                            .entityTypeDisplayName(o.getEntityTypeDisplayName())
-                            .typeDisplayName(o.getTypeDisplayName())
-                            .typeName(o.getTypeName())
-                            .severity(o.getSeverity());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsWarning model) {
+            if (model.wasPropertyExplicitlySet("agentId")) {
+                this.agentId(model.getAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("hostName")) {
+                this.hostName(model.getHostName());
+            }
+            if (model.wasPropertyExplicitlySet("ruleDisplayName")) {
+                this.ruleDisplayName(model.getRuleDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("sourceName")) {
+                this.sourceName(model.getSourceName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDisplayName")) {
+                this.sourceDisplayName(model.getSourceDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("entityName")) {
+                this.entityName(model.getEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("warningId")) {
+                this.warningId(model.getWarningId());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfInitialWarning")) {
+                this.timeOfInitialWarning(model.getTimeOfInitialWarning());
+            }
+            if (model.wasPropertyExplicitlySet("isActive")) {
+                this.isActive(model.getIsActive());
+            }
+            if (model.wasPropertyExplicitlySet("isSuppressed")) {
+                this.isSuppressed(model.getIsSuppressed());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfLatestWarning")) {
+                this.timeOfLatestWarning(model.getTimeOfLatestWarning());
+            }
+            if (model.wasPropertyExplicitlySet("warningLevel")) {
+                this.warningLevel(model.getWarningLevel());
+            }
+            if (model.wasPropertyExplicitlySet("warningMessage")) {
+                this.warningMessage(model.getWarningMessage());
+            }
+            if (model.wasPropertyExplicitlySet("patternId")) {
+                this.patternId(model.getPatternId());
+            }
+            if (model.wasPropertyExplicitlySet("patternText")) {
+                this.patternText(model.getPatternText());
+            }
+            if (model.wasPropertyExplicitlySet("ruleId")) {
+                this.ruleId(model.getRuleId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("suppressedBy")) {
+                this.suppressedBy(model.getSuppressedBy());
+            }
+            if (model.wasPropertyExplicitlySet("entityId")) {
+                this.entityId(model.getEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("entityTypeDisplayName")) {
+                this.entityTypeDisplayName(model.getEntityTypeDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("typeDisplayName")) {
+                this.typeDisplayName(model.getTypeDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("typeName")) {
+                this.typeName(model.getTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("severity")) {
+                this.severity(model.getSeverity());
+            }
+            return this;
         }
     }
 
@@ -995,6 +1046,7 @@ public final class LogAnalyticsWarning {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsWarning(");
+        sb.append("super=").append(super.toString());
         sb.append("agentId=").append(String.valueOf(this.agentId));
         sb.append(", hostName=").append(String.valueOf(this.hostName));
         sb.append(", ruleDisplayName=").append(String.valueOf(this.ruleDisplayName));
@@ -1021,7 +1073,6 @@ public final class LogAnalyticsWarning {
         sb.append(", typeDisplayName=").append(String.valueOf(this.typeDisplayName));
         sb.append(", typeName=").append(String.valueOf(this.typeName));
         sb.append(", severity=").append(String.valueOf(this.severity));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1062,7 +1113,7 @@ public final class LogAnalyticsWarning {
                 && java.util.Objects.equals(this.typeDisplayName, other.typeDisplayName)
                 && java.util.Objects.equals(this.typeName, other.typeName)
                 && java.util.Objects.equals(this.severity, other.severity)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1119,16 +1170,7 @@ public final class LogAnalyticsWarning {
                         + (this.typeDisplayName == null ? 43 : this.typeDisplayName.hashCode());
         result = (result * PRIME) + (this.typeName == null ? 43 : this.typeName.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

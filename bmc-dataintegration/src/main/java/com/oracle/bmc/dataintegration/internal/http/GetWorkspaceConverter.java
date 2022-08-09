@@ -106,8 +106,8 @@ public class GetWorkspaceConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .GetWorkspaceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.workspace(response.getItem());
 

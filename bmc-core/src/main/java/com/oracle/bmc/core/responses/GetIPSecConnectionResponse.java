@@ -55,16 +55,18 @@ public class GetIPSecConnectionResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "iPSecConnection"
     })
     private GetIPSecConnectionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.IPSecConnection iPSecConnection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.iPSecConnection = iPSecConnection;
@@ -75,6 +77,13 @@ public class GetIPSecConnectionResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class GetIPSecConnectionResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetIPSecConnectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             iPSecConnection(o.getIPSecConnection());
@@ -148,7 +158,7 @@ public class GetIPSecConnectionResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetIPSecConnectionResponse build() {
             return new GetIPSecConnectionResponse(
-                    __httpStatusCode__, etag, opcRequestId, iPSecConnection);
+                    __httpStatusCode__, headers, etag, opcRequestId, iPSecConnection);
         }
     }
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.licensemanager.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImageDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImageDetails {
+public final class ImageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"listingId", "packageVersion"})
     public ImageDetails(String listingId, String packageVersion) {
@@ -65,18 +65,22 @@ public final class ImageDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageDetails build() {
-            ImageDetails __instance__ = new ImageDetails(listingId, packageVersion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ImageDetails model = new ImageDetails(this.listingId, this.packageVersion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImageDetails o) {
-            Builder copiedBuilder =
-                    listingId(o.getListingId()).packageVersion(o.getPackageVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImageDetails model) {
+            if (model.wasPropertyExplicitlySet("listingId")) {
+                this.listingId(model.getListingId());
+            }
+            if (model.wasPropertyExplicitlySet("packageVersion")) {
+                this.packageVersion(model.getPackageVersion());
+            }
+            return this;
         }
     }
 
@@ -132,9 +136,9 @@ public final class ImageDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImageDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("listingId=").append(String.valueOf(this.listingId));
         sb.append(", packageVersion=").append(String.valueOf(this.packageVersion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -151,7 +155,7 @@ public final class ImageDetails {
         ImageDetails other = (ImageDetails) o;
         return java.util.Objects.equals(this.listingId, other.listingId)
                 && java.util.Objects.equals(this.packageVersion, other.packageVersion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -162,16 +166,7 @@ public final class ImageDetails {
         result =
                 (result * PRIME)
                         + (this.packageVersion == null ? 43 : this.packageVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

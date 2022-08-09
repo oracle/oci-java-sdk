@@ -63,17 +63,19 @@ public class ListCertificateVersionsResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "certificateVersionCollection"
     })
     private ListCertificateVersionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.certificatesmanagement.model.CertificateVersionCollection
                     certificateVersionCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.certificateVersionCollection = certificateVersionCollection;
@@ -84,6 +86,13 @@ public class ListCertificateVersionsResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -153,6 +162,7 @@ public class ListCertificateVersionsResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(ListCertificateVersionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             certificateVersionCollection(o.getCertificateVersionCollection());
@@ -166,7 +176,11 @@ public class ListCertificateVersionsResponse extends com.oracle.bmc.responses.Bm
          */
         public ListCertificateVersionsResponse build() {
             return new ListCertificateVersionsResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, certificateVersionCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcNextPage,
+                    opcRequestId,
+                    certificateVersionCollection);
         }
     }
 

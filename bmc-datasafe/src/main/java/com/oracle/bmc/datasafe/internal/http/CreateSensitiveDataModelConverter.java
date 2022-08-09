@@ -109,8 +109,8 @@ public class CreateSensitiveDataModelConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .CreateSensitiveDataModelResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sensitiveDataModel(response.getItem());
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.email.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Suppression.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Suppression {
+public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -241,36 +241,53 @@ public final class Suppression {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Suppression build() {
-            Suppression __instance__ =
+            Suppression model =
                     new Suppression(
-                            compartmentId,
-                            emailAddress,
-                            id,
-                            reason,
-                            timeCreated,
-                            timeLastSuppressed,
-                            messageId,
-                            errorDetail,
-                            errorSource);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.emailAddress,
+                            this.id,
+                            this.reason,
+                            this.timeCreated,
+                            this.timeLastSuppressed,
+                            this.messageId,
+                            this.errorDetail,
+                            this.errorSource);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Suppression o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .emailAddress(o.getEmailAddress())
-                            .id(o.getId())
-                            .reason(o.getReason())
-                            .timeCreated(o.getTimeCreated())
-                            .timeLastSuppressed(o.getTimeLastSuppressed())
-                            .messageId(o.getMessageId())
-                            .errorDetail(o.getErrorDetail())
-                            .errorSource(o.getErrorSource());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Suppression model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("emailAddress")) {
+                this.emailAddress(model.getEmailAddress());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("reason")) {
+                this.reason(model.getReason());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSuppressed")) {
+                this.timeLastSuppressed(model.getTimeLastSuppressed());
+            }
+            if (model.wasPropertyExplicitlySet("messageId")) {
+                this.messageId(model.getMessageId());
+            }
+            if (model.wasPropertyExplicitlySet("errorDetail")) {
+                this.errorDetail(model.getErrorDetail());
+            }
+            if (model.wasPropertyExplicitlySet("errorSource")) {
+                this.errorSource(model.getErrorSource());
+            }
+            return this;
         }
     }
 
@@ -513,6 +530,7 @@ public final class Suppression {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Suppression(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", emailAddress=").append(String.valueOf(this.emailAddress));
         sb.append(", id=").append(String.valueOf(this.id));
@@ -522,7 +540,6 @@ public final class Suppression {
         sb.append(", messageId=").append(String.valueOf(this.messageId));
         sb.append(", errorDetail=").append(String.valueOf(this.errorDetail));
         sb.append(", errorSource=").append(String.valueOf(this.errorSource));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -546,7 +563,7 @@ public final class Suppression {
                 && java.util.Objects.equals(this.messageId, other.messageId)
                 && java.util.Objects.equals(this.errorDetail, other.errorDetail)
                 && java.util.Objects.equals(this.errorSource, other.errorSource)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -568,16 +585,7 @@ public final class Suppression {
         result = (result * PRIME) + (this.messageId == null ? 43 : this.messageId.hashCode());
         result = (result * PRIME) + (this.errorDetail == null ? 43 : this.errorDetail.hashCode());
         result = (result * PRIME) + (this.errorSource == null ? 43 : this.errorSource.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

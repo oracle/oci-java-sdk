@@ -18,7 +18,7 @@ package com.oracle.bmc.ons.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MessageDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MessageDetails {
+public final class MessageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"title", "body"})
     public MessageDetails(String title, String body) {
@@ -70,17 +70,22 @@ public final class MessageDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MessageDetails build() {
-            MessageDetails __instance__ = new MessageDetails(title, body);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MessageDetails model = new MessageDetails(this.title, this.body);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MessageDetails o) {
-            Builder copiedBuilder = title(o.getTitle()).body(o.getBody());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MessageDetails model) {
+            if (model.wasPropertyExplicitlySet("title")) {
+                this.title(model.getTitle());
+            }
+            if (model.wasPropertyExplicitlySet("body")) {
+                this.body(model.getBody());
+            }
+            return this;
         }
     }
 
@@ -140,9 +145,9 @@ public final class MessageDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MessageDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("title=").append(String.valueOf(this.title));
         sb.append(", body=").append(String.valueOf(this.body));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,7 +164,7 @@ public final class MessageDetails {
         MessageDetails other = (MessageDetails) o;
         return java.util.Objects.equals(this.title, other.title)
                 && java.util.Objects.equals(this.body, other.body)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +173,7 @@ public final class MessageDetails {
         int result = 1;
         result = (result * PRIME) + (this.title == null ? 43 : this.title.hashCode());
         result = (result * PRIME) + (this.body == null ? 43 : this.body.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

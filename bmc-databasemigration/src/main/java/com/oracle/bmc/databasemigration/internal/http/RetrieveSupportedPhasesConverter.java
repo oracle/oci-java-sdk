@@ -115,8 +115,8 @@ public class RetrieveSupportedPhasesConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .RetrieveSupportedPhasesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.migrationPhaseCollection(response.getItem());
 

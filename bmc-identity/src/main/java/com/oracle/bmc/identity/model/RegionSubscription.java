@@ -25,7 +25,7 @@ package com.oracle.bmc.identity.model;
     builder = RegionSubscription.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RegionSubscription {
+public final class RegionSubscription extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"regionKey", "regionName", "status", "isHomeRegion"})
     public RegionSubscription(
@@ -124,22 +124,30 @@ public final class RegionSubscription {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RegionSubscription build() {
-            RegionSubscription __instance__ =
-                    new RegionSubscription(regionKey, regionName, status, isHomeRegion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RegionSubscription model =
+                    new RegionSubscription(
+                            this.regionKey, this.regionName, this.status, this.isHomeRegion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RegionSubscription o) {
-            Builder copiedBuilder =
-                    regionKey(o.getRegionKey())
-                            .regionName(o.getRegionName())
-                            .status(o.getStatus())
-                            .isHomeRegion(o.getIsHomeRegion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RegionSubscription model) {
+            if (model.wasPropertyExplicitlySet("regionKey")) {
+                this.regionKey(model.getRegionKey());
+            }
+            if (model.wasPropertyExplicitlySet("regionName")) {
+                this.regionName(model.getRegionName());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("isHomeRegion")) {
+                this.isHomeRegion(model.getIsHomeRegion());
+            }
+            return this;
         }
     }
 
@@ -286,11 +294,11 @@ public final class RegionSubscription {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RegionSubscription(");
+        sb.append("super=").append(super.toString());
         sb.append("regionKey=").append(String.valueOf(this.regionKey));
         sb.append(", regionName=").append(String.valueOf(this.regionName));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", isHomeRegion=").append(String.valueOf(this.isHomeRegion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -309,7 +317,7 @@ public final class RegionSubscription {
                 && java.util.Objects.equals(this.regionName, other.regionName)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.isHomeRegion, other.isHomeRegion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -320,16 +328,7 @@ public final class RegionSubscription {
         result = (result * PRIME) + (this.regionName == null ? 43 : this.regionName.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.isHomeRegion == null ? 43 : this.isHomeRegion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

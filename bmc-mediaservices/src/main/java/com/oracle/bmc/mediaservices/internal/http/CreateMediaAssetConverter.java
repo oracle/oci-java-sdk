@@ -106,8 +106,8 @@ public class CreateMediaAssetConverter {
                                         builder =
                                                 com.oracle.bmc.mediaservices.responses
                                                         .CreateMediaAssetResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.mediaAsset(response.getItem());
 

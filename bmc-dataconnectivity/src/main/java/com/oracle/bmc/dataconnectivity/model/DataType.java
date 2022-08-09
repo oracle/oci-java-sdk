@@ -124,36 +124,53 @@ public final class DataType extends BaseType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataType build() {
-            DataType __instance__ =
+            DataType model =
                     new DataType(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            objectStatus,
-                            description,
-                            dtType,
-                            typeSystemName,
-                            configDefinition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.objectStatus,
+                            this.description,
+                            this.dtType,
+                            this.typeSystemName,
+                            this.configDefinition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataType o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .objectStatus(o.getObjectStatus())
-                            .description(o.getDescription())
-                            .dtType(o.getDtType())
-                            .typeSystemName(o.getTypeSystemName())
-                            .configDefinition(o.getConfigDefinition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataType model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("dtType")) {
+                this.dtType(model.getDtType());
+            }
+            if (model.wasPropertyExplicitlySet("typeSystemName")) {
+                this.typeSystemName(model.getTypeSystemName());
+            }
+            if (model.wasPropertyExplicitlySet("configDefinition")) {
+                this.configDefinition(model.getConfigDefinition());
+            }
+            return this;
         }
     }
 
@@ -284,7 +301,6 @@ public final class DataType extends BaseType {
         sb.append(", dtType=").append(String.valueOf(this.dtType));
         sb.append(", typeSystemName=").append(String.valueOf(this.typeSystemName));
         sb.append(", configDefinition=").append(String.valueOf(this.configDefinition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -302,8 +318,7 @@ public final class DataType extends BaseType {
         return java.util.Objects.equals(this.dtType, other.dtType)
                 && java.util.Objects.equals(this.typeSystemName, other.typeSystemName)
                 && java.util.Objects.equals(this.configDefinition, other.configDefinition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -317,16 +332,6 @@ public final class DataType extends BaseType {
         result =
                 (result * PRIME)
                         + (this.configDefinition == null ? 43 : this.configDefinition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

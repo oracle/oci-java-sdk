@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = ResizeDataFileDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResizeDataFileDetails {
+public final class ResizeDataFileDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -193,34 +194,49 @@ public final class ResizeDataFileDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResizeDataFileDetails build() {
-            ResizeDataFileDetails __instance__ =
+            ResizeDataFileDetails model =
                     new ResizeDataFileDetails(
-                            credentialDetails,
-                            fileType,
-                            dataFile,
-                            fileSize,
-                            isAutoExtensible,
-                            autoExtendNextSize,
-                            autoExtendMaxSize,
-                            isMaxSizeUnlimited);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.credentialDetails,
+                            this.fileType,
+                            this.dataFile,
+                            this.fileSize,
+                            this.isAutoExtensible,
+                            this.autoExtendNextSize,
+                            this.autoExtendMaxSize,
+                            this.isMaxSizeUnlimited);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResizeDataFileDetails o) {
-            Builder copiedBuilder =
-                    credentialDetails(o.getCredentialDetails())
-                            .fileType(o.getFileType())
-                            .dataFile(o.getDataFile())
-                            .fileSize(o.getFileSize())
-                            .isAutoExtensible(o.getIsAutoExtensible())
-                            .autoExtendNextSize(o.getAutoExtendNextSize())
-                            .autoExtendMaxSize(o.getAutoExtendMaxSize())
-                            .isMaxSizeUnlimited(o.getIsMaxSizeUnlimited());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResizeDataFileDetails model) {
+            if (model.wasPropertyExplicitlySet("credentialDetails")) {
+                this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("fileType")) {
+                this.fileType(model.getFileType());
+            }
+            if (model.wasPropertyExplicitlySet("dataFile")) {
+                this.dataFile(model.getDataFile());
+            }
+            if (model.wasPropertyExplicitlySet("fileSize")) {
+                this.fileSize(model.getFileSize());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoExtensible")) {
+                this.isAutoExtensible(model.getIsAutoExtensible());
+            }
+            if (model.wasPropertyExplicitlySet("autoExtendNextSize")) {
+                this.autoExtendNextSize(model.getAutoExtendNextSize());
+            }
+            if (model.wasPropertyExplicitlySet("autoExtendMaxSize")) {
+                this.autoExtendMaxSize(model.getAutoExtendMaxSize());
+            }
+            if (model.wasPropertyExplicitlySet("isMaxSizeUnlimited")) {
+                this.isMaxSizeUnlimited(model.getIsMaxSizeUnlimited());
+            }
+            return this;
         }
     }
 
@@ -403,6 +419,7 @@ public final class ResizeDataFileDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResizeDataFileDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
         sb.append(", fileType=").append(String.valueOf(this.fileType));
         sb.append(", dataFile=").append(String.valueOf(this.dataFile));
@@ -411,7 +428,6 @@ public final class ResizeDataFileDetails {
         sb.append(", autoExtendNextSize=").append(String.valueOf(this.autoExtendNextSize));
         sb.append(", autoExtendMaxSize=").append(String.valueOf(this.autoExtendMaxSize));
         sb.append(", isMaxSizeUnlimited=").append(String.valueOf(this.isMaxSizeUnlimited));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -434,7 +450,7 @@ public final class ResizeDataFileDetails {
                 && java.util.Objects.equals(this.autoExtendNextSize, other.autoExtendNextSize)
                 && java.util.Objects.equals(this.autoExtendMaxSize, other.autoExtendMaxSize)
                 && java.util.Objects.equals(this.isMaxSizeUnlimited, other.isMaxSizeUnlimited)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -463,16 +479,7 @@ public final class ResizeDataFileDetails {
                         + (this.isMaxSizeUnlimited == null
                                 ? 43
                                 : this.isMaxSizeUnlimited.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

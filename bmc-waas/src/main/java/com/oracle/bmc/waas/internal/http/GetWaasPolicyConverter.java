@@ -100,8 +100,8 @@ public class GetWaasPolicyConverter {
                                         builder =
                                                 com.oracle.bmc.waas.responses.GetWaasPolicyResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.waasPolicy(response.getItem());
 

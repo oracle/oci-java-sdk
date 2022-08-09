@@ -19,7 +19,7 @@ package com.oracle.bmc.lockbox.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AccessRequest.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AccessRequest {
+public final class AccessRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -293,44 +293,69 @@ public final class AccessRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AccessRequest build() {
-            AccessRequest __instance__ =
+            AccessRequest model =
                     new AccessRequest(
-                            id,
-                            lockboxId,
-                            displayName,
-                            description,
-                            requestorId,
-                            lifecycleState,
-                            lifecycleStateDetails,
-                            accessDuration,
-                            context,
-                            activityLogs,
-                            timeCreated,
-                            timeUpdated,
-                            timeExpired);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.lockboxId,
+                            this.displayName,
+                            this.description,
+                            this.requestorId,
+                            this.lifecycleState,
+                            this.lifecycleStateDetails,
+                            this.accessDuration,
+                            this.context,
+                            this.activityLogs,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.timeExpired);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AccessRequest o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .lockboxId(o.getLockboxId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .requestorId(o.getRequestorId())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleStateDetails(o.getLifecycleStateDetails())
-                            .accessDuration(o.getAccessDuration())
-                            .context(o.getContext())
-                            .activityLogs(o.getActivityLogs())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .timeExpired(o.getTimeExpired());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AccessRequest model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lockboxId")) {
+                this.lockboxId(model.getLockboxId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("requestorId")) {
+                this.requestorId(model.getRequestorId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleStateDetails")) {
+                this.lifecycleStateDetails(model.getLifecycleStateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("accessDuration")) {
+                this.accessDuration(model.getAccessDuration());
+            }
+            if (model.wasPropertyExplicitlySet("context")) {
+                this.context(model.getContext());
+            }
+            if (model.wasPropertyExplicitlySet("activityLogs")) {
+                this.activityLogs(model.getActivityLogs());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpired")) {
+                this.timeExpired(model.getTimeExpired());
+            }
+            return this;
         }
     }
 
@@ -659,6 +684,7 @@ public final class AccessRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AccessRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", lockboxId=").append(String.valueOf(this.lockboxId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -672,7 +698,6 @@ public final class AccessRequest {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeExpired=").append(String.valueOf(this.timeExpired));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -700,7 +725,7 @@ public final class AccessRequest {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeExpired, other.timeExpired)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -728,16 +753,7 @@ public final class AccessRequest {
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.timeExpired == null ? 43 : this.timeExpired.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -39,10 +39,18 @@ public class GetPrivateApplicationPackageActionDownloadConfigResponse
         return inputStream;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "inputStream"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "inputStream"
+    })
     private GetPrivateApplicationPackageActionDownloadConfigResponse(
-            int __httpStatusCode__, String opcRequestId, java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            java.io.InputStream inputStream) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.inputStream = inputStream;
     }
@@ -52,6 +60,13 @@ public class GetPrivateApplicationPackageActionDownloadConfigResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -95,6 +110,7 @@ public class GetPrivateApplicationPackageActionDownloadConfigResponse
          */
         public Builder copy(GetPrivateApplicationPackageActionDownloadConfigResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             inputStream(o.getInputStream());
 
@@ -107,7 +123,7 @@ public class GetPrivateApplicationPackageActionDownloadConfigResponse
          */
         public GetPrivateApplicationPackageActionDownloadConfigResponse build() {
             return new GetPrivateApplicationPackageActionDownloadConfigResponse(
-                    __httpStatusCode__, opcRequestId, inputStream);
+                    __httpStatusCode__, headers, opcRequestId, inputStream);
         }
     }
 

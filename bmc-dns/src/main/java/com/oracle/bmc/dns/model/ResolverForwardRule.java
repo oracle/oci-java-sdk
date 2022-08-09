@@ -87,26 +87,33 @@ public final class ResolverForwardRule extends ResolverRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResolverForwardRule build() {
-            ResolverForwardRule __instance__ =
+            ResolverForwardRule model =
                     new ResolverForwardRule(
-                            clientAddressConditions,
-                            qnameCoverConditions,
-                            destinationAddresses,
-                            sourceEndpointName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.clientAddressConditions,
+                            this.qnameCoverConditions,
+                            this.destinationAddresses,
+                            this.sourceEndpointName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResolverForwardRule o) {
-            Builder copiedBuilder =
-                    clientAddressConditions(o.getClientAddressConditions())
-                            .qnameCoverConditions(o.getQnameCoverConditions())
-                            .destinationAddresses(o.getDestinationAddresses())
-                            .sourceEndpointName(o.getSourceEndpointName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResolverForwardRule model) {
+            if (model.wasPropertyExplicitlySet("clientAddressConditions")) {
+                this.clientAddressConditions(model.getClientAddressConditions());
+            }
+            if (model.wasPropertyExplicitlySet("qnameCoverConditions")) {
+                this.qnameCoverConditions(model.getQnameCoverConditions());
+            }
+            if (model.wasPropertyExplicitlySet("destinationAddresses")) {
+                this.destinationAddresses(model.getDestinationAddresses());
+            }
+            if (model.wasPropertyExplicitlySet("sourceEndpointName")) {
+                this.sourceEndpointName(model.getSourceEndpointName());
+            }
+            return this;
         }
     }
 
@@ -182,7 +189,6 @@ public final class ResolverForwardRule extends ResolverRule {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", destinationAddresses=").append(String.valueOf(this.destinationAddresses));
         sb.append(", sourceEndpointName=").append(String.valueOf(this.sourceEndpointName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,8 +205,7 @@ public final class ResolverForwardRule extends ResolverRule {
         ResolverForwardRule other = (ResolverForwardRule) o;
         return java.util.Objects.equals(this.destinationAddresses, other.destinationAddresses)
                 && java.util.Objects.equals(this.sourceEndpointName, other.sourceEndpointName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -217,16 +222,6 @@ public final class ResolverForwardRule extends ResolverRule {
                         + (this.sourceEndpointName == null
                                 ? 43
                                 : this.sourceEndpointName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

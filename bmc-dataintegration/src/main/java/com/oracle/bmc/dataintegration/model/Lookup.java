@@ -194,50 +194,81 @@ public final class Lookup extends Operator {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Lookup build() {
-            Lookup __instance__ =
+            Lookup model =
                     new Lookup(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            inputPorts,
-                            outputPorts,
-                            objectStatus,
-                            identifier,
-                            parameters,
-                            opConfigValues,
-                            lookupCondition,
-                            isSkipNoMatch,
-                            multiMatchStrategy,
-                            nullFillValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.inputPorts,
+                            this.outputPorts,
+                            this.objectStatus,
+                            this.identifier,
+                            this.parameters,
+                            this.opConfigValues,
+                            this.lookupCondition,
+                            this.isSkipNoMatch,
+                            this.multiMatchStrategy,
+                            this.nullFillValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Lookup o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .inputPorts(o.getInputPorts())
-                            .outputPorts(o.getOutputPorts())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .parameters(o.getParameters())
-                            .opConfigValues(o.getOpConfigValues())
-                            .lookupCondition(o.getLookupCondition())
-                            .isSkipNoMatch(o.getIsSkipNoMatch())
-                            .multiMatchStrategy(o.getMultiMatchStrategy())
-                            .nullFillValues(o.getNullFillValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Lookup model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("inputPorts")) {
+                this.inputPorts(model.getInputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("outputPorts")) {
+                this.outputPorts(model.getOutputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("opConfigValues")) {
+                this.opConfigValues(model.getOpConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("lookupCondition")) {
+                this.lookupCondition(model.getLookupCondition());
+            }
+            if (model.wasPropertyExplicitlySet("isSkipNoMatch")) {
+                this.isSkipNoMatch(model.getIsSkipNoMatch());
+            }
+            if (model.wasPropertyExplicitlySet("multiMatchStrategy")) {
+                this.multiMatchStrategy(model.getMultiMatchStrategy());
+            }
+            if (model.wasPropertyExplicitlySet("nullFillValues")) {
+                this.nullFillValues(model.getNullFillValues());
+            }
+            return this;
         }
     }
 
@@ -407,7 +438,6 @@ public final class Lookup extends Operator {
         sb.append(", isSkipNoMatch=").append(String.valueOf(this.isSkipNoMatch));
         sb.append(", multiMatchStrategy=").append(String.valueOf(this.multiMatchStrategy));
         sb.append(", nullFillValues=").append(String.valueOf(this.nullFillValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -426,8 +456,7 @@ public final class Lookup extends Operator {
                 && java.util.Objects.equals(this.isSkipNoMatch, other.isSkipNoMatch)
                 && java.util.Objects.equals(this.multiMatchStrategy, other.multiMatchStrategy)
                 && java.util.Objects.equals(this.nullFillValues, other.nullFillValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -448,16 +477,6 @@ public final class Lookup extends Operator {
         result =
                 (result * PRIME)
                         + (this.nullFillValues == null ? 43 : this.nullFillValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

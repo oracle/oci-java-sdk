@@ -123,33 +123,46 @@ public final class CreateEmManagedExternalHostInsightDetails extends CreateHostI
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateEmManagedExternalHostInsightDetails build() {
-            CreateEmManagedExternalHostInsightDetails __instance__ =
+            CreateEmManagedExternalHostInsightDetails model =
                     new CreateEmManagedExternalHostInsightDetails(
-                            compartmentId,
-                            freeformTags,
-                            definedTags,
-                            enterpriseManagerIdentifier,
-                            enterpriseManagerBridgeId,
-                            enterpriseManagerEntityIdentifier,
-                            exadataInsightId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.enterpriseManagerIdentifier,
+                            this.enterpriseManagerBridgeId,
+                            this.enterpriseManagerEntityIdentifier,
+                            this.exadataInsightId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateEmManagedExternalHostInsightDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .enterpriseManagerIdentifier(o.getEnterpriseManagerIdentifier())
-                            .enterpriseManagerBridgeId(o.getEnterpriseManagerBridgeId())
-                            .enterpriseManagerEntityIdentifier(
-                                    o.getEnterpriseManagerEntityIdentifier())
-                            .exadataInsightId(o.getExadataInsightId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateEmManagedExternalHostInsightDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerIdentifier")) {
+                this.enterpriseManagerIdentifier(model.getEnterpriseManagerIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerBridgeId")) {
+                this.enterpriseManagerBridgeId(model.getEnterpriseManagerBridgeId());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityIdentifier")) {
+                this.enterpriseManagerEntityIdentifier(
+                        model.getEnterpriseManagerEntityIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("exadataInsightId")) {
+                this.exadataInsightId(model.getExadataInsightId());
+            }
+            return this;
         }
     }
 
@@ -257,7 +270,6 @@ public final class CreateEmManagedExternalHostInsightDetails extends CreateHostI
         sb.append(", enterpriseManagerEntityIdentifier=")
                 .append(String.valueOf(this.enterpriseManagerEntityIdentifier));
         sb.append(", exadataInsightId=").append(String.valueOf(this.exadataInsightId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -281,8 +293,7 @@ public final class CreateEmManagedExternalHostInsightDetails extends CreateHostI
                         this.enterpriseManagerEntityIdentifier,
                         other.enterpriseManagerEntityIdentifier)
                 && java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -307,16 +318,6 @@ public final class CreateEmManagedExternalHostInsightDetails extends CreateHostI
         result =
                 (result * PRIME)
                         + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

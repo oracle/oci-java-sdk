@@ -19,7 +19,8 @@ package com.oracle.bmc.identity.model;
     builder = BulkDeleteTagsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BulkDeleteTagsDetails {
+public final class BulkDeleteTagsDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tagDefinitionIds"})
     public BulkDeleteTagsDetails(java.util.List<String> tagDefinitionIds) {
@@ -50,17 +51,19 @@ public final class BulkDeleteTagsDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BulkDeleteTagsDetails build() {
-            BulkDeleteTagsDetails __instance__ = new BulkDeleteTagsDetails(tagDefinitionIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BulkDeleteTagsDetails model = new BulkDeleteTagsDetails(this.tagDefinitionIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BulkDeleteTagsDetails o) {
-            Builder copiedBuilder = tagDefinitionIds(o.getTagDefinitionIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BulkDeleteTagsDetails model) {
+            if (model.wasPropertyExplicitlySet("tagDefinitionIds")) {
+                this.tagDefinitionIds(model.getTagDefinitionIds());
+            }
+            return this;
         }
     }
 
@@ -102,8 +105,8 @@ public final class BulkDeleteTagsDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BulkDeleteTagsDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("tagDefinitionIds=").append(String.valueOf(this.tagDefinitionIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +122,7 @@ public final class BulkDeleteTagsDetails {
 
         BulkDeleteTagsDetails other = (BulkDeleteTagsDetails) o;
         return java.util.Objects.equals(this.tagDefinitionIds, other.tagDefinitionIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -129,16 +132,7 @@ public final class BulkDeleteTagsDetails {
         result =
                 (result * PRIME)
                         + (this.tagDefinitionIds == null ? 43 : this.tagDefinitionIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

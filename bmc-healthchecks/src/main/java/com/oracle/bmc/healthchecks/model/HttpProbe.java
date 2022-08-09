@@ -18,7 +18,7 @@ package com.oracle.bmc.healthchecks.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HttpProbe.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HttpProbe {
+public final class HttpProbe extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -284,44 +284,69 @@ public final class HttpProbe {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HttpProbe build() {
-            HttpProbe __instance__ =
+            HttpProbe model =
                     new HttpProbe(
-                            id,
-                            resultsUrl,
-                            homeRegion,
-                            timeCreated,
-                            compartmentId,
-                            targets,
-                            vantagePointNames,
-                            port,
-                            timeoutInSeconds,
-                            protocol,
-                            method,
-                            path,
-                            headers);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.resultsUrl,
+                            this.homeRegion,
+                            this.timeCreated,
+                            this.compartmentId,
+                            this.targets,
+                            this.vantagePointNames,
+                            this.port,
+                            this.timeoutInSeconds,
+                            this.protocol,
+                            this.method,
+                            this.path,
+                            this.headers);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HttpProbe o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .resultsUrl(o.getResultsUrl())
-                            .homeRegion(o.getHomeRegion())
-                            .timeCreated(o.getTimeCreated())
-                            .compartmentId(o.getCompartmentId())
-                            .targets(o.getTargets())
-                            .vantagePointNames(o.getVantagePointNames())
-                            .port(o.getPort())
-                            .timeoutInSeconds(o.getTimeoutInSeconds())
-                            .protocol(o.getProtocol())
-                            .method(o.getMethod())
-                            .path(o.getPath())
-                            .headers(o.getHeaders());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HttpProbe model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("resultsUrl")) {
+                this.resultsUrl(model.getResultsUrl());
+            }
+            if (model.wasPropertyExplicitlySet("homeRegion")) {
+                this.homeRegion(model.getHomeRegion());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("targets")) {
+                this.targets(model.getTargets());
+            }
+            if (model.wasPropertyExplicitlySet("vantagePointNames")) {
+                this.vantagePointNames(model.getVantagePointNames());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInSeconds")) {
+                this.timeoutInSeconds(model.getTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("method")) {
+                this.method(model.getMethod());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("headers")) {
+                this.headers(model.getHeaders());
+            }
+            return this;
         }
     }
 
@@ -535,6 +560,7 @@ public final class HttpProbe {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HttpProbe(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", resultsUrl=").append(String.valueOf(this.resultsUrl));
         sb.append(", homeRegion=").append(String.valueOf(this.homeRegion));
@@ -548,7 +574,6 @@ public final class HttpProbe {
         sb.append(", method=").append(String.valueOf(this.method));
         sb.append(", path=").append(String.valueOf(this.path));
         sb.append(", headers=").append(String.valueOf(this.headers));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -576,7 +601,7 @@ public final class HttpProbe {
                 && java.util.Objects.equals(this.method, other.method)
                 && java.util.Objects.equals(this.path, other.path)
                 && java.util.Objects.equals(this.headers, other.headers)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -602,16 +627,7 @@ public final class HttpProbe {
         result = (result * PRIME) + (this.method == null ? 43 : this.method.hashCode());
         result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
         result = (result * PRIME) + (this.headers == null ? 43 : this.headers.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

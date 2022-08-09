@@ -59,16 +59,18 @@ public class ListAwrDatabasesResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "awrDatabaseCollection"
     })
     private ListAwrDatabasesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.opsi.model.AwrDatabaseCollection awrDatabaseCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.awrDatabaseCollection = awrDatabaseCollection;
@@ -79,6 +81,13 @@ public class ListAwrDatabasesResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListAwrDatabasesResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(ListAwrDatabasesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             awrDatabaseCollection(o.getAwrDatabaseCollection());
@@ -157,7 +167,7 @@ public class ListAwrDatabasesResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public ListAwrDatabasesResponse build() {
             return new ListAwrDatabasesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, awrDatabaseCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, awrDatabaseCollection);
         }
     }
 

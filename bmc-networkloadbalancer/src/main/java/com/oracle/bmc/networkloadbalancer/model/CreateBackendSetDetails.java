@@ -24,7 +24,8 @@ package com.oracle.bmc.networkloadbalancer.model;
     builder = CreateBackendSetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateBackendSetDetails {
+public final class CreateBackendSetDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -170,25 +171,41 @@ public final class CreateBackendSetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateBackendSetDetails build() {
-            CreateBackendSetDetails __instance__ =
+            CreateBackendSetDetails model =
                     new CreateBackendSetDetails(
-                            name, policy, isPreserveSource, ipVersion, backends, healthChecker);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.policy,
+                            this.isPreserveSource,
+                            this.ipVersion,
+                            this.backends,
+                            this.healthChecker);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateBackendSetDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .policy(o.getPolicy())
-                            .isPreserveSource(o.getIsPreserveSource())
-                            .ipVersion(o.getIpVersion())
-                            .backends(o.getBackends())
-                            .healthChecker(o.getHealthChecker());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateBackendSetDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("policy")) {
+                this.policy(model.getPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("isPreserveSource")) {
+                this.isPreserveSource(model.getIsPreserveSource());
+            }
+            if (model.wasPropertyExplicitlySet("ipVersion")) {
+                this.ipVersion(model.getIpVersion());
+            }
+            if (model.wasPropertyExplicitlySet("backends")) {
+                this.backends(model.getBackends());
+            }
+            if (model.wasPropertyExplicitlySet("healthChecker")) {
+                this.healthChecker(model.getHealthChecker());
+            }
+            return this;
         }
     }
 
@@ -317,13 +334,13 @@ public final class CreateBackendSetDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateBackendSetDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", policy=").append(String.valueOf(this.policy));
         sb.append(", isPreserveSource=").append(String.valueOf(this.isPreserveSource));
         sb.append(", ipVersion=").append(String.valueOf(this.ipVersion));
         sb.append(", backends=").append(String.valueOf(this.backends));
         sb.append(", healthChecker=").append(String.valueOf(this.healthChecker));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -344,7 +361,7 @@ public final class CreateBackendSetDetails {
                 && java.util.Objects.equals(this.ipVersion, other.ipVersion)
                 && java.util.Objects.equals(this.backends, other.backends)
                 && java.util.Objects.equals(this.healthChecker, other.healthChecker)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -361,16 +378,7 @@ public final class CreateBackendSetDetails {
         result =
                 (result * PRIME)
                         + (this.healthChecker == null ? 43 : this.healthChecker.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

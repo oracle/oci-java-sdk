@@ -101,8 +101,8 @@ public class GetVolumeBackupPolicyConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetVolumeBackupPolicyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.volumeBackupPolicy(response.getItem());
 

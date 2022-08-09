@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = DatabaseConnectionString.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseConnectionString {
+public final class DatabaseConnectionString
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hostname", "port", "service", "protocol"})
     public DatabaseConnectionString(
@@ -103,22 +104,30 @@ public final class DatabaseConnectionString {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseConnectionString build() {
-            DatabaseConnectionString __instance__ =
-                    new DatabaseConnectionString(hostname, port, service, protocol);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DatabaseConnectionString model =
+                    new DatabaseConnectionString(
+                            this.hostname, this.port, this.service, this.protocol);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseConnectionString o) {
-            Builder copiedBuilder =
-                    hostname(o.getHostname())
-                            .port(o.getPort())
-                            .service(o.getService())
-                            .protocol(o.getProtocol());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseConnectionString model) {
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("service")) {
+                this.service(model.getService());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            return this;
         }
     }
 
@@ -250,11 +259,11 @@ public final class DatabaseConnectionString {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseConnectionString(");
+        sb.append("super=").append(super.toString());
         sb.append("hostname=").append(String.valueOf(this.hostname));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", service=").append(String.valueOf(this.service));
         sb.append(", protocol=").append(String.valueOf(this.protocol));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -273,7 +282,7 @@ public final class DatabaseConnectionString {
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.service, other.service)
                 && java.util.Objects.equals(this.protocol, other.protocol)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -284,16 +293,7 @@ public final class DatabaseConnectionString {
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
         result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

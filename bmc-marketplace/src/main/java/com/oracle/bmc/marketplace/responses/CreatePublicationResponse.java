@@ -53,13 +53,20 @@ public class CreatePublicationResponse extends com.oracle.bmc.responses.BmcRespo
         return publication;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "publication"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "publication"
+    })
     private CreatePublicationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.marketplace.model.Publication publication) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.publication = publication;
@@ -70,6 +77,13 @@ public class CreatePublicationResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class CreatePublicationResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(CreatePublicationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             publication(o.getPublication());
@@ -143,7 +158,7 @@ public class CreatePublicationResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public CreatePublicationResponse build() {
             return new CreatePublicationResponse(
-                    __httpStatusCode__, opcRequestId, etag, publication);
+                    __httpStatusCode__, headers, opcRequestId, etag, publication);
         }
     }
 

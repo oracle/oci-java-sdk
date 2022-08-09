@@ -98,8 +98,8 @@ public class GetDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetDatabaseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.database(response.getItem());
 

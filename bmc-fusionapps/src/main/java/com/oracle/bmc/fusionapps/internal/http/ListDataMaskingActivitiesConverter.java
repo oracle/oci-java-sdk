@@ -154,8 +154,8 @@ public class ListDataMaskingActivitiesConverter {
                                         builder =
                                                 com.oracle.bmc.fusionapps.responses
                                                         .ListDataMaskingActivitiesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataMaskingActivityCollection(response.getItem());
 

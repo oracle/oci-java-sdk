@@ -57,17 +57,19 @@ public class PreviewScaleBlockchainPlatformResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "scaledBlockchainPlatformPreview"
     })
     private PreviewScaleBlockchainPlatformResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.blockchain.model.ScaledBlockchainPlatformPreview
                     scaledBlockchainPlatformPreview) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.scaledBlockchainPlatformPreview = scaledBlockchainPlatformPreview;
@@ -78,6 +80,13 @@ public class PreviewScaleBlockchainPlatformResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -141,6 +150,7 @@ public class PreviewScaleBlockchainPlatformResponse extends com.oracle.bmc.respo
          */
         public Builder copy(PreviewScaleBlockchainPlatformResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             scaledBlockchainPlatformPreview(o.getScaledBlockchainPlatformPreview());
@@ -154,7 +164,11 @@ public class PreviewScaleBlockchainPlatformResponse extends com.oracle.bmc.respo
          */
         public PreviewScaleBlockchainPlatformResponse build() {
             return new PreviewScaleBlockchainPlatformResponse(
-                    __httpStatusCode__, etag, opcRequestId, scaledBlockchainPlatformPreview);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    scaledBlockchainPlatformPreview);
         }
     }
 

@@ -180,7 +180,8 @@ public class ListSqlTextsConverter {
 
                                 com.oracle.bmc.opsi.responses.ListSqlTextsResponse.Builder builder =
                                         com.oracle.bmc.opsi.responses.ListSqlTextsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.sqlTextCollection(response.getItem());
 

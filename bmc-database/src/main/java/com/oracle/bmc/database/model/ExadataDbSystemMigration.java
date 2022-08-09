@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = ExadataDbSystemMigration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExadataDbSystemMigration {
+public final class ExadataDbSystemMigration
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dbSystemId",
@@ -112,26 +113,33 @@ public final class ExadataDbSystemMigration {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExadataDbSystemMigration build() {
-            ExadataDbSystemMigration __instance__ =
+            ExadataDbSystemMigration model =
                     new ExadataDbSystemMigration(
-                            dbSystemId,
-                            cloudVmClusterId,
-                            cloudExadataInfrastructureId,
-                            additionalMigrations);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dbSystemId,
+                            this.cloudVmClusterId,
+                            this.cloudExadataInfrastructureId,
+                            this.additionalMigrations);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExadataDbSystemMigration o) {
-            Builder copiedBuilder =
-                    dbSystemId(o.getDbSystemId())
-                            .cloudVmClusterId(o.getCloudVmClusterId())
-                            .cloudExadataInfrastructureId(o.getCloudExadataInfrastructureId())
-                            .additionalMigrations(o.getAdditionalMigrations());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExadataDbSystemMigration model) {
+            if (model.wasPropertyExplicitlySet("dbSystemId")) {
+                this.dbSystemId(model.getDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("cloudVmClusterId")) {
+                this.cloudVmClusterId(model.getCloudVmClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("cloudExadataInfrastructureId")) {
+                this.cloudExadataInfrastructureId(model.getCloudExadataInfrastructureId());
+            }
+            if (model.wasPropertyExplicitlySet("additionalMigrations")) {
+                this.additionalMigrations(model.getAdditionalMigrations());
+            }
+            return this;
         }
     }
 
@@ -215,12 +223,12 @@ public final class ExadataDbSystemMigration {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExadataDbSystemMigration(");
+        sb.append("super=").append(super.toString());
         sb.append("dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", cloudVmClusterId=").append(String.valueOf(this.cloudVmClusterId));
         sb.append(", cloudExadataInfrastructureId=")
                 .append(String.valueOf(this.cloudExadataInfrastructureId));
         sb.append(", additionalMigrations=").append(String.valueOf(this.additionalMigrations));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -240,7 +248,7 @@ public final class ExadataDbSystemMigration {
                 && java.util.Objects.equals(
                         this.cloudExadataInfrastructureId, other.cloudExadataInfrastructureId)
                 && java.util.Objects.equals(this.additionalMigrations, other.additionalMigrations)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -261,16 +269,7 @@ public final class ExadataDbSystemMigration {
                         + (this.additionalMigrations == null
                                 ? 43
                                 : this.additionalMigrations.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

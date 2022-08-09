@@ -113,8 +113,8 @@ public class GetStreamPackagingConfigConverter {
                                         builder =
                                                 com.oracle.bmc.mediaservices.responses
                                                         .GetStreamPackagingConfigResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.streamPackagingConfig(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = RemoveDataFileDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RemoveDataFileDetails {
+public final class RemoveDataFileDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"credentialDetails", "fileType", "dataFile"})
     public RemoveDataFileDetails(
@@ -84,21 +85,26 @@ public final class RemoveDataFileDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RemoveDataFileDetails build() {
-            RemoveDataFileDetails __instance__ =
-                    new RemoveDataFileDetails(credentialDetails, fileType, dataFile);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RemoveDataFileDetails model =
+                    new RemoveDataFileDetails(this.credentialDetails, this.fileType, this.dataFile);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RemoveDataFileDetails o) {
-            Builder copiedBuilder =
-                    credentialDetails(o.getCredentialDetails())
-                            .fileType(o.getFileType())
-                            .dataFile(o.getDataFile());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RemoveDataFileDetails model) {
+            if (model.wasPropertyExplicitlySet("credentialDetails")) {
+                this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("fileType")) {
+                this.fileType(model.getFileType());
+            }
+            if (model.wasPropertyExplicitlySet("dataFile")) {
+                this.dataFile(model.getDataFile());
+            }
+            return this;
         }
     }
 
@@ -201,10 +207,10 @@ public final class RemoveDataFileDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RemoveDataFileDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
         sb.append(", fileType=").append(String.valueOf(this.fileType));
         sb.append(", dataFile=").append(String.valueOf(this.dataFile));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -222,7 +228,7 @@ public final class RemoveDataFileDetails {
         return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
                 && java.util.Objects.equals(this.fileType, other.fileType)
                 && java.util.Objects.equals(this.dataFile, other.dataFile)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -234,16 +240,7 @@ public final class RemoveDataFileDetails {
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
         result = (result * PRIME) + (this.fileType == null ? 43 : this.fileType.hashCode());
         result = (result * PRIME) + (this.dataFile == null ? 43 : this.dataFile.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

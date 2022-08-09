@@ -17,7 +17,7 @@ package com.oracle.bmc.oda.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImportBotDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImportBotDetails {
+public final class ImportBotDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"source"})
     public ImportBotDetails(StorageLocation source) {
@@ -41,17 +41,19 @@ public final class ImportBotDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImportBotDetails build() {
-            ImportBotDetails __instance__ = new ImportBotDetails(source);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ImportBotDetails model = new ImportBotDetails(this.source);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImportBotDetails o) {
-            Builder copiedBuilder = source(o.getSource());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImportBotDetails model) {
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            return this;
         }
     }
 
@@ -86,8 +88,8 @@ public final class ImportBotDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImportBotDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("source=").append(String.valueOf(this.source));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -102,8 +104,7 @@ public final class ImportBotDetails {
         }
 
         ImportBotDetails other = (ImportBotDetails) o;
-        return java.util.Objects.equals(this.source, other.source)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.source, other.source) && super.equals(other);
     }
 
     @Override
@@ -111,16 +112,7 @@ public final class ImportBotDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

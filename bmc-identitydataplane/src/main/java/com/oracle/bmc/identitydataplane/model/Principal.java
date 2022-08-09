@@ -17,7 +17,7 @@ package com.oracle.bmc.identitydataplane.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Principal.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Principal {
+public final class Principal extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"subjectId", "tenantId", "claims"})
     public Principal(String subjectId, String tenantId, java.util.List<Claim> claims) {
@@ -82,18 +82,25 @@ public final class Principal {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Principal build() {
-            Principal __instance__ = new Principal(subjectId, tenantId, claims);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Principal model = new Principal(this.subjectId, this.tenantId, this.claims);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Principal o) {
-            Builder copiedBuilder =
-                    subjectId(o.getSubjectId()).tenantId(o.getTenantId()).claims(o.getClaims());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Principal model) {
+            if (model.wasPropertyExplicitlySet("subjectId")) {
+                this.subjectId(model.getSubjectId());
+            }
+            if (model.wasPropertyExplicitlySet("tenantId")) {
+                this.tenantId(model.getTenantId());
+            }
+            if (model.wasPropertyExplicitlySet("claims")) {
+                this.claims(model.getClaims());
+            }
+            return this;
         }
     }
 
@@ -163,10 +170,10 @@ public final class Principal {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Principal(");
+        sb.append("super=").append(super.toString());
         sb.append("subjectId=").append(String.valueOf(this.subjectId));
         sb.append(", tenantId=").append(String.valueOf(this.tenantId));
         sb.append(", claims=").append(String.valueOf(this.claims));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -184,7 +191,7 @@ public final class Principal {
         return java.util.Objects.equals(this.subjectId, other.subjectId)
                 && java.util.Objects.equals(this.tenantId, other.tenantId)
                 && java.util.Objects.equals(this.claims, other.claims)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -194,16 +201,7 @@ public final class Principal {
         result = (result * PRIME) + (this.subjectId == null ? 43 : this.subjectId.hashCode());
         result = (result * PRIME) + (this.tenantId == null ? 43 : this.tenantId.hashCode());
         result = (result * PRIME) + (this.claims == null ? 43 : this.claims.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

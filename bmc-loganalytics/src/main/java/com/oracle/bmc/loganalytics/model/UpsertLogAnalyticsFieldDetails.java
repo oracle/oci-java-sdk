@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = UpsertLogAnalyticsFieldDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpsertLogAnalyticsFieldDetails {
+public final class UpsertLogAnalyticsFieldDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dataType",
@@ -131,24 +132,37 @@ public final class UpsertLogAnalyticsFieldDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpsertLogAnalyticsFieldDetails build() {
-            UpsertLogAnalyticsFieldDetails __instance__ =
+            UpsertLogAnalyticsFieldDetails model =
                     new UpsertLogAnalyticsFieldDetails(
-                            dataType, isMultiValued, description, displayName, name);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dataType,
+                            this.isMultiValued,
+                            this.description,
+                            this.displayName,
+                            this.name);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpsertLogAnalyticsFieldDetails o) {
-            Builder copiedBuilder =
-                    dataType(o.getDataType())
-                            .isMultiValued(o.getIsMultiValued())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .name(o.getName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpsertLogAnalyticsFieldDetails model) {
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("isMultiValued")) {
+                this.isMultiValued(model.getIsMultiValued());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            return this;
         }
     }
 
@@ -248,12 +262,12 @@ public final class UpsertLogAnalyticsFieldDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpsertLogAnalyticsFieldDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("dataType=").append(String.valueOf(this.dataType));
         sb.append(", isMultiValued=").append(String.valueOf(this.isMultiValued));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", name=").append(String.valueOf(this.name));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -273,7 +287,7 @@ public final class UpsertLogAnalyticsFieldDetails {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -287,16 +301,7 @@ public final class UpsertLogAnalyticsFieldDetails {
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

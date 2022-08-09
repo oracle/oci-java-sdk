@@ -48,18 +48,20 @@ public final class VolumeGroupSourceFromVolumeGroupBackupDetails extends VolumeG
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VolumeGroupSourceFromVolumeGroupBackupDetails build() {
-            VolumeGroupSourceFromVolumeGroupBackupDetails __instance__ =
-                    new VolumeGroupSourceFromVolumeGroupBackupDetails(volumeGroupBackupId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VolumeGroupSourceFromVolumeGroupBackupDetails model =
+                    new VolumeGroupSourceFromVolumeGroupBackupDetails(this.volumeGroupBackupId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VolumeGroupSourceFromVolumeGroupBackupDetails o) {
-            Builder copiedBuilder = volumeGroupBackupId(o.getVolumeGroupBackupId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VolumeGroupSourceFromVolumeGroupBackupDetails model) {
+            if (model.wasPropertyExplicitlySet("volumeGroupBackupId")) {
+                this.volumeGroupBackupId(model.getVolumeGroupBackupId());
+            }
+            return this;
         }
     }
 
@@ -109,7 +111,6 @@ public final class VolumeGroupSourceFromVolumeGroupBackupDetails extends VolumeG
         sb.append("VolumeGroupSourceFromVolumeGroupBackupDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", volumeGroupBackupId=").append(String.valueOf(this.volumeGroupBackupId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -126,8 +127,7 @@ public final class VolumeGroupSourceFromVolumeGroupBackupDetails extends VolumeG
         VolumeGroupSourceFromVolumeGroupBackupDetails other =
                 (VolumeGroupSourceFromVolumeGroupBackupDetails) o;
         return java.util.Objects.equals(this.volumeGroupBackupId, other.volumeGroupBackupId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -139,16 +139,6 @@ public final class VolumeGroupSourceFromVolumeGroupBackupDetails extends VolumeG
                         + (this.volumeGroupBackupId == null
                                 ? 43
                                 : this.volumeGroupBackupId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

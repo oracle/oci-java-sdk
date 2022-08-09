@@ -167,8 +167,8 @@ public class ListManagedInstanceErrataConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .ListManagedInstanceErrataResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

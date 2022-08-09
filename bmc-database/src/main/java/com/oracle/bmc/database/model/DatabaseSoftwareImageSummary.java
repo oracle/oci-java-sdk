@@ -26,7 +26,8 @@ package com.oracle.bmc.database.model;
     builder = DatabaseSoftwareImageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseSoftwareImageSummary {
+public final class DatabaseSoftwareImageSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -379,54 +380,87 @@ public final class DatabaseSoftwareImageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseSoftwareImageSummary build() {
-            DatabaseSoftwareImageSummary __instance__ =
+            DatabaseSoftwareImageSummary model =
                     new DatabaseSoftwareImageSummary(
-                            id,
-                            compartmentId,
-                            databaseVersion,
-                            displayName,
-                            lifecycleState,
-                            lifecycleDetails,
-                            timeCreated,
-                            imageType,
-                            imageShapeFamily,
-                            patchSet,
-                            freeformTags,
-                            definedTags,
-                            databaseSoftwareImageIncludedPatches,
-                            includedPatchesSummary,
-                            databaseSoftwareImageOneOffPatches,
-                            lsInventory,
-                            isUpgradeSupported);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.databaseVersion,
+                            this.displayName,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.timeCreated,
+                            this.imageType,
+                            this.imageShapeFamily,
+                            this.patchSet,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.databaseSoftwareImageIncludedPatches,
+                            this.includedPatchesSummary,
+                            this.databaseSoftwareImageOneOffPatches,
+                            this.lsInventory,
+                            this.isUpgradeSupported);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseSoftwareImageSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .databaseVersion(o.getDatabaseVersion())
-                            .displayName(o.getDisplayName())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .timeCreated(o.getTimeCreated())
-                            .imageType(o.getImageType())
-                            .imageShapeFamily(o.getImageShapeFamily())
-                            .patchSet(o.getPatchSet())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .databaseSoftwareImageIncludedPatches(
-                                    o.getDatabaseSoftwareImageIncludedPatches())
-                            .includedPatchesSummary(o.getIncludedPatchesSummary())
-                            .databaseSoftwareImageOneOffPatches(
-                                    o.getDatabaseSoftwareImageOneOffPatches())
-                            .lsInventory(o.getLsInventory())
-                            .isUpgradeSupported(o.getIsUpgradeSupported());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseSoftwareImageSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("imageType")) {
+                this.imageType(model.getImageType());
+            }
+            if (model.wasPropertyExplicitlySet("imageShapeFamily")) {
+                this.imageShapeFamily(model.getImageShapeFamily());
+            }
+            if (model.wasPropertyExplicitlySet("patchSet")) {
+                this.patchSet(model.getPatchSet());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageIncludedPatches")) {
+                this.databaseSoftwareImageIncludedPatches(
+                        model.getDatabaseSoftwareImageIncludedPatches());
+            }
+            if (model.wasPropertyExplicitlySet("includedPatchesSummary")) {
+                this.includedPatchesSummary(model.getIncludedPatchesSummary());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageOneOffPatches")) {
+                this.databaseSoftwareImageOneOffPatches(
+                        model.getDatabaseSoftwareImageOneOffPatches());
+            }
+            if (model.wasPropertyExplicitlySet("lsInventory")) {
+                this.lsInventory(model.getLsInventory());
+            }
+            if (model.wasPropertyExplicitlySet("isUpgradeSupported")) {
+                this.isUpgradeSupported(model.getIsUpgradeSupported());
+            }
+            return this;
         }
     }
 
@@ -855,6 +889,7 @@ public final class DatabaseSoftwareImageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseSoftwareImageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
@@ -874,7 +909,6 @@ public final class DatabaseSoftwareImageSummary {
                 .append(String.valueOf(this.databaseSoftwareImageOneOffPatches));
         sb.append(", lsInventory=").append(String.valueOf(this.lsInventory));
         sb.append(", isUpgradeSupported=").append(String.valueOf(this.isUpgradeSupported));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -911,7 +945,7 @@ public final class DatabaseSoftwareImageSummary {
                         other.databaseSoftwareImageOneOffPatches)
                 && java.util.Objects.equals(this.lsInventory, other.lsInventory)
                 && java.util.Objects.equals(this.isUpgradeSupported, other.isUpgradeSupported)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -961,16 +995,7 @@ public final class DatabaseSoftwareImageSummary {
                         + (this.isUpgradeSupported == null
                                 ? 43
                                 : this.isUpgradeSupported.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

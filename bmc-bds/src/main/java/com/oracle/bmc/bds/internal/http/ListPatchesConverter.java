@@ -123,7 +123,8 @@ public class ListPatchesConverter {
 
                                 com.oracle.bmc.bds.responses.ListPatchesResponse.Builder builder =
                                         com.oracle.bmc.bds.responses.ListPatchesResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

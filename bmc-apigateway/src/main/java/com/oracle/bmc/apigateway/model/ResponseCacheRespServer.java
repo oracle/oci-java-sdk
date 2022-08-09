@@ -20,7 +20,8 @@ package com.oracle.bmc.apigateway.model;
     builder = ResponseCacheRespServer.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResponseCacheRespServer {
+public final class ResponseCacheRespServer
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"host", "port"})
     public ResponseCacheRespServer(String host, Integer port) {
@@ -68,17 +69,22 @@ public final class ResponseCacheRespServer {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResponseCacheRespServer build() {
-            ResponseCacheRespServer __instance__ = new ResponseCacheRespServer(host, port);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ResponseCacheRespServer model = new ResponseCacheRespServer(this.host, this.port);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResponseCacheRespServer o) {
-            Builder copiedBuilder = host(o.getHost()).port(o.getPort());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResponseCacheRespServer model) {
+            if (model.wasPropertyExplicitlySet("host")) {
+                this.host(model.getHost());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            return this;
         }
     }
 
@@ -134,9 +140,9 @@ public final class ResponseCacheRespServer {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResponseCacheRespServer(");
+        sb.append("super=").append(super.toString());
         sb.append("host=").append(String.valueOf(this.host));
         sb.append(", port=").append(String.valueOf(this.port));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,7 +159,7 @@ public final class ResponseCacheRespServer {
         ResponseCacheRespServer other = (ResponseCacheRespServer) o;
         return java.util.Objects.equals(this.host, other.host)
                 && java.util.Objects.equals(this.port, other.port)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -162,16 +168,7 @@ public final class ResponseCacheRespServer {
         int result = 1;
         result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

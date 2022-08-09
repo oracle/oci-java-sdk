@@ -194,8 +194,8 @@ public class ListExadataInsightsConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .ListExadataInsightsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.exadataInsightSummaryCollection(response.getItem());
 

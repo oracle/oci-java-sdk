@@ -224,52 +224,85 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseToolsConnectionOracleDatabase build() {
-            DatabaseToolsConnectionOracleDatabase __instance__ =
+            DatabaseToolsConnectionOracleDatabase model =
                     new DatabaseToolsConnectionOracleDatabase(
-                            id,
-                            displayName,
-                            compartmentId,
-                            lifecycleState,
-                            lifecycleDetails,
-                            timeCreated,
-                            timeUpdated,
-                            definedTags,
-                            freeformTags,
-                            systemTags,
-                            relatedResource,
-                            connectionString,
-                            userName,
-                            userPassword,
-                            advancedProperties,
-                            keyStores,
-                            privateEndpointId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.compartmentId,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.systemTags,
+                            this.relatedResource,
+                            this.connectionString,
+                            this.userName,
+                            this.userPassword,
+                            this.advancedProperties,
+                            this.keyStores,
+                            this.privateEndpointId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseToolsConnectionOracleDatabase o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .systemTags(o.getSystemTags())
-                            .relatedResource(o.getRelatedResource())
-                            .connectionString(o.getConnectionString())
-                            .userName(o.getUserName())
-                            .userPassword(o.getUserPassword())
-                            .advancedProperties(o.getAdvancedProperties())
-                            .keyStores(o.getKeyStores())
-                            .privateEndpointId(o.getPrivateEndpointId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseToolsConnectionOracleDatabase model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("relatedResource")) {
+                this.relatedResource(model.getRelatedResource());
+            }
+            if (model.wasPropertyExplicitlySet("connectionString")) {
+                this.connectionString(model.getConnectionString());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("userPassword")) {
+                this.userPassword(model.getUserPassword());
+            }
+            if (model.wasPropertyExplicitlySet("advancedProperties")) {
+                this.advancedProperties(model.getAdvancedProperties());
+            }
+            if (model.wasPropertyExplicitlySet("keyStores")) {
+                this.keyStores(model.getKeyStores());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointId")) {
+                this.privateEndpointId(model.getPrivateEndpointId());
+            }
+            return this;
         }
     }
 
@@ -432,7 +465,6 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
         sb.append(", advancedProperties=").append(String.valueOf(this.advancedProperties));
         sb.append(", keyStores=").append(String.valueOf(this.keyStores));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -454,8 +486,7 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
                 && java.util.Objects.equals(this.advancedProperties, other.advancedProperties)
                 && java.util.Objects.equals(this.keyStores, other.keyStores)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -479,16 +510,6 @@ public final class DatabaseToolsConnectionOracleDatabase extends DatabaseToolsCo
         result =
                 (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

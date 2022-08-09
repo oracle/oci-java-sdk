@@ -17,7 +17,7 @@ package com.oracle.bmc.nosql.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StatementSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StatementSummary {
+public final class StatementSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operation",
@@ -148,30 +148,41 @@ public final class StatementSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StatementSummary build() {
-            StatementSummary __instance__ =
+            StatementSummary model =
                     new StatementSummary(
-                            operation,
-                            tableName,
-                            indexName,
-                            isIfExists,
-                            isIfNotExists,
-                            syntaxError);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.operation,
+                            this.tableName,
+                            this.indexName,
+                            this.isIfExists,
+                            this.isIfNotExists,
+                            this.syntaxError);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StatementSummary o) {
-            Builder copiedBuilder =
-                    operation(o.getOperation())
-                            .tableName(o.getTableName())
-                            .indexName(o.getIndexName())
-                            .isIfExists(o.getIsIfExists())
-                            .isIfNotExists(o.getIsIfNotExists())
-                            .syntaxError(o.getSyntaxError());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StatementSummary model) {
+            if (model.wasPropertyExplicitlySet("operation")) {
+                this.operation(model.getOperation());
+            }
+            if (model.wasPropertyExplicitlySet("tableName")) {
+                this.tableName(model.getTableName());
+            }
+            if (model.wasPropertyExplicitlySet("indexName")) {
+                this.indexName(model.getIndexName());
+            }
+            if (model.wasPropertyExplicitlySet("isIfExists")) {
+                this.isIfExists(model.getIsIfExists());
+            }
+            if (model.wasPropertyExplicitlySet("isIfNotExists")) {
+                this.isIfNotExists(model.getIsIfNotExists());
+            }
+            if (model.wasPropertyExplicitlySet("syntaxError")) {
+                this.syntaxError(model.getSyntaxError());
+            }
+            return this;
         }
     }
 
@@ -341,13 +352,13 @@ public final class StatementSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StatementSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("operation=").append(String.valueOf(this.operation));
         sb.append(", tableName=").append(String.valueOf(this.tableName));
         sb.append(", indexName=").append(String.valueOf(this.indexName));
         sb.append(", isIfExists=").append(String.valueOf(this.isIfExists));
         sb.append(", isIfNotExists=").append(String.valueOf(this.isIfNotExists));
         sb.append(", syntaxError=").append(String.valueOf(this.syntaxError));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -368,7 +379,7 @@ public final class StatementSummary {
                 && java.util.Objects.equals(this.isIfExists, other.isIfExists)
                 && java.util.Objects.equals(this.isIfNotExists, other.isIfNotExists)
                 && java.util.Objects.equals(this.syntaxError, other.syntaxError)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -383,16 +394,7 @@ public final class StatementSummary {
                 (result * PRIME)
                         + (this.isIfNotExists == null ? 43 : this.isIfNotExists.hashCode());
         result = (result * PRIME) + (this.syntaxError == null ? 43 : this.syntaxError.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

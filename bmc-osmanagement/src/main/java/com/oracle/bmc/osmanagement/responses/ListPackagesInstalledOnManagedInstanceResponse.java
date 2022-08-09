@@ -62,16 +62,18 @@ public class ListPackagesInstalledOnManagedInstanceResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "items"
     })
     private ListPackagesInstalledOnManagedInstanceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             java.util.List<com.oracle.bmc.osmanagement.model.InstalledPackageSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.items = items;
@@ -82,6 +84,13 @@ public class ListPackagesInstalledOnManagedInstanceResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListPackagesInstalledOnManagedInstanceResponse
          */
         public Builder copy(ListPackagesInstalledOnManagedInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             items(o.getItems());
@@ -162,7 +172,7 @@ public class ListPackagesInstalledOnManagedInstanceResponse
          */
         public ListPackagesInstalledOnManagedInstanceResponse build() {
             return new ListPackagesInstalledOnManagedInstanceResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, items);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, items);
         }
     }
 

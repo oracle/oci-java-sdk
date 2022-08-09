@@ -107,8 +107,8 @@ public class UpdateProfileConverter {
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
                                                         .UpdateProfileResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.profile(response.getItem());
 

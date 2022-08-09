@@ -61,17 +61,19 @@ public class ListManagementSavedSearchesResponse extends com.oracle.bmc.response
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "managementSavedSearchCollection"
     })
     private ListManagementSavedSearchesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.managementdashboard.model.ManagementSavedSearchCollection
                     managementSavedSearchCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.managementSavedSearchCollection = managementSavedSearchCollection;
@@ -82,6 +84,13 @@ public class ListManagementSavedSearchesResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListManagementSavedSearchesResponse extends com.oracle.bmc.response
          */
         public Builder copy(ListManagementSavedSearchesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             managementSavedSearchCollection(o.getManagementSavedSearchCollection());
@@ -162,7 +172,11 @@ public class ListManagementSavedSearchesResponse extends com.oracle.bmc.response
          */
         public ListManagementSavedSearchesResponse build() {
             return new ListManagementSavedSearchesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, managementSavedSearchCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    managementSavedSearchCollection);
         }
     }
 

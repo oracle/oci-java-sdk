@@ -59,18 +59,20 @@ public final class CreateDbSystemSourceImportFromUrlDetails extends CreateDbSyst
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDbSystemSourceImportFromUrlDetails build() {
-            CreateDbSystemSourceImportFromUrlDetails __instance__ =
-                    new CreateDbSystemSourceImportFromUrlDetails(sourceUrl);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateDbSystemSourceImportFromUrlDetails model =
+                    new CreateDbSystemSourceImportFromUrlDetails(this.sourceUrl);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDbSystemSourceImportFromUrlDetails o) {
-            Builder copiedBuilder = sourceUrl(o.getSourceUrl());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDbSystemSourceImportFromUrlDetails model) {
+            if (model.wasPropertyExplicitlySet("sourceUrl")) {
+                this.sourceUrl(model.getSourceUrl());
+            }
+            return this;
         }
     }
 
@@ -130,7 +132,6 @@ public final class CreateDbSystemSourceImportFromUrlDetails extends CreateDbSyst
         sb.append("CreateDbSystemSourceImportFromUrlDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sourceUrl=").append(String.valueOf(this.sourceUrl));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -146,9 +147,7 @@ public final class CreateDbSystemSourceImportFromUrlDetails extends CreateDbSyst
 
         CreateDbSystemSourceImportFromUrlDetails other =
                 (CreateDbSystemSourceImportFromUrlDetails) o;
-        return java.util.Objects.equals(this.sourceUrl, other.sourceUrl)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.sourceUrl, other.sourceUrl) && super.equals(other);
     }
 
     @Override
@@ -156,16 +155,6 @@ public final class CreateDbSystemSourceImportFromUrlDetails extends CreateDbSyst
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.sourceUrl == null ? 43 : this.sourceUrl.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

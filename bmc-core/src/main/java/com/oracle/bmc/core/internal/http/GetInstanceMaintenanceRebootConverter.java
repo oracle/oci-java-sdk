@@ -112,8 +112,8 @@ public class GetInstanceMaintenanceRebootConverter {
                                                 com.oracle.bmc.core.responses
                                                         .GetInstanceMaintenanceRebootResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.instanceMaintenanceReboot(response.getItem());
 

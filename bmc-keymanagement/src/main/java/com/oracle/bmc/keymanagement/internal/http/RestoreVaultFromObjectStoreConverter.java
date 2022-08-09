@@ -122,8 +122,8 @@ public class RestoreVaultFromObjectStoreConverter {
                                                 com.oracle.bmc.keymanagement.responses
                                                         .RestoreVaultFromObjectStoreResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.vault(response.getItem());
 

@@ -19,7 +19,7 @@ package com.oracle.bmc.licensemanager.model;
     builder = BulkUploadTemplate.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BulkUploadTemplate {
+public final class BulkUploadTemplate extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"template"})
     public BulkUploadTemplate(String template) {
@@ -50,17 +50,19 @@ public final class BulkUploadTemplate {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BulkUploadTemplate build() {
-            BulkUploadTemplate __instance__ = new BulkUploadTemplate(template);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BulkUploadTemplate model = new BulkUploadTemplate(this.template);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BulkUploadTemplate o) {
-            Builder copiedBuilder = template(o.getTemplate());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BulkUploadTemplate model) {
+            if (model.wasPropertyExplicitlySet("template")) {
+                this.template(model.getTemplate());
+            }
+            return this;
         }
     }
 
@@ -102,8 +104,8 @@ public final class BulkUploadTemplate {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BulkUploadTemplate(");
+        sb.append("super=").append(super.toString());
         sb.append("template=").append(String.valueOf(this.template));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -118,8 +120,7 @@ public final class BulkUploadTemplate {
         }
 
         BulkUploadTemplate other = (BulkUploadTemplate) o;
-        return java.util.Objects.equals(this.template, other.template)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.template, other.template) && super.equals(other);
     }
 
     @Override
@@ -127,16 +128,7 @@ public final class BulkUploadTemplate {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.template == null ? 43 : this.template.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

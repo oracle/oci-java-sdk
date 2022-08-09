@@ -58,17 +58,19 @@ public class SummarizeOperationsInsightsWarehouseResourceUsageResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "summarizeOperationsInsightsWarehouseResourceUsageAggregation"
     })
     private SummarizeOperationsInsightsWarehouseResourceUsageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.opsi.model.SummarizeOperationsInsightsWarehouseResourceUsageAggregation
                     summarizeOperationsInsightsWarehouseResourceUsageAggregation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.summarizeOperationsInsightsWarehouseResourceUsageAggregation =
@@ -80,6 +82,13 @@ public class SummarizeOperationsInsightsWarehouseResourceUsageResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -146,6 +155,7 @@ public class SummarizeOperationsInsightsWarehouseResourceUsageResponse
          */
         public Builder copy(SummarizeOperationsInsightsWarehouseResourceUsageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             summarizeOperationsInsightsWarehouseResourceUsageAggregation(
@@ -161,6 +171,7 @@ public class SummarizeOperationsInsightsWarehouseResourceUsageResponse
         public SummarizeOperationsInsightsWarehouseResourceUsageResponse build() {
             return new SummarizeOperationsInsightsWarehouseResourceUsageResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcRequestId,
                     summarizeOperationsInsightsWarehouseResourceUsageAggregation);

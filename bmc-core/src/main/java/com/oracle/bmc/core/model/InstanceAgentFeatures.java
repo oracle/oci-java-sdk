@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = InstanceAgentFeatures.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceAgentFeatures {
+public final class InstanceAgentFeatures
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isMonitoringSupported", "isManagementSupported"})
     public InstanceAgentFeatures(Boolean isMonitoringSupported, Boolean isManagementSupported) {
@@ -71,20 +72,24 @@ public final class InstanceAgentFeatures {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceAgentFeatures build() {
-            InstanceAgentFeatures __instance__ =
-                    new InstanceAgentFeatures(isMonitoringSupported, isManagementSupported);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            InstanceAgentFeatures model =
+                    new InstanceAgentFeatures(
+                            this.isMonitoringSupported, this.isManagementSupported);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceAgentFeatures o) {
-            Builder copiedBuilder =
-                    isMonitoringSupported(o.getIsMonitoringSupported())
-                            .isManagementSupported(o.getIsManagementSupported());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceAgentFeatures model) {
+            if (model.wasPropertyExplicitlySet("isMonitoringSupported")) {
+                this.isMonitoringSupported(model.getIsMonitoringSupported());
+            }
+            if (model.wasPropertyExplicitlySet("isManagementSupported")) {
+                this.isManagementSupported(model.getIsManagementSupported());
+            }
+            return this;
         }
     }
 
@@ -144,9 +149,9 @@ public final class InstanceAgentFeatures {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceAgentFeatures(");
+        sb.append("super=").append(super.toString());
         sb.append("isMonitoringSupported=").append(String.valueOf(this.isMonitoringSupported));
         sb.append(", isManagementSupported=").append(String.valueOf(this.isManagementSupported));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -163,7 +168,7 @@ public final class InstanceAgentFeatures {
         InstanceAgentFeatures other = (InstanceAgentFeatures) o;
         return java.util.Objects.equals(this.isMonitoringSupported, other.isMonitoringSupported)
                 && java.util.Objects.equals(this.isManagementSupported, other.isManagementSupported)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -180,16 +185,7 @@ public final class InstanceAgentFeatures {
                         + (this.isManagementSupported == null
                                 ? 43
                                 : this.isManagementSupported.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

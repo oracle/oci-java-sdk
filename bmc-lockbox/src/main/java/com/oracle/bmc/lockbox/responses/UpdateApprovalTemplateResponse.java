@@ -55,16 +55,18 @@ public class UpdateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "approvalTemplate"
     })
     private UpdateApprovalTemplateResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.lockbox.model.ApprovalTemplate approvalTemplate) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.approvalTemplate = approvalTemplate;
@@ -75,6 +77,13 @@ public class UpdateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class UpdateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(UpdateApprovalTemplateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             approvalTemplate(o.getApprovalTemplate());
@@ -149,7 +159,7 @@ public class UpdateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
          */
         public UpdateApprovalTemplateResponse build() {
             return new UpdateApprovalTemplateResponse(
-                    __httpStatusCode__, opcRequestId, etag, approvalTemplate);
+                    __httpStatusCode__, headers, opcRequestId, etag, approvalTemplate);
         }
     }
 

@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = UploadFileSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UploadFileSummary {
+public final class UploadFileSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "reference",
@@ -319,48 +319,77 @@ public final class UploadFileSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UploadFileSummary build() {
-            UploadFileSummary __instance__ =
+            UploadFileSummary model =
                     new UploadFileSummary(
-                            reference,
-                            name,
-                            status,
-                            totalChunks,
-                            chunksConsumed,
-                            chunksSuccess,
-                            chunksFail,
-                            timeStarted,
-                            sourceName,
-                            entityType,
-                            entityName,
-                            logNamespace,
-                            logGroupId,
-                            logGroupName,
-                            failureDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.reference,
+                            this.name,
+                            this.status,
+                            this.totalChunks,
+                            this.chunksConsumed,
+                            this.chunksSuccess,
+                            this.chunksFail,
+                            this.timeStarted,
+                            this.sourceName,
+                            this.entityType,
+                            this.entityName,
+                            this.logNamespace,
+                            this.logGroupId,
+                            this.logGroupName,
+                            this.failureDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UploadFileSummary o) {
-            Builder copiedBuilder =
-                    reference(o.getReference())
-                            .name(o.getName())
-                            .status(o.getStatus())
-                            .totalChunks(o.getTotalChunks())
-                            .chunksConsumed(o.getChunksConsumed())
-                            .chunksSuccess(o.getChunksSuccess())
-                            .chunksFail(o.getChunksFail())
-                            .timeStarted(o.getTimeStarted())
-                            .sourceName(o.getSourceName())
-                            .entityType(o.getEntityType())
-                            .entityName(o.getEntityName())
-                            .logNamespace(o.getLogNamespace())
-                            .logGroupId(o.getLogGroupId())
-                            .logGroupName(o.getLogGroupName())
-                            .failureDetails(o.getFailureDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UploadFileSummary model) {
+            if (model.wasPropertyExplicitlySet("reference")) {
+                this.reference(model.getReference());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("totalChunks")) {
+                this.totalChunks(model.getTotalChunks());
+            }
+            if (model.wasPropertyExplicitlySet("chunksConsumed")) {
+                this.chunksConsumed(model.getChunksConsumed());
+            }
+            if (model.wasPropertyExplicitlySet("chunksSuccess")) {
+                this.chunksSuccess(model.getChunksSuccess());
+            }
+            if (model.wasPropertyExplicitlySet("chunksFail")) {
+                this.chunksFail(model.getChunksFail());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("sourceName")) {
+                this.sourceName(model.getSourceName());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("entityName")) {
+                this.entityName(model.getEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("logNamespace")) {
+                this.logNamespace(model.getLogNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupId")) {
+                this.logGroupId(model.getLogGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("logGroupName")) {
+                this.logGroupName(model.getLogGroupName());
+            }
+            if (model.wasPropertyExplicitlySet("failureDetails")) {
+                this.failureDetails(model.getFailureDetails());
+            }
+            return this;
         }
     }
 
@@ -646,6 +675,7 @@ public final class UploadFileSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UploadFileSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("reference=").append(String.valueOf(this.reference));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", status=").append(String.valueOf(this.status));
@@ -661,7 +691,6 @@ public final class UploadFileSummary {
         sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(", logGroupName=").append(String.valueOf(this.logGroupName));
         sb.append(", failureDetails=").append(String.valueOf(this.failureDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -691,7 +720,7 @@ public final class UploadFileSummary {
                 && java.util.Objects.equals(this.logGroupId, other.logGroupId)
                 && java.util.Objects.equals(this.logGroupName, other.logGroupName)
                 && java.util.Objects.equals(this.failureDetails, other.failureDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -719,16 +748,7 @@ public final class UploadFileSummary {
         result =
                 (result * PRIME)
                         + (this.failureDetails == null ? 43 : this.failureDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

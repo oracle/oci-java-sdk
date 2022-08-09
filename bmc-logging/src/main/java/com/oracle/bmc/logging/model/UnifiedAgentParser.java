@@ -76,7 +76,7 @@ package com.oracle.bmc.logging.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class UnifiedAgentParser {
+public class UnifiedAgentParser extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "fieldTimeKey",
@@ -216,6 +216,7 @@ public class UnifiedAgentParser {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UnifiedAgentParser(");
+        sb.append("super=").append(super.toString());
         sb.append("fieldTimeKey=").append(String.valueOf(this.fieldTimeKey));
         sb.append(", types=").append(String.valueOf(this.types));
         sb.append(", nullValuePattern=").append(String.valueOf(this.nullValuePattern));
@@ -244,8 +245,8 @@ public class UnifiedAgentParser {
                 && java.util.Objects.equals(
                         this.isEstimateCurrentEvent, other.isEstimateCurrentEvent)
                 && java.util.Objects.equals(this.isKeepTimeKey, other.isKeepTimeKey)
-                && java.util.Objects.equals(
-                        this.timeoutInMilliseconds, other.timeoutInMilliseconds);
+                && java.util.Objects.equals(this.timeoutInMilliseconds, other.timeoutInMilliseconds)
+                && super.equals(other);
     }
 
     @Override
@@ -273,6 +274,7 @@ public class UnifiedAgentParser {
                         + (this.timeoutInMilliseconds == null
                                 ? 43
                                 : this.timeoutInMilliseconds.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

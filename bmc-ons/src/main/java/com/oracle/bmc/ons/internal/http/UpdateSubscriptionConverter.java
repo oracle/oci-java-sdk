@@ -113,8 +113,8 @@ public class UpdateSubscriptionConverter {
                                         builder =
                                                 com.oracle.bmc.ons.responses
                                                         .UpdateSubscriptionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.updateSubscriptionDetails(response.getItem());
 

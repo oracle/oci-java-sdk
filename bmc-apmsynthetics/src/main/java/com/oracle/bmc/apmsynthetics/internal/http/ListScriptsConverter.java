@@ -156,8 +156,8 @@ public class ListScriptsConverter {
                                         builder =
                                                 com.oracle.bmc.apmsynthetics.responses
                                                         .ListScriptsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.scriptCollection(response.getItem());
 

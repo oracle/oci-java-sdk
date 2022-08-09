@@ -20,7 +20,7 @@ package com.oracle.bmc.apigateway.model;
     builder = ExecutionLogPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExecutionLogPolicy {
+public final class ExecutionLogPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled", "logLevel"})
     public ExecutionLogPolicy(Boolean isEnabled, LogLevel logLevel) {
@@ -90,17 +90,22 @@ public final class ExecutionLogPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExecutionLogPolicy build() {
-            ExecutionLogPolicy __instance__ = new ExecutionLogPolicy(isEnabled, logLevel);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExecutionLogPolicy model = new ExecutionLogPolicy(this.isEnabled, this.logLevel);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExecutionLogPolicy o) {
-            Builder copiedBuilder = isEnabled(o.getIsEnabled()).logLevel(o.getLogLevel());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExecutionLogPolicy model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("logLevel")) {
+                this.logLevel(model.getLogLevel());
+            }
+            return this;
         }
     }
 
@@ -229,9 +234,9 @@ public final class ExecutionLogPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExecutionLogPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", logLevel=").append(String.valueOf(this.logLevel));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -248,7 +253,7 @@ public final class ExecutionLogPolicy {
         ExecutionLogPolicy other = (ExecutionLogPolicy) o;
         return java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.logLevel, other.logLevel)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -257,16 +262,7 @@ public final class ExecutionLogPolicy {
         int result = 1;
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.logLevel == null ? 43 : this.logLevel.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

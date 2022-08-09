@@ -55,16 +55,18 @@ public class ReviewAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "accessRequest"
     })
     private ReviewAccessRequestResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.operatoraccesscontrol.model.AccessRequest accessRequest) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.accessRequest = accessRequest;
@@ -75,6 +77,13 @@ public class ReviewAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class ReviewAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ReviewAccessRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             accessRequest(o.getAccessRequest());
@@ -149,7 +159,7 @@ public class ReviewAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
          */
         public ReviewAccessRequestResponse build() {
             return new ReviewAccessRequestResponse(
-                    __httpStatusCode__, etag, opcRequestId, accessRequest);
+                    __httpStatusCode__, headers, etag, opcRequestId, accessRequest);
         }
     }
 

@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemanagement.model;
     builder = JobScheduleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobScheduleDetails {
+public final class JobScheduleDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"startTime", "endTime", "intervalType", "intervalValue"})
     public JobScheduleDetails(
@@ -102,22 +102,30 @@ public final class JobScheduleDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobScheduleDetails build() {
-            JobScheduleDetails __instance__ =
-                    new JobScheduleDetails(startTime, endTime, intervalType, intervalValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            JobScheduleDetails model =
+                    new JobScheduleDetails(
+                            this.startTime, this.endTime, this.intervalType, this.intervalValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JobScheduleDetails o) {
-            Builder copiedBuilder =
-                    startTime(o.getStartTime())
-                            .endTime(o.getEndTime())
-                            .intervalType(o.getIntervalType())
-                            .intervalValue(o.getIntervalValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JobScheduleDetails model) {
+            if (model.wasPropertyExplicitlySet("startTime")) {
+                this.startTime(model.getStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("endTime")) {
+                this.endTime(model.getEndTime());
+            }
+            if (model.wasPropertyExplicitlySet("intervalType")) {
+                this.intervalType(model.getIntervalType());
+            }
+            if (model.wasPropertyExplicitlySet("intervalValue")) {
+                this.intervalValue(model.getIntervalValue());
+            }
+            return this;
         }
     }
 
@@ -252,11 +260,11 @@ public final class JobScheduleDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JobScheduleDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("startTime=").append(String.valueOf(this.startTime));
         sb.append(", endTime=").append(String.valueOf(this.endTime));
         sb.append(", intervalType=").append(String.valueOf(this.intervalType));
         sb.append(", intervalValue=").append(String.valueOf(this.intervalValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -275,7 +283,7 @@ public final class JobScheduleDetails {
                 && java.util.Objects.equals(this.endTime, other.endTime)
                 && java.util.Objects.equals(this.intervalType, other.intervalType)
                 && java.util.Objects.equals(this.intervalValue, other.intervalValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -288,16 +296,7 @@ public final class JobScheduleDetails {
         result =
                 (result * PRIME)
                         + (this.intervalValue == null ? 43 : this.intervalValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

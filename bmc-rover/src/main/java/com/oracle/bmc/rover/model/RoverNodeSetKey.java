@@ -17,7 +17,7 @@ package com.oracle.bmc.rover.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoverNodeSetKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RoverNodeSetKey {
+public final class RoverNodeSetKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isSuccessful"})
     public RoverNodeSetKey(Boolean isSuccessful) {
@@ -48,17 +48,19 @@ public final class RoverNodeSetKey {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RoverNodeSetKey build() {
-            RoverNodeSetKey __instance__ = new RoverNodeSetKey(isSuccessful);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RoverNodeSetKey model = new RoverNodeSetKey(this.isSuccessful);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RoverNodeSetKey o) {
-            Builder copiedBuilder = isSuccessful(o.getIsSuccessful());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RoverNodeSetKey model) {
+            if (model.wasPropertyExplicitlySet("isSuccessful")) {
+                this.isSuccessful(model.getIsSuccessful());
+            }
+            return this;
         }
     }
 
@@ -100,8 +102,8 @@ public final class RoverNodeSetKey {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RoverNodeSetKey(");
+        sb.append("super=").append(super.toString());
         sb.append("isSuccessful=").append(String.valueOf(this.isSuccessful));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -117,7 +119,7 @@ public final class RoverNodeSetKey {
 
         RoverNodeSetKey other = (RoverNodeSetKey) o;
         return java.util.Objects.equals(this.isSuccessful, other.isSuccessful)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -125,16 +127,7 @@ public final class RoverNodeSetKey {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.isSuccessful == null ? 43 : this.isSuccessful.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

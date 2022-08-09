@@ -116,8 +116,8 @@ public class GetIngressGatewayRouteTableConverter {
                                                 com.oracle.bmc.servicemesh.responses
                                                         .GetIngressGatewayRouteTableResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.ingressGatewayRouteTable(response.getItem());
 

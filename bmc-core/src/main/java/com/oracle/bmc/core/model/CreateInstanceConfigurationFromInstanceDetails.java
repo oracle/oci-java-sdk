@@ -90,24 +90,37 @@ public final class CreateInstanceConfigurationFromInstanceDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateInstanceConfigurationFromInstanceDetails build() {
-            CreateInstanceConfigurationFromInstanceDetails __instance__ =
+            CreateInstanceConfigurationFromInstanceDetails model =
                     new CreateInstanceConfigurationFromInstanceDetails(
-                            compartmentId, definedTags, displayName, freeformTags, instanceId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.instanceId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateInstanceConfigurationFromInstanceDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .instanceId(o.getInstanceId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateInstanceConfigurationFromInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            return this;
         }
     }
 
@@ -166,7 +179,6 @@ public final class CreateInstanceConfigurationFromInstanceDetails
         sb.append("CreateInstanceConfigurationFromInstanceDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -182,9 +194,7 @@ public final class CreateInstanceConfigurationFromInstanceDetails
 
         CreateInstanceConfigurationFromInstanceDetails other =
                 (CreateInstanceConfigurationFromInstanceDetails) o;
-        return java.util.Objects.equals(this.instanceId, other.instanceId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.instanceId, other.instanceId) && super.equals(other);
     }
 
     @Override
@@ -192,16 +202,6 @@ public final class CreateInstanceConfigurationFromInstanceDetails
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

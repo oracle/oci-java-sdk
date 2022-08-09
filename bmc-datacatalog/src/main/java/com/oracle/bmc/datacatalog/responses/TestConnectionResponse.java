@@ -55,16 +55,18 @@ public class TestConnectionResponse extends com.oracle.bmc.responses.BmcResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "validateConnectionResult"
     })
     private TestConnectionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.ValidateConnectionResult validateConnectionResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.validateConnectionResult = validateConnectionResult;
@@ -75,6 +77,13 @@ public class TestConnectionResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -137,6 +146,7 @@ public class TestConnectionResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(TestConnectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             validateConnectionResult(o.getValidateConnectionResult());
@@ -150,7 +160,7 @@ public class TestConnectionResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public TestConnectionResponse build() {
             return new TestConnectionResponse(
-                    __httpStatusCode__, etag, opcRequestId, validateConnectionResult);
+                    __httpStatusCode__, headers, etag, opcRequestId, validateConnectionResult);
         }
     }
 

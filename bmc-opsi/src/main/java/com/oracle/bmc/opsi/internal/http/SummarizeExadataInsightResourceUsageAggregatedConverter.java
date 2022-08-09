@@ -251,8 +251,8 @@ public class SummarizeExadataInsightResourceUsageAggregatedConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeExadataInsightResourceUsageAggregatedResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.summarizeExadataInsightResourceUsageAggregation(
                                         response.getItem());

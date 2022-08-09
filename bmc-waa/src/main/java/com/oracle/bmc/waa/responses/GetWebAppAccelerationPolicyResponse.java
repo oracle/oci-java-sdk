@@ -55,16 +55,18 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "webAppAccelerationPolicy"
     })
     private GetWebAppAccelerationPolicyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.waa.model.WebAppAccelerationPolicy webAppAccelerationPolicy) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.webAppAccelerationPolicy = webAppAccelerationPolicy;
@@ -75,6 +77,13 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
          */
         public Builder copy(GetWebAppAccelerationPolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             webAppAccelerationPolicy(o.getWebAppAccelerationPolicy());
@@ -149,7 +159,7 @@ public class GetWebAppAccelerationPolicyResponse extends com.oracle.bmc.response
          */
         public GetWebAppAccelerationPolicyResponse build() {
             return new GetWebAppAccelerationPolicyResponse(
-                    __httpStatusCode__, etag, opcRequestId, webAppAccelerationPolicy);
+                    __httpStatusCode__, headers, etag, opcRequestId, webAppAccelerationPolicy);
         }
     }
 

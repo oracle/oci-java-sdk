@@ -186,8 +186,8 @@ public class SummarizeAlertLogCountsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .SummarizeAlertLogCountsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.alertLogCountsCollection(response.getItem());
 

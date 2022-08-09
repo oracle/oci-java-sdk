@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = StatementsAggregateMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StatementsAggregateMetrics {
+public final class StatementsAggregateMetrics
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"queuedStatements", "runningStatements"})
     public StatementsAggregateMetrics(
@@ -54,20 +55,23 @@ public final class StatementsAggregateMetrics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StatementsAggregateMetrics build() {
-            StatementsAggregateMetrics __instance__ =
-                    new StatementsAggregateMetrics(queuedStatements, runningStatements);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StatementsAggregateMetrics model =
+                    new StatementsAggregateMetrics(this.queuedStatements, this.runningStatements);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StatementsAggregateMetrics o) {
-            Builder copiedBuilder =
-                    queuedStatements(o.getQueuedStatements())
-                            .runningStatements(o.getRunningStatements());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StatementsAggregateMetrics model) {
+            if (model.wasPropertyExplicitlySet("queuedStatements")) {
+                this.queuedStatements(model.getQueuedStatements());
+            }
+            if (model.wasPropertyExplicitlySet("runningStatements")) {
+                this.runningStatements(model.getRunningStatements());
+            }
+            return this;
         }
     }
 
@@ -109,9 +113,9 @@ public final class StatementsAggregateMetrics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StatementsAggregateMetrics(");
+        sb.append("super=").append(super.toString());
         sb.append("queuedStatements=").append(String.valueOf(this.queuedStatements));
         sb.append(", runningStatements=").append(String.valueOf(this.runningStatements));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -128,7 +132,7 @@ public final class StatementsAggregateMetrics {
         StatementsAggregateMetrics other = (StatementsAggregateMetrics) o;
         return java.util.Objects.equals(this.queuedStatements, other.queuedStatements)
                 && java.util.Objects.equals(this.runningStatements, other.runningStatements)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -141,16 +145,7 @@ public final class StatementsAggregateMetrics {
         result =
                 (result * PRIME)
                         + (this.runningStatements == null ? 43 : this.runningStatements.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

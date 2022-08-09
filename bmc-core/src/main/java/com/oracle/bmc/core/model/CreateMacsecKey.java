@@ -17,7 +17,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateMacsecKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateMacsecKey {
+public final class CreateMacsecKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "connectivityAssociationNameSecretId",
@@ -83,23 +83,27 @@ public final class CreateMacsecKey {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateMacsecKey build() {
-            CreateMacsecKey __instance__ =
+            CreateMacsecKey model =
                     new CreateMacsecKey(
-                            connectivityAssociationNameSecretId,
-                            connectivityAssociationKeySecretId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.connectivityAssociationNameSecretId,
+                            this.connectivityAssociationKeySecretId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateMacsecKey o) {
-            Builder copiedBuilder =
-                    connectivityAssociationNameSecretId(o.getConnectivityAssociationNameSecretId())
-                            .connectivityAssociationKeySecretId(
-                                    o.getConnectivityAssociationKeySecretId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateMacsecKey model) {
+            if (model.wasPropertyExplicitlySet("connectivityAssociationNameSecretId")) {
+                this.connectivityAssociationNameSecretId(
+                        model.getConnectivityAssociationNameSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("connectivityAssociationKeySecretId")) {
+                this.connectivityAssociationKeySecretId(
+                        model.getConnectivityAssociationKeySecretId());
+            }
+            return this;
         }
     }
 
@@ -167,11 +171,11 @@ public final class CreateMacsecKey {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateMacsecKey(");
+        sb.append("super=").append(super.toString());
         sb.append("connectivityAssociationNameSecretId=")
                 .append(String.valueOf(this.connectivityAssociationNameSecretId));
         sb.append(", connectivityAssociationKeySecretId=")
                 .append(String.valueOf(this.connectivityAssociationKeySecretId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,7 +196,7 @@ public final class CreateMacsecKey {
                 && java.util.Objects.equals(
                         this.connectivityAssociationKeySecretId,
                         other.connectivityAssociationKeySecretId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -209,16 +213,7 @@ public final class CreateMacsecKey {
                         + (this.connectivityAssociationKeySecretId == null
                                 ? 43
                                 : this.connectivityAssociationKeySecretId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

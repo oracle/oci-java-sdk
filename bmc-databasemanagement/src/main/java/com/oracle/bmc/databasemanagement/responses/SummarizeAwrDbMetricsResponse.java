@@ -60,16 +60,18 @@ public class SummarizeAwrDbMetricsResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "awrDbMetricCollection"
     })
     private SummarizeAwrDbMetricsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.databasemanagement.model.AwrDbMetricCollection awrDbMetricCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.awrDbMetricCollection = awrDbMetricCollection;
@@ -80,6 +82,13 @@ public class SummarizeAwrDbMetricsResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -146,6 +155,7 @@ public class SummarizeAwrDbMetricsResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(SummarizeAwrDbMetricsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             awrDbMetricCollection(o.getAwrDbMetricCollection());
@@ -159,7 +169,7 @@ public class SummarizeAwrDbMetricsResponse extends com.oracle.bmc.responses.BmcR
          */
         public SummarizeAwrDbMetricsResponse build() {
             return new SummarizeAwrDbMetricsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, awrDbMetricCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, awrDbMetricCollection);
         }
     }
 

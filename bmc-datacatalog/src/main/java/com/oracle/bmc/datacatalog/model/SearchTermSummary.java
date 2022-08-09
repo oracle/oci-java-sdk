@@ -20,7 +20,7 @@ package com.oracle.bmc.datacatalog.model;
     builder = SearchTermSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SearchTermSummary {
+public final class SearchTermSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -153,30 +153,41 @@ public final class SearchTermSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SearchTermSummary build() {
-            SearchTermSummary __instance__ =
+            SearchTermSummary model =
                     new SearchTermSummary(
-                            key,
-                            displayName,
-                            glossaryKey,
-                            glossaryName,
-                            parentTermKey,
-                            parentTermName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.glossaryKey,
+                            this.glossaryName,
+                            this.parentTermKey,
+                            this.parentTermName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SearchTermSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .glossaryKey(o.getGlossaryKey())
-                            .glossaryName(o.getGlossaryName())
-                            .parentTermKey(o.getParentTermKey())
-                            .parentTermName(o.getParentTermName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SearchTermSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("glossaryKey")) {
+                this.glossaryKey(model.getGlossaryKey());
+            }
+            if (model.wasPropertyExplicitlySet("glossaryName")) {
+                this.glossaryName(model.getGlossaryName());
+            }
+            if (model.wasPropertyExplicitlySet("parentTermKey")) {
+                this.parentTermKey(model.getParentTermKey());
+            }
+            if (model.wasPropertyExplicitlySet("parentTermName")) {
+                this.parentTermName(model.getParentTermName());
+            }
+            return this;
         }
     }
 
@@ -292,13 +303,13 @@ public final class SearchTermSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SearchTermSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", glossaryKey=").append(String.valueOf(this.glossaryKey));
         sb.append(", glossaryName=").append(String.valueOf(this.glossaryName));
         sb.append(", parentTermKey=").append(String.valueOf(this.parentTermKey));
         sb.append(", parentTermName=").append(String.valueOf(this.parentTermName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -319,7 +330,7 @@ public final class SearchTermSummary {
                 && java.util.Objects.equals(this.glossaryName, other.glossaryName)
                 && java.util.Objects.equals(this.parentTermKey, other.parentTermKey)
                 && java.util.Objects.equals(this.parentTermName, other.parentTermName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -336,16 +347,7 @@ public final class SearchTermSummary {
         result =
                 (result * PRIME)
                         + (this.parentTermName == null ? 43 : this.parentTermName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

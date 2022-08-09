@@ -62,19 +62,24 @@ public final class AddScheduleBasedHorizontalScalingPolicyDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddScheduleBasedHorizontalScalingPolicyDetails build() {
-            AddScheduleBasedHorizontalScalingPolicyDetails __instance__ =
-                    new AddScheduleBasedHorizontalScalingPolicyDetails(timezone, scheduleDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AddScheduleBasedHorizontalScalingPolicyDetails model =
+                    new AddScheduleBasedHorizontalScalingPolicyDetails(
+                            this.timezone, this.scheduleDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddScheduleBasedHorizontalScalingPolicyDetails o) {
-            Builder copiedBuilder =
-                    timezone(o.getTimezone()).scheduleDetails(o.getScheduleDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddScheduleBasedHorizontalScalingPolicyDetails model) {
+            if (model.wasPropertyExplicitlySet("timezone")) {
+                this.timezone(model.getTimezone());
+            }
+            if (model.wasPropertyExplicitlySet("scheduleDetails")) {
+                this.scheduleDetails(model.getScheduleDetails());
+            }
+            return this;
         }
     }
 
@@ -134,7 +139,6 @@ public final class AddScheduleBasedHorizontalScalingPolicyDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", timezone=").append(String.valueOf(this.timezone));
         sb.append(", scheduleDetails=").append(String.valueOf(this.scheduleDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,8 +156,7 @@ public final class AddScheduleBasedHorizontalScalingPolicyDetails
                 (AddScheduleBasedHorizontalScalingPolicyDetails) o;
         return java.util.Objects.equals(this.timezone, other.timezone)
                 && java.util.Objects.equals(this.scheduleDetails, other.scheduleDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -164,16 +167,6 @@ public final class AddScheduleBasedHorizontalScalingPolicyDetails
         result =
                 (result * PRIME)
                         + (this.scheduleDetails == null ? 43 : this.scheduleDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

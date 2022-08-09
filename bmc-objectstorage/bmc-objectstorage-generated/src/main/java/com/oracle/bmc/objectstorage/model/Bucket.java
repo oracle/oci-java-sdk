@@ -24,7 +24,7 @@ package com.oracle.bmc.objectstorage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Bucket.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Bucket {
+public final class Bucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "namespace",
@@ -511,60 +511,101 @@ public final class Bucket {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Bucket build() {
-            Bucket __instance__ =
+            Bucket model =
                     new Bucket(
-                            namespace,
-                            name,
-                            compartmentId,
-                            metadata,
-                            createdBy,
-                            timeCreated,
-                            etag,
-                            publicAccessType,
-                            storageTier,
-                            objectEventsEnabled,
-                            freeformTags,
-                            definedTags,
-                            kmsKeyId,
-                            objectLifecyclePolicyEtag,
-                            approximateCount,
-                            approximateSize,
-                            replicationEnabled,
-                            isReadOnly,
-                            id,
-                            versioning,
-                            autoTiering);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.namespace,
+                            this.name,
+                            this.compartmentId,
+                            this.metadata,
+                            this.createdBy,
+                            this.timeCreated,
+                            this.etag,
+                            this.publicAccessType,
+                            this.storageTier,
+                            this.objectEventsEnabled,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.kmsKeyId,
+                            this.objectLifecyclePolicyEtag,
+                            this.approximateCount,
+                            this.approximateSize,
+                            this.replicationEnabled,
+                            this.isReadOnly,
+                            this.id,
+                            this.versioning,
+                            this.autoTiering);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Bucket o) {
-            Builder copiedBuilder =
-                    namespace(o.getNamespace())
-                            .name(o.getName())
-                            .compartmentId(o.getCompartmentId())
-                            .metadata(o.getMetadata())
-                            .createdBy(o.getCreatedBy())
-                            .timeCreated(o.getTimeCreated())
-                            .etag(o.getEtag())
-                            .publicAccessType(o.getPublicAccessType())
-                            .storageTier(o.getStorageTier())
-                            .objectEventsEnabled(o.getObjectEventsEnabled())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .objectLifecyclePolicyEtag(o.getObjectLifecyclePolicyEtag())
-                            .approximateCount(o.getApproximateCount())
-                            .approximateSize(o.getApproximateSize())
-                            .replicationEnabled(o.getReplicationEnabled())
-                            .isReadOnly(o.getIsReadOnly())
-                            .id(o.getId())
-                            .versioning(o.getVersioning())
-                            .autoTiering(o.getAutoTiering());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Bucket model) {
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("etag")) {
+                this.etag(model.getEtag());
+            }
+            if (model.wasPropertyExplicitlySet("publicAccessType")) {
+                this.publicAccessType(model.getPublicAccessType());
+            }
+            if (model.wasPropertyExplicitlySet("storageTier")) {
+                this.storageTier(model.getStorageTier());
+            }
+            if (model.wasPropertyExplicitlySet("objectEventsEnabled")) {
+                this.objectEventsEnabled(model.getObjectEventsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("objectLifecyclePolicyEtag")) {
+                this.objectLifecyclePolicyEtag(model.getObjectLifecyclePolicyEtag());
+            }
+            if (model.wasPropertyExplicitlySet("approximateCount")) {
+                this.approximateCount(model.getApproximateCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateSize")) {
+                this.approximateSize(model.getApproximateSize());
+            }
+            if (model.wasPropertyExplicitlySet("replicationEnabled")) {
+                this.replicationEnabled(model.getReplicationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isReadOnly")) {
+                this.isReadOnly(model.getIsReadOnly());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("versioning")) {
+                this.versioning(model.getVersioning());
+            }
+            if (model.wasPropertyExplicitlySet("autoTiering")) {
+                this.autoTiering(model.getAutoTiering());
+            }
+            return this;
         }
     }
 
@@ -1166,6 +1207,7 @@ public final class Bucket {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Bucket(");
+        sb.append("super=").append(super.toString());
         sb.append("namespace=").append(String.valueOf(this.namespace));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -1188,7 +1230,6 @@ public final class Bucket {
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", versioning=").append(String.valueOf(this.versioning));
         sb.append(", autoTiering=").append(String.valueOf(this.autoTiering));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1225,7 +1266,7 @@ public final class Bucket {
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.versioning, other.versioning)
                 && java.util.Objects.equals(this.autoTiering, other.autoTiering)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1273,16 +1314,7 @@ public final class Bucket {
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.versioning == null ? 43 : this.versioning.hashCode());
         result = (result * PRIME) + (this.autoTiering == null ? 43 : this.autoTiering.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

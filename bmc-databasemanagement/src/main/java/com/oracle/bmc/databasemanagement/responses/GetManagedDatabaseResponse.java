@@ -38,12 +38,18 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
         return managedDatabase;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "managedDatabase"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "managedDatabase"
+    })
     private GetManagedDatabaseResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.ManagedDatabase managedDatabase) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.managedDatabase = managedDatabase;
     }
@@ -53,6 +59,13 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetManagedDatabaseResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             managedDatabase(o.getManagedDatabase());
 
@@ -109,7 +123,7 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetManagedDatabaseResponse build() {
             return new GetManagedDatabaseResponse(
-                    __httpStatusCode__, opcRequestId, managedDatabase);
+                    __httpStatusCode__, headers, opcRequestId, managedDatabase);
         }
     }
 

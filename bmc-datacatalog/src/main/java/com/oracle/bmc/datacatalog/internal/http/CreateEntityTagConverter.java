@@ -120,8 +120,8 @@ public class CreateEntityTagConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .CreateEntityTagResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.entityTag(response.getItem());
 

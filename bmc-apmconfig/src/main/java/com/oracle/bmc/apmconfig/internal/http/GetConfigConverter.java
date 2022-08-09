@@ -107,8 +107,8 @@ public class GetConfigConverter {
                                         builder =
                                                 com.oracle.bmc.apmconfig.responses.GetConfigResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.config(response.getItem());
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParserTestResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ParserTestResult {
+public final class ParserTestResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "additionalInfo",
@@ -127,24 +127,37 @@ public final class ParserTestResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ParserTestResult build() {
-            ParserTestResult __instance__ =
+            ParserTestResult model =
                     new ParserTestResult(
-                            additionalInfo, entries, exampleContent, lines, namedCaptureGroups);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.additionalInfo,
+                            this.entries,
+                            this.exampleContent,
+                            this.lines,
+                            this.namedCaptureGroups);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ParserTestResult o) {
-            Builder copiedBuilder =
-                    additionalInfo(o.getAdditionalInfo())
-                            .entries(o.getEntries())
-                            .exampleContent(o.getExampleContent())
-                            .lines(o.getLines())
-                            .namedCaptureGroups(o.getNamedCaptureGroups());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ParserTestResult model) {
+            if (model.wasPropertyExplicitlySet("additionalInfo")) {
+                this.additionalInfo(model.getAdditionalInfo());
+            }
+            if (model.wasPropertyExplicitlySet("entries")) {
+                this.entries(model.getEntries());
+            }
+            if (model.wasPropertyExplicitlySet("exampleContent")) {
+                this.exampleContent(model.getExampleContent());
+            }
+            if (model.wasPropertyExplicitlySet("lines")) {
+                this.lines(model.getLines());
+            }
+            if (model.wasPropertyExplicitlySet("namedCaptureGroups")) {
+                this.namedCaptureGroups(model.getNamedCaptureGroups());
+            }
+            return this;
         }
     }
 
@@ -242,12 +255,12 @@ public final class ParserTestResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ParserTestResult(");
+        sb.append("super=").append(super.toString());
         sb.append("additionalInfo=").append(String.valueOf(this.additionalInfo));
         sb.append(", entries=").append(String.valueOf(this.entries));
         sb.append(", exampleContent=").append(String.valueOf(this.exampleContent));
         sb.append(", lines=").append(String.valueOf(this.lines));
         sb.append(", namedCaptureGroups=").append(String.valueOf(this.namedCaptureGroups));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -267,7 +280,7 @@ public final class ParserTestResult {
                 && java.util.Objects.equals(this.exampleContent, other.exampleContent)
                 && java.util.Objects.equals(this.lines, other.lines)
                 && java.util.Objects.equals(this.namedCaptureGroups, other.namedCaptureGroups)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -287,16 +300,7 @@ public final class ParserTestResult {
                         + (this.namedCaptureGroups == null
                                 ? 43
                                 : this.namedCaptureGroups.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

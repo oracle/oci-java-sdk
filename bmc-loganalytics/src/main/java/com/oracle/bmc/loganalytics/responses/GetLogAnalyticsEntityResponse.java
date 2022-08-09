@@ -53,16 +53,18 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "logAnalyticsEntity"
     })
     private GetLogAnalyticsEntityResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogAnalyticsEntity logAnalyticsEntity) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.logAnalyticsEntity = logAnalyticsEntity;
@@ -73,6 +75,13 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(GetLogAnalyticsEntityResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             logAnalyticsEntity(o.getLogAnalyticsEntity());
@@ -145,7 +155,7 @@ public class GetLogAnalyticsEntityResponse extends com.oracle.bmc.responses.BmcR
          */
         public GetLogAnalyticsEntityResponse build() {
             return new GetLogAnalyticsEntityResponse(
-                    __httpStatusCode__, etag, opcRequestId, logAnalyticsEntity);
+                    __httpStatusCode__, headers, etag, opcRequestId, logAnalyticsEntity);
         }
     }
 

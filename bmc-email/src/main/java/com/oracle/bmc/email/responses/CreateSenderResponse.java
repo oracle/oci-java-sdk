@@ -53,13 +53,20 @@ public class CreateSenderResponse extends com.oracle.bmc.responses.BmcResponse {
         return sender;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "sender"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "sender"
+    })
     private CreateSenderResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.email.model.Sender sender) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.sender = sender;
@@ -70,6 +77,13 @@ public class CreateSenderResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class CreateSenderResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(CreateSenderResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             sender(o.getSender());
@@ -142,7 +157,8 @@ public class CreateSenderResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public CreateSenderResponse build() {
-            return new CreateSenderResponse(__httpStatusCode__, opcRequestId, etag, sender);
+            return new CreateSenderResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, sender);
         }
     }
 

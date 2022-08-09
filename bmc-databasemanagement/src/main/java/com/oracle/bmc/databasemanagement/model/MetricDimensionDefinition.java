@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = MetricDimensionDefinition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MetricDimensionDefinition {
+public final class MetricDimensionDefinition
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dimensionName", "dimensionValue"})
     public MetricDimensionDefinition(String dimensionName, String dimensionValue) {
@@ -67,19 +68,23 @@ public final class MetricDimensionDefinition {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MetricDimensionDefinition build() {
-            MetricDimensionDefinition __instance__ =
-                    new MetricDimensionDefinition(dimensionName, dimensionValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MetricDimensionDefinition model =
+                    new MetricDimensionDefinition(this.dimensionName, this.dimensionValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MetricDimensionDefinition o) {
-            Builder copiedBuilder =
-                    dimensionName(o.getDimensionName()).dimensionValue(o.getDimensionValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MetricDimensionDefinition model) {
+            if (model.wasPropertyExplicitlySet("dimensionName")) {
+                this.dimensionName(model.getDimensionName());
+            }
+            if (model.wasPropertyExplicitlySet("dimensionValue")) {
+                this.dimensionValue(model.getDimensionValue());
+            }
+            return this;
         }
     }
 
@@ -135,9 +140,9 @@ public final class MetricDimensionDefinition {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MetricDimensionDefinition(");
+        sb.append("super=").append(super.toString());
         sb.append("dimensionName=").append(String.valueOf(this.dimensionName));
         sb.append(", dimensionValue=").append(String.valueOf(this.dimensionValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,7 +159,7 @@ public final class MetricDimensionDefinition {
         MetricDimensionDefinition other = (MetricDimensionDefinition) o;
         return java.util.Objects.equals(this.dimensionName, other.dimensionName)
                 && java.util.Objects.equals(this.dimensionValue, other.dimensionValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -167,16 +172,7 @@ public final class MetricDimensionDefinition {
         result =
                 (result * PRIME)
                         + (this.dimensionValue == null ? 43 : this.dimensionValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

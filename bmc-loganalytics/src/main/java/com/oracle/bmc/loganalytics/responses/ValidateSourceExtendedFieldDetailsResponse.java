@@ -41,15 +41,17 @@ public class ValidateSourceExtendedFieldDetailsResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "extendedFieldsValidationResult"
     })
     private ValidateSourceExtendedFieldDetailsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.ExtendedFieldsValidationResult
                     extendedFieldsValidationResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.extendedFieldsValidationResult = extendedFieldsValidationResult;
     }
@@ -59,6 +61,13 @@ public class ValidateSourceExtendedFieldDetailsResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -103,6 +112,7 @@ public class ValidateSourceExtendedFieldDetailsResponse
          */
         public Builder copy(ValidateSourceExtendedFieldDetailsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             extendedFieldsValidationResult(o.getExtendedFieldsValidationResult());
 
@@ -115,7 +125,7 @@ public class ValidateSourceExtendedFieldDetailsResponse
          */
         public ValidateSourceExtendedFieldDetailsResponse build() {
             return new ValidateSourceExtendedFieldDetailsResponse(
-                    __httpStatusCode__, opcRequestId, extendedFieldsValidationResult);
+                    __httpStatusCode__, headers, opcRequestId, extendedFieldsValidationResult);
         }
     }
 

@@ -75,6 +75,7 @@ public class UpdateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "opcWorkRequestId",
@@ -83,12 +84,13 @@ public class UpdateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private UpdateConnectionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
             String location,
             com.oracle.bmc.devops.model.Connection connection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
@@ -101,6 +103,13 @@ public class UpdateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -185,6 +194,7 @@ public class UpdateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(UpdateConnectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
@@ -200,7 +210,13 @@ public class UpdateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public UpdateConnectionResponse build() {
             return new UpdateConnectionResponse(
-                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, location, connection);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    location,
+                    connection);
         }
     }
 

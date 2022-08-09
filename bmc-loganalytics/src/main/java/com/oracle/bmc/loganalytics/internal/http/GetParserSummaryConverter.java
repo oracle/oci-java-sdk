@@ -110,8 +110,8 @@ public class GetParserSummaryConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetParserSummaryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.parserSummaryReport(response.getItem());
 

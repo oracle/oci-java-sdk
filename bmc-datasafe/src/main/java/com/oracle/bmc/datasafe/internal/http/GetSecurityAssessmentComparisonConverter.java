@@ -122,8 +122,8 @@ public class GetSecurityAssessmentComparisonConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetSecurityAssessmentComparisonResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityAssessmentComparison(response.getItem());
 

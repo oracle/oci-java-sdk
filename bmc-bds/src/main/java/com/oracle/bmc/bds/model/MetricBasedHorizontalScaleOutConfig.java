@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = MetricBasedHorizontalScaleOutConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MetricBasedHorizontalScaleOutConfig {
+public final class MetricBasedHorizontalScaleOutConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"metric", "maxNodeCount", "stepSize"})
     public MetricBasedHorizontalScaleOutConfig(
@@ -78,21 +79,27 @@ public final class MetricBasedHorizontalScaleOutConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MetricBasedHorizontalScaleOutConfig build() {
-            MetricBasedHorizontalScaleOutConfig __instance__ =
-                    new MetricBasedHorizontalScaleOutConfig(metric, maxNodeCount, stepSize);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MetricBasedHorizontalScaleOutConfig model =
+                    new MetricBasedHorizontalScaleOutConfig(
+                            this.metric, this.maxNodeCount, this.stepSize);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MetricBasedHorizontalScaleOutConfig o) {
-            Builder copiedBuilder =
-                    metric(o.getMetric())
-                            .maxNodeCount(o.getMaxNodeCount())
-                            .stepSize(o.getStepSize());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MetricBasedHorizontalScaleOutConfig model) {
+            if (model.wasPropertyExplicitlySet("metric")) {
+                this.metric(model.getMetric());
+            }
+            if (model.wasPropertyExplicitlySet("maxNodeCount")) {
+                this.maxNodeCount(model.getMaxNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("stepSize")) {
+                this.stepSize(model.getStepSize());
+            }
+            return this;
         }
     }
 
@@ -155,10 +162,10 @@ public final class MetricBasedHorizontalScaleOutConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MetricBasedHorizontalScaleOutConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("metric=").append(String.valueOf(this.metric));
         sb.append(", maxNodeCount=").append(String.valueOf(this.maxNodeCount));
         sb.append(", stepSize=").append(String.valueOf(this.stepSize));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -176,7 +183,7 @@ public final class MetricBasedHorizontalScaleOutConfig {
         return java.util.Objects.equals(this.metric, other.metric)
                 && java.util.Objects.equals(this.maxNodeCount, other.maxNodeCount)
                 && java.util.Objects.equals(this.stepSize, other.stepSize)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -186,16 +193,7 @@ public final class MetricBasedHorizontalScaleOutConfig {
         result = (result * PRIME) + (this.metric == null ? 43 : this.metric.hashCode());
         result = (result * PRIME) + (this.maxNodeCount == null ? 43 : this.maxNodeCount.hashCode());
         result = (result * PRIME) + (this.stepSize == null ? 43 : this.stepSize.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

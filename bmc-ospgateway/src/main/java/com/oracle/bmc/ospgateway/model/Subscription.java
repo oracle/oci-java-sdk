@@ -17,7 +17,7 @@ package com.oracle.bmc.ospgateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Subscription.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Subscription {
+public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -372,56 +372,93 @@ public final class Subscription {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Subscription build() {
-            Subscription __instance__ =
+            Subscription model =
                     new Subscription(
-                            id,
-                            subscriptionPlanNumber,
-                            planType,
-                            timeStart,
-                            shipToCustAcctSiteId,
-                            shipToCustAcctRoleId,
-                            billToCustAccountId,
-                            isIntentToPay,
-                            currencyCode,
-                            gsiOrgCode,
-                            languageCode,
-                            organizationId,
-                            upgradeState,
-                            upgradeStateDetails,
-                            taxInfo,
-                            paymentOptions,
-                            paymentGateway,
-                            billingAddress,
-                            timePlanUpgrade);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.subscriptionPlanNumber,
+                            this.planType,
+                            this.timeStart,
+                            this.shipToCustAcctSiteId,
+                            this.shipToCustAcctRoleId,
+                            this.billToCustAccountId,
+                            this.isIntentToPay,
+                            this.currencyCode,
+                            this.gsiOrgCode,
+                            this.languageCode,
+                            this.organizationId,
+                            this.upgradeState,
+                            this.upgradeStateDetails,
+                            this.taxInfo,
+                            this.paymentOptions,
+                            this.paymentGateway,
+                            this.billingAddress,
+                            this.timePlanUpgrade);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Subscription o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .subscriptionPlanNumber(o.getSubscriptionPlanNumber())
-                            .planType(o.getPlanType())
-                            .timeStart(o.getTimeStart())
-                            .shipToCustAcctSiteId(o.getShipToCustAcctSiteId())
-                            .shipToCustAcctRoleId(o.getShipToCustAcctRoleId())
-                            .billToCustAccountId(o.getBillToCustAccountId())
-                            .isIntentToPay(o.getIsIntentToPay())
-                            .currencyCode(o.getCurrencyCode())
-                            .gsiOrgCode(o.getGsiOrgCode())
-                            .languageCode(o.getLanguageCode())
-                            .organizationId(o.getOrganizationId())
-                            .upgradeState(o.getUpgradeState())
-                            .upgradeStateDetails(o.getUpgradeStateDetails())
-                            .taxInfo(o.getTaxInfo())
-                            .paymentOptions(o.getPaymentOptions())
-                            .paymentGateway(o.getPaymentGateway())
-                            .billingAddress(o.getBillingAddress())
-                            .timePlanUpgrade(o.getTimePlanUpgrade());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Subscription model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionPlanNumber")) {
+                this.subscriptionPlanNumber(model.getSubscriptionPlanNumber());
+            }
+            if (model.wasPropertyExplicitlySet("planType")) {
+                this.planType(model.getPlanType());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("shipToCustAcctSiteId")) {
+                this.shipToCustAcctSiteId(model.getShipToCustAcctSiteId());
+            }
+            if (model.wasPropertyExplicitlySet("shipToCustAcctRoleId")) {
+                this.shipToCustAcctRoleId(model.getShipToCustAcctRoleId());
+            }
+            if (model.wasPropertyExplicitlySet("billToCustAccountId")) {
+                this.billToCustAccountId(model.getBillToCustAccountId());
+            }
+            if (model.wasPropertyExplicitlySet("isIntentToPay")) {
+                this.isIntentToPay(model.getIsIntentToPay());
+            }
+            if (model.wasPropertyExplicitlySet("currencyCode")) {
+                this.currencyCode(model.getCurrencyCode());
+            }
+            if (model.wasPropertyExplicitlySet("gsiOrgCode")) {
+                this.gsiOrgCode(model.getGsiOrgCode());
+            }
+            if (model.wasPropertyExplicitlySet("languageCode")) {
+                this.languageCode(model.getLanguageCode());
+            }
+            if (model.wasPropertyExplicitlySet("organizationId")) {
+                this.organizationId(model.getOrganizationId());
+            }
+            if (model.wasPropertyExplicitlySet("upgradeState")) {
+                this.upgradeState(model.getUpgradeState());
+            }
+            if (model.wasPropertyExplicitlySet("upgradeStateDetails")) {
+                this.upgradeStateDetails(model.getUpgradeStateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("taxInfo")) {
+                this.taxInfo(model.getTaxInfo());
+            }
+            if (model.wasPropertyExplicitlySet("paymentOptions")) {
+                this.paymentOptions(model.getPaymentOptions());
+            }
+            if (model.wasPropertyExplicitlySet("paymentGateway")) {
+                this.paymentGateway(model.getPaymentGateway());
+            }
+            if (model.wasPropertyExplicitlySet("billingAddress")) {
+                this.billingAddress(model.getBillingAddress());
+            }
+            if (model.wasPropertyExplicitlySet("timePlanUpgrade")) {
+                this.timePlanUpgrade(model.getTimePlanUpgrade());
+            }
+            return this;
         }
     }
 
@@ -840,6 +877,7 @@ public final class Subscription {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Subscription(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", subscriptionPlanNumber=").append(String.valueOf(this.subscriptionPlanNumber));
         sb.append(", planType=").append(String.valueOf(this.planType));
@@ -859,7 +897,6 @@ public final class Subscription {
         sb.append(", paymentGateway=").append(String.valueOf(this.paymentGateway));
         sb.append(", billingAddress=").append(String.valueOf(this.billingAddress));
         sb.append(", timePlanUpgrade=").append(String.valueOf(this.timePlanUpgrade));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -894,7 +931,7 @@ public final class Subscription {
                 && java.util.Objects.equals(this.paymentGateway, other.paymentGateway)
                 && java.util.Objects.equals(this.billingAddress, other.billingAddress)
                 && java.util.Objects.equals(this.timePlanUpgrade, other.timePlanUpgrade)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -952,16 +989,7 @@ public final class Subscription {
         result =
                 (result * PRIME)
                         + (this.timePlanUpgrade == null ? 43 : this.timePlanUpgrade.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

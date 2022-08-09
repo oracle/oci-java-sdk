@@ -112,8 +112,8 @@ public class UpdateHttpMonitorConverter {
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
                                                         .UpdateHttpMonitorResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.httpMonitor(response.getItem());
 

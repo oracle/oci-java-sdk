@@ -61,17 +61,19 @@ public class ListAssociatedDatabasesResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "associatedDatabaseCollection"
     })
     private ListAssociatedDatabasesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.AssociatedDatabaseCollection
                     associatedDatabaseCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.associatedDatabaseCollection = associatedDatabaseCollection;
@@ -82,6 +84,13 @@ public class ListAssociatedDatabasesResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListAssociatedDatabasesResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(ListAssociatedDatabasesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             associatedDatabaseCollection(o.getAssociatedDatabaseCollection());
@@ -162,7 +172,11 @@ public class ListAssociatedDatabasesResponse extends com.oracle.bmc.responses.Bm
          */
         public ListAssociatedDatabasesResponse build() {
             return new ListAssociatedDatabasesResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, associatedDatabaseCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcNextPage,
+                    opcRequestId,
+                    associatedDatabaseCollection);
         }
     }
 

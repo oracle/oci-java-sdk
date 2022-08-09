@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = CreateDrgRouteDistributionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateDrgRouteDistributionDetails {
+public final class CreateDrgRouteDistributionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTags",
@@ -155,24 +156,37 @@ public final class CreateDrgRouteDistributionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDrgRouteDistributionDetails build() {
-            CreateDrgRouteDistributionDetails __instance__ =
+            CreateDrgRouteDistributionDetails model =
                     new CreateDrgRouteDistributionDetails(
-                            definedTags, displayName, freeformTags, drgId, distributionType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.drgId,
+                            this.distributionType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDrgRouteDistributionDetails o) {
-            Builder copiedBuilder =
-                    definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .drgId(o.getDrgId())
-                            .distributionType(o.getDistributionType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDrgRouteDistributionDetails model) {
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("drgId")) {
+                this.drgId(model.getDrgId());
+            }
+            if (model.wasPropertyExplicitlySet("distributionType")) {
+                this.distributionType(model.getDistributionType());
+            }
+            return this;
         }
     }
 
@@ -329,12 +343,12 @@ public final class CreateDrgRouteDistributionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDrgRouteDistributionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", drgId=").append(String.valueOf(this.drgId));
         sb.append(", distributionType=").append(String.valueOf(this.distributionType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -354,7 +368,7 @@ public final class CreateDrgRouteDistributionDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.drgId, other.drgId)
                 && java.util.Objects.equals(this.distributionType, other.distributionType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -368,16 +382,7 @@ public final class CreateDrgRouteDistributionDetails {
         result =
                 (result * PRIME)
                         + (this.distributionType == null ? 43 : this.distributionType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

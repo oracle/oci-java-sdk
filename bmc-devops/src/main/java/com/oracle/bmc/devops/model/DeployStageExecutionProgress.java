@@ -96,7 +96,8 @@ package com.oracle.bmc.devops.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DeployStageExecutionProgress {
+public class DeployStageExecutionProgress
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "deployStageDisplayName",
@@ -286,6 +287,7 @@ public class DeployStageExecutionProgress {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DeployStageExecutionProgress(");
+        sb.append("super=").append(super.toString());
         sb.append("deployStageDisplayName=").append(String.valueOf(this.deployStageDisplayName));
         sb.append(", deployStageId=").append(String.valueOf(this.deployStageId));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
@@ -318,7 +320,8 @@ public class DeployStageExecutionProgress {
                         this.deployStagePredecessors, other.deployStagePredecessors)
                 && java.util.Objects.equals(
                         this.deployStageExecutionProgressDetails,
-                        other.deployStageExecutionProgressDetails);
+                        other.deployStageExecutionProgressDetails)
+                && super.equals(other);
     }
 
     @Override
@@ -346,6 +349,7 @@ public class DeployStageExecutionProgress {
                         + (this.deployStageExecutionProgressDetails == null
                                 ? 43
                                 : this.deployStageExecutionProgressDetails.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

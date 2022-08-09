@@ -19,7 +19,7 @@ package com.oracle.bmc.aianomalydetection.model;
     builder = RowReductionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RowReductionDetails {
+public final class RowReductionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isReductionEnabled",
@@ -97,22 +97,29 @@ public final class RowReductionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RowReductionDetails build() {
-            RowReductionDetails __instance__ =
+            RowReductionDetails model =
                     new RowReductionDetails(
-                            isReductionEnabled, reductionPercentage, reductionMethod);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isReductionEnabled,
+                            this.reductionPercentage,
+                            this.reductionMethod);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RowReductionDetails o) {
-            Builder copiedBuilder =
-                    isReductionEnabled(o.getIsReductionEnabled())
-                            .reductionPercentage(o.getReductionPercentage())
-                            .reductionMethod(o.getReductionMethod());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RowReductionDetails model) {
+            if (model.wasPropertyExplicitlySet("isReductionEnabled")) {
+                this.isReductionEnabled(model.getIsReductionEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("reductionPercentage")) {
+                this.reductionPercentage(model.getReductionPercentage());
+            }
+            if (model.wasPropertyExplicitlySet("reductionMethod")) {
+                this.reductionMethod(model.getReductionMethod());
+            }
+            return this;
         }
     }
 
@@ -239,10 +246,10 @@ public final class RowReductionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RowReductionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isReductionEnabled=").append(String.valueOf(this.isReductionEnabled));
         sb.append(", reductionPercentage=").append(String.valueOf(this.reductionPercentage));
         sb.append(", reductionMethod=").append(String.valueOf(this.reductionMethod));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -260,7 +267,7 @@ public final class RowReductionDetails {
         return java.util.Objects.equals(this.isReductionEnabled, other.isReductionEnabled)
                 && java.util.Objects.equals(this.reductionPercentage, other.reductionPercentage)
                 && java.util.Objects.equals(this.reductionMethod, other.reductionMethod)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -280,16 +287,7 @@ public final class RowReductionDetails {
         result =
                 (result * PRIME)
                         + (this.reductionMethod == null ? 43 : this.reductionMethod.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -113,8 +113,8 @@ public class DeleteInclusionCriterionConverter {
                                         builder =
                                                 com.oracle.bmc.governancerulescontrolplane.responses
                                                         .DeleteInclusionCriterionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

@@ -4,6 +4,8 @@
  */
 package com.oracle.bmc.util.internal;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -32,9 +34,75 @@ public enum HttpUtils {
      * @return escaped path segment
      */
     public static String urlPathSegmentEscape(String pathSegment) {
-        return com.google.common /*Guava will be removed soon*/.net.UrlEscapers
-                .urlPathSegmentEscaper()
-                .escape(pathSegment);
+        try {
+            String encoded = URLEncoder.encode(pathSegment, "UTF-8");
+            StringBuilder sb = new StringBuilder();
+            int i = 0;
+            while (i < encoded.length()) {
+                char ch = encoded.charAt(i);
+                if (ch == '+') {
+                    // .replaceAll("\\+", "%20")
+                    sb.append("%20");
+                    ++i;
+                    continue;
+                }
+
+                if (ch == '%' && i + 2 < encoded.length()) {
+                    char ch2 = encoded.charAt(i + 1);
+                    char ch3 = encoded.charAt(i + 2);
+                    if (ch2 == '2') {
+                        switch (ch3) {
+                            case '1':
+                                // .replaceAll("%21", "!")
+                                sb.append("!");
+                                i += 3;
+                                continue;
+                            case '7':
+                                // .replaceAll("%27", "'")
+                                sb.append("'");
+                                i += 3;
+                                continue;
+                            case '8':
+                                // .replaceAll("%28", "(")
+                                sb.append("(");
+                                i += 3;
+                                continue;
+                            case '9':
+                                // .replaceAll("%29", ")")
+                                sb.append(")");
+                                i += 3;
+                                continue;
+                            case 'B':
+                                // .replaceAll("%2B", "+")
+                                sb.append("+");
+                                i += 3;
+                                continue;
+                        }
+                    } else if (ch2 == '3' && ch3 == 'A') {
+                        // .replaceAll("%3A", ":")
+                        sb.append(":");
+                        i += 3;
+                        continue;
+                    } else if (ch2 == '4' && ch3 == '0') {
+                        // .replaceAll("%40", "@")
+                        sb.append("@");
+                        i += 3;
+                        continue;
+                    } else if (ch2 == '7' && ch3 == 'E') {
+                        // .replaceAll("%7E", "~")
+                        sb.append("~");
+                        i += 3;
+                        continue;
+                    }
+                }
+
+                sb.append(ch);
+                ++i;
+            }
+            return sb.toString();
+        } catch (UnsupportedEncodingException uee) {
+            throw new RuntimeException(uee);
+        }
     }
 
     /**

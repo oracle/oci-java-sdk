@@ -68,6 +68,7 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "opcRequestId",
         "etag",
@@ -75,11 +76,12 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
     })
     private CreateDatabaseRegistrationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String etag,
             com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.etag = etag;
@@ -91,6 +93,13 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -167,6 +176,7 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
          */
         public Builder copy(CreateDatabaseRegistrationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
@@ -181,7 +191,12 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
          */
         public CreateDatabaseRegistrationResponse build() {
             return new CreateDatabaseRegistrationResponse(
-                    __httpStatusCode__, opcWorkRequestId, opcRequestId, etag, databaseRegistration);
+                    __httpStatusCode__,
+                    headers,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    etag,
+                    databaseRegistration);
         }
     }
 

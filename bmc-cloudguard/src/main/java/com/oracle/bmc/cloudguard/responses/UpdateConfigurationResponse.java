@@ -55,16 +55,18 @@ public class UpdateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "configuration"
     })
     private UpdateConfigurationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.cloudguard.model.Configuration configuration) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.configuration = configuration;
@@ -75,6 +77,13 @@ public class UpdateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class UpdateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(UpdateConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             configuration(o.getConfiguration());
@@ -148,7 +158,7 @@ public class UpdateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
          */
         public UpdateConfigurationResponse build() {
             return new UpdateConfigurationResponse(
-                    __httpStatusCode__, etag, opcRequestId, configuration);
+                    __httpStatusCode__, headers, etag, opcRequestId, configuration);
         }
     }
 

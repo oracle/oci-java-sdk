@@ -19,7 +19,8 @@ package com.oracle.bmc.datascience.model;
     builder = UpdateCategoryLogDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateCategoryLogDetails {
+public final class UpdateCategoryLogDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"access", "predict"})
     public UpdateCategoryLogDetails(LogDetails access, LogDetails predict) {
@@ -53,17 +54,23 @@ public final class UpdateCategoryLogDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateCategoryLogDetails build() {
-            UpdateCategoryLogDetails __instance__ = new UpdateCategoryLogDetails(access, predict);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateCategoryLogDetails model =
+                    new UpdateCategoryLogDetails(this.access, this.predict);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateCategoryLogDetails o) {
-            Builder copiedBuilder = access(o.getAccess()).predict(o.getPredict());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateCategoryLogDetails model) {
+            if (model.wasPropertyExplicitlySet("access")) {
+                this.access(model.getAccess());
+            }
+            if (model.wasPropertyExplicitlySet("predict")) {
+                this.predict(model.getPredict());
+            }
+            return this;
         }
     }
 
@@ -105,9 +112,9 @@ public final class UpdateCategoryLogDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateCategoryLogDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("access=").append(String.valueOf(this.access));
         sb.append(", predict=").append(String.valueOf(this.predict));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -124,7 +131,7 @@ public final class UpdateCategoryLogDetails {
         UpdateCategoryLogDetails other = (UpdateCategoryLogDetails) o;
         return java.util.Objects.equals(this.access, other.access)
                 && java.util.Objects.equals(this.predict, other.predict)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -133,16 +140,7 @@ public final class UpdateCategoryLogDetails {
         int result = 1;
         result = (result * PRIME) + (this.access == null ? 43 : this.access.hashCode());
         result = (result * PRIME) + (this.predict == null ? 43 : this.predict.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

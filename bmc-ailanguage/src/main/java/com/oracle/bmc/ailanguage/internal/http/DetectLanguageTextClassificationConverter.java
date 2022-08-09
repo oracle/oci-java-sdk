@@ -115,8 +115,8 @@ public class DetectLanguageTextClassificationConverter {
                                                 com.oracle.bmc.ailanguage.responses
                                                         .DetectLanguageTextClassificationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.detectLanguageTextClassificationResult(response.getItem());
 

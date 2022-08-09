@@ -19,7 +19,7 @@ package com.oracle.bmc.blockchain.model;
     builder = ScaleStorageDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ScaleStorageDetails {
+public final class ScaleStorageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"storageSizeInTBs"})
     public ScaleStorageDetails(Integer storageSizeInTBs) {
@@ -50,17 +50,19 @@ public final class ScaleStorageDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScaleStorageDetails build() {
-            ScaleStorageDetails __instance__ = new ScaleStorageDetails(storageSizeInTBs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ScaleStorageDetails model = new ScaleStorageDetails(this.storageSizeInTBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ScaleStorageDetails o) {
-            Builder copiedBuilder = storageSizeInTBs(o.getStorageSizeInTBs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ScaleStorageDetails model) {
+            if (model.wasPropertyExplicitlySet("storageSizeInTBs")) {
+                this.storageSizeInTBs(model.getStorageSizeInTBs());
+            }
+            return this;
         }
     }
 
@@ -102,8 +104,8 @@ public final class ScaleStorageDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ScaleStorageDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("storageSizeInTBs=").append(String.valueOf(this.storageSizeInTBs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +121,7 @@ public final class ScaleStorageDetails {
 
         ScaleStorageDetails other = (ScaleStorageDetails) o;
         return java.util.Objects.equals(this.storageSizeInTBs, other.storageSizeInTBs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -129,16 +131,7 @@ public final class ScaleStorageDetails {
         result =
                 (result * PRIME)
                         + (this.storageSizeInTBs == null ? 43 : this.storageSizeInTBs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

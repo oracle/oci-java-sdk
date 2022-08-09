@@ -121,8 +121,8 @@ public class RestoreContainerImageConverter {
                                         builder =
                                                 com.oracle.bmc.artifacts.responses
                                                         .RestoreContainerImageResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.containerImage(response.getItem());
 

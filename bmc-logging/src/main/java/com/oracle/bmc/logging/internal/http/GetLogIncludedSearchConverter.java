@@ -114,8 +114,8 @@ public class GetLogIncludedSearchConverter {
                                         builder =
                                                 com.oracle.bmc.logging.responses
                                                         .GetLogIncludedSearchResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logIncludedSearch(response.getItem());
 

@@ -38,12 +38,18 @@ public class GenerateAwrSnapshotResponse extends com.oracle.bmc.responses.BmcRes
         return snapshotDetails;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "snapshotDetails"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "snapshotDetails"
+    })
     private GenerateAwrSnapshotResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.SnapshotDetails snapshotDetails) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.snapshotDetails = snapshotDetails;
     }
@@ -53,6 +59,13 @@ public class GenerateAwrSnapshotResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GenerateAwrSnapshotResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(GenerateAwrSnapshotResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             snapshotDetails(o.getSnapshotDetails());
 
@@ -109,7 +123,7 @@ public class GenerateAwrSnapshotResponse extends com.oracle.bmc.responses.BmcRes
          */
         public GenerateAwrSnapshotResponse build() {
             return new GenerateAwrSnapshotResponse(
-                    __httpStatusCode__, opcRequestId, snapshotDetails);
+                    __httpStatusCode__, headers, opcRequestId, snapshotDetails);
         }
     }
 

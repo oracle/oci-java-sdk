@@ -126,32 +126,45 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProtectionRule build() {
-            ProtectionRule __instance__ =
+            ProtectionRule model =
                     new ProtectionRule(
-                            name,
-                            conditionLanguage,
-                            condition,
-                            actionName,
-                            protectionCapabilities,
-                            protectionCapabilitySettings,
-                            isBodyInspectionEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.conditionLanguage,
+                            this.condition,
+                            this.actionName,
+                            this.protectionCapabilities,
+                            this.protectionCapabilitySettings,
+                            this.isBodyInspectionEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProtectionRule o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .conditionLanguage(o.getConditionLanguage())
-                            .condition(o.getCondition())
-                            .actionName(o.getActionName())
-                            .protectionCapabilities(o.getProtectionCapabilities())
-                            .protectionCapabilitySettings(o.getProtectionCapabilitySettings())
-                            .isBodyInspectionEnabled(o.getIsBodyInspectionEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProtectionRule model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("conditionLanguage")) {
+                this.conditionLanguage(model.getConditionLanguage());
+            }
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            if (model.wasPropertyExplicitlySet("actionName")) {
+                this.actionName(model.getActionName());
+            }
+            if (model.wasPropertyExplicitlySet("protectionCapabilities")) {
+                this.protectionCapabilities(model.getProtectionCapabilities());
+            }
+            if (model.wasPropertyExplicitlySet("protectionCapabilitySettings")) {
+                this.protectionCapabilitySettings(model.getProtectionCapabilitySettings());
+            }
+            if (model.wasPropertyExplicitlySet("isBodyInspectionEnabled")) {
+                this.isBodyInspectionEnabled(model.getIsBodyInspectionEnabled());
+            }
+            return this;
         }
     }
 
@@ -249,7 +262,6 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
                 .append(String.valueOf(this.protectionCapabilitySettings));
         sb.append(", isBodyInspectionEnabled=")
                 .append(String.valueOf(this.isBodyInspectionEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -269,8 +281,7 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
                         this.protectionCapabilitySettings, other.protectionCapabilitySettings)
                 && java.util.Objects.equals(
                         this.isBodyInspectionEnabled, other.isBodyInspectionEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -292,16 +303,6 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
                         + (this.isBodyInspectionEnabled == null
                                 ? 43
                                 : this.isBodyInspectionEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

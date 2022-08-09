@@ -25,9 +25,12 @@ public class DeleteManagementAgentResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
-    private DeleteManagementAgentResponse(int __httpStatusCode__, String opcRequestId) {
-        super(__httpStatusCode__);
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    private DeleteManagementAgentResponse(
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
@@ -36,6 +39,13 @@ public class DeleteManagementAgentResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -64,6 +74,7 @@ public class DeleteManagementAgentResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(DeleteManagementAgentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
 
             return this;
@@ -74,7 +85,7 @@ public class DeleteManagementAgentResponse extends com.oracle.bmc.responses.BmcR
          * @return the response object
          */
         public DeleteManagementAgentResponse build() {
-            return new DeleteManagementAgentResponse(__httpStatusCode__, opcRequestId);
+            return new DeleteManagementAgentResponse(__httpStatusCode__, headers, opcRequestId);
         }
     }
 

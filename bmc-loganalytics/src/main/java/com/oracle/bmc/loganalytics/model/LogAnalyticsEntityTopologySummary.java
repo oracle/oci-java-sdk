@@ -20,7 +20,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsEntityTopologySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsEntityTopologySummary {
+public final class LogAnalyticsEntityTopologySummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"nodes", "links"})
     public LogAnalyticsEntityTopologySummary(
@@ -55,18 +56,23 @@ public final class LogAnalyticsEntityTopologySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsEntityTopologySummary build() {
-            LogAnalyticsEntityTopologySummary __instance__ =
-                    new LogAnalyticsEntityTopologySummary(nodes, links);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LogAnalyticsEntityTopologySummary model =
+                    new LogAnalyticsEntityTopologySummary(this.nodes, this.links);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsEntityTopologySummary o) {
-            Builder copiedBuilder = nodes(o.getNodes()).links(o.getLinks());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsEntityTopologySummary model) {
+            if (model.wasPropertyExplicitlySet("nodes")) {
+                this.nodes(model.getNodes());
+            }
+            if (model.wasPropertyExplicitlySet("links")) {
+                this.links(model.getLinks());
+            }
+            return this;
         }
     }
 
@@ -108,9 +114,9 @@ public final class LogAnalyticsEntityTopologySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsEntityTopologySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("nodes=").append(String.valueOf(this.nodes));
         sb.append(", links=").append(String.valueOf(this.links));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -127,7 +133,7 @@ public final class LogAnalyticsEntityTopologySummary {
         LogAnalyticsEntityTopologySummary other = (LogAnalyticsEntityTopologySummary) o;
         return java.util.Objects.equals(this.nodes, other.nodes)
                 && java.util.Objects.equals(this.links, other.links)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -136,16 +142,7 @@ public final class LogAnalyticsEntityTopologySummary {
         int result = 1;
         result = (result * PRIME) + (this.nodes == null ? 43 : this.nodes.hashCode());
         result = (result * PRIME) + (this.links == null ? 43 : this.links.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

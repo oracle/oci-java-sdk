@@ -142,8 +142,8 @@ public class ValidateSourceConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ValidateSourceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sourceValidateResults(response.getItem());
 

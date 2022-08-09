@@ -111,8 +111,8 @@ public class GetRoverClusterCertificateConverter {
                                                 com.oracle.bmc.rover.responses
                                                         .GetRoverClusterCertificateResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.roverClusterCertificate(response.getItem());
 

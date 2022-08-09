@@ -56,16 +56,18 @@ public class GetFusionEnvironmentFamilySubscriptionDetailResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "subscriptionDetail"
     })
     private GetFusionEnvironmentFamilySubscriptionDetailResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.fusionapps.model.SubscriptionDetail subscriptionDetail) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.subscriptionDetail = subscriptionDetail;
@@ -76,6 +78,13 @@ public class GetFusionEnvironmentFamilySubscriptionDetailResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -137,6 +146,7 @@ public class GetFusionEnvironmentFamilySubscriptionDetailResponse
          */
         public Builder copy(GetFusionEnvironmentFamilySubscriptionDetailResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             subscriptionDetail(o.getSubscriptionDetail());
@@ -150,7 +160,7 @@ public class GetFusionEnvironmentFamilySubscriptionDetailResponse
          */
         public GetFusionEnvironmentFamilySubscriptionDetailResponse build() {
             return new GetFusionEnvironmentFamilySubscriptionDetailResponse(
-                    __httpStatusCode__, etag, opcRequestId, subscriptionDetail);
+                    __httpStatusCode__, headers, etag, opcRequestId, subscriptionDetail);
         }
     }
 

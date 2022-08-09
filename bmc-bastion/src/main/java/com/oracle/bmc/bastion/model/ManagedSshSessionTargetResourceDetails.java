@@ -105,29 +105,38 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagedSshSessionTargetResourceDetails build() {
-            ManagedSshSessionTargetResourceDetails __instance__ =
+            ManagedSshSessionTargetResourceDetails model =
                     new ManagedSshSessionTargetResourceDetails(
-                            targetResourcePort,
-                            targetResourceOperatingSystemUserName,
-                            targetResourceId,
-                            targetResourcePrivateIpAddress,
-                            targetResourceDisplayName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.targetResourcePort,
+                            this.targetResourceOperatingSystemUserName,
+                            this.targetResourceId,
+                            this.targetResourcePrivateIpAddress,
+                            this.targetResourceDisplayName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManagedSshSessionTargetResourceDetails o) {
-            Builder copiedBuilder =
-                    targetResourcePort(o.getTargetResourcePort())
-                            .targetResourceOperatingSystemUserName(
-                                    o.getTargetResourceOperatingSystemUserName())
-                            .targetResourceId(o.getTargetResourceId())
-                            .targetResourcePrivateIpAddress(o.getTargetResourcePrivateIpAddress())
-                            .targetResourceDisplayName(o.getTargetResourceDisplayName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManagedSshSessionTargetResourceDetails model) {
+            if (model.wasPropertyExplicitlySet("targetResourcePort")) {
+                this.targetResourcePort(model.getTargetResourcePort());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourceOperatingSystemUserName")) {
+                this.targetResourceOperatingSystemUserName(
+                        model.getTargetResourceOperatingSystemUserName());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourceId")) {
+                this.targetResourceId(model.getTargetResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourcePrivateIpAddress")) {
+                this.targetResourcePrivateIpAddress(model.getTargetResourcePrivateIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("targetResourceDisplayName")) {
+                this.targetResourceDisplayName(model.getTargetResourceDisplayName());
+            }
+            return this;
         }
     }
 
@@ -233,7 +242,6 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
                 .append(String.valueOf(this.targetResourcePrivateIpAddress));
         sb.append(", targetResourceDisplayName=")
                 .append(String.valueOf(this.targetResourceDisplayName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -256,8 +264,7 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
                         this.targetResourcePrivateIpAddress, other.targetResourcePrivateIpAddress)
                 && java.util.Objects.equals(
                         this.targetResourceDisplayName, other.targetResourceDisplayName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -282,16 +289,6 @@ public final class ManagedSshSessionTargetResourceDetails extends TargetResource
                         + (this.targetResourceDisplayName == null
                                 ? 43
                                 : this.targetResourceDisplayName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -65,19 +65,26 @@ public final class HourlyFrequencyDetails extends AbstractFrequencyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HourlyFrequencyDetails build() {
-            HourlyFrequencyDetails __instance__ =
-                    new HourlyFrequencyDetails(frequency, interval, time);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HourlyFrequencyDetails model =
+                    new HourlyFrequencyDetails(this.frequency, this.interval, this.time);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HourlyFrequencyDetails o) {
-            Builder copiedBuilder =
-                    frequency(o.getFrequency()).interval(o.getInterval()).time(o.getTime());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HourlyFrequencyDetails model) {
+            if (model.wasPropertyExplicitlySet("frequency")) {
+                this.frequency(model.getFrequency());
+            }
+            if (model.wasPropertyExplicitlySet("interval")) {
+                this.interval(model.getInterval());
+            }
+            if (model.wasPropertyExplicitlySet("time")) {
+                this.time(model.getTime());
+            }
+            return this;
         }
     }
 
@@ -136,7 +143,6 @@ public final class HourlyFrequencyDetails extends AbstractFrequencyDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", interval=").append(String.valueOf(this.interval));
         sb.append(", time=").append(String.valueOf(this.time));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,8 +159,7 @@ public final class HourlyFrequencyDetails extends AbstractFrequencyDetails {
         HourlyFrequencyDetails other = (HourlyFrequencyDetails) o;
         return java.util.Objects.equals(this.interval, other.interval)
                 && java.util.Objects.equals(this.time, other.time)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -163,16 +168,6 @@ public final class HourlyFrequencyDetails extends AbstractFrequencyDetails {
         int result = super.hashCode();
         result = (result * PRIME) + (this.interval == null ? 43 : this.interval.hashCode());
         result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

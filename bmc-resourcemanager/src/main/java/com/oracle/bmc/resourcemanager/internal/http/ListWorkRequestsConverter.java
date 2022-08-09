@@ -141,8 +141,8 @@ public class ListWorkRequestsConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .ListWorkRequestsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

@@ -93,7 +93,8 @@ public class CreateSubnetConverter {
 
                                 com.oracle.bmc.core.responses.CreateSubnetResponse.Builder builder =
                                         com.oracle.bmc.core.responses.CreateSubnetResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.subnet(response.getItem());
 

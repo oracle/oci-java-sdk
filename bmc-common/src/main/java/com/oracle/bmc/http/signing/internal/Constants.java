@@ -78,6 +78,7 @@ public class Constants {
      * This field will be removed soon, when Guava is removed as a dependency.
      * @deprecated use ALL_HEADERS_LIST instead
      */
+    @Deprecated
     public static final com.google.common /*Guava will be removed soon*/.collect.ImmutableList<
                     String>
             ALL_HEADERS =
@@ -104,11 +105,11 @@ public class Constants {
                     com.google.common /*Guava will be removed soon*/.collect.ImmutableMap.copyOf(
                             REQUIRED_SIGNING_HEADERS_MAP);
 
-    @Deprecated
     /**
      * A signing strategy that signs headers and body, except for PUT, where bodies are not signed
      * @deprecated use REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS_MAP instead; Object Storage has migrated to using STANDARD, with EXCLUDE_BODY as a per-operation override.  We therefore do not want to maintain a service-specific signing strategy.
      */
+    @Deprecated
     public static final Map<String, List<String>> REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS_MAP =
             createHeadersToSignForVerbMap(
                     GENERIC_HEADERS_LIST,
@@ -122,6 +123,7 @@ public class Constants {
      * This field will be removed soon, when Guava is removed as a dependency.
      * @deprecated use REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS_MAP instead
      */
+    @Deprecated
     public static final com.google.common /*Guava will be removed soon*/.collect.ImmutableMap<
                     String, List<String>>
             REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS =
@@ -144,6 +146,7 @@ public class Constants {
      * This field will be removed soon, when Guava is removed as a dependency.
      * @deprecated use REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS_MAP instead
      */
+    @Deprecated
     public static final com.google.common /*Guava will be removed soon*/.collect.ImmutableMap<
                     String, List<String>>
             REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS =
@@ -171,6 +174,7 @@ public class Constants {
      * This field will be removed soon, when Guava is removed as a dependency.
      * @deprecated use OPTIONAL_SIGNING_HEADERS_MAP instead
      */
+    @Deprecated
     public static final com.google.common /*Guava will be removed soon*/.collect.ImmutableMap<
                     String, List<String>>
             OPTIONAL_SIGNING_HEADERS =

@@ -93,7 +93,8 @@ public class CreateVolumeConverter {
 
                                 com.oracle.bmc.core.responses.CreateVolumeResponse.Builder builder =
                                         com.oracle.bmc.core.responses.CreateVolumeResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.volume(response.getItem());
 

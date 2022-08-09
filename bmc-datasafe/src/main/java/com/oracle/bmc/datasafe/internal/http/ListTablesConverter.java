@@ -176,8 +176,8 @@ public class ListTablesConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses.ListTablesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

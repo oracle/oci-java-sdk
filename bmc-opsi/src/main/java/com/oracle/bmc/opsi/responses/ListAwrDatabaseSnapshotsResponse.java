@@ -60,16 +60,18 @@ public class ListAwrDatabaseSnapshotsResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "awrDatabaseSnapshotCollection"
     })
     private ListAwrDatabaseSnapshotsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.opsi.model.AwrDatabaseSnapshotCollection awrDatabaseSnapshotCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.awrDatabaseSnapshotCollection = awrDatabaseSnapshotCollection;
@@ -80,6 +82,13 @@ public class ListAwrDatabaseSnapshotsResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -147,6 +156,7 @@ public class ListAwrDatabaseSnapshotsResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(ListAwrDatabaseSnapshotsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             awrDatabaseSnapshotCollection(o.getAwrDatabaseSnapshotCollection());
@@ -160,7 +170,11 @@ public class ListAwrDatabaseSnapshotsResponse extends com.oracle.bmc.responses.B
          */
         public ListAwrDatabaseSnapshotsResponse build() {
             return new ListAwrDatabaseSnapshotsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, awrDatabaseSnapshotCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    awrDatabaseSnapshotCollection);
         }
     }
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.resourcesearch.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceSummary {
+public final class ResourceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceType",
@@ -307,44 +307,69 @@ public final class ResourceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceSummary build() {
-            ResourceSummary __instance__ =
+            ResourceSummary model =
                     new ResourceSummary(
-                            resourceType,
-                            identifier,
-                            compartmentId,
-                            timeCreated,
-                            displayName,
-                            availabilityDomain,
-                            lifecycleState,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            searchContext,
-                            identityContext,
-                            additionalDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.resourceType,
+                            this.identifier,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.displayName,
+                            this.availabilityDomain,
+                            this.lifecycleState,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.searchContext,
+                            this.identityContext,
+                            this.additionalDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResourceSummary o) {
-            Builder copiedBuilder =
-                    resourceType(o.getResourceType())
-                            .identifier(o.getIdentifier())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .displayName(o.getDisplayName())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .lifecycleState(o.getLifecycleState())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .searchContext(o.getSearchContext())
-                            .identityContext(o.getIdentityContext())
-                            .additionalDetails(o.getAdditionalDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResourceSummary model) {
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("searchContext")) {
+                this.searchContext(model.getSearchContext());
+            }
+            if (model.wasPropertyExplicitlySet("identityContext")) {
+                this.identityContext(model.getIdentityContext());
+            }
+            if (model.wasPropertyExplicitlySet("additionalDetails")) {
+                this.additionalDetails(model.getAdditionalDetails());
+            }
+            return this;
         }
     }
 
@@ -581,6 +606,7 @@ public final class ResourceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResourceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -594,7 +620,6 @@ public final class ResourceSummary {
         sb.append(", searchContext=").append(String.valueOf(this.searchContext));
         sb.append(", identityContext=").append(String.valueOf(this.identityContext));
         sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -622,7 +647,7 @@ public final class ResourceSummary {
                 && java.util.Objects.equals(this.searchContext, other.searchContext)
                 && java.util.Objects.equals(this.identityContext, other.identityContext)
                 && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -656,16 +681,7 @@ public final class ResourceSummary {
         result =
                 (result * PRIME)
                         + (this.additionalDetails == null ? 43 : this.additionalDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

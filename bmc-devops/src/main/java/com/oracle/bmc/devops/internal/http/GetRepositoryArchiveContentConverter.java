@@ -123,8 +123,8 @@ public class GetRepositoryArchiveContentConverter {
                                                 com.oracle.bmc.devops.responses
                                                         .GetRepositoryArchiveContentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

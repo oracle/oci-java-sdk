@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = AwrDbParameterSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwrDbParameterSummary {
+public final class AwrDbParameterSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -175,32 +176,45 @@ public final class AwrDbParameterSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrDbParameterSummary build() {
-            AwrDbParameterSummary __instance__ =
+            AwrDbParameterSummary model =
                     new AwrDbParameterSummary(
-                            name,
-                            instanceNumber,
-                            beginValue,
-                            endValue,
-                            isChanged,
-                            valueModified,
-                            isDefault);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.instanceNumber,
+                            this.beginValue,
+                            this.endValue,
+                            this.isChanged,
+                            this.valueModified,
+                            this.isDefault);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrDbParameterSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .instanceNumber(o.getInstanceNumber())
-                            .beginValue(o.getBeginValue())
-                            .endValue(o.getEndValue())
-                            .isChanged(o.getIsChanged())
-                            .valueModified(o.getValueModified())
-                            .isDefault(o.getIsDefault());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrDbParameterSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("instanceNumber")) {
+                this.instanceNumber(model.getInstanceNumber());
+            }
+            if (model.wasPropertyExplicitlySet("beginValue")) {
+                this.beginValue(model.getBeginValue());
+            }
+            if (model.wasPropertyExplicitlySet("endValue")) {
+                this.endValue(model.getEndValue());
+            }
+            if (model.wasPropertyExplicitlySet("isChanged")) {
+                this.isChanged(model.getIsChanged());
+            }
+            if (model.wasPropertyExplicitlySet("valueModified")) {
+                this.valueModified(model.getValueModified());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            return this;
         }
     }
 
@@ -334,6 +348,7 @@ public final class AwrDbParameterSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrDbParameterSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", instanceNumber=").append(String.valueOf(this.instanceNumber));
         sb.append(", beginValue=").append(String.valueOf(this.beginValue));
@@ -341,7 +356,6 @@ public final class AwrDbParameterSummary {
         sb.append(", isChanged=").append(String.valueOf(this.isChanged));
         sb.append(", valueModified=").append(String.valueOf(this.valueModified));
         sb.append(", isDefault=").append(String.valueOf(this.isDefault));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -363,7 +377,7 @@ public final class AwrDbParameterSummary {
                 && java.util.Objects.equals(this.isChanged, other.isChanged)
                 && java.util.Objects.equals(this.valueModified, other.valueModified)
                 && java.util.Objects.equals(this.isDefault, other.isDefault)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -381,16 +395,7 @@ public final class AwrDbParameterSummary {
                 (result * PRIME)
                         + (this.valueModified == null ? 43 : this.valueModified.hashCode());
         result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -121,8 +121,8 @@ public class UpdatePrivateApplicationConverter {
                                         builder =
                                                 com.oracle.bmc.servicecatalog.responses
                                                         .UpdatePrivateApplicationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.privateApplication(response.getItem());
 

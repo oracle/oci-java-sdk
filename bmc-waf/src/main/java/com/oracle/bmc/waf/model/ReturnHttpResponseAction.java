@@ -207,19 +207,29 @@ public final class ReturnHttpResponseAction extends Action {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ReturnHttpResponseAction build() {
-            ReturnHttpResponseAction __instance__ =
-                    new ReturnHttpResponseAction(name, code, headers, body);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ReturnHttpResponseAction model =
+                    new ReturnHttpResponseAction(this.name, this.code, this.headers, this.body);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ReturnHttpResponseAction o) {
-            Builder copiedBuilder =
-                    name(o.getName()).code(o.getCode()).headers(o.getHeaders()).body(o.getBody());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ReturnHttpResponseAction model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("code")) {
+                this.code(model.getCode());
+            }
+            if (model.wasPropertyExplicitlySet("headers")) {
+                this.headers(model.getHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("body")) {
+                this.body(model.getBody());
+            }
+            return this;
         }
     }
 
@@ -424,7 +434,6 @@ public final class ReturnHttpResponseAction extends Action {
         sb.append(", code=").append(String.valueOf(this.code));
         sb.append(", headers=").append(String.valueOf(this.headers));
         sb.append(", body=").append(String.valueOf(this.body));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -442,8 +451,7 @@ public final class ReturnHttpResponseAction extends Action {
         return java.util.Objects.equals(this.code, other.code)
                 && java.util.Objects.equals(this.headers, other.headers)
                 && java.util.Objects.equals(this.body, other.body)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -453,16 +461,6 @@ public final class ReturnHttpResponseAction extends Action {
         result = (result * PRIME) + (this.code == null ? 43 : this.code.hashCode());
         result = (result * PRIME) + (this.headers == null ? 43 : this.headers.hashCode());
         result = (result * PRIME) + (this.body == null ? 43 : this.body.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

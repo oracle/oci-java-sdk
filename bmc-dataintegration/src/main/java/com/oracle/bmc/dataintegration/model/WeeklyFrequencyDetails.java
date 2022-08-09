@@ -65,17 +65,26 @@ public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WeeklyFrequencyDetails build() {
-            WeeklyFrequencyDetails __instance__ = new WeeklyFrequencyDetails(frequency, time, days);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            WeeklyFrequencyDetails model =
+                    new WeeklyFrequencyDetails(this.frequency, this.time, this.days);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WeeklyFrequencyDetails o) {
-            Builder copiedBuilder = frequency(o.getFrequency()).time(o.getTime()).days(o.getDays());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WeeklyFrequencyDetails model) {
+            if (model.wasPropertyExplicitlySet("frequency")) {
+                this.frequency(model.getFrequency());
+            }
+            if (model.wasPropertyExplicitlySet("time")) {
+                this.time(model.getTime());
+            }
+            if (model.wasPropertyExplicitlySet("days")) {
+                this.days(model.getDays());
+            }
+            return this;
         }
     }
 
@@ -184,7 +193,6 @@ public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", time=").append(String.valueOf(this.time));
         sb.append(", days=").append(String.valueOf(this.days));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -201,8 +209,7 @@ public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
         WeeklyFrequencyDetails other = (WeeklyFrequencyDetails) o;
         return java.util.Objects.equals(this.time, other.time)
                 && java.util.Objects.equals(this.days, other.days)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -211,16 +218,6 @@ public final class WeeklyFrequencyDetails extends AbstractFrequencyDetails {
         int result = super.hashCode();
         result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
         result = (result * PRIME) + (this.days == null ? 43 : this.days.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

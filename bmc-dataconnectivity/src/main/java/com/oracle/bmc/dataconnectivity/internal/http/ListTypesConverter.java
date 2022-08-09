@@ -157,8 +157,8 @@ public class ListTypesConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .ListTypesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.typesSummaryCollection(response.getItem());
 

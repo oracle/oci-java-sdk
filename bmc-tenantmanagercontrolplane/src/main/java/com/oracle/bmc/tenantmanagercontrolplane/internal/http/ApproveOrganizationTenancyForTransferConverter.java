@@ -140,8 +140,8 @@ public class ApproveOrganizationTenancyForTransferConverter {
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
                                                         .ApproveOrganizationTenancyForTransferResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.organizationTenancy(response.getItem());
 

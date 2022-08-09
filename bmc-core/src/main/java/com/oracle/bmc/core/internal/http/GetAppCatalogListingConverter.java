@@ -101,8 +101,8 @@ public class GetAppCatalogListingConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetAppCatalogListingResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.appCatalogListing(response.getItem());
 

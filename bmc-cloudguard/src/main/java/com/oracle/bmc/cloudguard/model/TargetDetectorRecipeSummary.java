@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = TargetDetectorRecipeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TargetDetectorRecipeSummary {
+public final class TargetDetectorRecipeSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -262,42 +263,65 @@ public final class TargetDetectorRecipeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TargetDetectorRecipeSummary build() {
-            TargetDetectorRecipeSummary __instance__ =
+            TargetDetectorRecipeSummary model =
                     new TargetDetectorRecipeSummary(
-                            id,
-                            compartmentId,
-                            displayName,
-                            description,
-                            owner,
-                            detectorRecipeId,
-                            detector,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleDetails,
-                            sourceDataRetention);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.description,
+                            this.owner,
+                            this.detectorRecipeId,
+                            this.detector,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleDetails,
+                            this.sourceDataRetention);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TargetDetectorRecipeSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .owner(o.getOwner())
-                            .detectorRecipeId(o.getDetectorRecipeId())
-                            .detector(o.getDetector())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .sourceDataRetention(o.getSourceDataRetention());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TargetDetectorRecipeSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("owner")) {
+                this.owner(model.getOwner());
+            }
+            if (model.wasPropertyExplicitlySet("detectorRecipeId")) {
+                this.detectorRecipeId(model.getDetectorRecipeId());
+            }
+            if (model.wasPropertyExplicitlySet("detector")) {
+                this.detector(model.getDetector());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDataRetention")) {
+                this.sourceDataRetention(model.getSourceDataRetention());
+            }
+            return this;
         }
     }
 
@@ -493,6 +517,7 @@ public final class TargetDetectorRecipeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TargetDetectorRecipeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -505,7 +530,6 @@ public final class TargetDetectorRecipeSummary {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", sourceDataRetention=").append(String.valueOf(this.sourceDataRetention));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -532,7 +556,7 @@ public final class TargetDetectorRecipeSummary {
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.sourceDataRetention, other.sourceDataRetention)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -563,16 +587,7 @@ public final class TargetDetectorRecipeSummary {
                         + (this.sourceDataRetention == null
                                 ? 43
                                 : this.sourceDataRetention.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

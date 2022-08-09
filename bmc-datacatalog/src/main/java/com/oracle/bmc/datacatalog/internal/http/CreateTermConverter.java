@@ -113,8 +113,8 @@ public class CreateTermConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .CreateTermResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.term(response.getItem());
 

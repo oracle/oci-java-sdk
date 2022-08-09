@@ -20,7 +20,7 @@ package com.oracle.bmc.networkfirewall.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SecurityRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SecurityRule {
+public final class SecurityRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "condition", "action", "inspection"})
     public SecurityRule(
@@ -119,21 +119,29 @@ public final class SecurityRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecurityRule build() {
-            SecurityRule __instance__ = new SecurityRule(name, condition, action, inspection);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SecurityRule model =
+                    new SecurityRule(this.name, this.condition, this.action, this.inspection);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SecurityRule o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .condition(o.getCondition())
-                            .action(o.getAction())
-                            .inspection(o.getInspection());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SecurityRule model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("inspection")) {
+                this.inspection(model.getInspection());
+            }
+            return this;
         }
     }
 
@@ -337,11 +345,11 @@ public final class SecurityRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SecurityRule(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", condition=").append(String.valueOf(this.condition));
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", inspection=").append(String.valueOf(this.inspection));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -360,7 +368,7 @@ public final class SecurityRule {
                 && java.util.Objects.equals(this.condition, other.condition)
                 && java.util.Objects.equals(this.action, other.action)
                 && java.util.Objects.equals(this.inspection, other.inspection)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -371,16 +379,7 @@ public final class SecurityRule {
         result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
         result = (result * PRIME) + (this.inspection == null ? 43 : this.inspection.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

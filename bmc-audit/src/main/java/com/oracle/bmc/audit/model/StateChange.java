@@ -18,7 +18,7 @@ package com.oracle.bmc.audit.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StateChange.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StateChange {
+public final class StateChange extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"previous", "current"})
     public StateChange(
@@ -79,17 +79,22 @@ public final class StateChange {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StateChange build() {
-            StateChange __instance__ = new StateChange(previous, current);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StateChange model = new StateChange(this.previous, this.current);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StateChange o) {
-            Builder copiedBuilder = previous(o.getPrevious()).current(o.getCurrent());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StateChange model) {
+            if (model.wasPropertyExplicitlySet("previous")) {
+                this.previous(model.getPrevious());
+            }
+            if (model.wasPropertyExplicitlySet("current")) {
+                this.current(model.getCurrent());
+            }
+            return this;
         }
     }
 
@@ -157,9 +162,9 @@ public final class StateChange {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StateChange(");
+        sb.append("super=").append(super.toString());
         sb.append("previous=").append(String.valueOf(this.previous));
         sb.append(", current=").append(String.valueOf(this.current));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -176,7 +181,7 @@ public final class StateChange {
         StateChange other = (StateChange) o;
         return java.util.Objects.equals(this.previous, other.previous)
                 && java.util.Objects.equals(this.current, other.current)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -185,16 +190,7 @@ public final class StateChange {
         int result = 1;
         result = (result * PRIME) + (this.previous == null ? 43 : this.previous.hashCode());
         result = (result * PRIME) + (this.current == null ? 43 : this.current.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

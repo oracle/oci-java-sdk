@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = UpdateMaskingColumnDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateMaskingColumnDetails {
+public final class UpdateMaskingColumnDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "objectType",
@@ -161,28 +162,37 @@ public final class UpdateMaskingColumnDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateMaskingColumnDetails build() {
-            UpdateMaskingColumnDetails __instance__ =
+            UpdateMaskingColumnDetails model =
                     new UpdateMaskingColumnDetails(
-                            objectType,
-                            maskingColumnGroup,
-                            sensitiveTypeId,
-                            isMaskingEnabled,
-                            maskingFormats);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.objectType,
+                            this.maskingColumnGroup,
+                            this.sensitiveTypeId,
+                            this.isMaskingEnabled,
+                            this.maskingFormats);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateMaskingColumnDetails o) {
-            Builder copiedBuilder =
-                    objectType(o.getObjectType())
-                            .maskingColumnGroup(o.getMaskingColumnGroup())
-                            .sensitiveTypeId(o.getSensitiveTypeId())
-                            .isMaskingEnabled(o.getIsMaskingEnabled())
-                            .maskingFormats(o.getMaskingFormats());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateMaskingColumnDetails model) {
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("maskingColumnGroup")) {
+                this.maskingColumnGroup(model.getMaskingColumnGroup());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveTypeId")) {
+                this.sensitiveTypeId(model.getSensitiveTypeId());
+            }
+            if (model.wasPropertyExplicitlySet("isMaskingEnabled")) {
+                this.isMaskingEnabled(model.getIsMaskingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("maskingFormats")) {
+                this.maskingFormats(model.getMaskingFormats());
+            }
+            return this;
         }
     }
 
@@ -312,12 +322,12 @@ public final class UpdateMaskingColumnDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateMaskingColumnDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("objectType=").append(String.valueOf(this.objectType));
         sb.append(", maskingColumnGroup=").append(String.valueOf(this.maskingColumnGroup));
         sb.append(", sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
         sb.append(", isMaskingEnabled=").append(String.valueOf(this.isMaskingEnabled));
         sb.append(", maskingFormats=").append(String.valueOf(this.maskingFormats));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -337,7 +347,7 @@ public final class UpdateMaskingColumnDetails {
                 && java.util.Objects.equals(this.sensitiveTypeId, other.sensitiveTypeId)
                 && java.util.Objects.equals(this.isMaskingEnabled, other.isMaskingEnabled)
                 && java.util.Objects.equals(this.maskingFormats, other.maskingFormats)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -359,16 +369,7 @@ public final class UpdateMaskingColumnDetails {
         result =
                 (result * PRIME)
                         + (this.maskingFormats == null ? 43 : this.maskingFormats.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

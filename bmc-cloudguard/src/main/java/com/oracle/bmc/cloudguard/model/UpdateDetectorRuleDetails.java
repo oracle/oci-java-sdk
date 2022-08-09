@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = UpdateDetectorRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateDetectorRuleDetails {
+public final class UpdateDetectorRuleDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -122,24 +123,37 @@ public final class UpdateDetectorRuleDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDetectorRuleDetails build() {
-            UpdateDetectorRuleDetails __instance__ =
+            UpdateDetectorRuleDetails model =
                     new UpdateDetectorRuleDetails(
-                            isEnabled, riskLevel, configurations, condition, labels);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isEnabled,
+                            this.riskLevel,
+                            this.configurations,
+                            this.condition,
+                            this.labels);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateDetectorRuleDetails o) {
-            Builder copiedBuilder =
-                    isEnabled(o.getIsEnabled())
-                            .riskLevel(o.getRiskLevel())
-                            .configurations(o.getConfigurations())
-                            .condition(o.getCondition())
-                            .labels(o.getLabels());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateDetectorRuleDetails model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("riskLevel")) {
+                this.riskLevel(model.getRiskLevel());
+            }
+            if (model.wasPropertyExplicitlySet("configurations")) {
+                this.configurations(model.getConfigurations());
+            }
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            if (model.wasPropertyExplicitlySet("labels")) {
+                this.labels(model.getLabels());
+            }
+            return this;
         }
     }
 
@@ -230,12 +244,12 @@ public final class UpdateDetectorRuleDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDetectorRuleDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", riskLevel=").append(String.valueOf(this.riskLevel));
         sb.append(", configurations=").append(String.valueOf(this.configurations));
         sb.append(", condition=").append(String.valueOf(this.condition));
         sb.append(", labels=").append(String.valueOf(this.labels));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -255,7 +269,7 @@ public final class UpdateDetectorRuleDetails {
                 && java.util.Objects.equals(this.configurations, other.configurations)
                 && java.util.Objects.equals(this.condition, other.condition)
                 && java.util.Objects.equals(this.labels, other.labels)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -269,16 +283,7 @@ public final class UpdateDetectorRuleDetails {
                         + (this.configurations == null ? 43 : this.configurations.hashCode());
         result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
         result = (result * PRIME) + (this.labels == null ? 43 : this.labels.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

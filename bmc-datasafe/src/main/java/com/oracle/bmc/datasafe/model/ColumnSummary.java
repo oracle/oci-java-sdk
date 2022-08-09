@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ColumnSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ColumnSummary {
+public final class ColumnSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "columnName",
@@ -184,34 +184,49 @@ public final class ColumnSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ColumnSummary build() {
-            ColumnSummary __instance__ =
+            ColumnSummary model =
                     new ColumnSummary(
-                            columnName,
-                            dataType,
-                            length,
-                            precision,
-                            scale,
-                            characterLength,
-                            tableName,
-                            schemaName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.columnName,
+                            this.dataType,
+                            this.length,
+                            this.precision,
+                            this.scale,
+                            this.characterLength,
+                            this.tableName,
+                            this.schemaName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ColumnSummary o) {
-            Builder copiedBuilder =
-                    columnName(o.getColumnName())
-                            .dataType(o.getDataType())
-                            .length(o.getLength())
-                            .precision(o.getPrecision())
-                            .scale(o.getScale())
-                            .characterLength(o.getCharacterLength())
-                            .tableName(o.getTableName())
-                            .schemaName(o.getSchemaName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ColumnSummary model) {
+            if (model.wasPropertyExplicitlySet("columnName")) {
+                this.columnName(model.getColumnName());
+            }
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("length")) {
+                this.length(model.getLength());
+            }
+            if (model.wasPropertyExplicitlySet("precision")) {
+                this.precision(model.getPrecision());
+            }
+            if (model.wasPropertyExplicitlySet("scale")) {
+                this.scale(model.getScale());
+            }
+            if (model.wasPropertyExplicitlySet("characterLength")) {
+                this.characterLength(model.getCharacterLength());
+            }
+            if (model.wasPropertyExplicitlySet("tableName")) {
+                this.tableName(model.getTableName());
+            }
+            if (model.wasPropertyExplicitlySet("schemaName")) {
+                this.schemaName(model.getSchemaName());
+            }
+            return this;
         }
     }
 
@@ -351,6 +366,7 @@ public final class ColumnSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ColumnSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("columnName=").append(String.valueOf(this.columnName));
         sb.append(", dataType=").append(String.valueOf(this.dataType));
         sb.append(", length=").append(String.valueOf(this.length));
@@ -359,7 +375,6 @@ public final class ColumnSummary {
         sb.append(", characterLength=").append(String.valueOf(this.characterLength));
         sb.append(", tableName=").append(String.valueOf(this.tableName));
         sb.append(", schemaName=").append(String.valueOf(this.schemaName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -382,7 +397,7 @@ public final class ColumnSummary {
                 && java.util.Objects.equals(this.characterLength, other.characterLength)
                 && java.util.Objects.equals(this.tableName, other.tableName)
                 && java.util.Objects.equals(this.schemaName, other.schemaName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -399,16 +414,7 @@ public final class ColumnSummary {
                         + (this.characterLength == null ? 43 : this.characterLength.hashCode());
         result = (result * PRIME) + (this.tableName == null ? 43 : this.tableName.hashCode());
         result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

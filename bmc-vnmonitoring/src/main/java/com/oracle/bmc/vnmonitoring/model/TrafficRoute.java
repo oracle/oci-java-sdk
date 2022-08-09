@@ -17,7 +17,7 @@ package com.oracle.bmc.vnmonitoring.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TrafficRoute.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TrafficRoute {
+public final class TrafficRoute extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"reachabilityStatus", "nodes", "routeAnalysisDescription"})
     public TrafficRoute(
@@ -89,21 +89,27 @@ public final class TrafficRoute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TrafficRoute build() {
-            TrafficRoute __instance__ =
-                    new TrafficRoute(reachabilityStatus, nodes, routeAnalysisDescription);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TrafficRoute model =
+                    new TrafficRoute(
+                            this.reachabilityStatus, this.nodes, this.routeAnalysisDescription);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TrafficRoute o) {
-            Builder copiedBuilder =
-                    reachabilityStatus(o.getReachabilityStatus())
-                            .nodes(o.getNodes())
-                            .routeAnalysisDescription(o.getRouteAnalysisDescription());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TrafficRoute model) {
+            if (model.wasPropertyExplicitlySet("reachabilityStatus")) {
+                this.reachabilityStatus(model.getReachabilityStatus());
+            }
+            if (model.wasPropertyExplicitlySet("nodes")) {
+                this.nodes(model.getNodes());
+            }
+            if (model.wasPropertyExplicitlySet("routeAnalysisDescription")) {
+                this.routeAnalysisDescription(model.getRouteAnalysisDescription());
+            }
+            return this;
         }
     }
 
@@ -226,11 +232,11 @@ public final class TrafficRoute {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TrafficRoute(");
+        sb.append("super=").append(super.toString());
         sb.append("reachabilityStatus=").append(String.valueOf(this.reachabilityStatus));
         sb.append(", nodes=").append(String.valueOf(this.nodes));
         sb.append(", routeAnalysisDescription=")
                 .append(String.valueOf(this.routeAnalysisDescription));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -249,7 +255,7 @@ public final class TrafficRoute {
                 && java.util.Objects.equals(this.nodes, other.nodes)
                 && java.util.Objects.equals(
                         this.routeAnalysisDescription, other.routeAnalysisDescription)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -267,16 +273,7 @@ public final class TrafficRoute {
                         + (this.routeAnalysisDescription == null
                                 ? 43
                                 : this.routeAnalysisDescription.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

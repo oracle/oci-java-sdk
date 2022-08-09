@@ -61,16 +61,18 @@ public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "eventCollection"
     })
     private ListEventsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.osmanagement.model.EventCollection eventCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.eventCollection = eventCollection;
@@ -81,6 +83,13 @@ public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -148,6 +157,7 @@ public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListEventsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             eventCollection(o.getEventCollection());
@@ -161,7 +171,7 @@ public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListEventsResponse build() {
             return new ListEventsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, eventCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, eventCollection);
         }
     }
 

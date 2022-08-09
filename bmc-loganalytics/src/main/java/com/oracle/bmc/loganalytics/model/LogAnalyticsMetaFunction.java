@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsMetaFunction.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsMetaFunction {
+public final class LogAnalyticsMetaFunction
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "metaFunctionArgument",
@@ -168,32 +169,45 @@ public final class LogAnalyticsMetaFunction {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsMetaFunction build() {
-            LogAnalyticsMetaFunction __instance__ =
+            LogAnalyticsMetaFunction model =
                     new LogAnalyticsMetaFunction(
-                            metaFunctionArgument,
-                            component,
-                            description,
-                            editVersion,
-                            metaFunctionId,
-                            javaClassName,
-                            name);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.metaFunctionArgument,
+                            this.component,
+                            this.description,
+                            this.editVersion,
+                            this.metaFunctionId,
+                            this.javaClassName,
+                            this.name);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsMetaFunction o) {
-            Builder copiedBuilder =
-                    metaFunctionArgument(o.getMetaFunctionArgument())
-                            .component(o.getComponent())
-                            .description(o.getDescription())
-                            .editVersion(o.getEditVersion())
-                            .metaFunctionId(o.getMetaFunctionId())
-                            .javaClassName(o.getJavaClassName())
-                            .name(o.getName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsMetaFunction model) {
+            if (model.wasPropertyExplicitlySet("metaFunctionArgument")) {
+                this.metaFunctionArgument(model.getMetaFunctionArgument());
+            }
+            if (model.wasPropertyExplicitlySet("component")) {
+                this.component(model.getComponent());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("editVersion")) {
+                this.editVersion(model.getEditVersion());
+            }
+            if (model.wasPropertyExplicitlySet("metaFunctionId")) {
+                this.metaFunctionId(model.getMetaFunctionId());
+            }
+            if (model.wasPropertyExplicitlySet("javaClassName")) {
+                this.javaClassName(model.getJavaClassName());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            return this;
         }
     }
 
@@ -319,6 +333,7 @@ public final class LogAnalyticsMetaFunction {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsMetaFunction(");
+        sb.append("super=").append(super.toString());
         sb.append("metaFunctionArgument=").append(String.valueOf(this.metaFunctionArgument));
         sb.append(", component=").append(String.valueOf(this.component));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -326,7 +341,6 @@ public final class LogAnalyticsMetaFunction {
         sb.append(", metaFunctionId=").append(String.valueOf(this.metaFunctionId));
         sb.append(", javaClassName=").append(String.valueOf(this.javaClassName));
         sb.append(", name=").append(String.valueOf(this.name));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -348,7 +362,7 @@ public final class LogAnalyticsMetaFunction {
                 && java.util.Objects.equals(this.metaFunctionId, other.metaFunctionId)
                 && java.util.Objects.equals(this.javaClassName, other.javaClassName)
                 && java.util.Objects.equals(this.name, other.name)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -370,16 +384,7 @@ public final class LogAnalyticsMetaFunction {
                 (result * PRIME)
                         + (this.javaClassName == null ? 43 : this.javaClassName.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

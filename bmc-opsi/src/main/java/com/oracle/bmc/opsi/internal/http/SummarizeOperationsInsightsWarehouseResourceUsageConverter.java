@@ -125,8 +125,8 @@ public class SummarizeOperationsInsightsWarehouseResourceUsageConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeOperationsInsightsWarehouseResourceUsageResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder
                                         .summarizeOperationsInsightsWarehouseResourceUsageAggregation(

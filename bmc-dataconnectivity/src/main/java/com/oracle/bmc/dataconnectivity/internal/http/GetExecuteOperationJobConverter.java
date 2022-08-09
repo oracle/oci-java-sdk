@@ -137,8 +137,8 @@ public class GetExecuteOperationJobConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .GetExecuteOperationJobResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.executeOperationJob(response.getItem());
 

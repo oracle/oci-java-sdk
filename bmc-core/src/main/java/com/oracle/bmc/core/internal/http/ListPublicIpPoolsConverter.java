@@ -154,8 +154,8 @@ public class ListPublicIpPoolsConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListPublicIpPoolsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.publicIpPoolCollection(response.getItem());
 

@@ -99,26 +99,45 @@ public final class OutputLink extends FlowPortLink {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OutputLink build() {
-            OutputLink __instance__ =
+            OutputLink model =
                     new OutputLink(
-                            key, modelVersion, parentRef, objectStatus, description, port, toLinks);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.objectStatus,
+                            this.description,
+                            this.port,
+                            this.toLinks);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OutputLink o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .objectStatus(o.getObjectStatus())
-                            .description(o.getDescription())
-                            .port(o.getPort())
-                            .toLinks(o.getToLinks());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OutputLink model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("toLinks")) {
+                this.toLinks(model.getToLinks());
+            }
+            return this;
         }
     }
 
@@ -175,7 +194,6 @@ public final class OutputLink extends FlowPortLink {
         sb.append("OutputLink(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", toLinks=").append(String.valueOf(this.toLinks));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,9 +208,7 @@ public final class OutputLink extends FlowPortLink {
         }
 
         OutputLink other = (OutputLink) o;
-        return java.util.Objects.equals(this.toLinks, other.toLinks)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.toLinks, other.toLinks) && super.equals(other);
     }
 
     @Override
@@ -200,16 +216,6 @@ public final class OutputLink extends FlowPortLink {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.toLinks == null ? 43 : this.toLinks.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

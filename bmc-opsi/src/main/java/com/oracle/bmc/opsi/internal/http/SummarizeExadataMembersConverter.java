@@ -153,8 +153,8 @@ public class SummarizeExadataMembersConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeExadataMembersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.exadataMemberCollection(response.getItem());
 

@@ -140,7 +140,8 @@ public class UpdateRRSetConverter {
 
                                 com.oracle.bmc.dns.responses.UpdateRRSetResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.UpdateRRSetResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.recordCollection(response.getItem());
 

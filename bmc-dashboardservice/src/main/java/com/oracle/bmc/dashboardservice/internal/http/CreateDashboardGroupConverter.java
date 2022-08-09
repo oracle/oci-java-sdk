@@ -117,8 +117,8 @@ public class CreateDashboardGroupConverter {
                                         builder =
                                                 com.oracle.bmc.dashboardservice.responses
                                                         .CreateDashboardGroupResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dashboardGroup(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.opensearch.model;
     builder = UpdateClusterStatusDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateClusterStatusDetails {
+public final class UpdateClusterStatusDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"clusterId", "lifecycleState"})
     public UpdateClusterStatusDetails(String clusterId, String lifecycleState) {
@@ -67,19 +68,23 @@ public final class UpdateClusterStatusDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateClusterStatusDetails build() {
-            UpdateClusterStatusDetails __instance__ =
-                    new UpdateClusterStatusDetails(clusterId, lifecycleState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateClusterStatusDetails model =
+                    new UpdateClusterStatusDetails(this.clusterId, this.lifecycleState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateClusterStatusDetails o) {
-            Builder copiedBuilder =
-                    clusterId(o.getClusterId()).lifecycleState(o.getLifecycleState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateClusterStatusDetails model) {
+            if (model.wasPropertyExplicitlySet("clusterId")) {
+                this.clusterId(model.getClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            return this;
         }
     }
 
@@ -135,9 +140,9 @@ public final class UpdateClusterStatusDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateClusterStatusDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("clusterId=").append(String.valueOf(this.clusterId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,7 +159,7 @@ public final class UpdateClusterStatusDetails {
         UpdateClusterStatusDetails other = (UpdateClusterStatusDetails) o;
         return java.util.Objects.equals(this.clusterId, other.clusterId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -165,16 +170,7 @@ public final class UpdateClusterStatusDetails {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

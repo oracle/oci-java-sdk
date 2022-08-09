@@ -51,13 +51,20 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
         return cluster;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "cluster"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "cluster"
+    })
     private GetClusterResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.containerengine.model.Cluster cluster) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.cluster = cluster;
@@ -68,6 +75,13 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetClusterResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             cluster(o.getCluster());
@@ -138,7 +153,7 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetClusterResponse build() {
-            return new GetClusterResponse(__httpStatusCode__, etag, opcRequestId, cluster);
+            return new GetClusterResponse(__httpStatusCode__, headers, etag, opcRequestId, cluster);
         }
     }
 

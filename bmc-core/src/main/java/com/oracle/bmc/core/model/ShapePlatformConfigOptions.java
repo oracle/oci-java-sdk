@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = ShapePlatformConfigOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ShapePlatformConfigOptions {
+public final class ShapePlatformConfigOptions
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "type",
@@ -174,41 +175,59 @@ public final class ShapePlatformConfigOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShapePlatformConfigOptions build() {
-            ShapePlatformConfigOptions __instance__ =
+            ShapePlatformConfigOptions model =
                     new ShapePlatformConfigOptions(
-                            type,
-                            secureBootOptions,
-                            measuredBootOptions,
-                            trustedPlatformModuleOptions,
-                            numaNodesPerSocketPlatformOptions,
-                            symmetricMultiThreadingOptions,
-                            accessControlServiceOptions,
-                            virtualInstructionsOptions,
-                            inputOutputMemoryManagementUnitOptions,
-                            percentageOfCoresEnabledOptions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.type,
+                            this.secureBootOptions,
+                            this.measuredBootOptions,
+                            this.trustedPlatformModuleOptions,
+                            this.numaNodesPerSocketPlatformOptions,
+                            this.symmetricMultiThreadingOptions,
+                            this.accessControlServiceOptions,
+                            this.virtualInstructionsOptions,
+                            this.inputOutputMemoryManagementUnitOptions,
+                            this.percentageOfCoresEnabledOptions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ShapePlatformConfigOptions o) {
-            Builder copiedBuilder =
-                    type(o.getType())
-                            .secureBootOptions(o.getSecureBootOptions())
-                            .measuredBootOptions(o.getMeasuredBootOptions())
-                            .trustedPlatformModuleOptions(o.getTrustedPlatformModuleOptions())
-                            .numaNodesPerSocketPlatformOptions(
-                                    o.getNumaNodesPerSocketPlatformOptions())
-                            .symmetricMultiThreadingOptions(o.getSymmetricMultiThreadingOptions())
-                            .accessControlServiceOptions(o.getAccessControlServiceOptions())
-                            .virtualInstructionsOptions(o.getVirtualInstructionsOptions())
-                            .inputOutputMemoryManagementUnitOptions(
-                                    o.getInputOutputMemoryManagementUnitOptions())
-                            .percentageOfCoresEnabledOptions(
-                                    o.getPercentageOfCoresEnabledOptions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ShapePlatformConfigOptions model) {
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("secureBootOptions")) {
+                this.secureBootOptions(model.getSecureBootOptions());
+            }
+            if (model.wasPropertyExplicitlySet("measuredBootOptions")) {
+                this.measuredBootOptions(model.getMeasuredBootOptions());
+            }
+            if (model.wasPropertyExplicitlySet("trustedPlatformModuleOptions")) {
+                this.trustedPlatformModuleOptions(model.getTrustedPlatformModuleOptions());
+            }
+            if (model.wasPropertyExplicitlySet("numaNodesPerSocketPlatformOptions")) {
+                this.numaNodesPerSocketPlatformOptions(
+                        model.getNumaNodesPerSocketPlatformOptions());
+            }
+            if (model.wasPropertyExplicitlySet("symmetricMultiThreadingOptions")) {
+                this.symmetricMultiThreadingOptions(model.getSymmetricMultiThreadingOptions());
+            }
+            if (model.wasPropertyExplicitlySet("accessControlServiceOptions")) {
+                this.accessControlServiceOptions(model.getAccessControlServiceOptions());
+            }
+            if (model.wasPropertyExplicitlySet("virtualInstructionsOptions")) {
+                this.virtualInstructionsOptions(model.getVirtualInstructionsOptions());
+            }
+            if (model.wasPropertyExplicitlySet("inputOutputMemoryManagementUnitOptions")) {
+                this.inputOutputMemoryManagementUnitOptions(
+                        model.getInputOutputMemoryManagementUnitOptions());
+            }
+            if (model.wasPropertyExplicitlySet("percentageOfCoresEnabledOptions")) {
+                this.percentageOfCoresEnabledOptions(model.getPercentageOfCoresEnabledOptions());
+            }
+            return this;
         }
     }
 
@@ -369,6 +388,7 @@ public final class ShapePlatformConfigOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ShapePlatformConfigOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("type=").append(String.valueOf(this.type));
         sb.append(", secureBootOptions=").append(String.valueOf(this.secureBootOptions));
         sb.append(", measuredBootOptions=").append(String.valueOf(this.measuredBootOptions));
@@ -386,7 +406,6 @@ public final class ShapePlatformConfigOptions {
                 .append(String.valueOf(this.inputOutputMemoryManagementUnitOptions));
         sb.append(", percentageOfCoresEnabledOptions=")
                 .append(String.valueOf(this.percentageOfCoresEnabledOptions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -420,7 +439,7 @@ public final class ShapePlatformConfigOptions {
                         other.inputOutputMemoryManagementUnitOptions)
                 && java.util.Objects.equals(
                         this.percentageOfCoresEnabledOptions, other.percentageOfCoresEnabledOptions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -471,16 +490,7 @@ public final class ShapePlatformConfigOptions {
                         + (this.percentageOfCoresEnabledOptions == null
                                 ? 43
                                 : this.percentageOfCoresEnabledOptions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -111,8 +111,8 @@ public class ChangeSecurityListCompartmentConverter {
                                                 com.oracle.bmc.core.responses
                                                         .ChangeSecurityListCompartmentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

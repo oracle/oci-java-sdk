@@ -19,7 +19,8 @@ package com.oracle.bmc.computeinstanceagent.model;
     builder = InstanceAgentCommandExecution.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceAgentCommandExecution {
+public final class InstanceAgentCommandExecution
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "instanceAgentCommandId",
@@ -224,36 +225,53 @@ public final class InstanceAgentCommandExecution {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceAgentCommandExecution build() {
-            InstanceAgentCommandExecution __instance__ =
+            InstanceAgentCommandExecution model =
                     new InstanceAgentCommandExecution(
-                            instanceAgentCommandId,
-                            instanceId,
-                            deliveryState,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            sequenceNumber,
-                            displayName,
-                            content);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.instanceAgentCommandId,
+                            this.instanceId,
+                            this.deliveryState,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.sequenceNumber,
+                            this.displayName,
+                            this.content);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceAgentCommandExecution o) {
-            Builder copiedBuilder =
-                    instanceAgentCommandId(o.getInstanceAgentCommandId())
-                            .instanceId(o.getInstanceId())
-                            .deliveryState(o.getDeliveryState())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .sequenceNumber(o.getSequenceNumber())
-                            .displayName(o.getDisplayName())
-                            .content(o.getContent());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceAgentCommandExecution model) {
+            if (model.wasPropertyExplicitlySet("instanceAgentCommandId")) {
+                this.instanceAgentCommandId(model.getInstanceAgentCommandId());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("deliveryState")) {
+                this.deliveryState(model.getDeliveryState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("sequenceNumber")) {
+                this.sequenceNumber(model.getSequenceNumber());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("content")) {
+                this.content(model.getContent());
+            }
+            return this;
         }
     }
 
@@ -542,6 +560,7 @@ public final class InstanceAgentCommandExecution {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceAgentCommandExecution(");
+        sb.append("super=").append(super.toString());
         sb.append("instanceAgentCommandId=").append(String.valueOf(this.instanceAgentCommandId));
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", deliveryState=").append(String.valueOf(this.deliveryState));
@@ -551,7 +570,6 @@ public final class InstanceAgentCommandExecution {
         sb.append(", sequenceNumber=").append(String.valueOf(this.sequenceNumber));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", content=").append(String.valueOf(this.content));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -575,7 +593,7 @@ public final class InstanceAgentCommandExecution {
                 && java.util.Objects.equals(this.sequenceNumber, other.sequenceNumber)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.content, other.content)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -601,16 +619,7 @@ public final class InstanceAgentCommandExecution {
                         + (this.sequenceNumber == null ? 43 : this.sequenceNumber.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

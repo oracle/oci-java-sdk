@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = TablespaceUsageTrendAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TablespaceUsageTrendAggregation {
+public final class TablespaceUsageTrendAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tablespaceName", "tablespaceType", "usageData"})
     public TablespaceUsageTrendAggregation(
@@ -87,21 +88,27 @@ public final class TablespaceUsageTrendAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TablespaceUsageTrendAggregation build() {
-            TablespaceUsageTrendAggregation __instance__ =
-                    new TablespaceUsageTrendAggregation(tablespaceName, tablespaceType, usageData);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TablespaceUsageTrendAggregation model =
+                    new TablespaceUsageTrendAggregation(
+                            this.tablespaceName, this.tablespaceType, this.usageData);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TablespaceUsageTrendAggregation o) {
-            Builder copiedBuilder =
-                    tablespaceName(o.getTablespaceName())
-                            .tablespaceType(o.getTablespaceType())
-                            .usageData(o.getUsageData());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TablespaceUsageTrendAggregation model) {
+            if (model.wasPropertyExplicitlySet("tablespaceName")) {
+                this.tablespaceName(model.getTablespaceName());
+            }
+            if (model.wasPropertyExplicitlySet("tablespaceType")) {
+                this.tablespaceType(model.getTablespaceType());
+            }
+            if (model.wasPropertyExplicitlySet("usageData")) {
+                this.usageData(model.getUsageData());
+            }
+            return this;
         }
     }
 
@@ -171,10 +178,10 @@ public final class TablespaceUsageTrendAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TablespaceUsageTrendAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("tablespaceName=").append(String.valueOf(this.tablespaceName));
         sb.append(", tablespaceType=").append(String.valueOf(this.tablespaceType));
         sb.append(", usageData=").append(String.valueOf(this.usageData));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,7 +199,7 @@ public final class TablespaceUsageTrendAggregation {
         return java.util.Objects.equals(this.tablespaceName, other.tablespaceName)
                 && java.util.Objects.equals(this.tablespaceType, other.tablespaceType)
                 && java.util.Objects.equals(this.usageData, other.usageData)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -206,16 +213,7 @@ public final class TablespaceUsageTrendAggregation {
                 (result * PRIME)
                         + (this.tablespaceType == null ? 43 : this.tablespaceType.hashCode());
         result = (result * PRIME) + (this.usageData == null ? 43 : this.usageData.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

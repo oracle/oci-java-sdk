@@ -108,8 +108,8 @@ public class GetRemotePeeringConnectionConverter {
                                                 com.oracle.bmc.core.responses
                                                         .GetRemotePeeringConnectionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.remotePeeringConnection(response.getItem());
 

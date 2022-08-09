@@ -136,32 +136,45 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CsvFormatAttribute build() {
-            CsvFormatAttribute __instance__ =
+            CsvFormatAttribute model =
                     new CsvFormatAttribute(
-                            isFilePattern,
-                            encoding,
-                            escapeCharacter,
-                            delimiter,
-                            quoteCharacter,
-                            hasHeader,
-                            timestampFormat);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isFilePattern,
+                            this.encoding,
+                            this.escapeCharacter,
+                            this.delimiter,
+                            this.quoteCharacter,
+                            this.hasHeader,
+                            this.timestampFormat);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CsvFormatAttribute o) {
-            Builder copiedBuilder =
-                    isFilePattern(o.getIsFilePattern())
-                            .encoding(o.getEncoding())
-                            .escapeCharacter(o.getEscapeCharacter())
-                            .delimiter(o.getDelimiter())
-                            .quoteCharacter(o.getQuoteCharacter())
-                            .hasHeader(o.getHasHeader())
-                            .timestampFormat(o.getTimestampFormat());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CsvFormatAttribute model) {
+            if (model.wasPropertyExplicitlySet("isFilePattern")) {
+                this.isFilePattern(model.getIsFilePattern());
+            }
+            if (model.wasPropertyExplicitlySet("encoding")) {
+                this.encoding(model.getEncoding());
+            }
+            if (model.wasPropertyExplicitlySet("escapeCharacter")) {
+                this.escapeCharacter(model.getEscapeCharacter());
+            }
+            if (model.wasPropertyExplicitlySet("delimiter")) {
+                this.delimiter(model.getDelimiter());
+            }
+            if (model.wasPropertyExplicitlySet("quoteCharacter")) {
+                this.quoteCharacter(model.getQuoteCharacter());
+            }
+            if (model.wasPropertyExplicitlySet("hasHeader")) {
+                this.hasHeader(model.getHasHeader());
+            }
+            if (model.wasPropertyExplicitlySet("timestampFormat")) {
+                this.timestampFormat(model.getTimestampFormat());
+            }
+            return this;
         }
     }
 
@@ -298,7 +311,6 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
         sb.append(", quoteCharacter=").append(String.valueOf(this.quoteCharacter));
         sb.append(", hasHeader=").append(String.valueOf(this.hasHeader));
         sb.append(", timestampFormat=").append(String.valueOf(this.timestampFormat));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -319,8 +331,7 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
                 && java.util.Objects.equals(this.quoteCharacter, other.quoteCharacter)
                 && java.util.Objects.equals(this.hasHeader, other.hasHeader)
                 && java.util.Objects.equals(this.timestampFormat, other.timestampFormat)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -339,16 +350,6 @@ public final class CsvFormatAttribute extends AbstractFormatAttribute {
         result =
                 (result * PRIME)
                         + (this.timestampFormat == null ? 43 : this.timestampFormat.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

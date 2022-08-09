@@ -17,7 +17,7 @@ package com.oracle.bmc.aispeech.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OutputLocation.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OutputLocation {
+public final class OutputLocation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"namespaceName", "bucketName", "prefix"})
     public OutputLocation(String namespaceName, String bucketName, String prefix) {
@@ -82,20 +82,26 @@ public final class OutputLocation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OutputLocation build() {
-            OutputLocation __instance__ = new OutputLocation(namespaceName, bucketName, prefix);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OutputLocation model =
+                    new OutputLocation(this.namespaceName, this.bucketName, this.prefix);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OutputLocation o) {
-            Builder copiedBuilder =
-                    namespaceName(o.getNamespaceName())
-                            .bucketName(o.getBucketName())
-                            .prefix(o.getPrefix());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OutputLocation model) {
+            if (model.wasPropertyExplicitlySet("namespaceName")) {
+                this.namespaceName(model.getNamespaceName());
+            }
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("prefix")) {
+                this.prefix(model.getPrefix());
+            }
+            return this;
         }
     }
 
@@ -165,10 +171,10 @@ public final class OutputLocation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OutputLocation(");
+        sb.append("super=").append(super.toString());
         sb.append("namespaceName=").append(String.valueOf(this.namespaceName));
         sb.append(", bucketName=").append(String.valueOf(this.bucketName));
         sb.append(", prefix=").append(String.valueOf(this.prefix));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +192,7 @@ public final class OutputLocation {
         return java.util.Objects.equals(this.namespaceName, other.namespaceName)
                 && java.util.Objects.equals(this.bucketName, other.bucketName)
                 && java.util.Objects.equals(this.prefix, other.prefix)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -198,16 +204,7 @@ public final class OutputLocation {
                         + (this.namespaceName == null ? 43 : this.namespaceName.hashCode());
         result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
         result = (result * PRIME) + (this.prefix == null ? 43 : this.prefix.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

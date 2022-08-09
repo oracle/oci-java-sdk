@@ -32,7 +32,8 @@ package com.oracle.bmc.dataconnectivity.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateConnectivityValidationDetails {
+public class CreateConnectivityValidationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -243,6 +244,7 @@ public class CreateConnectivityValidationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateConnectivityValidationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -280,7 +282,8 @@ public class CreateConnectivityValidationDetails {
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.parameters, other.parameters)
-                && java.util.Objects.equals(this.opConfigValues, other.opConfigValues);
+                && java.util.Objects.equals(this.opConfigValues, other.opConfigValues)
+                && super.equals(other);
     }
 
     @Override
@@ -303,6 +306,7 @@ public class CreateConnectivityValidationDetails {
         result =
                 (result * PRIME)
                         + (this.opConfigValues == null ? 43 : this.opConfigValues.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

@@ -236,8 +236,8 @@ public class SummarizeAwrDatabaseParametersConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeAwrDatabaseParametersResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDatabaseParameterCollection(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.managementdashboard.model;
     builder = ManagementDashboardSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ManagementDashboardSummary {
+public final class ManagementDashboardSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dashboardId",
@@ -423,58 +424,97 @@ public final class ManagementDashboardSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagementDashboardSummary build() {
-            ManagementDashboardSummary __instance__ =
+            ManagementDashboardSummary model =
                     new ManagementDashboardSummary(
-                            dashboardId,
-                            id,
-                            displayName,
-                            description,
-                            compartmentId,
-                            providerId,
-                            providerName,
-                            providerVersion,
-                            isOobDashboard,
-                            createdBy,
-                            timeCreated,
-                            updatedBy,
-                            timeUpdated,
-                            metadataVersion,
-                            screenImage,
-                            nls,
-                            type,
-                            lifecycleState,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dashboardId,
+                            this.id,
+                            this.displayName,
+                            this.description,
+                            this.compartmentId,
+                            this.providerId,
+                            this.providerName,
+                            this.providerVersion,
+                            this.isOobDashboard,
+                            this.createdBy,
+                            this.timeCreated,
+                            this.updatedBy,
+                            this.timeUpdated,
+                            this.metadataVersion,
+                            this.screenImage,
+                            this.nls,
+                            this.type,
+                            this.lifecycleState,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManagementDashboardSummary o) {
-            Builder copiedBuilder =
-                    dashboardId(o.getDashboardId())
-                            .id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .compartmentId(o.getCompartmentId())
-                            .providerId(o.getProviderId())
-                            .providerName(o.getProviderName())
-                            .providerVersion(o.getProviderVersion())
-                            .isOobDashboard(o.getIsOobDashboard())
-                            .createdBy(o.getCreatedBy())
-                            .timeCreated(o.getTimeCreated())
-                            .updatedBy(o.getUpdatedBy())
-                            .timeUpdated(o.getTimeUpdated())
-                            .metadataVersion(o.getMetadataVersion())
-                            .screenImage(o.getScreenImage())
-                            .nls(o.getNls())
-                            .type(o.getType())
-                            .lifecycleState(o.getLifecycleState())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManagementDashboardSummary model) {
+            if (model.wasPropertyExplicitlySet("dashboardId")) {
+                this.dashboardId(model.getDashboardId());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("providerId")) {
+                this.providerId(model.getProviderId());
+            }
+            if (model.wasPropertyExplicitlySet("providerName")) {
+                this.providerName(model.getProviderName());
+            }
+            if (model.wasPropertyExplicitlySet("providerVersion")) {
+                this.providerVersion(model.getProviderVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isOobDashboard")) {
+                this.isOobDashboard(model.getIsOobDashboard());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("updatedBy")) {
+                this.updatedBy(model.getUpdatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("metadataVersion")) {
+                this.metadataVersion(model.getMetadataVersion());
+            }
+            if (model.wasPropertyExplicitlySet("screenImage")) {
+                this.screenImage(model.getScreenImage());
+            }
+            if (model.wasPropertyExplicitlySet("nls")) {
+                this.nls(model.getNls());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -790,6 +830,7 @@ public final class ManagementDashboardSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagementDashboardSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("dashboardId=").append(String.valueOf(this.dashboardId));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -810,7 +851,6 @@ public final class ManagementDashboardSummary {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -845,7 +885,7 @@ public final class ManagementDashboardSummary {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -882,16 +922,7 @@ public final class ManagementDashboardSummary {
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

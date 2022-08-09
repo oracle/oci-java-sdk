@@ -105,8 +105,8 @@ public class GetMountTargetConverter {
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
                                                         .GetMountTargetResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.mountTarget(response.getItem());
 

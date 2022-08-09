@@ -61,17 +61,19 @@ public class ListTopUtilizedResourcesResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "topUtilizedResourceCollection"
     })
     private ListTopUtilizedResourcesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.licensemanager.model.TopUtilizedResourceCollection
                     topUtilizedResourceCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.topUtilizedResourceCollection = topUtilizedResourceCollection;
@@ -82,6 +84,13 @@ public class ListTopUtilizedResourcesResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListTopUtilizedResourcesResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(ListTopUtilizedResourcesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             topUtilizedResourceCollection(o.getTopUtilizedResourceCollection());
@@ -162,7 +172,11 @@ public class ListTopUtilizedResourcesResponse extends com.oracle.bmc.responses.B
          */
         public ListTopUtilizedResourcesResponse build() {
             return new ListTopUtilizedResourcesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, topUtilizedResourceCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    topUtilizedResourceCollection);
         }
     }
 

@@ -146,8 +146,8 @@ public class ListTacticsConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListTacticsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tacticCollection(response.getItem());
 

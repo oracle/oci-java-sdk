@@ -94,7 +94,8 @@ public class GetUserConverter {
 
                                 com.oracle.bmc.identity.responses.GetUserResponse.Builder builder =
                                         com.oracle.bmc.identity.responses.GetUserResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.user(response.getItem());
 

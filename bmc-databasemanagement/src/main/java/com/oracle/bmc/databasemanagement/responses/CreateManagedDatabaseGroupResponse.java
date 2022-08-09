@@ -68,6 +68,7 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "location",
         "opcRequestId",
         "etag",
@@ -75,11 +76,12 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
     })
     private CreateManagedDatabaseGroupResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String opcRequestId,
             String etag,
             com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.location = location;
         this.opcRequestId = opcRequestId;
         this.etag = etag;
@@ -91,6 +93,13 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -167,6 +176,7 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
          */
         public Builder copy(CreateManagedDatabaseGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
@@ -181,7 +191,12 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
          */
         public CreateManagedDatabaseGroupResponse build() {
             return new CreateManagedDatabaseGroupResponse(
-                    __httpStatusCode__, location, opcRequestId, etag, managedDatabaseGroup);
+                    __httpStatusCode__,
+                    headers,
+                    location,
+                    opcRequestId,
+                    etag,
+                    managedDatabaseGroup);
         }
     }
 

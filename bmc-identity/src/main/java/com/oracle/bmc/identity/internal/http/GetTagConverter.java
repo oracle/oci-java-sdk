@@ -98,7 +98,8 @@ public class GetTagConverter {
 
                                 com.oracle.bmc.identity.responses.GetTagResponse.Builder builder =
                                         com.oracle.bmc.identity.responses.GetTagResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.tag(response.getItem());
 

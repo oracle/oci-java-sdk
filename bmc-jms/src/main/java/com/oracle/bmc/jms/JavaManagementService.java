@@ -53,6 +53,19 @@ public interface JavaManagementService extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Add Java installation sites in a Fleet.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/AddFleetInstallationSitesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddFleetInstallationSites API.
+     */
+    AddFleetInstallationSitesResponse addFleetInstallationSites(
+            AddFleetInstallationSitesRequest request);
+
+    /**
      * Deletes the work request specified by an identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -92,6 +105,12 @@ public interface JavaManagementService extends AutoCloseable {
 
     /**
      * Create a new Fleet using the information provided.
+     * <p>
+     * `inventoryLog` is now a required parameter for CreateFleet API.
+     * Update existing applications using this API
+     * before July 15, 2022 to ensure the applications continue to work.
+     * See the [Service Change Notice](https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#JMS) for more details.
+     * Migrate existing fleets using the `UpdateFleet` API to set the `inventoryLog` parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -128,6 +147,20 @@ public interface JavaManagementService extends AutoCloseable {
     DeleteFleetResponse deleteFleet(DeleteFleetRequest request);
 
     /**
+     * Generates Agent Deploy Script for Fleet using the information provided.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GenerateAgentDeployScriptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateAgentDeployScript API.
+     */
+    GenerateAgentDeployScriptResponse generateAgentDeployScript(
+            GenerateAgentDeployScriptRequest request);
+
+    /**
      * Retrieve a Fleet with the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -151,6 +184,31 @@ public interface JavaManagementService extends AutoCloseable {
      */
     GetFleetAgentConfigurationResponse getFleetAgentConfiguration(
             GetFleetAgentConfigurationRequest request);
+
+    /**
+     * Returns details of a Java release family based on specified version.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetJavaFamilyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaFamily API.
+     */
+    GetJavaFamilyResponse getJavaFamily(GetJavaFamilyRequest request);
+
+    /**
+     * Returns detail of a Java release.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetJavaReleaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJavaRelease API.
+     */
+    GetJavaReleaseResponse getJavaRelease(GetJavaReleaseRequest request);
 
     /**
      * Retrieve the details of a work request with the specified ID.
@@ -202,6 +260,33 @@ public interface JavaManagementService extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListInstallationSitesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstallationSites API.
      */
     ListInstallationSitesResponse listInstallationSites(ListInstallationSitesRequest request);
+
+    /**
+     * Returns a list of the Java release family information.
+     * A Java release family is typically a major version in the Java version identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaFamiliesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaFamilies API.
+     */
+    ListJavaFamiliesResponse listJavaFamilies(ListJavaFamiliesRequest request);
+
+    /**
+     * Returns a list of Java releases.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaReleasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJavaReleases API.
+     */
+    ListJavaReleasesResponse listJavaReleases(ListJavaReleasesRequest request);
 
     /**
      * List Java Runtime usage in a specified host filtered by query parameters.

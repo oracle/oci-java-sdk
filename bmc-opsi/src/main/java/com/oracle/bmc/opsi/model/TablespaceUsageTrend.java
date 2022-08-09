@@ -19,7 +19,7 @@ package com.oracle.bmc.opsi.model;
     builder = TablespaceUsageTrend.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TablespaceUsageTrend {
+public final class TablespaceUsageTrend extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"endTimestamp", "usage", "capacity"})
     public TablespaceUsageTrend(java.util.Date endTimestamp, Double usage, Double capacity) {
@@ -88,19 +88,26 @@ public final class TablespaceUsageTrend {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TablespaceUsageTrend build() {
-            TablespaceUsageTrend __instance__ =
-                    new TablespaceUsageTrend(endTimestamp, usage, capacity);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TablespaceUsageTrend model =
+                    new TablespaceUsageTrend(this.endTimestamp, this.usage, this.capacity);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TablespaceUsageTrend o) {
-            Builder copiedBuilder =
-                    endTimestamp(o.getEndTimestamp()).usage(o.getUsage()).capacity(o.getCapacity());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TablespaceUsageTrend model) {
+            if (model.wasPropertyExplicitlySet("endTimestamp")) {
+                this.endTimestamp(model.getEndTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
+            }
+            if (model.wasPropertyExplicitlySet("capacity")) {
+                this.capacity(model.getCapacity());
+            }
+            return this;
         }
     }
 
@@ -174,10 +181,10 @@ public final class TablespaceUsageTrend {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TablespaceUsageTrend(");
+        sb.append("super=").append(super.toString());
         sb.append("endTimestamp=").append(String.valueOf(this.endTimestamp));
         sb.append(", usage=").append(String.valueOf(this.usage));
         sb.append(", capacity=").append(String.valueOf(this.capacity));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -195,7 +202,7 @@ public final class TablespaceUsageTrend {
         return java.util.Objects.equals(this.endTimestamp, other.endTimestamp)
                 && java.util.Objects.equals(this.usage, other.usage)
                 && java.util.Objects.equals(this.capacity, other.capacity)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -205,16 +212,7 @@ public final class TablespaceUsageTrend {
         result = (result * PRIME) + (this.endTimestamp == null ? 43 : this.endTimestamp.hashCode());
         result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
         result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

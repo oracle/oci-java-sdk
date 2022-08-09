@@ -99,6 +99,7 @@ public class CreateOperationsInsightsWarehouseUserResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "opcRequestId",
         "location",
@@ -108,6 +109,7 @@ public class CreateOperationsInsightsWarehouseUserResponse
     })
     private CreateOperationsInsightsWarehouseUserResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String location,
@@ -115,7 +117,7 @@ public class CreateOperationsInsightsWarehouseUserResponse
             String etag,
             com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
                     operationsInsightsWarehouseUser) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.location = location;
@@ -129,6 +131,13 @@ public class CreateOperationsInsightsWarehouseUserResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -239,6 +248,7 @@ public class CreateOperationsInsightsWarehouseUserResponse
          */
         public Builder copy(CreateOperationsInsightsWarehouseUserResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             location(o.getLocation());
@@ -256,6 +266,7 @@ public class CreateOperationsInsightsWarehouseUserResponse
         public CreateOperationsInsightsWarehouseUserResponse build() {
             return new CreateOperationsInsightsWarehouseUserResponse(
                     __httpStatusCode__,
+                    headers,
                     opcWorkRequestId,
                     opcRequestId,
                     location,

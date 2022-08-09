@@ -21,7 +21,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceFilters.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceFilters {
+public final class ResourceFilters extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTagEquals",
@@ -165,28 +165,37 @@ public final class ResourceFilters {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceFilters build() {
-            ResourceFilters __instance__ =
+            ResourceFilters model =
                     new ResourceFilters(
-                            definedTagEquals,
-                            freeformTagEquals,
-                            definedTagExists,
-                            freeformTagExists,
-                            compartmentIdInSubtree);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.definedTagEquals,
+                            this.freeformTagEquals,
+                            this.definedTagExists,
+                            this.freeformTagExists,
+                            this.compartmentIdInSubtree);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResourceFilters o) {
-            Builder copiedBuilder =
-                    definedTagEquals(o.getDefinedTagEquals())
-                            .freeformTagEquals(o.getFreeformTagEquals())
-                            .definedTagExists(o.getDefinedTagExists())
-                            .freeformTagExists(o.getFreeformTagExists())
-                            .compartmentIdInSubtree(o.getCompartmentIdInSubtree());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResourceFilters model) {
+            if (model.wasPropertyExplicitlySet("definedTagEquals")) {
+                this.definedTagEquals(model.getDefinedTagEquals());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTagEquals")) {
+                this.freeformTagEquals(model.getFreeformTagEquals());
+            }
+            if (model.wasPropertyExplicitlySet("definedTagExists")) {
+                this.definedTagExists(model.getDefinedTagExists());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTagExists")) {
+                this.freeformTagExists(model.getFreeformTagExists());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentIdInSubtree")) {
+                this.compartmentIdInSubtree(model.getCompartmentIdInSubtree());
+            }
+            return this;
         }
     }
 
@@ -318,12 +327,12 @@ public final class ResourceFilters {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResourceFilters(");
+        sb.append("super=").append(super.toString());
         sb.append("definedTagEquals=").append(String.valueOf(this.definedTagEquals));
         sb.append(", freeformTagEquals=").append(String.valueOf(this.freeformTagEquals));
         sb.append(", definedTagExists=").append(String.valueOf(this.definedTagExists));
         sb.append(", freeformTagExists=").append(String.valueOf(this.freeformTagExists));
         sb.append(", compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -344,7 +353,7 @@ public final class ResourceFilters {
                 && java.util.Objects.equals(this.freeformTagExists, other.freeformTagExists)
                 && java.util.Objects.equals(
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -368,16 +377,7 @@ public final class ResourceFilters {
                         + (this.compartmentIdInSubtree == null
                                 ? 43
                                 : this.compartmentIdInSubtree.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -113,7 +113,8 @@ public class StartChannelConverter {
 
                                 com.oracle.bmc.oda.responses.StartChannelResponse.Builder builder =
                                         com.oracle.bmc.oda.responses.StartChannelResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.channel(response.getItem());
 

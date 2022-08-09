@@ -119,8 +119,8 @@ public class GetTaskScheduleConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .GetTaskScheduleResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.taskSchedule(response.getItem());
 

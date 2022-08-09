@@ -61,17 +61,19 @@ public class SummarizeAwrDbTopWaitEventsResponse extends com.oracle.bmc.response
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "awrDbTopWaitEventCollection"
     })
     private SummarizeAwrDbTopWaitEventsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.databasemanagement.model.AwrDbTopWaitEventCollection
                     awrDbTopWaitEventCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.awrDbTopWaitEventCollection = awrDbTopWaitEventCollection;
@@ -82,6 +84,13 @@ public class SummarizeAwrDbTopWaitEventsResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class SummarizeAwrDbTopWaitEventsResponse extends com.oracle.bmc.response
          */
         public Builder copy(SummarizeAwrDbTopWaitEventsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             awrDbTopWaitEventCollection(o.getAwrDbTopWaitEventCollection());
@@ -162,7 +172,11 @@ public class SummarizeAwrDbTopWaitEventsResponse extends com.oracle.bmc.response
          */
         public SummarizeAwrDbTopWaitEventsResponse build() {
             return new SummarizeAwrDbTopWaitEventsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, awrDbTopWaitEventCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    awrDbTopWaitEventCollection);
         }
     }
 

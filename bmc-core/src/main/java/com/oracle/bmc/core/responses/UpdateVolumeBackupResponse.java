@@ -36,12 +36,13 @@ public class UpdateVolumeBackupResponse extends com.oracle.bmc.responses.BmcResp
         return volumeBackup;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "volumeBackup"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "etag", "volumeBackup"})
     private UpdateVolumeBackupResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             com.oracle.bmc.core.model.VolumeBackup volumeBackup) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.volumeBackup = volumeBackup;
     }
@@ -51,6 +52,13 @@ public class UpdateVolumeBackupResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -92,6 +100,7 @@ public class UpdateVolumeBackupResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(UpdateVolumeBackupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             volumeBackup(o.getVolumeBackup());
 
@@ -103,7 +112,7 @@ public class UpdateVolumeBackupResponse extends com.oracle.bmc.responses.BmcResp
          * @return the response object
          */
         public UpdateVolumeBackupResponse build() {
-            return new UpdateVolumeBackupResponse(__httpStatusCode__, etag, volumeBackup);
+            return new UpdateVolumeBackupResponse(__httpStatusCode__, headers, etag, volumeBackup);
         }
     }
 

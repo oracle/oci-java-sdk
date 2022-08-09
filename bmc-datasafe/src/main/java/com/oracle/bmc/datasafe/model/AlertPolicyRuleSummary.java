@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = AlertPolicyRuleSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AlertPolicyRuleSummary {
+public final class AlertPolicyRuleSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "description", "expression"})
     public AlertPolicyRuleSummary(String key, String description, String expression) {
@@ -84,19 +85,26 @@ public final class AlertPolicyRuleSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AlertPolicyRuleSummary build() {
-            AlertPolicyRuleSummary __instance__ =
-                    new AlertPolicyRuleSummary(key, description, expression);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AlertPolicyRuleSummary model =
+                    new AlertPolicyRuleSummary(this.key, this.description, this.expression);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AlertPolicyRuleSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey()).description(o.getDescription()).expression(o.getExpression());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AlertPolicyRuleSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("expression")) {
+                this.expression(model.getExpression());
+            }
+            return this;
         }
     }
 
@@ -166,10 +174,10 @@ public final class AlertPolicyRuleSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AlertPolicyRuleSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", expression=").append(String.valueOf(this.expression));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -187,7 +195,7 @@ public final class AlertPolicyRuleSummary {
         return java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.expression, other.expression)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -197,16 +205,7 @@ public final class AlertPolicyRuleSummary {
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.expression == null ? 43 : this.expression.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

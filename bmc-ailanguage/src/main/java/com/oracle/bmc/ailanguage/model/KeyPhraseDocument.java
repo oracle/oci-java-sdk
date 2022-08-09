@@ -19,7 +19,7 @@ package com.oracle.bmc.ailanguage.model;
     builder = KeyPhraseDocument.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class KeyPhraseDocument {
+public final class KeyPhraseDocument extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "text", "languageCode"})
     public KeyPhraseDocument(String key, String text, String languageCode) {
@@ -84,18 +84,25 @@ public final class KeyPhraseDocument {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KeyPhraseDocument build() {
-            KeyPhraseDocument __instance__ = new KeyPhraseDocument(key, text, languageCode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            KeyPhraseDocument model = new KeyPhraseDocument(this.key, this.text, this.languageCode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(KeyPhraseDocument o) {
-            Builder copiedBuilder =
-                    key(o.getKey()).text(o.getText()).languageCode(o.getLanguageCode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(KeyPhraseDocument model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("text")) {
+                this.text(model.getText());
+            }
+            if (model.wasPropertyExplicitlySet("languageCode")) {
+                this.languageCode(model.getLanguageCode());
+            }
+            return this;
         }
     }
 
@@ -165,10 +172,10 @@ public final class KeyPhraseDocument {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("KeyPhraseDocument(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", text=").append(String.valueOf(this.text));
         sb.append(", languageCode=").append(String.valueOf(this.languageCode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +193,7 @@ public final class KeyPhraseDocument {
         return java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.text, other.text)
                 && java.util.Objects.equals(this.languageCode, other.languageCode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -196,16 +203,7 @@ public final class KeyPhraseDocument {
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.text == null ? 43 : this.text.hashCode());
         result = (result * PRIME) + (this.languageCode == null ? 43 : this.languageCode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

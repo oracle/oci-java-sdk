@@ -17,7 +17,7 @@ package com.oracle.bmc.nosql.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Column.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Column {
+public final class Column extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "type", "isNullable", "defaultValue"})
     public Column(String name, String type, Boolean isNullable, String defaultValue) {
@@ -99,21 +99,28 @@ public final class Column {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Column build() {
-            Column __instance__ = new Column(name, type, isNullable, defaultValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Column model = new Column(this.name, this.type, this.isNullable, this.defaultValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Column o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .type(o.getType())
-                            .isNullable(o.getIsNullable())
-                            .defaultValue(o.getDefaultValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Column model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("isNullable")) {
+                this.isNullable(model.getIsNullable());
+            }
+            if (model.wasPropertyExplicitlySet("defaultValue")) {
+                this.defaultValue(model.getDefaultValue());
+            }
+            return this;
         }
     }
 
@@ -197,11 +204,11 @@ public final class Column {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Column(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", isNullable=").append(String.valueOf(this.isNullable));
         sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -220,7 +227,7 @@ public final class Column {
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.isNullable, other.isNullable)
                 && java.util.Objects.equals(this.defaultValue, other.defaultValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -231,16 +238,7 @@ public final class Column {
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.isNullable == null ? 43 : this.isNullable.hashCode());
         result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -27,9 +27,12 @@ public class DeleteExportResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
-    private DeleteExportResponse(int __httpStatusCode__, String opcRequestId) {
-        super(__httpStatusCode__);
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    private DeleteExportResponse(
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
@@ -38,6 +41,13 @@ public class DeleteExportResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -68,6 +78,7 @@ public class DeleteExportResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(DeleteExportResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
 
             return this;
@@ -78,7 +89,7 @@ public class DeleteExportResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public DeleteExportResponse build() {
-            return new DeleteExportResponse(__httpStatusCode__, opcRequestId);
+            return new DeleteExportResponse(__httpStatusCode__, headers, opcRequestId);
         }
     }
 

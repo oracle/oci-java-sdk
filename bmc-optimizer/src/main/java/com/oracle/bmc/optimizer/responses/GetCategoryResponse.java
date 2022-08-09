@@ -38,12 +38,13 @@ public class GetCategoryResponse extends com.oracle.bmc.responses.BmcResponse {
         return category;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "category"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "category"})
     private GetCategoryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.optimizer.model.Category category) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.category = category;
     }
@@ -53,6 +54,13 @@ public class GetCategoryResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +104,7 @@ public class GetCategoryResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetCategoryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             category(o.getCategory());
 
@@ -107,7 +116,7 @@ public class GetCategoryResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetCategoryResponse build() {
-            return new GetCategoryResponse(__httpStatusCode__, opcRequestId, category);
+            return new GetCategoryResponse(__httpStatusCode__, headers, opcRequestId, category);
         }
     }
 

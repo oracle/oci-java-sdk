@@ -102,8 +102,8 @@ public class CreateRoverClusterConverter {
                                         builder =
                                                 com.oracle.bmc.rover.responses
                                                         .CreateRoverClusterResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.roverCluster(response.getItem());
 

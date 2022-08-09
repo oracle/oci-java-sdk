@@ -147,8 +147,8 @@ public class ListCustomTablesConverter {
                                         builder =
                                                 com.oracle.bmc.usageapi.responses
                                                         .ListCustomTablesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.customTableCollection(response.getItem());
 

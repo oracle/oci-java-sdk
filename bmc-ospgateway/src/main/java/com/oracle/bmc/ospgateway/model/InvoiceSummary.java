@@ -17,7 +17,7 @@ package com.oracle.bmc.ospgateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InvoiceSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InvoiceSummary {
+public final class InvoiceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "invoiceId",
@@ -512,70 +512,121 @@ public final class InvoiceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InvoiceSummary build() {
-            InvoiceSummary __instance__ =
+            InvoiceSummary model =
                     new InvoiceSummary(
-                            invoiceId,
-                            invoiceNumber,
-                            internalInvoiceId,
-                            isCreditCardPayable,
-                            invoiceStatus,
-                            invoiceType,
-                            isPaid,
-                            isPayable,
-                            invoiceAmount,
-                            invoiceAmountDue,
-                            invoiceAmountCredited,
-                            invoiceAmountAdjusted,
-                            invoiceAmountApplied,
-                            timeInvoiceDue,
-                            isPaymentFailed,
-                            invoiceAmountInDispute,
-                            invoiceRefNumber,
-                            invoicePoNumber,
-                            timeInvoice,
-                            currency,
-                            isPdfEmailAvailable,
-                            isDisplayViewPdf,
-                            isDisplayDownloadPdf,
-                            lastPaymentDetail,
-                            partyName,
-                            subscriptionIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.invoiceId,
+                            this.invoiceNumber,
+                            this.internalInvoiceId,
+                            this.isCreditCardPayable,
+                            this.invoiceStatus,
+                            this.invoiceType,
+                            this.isPaid,
+                            this.isPayable,
+                            this.invoiceAmount,
+                            this.invoiceAmountDue,
+                            this.invoiceAmountCredited,
+                            this.invoiceAmountAdjusted,
+                            this.invoiceAmountApplied,
+                            this.timeInvoiceDue,
+                            this.isPaymentFailed,
+                            this.invoiceAmountInDispute,
+                            this.invoiceRefNumber,
+                            this.invoicePoNumber,
+                            this.timeInvoice,
+                            this.currency,
+                            this.isPdfEmailAvailable,
+                            this.isDisplayViewPdf,
+                            this.isDisplayDownloadPdf,
+                            this.lastPaymentDetail,
+                            this.partyName,
+                            this.subscriptionIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InvoiceSummary o) {
-            Builder copiedBuilder =
-                    invoiceId(o.getInvoiceId())
-                            .invoiceNumber(o.getInvoiceNumber())
-                            .internalInvoiceId(o.getInternalInvoiceId())
-                            .isCreditCardPayable(o.getIsCreditCardPayable())
-                            .invoiceStatus(o.getInvoiceStatus())
-                            .invoiceType(o.getInvoiceType())
-                            .isPaid(o.getIsPaid())
-                            .isPayable(o.getIsPayable())
-                            .invoiceAmount(o.getInvoiceAmount())
-                            .invoiceAmountDue(o.getInvoiceAmountDue())
-                            .invoiceAmountCredited(o.getInvoiceAmountCredited())
-                            .invoiceAmountAdjusted(o.getInvoiceAmountAdjusted())
-                            .invoiceAmountApplied(o.getInvoiceAmountApplied())
-                            .timeInvoiceDue(o.getTimeInvoiceDue())
-                            .isPaymentFailed(o.getIsPaymentFailed())
-                            .invoiceAmountInDispute(o.getInvoiceAmountInDispute())
-                            .invoiceRefNumber(o.getInvoiceRefNumber())
-                            .invoicePoNumber(o.getInvoicePoNumber())
-                            .timeInvoice(o.getTimeInvoice())
-                            .currency(o.getCurrency())
-                            .isPdfEmailAvailable(o.getIsPdfEmailAvailable())
-                            .isDisplayViewPdf(o.getIsDisplayViewPdf())
-                            .isDisplayDownloadPdf(o.getIsDisplayDownloadPdf())
-                            .lastPaymentDetail(o.getLastPaymentDetail())
-                            .partyName(o.getPartyName())
-                            .subscriptionIds(o.getSubscriptionIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InvoiceSummary model) {
+            if (model.wasPropertyExplicitlySet("invoiceId")) {
+                this.invoiceId(model.getInvoiceId());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceNumber")) {
+                this.invoiceNumber(model.getInvoiceNumber());
+            }
+            if (model.wasPropertyExplicitlySet("internalInvoiceId")) {
+                this.internalInvoiceId(model.getInternalInvoiceId());
+            }
+            if (model.wasPropertyExplicitlySet("isCreditCardPayable")) {
+                this.isCreditCardPayable(model.getIsCreditCardPayable());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceStatus")) {
+                this.invoiceStatus(model.getInvoiceStatus());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceType")) {
+                this.invoiceType(model.getInvoiceType());
+            }
+            if (model.wasPropertyExplicitlySet("isPaid")) {
+                this.isPaid(model.getIsPaid());
+            }
+            if (model.wasPropertyExplicitlySet("isPayable")) {
+                this.isPayable(model.getIsPayable());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceAmount")) {
+                this.invoiceAmount(model.getInvoiceAmount());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceAmountDue")) {
+                this.invoiceAmountDue(model.getInvoiceAmountDue());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceAmountCredited")) {
+                this.invoiceAmountCredited(model.getInvoiceAmountCredited());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceAmountAdjusted")) {
+                this.invoiceAmountAdjusted(model.getInvoiceAmountAdjusted());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceAmountApplied")) {
+                this.invoiceAmountApplied(model.getInvoiceAmountApplied());
+            }
+            if (model.wasPropertyExplicitlySet("timeInvoiceDue")) {
+                this.timeInvoiceDue(model.getTimeInvoiceDue());
+            }
+            if (model.wasPropertyExplicitlySet("isPaymentFailed")) {
+                this.isPaymentFailed(model.getIsPaymentFailed());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceAmountInDispute")) {
+                this.invoiceAmountInDispute(model.getInvoiceAmountInDispute());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceRefNumber")) {
+                this.invoiceRefNumber(model.getInvoiceRefNumber());
+            }
+            if (model.wasPropertyExplicitlySet("invoicePoNumber")) {
+                this.invoicePoNumber(model.getInvoicePoNumber());
+            }
+            if (model.wasPropertyExplicitlySet("timeInvoice")) {
+                this.timeInvoice(model.getTimeInvoice());
+            }
+            if (model.wasPropertyExplicitlySet("currency")) {
+                this.currency(model.getCurrency());
+            }
+            if (model.wasPropertyExplicitlySet("isPdfEmailAvailable")) {
+                this.isPdfEmailAvailable(model.getIsPdfEmailAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("isDisplayViewPdf")) {
+                this.isDisplayViewPdf(model.getIsDisplayViewPdf());
+            }
+            if (model.wasPropertyExplicitlySet("isDisplayDownloadPdf")) {
+                this.isDisplayDownloadPdf(model.getIsDisplayDownloadPdf());
+            }
+            if (model.wasPropertyExplicitlySet("lastPaymentDetail")) {
+                this.lastPaymentDetail(model.getLastPaymentDetail());
+            }
+            if (model.wasPropertyExplicitlySet("partyName")) {
+                this.partyName(model.getPartyName());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionIds")) {
+                this.subscriptionIds(model.getSubscriptionIds());
+            }
+            return this;
         }
     }
 
@@ -1057,6 +1108,7 @@ public final class InvoiceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InvoiceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("invoiceId=").append(String.valueOf(this.invoiceId));
         sb.append(", invoiceNumber=").append(String.valueOf(this.invoiceNumber));
         sb.append(", internalInvoiceId=").append(String.valueOf(this.internalInvoiceId));
@@ -1083,7 +1135,6 @@ public final class InvoiceSummary {
         sb.append(", lastPaymentDetail=").append(String.valueOf(this.lastPaymentDetail));
         sb.append(", partyName=").append(String.valueOf(this.partyName));
         sb.append(", subscriptionIds=").append(String.valueOf(this.subscriptionIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1125,7 +1176,7 @@ public final class InvoiceSummary {
                 && java.util.Objects.equals(this.lastPaymentDetail, other.lastPaymentDetail)
                 && java.util.Objects.equals(this.partyName, other.partyName)
                 && java.util.Objects.equals(this.subscriptionIds, other.subscriptionIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1210,16 +1261,7 @@ public final class InvoiceSummary {
         result =
                 (result * PRIME)
                         + (this.subscriptionIds == null ? 43 : this.subscriptionIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

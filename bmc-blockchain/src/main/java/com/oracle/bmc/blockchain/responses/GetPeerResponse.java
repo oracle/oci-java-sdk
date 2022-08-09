@@ -53,13 +53,20 @@ public class GetPeerResponse extends com.oracle.bmc.responses.BmcResponse {
         return peer;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "peer"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "peer"
+    })
     private GetPeerResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.blockchain.model.Peer peer) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.peer = peer;
@@ -70,6 +77,13 @@ public class GetPeerResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetPeerResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetPeerResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             peer(o.getPeer());
@@ -142,7 +157,7 @@ public class GetPeerResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetPeerResponse build() {
-            return new GetPeerResponse(__httpStatusCode__, etag, opcRequestId, peer);
+            return new GetPeerResponse(__httpStatusCode__, headers, etag, opcRequestId, peer);
         }
     }
 

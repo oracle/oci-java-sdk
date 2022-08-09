@@ -20,7 +20,8 @@ package com.oracle.bmc.ocvp.model;
     builder = SupportedHostShapeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SupportedHostShapeSummary {
+public final class SupportedHostShapeSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -223,36 +224,53 @@ public final class SupportedHostShapeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SupportedHostShapeSummary build() {
-            SupportedHostShapeSummary __instance__ =
+            SupportedHostShapeSummary model =
                     new SupportedHostShapeSummary(
-                            name,
-                            supportedOperations,
-                            shapeFamily,
-                            defaultOcpuCount,
-                            supportedOcpuCount,
-                            supportedSddcTypes,
-                            supportedVmwareSoftwareVersions,
-                            description,
-                            isSupportShieldedInstances);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.supportedOperations,
+                            this.shapeFamily,
+                            this.defaultOcpuCount,
+                            this.supportedOcpuCount,
+                            this.supportedSddcTypes,
+                            this.supportedVmwareSoftwareVersions,
+                            this.description,
+                            this.isSupportShieldedInstances);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SupportedHostShapeSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .supportedOperations(o.getSupportedOperations())
-                            .shapeFamily(o.getShapeFamily())
-                            .defaultOcpuCount(o.getDefaultOcpuCount())
-                            .supportedOcpuCount(o.getSupportedOcpuCount())
-                            .supportedSddcTypes(o.getSupportedSddcTypes())
-                            .supportedVmwareSoftwareVersions(o.getSupportedVmwareSoftwareVersions())
-                            .description(o.getDescription())
-                            .isSupportShieldedInstances(o.getIsSupportShieldedInstances());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SupportedHostShapeSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("supportedOperations")) {
+                this.supportedOperations(model.getSupportedOperations());
+            }
+            if (model.wasPropertyExplicitlySet("shapeFamily")) {
+                this.shapeFamily(model.getShapeFamily());
+            }
+            if (model.wasPropertyExplicitlySet("defaultOcpuCount")) {
+                this.defaultOcpuCount(model.getDefaultOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("supportedOcpuCount")) {
+                this.supportedOcpuCount(model.getSupportedOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("supportedSddcTypes")) {
+                this.supportedSddcTypes(model.getSupportedSddcTypes());
+            }
+            if (model.wasPropertyExplicitlySet("supportedVmwareSoftwareVersions")) {
+                this.supportedVmwareSoftwareVersions(model.getSupportedVmwareSoftwareVersions());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isSupportShieldedInstances")) {
+                this.isSupportShieldedInstances(model.getIsSupportShieldedInstances());
+            }
+            return this;
         }
     }
 
@@ -422,6 +440,7 @@ public final class SupportedHostShapeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SupportedHostShapeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", supportedOperations=").append(String.valueOf(this.supportedOperations));
         sb.append(", shapeFamily=").append(String.valueOf(this.shapeFamily));
@@ -433,7 +452,6 @@ public final class SupportedHostShapeSummary {
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", isSupportShieldedInstances=")
                 .append(String.valueOf(this.isSupportShieldedInstances));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -459,7 +477,7 @@ public final class SupportedHostShapeSummary {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(
                         this.isSupportShieldedInstances, other.isSupportShieldedInstances)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -497,16 +515,7 @@ public final class SupportedHostShapeSummary {
                         + (this.isSupportShieldedInstances == null
                                 ? 43
                                 : this.isSupportShieldedInstances.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

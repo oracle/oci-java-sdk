@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>2.38.0</version>
+    <version>2.39.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -14,29 +14,40 @@
   <description>This project contains the client-side encryption components of the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
 
-  <properties>
-    <bouncycastle.version>1.70</bouncycastle.version>
-  </properties>
-
-  
-  <build>
-  </build>
 
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>2.38.0</version>
-  </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-circuitbreaker</artifactId>
-      <version>2.38.0</version>
+      <version>2.39.0</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-circuitbreaker</artifactId>
+      <version>2.39.0</version>
+      <scope>test</scope>
+  </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-keymanagement</artifactId>
-      <version>2.38.0</version>
+      <version>2.39.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

@@ -116,8 +116,8 @@ public class CreateDataGuardAssociationConverter {
                                                 com.oracle.bmc.database.responses
                                                         .CreateDataGuardAssociationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataGuardAssociation(response.getItem());
 

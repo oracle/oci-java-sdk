@@ -55,16 +55,18 @@ public class GetPublishedObjectResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "publishedObject"
     })
     private GetPublishedObjectResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.PublishedObject publishedObject) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.publishedObject = publishedObject;
@@ -75,6 +77,13 @@ public class GetPublishedObjectResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetPublishedObjectResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetPublishedObjectResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             publishedObject(o.getPublishedObject());
@@ -149,7 +159,7 @@ public class GetPublishedObjectResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetPublishedObjectResponse build() {
             return new GetPublishedObjectResponse(
-                    __httpStatusCode__, etag, opcRequestId, publishedObject);
+                    __httpStatusCode__, headers, etag, opcRequestId, publishedObject);
         }
     }
 

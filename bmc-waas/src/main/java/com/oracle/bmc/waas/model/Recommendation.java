@@ -19,7 +19,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Recommendation.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Recommendation {
+public final class Recommendation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -150,25 +150,41 @@ public final class Recommendation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Recommendation build() {
-            Recommendation __instance__ =
+            Recommendation model =
                     new Recommendation(
-                            key, modSecurityRuleIds, name, description, labels, recommendedAction);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modSecurityRuleIds,
+                            this.name,
+                            this.description,
+                            this.labels,
+                            this.recommendedAction);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Recommendation o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modSecurityRuleIds(o.getModSecurityRuleIds())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .labels(o.getLabels())
-                            .recommendedAction(o.getRecommendedAction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Recommendation model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modSecurityRuleIds")) {
+                this.modSecurityRuleIds(model.getModSecurityRuleIds());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("labels")) {
+                this.labels(model.getLabels());
+            }
+            if (model.wasPropertyExplicitlySet("recommendedAction")) {
+                this.recommendedAction(model.getRecommendedAction());
+            }
+            return this;
         }
     }
 
@@ -282,13 +298,13 @@ public final class Recommendation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Recommendation(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modSecurityRuleIds=").append(String.valueOf(this.modSecurityRuleIds));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", labels=").append(String.valueOf(this.labels));
         sb.append(", recommendedAction=").append(String.valueOf(this.recommendedAction));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -309,7 +325,7 @@ public final class Recommendation {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.labels, other.labels)
                 && java.util.Objects.equals(this.recommendedAction, other.recommendedAction)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -328,16 +344,7 @@ public final class Recommendation {
         result =
                 (result * PRIME)
                         + (this.recommendedAction == null ? 43 : this.recommendedAction.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

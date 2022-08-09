@@ -67,6 +67,7 @@ public class GetManagementAgentInstallKeyContentResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "contentLength",
         "contentType",
@@ -74,11 +75,12 @@ public class GetManagementAgentInstallKeyContentResponse
     })
     private GetManagementAgentInstallKeyContentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             Long contentLength,
             String contentType,
             java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.contentLength = contentLength;
         this.contentType = contentType;
@@ -90,6 +92,13 @@ public class GetManagementAgentInstallKeyContentResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -163,6 +172,7 @@ public class GetManagementAgentInstallKeyContentResponse
          */
         public Builder copy(GetManagementAgentInstallKeyContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             contentLength(o.getContentLength());
             contentType(o.getContentType());
@@ -177,7 +187,12 @@ public class GetManagementAgentInstallKeyContentResponse
          */
         public GetManagementAgentInstallKeyContentResponse build() {
             return new GetManagementAgentInstallKeyContentResponse(
-                    __httpStatusCode__, opcRequestId, contentLength, contentType, inputStream);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    contentLength,
+                    contentType,
+                    inputStream);
         }
     }
 

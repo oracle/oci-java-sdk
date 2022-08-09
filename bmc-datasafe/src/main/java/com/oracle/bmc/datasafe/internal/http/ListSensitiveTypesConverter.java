@@ -229,8 +229,8 @@ public class ListSensitiveTypesConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListSensitiveTypesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sensitiveTypeCollection(response.getItem());
 

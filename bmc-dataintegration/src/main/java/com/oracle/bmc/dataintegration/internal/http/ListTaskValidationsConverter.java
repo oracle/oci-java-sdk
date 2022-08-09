@@ -178,8 +178,8 @@ public class ListTaskValidationsConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .ListTaskValidationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.taskValidationSummaryCollection(response.getItem());
 

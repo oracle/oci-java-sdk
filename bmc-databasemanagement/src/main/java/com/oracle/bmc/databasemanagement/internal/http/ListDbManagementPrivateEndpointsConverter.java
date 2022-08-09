@@ -184,8 +184,8 @@ public class ListDbManagementPrivateEndpointsConverter {
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListDbManagementPrivateEndpointsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dbManagementPrivateEndpointCollection(response.getItem());
 

@@ -173,8 +173,8 @@ public class ListServiceCatalogAssociationsConverter {
                                                 com.oracle.bmc.servicecatalog.responses
                                                         .ListServiceCatalogAssociationsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.serviceCatalogAssociationCollection(response.getItem());
 

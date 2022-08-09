@@ -38,12 +38,18 @@ public class GetBackendHealthResponse extends com.oracle.bmc.responses.BmcRespon
         return backendHealth;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "backendHealth"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "backendHealth"
+    })
     private GetBackendHealthResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.networkloadbalancer.model.BackendHealth backendHealth) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.backendHealth = backendHealth;
     }
@@ -53,6 +59,13 @@ public class GetBackendHealthResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetBackendHealthResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetBackendHealthResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             backendHealth(o.getBackendHealth());
 
@@ -108,7 +122,8 @@ public class GetBackendHealthResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public GetBackendHealthResponse build() {
-            return new GetBackendHealthResponse(__httpStatusCode__, opcRequestId, backendHealth);
+            return new GetBackendHealthResponse(
+                    __httpStatusCode__, headers, opcRequestId, backendHealth);
         }
     }
 

@@ -53,13 +53,20 @@ public class GetExportSetResponse extends com.oracle.bmc.responses.BmcResponse {
         return exportSet;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "exportSet"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "exportSet"
+    })
     private GetExportSetResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.filestorage.model.ExportSet exportSet) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.exportSet = exportSet;
@@ -70,6 +77,13 @@ public class GetExportSetResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetExportSetResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetExportSetResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             exportSet(o.getExportSet());
@@ -142,7 +157,8 @@ public class GetExportSetResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetExportSetResponse build() {
-            return new GetExportSetResponse(__httpStatusCode__, etag, opcRequestId, exportSet);
+            return new GetExportSetResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, exportSet);
         }
     }
 

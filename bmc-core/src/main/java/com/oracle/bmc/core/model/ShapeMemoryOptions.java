@@ -22,7 +22,7 @@ package com.oracle.bmc.core.model;
     builder = ShapeMemoryOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ShapeMemoryOptions {
+public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "minInGBs",
@@ -142,28 +142,37 @@ public final class ShapeMemoryOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShapeMemoryOptions build() {
-            ShapeMemoryOptions __instance__ =
+            ShapeMemoryOptions model =
                     new ShapeMemoryOptions(
-                            minInGBs,
-                            maxInGBs,
-                            defaultPerOcpuInGBs,
-                            minPerOcpuInGBs,
-                            maxPerOcpuInGBs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.minInGBs,
+                            this.maxInGBs,
+                            this.defaultPerOcpuInGBs,
+                            this.minPerOcpuInGBs,
+                            this.maxPerOcpuInGBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ShapeMemoryOptions o) {
-            Builder copiedBuilder =
-                    minInGBs(o.getMinInGBs())
-                            .maxInGBs(o.getMaxInGBs())
-                            .defaultPerOcpuInGBs(o.getDefaultPerOcpuInGBs())
-                            .minPerOcpuInGBs(o.getMinPerOcpuInGBs())
-                            .maxPerOcpuInGBs(o.getMaxPerOcpuInGBs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ShapeMemoryOptions model) {
+            if (model.wasPropertyExplicitlySet("minInGBs")) {
+                this.minInGBs(model.getMinInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("maxInGBs")) {
+                this.maxInGBs(model.getMaxInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("defaultPerOcpuInGBs")) {
+                this.defaultPerOcpuInGBs(model.getDefaultPerOcpuInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("minPerOcpuInGBs")) {
+                this.minPerOcpuInGBs(model.getMinPerOcpuInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("maxPerOcpuInGBs")) {
+                this.maxPerOcpuInGBs(model.getMaxPerOcpuInGBs());
+            }
+            return this;
         }
     }
 
@@ -271,12 +280,12 @@ public final class ShapeMemoryOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ShapeMemoryOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("minInGBs=").append(String.valueOf(this.minInGBs));
         sb.append(", maxInGBs=").append(String.valueOf(this.maxInGBs));
         sb.append(", defaultPerOcpuInGBs=").append(String.valueOf(this.defaultPerOcpuInGBs));
         sb.append(", minPerOcpuInGBs=").append(String.valueOf(this.minPerOcpuInGBs));
         sb.append(", maxPerOcpuInGBs=").append(String.valueOf(this.maxPerOcpuInGBs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -296,7 +305,7 @@ public final class ShapeMemoryOptions {
                 && java.util.Objects.equals(this.defaultPerOcpuInGBs, other.defaultPerOcpuInGBs)
                 && java.util.Objects.equals(this.minPerOcpuInGBs, other.minPerOcpuInGBs)
                 && java.util.Objects.equals(this.maxPerOcpuInGBs, other.maxPerOcpuInGBs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -316,16 +325,7 @@ public final class ShapeMemoryOptions {
         result =
                 (result * PRIME)
                         + (this.maxPerOcpuInGBs == null ? 43 : this.maxPerOcpuInGBs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

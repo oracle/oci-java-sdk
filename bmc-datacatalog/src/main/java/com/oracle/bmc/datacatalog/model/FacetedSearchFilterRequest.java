@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = FacetedSearchFilterRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FacetedSearchFilterRequest {
+public final class FacetedSearchFilterRequest
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"searchDateFilters", "searchStringFilters"})
     public FacetedSearchFilterRequest(
@@ -71,20 +72,24 @@ public final class FacetedSearchFilterRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FacetedSearchFilterRequest build() {
-            FacetedSearchFilterRequest __instance__ =
-                    new FacetedSearchFilterRequest(searchDateFilters, searchStringFilters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FacetedSearchFilterRequest model =
+                    new FacetedSearchFilterRequest(
+                            this.searchDateFilters, this.searchStringFilters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FacetedSearchFilterRequest o) {
-            Builder copiedBuilder =
-                    searchDateFilters(o.getSearchDateFilters())
-                            .searchStringFilters(o.getSearchStringFilters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FacetedSearchFilterRequest model) {
+            if (model.wasPropertyExplicitlySet("searchDateFilters")) {
+                this.searchDateFilters(model.getSearchDateFilters());
+            }
+            if (model.wasPropertyExplicitlySet("searchStringFilters")) {
+                this.searchStringFilters(model.getSearchStringFilters());
+            }
+            return this;
         }
     }
 
@@ -140,9 +145,9 @@ public final class FacetedSearchFilterRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FacetedSearchFilterRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("searchDateFilters=").append(String.valueOf(this.searchDateFilters));
         sb.append(", searchStringFilters=").append(String.valueOf(this.searchStringFilters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,7 +164,7 @@ public final class FacetedSearchFilterRequest {
         FacetedSearchFilterRequest other = (FacetedSearchFilterRequest) o;
         return java.util.Objects.equals(this.searchDateFilters, other.searchDateFilters)
                 && java.util.Objects.equals(this.searchStringFilters, other.searchStringFilters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -174,16 +179,7 @@ public final class FacetedSearchFilterRequest {
                         + (this.searchStringFilters == null
                                 ? 43
                                 : this.searchStringFilters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.ailanguage.model;
     builder = DetectLanguageTextClassificationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetectLanguageTextClassificationDetails {
+public final class DetectLanguageTextClassificationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"text"})
     public DetectLanguageTextClassificationDetails(String text) {
@@ -50,18 +51,20 @@ public final class DetectLanguageTextClassificationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetectLanguageTextClassificationDetails build() {
-            DetectLanguageTextClassificationDetails __instance__ =
-                    new DetectLanguageTextClassificationDetails(text);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DetectLanguageTextClassificationDetails model =
+                    new DetectLanguageTextClassificationDetails(this.text);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DetectLanguageTextClassificationDetails o) {
-            Builder copiedBuilder = text(o.getText());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DetectLanguageTextClassificationDetails model) {
+            if (model.wasPropertyExplicitlySet("text")) {
+                this.text(model.getText());
+            }
+            return this;
         }
     }
 
@@ -103,8 +106,8 @@ public final class DetectLanguageTextClassificationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetectLanguageTextClassificationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("text=").append(String.valueOf(this.text));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -119,8 +122,7 @@ public final class DetectLanguageTextClassificationDetails {
         }
 
         DetectLanguageTextClassificationDetails other = (DetectLanguageTextClassificationDetails) o;
-        return java.util.Objects.equals(this.text, other.text)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.text, other.text) && super.equals(other);
     }
 
     @Override
@@ -128,16 +130,7 @@ public final class DetectLanguageTextClassificationDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.text == null ? 43 : this.text.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,7 @@ package com.oracle.bmc.datasafe.model;
     builder = MaskingColumnSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MaskingColumnSummary {
+public final class MaskingColumnSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -352,50 +352,81 @@ public final class MaskingColumnSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MaskingColumnSummary build() {
-            MaskingColumnSummary __instance__ =
+            MaskingColumnSummary model =
                     new MaskingColumnSummary(
-                            key,
-                            maskingPolicyId,
-                            lifecycleState,
-                            lifecycleDetails,
-                            timeCreated,
-                            timeUpdated,
-                            schemaName,
-                            objectName,
-                            objectType,
-                            columnName,
-                            childColumns,
-                            maskingColumnGroup,
-                            sensitiveTypeId,
-                            isMaskingEnabled,
-                            dataType,
-                            maskingFormats);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.maskingPolicyId,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.schemaName,
+                            this.objectName,
+                            this.objectType,
+                            this.columnName,
+                            this.childColumns,
+                            this.maskingColumnGroup,
+                            this.sensitiveTypeId,
+                            this.isMaskingEnabled,
+                            this.dataType,
+                            this.maskingFormats);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MaskingColumnSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .maskingPolicyId(o.getMaskingPolicyId())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .schemaName(o.getSchemaName())
-                            .objectName(o.getObjectName())
-                            .objectType(o.getObjectType())
-                            .columnName(o.getColumnName())
-                            .childColumns(o.getChildColumns())
-                            .maskingColumnGroup(o.getMaskingColumnGroup())
-                            .sensitiveTypeId(o.getSensitiveTypeId())
-                            .isMaskingEnabled(o.getIsMaskingEnabled())
-                            .dataType(o.getDataType())
-                            .maskingFormats(o.getMaskingFormats());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MaskingColumnSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("maskingPolicyId")) {
+                this.maskingPolicyId(model.getMaskingPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("schemaName")) {
+                this.schemaName(model.getSchemaName());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("columnName")) {
+                this.columnName(model.getColumnName());
+            }
+            if (model.wasPropertyExplicitlySet("childColumns")) {
+                this.childColumns(model.getChildColumns());
+            }
+            if (model.wasPropertyExplicitlySet("maskingColumnGroup")) {
+                this.maskingColumnGroup(model.getMaskingColumnGroup());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveTypeId")) {
+                this.sensitiveTypeId(model.getSensitiveTypeId());
+            }
+            if (model.wasPropertyExplicitlySet("isMaskingEnabled")) {
+                this.isMaskingEnabled(model.getIsMaskingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("maskingFormats")) {
+                this.maskingFormats(model.getMaskingFormats());
+            }
+            return this;
         }
     }
 
@@ -661,6 +692,7 @@ public final class MaskingColumnSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MaskingColumnSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", maskingPolicyId=").append(String.valueOf(this.maskingPolicyId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -677,7 +709,6 @@ public final class MaskingColumnSummary {
         sb.append(", isMaskingEnabled=").append(String.valueOf(this.isMaskingEnabled));
         sb.append(", dataType=").append(String.valueOf(this.dataType));
         sb.append(", maskingFormats=").append(String.valueOf(this.maskingFormats));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -708,7 +739,7 @@ public final class MaskingColumnSummary {
                 && java.util.Objects.equals(this.isMaskingEnabled, other.isMaskingEnabled)
                 && java.util.Objects.equals(this.dataType, other.dataType)
                 && java.util.Objects.equals(this.maskingFormats, other.maskingFormats)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -747,16 +778,7 @@ public final class MaskingColumnSummary {
         result =
                 (result * PRIME)
                         + (this.maskingFormats == null ? 43 : this.maskingFormats.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

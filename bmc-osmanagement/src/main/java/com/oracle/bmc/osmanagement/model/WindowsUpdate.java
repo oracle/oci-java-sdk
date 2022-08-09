@@ -17,7 +17,7 @@ package com.oracle.bmc.osmanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WindowsUpdate.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WindowsUpdate {
+public final class WindowsUpdate extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -211,36 +211,53 @@ public final class WindowsUpdate {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WindowsUpdate build() {
-            WindowsUpdate __instance__ =
+            WindowsUpdate model =
                     new WindowsUpdate(
-                            displayName,
-                            name,
-                            description,
-                            updateType,
-                            sizeInBytes,
-                            isEligibleForInstallation,
-                            installationRequirements,
-                            isRebootRequiredForInstallation,
-                            kbArticleIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.name,
+                            this.description,
+                            this.updateType,
+                            this.sizeInBytes,
+                            this.isEligibleForInstallation,
+                            this.installationRequirements,
+                            this.isRebootRequiredForInstallation,
+                            this.kbArticleIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WindowsUpdate o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .updateType(o.getUpdateType())
-                            .sizeInBytes(o.getSizeInBytes())
-                            .isEligibleForInstallation(o.getIsEligibleForInstallation())
-                            .installationRequirements(o.getInstallationRequirements())
-                            .isRebootRequiredForInstallation(o.getIsRebootRequiredForInstallation())
-                            .kbArticleIds(o.getKbArticleIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WindowsUpdate model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("updateType")) {
+                this.updateType(model.getUpdateType());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInBytes")) {
+                this.sizeInBytes(model.getSizeInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("isEligibleForInstallation")) {
+                this.isEligibleForInstallation(model.getIsEligibleForInstallation());
+            }
+            if (model.wasPropertyExplicitlySet("installationRequirements")) {
+                this.installationRequirements(model.getInstallationRequirements());
+            }
+            if (model.wasPropertyExplicitlySet("isRebootRequiredForInstallation")) {
+                this.isRebootRequiredForInstallation(model.getIsRebootRequiredForInstallation());
+            }
+            if (model.wasPropertyExplicitlySet("kbArticleIds")) {
+                this.kbArticleIds(model.getKbArticleIds());
+            }
+            return this;
         }
     }
 
@@ -448,6 +465,7 @@ public final class WindowsUpdate {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WindowsUpdate(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -460,7 +478,6 @@ public final class WindowsUpdate {
         sb.append(", isRebootRequiredForInstallation=")
                 .append(String.valueOf(this.isRebootRequiredForInstallation));
         sb.append(", kbArticleIds=").append(String.valueOf(this.kbArticleIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -487,7 +504,7 @@ public final class WindowsUpdate {
                 && java.util.Objects.equals(
                         this.isRebootRequiredForInstallation, other.isRebootRequiredForInstallation)
                 && java.util.Objects.equals(this.kbArticleIds, other.kbArticleIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -515,16 +532,7 @@ public final class WindowsUpdate {
                                 ? 43
                                 : this.isRebootRequiredForInstallation.hashCode());
         result = (result * PRIME) + (this.kbArticleIds == null ? 43 : this.kbArticleIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

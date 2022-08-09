@@ -20,7 +20,8 @@ package com.oracle.bmc.onesubscription.model;
     builder = InvoicelineComputedUsageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InvoicelineComputedUsageSummary {
+public final class InvoicelineComputedUsageSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "parentProduct",
@@ -185,34 +186,49 @@ public final class InvoicelineComputedUsageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InvoicelineComputedUsageSummary build() {
-            InvoicelineComputedUsageSummary __instance__ =
+            InvoicelineComputedUsageSummary model =
                     new InvoicelineComputedUsageSummary(
-                            parentProduct,
-                            product,
-                            quantity,
-                            netUnitPrice,
-                            timeMeteredOn,
-                            type,
-                            cost,
-                            costRounded);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.parentProduct,
+                            this.product,
+                            this.quantity,
+                            this.netUnitPrice,
+                            this.timeMeteredOn,
+                            this.type,
+                            this.cost,
+                            this.costRounded);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InvoicelineComputedUsageSummary o) {
-            Builder copiedBuilder =
-                    parentProduct(o.getParentProduct())
-                            .product(o.getProduct())
-                            .quantity(o.getQuantity())
-                            .netUnitPrice(o.getNetUnitPrice())
-                            .timeMeteredOn(o.getTimeMeteredOn())
-                            .type(o.getType())
-                            .cost(o.getCost())
-                            .costRounded(o.getCostRounded());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InvoicelineComputedUsageSummary model) {
+            if (model.wasPropertyExplicitlySet("parentProduct")) {
+                this.parentProduct(model.getParentProduct());
+            }
+            if (model.wasPropertyExplicitlySet("product")) {
+                this.product(model.getProduct());
+            }
+            if (model.wasPropertyExplicitlySet("quantity")) {
+                this.quantity(model.getQuantity());
+            }
+            if (model.wasPropertyExplicitlySet("netUnitPrice")) {
+                this.netUnitPrice(model.getNetUnitPrice());
+            }
+            if (model.wasPropertyExplicitlySet("timeMeteredOn")) {
+                this.timeMeteredOn(model.getTimeMeteredOn());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("cost")) {
+                this.cost(model.getCost());
+            }
+            if (model.wasPropertyExplicitlySet("costRounded")) {
+                this.costRounded(model.getCostRounded());
+            }
+            return this;
         }
     }
 
@@ -406,6 +422,7 @@ public final class InvoicelineComputedUsageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InvoicelineComputedUsageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("parentProduct=").append(String.valueOf(this.parentProduct));
         sb.append(", product=").append(String.valueOf(this.product));
         sb.append(", quantity=").append(String.valueOf(this.quantity));
@@ -414,7 +431,6 @@ public final class InvoicelineComputedUsageSummary {
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", cost=").append(String.valueOf(this.cost));
         sb.append(", costRounded=").append(String.valueOf(this.costRounded));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -437,7 +453,7 @@ public final class InvoicelineComputedUsageSummary {
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.cost, other.cost)
                 && java.util.Objects.equals(this.costRounded, other.costRounded)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -456,16 +472,7 @@ public final class InvoicelineComputedUsageSummary {
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.cost == null ? 43 : this.cost.hashCode());
         result = (result * PRIME) + (this.costRounded == null ? 43 : this.costRounded.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

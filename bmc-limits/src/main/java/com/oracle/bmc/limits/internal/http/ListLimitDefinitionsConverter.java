@@ -161,8 +161,8 @@ public class ListLimitDefinitionsConverter {
                                         builder =
                                                 com.oracle.bmc.limits.responses
                                                         .ListLimitDefinitionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

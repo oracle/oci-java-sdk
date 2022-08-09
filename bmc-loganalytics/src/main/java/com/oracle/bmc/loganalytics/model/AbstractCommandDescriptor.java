@@ -205,7 +205,7 @@ package com.oracle.bmc.loganalytics.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AbstractCommandDescriptor {
+public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayQueryString",
@@ -321,6 +321,7 @@ public class AbstractCommandDescriptor {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AbstractCommandDescriptor(");
+        sb.append("super=").append(super.toString());
         sb.append("displayQueryString=").append(String.valueOf(this.displayQueryString));
         sb.append(", internalQueryString=").append(String.valueOf(this.internalQueryString));
         sb.append(", category=").append(String.valueOf(this.category));
@@ -344,7 +345,8 @@ public class AbstractCommandDescriptor {
                 && java.util.Objects.equals(this.internalQueryString, other.internalQueryString)
                 && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.referencedFields, other.referencedFields)
-                && java.util.Objects.equals(this.declaredFields, other.declaredFields);
+                && java.util.Objects.equals(this.declaredFields, other.declaredFields)
+                && super.equals(other);
     }
 
     @Override
@@ -368,6 +370,7 @@ public class AbstractCommandDescriptor {
         result =
                 (result * PRIME)
                         + (this.declaredFields == null ? 43 : this.declaredFields.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

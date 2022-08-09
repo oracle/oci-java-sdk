@@ -19,7 +19,7 @@ package com.oracle.bmc.dataintegration.model;
     builder = CreateTaskRunDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateTaskRunDetails {
+public final class CreateTaskRunDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -248,42 +248,65 @@ public final class CreateTaskRunDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateTaskRunDetails build() {
-            CreateTaskRunDetails __instance__ =
+            CreateTaskRunDetails model =
                     new CreateTaskRunDetails(
-                            key,
-                            modelType,
-                            modelVersion,
-                            name,
-                            description,
-                            configProvider,
-                            identifier,
-                            taskScheduleKey,
-                            refTaskRunId,
-                            reRunType,
-                            stepId,
-                            registryMetadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelType,
+                            this.modelVersion,
+                            this.name,
+                            this.description,
+                            this.configProvider,
+                            this.identifier,
+                            this.taskScheduleKey,
+                            this.refTaskRunId,
+                            this.reRunType,
+                            this.stepId,
+                            this.registryMetadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateTaskRunDetails o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelType(o.getModelType())
-                            .modelVersion(o.getModelVersion())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .configProvider(o.getConfigProvider())
-                            .identifier(o.getIdentifier())
-                            .taskScheduleKey(o.getTaskScheduleKey())
-                            .refTaskRunId(o.getRefTaskRunId())
-                            .reRunType(o.getReRunType())
-                            .stepId(o.getStepId())
-                            .registryMetadata(o.getRegistryMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateTaskRunDetails model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("configProvider")) {
+                this.configProvider(model.getConfigProvider());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("taskScheduleKey")) {
+                this.taskScheduleKey(model.getTaskScheduleKey());
+            }
+            if (model.wasPropertyExplicitlySet("refTaskRunId")) {
+                this.refTaskRunId(model.getRefTaskRunId());
+            }
+            if (model.wasPropertyExplicitlySet("reRunType")) {
+                this.reRunType(model.getReRunType());
+            }
+            if (model.wasPropertyExplicitlySet("stepId")) {
+                this.stepId(model.getStepId());
+            }
+            if (model.wasPropertyExplicitlySet("registryMetadata")) {
+                this.registryMetadata(model.getRegistryMetadata());
+            }
+            return this;
         }
     }
 
@@ -501,6 +524,7 @@ public final class CreateTaskRunDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateTaskRunDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
@@ -513,7 +537,6 @@ public final class CreateTaskRunDetails {
         sb.append(", reRunType=").append(String.valueOf(this.reRunType));
         sb.append(", stepId=").append(String.valueOf(this.stepId));
         sb.append(", registryMetadata=").append(String.valueOf(this.registryMetadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -540,7 +563,7 @@ public final class CreateTaskRunDetails {
                 && java.util.Objects.equals(this.reRunType, other.reRunType)
                 && java.util.Objects.equals(this.stepId, other.stepId)
                 && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -565,16 +588,7 @@ public final class CreateTaskRunDetails {
         result =
                 (result * PRIME)
                         + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

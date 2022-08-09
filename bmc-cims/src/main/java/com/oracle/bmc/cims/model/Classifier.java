@@ -17,7 +17,7 @@ package com.oracle.bmc.cims.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Classifier.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Classifier {
+public final class Classifier extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -165,25 +165,45 @@ public final class Classifier {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Classifier build() {
-            Classifier __instance__ =
-                    new Classifier(id, name, label, description, issueTypeList, scope, unit);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Classifier model =
+                    new Classifier(
+                            this.id,
+                            this.name,
+                            this.label,
+                            this.description,
+                            this.issueTypeList,
+                            this.scope,
+                            this.unit);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Classifier o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .label(o.getLabel())
-                            .description(o.getDescription())
-                            .issueTypeList(o.getIssueTypeList())
-                            .scope(o.getScope())
-                            .unit(o.getUnit());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Classifier model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("label")) {
+                this.label(model.getLabel());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("issueTypeList")) {
+                this.issueTypeList(model.getIssueTypeList());
+            }
+            if (model.wasPropertyExplicitlySet("scope")) {
+                this.scope(model.getScope());
+            }
+            if (model.wasPropertyExplicitlySet("unit")) {
+                this.unit(model.getUnit());
+            }
+            return this;
         }
     }
 
@@ -405,6 +425,7 @@ public final class Classifier {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Classifier(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", label=").append(String.valueOf(this.label));
@@ -412,7 +433,6 @@ public final class Classifier {
         sb.append(", issueTypeList=").append(String.valueOf(this.issueTypeList));
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", unit=").append(String.valueOf(this.unit));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -434,7 +454,7 @@ public final class Classifier {
                 && java.util.Objects.equals(this.issueTypeList, other.issueTypeList)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.unit, other.unit)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -450,16 +470,7 @@ public final class Classifier {
                         + (this.issueTypeList == null ? 43 : this.issueTypeList.hashCode());
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

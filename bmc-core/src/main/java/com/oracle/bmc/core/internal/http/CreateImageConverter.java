@@ -93,7 +93,8 @@ public class CreateImageConverter {
 
                                 com.oracle.bmc.core.responses.CreateImageResponse.Builder builder =
                                         com.oracle.bmc.core.responses.CreateImageResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.image(response.getItem());
 

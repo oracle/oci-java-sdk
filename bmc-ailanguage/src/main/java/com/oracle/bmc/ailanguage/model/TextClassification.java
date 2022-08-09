@@ -19,7 +19,7 @@ package com.oracle.bmc.ailanguage.model;
     builder = TextClassification.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TextClassification {
+public final class TextClassification extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"label", "score"})
     public TextClassification(String label, Double score) {
@@ -71,17 +71,22 @@ public final class TextClassification {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TextClassification build() {
-            TextClassification __instance__ = new TextClassification(label, score);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TextClassification model = new TextClassification(this.label, this.score);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TextClassification o) {
-            Builder copiedBuilder = label(o.getLabel()).score(o.getScore());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TextClassification model) {
+            if (model.wasPropertyExplicitlySet("label")) {
+                this.label(model.getLabel());
+            }
+            if (model.wasPropertyExplicitlySet("score")) {
+                this.score(model.getScore());
+            }
+            return this;
         }
     }
 
@@ -141,9 +146,9 @@ public final class TextClassification {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TextClassification(");
+        sb.append("super=").append(super.toString());
         sb.append("label=").append(String.valueOf(this.label));
         sb.append(", score=").append(String.valueOf(this.score));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -160,7 +165,7 @@ public final class TextClassification {
         TextClassification other = (TextClassification) o;
         return java.util.Objects.equals(this.label, other.label)
                 && java.util.Objects.equals(this.score, other.score)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -169,16 +174,7 @@ public final class TextClassification {
         int result = 1;
         result = (result * PRIME) + (this.label == null ? 43 : this.label.hashCode());
         result = (result * PRIME) + (this.score == null ? 43 : this.score.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

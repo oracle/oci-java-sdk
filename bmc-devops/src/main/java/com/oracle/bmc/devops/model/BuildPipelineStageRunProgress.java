@@ -40,7 +40,8 @@ package com.oracle.bmc.devops.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class BuildPipelineStageRunProgress {
+public class BuildPipelineStageRunProgress
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "stageDisplayName",
@@ -207,6 +208,7 @@ public class BuildPipelineStageRunProgress {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BuildPipelineStageRunProgress(");
+        sb.append("super=").append(super.toString());
         sb.append("stageDisplayName=").append(String.valueOf(this.stageDisplayName));
         sb.append(", buildPipelineStageId=").append(String.valueOf(this.buildPipelineStageId));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
@@ -234,7 +236,8 @@ public class BuildPipelineStageRunProgress {
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(
-                        this.buildPipelineStagePredecessors, other.buildPipelineStagePredecessors);
+                        this.buildPipelineStagePredecessors, other.buildPipelineStagePredecessors)
+                && super.equals(other);
     }
 
     @Override
@@ -257,6 +260,7 @@ public class BuildPipelineStageRunProgress {
                         + (this.buildPipelineStagePredecessors == null
                                 ? 43
                                 : this.buildPipelineStagePredecessors.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

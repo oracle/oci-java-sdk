@@ -19,7 +19,8 @@ package com.oracle.bmc.containerengine.model;
     builder = CreateClusterKubeconfigContentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateClusterKubeconfigContentDetails {
+public final class CreateClusterKubeconfigContentDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tokenVersion", "expiration", "endpoint"})
     public CreateClusterKubeconfigContentDetails(
@@ -89,21 +90,27 @@ public final class CreateClusterKubeconfigContentDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateClusterKubeconfigContentDetails build() {
-            CreateClusterKubeconfigContentDetails __instance__ =
-                    new CreateClusterKubeconfigContentDetails(tokenVersion, expiration, endpoint);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateClusterKubeconfigContentDetails model =
+                    new CreateClusterKubeconfigContentDetails(
+                            this.tokenVersion, this.expiration, this.endpoint);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateClusterKubeconfigContentDetails o) {
-            Builder copiedBuilder =
-                    tokenVersion(o.getTokenVersion())
-                            .expiration(o.getExpiration())
-                            .endpoint(o.getEndpoint());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateClusterKubeconfigContentDetails model) {
+            if (model.wasPropertyExplicitlySet("tokenVersion")) {
+                this.tokenVersion(model.getTokenVersion());
+            }
+            if (model.wasPropertyExplicitlySet("expiration")) {
+                this.expiration(model.getExpiration());
+            }
+            if (model.wasPropertyExplicitlySet("endpoint")) {
+                this.endpoint(model.getEndpoint());
+            }
+            return this;
         }
     }
 
@@ -214,10 +221,10 @@ public final class CreateClusterKubeconfigContentDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateClusterKubeconfigContentDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("tokenVersion=").append(String.valueOf(this.tokenVersion));
         sb.append(", expiration=").append(String.valueOf(this.expiration));
         sb.append(", endpoint=").append(String.valueOf(this.endpoint));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -235,7 +242,7 @@ public final class CreateClusterKubeconfigContentDetails {
         return java.util.Objects.equals(this.tokenVersion, other.tokenVersion)
                 && java.util.Objects.equals(this.expiration, other.expiration)
                 && java.util.Objects.equals(this.endpoint, other.endpoint)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -245,16 +252,7 @@ public final class CreateClusterKubeconfigContentDetails {
         result = (result * PRIME) + (this.tokenVersion == null ? 43 : this.tokenVersion.hashCode());
         result = (result * PRIME) + (this.expiration == null ? 43 : this.expiration.hashCode());
         result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

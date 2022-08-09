@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemigration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MetadataRemap.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MetadataRemap {
+public final class MetadataRemap extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "oldValue", "newValue"})
     public MetadataRemap(Type type, String oldValue, String newValue) {
@@ -90,18 +90,25 @@ public final class MetadataRemap {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MetadataRemap build() {
-            MetadataRemap __instance__ = new MetadataRemap(type, oldValue, newValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MetadataRemap model = new MetadataRemap(this.type, this.oldValue, this.newValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MetadataRemap o) {
-            Builder copiedBuilder =
-                    type(o.getType()).oldValue(o.getOldValue()).newValue(o.getNewValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MetadataRemap model) {
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("oldValue")) {
+                this.oldValue(model.getOldValue());
+            }
+            if (model.wasPropertyExplicitlySet("newValue")) {
+                this.newValue(model.getNewValue());
+            }
+            return this;
         }
     }
 
@@ -226,10 +233,10 @@ public final class MetadataRemap {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MetadataRemap(");
+        sb.append("super=").append(super.toString());
         sb.append("type=").append(String.valueOf(this.type));
         sb.append(", oldValue=").append(String.valueOf(this.oldValue));
         sb.append(", newValue=").append(String.valueOf(this.newValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -247,7 +254,7 @@ public final class MetadataRemap {
         return java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.oldValue, other.oldValue)
                 && java.util.Objects.equals(this.newValue, other.newValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -257,16 +264,7 @@ public final class MetadataRemap {
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.oldValue == null ? 43 : this.oldValue.hashCode());
         result = (result * PRIME) + (this.newValue == null ? 43 : this.newValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

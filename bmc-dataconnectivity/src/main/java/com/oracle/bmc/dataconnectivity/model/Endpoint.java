@@ -17,7 +17,7 @@ package com.oracle.bmc.dataconnectivity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Endpoint.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Endpoint {
+public final class Endpoint extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vcnId",
@@ -348,48 +348,77 @@ public final class Endpoint {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Endpoint build() {
-            Endpoint __instance__ =
+            Endpoint model =
                     new Endpoint(
-                            vcnId,
-                            subnetId,
-                            dnsZones,
-                            freeformTags,
-                            definedTags,
-                            description,
-                            displayName,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            stateMessage,
-                            id,
-                            endpointSize,
-                            nsgIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.vcnId,
+                            this.subnetId,
+                            this.dnsZones,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.description,
+                            this.displayName,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.stateMessage,
+                            this.id,
+                            this.endpointSize,
+                            this.nsgIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Endpoint o) {
-            Builder copiedBuilder =
-                    vcnId(o.getVcnId())
-                            .subnetId(o.getSubnetId())
-                            .dnsZones(o.getDnsZones())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .stateMessage(o.getStateMessage())
-                            .id(o.getId())
-                            .endpointSize(o.getEndpointSize())
-                            .nsgIds(o.getNsgIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Endpoint model) {
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("dnsZones")) {
+                this.dnsZones(model.getDnsZones());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("stateMessage")) {
+                this.stateMessage(model.getStateMessage());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("endpointSize")) {
+                this.endpointSize(model.getEndpointSize());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            return this;
         }
     }
 
@@ -719,6 +748,7 @@ public final class Endpoint {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Endpoint(");
+        sb.append("super=").append(super.toString());
         sb.append("vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", dnsZones=").append(String.valueOf(this.dnsZones));
@@ -734,7 +764,6 @@ public final class Endpoint {
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", endpointSize=").append(String.valueOf(this.endpointSize));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -764,7 +793,7 @@ public final class Endpoint {
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.endpointSize, other.endpointSize)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -790,16 +819,7 @@ public final class Endpoint {
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.endpointSize == null ? 43 : this.endpointSize.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -174,8 +174,8 @@ public class SummarizeSqlResponseTimeDistributionsConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeSqlResponseTimeDistributionsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sqlResponseTimeDistributionAggregationCollection(
                                         response.getItem());

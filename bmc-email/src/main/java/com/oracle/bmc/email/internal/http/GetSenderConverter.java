@@ -97,7 +97,8 @@ public class GetSenderConverter {
 
                                 com.oracle.bmc.email.responses.GetSenderResponse.Builder builder =
                                         com.oracle.bmc.email.responses.GetSenderResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.sender(response.getItem());
 

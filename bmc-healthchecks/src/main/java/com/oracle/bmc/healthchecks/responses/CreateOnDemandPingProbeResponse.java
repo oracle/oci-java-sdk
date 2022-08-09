@@ -55,16 +55,18 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "location",
         "pingProbe"
     })
     private CreateOnDemandPingProbeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String location,
             com.oracle.bmc.healthchecks.model.PingProbe pingProbe) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.location = location;
         this.pingProbe = pingProbe;
@@ -75,6 +77,13 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(CreateOnDemandPingProbeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             location(o.getLocation());
             pingProbe(o.getPingProbe());
@@ -148,7 +158,7 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
          */
         public CreateOnDemandPingProbeResponse build() {
             return new CreateOnDemandPingProbeResponse(
-                    __httpStatusCode__, opcRequestId, location, pingProbe);
+                    __httpStatusCode__, headers, opcRequestId, location, pingProbe);
         }
     }
 

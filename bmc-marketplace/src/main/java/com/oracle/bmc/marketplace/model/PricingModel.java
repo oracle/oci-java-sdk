@@ -17,7 +17,7 @@ package com.oracle.bmc.marketplace.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PricingModel.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PricingModel {
+public final class PricingModel extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "type",
@@ -120,23 +120,37 @@ public final class PricingModel {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PricingModel build() {
-            PricingModel __instance__ =
-                    new PricingModel(type, payGoStrategy, currency, rate, internationalMarketPrice);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PricingModel model =
+                    new PricingModel(
+                            this.type,
+                            this.payGoStrategy,
+                            this.currency,
+                            this.rate,
+                            this.internationalMarketPrice);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PricingModel o) {
-            Builder copiedBuilder =
-                    type(o.getType())
-                            .payGoStrategy(o.getPayGoStrategy())
-                            .currency(o.getCurrency())
-                            .rate(o.getRate())
-                            .internationalMarketPrice(o.getInternationalMarketPrice());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PricingModel model) {
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("payGoStrategy")) {
+                this.payGoStrategy(model.getPayGoStrategy());
+            }
+            if (model.wasPropertyExplicitlySet("currency")) {
+                this.currency(model.getCurrency());
+            }
+            if (model.wasPropertyExplicitlySet("rate")) {
+                this.rate(model.getRate());
+            }
+            if (model.wasPropertyExplicitlySet("internationalMarketPrice")) {
+                this.internationalMarketPrice(model.getInternationalMarketPrice());
+            }
+            return this;
         }
     }
 
@@ -227,13 +241,13 @@ public final class PricingModel {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PricingModel(");
+        sb.append("super=").append(super.toString());
         sb.append("type=").append(String.valueOf(this.type));
         sb.append(", payGoStrategy=").append(String.valueOf(this.payGoStrategy));
         sb.append(", currency=").append(String.valueOf(this.currency));
         sb.append(", rate=").append(String.valueOf(this.rate));
         sb.append(", internationalMarketPrice=")
                 .append(String.valueOf(this.internationalMarketPrice));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -254,7 +268,7 @@ public final class PricingModel {
                 && java.util.Objects.equals(this.rate, other.rate)
                 && java.util.Objects.equals(
                         this.internationalMarketPrice, other.internationalMarketPrice)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -272,16 +286,7 @@ public final class PricingModel {
                         + (this.internationalMarketPrice == null
                                 ? 43
                                 : this.internationalMarketPrice.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

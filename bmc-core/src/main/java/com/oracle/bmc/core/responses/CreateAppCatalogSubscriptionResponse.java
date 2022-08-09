@@ -55,16 +55,18 @@ public class CreateAppCatalogSubscriptionResponse extends com.oracle.bmc.respons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "appCatalogSubscription"
     })
     private CreateAppCatalogSubscriptionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.AppCatalogSubscription appCatalogSubscription) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.appCatalogSubscription = appCatalogSubscription;
@@ -75,6 +77,13 @@ public class CreateAppCatalogSubscriptionResponse extends com.oracle.bmc.respons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class CreateAppCatalogSubscriptionResponse extends com.oracle.bmc.respons
          */
         public Builder copy(CreateAppCatalogSubscriptionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             appCatalogSubscription(o.getAppCatalogSubscription());
@@ -149,7 +159,7 @@ public class CreateAppCatalogSubscriptionResponse extends com.oracle.bmc.respons
          */
         public CreateAppCatalogSubscriptionResponse build() {
             return new CreateAppCatalogSubscriptionResponse(
-                    __httpStatusCode__, etag, opcRequestId, appCatalogSubscription);
+                    __httpStatusCode__, headers, etag, opcRequestId, appCatalogSubscription);
         }
     }
 

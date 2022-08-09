@@ -101,34 +101,49 @@ public final class DateAttribute extends AttributeProfileResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DateAttribute build() {
-            DateAttribute __instance__ =
+            DateAttribute model =
                     new DateAttribute(
-                            name,
-                            min,
-                            max,
-                            nullCount,
-                            distinctCount,
-                            uniqueCount,
-                            duplicateCount,
-                            valueFrequencies);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.min,
+                            this.max,
+                            this.nullCount,
+                            this.distinctCount,
+                            this.uniqueCount,
+                            this.duplicateCount,
+                            this.valueFrequencies);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DateAttribute o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .min(o.getMin())
-                            .max(o.getMax())
-                            .nullCount(o.getNullCount())
-                            .distinctCount(o.getDistinctCount())
-                            .uniqueCount(o.getUniqueCount())
-                            .duplicateCount(o.getDuplicateCount())
-                            .valueFrequencies(o.getValueFrequencies());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DateAttribute model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("min")) {
+                this.min(model.getMin());
+            }
+            if (model.wasPropertyExplicitlySet("max")) {
+                this.max(model.getMax());
+            }
+            if (model.wasPropertyExplicitlySet("nullCount")) {
+                this.nullCount(model.getNullCount());
+            }
+            if (model.wasPropertyExplicitlySet("distinctCount")) {
+                this.distinctCount(model.getDistinctCount());
+            }
+            if (model.wasPropertyExplicitlySet("uniqueCount")) {
+                this.uniqueCount(model.getUniqueCount());
+            }
+            if (model.wasPropertyExplicitlySet("duplicateCount")) {
+                this.duplicateCount(model.getDuplicateCount());
+            }
+            if (model.wasPropertyExplicitlySet("valueFrequencies")) {
+                this.valueFrequencies(model.getValueFrequencies());
+            }
+            return this;
         }
     }
 
@@ -178,7 +193,6 @@ public final class DateAttribute extends AttributeProfileResult {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DateAttribute(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -193,24 +207,13 @@ public final class DateAttribute extends AttributeProfileResult {
         }
 
         DateAttribute other = (DateAttribute) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

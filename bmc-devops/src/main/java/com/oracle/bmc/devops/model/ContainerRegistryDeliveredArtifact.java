@@ -81,23 +81,33 @@ public final class ContainerRegistryDeliveredArtifact extends DeliveredArtifact 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ContainerRegistryDeliveredArtifact build() {
-            ContainerRegistryDeliveredArtifact __instance__ =
+            ContainerRegistryDeliveredArtifact model =
                     new ContainerRegistryDeliveredArtifact(
-                            deployArtifactId, outputArtifactName, deliveredArtifactHash, imageUri);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.deployArtifactId,
+                            this.outputArtifactName,
+                            this.deliveredArtifactHash,
+                            this.imageUri);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ContainerRegistryDeliveredArtifact o) {
-            Builder copiedBuilder =
-                    deployArtifactId(o.getDeployArtifactId())
-                            .outputArtifactName(o.getOutputArtifactName())
-                            .deliveredArtifactHash(o.getDeliveredArtifactHash())
-                            .imageUri(o.getImageUri());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ContainerRegistryDeliveredArtifact model) {
+            if (model.wasPropertyExplicitlySet("deployArtifactId")) {
+                this.deployArtifactId(model.getDeployArtifactId());
+            }
+            if (model.wasPropertyExplicitlySet("outputArtifactName")) {
+                this.outputArtifactName(model.getOutputArtifactName());
+            }
+            if (model.wasPropertyExplicitlySet("deliveredArtifactHash")) {
+                this.deliveredArtifactHash(model.getDeliveredArtifactHash());
+            }
+            if (model.wasPropertyExplicitlySet("imageUri")) {
+                this.imageUri(model.getImageUri());
+            }
+            return this;
         }
     }
 
@@ -167,7 +177,6 @@ public final class ContainerRegistryDeliveredArtifact extends DeliveredArtifact 
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", deliveredArtifactHash=").append(String.valueOf(this.deliveredArtifactHash));
         sb.append(", imageUri=").append(String.valueOf(this.imageUri));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -184,8 +193,7 @@ public final class ContainerRegistryDeliveredArtifact extends DeliveredArtifact 
         ContainerRegistryDeliveredArtifact other = (ContainerRegistryDeliveredArtifact) o;
         return java.util.Objects.equals(this.deliveredArtifactHash, other.deliveredArtifactHash)
                 && java.util.Objects.equals(this.imageUri, other.imageUri)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -198,16 +206,6 @@ public final class ContainerRegistryDeliveredArtifact extends DeliveredArtifact 
                                 ? 43
                                 : this.deliveredArtifactHash.hashCode());
         result = (result * PRIME) + (this.imageUri == null ? 43 : this.imageUri.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -140,40 +140,61 @@ public final class FieldsAddRemoveField extends AbstractField {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FieldsAddRemoveField build() {
-            FieldsAddRemoveField __instance__ =
+            FieldsAddRemoveField model =
                     new FieldsAddRemoveField(
-                            displayName,
-                            isDeclared,
-                            originalDisplayNames,
-                            internalName,
-                            valueType,
-                            isGroupable,
-                            isDuration,
-                            alias,
-                            filterQueryString,
-                            unitType,
-                            operation);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.isDeclared,
+                            this.originalDisplayNames,
+                            this.internalName,
+                            this.valueType,
+                            this.isGroupable,
+                            this.isDuration,
+                            this.alias,
+                            this.filterQueryString,
+                            this.unitType,
+                            this.operation);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FieldsAddRemoveField o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .isDeclared(o.getIsDeclared())
-                            .originalDisplayNames(o.getOriginalDisplayNames())
-                            .internalName(o.getInternalName())
-                            .valueType(o.getValueType())
-                            .isGroupable(o.getIsGroupable())
-                            .isDuration(o.getIsDuration())
-                            .alias(o.getAlias())
-                            .filterQueryString(o.getFilterQueryString())
-                            .unitType(o.getUnitType())
-                            .operation(o.getOperation());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FieldsAddRemoveField model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isDeclared")) {
+                this.isDeclared(model.getIsDeclared());
+            }
+            if (model.wasPropertyExplicitlySet("originalDisplayNames")) {
+                this.originalDisplayNames(model.getOriginalDisplayNames());
+            }
+            if (model.wasPropertyExplicitlySet("internalName")) {
+                this.internalName(model.getInternalName());
+            }
+            if (model.wasPropertyExplicitlySet("valueType")) {
+                this.valueType(model.getValueType());
+            }
+            if (model.wasPropertyExplicitlySet("isGroupable")) {
+                this.isGroupable(model.getIsGroupable());
+            }
+            if (model.wasPropertyExplicitlySet("isDuration")) {
+                this.isDuration(model.getIsDuration());
+            }
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
+            }
+            if (model.wasPropertyExplicitlySet("filterQueryString")) {
+                this.filterQueryString(model.getFilterQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("unitType")) {
+                this.unitType(model.getUnitType());
+            }
+            if (model.wasPropertyExplicitlySet("operation")) {
+                this.operation(model.getOperation());
+            }
+            return this;
         }
     }
 
@@ -295,7 +316,6 @@ public final class FieldsAddRemoveField extends AbstractField {
         sb.append("FieldsAddRemoveField(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", operation=").append(String.valueOf(this.operation));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -310,9 +330,7 @@ public final class FieldsAddRemoveField extends AbstractField {
         }
 
         FieldsAddRemoveField other = (FieldsAddRemoveField) o;
-        return java.util.Objects.equals(this.operation, other.operation)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.operation, other.operation) && super.equals(other);
     }
 
     @Override
@@ -320,16 +338,6 @@ public final class FieldsAddRemoveField extends AbstractField {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.operation == null ? 43 : this.operation.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

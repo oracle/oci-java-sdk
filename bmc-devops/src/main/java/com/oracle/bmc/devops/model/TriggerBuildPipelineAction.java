@@ -56,18 +56,23 @@ public final class TriggerBuildPipelineAction extends TriggerAction {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TriggerBuildPipelineAction build() {
-            TriggerBuildPipelineAction __instance__ =
-                    new TriggerBuildPipelineAction(filter, buildPipelineId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TriggerBuildPipelineAction model =
+                    new TriggerBuildPipelineAction(this.filter, this.buildPipelineId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TriggerBuildPipelineAction o) {
-            Builder copiedBuilder = filter(o.getFilter()).buildPipelineId(o.getBuildPipelineId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TriggerBuildPipelineAction model) {
+            if (model.wasPropertyExplicitlySet("filter")) {
+                this.filter(model.getFilter());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineId")) {
+                this.buildPipelineId(model.getBuildPipelineId());
+            }
+            return this;
         }
     }
 
@@ -117,7 +122,6 @@ public final class TriggerBuildPipelineAction extends TriggerAction {
         sb.append("TriggerBuildPipelineAction(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", buildPipelineId=").append(String.valueOf(this.buildPipelineId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -133,8 +137,7 @@ public final class TriggerBuildPipelineAction extends TriggerAction {
 
         TriggerBuildPipelineAction other = (TriggerBuildPipelineAction) o;
         return java.util.Objects.equals(this.buildPipelineId, other.buildPipelineId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -144,16 +147,6 @@ public final class TriggerBuildPipelineAction extends TriggerAction {
         result =
                 (result * PRIME)
                         + (this.buildPipelineId == null ? 43 : this.buildPipelineId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

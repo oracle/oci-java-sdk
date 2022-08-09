@@ -21,7 +21,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TunnelConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TunnelConfig {
+public final class TunnelConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ipAddress", "sharedSecret", "timeCreated"})
     public TunnelConfig(String ipAddress, String sharedSecret, java.util.Date timeCreated) {
@@ -100,20 +100,26 @@ public final class TunnelConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TunnelConfig build() {
-            TunnelConfig __instance__ = new TunnelConfig(ipAddress, sharedSecret, timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TunnelConfig model =
+                    new TunnelConfig(this.ipAddress, this.sharedSecret, this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TunnelConfig o) {
-            Builder copiedBuilder =
-                    ipAddress(o.getIpAddress())
-                            .sharedSecret(o.getSharedSecret())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TunnelConfig model) {
+            if (model.wasPropertyExplicitlySet("ipAddress")) {
+                this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("sharedSecret")) {
+                this.sharedSecret(model.getSharedSecret());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -197,10 +203,10 @@ public final class TunnelConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TunnelConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", sharedSecret=").append(String.valueOf(this.sharedSecret));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -218,7 +224,7 @@ public final class TunnelConfig {
         return java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.sharedSecret, other.sharedSecret)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -228,16 +234,7 @@ public final class TunnelConfig {
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.sharedSecret == null ? 43 : this.sharedSecret.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

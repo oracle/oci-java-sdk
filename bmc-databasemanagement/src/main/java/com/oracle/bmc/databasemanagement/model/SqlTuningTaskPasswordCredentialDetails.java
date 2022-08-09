@@ -65,19 +65,27 @@ public final class SqlTuningTaskPasswordCredentialDetails extends SqlTuningTaskC
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlTuningTaskPasswordCredentialDetails build() {
-            SqlTuningTaskPasswordCredentialDetails __instance__ =
-                    new SqlTuningTaskPasswordCredentialDetails(username, role, password);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SqlTuningTaskPasswordCredentialDetails model =
+                    new SqlTuningTaskPasswordCredentialDetails(
+                            this.username, this.role, this.password);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlTuningTaskPasswordCredentialDetails o) {
-            Builder copiedBuilder =
-                    username(o.getUsername()).role(o.getRole()).password(o.getPassword());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlTuningTaskPasswordCredentialDetails model) {
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            return this;
         }
     }
 
@@ -127,7 +135,6 @@ public final class SqlTuningTaskPasswordCredentialDetails extends SqlTuningTaskC
         sb.append("SqlTuningTaskPasswordCredentialDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", password=").append(String.valueOf(this.password));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -142,9 +149,7 @@ public final class SqlTuningTaskPasswordCredentialDetails extends SqlTuningTaskC
         }
 
         SqlTuningTaskPasswordCredentialDetails other = (SqlTuningTaskPasswordCredentialDetails) o;
-        return java.util.Objects.equals(this.password, other.password)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.password, other.password) && super.equals(other);
     }
 
     @Override
@@ -152,16 +157,6 @@ public final class SqlTuningTaskPasswordCredentialDetails extends SqlTuningTaskC
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

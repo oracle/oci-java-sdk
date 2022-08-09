@@ -96,7 +96,8 @@ public class CreateVtapConverter {
 
                                 com.oracle.bmc.core.responses.CreateVtapResponse.Builder builder =
                                         com.oracle.bmc.core.responses.CreateVtapResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.vtap(response.getItem());
 

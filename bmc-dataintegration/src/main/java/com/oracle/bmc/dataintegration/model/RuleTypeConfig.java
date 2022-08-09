@@ -153,36 +153,53 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RuleTypeConfig build() {
-            RuleTypeConfig __instance__ =
+            RuleTypeConfig model =
                     new RuleTypeConfig(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            scope,
-                            scopeReference,
-                            isOrderByRule,
-                            projectionRules,
-                            configValues,
-                            objectStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.scope,
+                            this.scopeReference,
+                            this.isOrderByRule,
+                            this.projectionRules,
+                            this.configValues,
+                            this.objectStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RuleTypeConfig o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .scope(o.getScope())
-                            .scopeReference(o.getScopeReference())
-                            .isOrderByRule(o.getIsOrderByRule())
-                            .projectionRules(o.getProjectionRules())
-                            .configValues(o.getConfigValues())
-                            .objectStatus(o.getObjectStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RuleTypeConfig model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("scope")) {
+                this.scope(model.getScope());
+            }
+            if (model.wasPropertyExplicitlySet("scopeReference")) {
+                this.scopeReference(model.getScopeReference());
+            }
+            if (model.wasPropertyExplicitlySet("isOrderByRule")) {
+                this.isOrderByRule(model.getIsOrderByRule());
+            }
+            if (model.wasPropertyExplicitlySet("projectionRules")) {
+                this.projectionRules(model.getProjectionRules());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            return this;
         }
     }
 
@@ -348,7 +365,6 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
         sb.append(", projectionRules=").append(String.valueOf(this.projectionRules));
         sb.append(", configValues=").append(String.valueOf(this.configValues));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -372,8 +388,7 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
                 && java.util.Objects.equals(this.projectionRules, other.projectionRules)
                 && java.util.Objects.equals(this.configValues, other.configValues)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -395,16 +410,6 @@ public final class RuleTypeConfig extends DynamicTypeHandler {
                         + (this.projectionRules == null ? 43 : this.projectionRules.hashCode());
         result = (result * PRIME) + (this.configValues == null ? 43 : this.configValues.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

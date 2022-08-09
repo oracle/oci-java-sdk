@@ -33,7 +33,7 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class HostResourceStatistics {
+public class HostResourceStatistics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "usage",
@@ -125,6 +125,7 @@ public class HostResourceStatistics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostResourceStatistics(");
+        sb.append("super=").append(super.toString());
         sb.append("usage=").append(String.valueOf(this.usage));
         sb.append(", capacity=").append(String.valueOf(this.capacity));
         sb.append(", utilizationPercent=").append(String.valueOf(this.utilizationPercent));
@@ -146,7 +147,8 @@ public class HostResourceStatistics {
         return java.util.Objects.equals(this.usage, other.usage)
                 && java.util.Objects.equals(this.capacity, other.capacity)
                 && java.util.Objects.equals(this.utilizationPercent, other.utilizationPercent)
-                && java.util.Objects.equals(this.usageChangePercent, other.usageChangePercent);
+                && java.util.Objects.equals(this.usageChangePercent, other.usageChangePercent)
+                && super.equals(other);
     }
 
     @Override
@@ -165,6 +167,7 @@ public class HostResourceStatistics {
                         + (this.usageChangePercent == null
                                 ? 43
                                 : this.usageChangePercent.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

@@ -19,7 +19,7 @@ package com.oracle.bmc.aianomalydetection.model;
     builder = AnomalyDetectResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AnomalyDetectResult {
+public final class AnomalyDetectResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"detectionResults"})
     public AnomalyDetectResult(java.util.List<DetectionResultItem> detectionResults) {
@@ -50,17 +50,19 @@ public final class AnomalyDetectResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AnomalyDetectResult build() {
-            AnomalyDetectResult __instance__ = new AnomalyDetectResult(detectionResults);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AnomalyDetectResult model = new AnomalyDetectResult(this.detectionResults);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AnomalyDetectResult o) {
-            Builder copiedBuilder = detectionResults(o.getDetectionResults());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AnomalyDetectResult model) {
+            if (model.wasPropertyExplicitlySet("detectionResults")) {
+                this.detectionResults(model.getDetectionResults());
+            }
+            return this;
         }
     }
 
@@ -102,8 +104,8 @@ public final class AnomalyDetectResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AnomalyDetectResult(");
+        sb.append("super=").append(super.toString());
         sb.append("detectionResults=").append(String.valueOf(this.detectionResults));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +121,7 @@ public final class AnomalyDetectResult {
 
         AnomalyDetectResult other = (AnomalyDetectResult) o;
         return java.util.Objects.equals(this.detectionResults, other.detectionResults)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -129,16 +131,7 @@ public final class AnomalyDetectResult {
         result =
                 (result * PRIME)
                         + (this.detectionResults == null ? 43 : this.detectionResults.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -157,8 +157,8 @@ public class ListOpsiDataObjectsConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .ListOpsiDataObjectsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.opsiDataObjectsCollection(response.getItem());
 

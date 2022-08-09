@@ -19,7 +19,8 @@ package com.oracle.bmc.databasetools.model;
     builder = CreateDatabaseToolsRelatedResourceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateDatabaseToolsRelatedResourceDetails {
+public final class CreateDatabaseToolsRelatedResourceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"entityType", "identifier"})
     public CreateDatabaseToolsRelatedResourceDetails(
@@ -68,18 +69,23 @@ public final class CreateDatabaseToolsRelatedResourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDatabaseToolsRelatedResourceDetails build() {
-            CreateDatabaseToolsRelatedResourceDetails __instance__ =
-                    new CreateDatabaseToolsRelatedResourceDetails(entityType, identifier);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateDatabaseToolsRelatedResourceDetails model =
+                    new CreateDatabaseToolsRelatedResourceDetails(this.entityType, this.identifier);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDatabaseToolsRelatedResourceDetails o) {
-            Builder copiedBuilder = entityType(o.getEntityType()).identifier(o.getIdentifier());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDatabaseToolsRelatedResourceDetails model) {
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            return this;
         }
     }
 
@@ -135,9 +141,9 @@ public final class CreateDatabaseToolsRelatedResourceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDatabaseToolsRelatedResourceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("entityType=").append(String.valueOf(this.entityType));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +161,7 @@ public final class CreateDatabaseToolsRelatedResourceDetails {
                 (CreateDatabaseToolsRelatedResourceDetails) o;
         return java.util.Objects.equals(this.entityType, other.entityType)
                 && java.util.Objects.equals(this.identifier, other.identifier)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -164,16 +170,7 @@ public final class CreateDatabaseToolsRelatedResourceDetails {
         int result = 1;
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

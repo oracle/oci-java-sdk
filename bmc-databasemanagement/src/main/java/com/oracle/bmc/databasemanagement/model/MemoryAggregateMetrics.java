@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = MemoryAggregateMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MemoryAggregateMetrics {
+public final class MemoryAggregateMetrics
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"memoryUsage"})
     public MemoryAggregateMetrics(java.util.List<MetricDataPoint> memoryUsage) {
@@ -50,17 +51,19 @@ public final class MemoryAggregateMetrics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MemoryAggregateMetrics build() {
-            MemoryAggregateMetrics __instance__ = new MemoryAggregateMetrics(memoryUsage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MemoryAggregateMetrics model = new MemoryAggregateMetrics(this.memoryUsage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MemoryAggregateMetrics o) {
-            Builder copiedBuilder = memoryUsage(o.getMemoryUsage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MemoryAggregateMetrics model) {
+            if (model.wasPropertyExplicitlySet("memoryUsage")) {
+                this.memoryUsage(model.getMemoryUsage());
+            }
+            return this;
         }
     }
 
@@ -102,8 +105,8 @@ public final class MemoryAggregateMetrics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MemoryAggregateMetrics(");
+        sb.append("super=").append(super.toString());
         sb.append("memoryUsage=").append(String.valueOf(this.memoryUsage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -118,8 +121,7 @@ public final class MemoryAggregateMetrics {
         }
 
         MemoryAggregateMetrics other = (MemoryAggregateMetrics) o;
-        return java.util.Objects.equals(this.memoryUsage, other.memoryUsage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.memoryUsage, other.memoryUsage) && super.equals(other);
     }
 
     @Override
@@ -127,16 +129,7 @@ public final class MemoryAggregateMetrics {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.memoryUsage == null ? 43 : this.memoryUsage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

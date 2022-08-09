@@ -139,8 +139,8 @@ public class GetMonitorResultConverter {
                                         builder =
                                                 com.oracle.bmc.apmsynthetics.responses
                                                         .GetMonitorResultResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.monitorResult(response.getItem());
 

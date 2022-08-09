@@ -97,7 +97,8 @@ public class GetSddcConverter {
 
                                 com.oracle.bmc.ocvp.responses.GetSddcResponse.Builder builder =
                                         com.oracle.bmc.ocvp.responses.GetSddcResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.sddc(response.getItem());
 

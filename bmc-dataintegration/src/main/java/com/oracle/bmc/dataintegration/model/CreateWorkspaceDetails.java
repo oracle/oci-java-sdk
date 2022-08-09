@@ -19,7 +19,8 @@ package com.oracle.bmc.dataintegration.model;
     builder = CreateWorkspaceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateWorkspaceDetails {
+public final class CreateWorkspaceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vcnId",
@@ -233,38 +234,57 @@ public final class CreateWorkspaceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateWorkspaceDetails build() {
-            CreateWorkspaceDetails __instance__ =
+            CreateWorkspaceDetails model =
                     new CreateWorkspaceDetails(
-                            vcnId,
-                            subnetId,
-                            dnsServerIp,
-                            dnsServerZone,
-                            freeformTags,
-                            definedTags,
-                            description,
-                            displayName,
-                            compartmentId,
-                            isPrivateNetworkEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.vcnId,
+                            this.subnetId,
+                            this.dnsServerIp,
+                            this.dnsServerZone,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.description,
+                            this.displayName,
+                            this.compartmentId,
+                            this.isPrivateNetworkEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateWorkspaceDetails o) {
-            Builder copiedBuilder =
-                    vcnId(o.getVcnId())
-                            .subnetId(o.getSubnetId())
-                            .dnsServerIp(o.getDnsServerIp())
-                            .dnsServerZone(o.getDnsServerZone())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .isPrivateNetworkEnabled(o.getIsPrivateNetworkEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateWorkspaceDetails model) {
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("dnsServerIp")) {
+                this.dnsServerIp(model.getDnsServerIp());
+            }
+            if (model.wasPropertyExplicitlySet("dnsServerZone")) {
+                this.dnsServerZone(model.getDnsServerZone());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("isPrivateNetworkEnabled")) {
+                this.isPrivateNetworkEnabled(model.getIsPrivateNetworkEnabled());
+            }
+            return this;
         }
     }
 
@@ -440,6 +460,7 @@ public final class CreateWorkspaceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateWorkspaceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", dnsServerIp=").append(String.valueOf(this.dnsServerIp));
@@ -451,7 +472,6 @@ public final class CreateWorkspaceDetails {
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", isPrivateNetworkEnabled=")
                 .append(String.valueOf(this.isPrivateNetworkEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -477,7 +497,7 @@ public final class CreateWorkspaceDetails {
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.isPrivateNetworkEnabled, other.isPrivateNetworkEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -502,16 +522,7 @@ public final class CreateWorkspaceDetails {
                         + (this.isPrivateNetworkEnabled == null
                                 ? 43
                                 : this.isPrivateNetworkEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -175,50 +175,81 @@ public final class TaskSummaryFromPipelineTask extends TaskSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TaskSummaryFromPipelineTask build() {
-            TaskSummaryFromPipelineTask __instance__ =
+            TaskSummaryFromPipelineTask model =
                     new TaskSummaryFromPipelineTask(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            objectStatus,
-                            identifier,
-                            inputPorts,
-                            outputPorts,
-                            parameters,
-                            opConfigValues,
-                            configProviderDelegate,
-                            metadata,
-                            keyMap,
-                            pipeline);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.objectStatus,
+                            this.identifier,
+                            this.inputPorts,
+                            this.outputPorts,
+                            this.parameters,
+                            this.opConfigValues,
+                            this.configProviderDelegate,
+                            this.metadata,
+                            this.keyMap,
+                            this.pipeline);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TaskSummaryFromPipelineTask o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .inputPorts(o.getInputPorts())
-                            .outputPorts(o.getOutputPorts())
-                            .parameters(o.getParameters())
-                            .opConfigValues(o.getOpConfigValues())
-                            .configProviderDelegate(o.getConfigProviderDelegate())
-                            .metadata(o.getMetadata())
-                            .keyMap(o.getKeyMap())
-                            .pipeline(o.getPipeline());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TaskSummaryFromPipelineTask model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("inputPorts")) {
+                this.inputPorts(model.getInputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("outputPorts")) {
+                this.outputPorts(model.getOutputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("opConfigValues")) {
+                this.opConfigValues(model.getOpConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("configProviderDelegate")) {
+                this.configProviderDelegate(model.getConfigProviderDelegate());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("keyMap")) {
+                this.keyMap(model.getKeyMap());
+            }
+            if (model.wasPropertyExplicitlySet("pipeline")) {
+                this.pipeline(model.getPipeline());
+            }
+            return this;
         }
     }
 
@@ -292,7 +323,6 @@ public final class TaskSummaryFromPipelineTask extends TaskSummary {
         sb.append("TaskSummaryFromPipelineTask(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", pipeline=").append(String.valueOf(this.pipeline));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -307,9 +337,7 @@ public final class TaskSummaryFromPipelineTask extends TaskSummary {
         }
 
         TaskSummaryFromPipelineTask other = (TaskSummaryFromPipelineTask) o;
-        return java.util.Objects.equals(this.pipeline, other.pipeline)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.pipeline, other.pipeline) && super.equals(other);
     }
 
     @Override
@@ -317,16 +345,6 @@ public final class TaskSummaryFromPipelineTask extends TaskSummary {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.pipeline == null ? 43 : this.pipeline.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

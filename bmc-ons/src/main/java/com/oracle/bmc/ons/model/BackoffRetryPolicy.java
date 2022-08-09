@@ -21,7 +21,7 @@ package com.oracle.bmc.ons.model;
     builder = BackoffRetryPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BackoffRetryPolicy {
+public final class BackoffRetryPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"maxRetryDuration", "policyType"})
     public BackoffRetryPolicy(Integer maxRetryDuration, PolicyType policyType) {
@@ -71,18 +71,23 @@ public final class BackoffRetryPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BackoffRetryPolicy build() {
-            BackoffRetryPolicy __instance__ = new BackoffRetryPolicy(maxRetryDuration, policyType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BackoffRetryPolicy model =
+                    new BackoffRetryPolicy(this.maxRetryDuration, this.policyType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BackoffRetryPolicy o) {
-            Builder copiedBuilder =
-                    maxRetryDuration(o.getMaxRetryDuration()).policyType(o.getPolicyType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BackoffRetryPolicy model) {
+            if (model.wasPropertyExplicitlySet("maxRetryDuration")) {
+                this.maxRetryDuration(model.getMaxRetryDuration());
+            }
+            if (model.wasPropertyExplicitlySet("policyType")) {
+                this.policyType(model.getPolicyType());
+            }
+            return this;
         }
     }
 
@@ -188,9 +193,9 @@ public final class BackoffRetryPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BackoffRetryPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("maxRetryDuration=").append(String.valueOf(this.maxRetryDuration));
         sb.append(", policyType=").append(String.valueOf(this.policyType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -207,7 +212,7 @@ public final class BackoffRetryPolicy {
         BackoffRetryPolicy other = (BackoffRetryPolicy) o;
         return java.util.Objects.equals(this.maxRetryDuration, other.maxRetryDuration)
                 && java.util.Objects.equals(this.policyType, other.policyType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -218,16 +223,7 @@ public final class BackoffRetryPolicy {
                 (result * PRIME)
                         + (this.maxRetryDuration == null ? 43 : this.maxRetryDuration.hashCode());
         result = (result * PRIME) + (this.policyType == null ? 43 : this.policyType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

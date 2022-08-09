@@ -369,6 +369,230 @@ public class JavaManagementServicePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listJavaFamilies operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListJavaFamiliesResponse> listJavaFamiliesResponseIterator(
+            final ListJavaFamiliesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListJavaFamiliesRequest.Builder, ListJavaFamiliesRequest, ListJavaFamiliesResponse>(
+                new java.util.function.Supplier<ListJavaFamiliesRequest.Builder>() {
+                    @Override
+                    public ListJavaFamiliesRequest.Builder get() {
+                        return ListJavaFamiliesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListJavaFamiliesResponse, String>() {
+                    @Override
+                    public String apply(ListJavaFamiliesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJavaFamiliesRequest.Builder>,
+                        ListJavaFamiliesRequest>() {
+                    @Override
+                    public ListJavaFamiliesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJavaFamiliesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListJavaFamiliesRequest, ListJavaFamiliesResponse>() {
+                    @Override
+                    public ListJavaFamiliesResponse apply(ListJavaFamiliesRequest request) {
+                        return client.listJavaFamilies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.jms.model.JavaFamilySummary} objects
+     * contained in responses from the listJavaFamilies operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.jms.model.JavaFamilySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.jms.model.JavaFamilySummary> listJavaFamiliesRecordIterator(
+            final ListJavaFamiliesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListJavaFamiliesRequest.Builder, ListJavaFamiliesRequest, ListJavaFamiliesResponse,
+                com.oracle.bmc.jms.model.JavaFamilySummary>(
+                new java.util.function.Supplier<ListJavaFamiliesRequest.Builder>() {
+                    @Override
+                    public ListJavaFamiliesRequest.Builder get() {
+                        return ListJavaFamiliesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListJavaFamiliesResponse, String>() {
+                    @Override
+                    public String apply(ListJavaFamiliesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJavaFamiliesRequest.Builder>,
+                        ListJavaFamiliesRequest>() {
+                    @Override
+                    public ListJavaFamiliesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJavaFamiliesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListJavaFamiliesRequest, ListJavaFamiliesResponse>() {
+                    @Override
+                    public ListJavaFamiliesResponse apply(ListJavaFamiliesRequest request) {
+                        return client.listJavaFamilies(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListJavaFamiliesResponse,
+                        java.util.List<com.oracle.bmc.jms.model.JavaFamilySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.jms.model.JavaFamilySummary> apply(
+                            ListJavaFamiliesResponse response) {
+                        return response.getJavaFamilyCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listJavaReleases operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListJavaReleasesResponse> listJavaReleasesResponseIterator(
+            final ListJavaReleasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListJavaReleasesRequest.Builder, ListJavaReleasesRequest, ListJavaReleasesResponse>(
+                new java.util.function.Supplier<ListJavaReleasesRequest.Builder>() {
+                    @Override
+                    public ListJavaReleasesRequest.Builder get() {
+                        return ListJavaReleasesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListJavaReleasesResponse, String>() {
+                    @Override
+                    public String apply(ListJavaReleasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJavaReleasesRequest.Builder>,
+                        ListJavaReleasesRequest>() {
+                    @Override
+                    public ListJavaReleasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJavaReleasesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListJavaReleasesRequest, ListJavaReleasesResponse>() {
+                    @Override
+                    public ListJavaReleasesResponse apply(ListJavaReleasesRequest request) {
+                        return client.listJavaReleases(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.jms.model.JavaReleaseSummary} objects
+     * contained in responses from the listJavaReleases operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.jms.model.JavaReleaseSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.jms.model.JavaReleaseSummary> listJavaReleasesRecordIterator(
+            final ListJavaReleasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListJavaReleasesRequest.Builder, ListJavaReleasesRequest, ListJavaReleasesResponse,
+                com.oracle.bmc.jms.model.JavaReleaseSummary>(
+                new java.util.function.Supplier<ListJavaReleasesRequest.Builder>() {
+                    @Override
+                    public ListJavaReleasesRequest.Builder get() {
+                        return ListJavaReleasesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListJavaReleasesResponse, String>() {
+                    @Override
+                    public String apply(ListJavaReleasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListJavaReleasesRequest.Builder>,
+                        ListJavaReleasesRequest>() {
+                    @Override
+                    public ListJavaReleasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListJavaReleasesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListJavaReleasesRequest, ListJavaReleasesResponse>() {
+                    @Override
+                    public ListJavaReleasesResponse apply(ListJavaReleasesRequest request) {
+                        return client.listJavaReleases(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListJavaReleasesResponse,
+                        java.util.List<com.oracle.bmc.jms.model.JavaReleaseSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.jms.model.JavaReleaseSummary> apply(
+                            ListJavaReleasesResponse response) {
+                        return response.getJavaReleaseCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listJreUsage operation. This iterable
      * will fetch more data from the server as needed.
      *

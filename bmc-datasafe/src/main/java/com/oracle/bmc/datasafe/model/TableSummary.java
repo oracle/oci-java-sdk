@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TableSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TableSummary {
+public final class TableSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tableName", "schemaName"})
     public TableSummary(String tableName, String schemaName) {
@@ -65,17 +65,22 @@ public final class TableSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TableSummary build() {
-            TableSummary __instance__ = new TableSummary(tableName, schemaName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TableSummary model = new TableSummary(this.tableName, this.schemaName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TableSummary o) {
-            Builder copiedBuilder = tableName(o.getTableName()).schemaName(o.getSchemaName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TableSummary model) {
+            if (model.wasPropertyExplicitlySet("tableName")) {
+                this.tableName(model.getTableName());
+            }
+            if (model.wasPropertyExplicitlySet("schemaName")) {
+                this.schemaName(model.getSchemaName());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class TableSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TableSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("tableName=").append(String.valueOf(this.tableName));
         sb.append(", schemaName=").append(String.valueOf(this.schemaName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class TableSummary {
         TableSummary other = (TableSummary) o;
         return java.util.Objects.equals(this.tableName, other.tableName)
                 && java.util.Objects.equals(this.schemaName, other.schemaName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class TableSummary {
         int result = 1;
         result = (result * PRIME) + (this.tableName == null ? 43 : this.tableName.hashCode());
         result = (result * PRIME) + (this.schemaName == null ? 43 : this.schemaName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

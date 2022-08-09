@@ -55,16 +55,18 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "location",
         "httpProbe"
     })
     private CreateOnDemandHttpProbeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String location,
             com.oracle.bmc.healthchecks.model.HttpProbe httpProbe) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.location = location;
         this.httpProbe = httpProbe;
@@ -75,6 +77,13 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -135,6 +144,7 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(CreateOnDemandHttpProbeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             location(o.getLocation());
             httpProbe(o.getHttpProbe());
@@ -148,7 +158,7 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
          */
         public CreateOnDemandHttpProbeResponse build() {
             return new CreateOnDemandHttpProbeResponse(
-                    __httpStatusCode__, opcRequestId, location, httpProbe);
+                    __httpStatusCode__, headers, opcRequestId, location, httpProbe);
         }
     }
 

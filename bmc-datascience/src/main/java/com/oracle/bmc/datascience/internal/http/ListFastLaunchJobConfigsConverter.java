@@ -133,8 +133,8 @@ public class ListFastLaunchJobConfigsConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .ListFastLaunchJobConfigsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

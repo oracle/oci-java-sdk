@@ -17,7 +17,7 @@ package com.oracle.bmc.dataconnectivity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataPreview.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataPreview {
+public final class DataPreview extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"entityName", "sampleRowsCount", "columns", "rows"})
     public DataPreview(
@@ -103,21 +103,29 @@ public final class DataPreview {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataPreview build() {
-            DataPreview __instance__ = new DataPreview(entityName, sampleRowsCount, columns, rows);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DataPreview model =
+                    new DataPreview(this.entityName, this.sampleRowsCount, this.columns, this.rows);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataPreview o) {
-            Builder copiedBuilder =
-                    entityName(o.getEntityName())
-                            .sampleRowsCount(o.getSampleRowsCount())
-                            .columns(o.getColumns())
-                            .rows(o.getRows());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataPreview model) {
+            if (model.wasPropertyExplicitlySet("entityName")) {
+                this.entityName(model.getEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("sampleRowsCount")) {
+                this.sampleRowsCount(model.getSampleRowsCount());
+            }
+            if (model.wasPropertyExplicitlySet("columns")) {
+                this.columns(model.getColumns());
+            }
+            if (model.wasPropertyExplicitlySet("rows")) {
+                this.rows(model.getRows());
+            }
+            return this;
         }
     }
 
@@ -201,11 +209,11 @@ public final class DataPreview {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataPreview(");
+        sb.append("super=").append(super.toString());
         sb.append("entityName=").append(String.valueOf(this.entityName));
         sb.append(", sampleRowsCount=").append(String.valueOf(this.sampleRowsCount));
         sb.append(", columns=").append(String.valueOf(this.columns));
         sb.append(", rows=").append(String.valueOf(this.rows));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -224,7 +232,7 @@ public final class DataPreview {
                 && java.util.Objects.equals(this.sampleRowsCount, other.sampleRowsCount)
                 && java.util.Objects.equals(this.columns, other.columns)
                 && java.util.Objects.equals(this.rows, other.rows)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -237,16 +245,7 @@ public final class DataPreview {
                         + (this.sampleRowsCount == null ? 43 : this.sampleRowsCount.hashCode());
         result = (result * PRIME) + (this.columns == null ? 43 : this.columns.hashCode());
         result = (result * PRIME) + (this.rows == null ? 43 : this.rows.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

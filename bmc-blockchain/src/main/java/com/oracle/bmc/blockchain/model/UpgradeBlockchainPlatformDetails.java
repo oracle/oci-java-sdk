@@ -20,7 +20,8 @@ package com.oracle.bmc.blockchain.model;
     builder = UpgradeBlockchainPlatformDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpgradeBlockchainPlatformDetails {
+public final class UpgradeBlockchainPlatformDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"patchId"})
     public UpgradeBlockchainPlatformDetails(String patchId) {
@@ -53,18 +54,20 @@ public final class UpgradeBlockchainPlatformDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpgradeBlockchainPlatformDetails build() {
-            UpgradeBlockchainPlatformDetails __instance__ =
-                    new UpgradeBlockchainPlatformDetails(patchId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpgradeBlockchainPlatformDetails model =
+                    new UpgradeBlockchainPlatformDetails(this.patchId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpgradeBlockchainPlatformDetails o) {
-            Builder copiedBuilder = patchId(o.getPatchId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpgradeBlockchainPlatformDetails model) {
+            if (model.wasPropertyExplicitlySet("patchId")) {
+                this.patchId(model.getPatchId());
+            }
+            return this;
         }
     }
 
@@ -108,8 +111,8 @@ public final class UpgradeBlockchainPlatformDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpgradeBlockchainPlatformDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("patchId=").append(String.valueOf(this.patchId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -124,8 +127,7 @@ public final class UpgradeBlockchainPlatformDetails {
         }
 
         UpgradeBlockchainPlatformDetails other = (UpgradeBlockchainPlatformDetails) o;
-        return java.util.Objects.equals(this.patchId, other.patchId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.patchId, other.patchId) && super.equals(other);
     }
 
     @Override
@@ -133,16 +135,7 @@ public final class UpgradeBlockchainPlatformDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.patchId == null ? 43 : this.patchId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

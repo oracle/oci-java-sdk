@@ -66,7 +66,8 @@ package com.oracle.bmc.database.model;
     builder = AutonomousDatabaseConnectionStrings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutonomousDatabaseConnectionStrings {
+public final class AutonomousDatabaseConnectionStrings
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "high",
@@ -201,25 +202,41 @@ public final class AutonomousDatabaseConnectionStrings {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseConnectionStrings build() {
-            AutonomousDatabaseConnectionStrings __instance__ =
+            AutonomousDatabaseConnectionStrings model =
                     new AutonomousDatabaseConnectionStrings(
-                            high, medium, low, dedicated, allConnectionStrings, profiles);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.high,
+                            this.medium,
+                            this.low,
+                            this.dedicated,
+                            this.allConnectionStrings,
+                            this.profiles);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDatabaseConnectionStrings o) {
-            Builder copiedBuilder =
-                    high(o.getHigh())
-                            .medium(o.getMedium())
-                            .low(o.getLow())
-                            .dedicated(o.getDedicated())
-                            .allConnectionStrings(o.getAllConnectionStrings())
-                            .profiles(o.getProfiles());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousDatabaseConnectionStrings model) {
+            if (model.wasPropertyExplicitlySet("high")) {
+                this.high(model.getHigh());
+            }
+            if (model.wasPropertyExplicitlySet("medium")) {
+                this.medium(model.getMedium());
+            }
+            if (model.wasPropertyExplicitlySet("low")) {
+                this.low(model.getLow());
+            }
+            if (model.wasPropertyExplicitlySet("dedicated")) {
+                this.dedicated(model.getDedicated());
+            }
+            if (model.wasPropertyExplicitlySet("allConnectionStrings")) {
+                this.allConnectionStrings(model.getAllConnectionStrings());
+            }
+            if (model.wasPropertyExplicitlySet("profiles")) {
+                this.profiles(model.getProfiles());
+            }
+            return this;
         }
     }
 
@@ -337,13 +354,13 @@ public final class AutonomousDatabaseConnectionStrings {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousDatabaseConnectionStrings(");
+        sb.append("super=").append(super.toString());
         sb.append("high=").append(String.valueOf(this.high));
         sb.append(", medium=").append(String.valueOf(this.medium));
         sb.append(", low=").append(String.valueOf(this.low));
         sb.append(", dedicated=").append(String.valueOf(this.dedicated));
         sb.append(", allConnectionStrings=").append(String.valueOf(this.allConnectionStrings));
         sb.append(", profiles=").append(String.valueOf(this.profiles));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -364,7 +381,7 @@ public final class AutonomousDatabaseConnectionStrings {
                 && java.util.Objects.equals(this.dedicated, other.dedicated)
                 && java.util.Objects.equals(this.allConnectionStrings, other.allConnectionStrings)
                 && java.util.Objects.equals(this.profiles, other.profiles)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -381,16 +398,7 @@ public final class AutonomousDatabaseConnectionStrings {
                                 ? 43
                                 : this.allConnectionStrings.hashCode());
         result = (result * PRIME) + (this.profiles == null ? 43 : this.profiles.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

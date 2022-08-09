@@ -51,13 +51,20 @@ public class GetTagResponse extends com.oracle.bmc.responses.BmcResponse {
         return tag;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "tag"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "tag"
+    })
     private GetTagResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.Tag tag) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.tag = tag;
@@ -68,6 +75,13 @@ public class GetTagResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class GetTagResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetTagResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             tag(o.getTag());
@@ -138,7 +153,7 @@ public class GetTagResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetTagResponse build() {
-            return new GetTagResponse(__httpStatusCode__, opcRequestId, etag, tag);
+            return new GetTagResponse(__httpStatusCode__, headers, opcRequestId, etag, tag);
         }
     }
 

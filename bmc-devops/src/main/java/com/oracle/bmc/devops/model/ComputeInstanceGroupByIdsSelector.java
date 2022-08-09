@@ -48,18 +48,20 @@ public final class ComputeInstanceGroupByIdsSelector extends ComputeInstanceGrou
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputeInstanceGroupByIdsSelector build() {
-            ComputeInstanceGroupByIdsSelector __instance__ =
-                    new ComputeInstanceGroupByIdsSelector(computeInstanceIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ComputeInstanceGroupByIdsSelector model =
+                    new ComputeInstanceGroupByIdsSelector(this.computeInstanceIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputeInstanceGroupByIdsSelector o) {
-            Builder copiedBuilder = computeInstanceIds(o.getComputeInstanceIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputeInstanceGroupByIdsSelector model) {
+            if (model.wasPropertyExplicitlySet("computeInstanceIds")) {
+                this.computeInstanceIds(model.getComputeInstanceIds());
+            }
+            return this;
         }
     }
 
@@ -109,7 +111,6 @@ public final class ComputeInstanceGroupByIdsSelector extends ComputeInstanceGrou
         sb.append("ComputeInstanceGroupByIdsSelector(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", computeInstanceIds=").append(String.valueOf(this.computeInstanceIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -125,8 +126,7 @@ public final class ComputeInstanceGroupByIdsSelector extends ComputeInstanceGrou
 
         ComputeInstanceGroupByIdsSelector other = (ComputeInstanceGroupByIdsSelector) o;
         return java.util.Objects.equals(this.computeInstanceIds, other.computeInstanceIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -138,16 +138,6 @@ public final class ComputeInstanceGroupByIdsSelector extends ComputeInstanceGrou
                         + (this.computeInstanceIds == null
                                 ? 43
                                 : this.computeInstanceIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

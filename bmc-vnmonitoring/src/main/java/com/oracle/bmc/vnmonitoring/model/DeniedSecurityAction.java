@@ -51,20 +51,23 @@ public final class DeniedSecurityAction extends SecurityAction {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DeniedSecurityAction build() {
-            DeniedSecurityAction __instance__ =
-                    new DeniedSecurityAction(actionType, deniedSecurityActionDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DeniedSecurityAction model =
+                    new DeniedSecurityAction(this.actionType, this.deniedSecurityActionDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeniedSecurityAction o) {
-            Builder copiedBuilder =
-                    actionType(o.getActionType())
-                            .deniedSecurityActionDetails(o.getDeniedSecurityActionDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DeniedSecurityAction model) {
+            if (model.wasPropertyExplicitlySet("actionType")) {
+                this.actionType(model.getActionType());
+            }
+            if (model.wasPropertyExplicitlySet("deniedSecurityActionDetails")) {
+                this.deniedSecurityActionDetails(model.getDeniedSecurityActionDetails());
+            }
+            return this;
         }
     }
 
@@ -109,7 +112,6 @@ public final class DeniedSecurityAction extends SecurityAction {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", deniedSecurityActionDetails=")
                 .append(String.valueOf(this.deniedSecurityActionDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -126,8 +128,7 @@ public final class DeniedSecurityAction extends SecurityAction {
         DeniedSecurityAction other = (DeniedSecurityAction) o;
         return java.util.Objects.equals(
                         this.deniedSecurityActionDetails, other.deniedSecurityActionDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -139,16 +140,6 @@ public final class DeniedSecurityAction extends SecurityAction {
                         + (this.deniedSecurityActionDetails == null
                                 ? 43
                                 : this.deniedSecurityActionDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

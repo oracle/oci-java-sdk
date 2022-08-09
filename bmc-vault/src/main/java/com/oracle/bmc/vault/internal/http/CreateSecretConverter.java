@@ -99,8 +99,8 @@ public class CreateSecretConverter {
                                         builder =
                                                 com.oracle.bmc.vault.responses.CreateSecretResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.secret(response.getItem());
 

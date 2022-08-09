@@ -53,13 +53,20 @@ public class CreateBlocklistResponse extends com.oracle.bmc.responses.BmcRespons
         return blocklist;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "blocklist"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "blocklist"
+    })
     private CreateBlocklistResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.jms.model.Blocklist blocklist) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.blocklist = blocklist;
@@ -70,6 +77,13 @@ public class CreateBlocklistResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class CreateBlocklistResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(CreateBlocklistResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             blocklist(o.getBlocklist());
@@ -142,7 +157,8 @@ public class CreateBlocklistResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public CreateBlocklistResponse build() {
-            return new CreateBlocklistResponse(__httpStatusCode__, opcRequestId, etag, blocklist);
+            return new CreateBlocklistResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, blocklist);
         }
     }
 

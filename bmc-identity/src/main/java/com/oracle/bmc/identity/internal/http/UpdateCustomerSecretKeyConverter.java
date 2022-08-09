@@ -119,8 +119,8 @@ public class UpdateCustomerSecretKeyConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .UpdateCustomerSecretKeyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.customerSecretKeySummary(response.getItem());
 

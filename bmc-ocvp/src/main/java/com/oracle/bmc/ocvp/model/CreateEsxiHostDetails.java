@@ -19,7 +19,8 @@ package com.oracle.bmc.ocvp.model;
     builder = CreateEsxiHostDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateEsxiHostDetails {
+public final class CreateEsxiHostDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sddcId",
@@ -314,40 +315,61 @@ public final class CreateEsxiHostDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateEsxiHostDetails build() {
-            CreateEsxiHostDetails __instance__ =
+            CreateEsxiHostDetails model =
                     new CreateEsxiHostDetails(
-                            sddcId,
-                            displayName,
-                            currentSku,
-                            nextSku,
-                            computeAvailabilityDomain,
-                            failedEsxiHostId,
-                            hostShapeName,
-                            hostOcpuCount,
-                            capacityReservationId,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sddcId,
+                            this.displayName,
+                            this.currentSku,
+                            this.nextSku,
+                            this.computeAvailabilityDomain,
+                            this.failedEsxiHostId,
+                            this.hostShapeName,
+                            this.hostOcpuCount,
+                            this.capacityReservationId,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateEsxiHostDetails o) {
-            Builder copiedBuilder =
-                    sddcId(o.getSddcId())
-                            .displayName(o.getDisplayName())
-                            .currentSku(o.getCurrentSku())
-                            .nextSku(o.getNextSku())
-                            .computeAvailabilityDomain(o.getComputeAvailabilityDomain())
-                            .failedEsxiHostId(o.getFailedEsxiHostId())
-                            .hostShapeName(o.getHostShapeName())
-                            .hostOcpuCount(o.getHostOcpuCount())
-                            .capacityReservationId(o.getCapacityReservationId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateEsxiHostDetails model) {
+            if (model.wasPropertyExplicitlySet("sddcId")) {
+                this.sddcId(model.getSddcId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("currentSku")) {
+                this.currentSku(model.getCurrentSku());
+            }
+            if (model.wasPropertyExplicitlySet("nextSku")) {
+                this.nextSku(model.getNextSku());
+            }
+            if (model.wasPropertyExplicitlySet("computeAvailabilityDomain")) {
+                this.computeAvailabilityDomain(model.getComputeAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("failedEsxiHostId")) {
+                this.failedEsxiHostId(model.getFailedEsxiHostId());
+            }
+            if (model.wasPropertyExplicitlySet("hostShapeName")) {
+                this.hostShapeName(model.getHostShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("hostOcpuCount")) {
+                this.hostOcpuCount(model.getHostOcpuCount());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationId")) {
+                this.capacityReservationId(model.getCapacityReservationId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -599,6 +621,7 @@ public final class CreateEsxiHostDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateEsxiHostDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("sddcId=").append(String.valueOf(this.sddcId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", currentSku=").append(String.valueOf(this.currentSku));
@@ -611,7 +634,6 @@ public final class CreateEsxiHostDetails {
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -638,7 +660,7 @@ public final class CreateEsxiHostDetails {
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -670,16 +692,7 @@ public final class CreateEsxiHostDetails {
                                 : this.capacityReservationId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

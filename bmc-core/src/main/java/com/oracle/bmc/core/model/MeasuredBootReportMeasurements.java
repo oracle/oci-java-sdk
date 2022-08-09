@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = MeasuredBootReportMeasurements.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MeasuredBootReportMeasurements {
+public final class MeasuredBootReportMeasurements
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"policy", "actual"})
     public MeasuredBootReportMeasurements(
@@ -69,18 +70,23 @@ public final class MeasuredBootReportMeasurements {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MeasuredBootReportMeasurements build() {
-            MeasuredBootReportMeasurements __instance__ =
-                    new MeasuredBootReportMeasurements(policy, actual);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MeasuredBootReportMeasurements model =
+                    new MeasuredBootReportMeasurements(this.policy, this.actual);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MeasuredBootReportMeasurements o) {
-            Builder copiedBuilder = policy(o.getPolicy()).actual(o.getActual());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MeasuredBootReportMeasurements model) {
+            if (model.wasPropertyExplicitlySet("policy")) {
+                this.policy(model.getPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("actual")) {
+                this.actual(model.getActual());
+            }
+            return this;
         }
     }
 
@@ -136,9 +142,9 @@ public final class MeasuredBootReportMeasurements {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MeasuredBootReportMeasurements(");
+        sb.append("super=").append(super.toString());
         sb.append("policy=").append(String.valueOf(this.policy));
         sb.append(", actual=").append(String.valueOf(this.actual));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +161,7 @@ public final class MeasuredBootReportMeasurements {
         MeasuredBootReportMeasurements other = (MeasuredBootReportMeasurements) o;
         return java.util.Objects.equals(this.policy, other.policy)
                 && java.util.Objects.equals(this.actual, other.actual)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -164,16 +170,7 @@ public final class MeasuredBootReportMeasurements {
         int result = 1;
         result = (result * PRIME) + (this.policy == null ? 43 : this.policy.hashCode());
         result = (result * PRIME) + (this.actual == null ? 43 : this.actual.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

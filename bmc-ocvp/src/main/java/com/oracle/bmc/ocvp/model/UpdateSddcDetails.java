@@ -26,7 +26,7 @@ package com.oracle.bmc.ocvp.model;
     builder = UpdateSddcDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateSddcDetails {
+public final class UpdateSddcDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -409,48 +409,77 @@ public final class UpdateSddcDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSddcDetails build() {
-            UpdateSddcDetails __instance__ =
+            UpdateSddcDetails model =
                     new UpdateSddcDetails(
-                            displayName,
-                            vmwareSoftwareVersion,
-                            sshAuthorizedKeys,
-                            vsphereVlanId,
-                            vmotionVlanId,
-                            vsanVlanId,
-                            nsxVTepVlanId,
-                            nsxEdgeVTepVlanId,
-                            nsxEdgeUplink1VlanId,
-                            nsxEdgeUplink2VlanId,
-                            replicationVlanId,
-                            provisioningVlanId,
-                            hcxVlanId,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.vmwareSoftwareVersion,
+                            this.sshAuthorizedKeys,
+                            this.vsphereVlanId,
+                            this.vmotionVlanId,
+                            this.vsanVlanId,
+                            this.nsxVTepVlanId,
+                            this.nsxEdgeVTepVlanId,
+                            this.nsxEdgeUplink1VlanId,
+                            this.nsxEdgeUplink2VlanId,
+                            this.replicationVlanId,
+                            this.provisioningVlanId,
+                            this.hcxVlanId,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateSddcDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .vmwareSoftwareVersion(o.getVmwareSoftwareVersion())
-                            .sshAuthorizedKeys(o.getSshAuthorizedKeys())
-                            .vsphereVlanId(o.getVsphereVlanId())
-                            .vmotionVlanId(o.getVmotionVlanId())
-                            .vsanVlanId(o.getVsanVlanId())
-                            .nsxVTepVlanId(o.getNsxVTepVlanId())
-                            .nsxEdgeVTepVlanId(o.getNsxEdgeVTepVlanId())
-                            .nsxEdgeUplink1VlanId(o.getNsxEdgeUplink1VlanId())
-                            .nsxEdgeUplink2VlanId(o.getNsxEdgeUplink2VlanId())
-                            .replicationVlanId(o.getReplicationVlanId())
-                            .provisioningVlanId(o.getProvisioningVlanId())
-                            .hcxVlanId(o.getHcxVlanId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateSddcDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("vmwareSoftwareVersion")) {
+                this.vmwareSoftwareVersion(model.getVmwareSoftwareVersion());
+            }
+            if (model.wasPropertyExplicitlySet("sshAuthorizedKeys")) {
+                this.sshAuthorizedKeys(model.getSshAuthorizedKeys());
+            }
+            if (model.wasPropertyExplicitlySet("vsphereVlanId")) {
+                this.vsphereVlanId(model.getVsphereVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("vmotionVlanId")) {
+                this.vmotionVlanId(model.getVmotionVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("vsanVlanId")) {
+                this.vsanVlanId(model.getVsanVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxVTepVlanId")) {
+                this.nsxVTepVlanId(model.getNsxVTepVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxEdgeVTepVlanId")) {
+                this.nsxEdgeVTepVlanId(model.getNsxEdgeVTepVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxEdgeUplink1VlanId")) {
+                this.nsxEdgeUplink1VlanId(model.getNsxEdgeUplink1VlanId());
+            }
+            if (model.wasPropertyExplicitlySet("nsxEdgeUplink2VlanId")) {
+                this.nsxEdgeUplink2VlanId(model.getNsxEdgeUplink2VlanId());
+            }
+            if (model.wasPropertyExplicitlySet("replicationVlanId")) {
+                this.replicationVlanId(model.getReplicationVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("provisioningVlanId")) {
+                this.provisioningVlanId(model.getProvisioningVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("hcxVlanId")) {
+                this.hcxVlanId(model.getHcxVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -770,6 +799,7 @@ public final class UpdateSddcDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateSddcDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
         sb.append(", sshAuthorizedKeys=").append(String.valueOf(this.sshAuthorizedKeys));
@@ -785,7 +815,6 @@ public final class UpdateSddcDetails {
         sb.append(", hcxVlanId=").append(String.valueOf(this.hcxVlanId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -815,7 +844,7 @@ public final class UpdateSddcDetails {
                 && java.util.Objects.equals(this.hcxVlanId, other.hcxVlanId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -865,16 +894,7 @@ public final class UpdateSddcDetails {
         result = (result * PRIME) + (this.hcxVlanId == null ? 43 : this.hcxVlanId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

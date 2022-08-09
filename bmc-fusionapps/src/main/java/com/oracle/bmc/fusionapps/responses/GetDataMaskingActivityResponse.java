@@ -55,16 +55,18 @@ public class GetDataMaskingActivityResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "dataMaskingActivity"
     })
     private GetDataMaskingActivityResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.fusionapps.model.DataMaskingActivity dataMaskingActivity) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.dataMaskingActivity = dataMaskingActivity;
@@ -75,6 +77,13 @@ public class GetDataMaskingActivityResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetDataMaskingActivityResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(GetDataMaskingActivityResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             dataMaskingActivity(o.getDataMaskingActivity());
@@ -149,7 +159,7 @@ public class GetDataMaskingActivityResponse extends com.oracle.bmc.responses.Bmc
          */
         public GetDataMaskingActivityResponse build() {
             return new GetDataMaskingActivityResponse(
-                    __httpStatusCode__, etag, opcRequestId, dataMaskingActivity);
+                    __httpStatusCode__, headers, etag, opcRequestId, dataMaskingActivity);
         }
     }
 

@@ -19,7 +19,7 @@ package com.oracle.bmc.optimizer.model;
     builder = RecommendationCount.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RecommendationCount {
+public final class RecommendationCount extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"importance", "count"})
     public RecommendationCount(Importance importance, Integer count) {
@@ -67,17 +67,22 @@ public final class RecommendationCount {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RecommendationCount build() {
-            RecommendationCount __instance__ = new RecommendationCount(importance, count);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RecommendationCount model = new RecommendationCount(this.importance, this.count);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RecommendationCount o) {
-            Builder copiedBuilder = importance(o.getImportance()).count(o.getCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RecommendationCount model) {
+            if (model.wasPropertyExplicitlySet("importance")) {
+                this.importance(model.getImportance());
+            }
+            if (model.wasPropertyExplicitlySet("count")) {
+                this.count(model.getCount());
+            }
+            return this;
         }
     }
 
@@ -133,9 +138,9 @@ public final class RecommendationCount {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RecommendationCount(");
+        sb.append("super=").append(super.toString());
         sb.append("importance=").append(String.valueOf(this.importance));
         sb.append(", count=").append(String.valueOf(this.count));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +157,7 @@ public final class RecommendationCount {
         RecommendationCount other = (RecommendationCount) o;
         return java.util.Objects.equals(this.importance, other.importance)
                 && java.util.Objects.equals(this.count, other.count)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +166,7 @@ public final class RecommendationCount {
         int result = 1;
         result = (result * PRIME) + (this.importance == null ? 43 : this.importance.hashCode());
         result = (result * PRIME) + (this.count == null ? 43 : this.count.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

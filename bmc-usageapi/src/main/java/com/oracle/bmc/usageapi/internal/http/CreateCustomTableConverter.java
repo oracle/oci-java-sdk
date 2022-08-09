@@ -103,8 +103,8 @@ public class CreateCustomTableConverter {
                                         builder =
                                                 com.oracle.bmc.usageapi.responses
                                                         .CreateCustomTableResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.customTable(response.getItem());
 

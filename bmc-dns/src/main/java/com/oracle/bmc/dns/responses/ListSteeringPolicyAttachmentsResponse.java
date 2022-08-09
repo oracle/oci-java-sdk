@@ -72,6 +72,7 @@ public class ListSteeringPolicyAttachmentsResponse extends com.oracle.bmc.respon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcTotalItems",
         "opcRequestId",
@@ -79,11 +80,12 @@ public class ListSteeringPolicyAttachmentsResponse extends com.oracle.bmc.respon
     })
     private ListSteeringPolicyAttachmentsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             Integer opcTotalItems,
             String opcRequestId,
             java.util.List<com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcTotalItems = opcTotalItems;
         this.opcRequestId = opcRequestId;
@@ -95,6 +97,13 @@ public class ListSteeringPolicyAttachmentsResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -175,6 +184,7 @@ public class ListSteeringPolicyAttachmentsResponse extends com.oracle.bmc.respon
          */
         public Builder copy(ListSteeringPolicyAttachmentsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcTotalItems(o.getOpcTotalItems());
             opcRequestId(o.getOpcRequestId());
@@ -189,7 +199,7 @@ public class ListSteeringPolicyAttachmentsResponse extends com.oracle.bmc.respon
          */
         public ListSteeringPolicyAttachmentsResponse build() {
             return new ListSteeringPolicyAttachmentsResponse(
-                    __httpStatusCode__, opcNextPage, opcTotalItems, opcRequestId, items);
+                    __httpStatusCode__, headers, opcNextPage, opcTotalItems, opcRequestId, items);
         }
     }
 

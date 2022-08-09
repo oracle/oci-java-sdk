@@ -20,7 +20,8 @@ package com.oracle.bmc.functions.model;
     builder = ApplicationTraceConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApplicationTraceConfig {
+public final class ApplicationTraceConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled", "domainId"})
     public ApplicationTraceConfig(Boolean isEnabled, String domainId) {
@@ -72,17 +73,23 @@ public final class ApplicationTraceConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApplicationTraceConfig build() {
-            ApplicationTraceConfig __instance__ = new ApplicationTraceConfig(isEnabled, domainId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ApplicationTraceConfig model =
+                    new ApplicationTraceConfig(this.isEnabled, this.domainId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApplicationTraceConfig o) {
-            Builder copiedBuilder = isEnabled(o.getIsEnabled()).domainId(o.getDomainId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApplicationTraceConfig model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("domainId")) {
+                this.domainId(model.getDomainId());
+            }
+            return this;
         }
     }
 
@@ -142,9 +149,9 @@ public final class ApplicationTraceConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApplicationTraceConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", domainId=").append(String.valueOf(this.domainId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -161,7 +168,7 @@ public final class ApplicationTraceConfig {
         ApplicationTraceConfig other = (ApplicationTraceConfig) o;
         return java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.domainId, other.domainId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -170,16 +177,7 @@ public final class ApplicationTraceConfig {
         int result = 1;
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.domainId == null ? 43 : this.domainId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

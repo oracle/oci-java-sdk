@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = DedicatedVmHostShapeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DedicatedVmHostShapeSummary {
+public final class DedicatedVmHostShapeSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"availabilityDomain", "dedicatedVmHostShape"})
     public DedicatedVmHostShapeSummary(String availabilityDomain, String dedicatedVmHostShape) {
@@ -74,20 +75,24 @@ public final class DedicatedVmHostShapeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DedicatedVmHostShapeSummary build() {
-            DedicatedVmHostShapeSummary __instance__ =
-                    new DedicatedVmHostShapeSummary(availabilityDomain, dedicatedVmHostShape);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DedicatedVmHostShapeSummary model =
+                    new DedicatedVmHostShapeSummary(
+                            this.availabilityDomain, this.dedicatedVmHostShape);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DedicatedVmHostShapeSummary o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .dedicatedVmHostShape(o.getDedicatedVmHostShape());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DedicatedVmHostShapeSummary model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("dedicatedVmHostShape")) {
+                this.dedicatedVmHostShape(model.getDedicatedVmHostShape());
+            }
+            return this;
         }
     }
 
@@ -149,9 +154,9 @@ public final class DedicatedVmHostShapeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DedicatedVmHostShapeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", dedicatedVmHostShape=").append(String.valueOf(this.dedicatedVmHostShape));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -168,7 +173,7 @@ public final class DedicatedVmHostShapeSummary {
         DedicatedVmHostShapeSummary other = (DedicatedVmHostShapeSummary) o;
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.dedicatedVmHostShape, other.dedicatedVmHostShape)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -185,16 +190,7 @@ public final class DedicatedVmHostShapeSummary {
                         + (this.dedicatedVmHostShape == null
                                 ? 43
                                 : this.dedicatedVmHostShape.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -53,18 +53,23 @@ public final class TopologyContainsEntityRelationship extends TopologyEntityRela
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TopologyContainsEntityRelationship build() {
-            TopologyContainsEntityRelationship __instance__ =
-                    new TopologyContainsEntityRelationship(id1, id2);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TopologyContainsEntityRelationship model =
+                    new TopologyContainsEntityRelationship(this.id1, this.id2);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TopologyContainsEntityRelationship o) {
-            Builder copiedBuilder = id1(o.getId1()).id2(o.getId2());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TopologyContainsEntityRelationship model) {
+            if (model.wasPropertyExplicitlySet("id1")) {
+                this.id1(model.getId1());
+            }
+            if (model.wasPropertyExplicitlySet("id2")) {
+                this.id2(model.getId2());
+            }
+            return this;
         }
     }
 
@@ -98,7 +103,6 @@ public final class TopologyContainsEntityRelationship extends TopologyEntityRela
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TopologyContainsEntityRelationship(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -113,24 +117,13 @@ public final class TopologyContainsEntityRelationship extends TopologyEntityRela
         }
 
         TopologyContainsEntityRelationship other = (TopologyContainsEntityRelationship) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

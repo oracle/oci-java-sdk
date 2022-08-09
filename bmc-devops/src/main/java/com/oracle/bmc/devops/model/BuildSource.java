@@ -48,7 +48,7 @@ package com.oracle.bmc.devops.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class BuildSource {
+public class BuildSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "repositoryUrl", "branch"})
     protected BuildSource(String name, String repositoryUrl, String branch) {
@@ -113,6 +113,7 @@ public class BuildSource {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BuildSource(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", repositoryUrl=").append(String.valueOf(this.repositoryUrl));
         sb.append(", branch=").append(String.valueOf(this.branch));
@@ -132,7 +133,8 @@ public class BuildSource {
         BuildSource other = (BuildSource) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.repositoryUrl, other.repositoryUrl)
-                && java.util.Objects.equals(this.branch, other.branch);
+                && java.util.Objects.equals(this.branch, other.branch)
+                && super.equals(other);
     }
 
     @Override
@@ -144,6 +146,7 @@ public class BuildSource {
                 (result * PRIME)
                         + (this.repositoryUrl == null ? 43 : this.repositoryUrl.hashCode());
         result = (result * PRIME) + (this.branch == null ? 43 : this.branch.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

@@ -19,7 +19,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Type.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Type {
+public final class Type extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -358,48 +358,77 @@ public final class Type {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Type build() {
-            Type __instance__ =
+            Type model =
                     new Type(
-                            key,
-                            name,
-                            description,
-                            catalogId,
-                            properties,
-                            lifecycleState,
-                            isInternal,
-                            isTag,
-                            isApproved,
-                            typeCategory,
-                            externalTypeName,
-                            uri,
-                            customProperties,
-                            parentTypeKey,
-                            parentTypeName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.name,
+                            this.description,
+                            this.catalogId,
+                            this.properties,
+                            this.lifecycleState,
+                            this.isInternal,
+                            this.isTag,
+                            this.isApproved,
+                            this.typeCategory,
+                            this.externalTypeName,
+                            this.uri,
+                            this.customProperties,
+                            this.parentTypeKey,
+                            this.parentTypeName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Type o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .catalogId(o.getCatalogId())
-                            .properties(o.getProperties())
-                            .lifecycleState(o.getLifecycleState())
-                            .isInternal(o.getIsInternal())
-                            .isTag(o.getIsTag())
-                            .isApproved(o.getIsApproved())
-                            .typeCategory(o.getTypeCategory())
-                            .externalTypeName(o.getExternalTypeName())
-                            .uri(o.getUri())
-                            .customProperties(o.getCustomProperties())
-                            .parentTypeKey(o.getParentTypeKey())
-                            .parentTypeName(o.getParentTypeName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Type model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("catalogId")) {
+                this.catalogId(model.getCatalogId());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("isInternal")) {
+                this.isInternal(model.getIsInternal());
+            }
+            if (model.wasPropertyExplicitlySet("isTag")) {
+                this.isTag(model.getIsTag());
+            }
+            if (model.wasPropertyExplicitlySet("isApproved")) {
+                this.isApproved(model.getIsApproved());
+            }
+            if (model.wasPropertyExplicitlySet("typeCategory")) {
+                this.typeCategory(model.getTypeCategory());
+            }
+            if (model.wasPropertyExplicitlySet("externalTypeName")) {
+                this.externalTypeName(model.getExternalTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("uri")) {
+                this.uri(model.getUri());
+            }
+            if (model.wasPropertyExplicitlySet("customProperties")) {
+                this.customProperties(model.getCustomProperties());
+            }
+            if (model.wasPropertyExplicitlySet("parentTypeKey")) {
+                this.parentTypeKey(model.getParentTypeKey());
+            }
+            if (model.wasPropertyExplicitlySet("parentTypeName")) {
+                this.parentTypeName(model.getParentTypeName());
+            }
+            return this;
         }
     }
 
@@ -675,6 +704,7 @@ public final class Type {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Type(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -690,7 +720,6 @@ public final class Type {
         sb.append(", customProperties=").append(String.valueOf(this.customProperties));
         sb.append(", parentTypeKey=").append(String.valueOf(this.parentTypeKey));
         sb.append(", parentTypeName=").append(String.valueOf(this.parentTypeName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -720,7 +749,7 @@ public final class Type {
                 && java.util.Objects.equals(this.customProperties, other.customProperties)
                 && java.util.Objects.equals(this.parentTypeKey, other.parentTypeKey)
                 && java.util.Objects.equals(this.parentTypeName, other.parentTypeName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -752,16 +781,7 @@ public final class Type {
         result =
                 (result * PRIME)
                         + (this.parentTypeName == null ? 43 : this.parentTypeName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

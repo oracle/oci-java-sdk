@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsSourceLabelCondition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsSourceLabelCondition {
+public final class LogAnalyticsSourceLabelCondition
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "message",
@@ -386,55 +387,89 @@ public final class LogAnalyticsSourceLabelCondition {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsSourceLabelCondition build() {
-            LogAnalyticsSourceLabelCondition __instance__ =
+            LogAnalyticsSourceLabelCondition model =
                     new LogAnalyticsSourceLabelCondition(
-                            message,
-                            isVisible,
-                            blockConditionField,
-                            blockConditionOperator,
-                            blockConditionValue,
-                            labelConditionValue,
-                            labelConditionValues,
-                            contentExample,
-                            isEnabled,
-                            fieldName,
-                            labelConditionId,
-                            isSystem,
-                            labelConditionOperator,
-                            sourceId,
-                            labelDisplayName,
-                            storageField,
-                            labelName,
-                            isInlineLabelExistingInDatabase);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.message,
+                            this.isVisible,
+                            this.blockConditionField,
+                            this.blockConditionOperator,
+                            this.blockConditionValue,
+                            this.labelConditionValue,
+                            this.labelConditionValues,
+                            this.contentExample,
+                            this.isEnabled,
+                            this.fieldName,
+                            this.labelConditionId,
+                            this.isSystem,
+                            this.labelConditionOperator,
+                            this.sourceId,
+                            this.labelDisplayName,
+                            this.storageField,
+                            this.labelName,
+                            this.isInlineLabelExistingInDatabase);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsSourceLabelCondition o) {
-            Builder copiedBuilder =
-                    message(o.getMessage())
-                            .isVisible(o.getIsVisible())
-                            .blockConditionField(o.getBlockConditionField())
-                            .blockConditionOperator(o.getBlockConditionOperator())
-                            .blockConditionValue(o.getBlockConditionValue())
-                            .labelConditionValue(o.getLabelConditionValue())
-                            .labelConditionValues(o.getLabelConditionValues())
-                            .contentExample(o.getContentExample())
-                            .isEnabled(o.getIsEnabled())
-                            .fieldName(o.getFieldName())
-                            .labelConditionId(o.getLabelConditionId())
-                            .isSystem(o.getIsSystem())
-                            .labelConditionOperator(o.getLabelConditionOperator())
-                            .sourceId(o.getSourceId())
-                            .labelDisplayName(o.getLabelDisplayName())
-                            .storageField(o.getStorageField())
-                            .labelName(o.getLabelName())
-                            .isInlineLabelExistingInDatabase(
-                                    o.getIsInlineLabelExistingInDatabase());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsSourceLabelCondition model) {
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("isVisible")) {
+                this.isVisible(model.getIsVisible());
+            }
+            if (model.wasPropertyExplicitlySet("blockConditionField")) {
+                this.blockConditionField(model.getBlockConditionField());
+            }
+            if (model.wasPropertyExplicitlySet("blockConditionOperator")) {
+                this.blockConditionOperator(model.getBlockConditionOperator());
+            }
+            if (model.wasPropertyExplicitlySet("blockConditionValue")) {
+                this.blockConditionValue(model.getBlockConditionValue());
+            }
+            if (model.wasPropertyExplicitlySet("labelConditionValue")) {
+                this.labelConditionValue(model.getLabelConditionValue());
+            }
+            if (model.wasPropertyExplicitlySet("labelConditionValues")) {
+                this.labelConditionValues(model.getLabelConditionValues());
+            }
+            if (model.wasPropertyExplicitlySet("contentExample")) {
+                this.contentExample(model.getContentExample());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("fieldName")) {
+                this.fieldName(model.getFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("labelConditionId")) {
+                this.labelConditionId(model.getLabelConditionId());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("labelConditionOperator")) {
+                this.labelConditionOperator(model.getLabelConditionOperator());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("labelDisplayName")) {
+                this.labelDisplayName(model.getLabelDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("storageField")) {
+                this.storageField(model.getStorageField());
+            }
+            if (model.wasPropertyExplicitlySet("labelName")) {
+                this.labelName(model.getLabelName());
+            }
+            if (model.wasPropertyExplicitlySet("isInlineLabelExistingInDatabase")) {
+                this.isInlineLabelExistingInDatabase(model.getIsInlineLabelExistingInDatabase());
+            }
+            return this;
         }
     }
 
@@ -724,6 +759,7 @@ public final class LogAnalyticsSourceLabelCondition {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsSourceLabelCondition(");
+        sb.append("super=").append(super.toString());
         sb.append("message=").append(String.valueOf(this.message));
         sb.append(", isVisible=").append(String.valueOf(this.isVisible));
         sb.append(", blockConditionField=").append(String.valueOf(this.blockConditionField));
@@ -743,7 +779,6 @@ public final class LogAnalyticsSourceLabelCondition {
         sb.append(", labelName=").append(String.valueOf(this.labelName));
         sb.append(", isInlineLabelExistingInDatabase=")
                 .append(String.valueOf(this.isInlineLabelExistingInDatabase));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -779,7 +814,7 @@ public final class LogAnalyticsSourceLabelCondition {
                 && java.util.Objects.equals(this.labelName, other.labelName)
                 && java.util.Objects.equals(
                         this.isInlineLabelExistingInDatabase, other.isInlineLabelExistingInDatabase)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -838,16 +873,7 @@ public final class LogAnalyticsSourceLabelCondition {
                         + (this.isInlineLabelExistingInDatabase == null
                                 ? 43
                                 : this.isInlineLabelExistingInDatabase.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -143,8 +143,8 @@ public class ListSightingEndpointsConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListSightingEndpointsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sightingEndpointCollection(response.getItem());
 

@@ -109,8 +109,8 @@ public class UpdateStackConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .UpdateStackResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.stack(response.getItem());
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.cims.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = User.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class User {
+public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -222,38 +222,57 @@ public final class User {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public User build() {
-            User __instance__ =
+            User model =
                     new User(
-                            key,
-                            firstName,
-                            lastName,
-                            country,
-                            csi,
-                            phone,
-                            timezone,
-                            organizationName,
-                            compartmentId,
-                            contactEmail);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.firstName,
+                            this.lastName,
+                            this.country,
+                            this.csi,
+                            this.phone,
+                            this.timezone,
+                            this.organizationName,
+                            this.compartmentId,
+                            this.contactEmail);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(User o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .firstName(o.getFirstName())
-                            .lastName(o.getLastName())
-                            .country(o.getCountry())
-                            .csi(o.getCsi())
-                            .phone(o.getPhone())
-                            .timezone(o.getTimezone())
-                            .organizationName(o.getOrganizationName())
-                            .compartmentId(o.getCompartmentId())
-                            .contactEmail(o.getContactEmail());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(User model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("firstName")) {
+                this.firstName(model.getFirstName());
+            }
+            if (model.wasPropertyExplicitlySet("lastName")) {
+                this.lastName(model.getLastName());
+            }
+            if (model.wasPropertyExplicitlySet("country")) {
+                this.country(model.getCountry());
+            }
+            if (model.wasPropertyExplicitlySet("csi")) {
+                this.csi(model.getCsi());
+            }
+            if (model.wasPropertyExplicitlySet("phone")) {
+                this.phone(model.getPhone());
+            }
+            if (model.wasPropertyExplicitlySet("timezone")) {
+                this.timezone(model.getTimezone());
+            }
+            if (model.wasPropertyExplicitlySet("organizationName")) {
+                this.organizationName(model.getOrganizationName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("contactEmail")) {
+                this.contactEmail(model.getContactEmail());
+            }
+            return this;
         }
     }
 
@@ -421,6 +440,7 @@ public final class User {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("User(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", firstName=").append(String.valueOf(this.firstName));
         sb.append(", lastName=").append(String.valueOf(this.lastName));
@@ -431,7 +451,6 @@ public final class User {
         sb.append(", organizationName=").append(String.valueOf(this.organizationName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", contactEmail=").append(String.valueOf(this.contactEmail));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -456,7 +475,7 @@ public final class User {
                 && java.util.Objects.equals(this.organizationName, other.organizationName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.contactEmail, other.contactEmail)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -477,16 +496,7 @@ public final class User {
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.contactEmail == null ? 43 : this.contactEmail.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

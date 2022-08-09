@@ -169,8 +169,8 @@ public class ListDbServersConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListDbServersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

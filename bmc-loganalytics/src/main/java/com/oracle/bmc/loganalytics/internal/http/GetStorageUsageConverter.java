@@ -108,8 +108,8 @@ public class GetStorageUsageConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetStorageUsageResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.storageUsage(response.getItem());
 

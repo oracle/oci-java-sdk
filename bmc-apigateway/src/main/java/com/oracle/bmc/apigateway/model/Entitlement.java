@@ -18,7 +18,7 @@ package com.oracle.bmc.apigateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Entitlement.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Entitlement {
+public final class Entitlement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "description", "rateLimit", "quota", "targets"})
     public Entitlement(
@@ -116,23 +116,33 @@ public final class Entitlement {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Entitlement build() {
-            Entitlement __instance__ =
-                    new Entitlement(name, description, rateLimit, quota, targets);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Entitlement model =
+                    new Entitlement(
+                            this.name, this.description, this.rateLimit, this.quota, this.targets);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Entitlement o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .description(o.getDescription())
-                            .rateLimit(o.getRateLimit())
-                            .quota(o.getQuota())
-                            .targets(o.getTargets());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Entitlement model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("rateLimit")) {
+                this.rateLimit(model.getRateLimit());
+            }
+            if (model.wasPropertyExplicitlySet("quota")) {
+                this.quota(model.getQuota());
+            }
+            if (model.wasPropertyExplicitlySet("targets")) {
+                this.targets(model.getTargets());
+            }
+            return this;
         }
     }
 
@@ -224,12 +234,12 @@ public final class Entitlement {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Entitlement(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", rateLimit=").append(String.valueOf(this.rateLimit));
         sb.append(", quota=").append(String.valueOf(this.quota));
         sb.append(", targets=").append(String.valueOf(this.targets));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -249,7 +259,7 @@ public final class Entitlement {
                 && java.util.Objects.equals(this.rateLimit, other.rateLimit)
                 && java.util.Objects.equals(this.quota, other.quota)
                 && java.util.Objects.equals(this.targets, other.targets)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -261,16 +271,7 @@ public final class Entitlement {
         result = (result * PRIME) + (this.rateLimit == null ? 43 : this.rateLimit.hashCode());
         result = (result * PRIME) + (this.quota == null ? 43 : this.quota.hashCode());
         result = (result * PRIME) + (this.targets == null ? 43 : this.targets.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

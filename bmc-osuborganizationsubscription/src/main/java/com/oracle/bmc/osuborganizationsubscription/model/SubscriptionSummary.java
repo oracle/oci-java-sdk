@@ -20,7 +20,7 @@ package com.oracle.bmc.osuborganizationsubscription.model;
     builder = SubscriptionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SubscriptionSummary {
+public final class SubscriptionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -194,34 +194,49 @@ public final class SubscriptionSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SubscriptionSummary build() {
-            SubscriptionSummary __instance__ =
+            SubscriptionSummary model =
                     new SubscriptionSummary(
-                            id,
-                            serviceName,
-                            type,
-                            status,
-                            timeStart,
-                            timeEnd,
-                            currency,
-                            totalValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.serviceName,
+                            this.type,
+                            this.status,
+                            this.timeStart,
+                            this.timeEnd,
+                            this.currency,
+                            this.totalValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SubscriptionSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .serviceName(o.getServiceName())
-                            .type(o.getType())
-                            .status(o.getStatus())
-                            .timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd())
-                            .currency(o.getCurrency())
-                            .totalValue(o.getTotalValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SubscriptionSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("serviceName")) {
+                this.serviceName(model.getServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("currency")) {
+                this.currency(model.getCurrency());
+            }
+            if (model.wasPropertyExplicitlySet("totalValue")) {
+                this.totalValue(model.getTotalValue());
+            }
+            return this;
         }
     }
 
@@ -368,6 +383,7 @@ public final class SubscriptionSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SubscriptionSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -376,7 +392,6 @@ public final class SubscriptionSummary {
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", currency=").append(String.valueOf(this.currency));
         sb.append(", totalValue=").append(String.valueOf(this.totalValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -399,7 +414,7 @@ public final class SubscriptionSummary {
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.currency, other.currency)
                 && java.util.Objects.equals(this.totalValue, other.totalValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -414,16 +429,7 @@ public final class SubscriptionSummary {
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result = (result * PRIME) + (this.currency == null ? 43 : this.currency.hashCode());
         result = (result * PRIME) + (this.totalValue == null ? 43 : this.totalValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -38,12 +38,18 @@ public class GetAwrDbSqlReportResponse extends com.oracle.bmc.responses.BmcRespo
         return awrDbSqlReport;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "awrDbSqlReport"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "awrDbSqlReport"
+    })
     private GetAwrDbSqlReportResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.AwrDbSqlReport awrDbSqlReport) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.awrDbSqlReport = awrDbSqlReport;
     }
@@ -53,6 +59,13 @@ public class GetAwrDbSqlReportResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetAwrDbSqlReportResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetAwrDbSqlReportResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             awrDbSqlReport(o.getAwrDbSqlReport());
 
@@ -108,7 +122,8 @@ public class GetAwrDbSqlReportResponse extends com.oracle.bmc.responses.BmcRespo
          * @return the response object
          */
         public GetAwrDbSqlReportResponse build() {
-            return new GetAwrDbSqlReportResponse(__httpStatusCode__, opcRequestId, awrDbSqlReport);
+            return new GetAwrDbSqlReportResponse(
+                    __httpStatusCode__, headers, opcRequestId, awrDbSqlReport);
         }
     }
 

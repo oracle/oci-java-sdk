@@ -41,7 +41,7 @@ package com.oracle.bmc.resourcemanager.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateJobOperationDetails {
+public class CreateJobOperationDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isProviderUpgradeRequired"})
     protected CreateJobOperationDetails(Boolean isProviderUpgradeRequired) {
@@ -82,6 +82,7 @@ public class CreateJobOperationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateJobOperationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isProviderUpgradeRequired=")
                 .append(String.valueOf(this.isProviderUpgradeRequired));
         sb.append(")");
@@ -99,7 +100,8 @@ public class CreateJobOperationDetails {
 
         CreateJobOperationDetails other = (CreateJobOperationDetails) o;
         return java.util.Objects.equals(
-                this.isProviderUpgradeRequired, other.isProviderUpgradeRequired);
+                        this.isProviderUpgradeRequired, other.isProviderUpgradeRequired)
+                && super.equals(other);
     }
 
     @Override
@@ -111,6 +113,7 @@ public class CreateJobOperationDetails {
                         + (this.isProviderUpgradeRequired == null
                                 ? 43
                                 : this.isProviderUpgradeRequired.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

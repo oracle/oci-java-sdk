@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = ObjectPrivilegeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ObjectPrivilegeSummary {
+public final class ObjectPrivilegeSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -211,36 +212,53 @@ public final class ObjectPrivilegeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectPrivilegeSummary build() {
-            ObjectPrivilegeSummary __instance__ =
+            ObjectPrivilegeSummary model =
                     new ObjectPrivilegeSummary(
-                            name,
-                            schemaType,
-                            owner,
-                            grantor,
-                            hierarchy,
-                            object,
-                            grantOption,
-                            common,
-                            inherited);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.schemaType,
+                            this.owner,
+                            this.grantor,
+                            this.hierarchy,
+                            this.object,
+                            this.grantOption,
+                            this.common,
+                            this.inherited);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ObjectPrivilegeSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .schemaType(o.getSchemaType())
-                            .owner(o.getOwner())
-                            .grantor(o.getGrantor())
-                            .hierarchy(o.getHierarchy())
-                            .object(o.getObject())
-                            .grantOption(o.getGrantOption())
-                            .common(o.getCommon())
-                            .inherited(o.getInherited());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ObjectPrivilegeSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("schemaType")) {
+                this.schemaType(model.getSchemaType());
+            }
+            if (model.wasPropertyExplicitlySet("owner")) {
+                this.owner(model.getOwner());
+            }
+            if (model.wasPropertyExplicitlySet("grantor")) {
+                this.grantor(model.getGrantor());
+            }
+            if (model.wasPropertyExplicitlySet("hierarchy")) {
+                this.hierarchy(model.getHierarchy());
+            }
+            if (model.wasPropertyExplicitlySet("object")) {
+                this.object(model.getObject());
+            }
+            if (model.wasPropertyExplicitlySet("grantOption")) {
+                this.grantOption(model.getGrantOption());
+            }
+            if (model.wasPropertyExplicitlySet("common")) {
+                this.common(model.getCommon());
+            }
+            if (model.wasPropertyExplicitlySet("inherited")) {
+                this.inherited(model.getInherited());
+            }
+            return this;
         }
     }
 
@@ -594,6 +612,7 @@ public final class ObjectPrivilegeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ObjectPrivilegeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", schemaType=").append(String.valueOf(this.schemaType));
         sb.append(", owner=").append(String.valueOf(this.owner));
@@ -603,7 +622,6 @@ public final class ObjectPrivilegeSummary {
         sb.append(", grantOption=").append(String.valueOf(this.grantOption));
         sb.append(", common=").append(String.valueOf(this.common));
         sb.append(", inherited=").append(String.valueOf(this.inherited));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -627,7 +645,7 @@ public final class ObjectPrivilegeSummary {
                 && java.util.Objects.equals(this.grantOption, other.grantOption)
                 && java.util.Objects.equals(this.common, other.common)
                 && java.util.Objects.equals(this.inherited, other.inherited)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -643,16 +661,7 @@ public final class ObjectPrivilegeSummary {
         result = (result * PRIME) + (this.grantOption == null ? 43 : this.grantOption.hashCode());
         result = (result * PRIME) + (this.common == null ? 43 : this.common.hashCode());
         result = (result * PRIME) + (this.inherited == null ? 43 : this.inherited.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

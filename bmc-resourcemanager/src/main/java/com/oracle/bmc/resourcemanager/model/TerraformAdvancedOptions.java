@@ -20,7 +20,8 @@ package com.oracle.bmc.resourcemanager.model;
     builder = TerraformAdvancedOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TerraformAdvancedOptions {
+public final class TerraformAdvancedOptions
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isRefreshRequired", "parallelism", "detailedLogLevel"})
     public TerraformAdvancedOptions(
@@ -102,21 +103,27 @@ public final class TerraformAdvancedOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TerraformAdvancedOptions build() {
-            TerraformAdvancedOptions __instance__ =
-                    new TerraformAdvancedOptions(isRefreshRequired, parallelism, detailedLogLevel);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TerraformAdvancedOptions model =
+                    new TerraformAdvancedOptions(
+                            this.isRefreshRequired, this.parallelism, this.detailedLogLevel);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TerraformAdvancedOptions o) {
-            Builder copiedBuilder =
-                    isRefreshRequired(o.getIsRefreshRequired())
-                            .parallelism(o.getParallelism())
-                            .detailedLogLevel(o.getDetailedLogLevel());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TerraformAdvancedOptions model) {
+            if (model.wasPropertyExplicitlySet("isRefreshRequired")) {
+                this.isRefreshRequired(model.getIsRefreshRequired());
+            }
+            if (model.wasPropertyExplicitlySet("parallelism")) {
+                this.parallelism(model.getParallelism());
+            }
+            if (model.wasPropertyExplicitlySet("detailedLogLevel")) {
+                this.detailedLogLevel(model.getDetailedLogLevel());
+            }
+            return this;
         }
     }
 
@@ -254,10 +261,10 @@ public final class TerraformAdvancedOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TerraformAdvancedOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("isRefreshRequired=").append(String.valueOf(this.isRefreshRequired));
         sb.append(", parallelism=").append(String.valueOf(this.parallelism));
         sb.append(", detailedLogLevel=").append(String.valueOf(this.detailedLogLevel));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -275,7 +282,7 @@ public final class TerraformAdvancedOptions {
         return java.util.Objects.equals(this.isRefreshRequired, other.isRefreshRequired)
                 && java.util.Objects.equals(this.parallelism, other.parallelism)
                 && java.util.Objects.equals(this.detailedLogLevel, other.detailedLogLevel)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -289,16 +296,7 @@ public final class TerraformAdvancedOptions {
         result =
                 (result * PRIME)
                         + (this.detailedLogLevel == null ? 43 : this.detailedLogLevel.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

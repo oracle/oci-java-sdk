@@ -137,6 +137,30 @@ public class ListInstallationSitesConverter {
                                     request.getJreSecurityStatus().getValue()));
         }
 
+        if (request.getPathContains() != null) {
+            target =
+                    target.queryParam(
+                            "pathContains",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPathContains()));
+        }
+
+        if (request.getTimeStart() != null) {
+            target =
+                    target.queryParam(
+                            "timeStart",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeStart()));
+        }
+
+        if (request.getTimeEnd() != null) {
+            target =
+                    target.queryParam(
+                            "timeEnd",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeEnd()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -205,8 +229,8 @@ public class ListInstallationSitesConverter {
                                         builder =
                                                 com.oracle.bmc.jms.responses
                                                         .ListInstallationSitesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.installationSiteCollection(response.getItem());
 

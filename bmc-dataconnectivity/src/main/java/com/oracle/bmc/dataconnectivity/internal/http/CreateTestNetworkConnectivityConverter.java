@@ -136,8 +136,8 @@ public class CreateTestNetworkConnectivityConverter {
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .CreateTestNetworkConnectivityResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.testNetworkConnectivity(response.getItem());
 

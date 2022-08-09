@@ -105,8 +105,8 @@ public class GetResourceActionConverter {
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
                                                         .GetResourceActionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceAction(response.getItem());
 

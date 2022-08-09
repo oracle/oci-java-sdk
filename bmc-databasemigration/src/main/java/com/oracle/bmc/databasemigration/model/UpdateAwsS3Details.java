@@ -21,7 +21,7 @@ package com.oracle.bmc.databasemigration.model;
     builder = UpdateAwsS3Details.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateAwsS3Details {
+public final class UpdateAwsS3Details extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "region", "accessKeyId", "secretAccessKey"})
     public UpdateAwsS3Details(
@@ -120,22 +120,30 @@ public final class UpdateAwsS3Details {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAwsS3Details build() {
-            UpdateAwsS3Details __instance__ =
-                    new UpdateAwsS3Details(name, region, accessKeyId, secretAccessKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateAwsS3Details model =
+                    new UpdateAwsS3Details(
+                            this.name, this.region, this.accessKeyId, this.secretAccessKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateAwsS3Details o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .region(o.getRegion())
-                            .accessKeyId(o.getAccessKeyId())
-                            .secretAccessKey(o.getSecretAccessKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateAwsS3Details model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("accessKeyId")) {
+                this.accessKeyId(model.getAccessKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("secretAccessKey")) {
+                this.secretAccessKey(model.getSecretAccessKey());
+            }
+            return this;
         }
     }
 
@@ -235,11 +243,11 @@ public final class UpdateAwsS3Details {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateAwsS3Details(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", accessKeyId=").append(String.valueOf(this.accessKeyId));
         sb.append(", secretAccessKey=").append(String.valueOf(this.secretAccessKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -258,7 +266,7 @@ public final class UpdateAwsS3Details {
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.accessKeyId, other.accessKeyId)
                 && java.util.Objects.equals(this.secretAccessKey, other.secretAccessKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -271,16 +279,7 @@ public final class UpdateAwsS3Details {
         result =
                 (result * PRIME)
                         + (this.secretAccessKey == null ? 43 : this.secretAccessKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

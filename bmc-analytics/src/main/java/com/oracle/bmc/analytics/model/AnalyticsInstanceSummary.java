@@ -20,7 +20,8 @@ package com.oracle.bmc.analytics.model;
     builder = AnalyticsInstanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AnalyticsInstanceSummary {
+public final class AnalyticsInstanceSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -298,44 +299,69 @@ public final class AnalyticsInstanceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AnalyticsInstanceSummary build() {
-            AnalyticsInstanceSummary __instance__ =
+            AnalyticsInstanceSummary model =
                     new AnalyticsInstanceSummary(
-                            id,
-                            name,
-                            description,
-                            compartmentId,
-                            lifecycleState,
-                            featureSet,
-                            capacity,
-                            licenseType,
-                            emailNotification,
-                            networkEndpointDetails,
-                            serviceUrl,
-                            timeCreated,
-                            timeUpdated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.description,
+                            this.compartmentId,
+                            this.lifecycleState,
+                            this.featureSet,
+                            this.capacity,
+                            this.licenseType,
+                            this.emailNotification,
+                            this.networkEndpointDetails,
+                            this.serviceUrl,
+                            this.timeCreated,
+                            this.timeUpdated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AnalyticsInstanceSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .compartmentId(o.getCompartmentId())
-                            .lifecycleState(o.getLifecycleState())
-                            .featureSet(o.getFeatureSet())
-                            .capacity(o.getCapacity())
-                            .licenseType(o.getLicenseType())
-                            .emailNotification(o.getEmailNotification())
-                            .networkEndpointDetails(o.getNetworkEndpointDetails())
-                            .serviceUrl(o.getServiceUrl())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AnalyticsInstanceSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("featureSet")) {
+                this.featureSet(model.getFeatureSet());
+            }
+            if (model.wasPropertyExplicitlySet("capacity")) {
+                this.capacity(model.getCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("licenseType")) {
+                this.licenseType(model.getLicenseType());
+            }
+            if (model.wasPropertyExplicitlySet("emailNotification")) {
+                this.emailNotification(model.getEmailNotification());
+            }
+            if (model.wasPropertyExplicitlySet("networkEndpointDetails")) {
+                this.networkEndpointDetails(model.getNetworkEndpointDetails());
+            }
+            if (model.wasPropertyExplicitlySet("serviceUrl")) {
+                this.serviceUrl(model.getServiceUrl());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            return this;
         }
     }
 
@@ -561,6 +587,7 @@ public final class AnalyticsInstanceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AnalyticsInstanceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -574,7 +601,6 @@ public final class AnalyticsInstanceSummary {
         sb.append(", serviceUrl=").append(String.valueOf(this.serviceUrl));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -603,7 +629,7 @@ public final class AnalyticsInstanceSummary {
                 && java.util.Objects.equals(this.serviceUrl, other.serviceUrl)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -633,16 +659,7 @@ public final class AnalyticsInstanceSummary {
         result = (result * PRIME) + (this.serviceUrl == null ? 43 : this.serviceUrl.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -104,8 +104,8 @@ public class CreateIdentityProviderConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .CreateIdentityProviderResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.identityProvider(response.getItem());
 

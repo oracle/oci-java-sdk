@@ -121,8 +121,8 @@ public class UpdateContainerConfigurationConverter {
                                                 com.oracle.bmc.artifacts.responses
                                                         .UpdateContainerConfigurationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.containerConfiguration(response.getItem());
 

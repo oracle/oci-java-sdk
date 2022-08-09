@@ -17,7 +17,7 @@ package com.oracle.bmc.oce.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkflowMonitor.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkflowMonitor {
+public final class WorkflowMonitor extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"workflowName", "resourceName", "workflowSteps"})
     public WorkflowMonitor(
@@ -83,21 +83,26 @@ public final class WorkflowMonitor {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkflowMonitor build() {
-            WorkflowMonitor __instance__ =
-                    new WorkflowMonitor(workflowName, resourceName, workflowSteps);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            WorkflowMonitor model =
+                    new WorkflowMonitor(this.workflowName, this.resourceName, this.workflowSteps);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkflowMonitor o) {
-            Builder copiedBuilder =
-                    workflowName(o.getWorkflowName())
-                            .resourceName(o.getResourceName())
-                            .workflowSteps(o.getWorkflowSteps());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkflowMonitor model) {
+            if (model.wasPropertyExplicitlySet("workflowName")) {
+                this.workflowName(model.getWorkflowName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("workflowSteps")) {
+                this.workflowSteps(model.getWorkflowSteps());
+            }
+            return this;
         }
     }
 
@@ -167,10 +172,10 @@ public final class WorkflowMonitor {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkflowMonitor(");
+        sb.append("super=").append(super.toString());
         sb.append("workflowName=").append(String.valueOf(this.workflowName));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
         sb.append(", workflowSteps=").append(String.valueOf(this.workflowSteps));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -188,7 +193,7 @@ public final class WorkflowMonitor {
         return java.util.Objects.equals(this.workflowName, other.workflowName)
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
                 && java.util.Objects.equals(this.workflowSteps, other.workflowSteps)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -200,16 +205,7 @@ public final class WorkflowMonitor {
         result =
                 (result * PRIME)
                         + (this.workflowSteps == null ? 43 : this.workflowSteps.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

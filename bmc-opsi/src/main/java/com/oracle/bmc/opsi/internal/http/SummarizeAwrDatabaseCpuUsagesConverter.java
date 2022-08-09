@@ -203,8 +203,8 @@ public class SummarizeAwrDatabaseCpuUsagesConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeAwrDatabaseCpuUsagesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDatabaseCpuUsageCollection(response.getItem());
 

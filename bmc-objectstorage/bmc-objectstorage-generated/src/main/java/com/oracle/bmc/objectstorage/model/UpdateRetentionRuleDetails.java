@@ -19,7 +19,8 @@ package com.oracle.bmc.objectstorage.model;
     builder = UpdateRetentionRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateRetentionRuleDetails {
+public final class UpdateRetentionRuleDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "duration", "timeRuleLocked"})
     public UpdateRetentionRuleDetails(
@@ -90,21 +91,27 @@ public final class UpdateRetentionRuleDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateRetentionRuleDetails build() {
-            UpdateRetentionRuleDetails __instance__ =
-                    new UpdateRetentionRuleDetails(displayName, duration, timeRuleLocked);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateRetentionRuleDetails model =
+                    new UpdateRetentionRuleDetails(
+                            this.displayName, this.duration, this.timeRuleLocked);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateRetentionRuleDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .duration(o.getDuration())
-                            .timeRuleLocked(o.getTimeRuleLocked());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateRetentionRuleDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("duration")) {
+                this.duration(model.getDuration());
+            }
+            if (model.wasPropertyExplicitlySet("timeRuleLocked")) {
+                this.timeRuleLocked(model.getTimeRuleLocked());
+            }
+            return this;
         }
     }
 
@@ -179,10 +186,10 @@ public final class UpdateRetentionRuleDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateRetentionRuleDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", duration=").append(String.valueOf(this.duration));
         sb.append(", timeRuleLocked=").append(String.valueOf(this.timeRuleLocked));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -200,7 +207,7 @@ public final class UpdateRetentionRuleDetails {
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.duration, other.duration)
                 && java.util.Objects.equals(this.timeRuleLocked, other.timeRuleLocked)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -212,16 +219,7 @@ public final class UpdateRetentionRuleDetails {
         result =
                 (result * PRIME)
                         + (this.timeRuleLocked == null ? 43 : this.timeRuleLocked.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -179,8 +179,8 @@ public class ListIngressGatewayRouteTablesConverter {
                                                 com.oracle.bmc.servicemesh.responses
                                                         .ListIngressGatewayRouteTablesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.ingressGatewayRouteTableCollection(response.getItem());
 

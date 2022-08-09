@@ -38,12 +38,18 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
         return nodePoolOptions;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "nodePoolOptions"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "nodePoolOptions"
+    })
     private GetNodePoolOptionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.containerengine.model.NodePoolOptions nodePoolOptions) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.nodePoolOptions = nodePoolOptions;
     }
@@ -53,6 +59,13 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetNodePoolOptionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             nodePoolOptions(o.getNodePoolOptions());
 
@@ -109,7 +123,7 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetNodePoolOptionsResponse build() {
             return new GetNodePoolOptionsResponse(
-                    __httpStatusCode__, opcRequestId, nodePoolOptions);
+                    __httpStatusCode__, headers, opcRequestId, nodePoolOptions);
         }
     }
 

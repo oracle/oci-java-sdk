@@ -48,18 +48,20 @@ public final class InlineDeployArtifactSource extends DeployArtifactSource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InlineDeployArtifactSource build() {
-            InlineDeployArtifactSource __instance__ =
-                    new InlineDeployArtifactSource(base64EncodedContent);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            InlineDeployArtifactSource model =
+                    new InlineDeployArtifactSource(this.base64EncodedContent);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InlineDeployArtifactSource o) {
-            Builder copiedBuilder = base64EncodedContent(o.getBase64EncodedContent());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InlineDeployArtifactSource model) {
+            if (model.wasPropertyExplicitlySet("base64EncodedContent")) {
+                this.base64EncodedContent(model.getBase64EncodedContent());
+            }
+            return this;
         }
     }
 
@@ -118,7 +120,6 @@ public final class InlineDeployArtifactSource extends DeployArtifactSource {
                                                         + this.base64EncodedContent.length
                                                         + "])"
                                                 : ""))));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -134,8 +135,7 @@ public final class InlineDeployArtifactSource extends DeployArtifactSource {
 
         InlineDeployArtifactSource other = (InlineDeployArtifactSource) o;
         return java.util.Arrays.equals(this.base64EncodedContent, other.base64EncodedContent)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -143,16 +143,6 @@ public final class InlineDeployArtifactSource extends DeployArtifactSource {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + java.util.Arrays.hashCode(this.base64EncodedContent);
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

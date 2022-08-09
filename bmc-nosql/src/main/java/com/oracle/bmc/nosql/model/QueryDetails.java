@@ -19,7 +19,7 @@ package com.oracle.bmc.nosql.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryDetails {
+public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -175,32 +175,45 @@ public final class QueryDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueryDetails build() {
-            QueryDetails __instance__ =
+            QueryDetails model =
                     new QueryDetails(
-                            compartmentId,
-                            statement,
-                            isPrepared,
-                            consistency,
-                            maxReadInKBs,
-                            variables,
-                            timeoutInMs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.statement,
+                            this.isPrepared,
+                            this.consistency,
+                            this.maxReadInKBs,
+                            this.variables,
+                            this.timeoutInMs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QueryDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .statement(o.getStatement())
-                            .isPrepared(o.getIsPrepared())
-                            .consistency(o.getConsistency())
-                            .maxReadInKBs(o.getMaxReadInKBs())
-                            .variables(o.getVariables())
-                            .timeoutInMs(o.getTimeoutInMs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QueryDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("statement")) {
+                this.statement(model.getStatement());
+            }
+            if (model.wasPropertyExplicitlySet("isPrepared")) {
+                this.isPrepared(model.getIsPrepared());
+            }
+            if (model.wasPropertyExplicitlySet("consistency")) {
+                this.consistency(model.getConsistency());
+            }
+            if (model.wasPropertyExplicitlySet("maxReadInKBs")) {
+                this.maxReadInKBs(model.getMaxReadInKBs());
+            }
+            if (model.wasPropertyExplicitlySet("variables")) {
+                this.variables(model.getVariables());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInMs")) {
+                this.timeoutInMs(model.getTimeoutInMs());
+            }
+            return this;
         }
     }
 
@@ -369,6 +382,7 @@ public final class QueryDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("QueryDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", statement=").append(String.valueOf(this.statement));
         sb.append(", isPrepared=").append(String.valueOf(this.isPrepared));
@@ -376,7 +390,6 @@ public final class QueryDetails {
         sb.append(", maxReadInKBs=").append(String.valueOf(this.maxReadInKBs));
         sb.append(", variables=").append(String.valueOf(this.variables));
         sb.append(", timeoutInMs=").append(String.valueOf(this.timeoutInMs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -398,7 +411,7 @@ public final class QueryDetails {
                 && java.util.Objects.equals(this.maxReadInKBs, other.maxReadInKBs)
                 && java.util.Objects.equals(this.variables, other.variables)
                 && java.util.Objects.equals(this.timeoutInMs, other.timeoutInMs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -414,16 +427,7 @@ public final class QueryDetails {
         result = (result * PRIME) + (this.maxReadInKBs == null ? 43 : this.maxReadInKBs.hashCode());
         result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
         result = (result * PRIME) + (this.timeoutInMs == null ? 43 : this.timeoutInMs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -62,19 +62,23 @@ public final class VcnRoutingConfiguration extends ForwardedRoutingConfiguration
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VcnRoutingConfiguration build() {
-            VcnRoutingConfiguration __instance__ =
-                    new VcnRoutingConfiguration(vcnRouteTableId, routeRule);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VcnRoutingConfiguration model =
+                    new VcnRoutingConfiguration(this.vcnRouteTableId, this.routeRule);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VcnRoutingConfiguration o) {
-            Builder copiedBuilder =
-                    vcnRouteTableId(o.getVcnRouteTableId()).routeRule(o.getRouteRule());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VcnRoutingConfiguration model) {
+            if (model.wasPropertyExplicitlySet("vcnRouteTableId")) {
+                this.vcnRouteTableId(model.getVcnRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("routeRule")) {
+                this.routeRule(model.getRouteRule());
+            }
+            return this;
         }
     }
 
@@ -137,7 +141,6 @@ public final class VcnRoutingConfiguration extends ForwardedRoutingConfiguration
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", vcnRouteTableId=").append(String.valueOf(this.vcnRouteTableId));
         sb.append(", routeRule=").append(String.valueOf(this.routeRule));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,8 +157,7 @@ public final class VcnRoutingConfiguration extends ForwardedRoutingConfiguration
         VcnRoutingConfiguration other = (VcnRoutingConfiguration) o;
         return java.util.Objects.equals(this.vcnRouteTableId, other.vcnRouteTableId)
                 && java.util.Objects.equals(this.routeRule, other.routeRule)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -166,16 +168,6 @@ public final class VcnRoutingConfiguration extends ForwardedRoutingConfiguration
                 (result * PRIME)
                         + (this.vcnRouteTableId == null ? 43 : this.vcnRouteTableId.hashCode());
         result = (result * PRIME) + (this.routeRule == null ? 43 : this.routeRule.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -103,25 +103,30 @@ public final class SecretExpiryRule extends SecretRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecretExpiryRule build() {
-            SecretExpiryRule __instance__ =
+            SecretExpiryRule model =
                     new SecretExpiryRule(
-                            secretVersionExpiryInterval,
-                            timeOfAbsoluteExpiry,
-                            isSecretContentRetrievalBlockedOnExpiry);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.secretVersionExpiryInterval,
+                            this.timeOfAbsoluteExpiry,
+                            this.isSecretContentRetrievalBlockedOnExpiry);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SecretExpiryRule o) {
-            Builder copiedBuilder =
-                    secretVersionExpiryInterval(o.getSecretVersionExpiryInterval())
-                            .timeOfAbsoluteExpiry(o.getTimeOfAbsoluteExpiry())
-                            .isSecretContentRetrievalBlockedOnExpiry(
-                                    o.getIsSecretContentRetrievalBlockedOnExpiry());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SecretExpiryRule model) {
+            if (model.wasPropertyExplicitlySet("secretVersionExpiryInterval")) {
+                this.secretVersionExpiryInterval(model.getSecretVersionExpiryInterval());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfAbsoluteExpiry")) {
+                this.timeOfAbsoluteExpiry(model.getTimeOfAbsoluteExpiry());
+            }
+            if (model.wasPropertyExplicitlySet("isSecretContentRetrievalBlockedOnExpiry")) {
+                this.isSecretContentRetrievalBlockedOnExpiry(
+                        model.getIsSecretContentRetrievalBlockedOnExpiry());
+            }
+            return this;
         }
     }
 
@@ -232,7 +237,6 @@ public final class SecretExpiryRule extends SecretRule {
         sb.append(", timeOfAbsoluteExpiry=").append(String.valueOf(this.timeOfAbsoluteExpiry));
         sb.append(", isSecretContentRetrievalBlockedOnExpiry=")
                 .append(String.valueOf(this.isSecretContentRetrievalBlockedOnExpiry));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -253,8 +257,7 @@ public final class SecretExpiryRule extends SecretRule {
                 && java.util.Objects.equals(
                         this.isSecretContentRetrievalBlockedOnExpiry,
                         other.isSecretContentRetrievalBlockedOnExpiry)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -276,16 +279,6 @@ public final class SecretExpiryRule extends SecretRule {
                         + (this.isSecretContentRetrievalBlockedOnExpiry == null
                                 ? 43
                                 : this.isSecretContentRetrievalBlockedOnExpiry.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

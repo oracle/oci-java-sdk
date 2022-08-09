@@ -110,8 +110,8 @@ public class GetBlockchainPlatformConverter {
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
                                                         .GetBlockchainPlatformResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.blockchainPlatform(response.getItem());
 

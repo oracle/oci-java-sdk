@@ -17,7 +17,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WafMeterDatum.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WafMeterDatum {
+public final class WafMeterDatum extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeObserved",
@@ -222,38 +222,57 @@ public final class WafMeterDatum {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WafMeterDatum build() {
-            WafMeterDatum __instance__ =
+            WafMeterDatum model =
                     new WafMeterDatum(
-                            timeObserved,
-                            timeRangeInSeconds,
-                            tenancyId,
-                            compartmentId,
-                            waasPolicyId,
-                            isOciOrigin,
-                            isBotEnabled,
-                            requestCount,
-                            trafficInBytes,
-                            tagSlug);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeObserved,
+                            this.timeRangeInSeconds,
+                            this.tenancyId,
+                            this.compartmentId,
+                            this.waasPolicyId,
+                            this.isOciOrigin,
+                            this.isBotEnabled,
+                            this.requestCount,
+                            this.trafficInBytes,
+                            this.tagSlug);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WafMeterDatum o) {
-            Builder copiedBuilder =
-                    timeObserved(o.getTimeObserved())
-                            .timeRangeInSeconds(o.getTimeRangeInSeconds())
-                            .tenancyId(o.getTenancyId())
-                            .compartmentId(o.getCompartmentId())
-                            .waasPolicyId(o.getWaasPolicyId())
-                            .isOciOrigin(o.getIsOciOrigin())
-                            .isBotEnabled(o.getIsBotEnabled())
-                            .requestCount(o.getRequestCount())
-                            .trafficInBytes(o.getTrafficInBytes())
-                            .tagSlug(o.getTagSlug());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WafMeterDatum model) {
+            if (model.wasPropertyExplicitlySet("timeObserved")) {
+                this.timeObserved(model.getTimeObserved());
+            }
+            if (model.wasPropertyExplicitlySet("timeRangeInSeconds")) {
+                this.timeRangeInSeconds(model.getTimeRangeInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("tenancyId")) {
+                this.tenancyId(model.getTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("waasPolicyId")) {
+                this.waasPolicyId(model.getWaasPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("isOciOrigin")) {
+                this.isOciOrigin(model.getIsOciOrigin());
+            }
+            if (model.wasPropertyExplicitlySet("isBotEnabled")) {
+                this.isBotEnabled(model.getIsBotEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("requestCount")) {
+                this.requestCount(model.getRequestCount());
+            }
+            if (model.wasPropertyExplicitlySet("trafficInBytes")) {
+                this.trafficInBytes(model.getTrafficInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("tagSlug")) {
+                this.tagSlug(model.getTagSlug());
+            }
+            return this;
         }
     }
 
@@ -421,6 +440,7 @@ public final class WafMeterDatum {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WafMeterDatum(");
+        sb.append("super=").append(super.toString());
         sb.append("timeObserved=").append(String.valueOf(this.timeObserved));
         sb.append(", timeRangeInSeconds=").append(String.valueOf(this.timeRangeInSeconds));
         sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
@@ -438,7 +458,6 @@ public final class WafMeterDatum {
                                         + (this.tagSlug != null
                                                 ? " (byte[" + this.tagSlug.length + "])"
                                                 : ""))));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -463,7 +482,7 @@ public final class WafMeterDatum {
                 && java.util.Objects.equals(this.requestCount, other.requestCount)
                 && java.util.Objects.equals(this.trafficInBytes, other.trafficInBytes)
                 && java.util.Arrays.equals(this.tagSlug, other.tagSlug)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -488,16 +507,7 @@ public final class WafMeterDatum {
                 (result * PRIME)
                         + (this.trafficInBytes == null ? 43 : this.trafficInBytes.hashCode());
         result = (result * PRIME) + java.util.Arrays.hashCode(this.tagSlug);
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -74,6 +74,7 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcNextPage",
         "opcRequestId",
@@ -81,11 +82,12 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private ListVaultReplicasResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.keymanagement.model.VaultReplicaSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
@@ -97,6 +99,13 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -179,6 +188,7 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(ListVaultReplicasResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
@@ -193,7 +203,7 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public ListVaultReplicasResponse build() {
             return new ListVaultReplicasResponse(
-                    __httpStatusCode__, etag, opcNextPage, opcRequestId, items);
+                    __httpStatusCode__, headers, etag, opcNextPage, opcRequestId, items);
         }
     }
 

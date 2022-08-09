@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details of DVP Stack.
+ * Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -28,7 +28,7 @@ package com.oracle.bmc.apmsynthetics.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DvpStackDetails {
+public class DvpStackDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dvpVersion"})
     protected DvpStackDetails(String dvpVersion) {
@@ -37,13 +37,13 @@ public class DvpStackDetails {
     }
 
     /**
-     * Version of DVP.
+     * Version of the dedicated vantage point.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dvpVersion")
     private final String dvpVersion;
 
     /**
-     * Version of DVP.
+     * Version of the dedicated vantage point.
      * @return the value
      **/
     public String getDvpVersion() {
@@ -63,6 +63,7 @@ public class DvpStackDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DvpStackDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("dvpVersion=").append(String.valueOf(this.dvpVersion));
         sb.append(")");
         return sb.toString();
@@ -78,7 +79,7 @@ public class DvpStackDetails {
         }
 
         DvpStackDetails other = (DvpStackDetails) o;
-        return java.util.Objects.equals(this.dvpVersion, other.dvpVersion);
+        return java.util.Objects.equals(this.dvpVersion, other.dvpVersion) && super.equals(other);
     }
 
     @Override
@@ -86,6 +87,7 @@ public class DvpStackDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.dvpVersion == null ? 43 : this.dvpVersion.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

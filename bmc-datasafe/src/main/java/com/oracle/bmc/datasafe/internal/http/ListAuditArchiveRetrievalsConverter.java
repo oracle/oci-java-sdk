@@ -202,8 +202,8 @@ public class ListAuditArchiveRetrievalsConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListAuditArchiveRetrievalsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.auditArchiveRetrievalCollection(response.getItem());
 

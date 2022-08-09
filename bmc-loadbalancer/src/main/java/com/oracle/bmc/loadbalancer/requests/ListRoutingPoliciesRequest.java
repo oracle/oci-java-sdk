@@ -77,6 +77,37 @@ public class ListRoutingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
     public String getPage() {
         return page;
     }
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+     * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+     * or POST response for any resource of that load balancer.
+     * <p>
+     * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+     * <p>
+     * The resource is updated or deleted only if the ETag you provide matches the resource's current
+     * ETag value.
+     * <p>
+     * Example: {@code example-etag}
+     *
+     */
+    private String ifMatch;
+
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+     * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+     * or POST response for any resource of that load balancer.
+     * <p>
+     * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+     * <p>
+     * The resource is updated or deleted only if the ETag you provide matches the resource's current
+     * ETag value.
+     * <p>
+     * Example: {@code example-etag}
+     *
+     */
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -168,6 +199,41 @@ public class ListRoutingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+         * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+         * or POST response for any resource of that load balancer.
+         * <p>
+         * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+         * <p>
+         * The resource is updated or deleted only if the ETag you provide matches the resource's current
+         * ETag value.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         */
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+         * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+         * or POST response for any resource of that load balancer.
+         * <p>
+         * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+         * <p>
+         * The resource is updated or deleted only if the ETag you provide matches the resource's current
+         * ETag value.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         * @param ifMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -199,6 +265,7 @@ public class ListRoutingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
             page(o.getPage());
+            ifMatch(o.getIfMatch());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -235,8 +302,9 @@ public class ListRoutingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
             request.opcRequestId = opcRequestId;
             request.limit = limit;
             request.page = page;
+            request.ifMatch = ifMatch;
             return request;
-            // new ListRoutingPoliciesRequest(loadBalancerId, opcRequestId, limit, page);
+            // new ListRoutingPoliciesRequest(loadBalancerId, opcRequestId, limit, page, ifMatch);
         }
     }
 
@@ -249,7 +317,8 @@ public class ListRoutingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
                 .loadBalancerId(loadBalancerId)
                 .opcRequestId(opcRequestId)
                 .limit(limit)
-                .page(page);
+                .page(page)
+                .ifMatch(ifMatch);
     }
 
     /**
@@ -269,6 +338,7 @@ public class ListRoutingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(")");
         return sb.toString();
     }
@@ -287,7 +357,8 @@ public class ListRoutingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.limit, other.limit)
-                && java.util.Objects.equals(this.page, other.page);
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
 
     @Override
@@ -300,6 +371,7 @@ public class ListRoutingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         return result;
     }
 }

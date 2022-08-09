@@ -117,8 +117,8 @@ public class GetAggregatedSnapshotConverter {
                                         builder =
                                                 com.oracle.bmc.apmtraces.responses
                                                         .GetAggregatedSnapshotResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.aggregatedSnapshot(response.getItem());
 

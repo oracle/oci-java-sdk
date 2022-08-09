@@ -19,7 +19,7 @@ package com.oracle.bmc.analytics.model;
     builder = WorkRequestResource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestResource {
+public final class WorkRequestResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "actionResult",
@@ -137,24 +137,37 @@ public final class WorkRequestResource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestResource build() {
-            WorkRequestResource __instance__ =
+            WorkRequestResource model =
                     new WorkRequestResource(
-                            actionResult, resourceType, identifier, resourceUri, metadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.actionResult,
+                            this.resourceType,
+                            this.identifier,
+                            this.resourceUri,
+                            this.metadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkRequestResource o) {
-            Builder copiedBuilder =
-                    actionResult(o.getActionResult())
-                            .resourceType(o.getResourceType())
-                            .identifier(o.getIdentifier())
-                            .resourceUri(o.getResourceUri())
-                            .metadata(o.getMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkRequestResource model) {
+            if (model.wasPropertyExplicitlySet("actionResult")) {
+                this.actionResult(model.getActionResult());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("resourceUri")) {
+                this.resourceUri(model.getResourceUri());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            return this;
         }
     }
 
@@ -260,12 +273,12 @@ public final class WorkRequestResource {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkRequestResource(");
+        sb.append("super=").append(super.toString());
         sb.append("actionResult=").append(String.valueOf(this.actionResult));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
         sb.append(", resourceUri=").append(String.valueOf(this.resourceUri));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -285,7 +298,7 @@ public final class WorkRequestResource {
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.resourceUri, other.resourceUri)
                 && java.util.Objects.equals(this.metadata, other.metadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -297,16 +310,7 @@ public final class WorkRequestResource {
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
         result = (result * PRIME) + (this.resourceUri == null ? 43 : this.resourceUri.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

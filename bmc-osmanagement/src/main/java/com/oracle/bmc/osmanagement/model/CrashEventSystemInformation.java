@@ -19,7 +19,8 @@ package com.oracle.bmc.osmanagement.model;
     builder = CrashEventSystemInformation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CrashEventSystemInformation {
+public final class CrashEventSystemInformation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "architecture",
@@ -167,32 +168,45 @@ public final class CrashEventSystemInformation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CrashEventSystemInformation build() {
-            CrashEventSystemInformation __instance__ =
+            CrashEventSystemInformation model =
                     new CrashEventSystemInformation(
-                            architecture,
-                            kspliceEffectiveKernelVersion,
-                            osFamily,
-                            osName,
-                            osKernelRelease,
-                            osKernelVersion,
-                            osSystemVersion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.architecture,
+                            this.kspliceEffectiveKernelVersion,
+                            this.osFamily,
+                            this.osName,
+                            this.osKernelRelease,
+                            this.osKernelVersion,
+                            this.osSystemVersion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CrashEventSystemInformation o) {
-            Builder copiedBuilder =
-                    architecture(o.getArchitecture())
-                            .kspliceEffectiveKernelVersion(o.getKspliceEffectiveKernelVersion())
-                            .osFamily(o.getOsFamily())
-                            .osName(o.getOsName())
-                            .osKernelRelease(o.getOsKernelRelease())
-                            .osKernelVersion(o.getOsKernelVersion())
-                            .osSystemVersion(o.getOsSystemVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CrashEventSystemInformation model) {
+            if (model.wasPropertyExplicitlySet("architecture")) {
+                this.architecture(model.getArchitecture());
+            }
+            if (model.wasPropertyExplicitlySet("kspliceEffectiveKernelVersion")) {
+                this.kspliceEffectiveKernelVersion(model.getKspliceEffectiveKernelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("osFamily")) {
+                this.osFamily(model.getOsFamily());
+            }
+            if (model.wasPropertyExplicitlySet("osName")) {
+                this.osName(model.getOsName());
+            }
+            if (model.wasPropertyExplicitlySet("osKernelRelease")) {
+                this.osKernelRelease(model.getOsKernelRelease());
+            }
+            if (model.wasPropertyExplicitlySet("osKernelVersion")) {
+                this.osKernelVersion(model.getOsKernelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("osSystemVersion")) {
+                this.osSystemVersion(model.getOsSystemVersion());
+            }
+            return this;
         }
     }
 
@@ -318,6 +332,7 @@ public final class CrashEventSystemInformation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CrashEventSystemInformation(");
+        sb.append("super=").append(super.toString());
         sb.append("architecture=").append(String.valueOf(this.architecture));
         sb.append(", kspliceEffectiveKernelVersion=")
                 .append(String.valueOf(this.kspliceEffectiveKernelVersion));
@@ -326,7 +341,6 @@ public final class CrashEventSystemInformation {
         sb.append(", osKernelRelease=").append(String.valueOf(this.osKernelRelease));
         sb.append(", osKernelVersion=").append(String.valueOf(this.osKernelVersion));
         sb.append(", osSystemVersion=").append(String.valueOf(this.osSystemVersion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -349,7 +363,7 @@ public final class CrashEventSystemInformation {
                 && java.util.Objects.equals(this.osKernelRelease, other.osKernelRelease)
                 && java.util.Objects.equals(this.osKernelVersion, other.osKernelVersion)
                 && java.util.Objects.equals(this.osSystemVersion, other.osSystemVersion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -373,16 +387,7 @@ public final class CrashEventSystemInformation {
         result =
                 (result * PRIME)
                         + (this.osSystemVersion == null ? 43 : this.osSystemVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

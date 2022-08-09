@@ -10,9 +10,10 @@ import com.oracle.bmc.core.model.*;
 public class BulkAddVirtualCircuitPublicPrefixesResponse
         extends com.oracle.bmc.responses.BmcResponse {
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__"})
-    private BulkAddVirtualCircuitPublicPrefixesResponse(int __httpStatusCode__) {
-        super(__httpStatusCode__);
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers"})
+    private BulkAddVirtualCircuitPublicPrefixesResponse(
+            int __httpStatusCode__, javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        super(__httpStatusCode__, headers);
     }
 
     public static class Builder {
@@ -23,12 +24,20 @@ public class BulkAddVirtualCircuitPublicPrefixesResponse
             return this;
         }
 
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
         public Builder copy(BulkAddVirtualCircuitPublicPrefixesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
 
             return this;
         }
@@ -38,7 +47,7 @@ public class BulkAddVirtualCircuitPublicPrefixesResponse
          * @return the response object
          */
         public BulkAddVirtualCircuitPublicPrefixesResponse build() {
-            return new BulkAddVirtualCircuitPublicPrefixesResponse(__httpStatusCode__);
+            return new BulkAddVirtualCircuitPublicPrefixesResponse(__httpStatusCode__, headers);
         }
     }
 

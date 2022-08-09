@@ -51,16 +51,18 @@ public class UploadLogEventsFileResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcObjectId",
         "timeCreated"
     })
     private UploadLogEventsFileResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcObjectId,
             java.util.Date timeCreated) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcObjectId = opcObjectId;
         this.timeCreated = timeCreated;
@@ -71,6 +73,13 @@ public class UploadLogEventsFileResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -127,6 +136,7 @@ public class UploadLogEventsFileResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(UploadLogEventsFileResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcObjectId(o.getOpcObjectId());
             timeCreated(o.getTimeCreated());
@@ -140,7 +150,7 @@ public class UploadLogEventsFileResponse extends com.oracle.bmc.responses.BmcRes
          */
         public UploadLogEventsFileResponse build() {
             return new UploadLogEventsFileResponse(
-                    __httpStatusCode__, opcRequestId, opcObjectId, timeCreated);
+                    __httpStatusCode__, headers, opcRequestId, opcObjectId, timeCreated);
         }
     }
 

@@ -157,46 +157,73 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ParavirtualizedVolumeAttachment build() {
-            ParavirtualizedVolumeAttachment __instance__ =
+            ParavirtualizedVolumeAttachment model =
                     new ParavirtualizedVolumeAttachment(
-                            availabilityDomain,
-                            compartmentId,
-                            device,
-                            displayName,
-                            id,
-                            instanceId,
-                            isReadOnly,
-                            isShareable,
-                            lifecycleState,
-                            timeCreated,
-                            volumeId,
-                            isPvEncryptionInTransitEnabled,
-                            isMultipath,
-                            iscsiLoginState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.compartmentId,
+                            this.device,
+                            this.displayName,
+                            this.id,
+                            this.instanceId,
+                            this.isReadOnly,
+                            this.isShareable,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.volumeId,
+                            this.isPvEncryptionInTransitEnabled,
+                            this.isMultipath,
+                            this.iscsiLoginState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ParavirtualizedVolumeAttachment o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .compartmentId(o.getCompartmentId())
-                            .device(o.getDevice())
-                            .displayName(o.getDisplayName())
-                            .id(o.getId())
-                            .instanceId(o.getInstanceId())
-                            .isReadOnly(o.getIsReadOnly())
-                            .isShareable(o.getIsShareable())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .volumeId(o.getVolumeId())
-                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
-                            .isMultipath(o.getIsMultipath())
-                            .iscsiLoginState(o.getIscsiLoginState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ParavirtualizedVolumeAttachment model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("device")) {
+                this.device(model.getDevice());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("isReadOnly")) {
+                this.isReadOnly(model.getIsReadOnly());
+            }
+            if (model.wasPropertyExplicitlySet("isShareable")) {
+                this.isShareable(model.getIsShareable());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("volumeId")) {
+                this.volumeId(model.getVolumeId());
+            }
+            if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
+                this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isMultipath")) {
+                this.isMultipath(model.getIsMultipath());
+            }
+            if (model.wasPropertyExplicitlySet("iscsiLoginState")) {
+                this.iscsiLoginState(model.getIscsiLoginState());
+            }
+            return this;
         }
     }
 
@@ -258,7 +285,6 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ParavirtualizedVolumeAttachment(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -273,24 +299,13 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
         }
 
         ParavirtualizedVolumeAttachment other = (ParavirtualizedVolumeAttachment) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

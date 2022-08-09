@@ -69,20 +69,24 @@ public final class NetworkLoadBalancerListenerEndpoint extends Endpoint {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NetworkLoadBalancerListenerEndpoint build() {
-            NetworkLoadBalancerListenerEndpoint __instance__ =
-                    new NetworkLoadBalancerListenerEndpoint(listenerId, networkLoadBalancerId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NetworkLoadBalancerListenerEndpoint model =
+                    new NetworkLoadBalancerListenerEndpoint(
+                            this.listenerId, this.networkLoadBalancerId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NetworkLoadBalancerListenerEndpoint o) {
-            Builder copiedBuilder =
-                    listenerId(o.getListenerId())
-                            .networkLoadBalancerId(o.getNetworkLoadBalancerId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NetworkLoadBalancerListenerEndpoint model) {
+            if (model.wasPropertyExplicitlySet("listenerId")) {
+                this.listenerId(model.getListenerId());
+            }
+            if (model.wasPropertyExplicitlySet("networkLoadBalancerId")) {
+                this.networkLoadBalancerId(model.getNetworkLoadBalancerId());
+            }
+            return this;
         }
     }
 
@@ -152,7 +156,6 @@ public final class NetworkLoadBalancerListenerEndpoint extends Endpoint {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", listenerId=").append(String.valueOf(this.listenerId));
         sb.append(", networkLoadBalancerId=").append(String.valueOf(this.networkLoadBalancerId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -169,8 +172,7 @@ public final class NetworkLoadBalancerListenerEndpoint extends Endpoint {
         NetworkLoadBalancerListenerEndpoint other = (NetworkLoadBalancerListenerEndpoint) o;
         return java.util.Objects.equals(this.listenerId, other.listenerId)
                 && java.util.Objects.equals(this.networkLoadBalancerId, other.networkLoadBalancerId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -183,16 +185,6 @@ public final class NetworkLoadBalancerListenerEndpoint extends Endpoint {
                         + (this.networkLoadBalancerId == null
                                 ? 43
                                 : this.networkLoadBalancerId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

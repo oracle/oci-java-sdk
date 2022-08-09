@@ -161,7 +161,8 @@ public class ListVlansConverter {
 
                                 com.oracle.bmc.core.responses.ListVlansResponse.Builder builder =
                                         com.oracle.bmc.core.responses.ListVlansResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

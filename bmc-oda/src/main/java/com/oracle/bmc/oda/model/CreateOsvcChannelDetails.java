@@ -222,45 +222,70 @@ public final class CreateOsvcChannelDetails extends CreateChannelDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateOsvcChannelDetails build() {
-            CreateOsvcChannelDetails __instance__ =
+            CreateOsvcChannelDetails model =
                     new CreateOsvcChannelDetails(
-                            name,
-                            description,
-                            sessionExpiryDurationInMilliseconds,
-                            freeformTags,
-                            definedTags,
-                            host,
-                            port,
-                            userName,
-                            password,
-                            totalSessionCount,
-                            channelService,
-                            authenticationProviderName,
-                            botId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.description,
+                            this.sessionExpiryDurationInMilliseconds,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.host,
+                            this.port,
+                            this.userName,
+                            this.password,
+                            this.totalSessionCount,
+                            this.channelService,
+                            this.authenticationProviderName,
+                            this.botId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateOsvcChannelDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .description(o.getDescription())
-                            .sessionExpiryDurationInMilliseconds(
-                                    o.getSessionExpiryDurationInMilliseconds())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .host(o.getHost())
-                            .port(o.getPort())
-                            .userName(o.getUserName())
-                            .password(o.getPassword())
-                            .totalSessionCount(o.getTotalSessionCount())
-                            .channelService(o.getChannelService())
-                            .authenticationProviderName(o.getAuthenticationProviderName())
-                            .botId(o.getBotId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateOsvcChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpiryDurationInMilliseconds")) {
+                this.sessionExpiryDurationInMilliseconds(
+                        model.getSessionExpiryDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("host")) {
+                this.host(model.getHost());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("totalSessionCount")) {
+                this.totalSessionCount(model.getTotalSessionCount());
+            }
+            if (model.wasPropertyExplicitlySet("channelService")) {
+                this.channelService(model.getChannelService());
+            }
+            if (model.wasPropertyExplicitlySet("authenticationProviderName")) {
+                this.authenticationProviderName(model.getAuthenticationProviderName());
+            }
+            if (model.wasPropertyExplicitlySet("botId")) {
+                this.botId(model.getBotId());
+            }
+            return this;
         }
     }
 
@@ -452,7 +477,6 @@ public final class CreateOsvcChannelDetails extends CreateChannelDetails {
         sb.append(", authenticationProviderName=")
                 .append(String.valueOf(this.authenticationProviderName));
         sb.append(", botId=").append(String.valueOf(this.botId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -476,8 +500,7 @@ public final class CreateOsvcChannelDetails extends CreateChannelDetails {
                 && java.util.Objects.equals(
                         this.authenticationProviderName, other.authenticationProviderName)
                 && java.util.Objects.equals(this.botId, other.botId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -500,16 +523,6 @@ public final class CreateOsvcChannelDetails extends CreateChannelDetails {
                                 ? 43
                                 : this.authenticationProviderName.hashCode());
         result = (result * PRIME) + (this.botId == null ? 43 : this.botId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

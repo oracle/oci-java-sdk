@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParsedContent.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ParsedContent {
+public final class ParsedContent extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "fieldNames",
@@ -146,30 +146,41 @@ public final class ParsedContent {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ParsedContent build() {
-            ParsedContent __instance__ =
+            ParsedContent model =
                     new ParsedContent(
-                            fieldNames,
-                            fieldDisplayNames,
-                            parsedFieldValues,
-                            logContent,
-                            sampleSize,
-                            matchStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.fieldNames,
+                            this.fieldDisplayNames,
+                            this.parsedFieldValues,
+                            this.logContent,
+                            this.sampleSize,
+                            this.matchStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ParsedContent o) {
-            Builder copiedBuilder =
-                    fieldNames(o.getFieldNames())
-                            .fieldDisplayNames(o.getFieldDisplayNames())
-                            .parsedFieldValues(o.getParsedFieldValues())
-                            .logContent(o.getLogContent())
-                            .sampleSize(o.getSampleSize())
-                            .matchStatus(o.getMatchStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ParsedContent model) {
+            if (model.wasPropertyExplicitlySet("fieldNames")) {
+                this.fieldNames(model.getFieldNames());
+            }
+            if (model.wasPropertyExplicitlySet("fieldDisplayNames")) {
+                this.fieldDisplayNames(model.getFieldDisplayNames());
+            }
+            if (model.wasPropertyExplicitlySet("parsedFieldValues")) {
+                this.parsedFieldValues(model.getParsedFieldValues());
+            }
+            if (model.wasPropertyExplicitlySet("logContent")) {
+                this.logContent(model.getLogContent());
+            }
+            if (model.wasPropertyExplicitlySet("sampleSize")) {
+                this.sampleSize(model.getSampleSize());
+            }
+            if (model.wasPropertyExplicitlySet("matchStatus")) {
+                this.matchStatus(model.getMatchStatus());
+            }
+            return this;
         }
     }
 
@@ -281,13 +292,13 @@ public final class ParsedContent {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ParsedContent(");
+        sb.append("super=").append(super.toString());
         sb.append("fieldNames=").append(String.valueOf(this.fieldNames));
         sb.append(", fieldDisplayNames=").append(String.valueOf(this.fieldDisplayNames));
         sb.append(", parsedFieldValues=").append(String.valueOf(this.parsedFieldValues));
         sb.append(", logContent=").append(String.valueOf(this.logContent));
         sb.append(", sampleSize=").append(String.valueOf(this.sampleSize));
         sb.append(", matchStatus=").append(String.valueOf(this.matchStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -308,7 +319,7 @@ public final class ParsedContent {
                 && java.util.Objects.equals(this.logContent, other.logContent)
                 && java.util.Objects.equals(this.sampleSize, other.sampleSize)
                 && java.util.Objects.equals(this.matchStatus, other.matchStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -325,16 +336,7 @@ public final class ParsedContent {
         result = (result * PRIME) + (this.logContent == null ? 43 : this.logContent.hashCode());
         result = (result * PRIME) + (this.sampleSize == null ? 43 : this.sampleSize.hashCode());
         result = (result * PRIME) + (this.matchStatus == null ? 43 : this.matchStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

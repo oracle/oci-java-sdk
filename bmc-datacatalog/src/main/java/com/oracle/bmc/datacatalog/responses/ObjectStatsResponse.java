@@ -55,13 +55,18 @@ public class ObjectStatsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "value"
     })
     private ObjectStatsResponse(
-            int __httpStatusCode__, String opcRequestId, String opcNextPage, String value) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            String opcNextPage,
+            String value) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.value = value;
@@ -72,6 +77,13 @@ public class ObjectStatsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +144,7 @@ public class ObjectStatsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ObjectStatsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             value(o.getValue());
@@ -144,7 +157,8 @@ public class ObjectStatsResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public ObjectStatsResponse build() {
-            return new ObjectStatsResponse(__httpStatusCode__, opcRequestId, opcNextPage, value);
+            return new ObjectStatsResponse(
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, value);
         }
     }
 

@@ -48,17 +48,19 @@ public final class SelfMountDetails extends MountTypeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SelfMountDetails build() {
-            SelfMountDetails __instance__ = new SelfMountDetails(localMountPointPath);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SelfMountDetails model = new SelfMountDetails(this.localMountPointPath);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SelfMountDetails o) {
-            Builder copiedBuilder = localMountPointPath(o.getLocalMountPointPath());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SelfMountDetails model) {
+            if (model.wasPropertyExplicitlySet("localMountPointPath")) {
+                this.localMountPointPath(model.getLocalMountPointPath());
+            }
+            return this;
         }
     }
 
@@ -110,7 +112,6 @@ public final class SelfMountDetails extends MountTypeDetails {
         sb.append("SelfMountDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", localMountPointPath=").append(String.valueOf(this.localMountPointPath));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -126,8 +127,7 @@ public final class SelfMountDetails extends MountTypeDetails {
 
         SelfMountDetails other = (SelfMountDetails) o;
         return java.util.Objects.equals(this.localMountPointPath, other.localMountPointPath)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -139,16 +139,6 @@ public final class SelfMountDetails extends MountTypeDetails {
                         + (this.localMountPointPath == null
                                 ? 43
                                 : this.localMountPointPath.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

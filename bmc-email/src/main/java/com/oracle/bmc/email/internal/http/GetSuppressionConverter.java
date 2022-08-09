@@ -102,8 +102,8 @@ public class GetSuppressionConverter {
                                         builder =
                                                 com.oracle.bmc.email.responses
                                                         .GetSuppressionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.suppression(response.getItem());
 

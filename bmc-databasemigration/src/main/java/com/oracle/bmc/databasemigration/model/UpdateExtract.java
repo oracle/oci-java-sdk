@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemigration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateExtract.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateExtract {
+public final class UpdateExtract extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"performanceProfile", "longTransDuration"})
     public UpdateExtract(ExtractPerformanceProfile performanceProfile, Integer longTransDuration) {
@@ -73,19 +73,23 @@ public final class UpdateExtract {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateExtract build() {
-            UpdateExtract __instance__ = new UpdateExtract(performanceProfile, longTransDuration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateExtract model =
+                    new UpdateExtract(this.performanceProfile, this.longTransDuration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateExtract o) {
-            Builder copiedBuilder =
-                    performanceProfile(o.getPerformanceProfile())
-                            .longTransDuration(o.getLongTransDuration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateExtract model) {
+            if (model.wasPropertyExplicitlySet("performanceProfile")) {
+                this.performanceProfile(model.getPerformanceProfile());
+            }
+            if (model.wasPropertyExplicitlySet("longTransDuration")) {
+                this.longTransDuration(model.getLongTransDuration());
+            }
+            return this;
         }
     }
 
@@ -147,9 +151,9 @@ public final class UpdateExtract {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateExtract(");
+        sb.append("super=").append(super.toString());
         sb.append("performanceProfile=").append(String.valueOf(this.performanceProfile));
         sb.append(", longTransDuration=").append(String.valueOf(this.longTransDuration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -166,7 +170,7 @@ public final class UpdateExtract {
         UpdateExtract other = (UpdateExtract) o;
         return java.util.Objects.equals(this.performanceProfile, other.performanceProfile)
                 && java.util.Objects.equals(this.longTransDuration, other.longTransDuration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -181,16 +185,7 @@ public final class UpdateExtract {
         result =
                 (result * PRIME)
                         + (this.longTransDuration == null ? 43 : this.longTransDuration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

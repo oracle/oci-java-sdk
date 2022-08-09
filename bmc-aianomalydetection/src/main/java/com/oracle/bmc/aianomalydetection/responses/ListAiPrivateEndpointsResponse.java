@@ -61,17 +61,19 @@ public class ListAiPrivateEndpointsResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "aiPrivateEndpointCollection"
     })
     private ListAiPrivateEndpointsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.aianomalydetection.model.AiPrivateEndpointCollection
                     aiPrivateEndpointCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.aiPrivateEndpointCollection = aiPrivateEndpointCollection;
@@ -82,6 +84,13 @@ public class ListAiPrivateEndpointsResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListAiPrivateEndpointsResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(ListAiPrivateEndpointsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             aiPrivateEndpointCollection(o.getAiPrivateEndpointCollection());
@@ -162,7 +172,11 @@ public class ListAiPrivateEndpointsResponse extends com.oracle.bmc.responses.Bmc
          */
         public ListAiPrivateEndpointsResponse build() {
             return new ListAiPrivateEndpointsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, aiPrivateEndpointCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    aiPrivateEndpointCollection);
         }
     }
 

@@ -114,8 +114,8 @@ public class GetPatchConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .GetPatchResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.patch(response.getItem());
 

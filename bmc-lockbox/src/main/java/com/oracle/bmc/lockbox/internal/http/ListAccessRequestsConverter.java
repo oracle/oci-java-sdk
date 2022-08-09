@@ -182,8 +182,8 @@ public class ListAccessRequestsConverter {
                                         builder =
                                                 com.oracle.bmc.lockbox.responses
                                                         .ListAccessRequestsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.accessRequestCollection(response.getItem());
 

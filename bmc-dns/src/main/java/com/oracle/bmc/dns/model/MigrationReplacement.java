@@ -20,7 +20,7 @@ package com.oracle.bmc.dns.model;
     builder = MigrationReplacement.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MigrationReplacement {
+public final class MigrationReplacement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"rtype", "substituteRtype", "ttl", "rdata"})
     public MigrationReplacement(String rtype, String substituteRtype, Integer ttl, String rdata) {
@@ -108,22 +108,30 @@ public final class MigrationReplacement {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MigrationReplacement build() {
-            MigrationReplacement __instance__ =
-                    new MigrationReplacement(rtype, substituteRtype, ttl, rdata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MigrationReplacement model =
+                    new MigrationReplacement(
+                            this.rtype, this.substituteRtype, this.ttl, this.rdata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MigrationReplacement o) {
-            Builder copiedBuilder =
-                    rtype(o.getRtype())
-                            .substituteRtype(o.getSubstituteRtype())
-                            .ttl(o.getTtl())
-                            .rdata(o.getRdata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MigrationReplacement model) {
+            if (model.wasPropertyExplicitlySet("rtype")) {
+                this.rtype(model.getRtype());
+            }
+            if (model.wasPropertyExplicitlySet("substituteRtype")) {
+                this.substituteRtype(model.getSubstituteRtype());
+            }
+            if (model.wasPropertyExplicitlySet("ttl")) {
+                this.ttl(model.getTtl());
+            }
+            if (model.wasPropertyExplicitlySet("rdata")) {
+                this.rdata(model.getRdata());
+            }
+            return this;
         }
     }
 
@@ -213,11 +221,11 @@ public final class MigrationReplacement {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MigrationReplacement(");
+        sb.append("super=").append(super.toString());
         sb.append("rtype=").append(String.valueOf(this.rtype));
         sb.append(", substituteRtype=").append(String.valueOf(this.substituteRtype));
         sb.append(", ttl=").append(String.valueOf(this.ttl));
         sb.append(", rdata=").append(String.valueOf(this.rdata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -236,7 +244,7 @@ public final class MigrationReplacement {
                 && java.util.Objects.equals(this.substituteRtype, other.substituteRtype)
                 && java.util.Objects.equals(this.ttl, other.ttl)
                 && java.util.Objects.equals(this.rdata, other.rdata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -249,16 +257,7 @@ public final class MigrationReplacement {
                         + (this.substituteRtype == null ? 43 : this.substituteRtype.hashCode());
         result = (result * PRIME) + (this.ttl == null ? 43 : this.ttl.hashCode());
         result = (result * PRIME) + (this.rdata == null ? 43 : this.rdata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

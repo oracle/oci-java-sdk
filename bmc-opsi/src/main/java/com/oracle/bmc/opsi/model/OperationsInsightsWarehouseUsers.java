@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = OperationsInsightsWarehouseUsers.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OperationsInsightsWarehouseUsers {
+public final class OperationsInsightsWarehouseUsers
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"operationsInsightsWarehouseUsers"})
     public OperationsInsightsWarehouseUsers(Object operationsInsightsWarehouseUsers) {
@@ -50,19 +51,20 @@ public final class OperationsInsightsWarehouseUsers {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OperationsInsightsWarehouseUsers build() {
-            OperationsInsightsWarehouseUsers __instance__ =
-                    new OperationsInsightsWarehouseUsers(operationsInsightsWarehouseUsers);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OperationsInsightsWarehouseUsers model =
+                    new OperationsInsightsWarehouseUsers(this.operationsInsightsWarehouseUsers);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OperationsInsightsWarehouseUsers o) {
-            Builder copiedBuilder =
-                    operationsInsightsWarehouseUsers(o.getOperationsInsightsWarehouseUsers());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OperationsInsightsWarehouseUsers model) {
+            if (model.wasPropertyExplicitlySet("operationsInsightsWarehouseUsers")) {
+                this.operationsInsightsWarehouseUsers(model.getOperationsInsightsWarehouseUsers());
+            }
+            return this;
         }
     }
 
@@ -104,9 +106,9 @@ public final class OperationsInsightsWarehouseUsers {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OperationsInsightsWarehouseUsers(");
+        sb.append("super=").append(super.toString());
         sb.append("operationsInsightsWarehouseUsers=")
                 .append(String.valueOf(this.operationsInsightsWarehouseUsers));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -124,7 +126,7 @@ public final class OperationsInsightsWarehouseUsers {
         return java.util.Objects.equals(
                         this.operationsInsightsWarehouseUsers,
                         other.operationsInsightsWarehouseUsers)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -136,16 +138,7 @@ public final class OperationsInsightsWarehouseUsers {
                         + (this.operationsInsightsWarehouseUsers == null
                                 ? 43
                                 : this.operationsInsightsWarehouseUsers.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -20,7 +20,7 @@ package com.oracle.bmc.waf.model;
     builder = ProtectionCapability.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProtectionCapability {
+public final class ProtectionCapability extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -155,30 +155,41 @@ public final class ProtectionCapability {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProtectionCapability build() {
-            ProtectionCapability __instance__ =
+            ProtectionCapability model =
                     new ProtectionCapability(
-                            key,
-                            version,
-                            exclusions,
-                            actionName,
-                            collaborativeActionThreshold,
-                            collaborativeWeights);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.version,
+                            this.exclusions,
+                            this.actionName,
+                            this.collaborativeActionThreshold,
+                            this.collaborativeWeights);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProtectionCapability o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .version(o.getVersion())
-                            .exclusions(o.getExclusions())
-                            .actionName(o.getActionName())
-                            .collaborativeActionThreshold(o.getCollaborativeActionThreshold())
-                            .collaborativeWeights(o.getCollaborativeWeights());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProtectionCapability model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("exclusions")) {
+                this.exclusions(model.getExclusions());
+            }
+            if (model.wasPropertyExplicitlySet("actionName")) {
+                this.actionName(model.getActionName());
+            }
+            if (model.wasPropertyExplicitlySet("collaborativeActionThreshold")) {
+                this.collaborativeActionThreshold(model.getCollaborativeActionThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("collaborativeWeights")) {
+                this.collaborativeWeights(model.getCollaborativeWeights());
+            }
+            return this;
         }
     }
 
@@ -295,6 +306,7 @@ public final class ProtectionCapability {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProtectionCapability(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", exclusions=").append(String.valueOf(this.exclusions));
@@ -302,7 +314,6 @@ public final class ProtectionCapability {
         sb.append(", collaborativeActionThreshold=")
                 .append(String.valueOf(this.collaborativeActionThreshold));
         sb.append(", collaborativeWeights=").append(String.valueOf(this.collaborativeWeights));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -324,7 +335,7 @@ public final class ProtectionCapability {
                 && java.util.Objects.equals(
                         this.collaborativeActionThreshold, other.collaborativeActionThreshold)
                 && java.util.Objects.equals(this.collaborativeWeights, other.collaborativeWeights)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -345,16 +356,7 @@ public final class ProtectionCapability {
                         + (this.collaborativeWeights == null
                                 ? 43
                                 : this.collaborativeWeights.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -301,8 +301,8 @@ public class ListProblemsConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListProblemsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.problemCollection(response.getItem());
 

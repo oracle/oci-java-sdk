@@ -76,6 +76,7 @@ public class FilterResourceActionsResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opcPrevPage",
@@ -83,11 +84,12 @@ public class FilterResourceActionsResponse extends com.oracle.bmc.responses.BmcR
     })
     private FilterResourceActionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
             com.oracle.bmc.optimizer.model.ResourceActionCollection resourceActionCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opcPrevPage = opcPrevPage;
@@ -99,6 +101,13 @@ public class FilterResourceActionsResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -183,6 +192,7 @@ public class FilterResourceActionsResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(FilterResourceActionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());
@@ -198,6 +208,7 @@ public class FilterResourceActionsResponse extends com.oracle.bmc.responses.BmcR
         public FilterResourceActionsResponse build() {
             return new FilterResourceActionsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     opcPrevPage,

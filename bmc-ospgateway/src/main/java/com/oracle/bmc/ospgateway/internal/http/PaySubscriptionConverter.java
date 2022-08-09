@@ -133,8 +133,8 @@ public class PaySubscriptionConverter {
                                         builder =
                                                 com.oracle.bmc.ospgateway.responses
                                                         .PaySubscriptionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.paySubscriptionReceipt(response.getItem());
 

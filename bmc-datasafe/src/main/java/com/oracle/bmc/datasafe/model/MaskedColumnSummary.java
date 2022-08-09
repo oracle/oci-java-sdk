@@ -19,7 +19,7 @@ package com.oracle.bmc.datasafe.model;
     builder = MaskedColumnSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MaskedColumnSummary {
+public final class MaskedColumnSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -224,38 +224,57 @@ public final class MaskedColumnSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MaskedColumnSummary build() {
-            MaskedColumnSummary __instance__ =
+            MaskedColumnSummary model =
                     new MaskedColumnSummary(
-                            key,
-                            parentColumnKey,
-                            sensitiveTypeId,
-                            schemaName,
-                            objectName,
-                            objectType,
-                            columnName,
-                            maskingColumnGroup,
-                            maskingFormatUsed,
-                            totalMaskedValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.parentColumnKey,
+                            this.sensitiveTypeId,
+                            this.schemaName,
+                            this.objectName,
+                            this.objectType,
+                            this.columnName,
+                            this.maskingColumnGroup,
+                            this.maskingFormatUsed,
+                            this.totalMaskedValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MaskedColumnSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .parentColumnKey(o.getParentColumnKey())
-                            .sensitiveTypeId(o.getSensitiveTypeId())
-                            .schemaName(o.getSchemaName())
-                            .objectName(o.getObjectName())
-                            .objectType(o.getObjectType())
-                            .columnName(o.getColumnName())
-                            .maskingColumnGroup(o.getMaskingColumnGroup())
-                            .maskingFormatUsed(o.getMaskingFormatUsed())
-                            .totalMaskedValues(o.getTotalMaskedValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MaskedColumnSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("parentColumnKey")) {
+                this.parentColumnKey(model.getParentColumnKey());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveTypeId")) {
+                this.sensitiveTypeId(model.getSensitiveTypeId());
+            }
+            if (model.wasPropertyExplicitlySet("schemaName")) {
+                this.schemaName(model.getSchemaName());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("columnName")) {
+                this.columnName(model.getColumnName());
+            }
+            if (model.wasPropertyExplicitlySet("maskingColumnGroup")) {
+                this.maskingColumnGroup(model.getMaskingColumnGroup());
+            }
+            if (model.wasPropertyExplicitlySet("maskingFormatUsed")) {
+                this.maskingFormatUsed(model.getMaskingFormatUsed());
+            }
+            if (model.wasPropertyExplicitlySet("totalMaskedValues")) {
+                this.totalMaskedValues(model.getTotalMaskedValues());
+            }
+            return this;
         }
     }
 
@@ -423,6 +442,7 @@ public final class MaskedColumnSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MaskedColumnSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", parentColumnKey=").append(String.valueOf(this.parentColumnKey));
         sb.append(", sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
@@ -433,7 +453,6 @@ public final class MaskedColumnSummary {
         sb.append(", maskingColumnGroup=").append(String.valueOf(this.maskingColumnGroup));
         sb.append(", maskingFormatUsed=").append(String.valueOf(this.maskingFormatUsed));
         sb.append(", totalMaskedValues=").append(String.valueOf(this.totalMaskedValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -458,7 +477,7 @@ public final class MaskedColumnSummary {
                 && java.util.Objects.equals(this.maskingColumnGroup, other.maskingColumnGroup)
                 && java.util.Objects.equals(this.maskingFormatUsed, other.maskingFormatUsed)
                 && java.util.Objects.equals(this.totalMaskedValues, other.totalMaskedValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -487,16 +506,7 @@ public final class MaskedColumnSummary {
         result =
                 (result * PRIME)
                         + (this.totalMaskedValues == null ? 43 : this.totalMaskedValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

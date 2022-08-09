@@ -53,16 +53,18 @@ public class GetConsoleConnectionResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "consoleConnection"
     })
     private GetConsoleConnectionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.ConsoleConnection consoleConnection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.consoleConnection = consoleConnection;
@@ -73,6 +75,13 @@ public class GetConsoleConnectionResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetConsoleConnectionResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(GetConsoleConnectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             consoleConnection(o.getConsoleConnection());
@@ -145,7 +155,7 @@ public class GetConsoleConnectionResponse extends com.oracle.bmc.responses.BmcRe
          */
         public GetConsoleConnectionResponse build() {
             return new GetConsoleConnectionResponse(
-                    __httpStatusCode__, etag, opcRequestId, consoleConnection);
+                    __httpStatusCode__, headers, etag, opcRequestId, consoleConnection);
         }
     }
 

@@ -129,8 +129,8 @@ public class UpdateDigitalAssistantParameterConverter {
                                                 com.oracle.bmc.oda.responses
                                                         .UpdateDigitalAssistantParameterResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.digitalAssistantParameter(response.getItem());
 

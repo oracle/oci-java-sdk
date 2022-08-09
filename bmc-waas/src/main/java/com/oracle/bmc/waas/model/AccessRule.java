@@ -17,7 +17,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AccessRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AccessRule {
+public final class AccessRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -389,50 +389,81 @@ public final class AccessRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AccessRule build() {
-            AccessRule __instance__ =
+            AccessRule model =
                     new AccessRule(
-                            name,
-                            criteria,
-                            action,
-                            blockAction,
-                            blockResponseCode,
-                            blockErrorPageMessage,
-                            blockErrorPageCode,
-                            blockErrorPageDescription,
-                            bypassChallenges,
-                            redirectUrl,
-                            redirectResponseCode,
-                            captchaTitle,
-                            captchaHeader,
-                            captchaFooter,
-                            captchaSubmitLabel,
-                            responseHeaderManipulation);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.criteria,
+                            this.action,
+                            this.blockAction,
+                            this.blockResponseCode,
+                            this.blockErrorPageMessage,
+                            this.blockErrorPageCode,
+                            this.blockErrorPageDescription,
+                            this.bypassChallenges,
+                            this.redirectUrl,
+                            this.redirectResponseCode,
+                            this.captchaTitle,
+                            this.captchaHeader,
+                            this.captchaFooter,
+                            this.captchaSubmitLabel,
+                            this.responseHeaderManipulation);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AccessRule o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .criteria(o.getCriteria())
-                            .action(o.getAction())
-                            .blockAction(o.getBlockAction())
-                            .blockResponseCode(o.getBlockResponseCode())
-                            .blockErrorPageMessage(o.getBlockErrorPageMessage())
-                            .blockErrorPageCode(o.getBlockErrorPageCode())
-                            .blockErrorPageDescription(o.getBlockErrorPageDescription())
-                            .bypassChallenges(o.getBypassChallenges())
-                            .redirectUrl(o.getRedirectUrl())
-                            .redirectResponseCode(o.getRedirectResponseCode())
-                            .captchaTitle(o.getCaptchaTitle())
-                            .captchaHeader(o.getCaptchaHeader())
-                            .captchaFooter(o.getCaptchaFooter())
-                            .captchaSubmitLabel(o.getCaptchaSubmitLabel())
-                            .responseHeaderManipulation(o.getResponseHeaderManipulation());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AccessRule model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("criteria")) {
+                this.criteria(model.getCriteria());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("blockAction")) {
+                this.blockAction(model.getBlockAction());
+            }
+            if (model.wasPropertyExplicitlySet("blockResponseCode")) {
+                this.blockResponseCode(model.getBlockResponseCode());
+            }
+            if (model.wasPropertyExplicitlySet("blockErrorPageMessage")) {
+                this.blockErrorPageMessage(model.getBlockErrorPageMessage());
+            }
+            if (model.wasPropertyExplicitlySet("blockErrorPageCode")) {
+                this.blockErrorPageCode(model.getBlockErrorPageCode());
+            }
+            if (model.wasPropertyExplicitlySet("blockErrorPageDescription")) {
+                this.blockErrorPageDescription(model.getBlockErrorPageDescription());
+            }
+            if (model.wasPropertyExplicitlySet("bypassChallenges")) {
+                this.bypassChallenges(model.getBypassChallenges());
+            }
+            if (model.wasPropertyExplicitlySet("redirectUrl")) {
+                this.redirectUrl(model.getRedirectUrl());
+            }
+            if (model.wasPropertyExplicitlySet("redirectResponseCode")) {
+                this.redirectResponseCode(model.getRedirectResponseCode());
+            }
+            if (model.wasPropertyExplicitlySet("captchaTitle")) {
+                this.captchaTitle(model.getCaptchaTitle());
+            }
+            if (model.wasPropertyExplicitlySet("captchaHeader")) {
+                this.captchaHeader(model.getCaptchaHeader());
+            }
+            if (model.wasPropertyExplicitlySet("captchaFooter")) {
+                this.captchaFooter(model.getCaptchaFooter());
+            }
+            if (model.wasPropertyExplicitlySet("captchaSubmitLabel")) {
+                this.captchaSubmitLabel(model.getCaptchaSubmitLabel());
+            }
+            if (model.wasPropertyExplicitlySet("responseHeaderManipulation")) {
+                this.responseHeaderManipulation(model.getResponseHeaderManipulation());
+            }
+            return this;
         }
     }
 
@@ -950,6 +981,7 @@ public final class AccessRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AccessRule(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", criteria=").append(String.valueOf(this.criteria));
         sb.append(", action=").append(String.valueOf(this.action));
@@ -968,7 +1000,6 @@ public final class AccessRule {
         sb.append(", captchaSubmitLabel=").append(String.valueOf(this.captchaSubmitLabel));
         sb.append(", responseHeaderManipulation=")
                 .append(String.valueOf(this.responseHeaderManipulation));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1001,7 +1032,7 @@ public final class AccessRule {
                 && java.util.Objects.equals(this.captchaSubmitLabel, other.captchaSubmitLabel)
                 && java.util.Objects.equals(
                         this.responseHeaderManipulation, other.responseHeaderManipulation)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1056,16 +1087,7 @@ public final class AccessRule {
                         + (this.responseHeaderManipulation == null
                                 ? 43
                                 : this.responseHeaderManipulation.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

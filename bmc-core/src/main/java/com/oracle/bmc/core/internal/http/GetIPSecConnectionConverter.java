@@ -99,8 +99,8 @@ public class GetIPSecConnectionConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetIPSecConnectionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.iPSecConnection(response.getItem());
 

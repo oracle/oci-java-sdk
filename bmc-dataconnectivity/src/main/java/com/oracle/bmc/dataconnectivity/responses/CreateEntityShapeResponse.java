@@ -38,12 +38,18 @@ public class CreateEntityShapeResponse extends com.oracle.bmc.responses.BmcRespo
         return entityShape;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "entityShape"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "entityShape"
+    })
     private CreateEntityShapeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.dataconnectivity.model.EntityShape entityShape) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.entityShape = entityShape;
     }
@@ -53,6 +59,13 @@ public class CreateEntityShapeResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +109,7 @@ public class CreateEntityShapeResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(CreateEntityShapeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             entityShape(o.getEntityShape());
 
@@ -107,7 +121,8 @@ public class CreateEntityShapeResponse extends com.oracle.bmc.responses.BmcRespo
          * @return the response object
          */
         public CreateEntityShapeResponse build() {
-            return new CreateEntityShapeResponse(__httpStatusCode__, opcRequestId, entityShape);
+            return new CreateEntityShapeResponse(
+                    __httpStatusCode__, headers, opcRequestId, entityShape);
         }
     }
 

@@ -50,19 +50,24 @@ public final class CreateStackTemplateConfigSourceDetails extends CreateConfigSo
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateStackTemplateConfigSourceDetails build() {
-            CreateStackTemplateConfigSourceDetails __instance__ =
-                    new CreateStackTemplateConfigSourceDetails(workingDirectory, templateId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateStackTemplateConfigSourceDetails model =
+                    new CreateStackTemplateConfigSourceDetails(
+                            this.workingDirectory, this.templateId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateStackTemplateConfigSourceDetails o) {
-            Builder copiedBuilder =
-                    workingDirectory(o.getWorkingDirectory()).templateId(o.getTemplateId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateStackTemplateConfigSourceDetails model) {
+            if (model.wasPropertyExplicitlySet("workingDirectory")) {
+                this.workingDirectory(model.getWorkingDirectory());
+            }
+            if (model.wasPropertyExplicitlySet("templateId")) {
+                this.templateId(model.getTemplateId());
+            }
+            return this;
         }
     }
 
@@ -105,7 +110,6 @@ public final class CreateStackTemplateConfigSourceDetails extends CreateConfigSo
         sb.append("CreateStackTemplateConfigSourceDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", templateId=").append(String.valueOf(this.templateId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -120,9 +124,7 @@ public final class CreateStackTemplateConfigSourceDetails extends CreateConfigSo
         }
 
         CreateStackTemplateConfigSourceDetails other = (CreateStackTemplateConfigSourceDetails) o;
-        return java.util.Objects.equals(this.templateId, other.templateId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.templateId, other.templateId) && super.equals(other);
     }
 
     @Override
@@ -130,16 +132,6 @@ public final class CreateStackTemplateConfigSourceDetails extends CreateConfigSo
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.templateId == null ? 43 : this.templateId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

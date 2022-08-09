@@ -112,8 +112,8 @@ public class CompareContentConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .CompareContentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.compareContentResult(response.getItem());
 

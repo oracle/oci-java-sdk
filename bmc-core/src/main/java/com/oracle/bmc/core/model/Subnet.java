@@ -26,7 +26,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Subnet.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Subnet {
+public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -624,62 +624,105 @@ public final class Subnet {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Subnet build() {
-            Subnet __instance__ =
+            Subnet model =
                     new Subnet(
-                            availabilityDomain,
-                            cidrBlock,
-                            compartmentId,
-                            definedTags,
-                            dhcpOptionsId,
-                            displayName,
-                            dnsLabel,
-                            freeformTags,
-                            id,
-                            ipv6CidrBlock,
-                            ipv6CidrBlocks,
-                            ipv6VirtualRouterIp,
-                            lifecycleState,
-                            prohibitInternetIngress,
-                            prohibitPublicIpOnVnic,
-                            routeTableId,
-                            securityListIds,
-                            subnetDomainName,
-                            timeCreated,
-                            vcnId,
-                            virtualRouterIp,
-                            virtualRouterMac);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.cidrBlock,
+                            this.compartmentId,
+                            this.definedTags,
+                            this.dhcpOptionsId,
+                            this.displayName,
+                            this.dnsLabel,
+                            this.freeformTags,
+                            this.id,
+                            this.ipv6CidrBlock,
+                            this.ipv6CidrBlocks,
+                            this.ipv6VirtualRouterIp,
+                            this.lifecycleState,
+                            this.prohibitInternetIngress,
+                            this.prohibitPublicIpOnVnic,
+                            this.routeTableId,
+                            this.securityListIds,
+                            this.subnetDomainName,
+                            this.timeCreated,
+                            this.vcnId,
+                            this.virtualRouterIp,
+                            this.virtualRouterMac);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Subnet o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .cidrBlock(o.getCidrBlock())
-                            .compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .dhcpOptionsId(o.getDhcpOptionsId())
-                            .displayName(o.getDisplayName())
-                            .dnsLabel(o.getDnsLabel())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .ipv6CidrBlock(o.getIpv6CidrBlock())
-                            .ipv6CidrBlocks(o.getIpv6CidrBlocks())
-                            .ipv6VirtualRouterIp(o.getIpv6VirtualRouterIp())
-                            .lifecycleState(o.getLifecycleState())
-                            .prohibitInternetIngress(o.getProhibitInternetIngress())
-                            .prohibitPublicIpOnVnic(o.getProhibitPublicIpOnVnic())
-                            .routeTableId(o.getRouteTableId())
-                            .securityListIds(o.getSecurityListIds())
-                            .subnetDomainName(o.getSubnetDomainName())
-                            .timeCreated(o.getTimeCreated())
-                            .vcnId(o.getVcnId())
-                            .virtualRouterIp(o.getVirtualRouterIp())
-                            .virtualRouterMac(o.getVirtualRouterMac());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Subnet model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("cidrBlock")) {
+                this.cidrBlock(model.getCidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("dhcpOptionsId")) {
+                this.dhcpOptionsId(model.getDhcpOptionsId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("dnsLabel")) {
+                this.dnsLabel(model.getDnsLabel());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlock")) {
+                this.ipv6CidrBlock(model.getIpv6CidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlocks")) {
+                this.ipv6CidrBlocks(model.getIpv6CidrBlocks());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6VirtualRouterIp")) {
+                this.ipv6VirtualRouterIp(model.getIpv6VirtualRouterIp());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("prohibitInternetIngress")) {
+                this.prohibitInternetIngress(model.getProhibitInternetIngress());
+            }
+            if (model.wasPropertyExplicitlySet("prohibitPublicIpOnVnic")) {
+                this.prohibitPublicIpOnVnic(model.getProhibitPublicIpOnVnic());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("securityListIds")) {
+                this.securityListIds(model.getSecurityListIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetDomainName")) {
+                this.subnetDomainName(model.getSubnetDomainName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("virtualRouterIp")) {
+                this.virtualRouterIp(model.getVirtualRouterIp());
+            }
+            if (model.wasPropertyExplicitlySet("virtualRouterMac")) {
+                this.virtualRouterMac(model.getVirtualRouterMac());
+            }
+            return this;
         }
     }
 
@@ -1230,6 +1273,7 @@ public final class Subnet {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Subnet(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", cidrBlock=").append(String.valueOf(this.cidrBlock));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -1253,7 +1297,6 @@ public final class Subnet {
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", virtualRouterIp=").append(String.valueOf(this.virtualRouterIp));
         sb.append(", virtualRouterMac=").append(String.valueOf(this.virtualRouterMac));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1292,7 +1335,7 @@ public final class Subnet {
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(this.virtualRouterIp, other.virtualRouterIp)
                 && java.util.Objects.equals(this.virtualRouterMac, other.virtualRouterMac)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1355,16 +1398,7 @@ public final class Subnet {
         result =
                 (result * PRIME)
                         + (this.virtualRouterMac == null ? 43 : this.virtualRouterMac.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

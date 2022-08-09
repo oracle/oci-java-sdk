@@ -70,6 +70,7 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "opcWorkRequestId",
@@ -77,11 +78,12 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
     })
     private RestoreVaultFromObjectStoreResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
             com.oracle.bmc.keymanagement.model.Vault vault) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
@@ -93,6 +95,13 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -170,6 +179,7 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
          */
         public Builder copy(RestoreVaultFromObjectStoreResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
@@ -184,7 +194,7 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
          */
         public RestoreVaultFromObjectStoreResponse build() {
             return new RestoreVaultFromObjectStoreResponse(
-                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, vault);
+                    __httpStatusCode__, headers, etag, opcRequestId, opcWorkRequestId, vault);
         }
     }
 

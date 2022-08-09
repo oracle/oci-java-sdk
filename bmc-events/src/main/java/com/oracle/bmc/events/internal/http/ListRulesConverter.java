@@ -156,7 +156,8 @@ public class ListRulesConverter {
 
                                 com.oracle.bmc.events.responses.ListRulesResponse.Builder builder =
                                         com.oracle.bmc.events.responses.ListRulesResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

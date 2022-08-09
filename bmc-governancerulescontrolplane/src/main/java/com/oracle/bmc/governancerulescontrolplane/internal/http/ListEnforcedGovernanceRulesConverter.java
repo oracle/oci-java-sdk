@@ -179,8 +179,8 @@ public class ListEnforcedGovernanceRulesConverter {
                                                 com.oracle.bmc.governancerulescontrolplane.responses
                                                         .ListEnforcedGovernanceRulesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.enforcedGovernanceRuleCollection(response.getItem());
 

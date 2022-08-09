@@ -17,7 +17,7 @@ package com.oracle.bmc.keymanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KeyVersion.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class KeyVersion {
+public final class KeyVersion extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -270,42 +270,65 @@ public final class KeyVersion {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KeyVersion build() {
-            KeyVersion __instance__ =
+            KeyVersion model =
                     new KeyVersion(
-                            compartmentId,
-                            id,
-                            keyId,
-                            publicKey,
-                            lifecycleState,
-                            origin,
-                            timeCreated,
-                            timeOfDeletion,
-                            vaultId,
-                            restoredFromKeyVersionId,
-                            replicaDetails,
-                            isPrimary);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.id,
+                            this.keyId,
+                            this.publicKey,
+                            this.lifecycleState,
+                            this.origin,
+                            this.timeCreated,
+                            this.timeOfDeletion,
+                            this.vaultId,
+                            this.restoredFromKeyVersionId,
+                            this.replicaDetails,
+                            this.isPrimary);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(KeyVersion o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .id(o.getId())
-                            .keyId(o.getKeyId())
-                            .publicKey(o.getPublicKey())
-                            .lifecycleState(o.getLifecycleState())
-                            .origin(o.getOrigin())
-                            .timeCreated(o.getTimeCreated())
-                            .timeOfDeletion(o.getTimeOfDeletion())
-                            .vaultId(o.getVaultId())
-                            .restoredFromKeyVersionId(o.getRestoredFromKeyVersionId())
-                            .replicaDetails(o.getReplicaDetails())
-                            .isPrimary(o.getIsPrimary());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(KeyVersion model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("keyId")) {
+                this.keyId(model.getKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("publicKey")) {
+                this.publicKey(model.getPublicKey());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("origin")) {
+                this.origin(model.getOrigin());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfDeletion")) {
+                this.timeOfDeletion(model.getTimeOfDeletion());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("restoredFromKeyVersionId")) {
+                this.restoredFromKeyVersionId(model.getRestoredFromKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("replicaDetails")) {
+                this.replicaDetails(model.getReplicaDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isPrimary")) {
+                this.isPrimary(model.getIsPrimary());
+            }
+            return this;
         }
     }
 
@@ -620,6 +643,7 @@ public final class KeyVersion {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("KeyVersion(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
@@ -633,7 +657,6 @@ public final class KeyVersion {
                 .append(String.valueOf(this.restoredFromKeyVersionId));
         sb.append(", replicaDetails=").append(String.valueOf(this.replicaDetails));
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -661,7 +684,7 @@ public final class KeyVersion {
                         this.restoredFromKeyVersionId, other.restoredFromKeyVersionId)
                 && java.util.Objects.equals(this.replicaDetails, other.replicaDetails)
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -692,16 +715,7 @@ public final class KeyVersion {
                 (result * PRIME)
                         + (this.replicaDetails == null ? 43 : this.replicaDetails.hashCode());
         result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

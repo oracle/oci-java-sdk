@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = CatalogPermissionsSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CatalogPermissionsSummary {
+public final class CatalogPermissionsSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"catalogId", "userPermissions"})
     public CatalogPermissionsSummary(String catalogId, java.util.List<String> userPermissions) {
@@ -67,19 +68,23 @@ public final class CatalogPermissionsSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CatalogPermissionsSummary build() {
-            CatalogPermissionsSummary __instance__ =
-                    new CatalogPermissionsSummary(catalogId, userPermissions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CatalogPermissionsSummary model =
+                    new CatalogPermissionsSummary(this.catalogId, this.userPermissions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CatalogPermissionsSummary o) {
-            Builder copiedBuilder =
-                    catalogId(o.getCatalogId()).userPermissions(o.getUserPermissions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CatalogPermissionsSummary model) {
+            if (model.wasPropertyExplicitlySet("catalogId")) {
+                this.catalogId(model.getCatalogId());
+            }
+            if (model.wasPropertyExplicitlySet("userPermissions")) {
+                this.userPermissions(model.getUserPermissions());
+            }
+            return this;
         }
     }
 
@@ -135,9 +140,9 @@ public final class CatalogPermissionsSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CatalogPermissionsSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("catalogId=").append(String.valueOf(this.catalogId));
         sb.append(", userPermissions=").append(String.valueOf(this.userPermissions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,7 +159,7 @@ public final class CatalogPermissionsSummary {
         CatalogPermissionsSummary other = (CatalogPermissionsSummary) o;
         return java.util.Objects.equals(this.catalogId, other.catalogId)
                 && java.util.Objects.equals(this.userPermissions, other.userPermissions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -165,16 +170,7 @@ public final class CatalogPermissionsSummary {
         result =
                 (result * PRIME)
                         + (this.userPermissions == null ? 43 : this.userPermissions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,7 @@ package com.oracle.bmc.core.model;
     builder = CrossConnectStatus.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CrossConnectStatus {
+public final class CrossConnectStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "crossConnectId",
@@ -190,30 +190,41 @@ public final class CrossConnectStatus {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CrossConnectStatus build() {
-            CrossConnectStatus __instance__ =
+            CrossConnectStatus model =
                     new CrossConnectStatus(
-                            crossConnectId,
-                            interfaceState,
-                            lightLevelIndBm,
-                            lightLevelIndicator,
-                            encryptionStatus,
-                            lightLevelsInDBm);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.crossConnectId,
+                            this.interfaceState,
+                            this.lightLevelIndBm,
+                            this.lightLevelIndicator,
+                            this.encryptionStatus,
+                            this.lightLevelsInDBm);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CrossConnectStatus o) {
-            Builder copiedBuilder =
-                    crossConnectId(o.getCrossConnectId())
-                            .interfaceState(o.getInterfaceState())
-                            .lightLevelIndBm(o.getLightLevelIndBm())
-                            .lightLevelIndicator(o.getLightLevelIndicator())
-                            .encryptionStatus(o.getEncryptionStatus())
-                            .lightLevelsInDBm(o.getLightLevelsInDBm());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CrossConnectStatus model) {
+            if (model.wasPropertyExplicitlySet("crossConnectId")) {
+                this.crossConnectId(model.getCrossConnectId());
+            }
+            if (model.wasPropertyExplicitlySet("interfaceState")) {
+                this.interfaceState(model.getInterfaceState());
+            }
+            if (model.wasPropertyExplicitlySet("lightLevelIndBm")) {
+                this.lightLevelIndBm(model.getLightLevelIndBm());
+            }
+            if (model.wasPropertyExplicitlySet("lightLevelIndicator")) {
+                this.lightLevelIndicator(model.getLightLevelIndicator());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionStatus")) {
+                this.encryptionStatus(model.getEncryptionStatus());
+            }
+            if (model.wasPropertyExplicitlySet("lightLevelsInDBm")) {
+                this.lightLevelsInDBm(model.getLightLevelsInDBm());
+            }
+            return this;
         }
     }
 
@@ -532,13 +543,13 @@ public final class CrossConnectStatus {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CrossConnectStatus(");
+        sb.append("super=").append(super.toString());
         sb.append("crossConnectId=").append(String.valueOf(this.crossConnectId));
         sb.append(", interfaceState=").append(String.valueOf(this.interfaceState));
         sb.append(", lightLevelIndBm=").append(String.valueOf(this.lightLevelIndBm));
         sb.append(", lightLevelIndicator=").append(String.valueOf(this.lightLevelIndicator));
         sb.append(", encryptionStatus=").append(String.valueOf(this.encryptionStatus));
         sb.append(", lightLevelsInDBm=").append(String.valueOf(this.lightLevelsInDBm));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -559,7 +570,7 @@ public final class CrossConnectStatus {
                 && java.util.Objects.equals(this.lightLevelIndicator, other.lightLevelIndicator)
                 && java.util.Objects.equals(this.encryptionStatus, other.encryptionStatus)
                 && java.util.Objects.equals(this.lightLevelsInDBm, other.lightLevelsInDBm)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -586,16 +597,7 @@ public final class CrossConnectStatus {
         result =
                 (result * PRIME)
                         + (this.lightLevelsInDBm == null ? 43 : this.lightLevelsInDBm.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

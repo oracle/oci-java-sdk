@@ -119,8 +119,8 @@ public class RetrieveNamespaceMetricsConverter {
                                         builder =
                                                 com.oracle.bmc.apmconfig.responses
                                                         .RetrieveNamespaceMetricsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.namespaceMetricCollection(response.getItem());
 

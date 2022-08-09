@@ -113,30 +113,41 @@ public final class CreditCardPaymentOption extends PaymentOption {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreditCardPaymentOption build() {
-            CreditCardPaymentOption __instance__ =
+            CreditCardPaymentOption model =
                     new CreditCardPaymentOption(
-                            walletInstrumentId,
-                            walletTransactionId,
-                            creditCardType,
-                            lastDigits,
-                            nameOnCard,
-                            timeExpiration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.walletInstrumentId,
+                            this.walletTransactionId,
+                            this.creditCardType,
+                            this.lastDigits,
+                            this.nameOnCard,
+                            this.timeExpiration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreditCardPaymentOption o) {
-            Builder copiedBuilder =
-                    walletInstrumentId(o.getWalletInstrumentId())
-                            .walletTransactionId(o.getWalletTransactionId())
-                            .creditCardType(o.getCreditCardType())
-                            .lastDigits(o.getLastDigits())
-                            .nameOnCard(o.getNameOnCard())
-                            .timeExpiration(o.getTimeExpiration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreditCardPaymentOption model) {
+            if (model.wasPropertyExplicitlySet("walletInstrumentId")) {
+                this.walletInstrumentId(model.getWalletInstrumentId());
+            }
+            if (model.wasPropertyExplicitlySet("walletTransactionId")) {
+                this.walletTransactionId(model.getWalletTransactionId());
+            }
+            if (model.wasPropertyExplicitlySet("creditCardType")) {
+                this.creditCardType(model.getCreditCardType());
+            }
+            if (model.wasPropertyExplicitlySet("lastDigits")) {
+                this.lastDigits(model.getLastDigits());
+            }
+            if (model.wasPropertyExplicitlySet("nameOnCard")) {
+                this.nameOnCard(model.getNameOnCard());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpiration")) {
+                this.timeExpiration(model.getTimeExpiration());
+            }
+            return this;
         }
     }
 
@@ -240,7 +251,6 @@ public final class CreditCardPaymentOption extends PaymentOption {
         sb.append(", lastDigits=").append(String.valueOf(this.lastDigits));
         sb.append(", nameOnCard=").append(String.valueOf(this.nameOnCard));
         sb.append(", timeExpiration=").append(String.valueOf(this.timeExpiration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -259,8 +269,7 @@ public final class CreditCardPaymentOption extends PaymentOption {
                 && java.util.Objects.equals(this.lastDigits, other.lastDigits)
                 && java.util.Objects.equals(this.nameOnCard, other.nameOnCard)
                 && java.util.Objects.equals(this.timeExpiration, other.timeExpiration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -275,16 +284,6 @@ public final class CreditCardPaymentOption extends PaymentOption {
         result =
                 (result * PRIME)
                         + (this.timeExpiration == null ? 43 : this.timeExpiration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -59,16 +59,18 @@ public class ListBlockVolumeReplicasResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "items"
     })
     private ListBlockVolumeReplicasResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.core.model.BlockVolumeReplica> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.items = items;
@@ -79,6 +81,13 @@ public class ListBlockVolumeReplicasResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -143,6 +152,7 @@ public class ListBlockVolumeReplicasResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(ListBlockVolumeReplicasResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
@@ -156,7 +166,7 @@ public class ListBlockVolumeReplicasResponse extends com.oracle.bmc.responses.Bm
          */
         public ListBlockVolumeReplicasResponse build() {
             return new ListBlockVolumeReplicasResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, items);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, items);
         }
     }
 

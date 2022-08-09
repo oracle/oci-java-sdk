@@ -111,8 +111,8 @@ public class UpdateDrgRouteRulesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateDrgRouteRulesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

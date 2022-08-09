@@ -20,7 +20,8 @@ package com.oracle.bmc.opsi.model;
     builder = HostInsightResourceStatisticsAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HostInsightResourceStatisticsAggregation {
+public final class HostInsightResourceStatisticsAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hostDetails", "currentStatistics"})
     public HostInsightResourceStatisticsAggregation(
@@ -55,19 +56,24 @@ public final class HostInsightResourceStatisticsAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostInsightResourceStatisticsAggregation build() {
-            HostInsightResourceStatisticsAggregation __instance__ =
-                    new HostInsightResourceStatisticsAggregation(hostDetails, currentStatistics);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HostInsightResourceStatisticsAggregation model =
+                    new HostInsightResourceStatisticsAggregation(
+                            this.hostDetails, this.currentStatistics);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostInsightResourceStatisticsAggregation o) {
-            Builder copiedBuilder =
-                    hostDetails(o.getHostDetails()).currentStatistics(o.getCurrentStatistics());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostInsightResourceStatisticsAggregation model) {
+            if (model.wasPropertyExplicitlySet("hostDetails")) {
+                this.hostDetails(model.getHostDetails());
+            }
+            if (model.wasPropertyExplicitlySet("currentStatistics")) {
+                this.currentStatistics(model.getCurrentStatistics());
+            }
+            return this;
         }
     }
 
@@ -109,9 +115,9 @@ public final class HostInsightResourceStatisticsAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostInsightResourceStatisticsAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("hostDetails=").append(String.valueOf(this.hostDetails));
         sb.append(", currentStatistics=").append(String.valueOf(this.currentStatistics));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -129,7 +135,7 @@ public final class HostInsightResourceStatisticsAggregation {
                 (HostInsightResourceStatisticsAggregation) o;
         return java.util.Objects.equals(this.hostDetails, other.hostDetails)
                 && java.util.Objects.equals(this.currentStatistics, other.currentStatistics)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -140,16 +146,7 @@ public final class HostInsightResourceStatisticsAggregation {
         result =
                 (result * PRIME)
                         + (this.currentStatistics == null ? 43 : this.currentStatistics.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

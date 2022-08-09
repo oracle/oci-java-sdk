@@ -19,7 +19,8 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = CreateDataPreviewDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateDataPreviewDetails {
+public final class CreateDataPreviewDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "readOperationConfig",
@@ -94,24 +95,37 @@ public final class CreateDataPreviewDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDataPreviewDetails build() {
-            CreateDataPreviewDetails __instance__ =
+            CreateDataPreviewDetails model =
                     new CreateDataPreviewDetails(
-                            readOperationConfig, dataAsset, connection, schema, dataEntity);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.readOperationConfig,
+                            this.dataAsset,
+                            this.connection,
+                            this.schema,
+                            this.dataEntity);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDataPreviewDetails o) {
-            Builder copiedBuilder =
-                    readOperationConfig(o.getReadOperationConfig())
-                            .dataAsset(o.getDataAsset())
-                            .connection(o.getConnection())
-                            .schema(o.getSchema())
-                            .dataEntity(o.getDataEntity());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDataPreviewDetails model) {
+            if (model.wasPropertyExplicitlySet("readOperationConfig")) {
+                this.readOperationConfig(model.getReadOperationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("dataAsset")) {
+                this.dataAsset(model.getDataAsset());
+            }
+            if (model.wasPropertyExplicitlySet("connection")) {
+                this.connection(model.getConnection());
+            }
+            if (model.wasPropertyExplicitlySet("schema")) {
+                this.schema(model.getSchema());
+            }
+            if (model.wasPropertyExplicitlySet("dataEntity")) {
+                this.dataEntity(model.getDataEntity());
+            }
+            return this;
         }
     }
 
@@ -174,12 +188,12 @@ public final class CreateDataPreviewDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDataPreviewDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("readOperationConfig=").append(String.valueOf(this.readOperationConfig));
         sb.append(", dataAsset=").append(String.valueOf(this.dataAsset));
         sb.append(", connection=").append(String.valueOf(this.connection));
         sb.append(", schema=").append(String.valueOf(this.schema));
         sb.append(", dataEntity=").append(String.valueOf(this.dataEntity));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,7 +213,7 @@ public final class CreateDataPreviewDetails {
                 && java.util.Objects.equals(this.connection, other.connection)
                 && java.util.Objects.equals(this.schema, other.schema)
                 && java.util.Objects.equals(this.dataEntity, other.dataEntity)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -215,16 +229,7 @@ public final class CreateDataPreviewDetails {
         result = (result * PRIME) + (this.connection == null ? 43 : this.connection.hashCode());
         result = (result * PRIME) + (this.schema == null ? 43 : this.schema.hashCode());
         result = (result * PRIME) + (this.dataEntity == null ? 43 : this.dataEntity.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

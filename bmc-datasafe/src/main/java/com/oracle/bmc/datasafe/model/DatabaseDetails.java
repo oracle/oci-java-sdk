@@ -39,7 +39,7 @@ package com.oracle.bmc.datasafe.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DatabaseDetails {
+public class DatabaseDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"infrastructureType"})
     protected DatabaseDetails(InfrastructureType infrastructureType) {
@@ -74,6 +74,7 @@ public class DatabaseDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("infrastructureType=").append(String.valueOf(this.infrastructureType));
         sb.append(")");
         return sb.toString();
@@ -89,7 +90,8 @@ public class DatabaseDetails {
         }
 
         DatabaseDetails other = (DatabaseDetails) o;
-        return java.util.Objects.equals(this.infrastructureType, other.infrastructureType);
+        return java.util.Objects.equals(this.infrastructureType, other.infrastructureType)
+                && super.equals(other);
     }
 
     @Override
@@ -101,6 +103,7 @@ public class DatabaseDetails {
                         + (this.infrastructureType == null
                                 ? 43
                                 : this.infrastructureType.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

@@ -36,7 +36,7 @@ package com.oracle.bmc.dataconnectivity.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AttributeProfileResult {
+public class AttributeProfileResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -151,6 +151,7 @@ public class AttributeProfileResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AttributeProfileResult(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", min=").append(String.valueOf(this.min));
         sb.append(", max=").append(String.valueOf(this.max));
@@ -180,7 +181,8 @@ public class AttributeProfileResult {
                 && java.util.Objects.equals(this.distinctCount, other.distinctCount)
                 && java.util.Objects.equals(this.uniqueCount, other.uniqueCount)
                 && java.util.Objects.equals(this.duplicateCount, other.duplicateCount)
-                && java.util.Objects.equals(this.valueFrequencies, other.valueFrequencies);
+                && java.util.Objects.equals(this.valueFrequencies, other.valueFrequencies)
+                && super.equals(other);
     }
 
     @Override
@@ -201,6 +203,7 @@ public class AttributeProfileResult {
         result =
                 (result * PRIME)
                         + (this.valueFrequencies == null ? 43 : this.valueFrequencies.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

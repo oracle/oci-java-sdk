@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StructuredType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StructuredType {
+public final class StructuredType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"schema", "dtType", "typeSystemName", "configDefinition"})
     public StructuredType(
@@ -89,22 +89,30 @@ public final class StructuredType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StructuredType build() {
-            StructuredType __instance__ =
-                    new StructuredType(schema, dtType, typeSystemName, configDefinition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StructuredType model =
+                    new StructuredType(
+                            this.schema, this.dtType, this.typeSystemName, this.configDefinition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StructuredType o) {
-            Builder copiedBuilder =
-                    schema(o.getSchema())
-                            .dtType(o.getDtType())
-                            .typeSystemName(o.getTypeSystemName())
-                            .configDefinition(o.getConfigDefinition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StructuredType model) {
+            if (model.wasPropertyExplicitlySet("schema")) {
+                this.schema(model.getSchema());
+            }
+            if (model.wasPropertyExplicitlySet("dtType")) {
+                this.dtType(model.getDtType());
+            }
+            if (model.wasPropertyExplicitlySet("typeSystemName")) {
+                this.typeSystemName(model.getTypeSystemName());
+            }
+            if (model.wasPropertyExplicitlySet("configDefinition")) {
+                this.configDefinition(model.getConfigDefinition());
+            }
+            return this;
         }
     }
 
@@ -209,11 +217,11 @@ public final class StructuredType {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StructuredType(");
+        sb.append("super=").append(super.toString());
         sb.append("schema=").append(String.valueOf(this.schema));
         sb.append(", dtType=").append(String.valueOf(this.dtType));
         sb.append(", typeSystemName=").append(String.valueOf(this.typeSystemName));
         sb.append(", configDefinition=").append(String.valueOf(this.configDefinition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -232,7 +240,7 @@ public final class StructuredType {
                 && java.util.Objects.equals(this.dtType, other.dtType)
                 && java.util.Objects.equals(this.typeSystemName, other.typeSystemName)
                 && java.util.Objects.equals(this.configDefinition, other.configDefinition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -247,16 +255,7 @@ public final class StructuredType {
         result =
                 (result * PRIME)
                         + (this.configDefinition == null ? 43 : this.configDefinition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

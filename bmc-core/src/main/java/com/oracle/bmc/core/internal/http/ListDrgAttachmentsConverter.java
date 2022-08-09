@@ -196,8 +196,8 @@ public class ListDrgAttachmentsConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListDrgAttachmentsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

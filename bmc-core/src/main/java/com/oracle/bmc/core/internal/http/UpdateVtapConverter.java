@@ -102,7 +102,8 @@ public class UpdateVtapConverter {
 
                                 com.oracle.bmc.core.responses.UpdateVtapResponse.Builder builder =
                                         com.oracle.bmc.core.responses.UpdateVtapResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.vtap(response.getItem());
 

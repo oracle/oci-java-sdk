@@ -142,8 +142,8 @@ public class ListLogSetsConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListLogSetsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logSetCollection(response.getItem());
 

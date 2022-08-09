@@ -108,8 +108,8 @@ public class UpdateByoipRangeConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateByoipRangeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.byoipRange(response.getItem());
 

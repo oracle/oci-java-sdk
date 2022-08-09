@@ -176,8 +176,8 @@ public class ListAuthenticationProvidersConverter {
                                                 com.oracle.bmc.oda.responses
                                                         .ListAuthenticationProvidersResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.authenticationProviderCollection(response.getItem());
 

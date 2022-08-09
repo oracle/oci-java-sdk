@@ -28,7 +28,8 @@ package com.oracle.bmc.servicecatalog.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreatePrivateApplicationPackage {
+public class CreatePrivateApplicationPackage
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"version"})
     protected CreatePrivateApplicationPackage(String version) {
@@ -63,6 +64,7 @@ public class CreatePrivateApplicationPackage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreatePrivateApplicationPackage(");
+        sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(")");
         return sb.toString();
@@ -78,7 +80,7 @@ public class CreatePrivateApplicationPackage {
         }
 
         CreatePrivateApplicationPackage other = (CreatePrivateApplicationPackage) o;
-        return java.util.Objects.equals(this.version, other.version);
+        return java.util.Objects.equals(this.version, other.version) && super.equals(other);
     }
 
     @Override
@@ -86,6 +88,7 @@ public class CreatePrivateApplicationPackage {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

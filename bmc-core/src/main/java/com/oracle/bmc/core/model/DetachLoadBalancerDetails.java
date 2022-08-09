@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = DetachLoadBalancerDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetachLoadBalancerDetails {
+public final class DetachLoadBalancerDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"loadBalancerId", "backendSetName"})
     public DetachLoadBalancerDetails(String loadBalancerId, String backendSetName) {
@@ -67,19 +68,23 @@ public final class DetachLoadBalancerDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetachLoadBalancerDetails build() {
-            DetachLoadBalancerDetails __instance__ =
-                    new DetachLoadBalancerDetails(loadBalancerId, backendSetName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DetachLoadBalancerDetails model =
+                    new DetachLoadBalancerDetails(this.loadBalancerId, this.backendSetName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DetachLoadBalancerDetails o) {
-            Builder copiedBuilder =
-                    loadBalancerId(o.getLoadBalancerId()).backendSetName(o.getBackendSetName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DetachLoadBalancerDetails model) {
+            if (model.wasPropertyExplicitlySet("loadBalancerId")) {
+                this.loadBalancerId(model.getLoadBalancerId());
+            }
+            if (model.wasPropertyExplicitlySet("backendSetName")) {
+                this.backendSetName(model.getBackendSetName());
+            }
+            return this;
         }
     }
 
@@ -135,9 +140,9 @@ public final class DetachLoadBalancerDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetachLoadBalancerDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(", backendSetName=").append(String.valueOf(this.backendSetName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,7 +159,7 @@ public final class DetachLoadBalancerDetails {
         DetachLoadBalancerDetails other = (DetachLoadBalancerDetails) o;
         return java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.backendSetName, other.backendSetName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -167,16 +172,7 @@ public final class DetachLoadBalancerDetails {
         result =
                 (result * PRIME)
                         + (this.backendSetName == null ? 43 : this.backendSetName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

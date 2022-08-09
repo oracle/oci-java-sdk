@@ -102,8 +102,8 @@ public class GetExadataInsightConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .GetExadataInsightResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.exadataInsight(response.getItem());
 

@@ -167,8 +167,8 @@ public class ListInclusionCriteriaConverter {
                                         builder =
                                                 com.oracle.bmc.governancerulescontrolplane.responses
                                                         .ListInclusionCriteriaResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inclusionCriterionCollection(response.getItem());
 

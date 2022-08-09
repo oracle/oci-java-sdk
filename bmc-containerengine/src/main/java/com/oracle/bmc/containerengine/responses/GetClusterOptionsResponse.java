@@ -38,12 +38,18 @@ public class GetClusterOptionsResponse extends com.oracle.bmc.responses.BmcRespo
         return clusterOptions;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "clusterOptions"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "clusterOptions"
+    })
     private GetClusterOptionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.containerengine.model.ClusterOptions clusterOptions) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.clusterOptions = clusterOptions;
     }
@@ -53,6 +59,13 @@ public class GetClusterOptionsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetClusterOptionsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetClusterOptionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             clusterOptions(o.getClusterOptions());
 
@@ -108,7 +122,8 @@ public class GetClusterOptionsResponse extends com.oracle.bmc.responses.BmcRespo
          * @return the response object
          */
         public GetClusterOptionsResponse build() {
-            return new GetClusterOptionsResponse(__httpStatusCode__, opcRequestId, clusterOptions);
+            return new GetClusterOptionsResponse(
+                    __httpStatusCode__, headers, opcRequestId, clusterOptions);
         }
     }
 

@@ -117,8 +117,8 @@ public class UpdateFolderConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .UpdateFolderResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.folder(response.getItem());
 

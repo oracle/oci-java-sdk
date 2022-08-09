@@ -107,8 +107,8 @@ public class CreateApplianceExportJobConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .CreateApplianceExportJobResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.applianceExportJob(response.getItem());
 

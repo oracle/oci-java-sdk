@@ -175,8 +175,8 @@ public class RequestSummarizedTrendResponderExecutionsConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .RequestSummarizedTrendResponderExecutionsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.responderExecutionTrendAggregationCollection(
                                         response.getItem());

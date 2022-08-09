@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = SensitiveColumnSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SensitiveColumnSummary {
+public final class SensitiveColumnSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -431,56 +432,93 @@ public final class SensitiveColumnSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SensitiveColumnSummary build() {
-            SensitiveColumnSummary __instance__ =
+            SensitiveColumnSummary model =
                     new SensitiveColumnSummary(
-                            key,
-                            sensitiveDataModelId,
-                            lifecycleState,
-                            lifecycleDetails,
-                            timeCreated,
-                            timeUpdated,
-                            appName,
-                            schemaName,
-                            objectName,
-                            columnName,
-                            objectType,
-                            dataType,
-                            status,
-                            sensitiveTypeId,
-                            source,
-                            parentColumnKeys,
-                            relationType,
-                            estimatedDataValueCount,
-                            sampleDataValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.sensitiveDataModelId,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.appName,
+                            this.schemaName,
+                            this.objectName,
+                            this.columnName,
+                            this.objectType,
+                            this.dataType,
+                            this.status,
+                            this.sensitiveTypeId,
+                            this.source,
+                            this.parentColumnKeys,
+                            this.relationType,
+                            this.estimatedDataValueCount,
+                            this.sampleDataValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SensitiveColumnSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .sensitiveDataModelId(o.getSensitiveDataModelId())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .appName(o.getAppName())
-                            .schemaName(o.getSchemaName())
-                            .objectName(o.getObjectName())
-                            .columnName(o.getColumnName())
-                            .objectType(o.getObjectType())
-                            .dataType(o.getDataType())
-                            .status(o.getStatus())
-                            .sensitiveTypeId(o.getSensitiveTypeId())
-                            .source(o.getSource())
-                            .parentColumnKeys(o.getParentColumnKeys())
-                            .relationType(o.getRelationType())
-                            .estimatedDataValueCount(o.getEstimatedDataValueCount())
-                            .sampleDataValues(o.getSampleDataValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SensitiveColumnSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveDataModelId")) {
+                this.sensitiveDataModelId(model.getSensitiveDataModelId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("appName")) {
+                this.appName(model.getAppName());
+            }
+            if (model.wasPropertyExplicitlySet("schemaName")) {
+                this.schemaName(model.getSchemaName());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("columnName")) {
+                this.columnName(model.getColumnName());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveTypeId")) {
+                this.sensitiveTypeId(model.getSensitiveTypeId());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("parentColumnKeys")) {
+                this.parentColumnKeys(model.getParentColumnKeys());
+            }
+            if (model.wasPropertyExplicitlySet("relationType")) {
+                this.relationType(model.getRelationType());
+            }
+            if (model.wasPropertyExplicitlySet("estimatedDataValueCount")) {
+                this.estimatedDataValueCount(model.getEstimatedDataValueCount());
+            }
+            if (model.wasPropertyExplicitlySet("sampleDataValues")) {
+                this.sampleDataValues(model.getSampleDataValues());
+            }
+            return this;
         }
     }
 
@@ -1009,6 +1047,7 @@ public final class SensitiveColumnSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SensitiveColumnSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", sensitiveDataModelId=").append(String.valueOf(this.sensitiveDataModelId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -1029,7 +1068,6 @@ public final class SensitiveColumnSummary {
         sb.append(", estimatedDataValueCount=")
                 .append(String.valueOf(this.estimatedDataValueCount));
         sb.append(", sampleDataValues=").append(String.valueOf(this.sampleDataValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1064,7 +1102,7 @@ public final class SensitiveColumnSummary {
                 && java.util.Objects.equals(
                         this.estimatedDataValueCount, other.estimatedDataValueCount)
                 && java.util.Objects.equals(this.sampleDataValues, other.sampleDataValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1108,16 +1146,7 @@ public final class SensitiveColumnSummary {
         result =
                 (result * PRIME)
                         + (this.sampleDataValues == null ? 43 : this.sampleDataValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

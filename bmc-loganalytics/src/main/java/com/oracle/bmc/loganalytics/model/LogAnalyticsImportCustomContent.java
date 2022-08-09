@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsImportCustomContent.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsImportCustomContent {
+public final class LogAnalyticsImportCustomContent
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "parserNames",
@@ -122,24 +123,37 @@ public final class LogAnalyticsImportCustomContent {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsImportCustomContent build() {
-            LogAnalyticsImportCustomContent __instance__ =
+            LogAnalyticsImportCustomContent model =
                     new LogAnalyticsImportCustomContent(
-                            parserNames, sourceNames, fieldNames, changeList, contentName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.parserNames,
+                            this.sourceNames,
+                            this.fieldNames,
+                            this.changeList,
+                            this.contentName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsImportCustomContent o) {
-            Builder copiedBuilder =
-                    parserNames(o.getParserNames())
-                            .sourceNames(o.getSourceNames())
-                            .fieldNames(o.getFieldNames())
-                            .changeList(o.getChangeList())
-                            .contentName(o.getContentName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsImportCustomContent model) {
+            if (model.wasPropertyExplicitlySet("parserNames")) {
+                this.parserNames(model.getParserNames());
+            }
+            if (model.wasPropertyExplicitlySet("sourceNames")) {
+                this.sourceNames(model.getSourceNames());
+            }
+            if (model.wasPropertyExplicitlySet("fieldNames")) {
+                this.fieldNames(model.getFieldNames());
+            }
+            if (model.wasPropertyExplicitlySet("changeList")) {
+                this.changeList(model.getChangeList());
+            }
+            if (model.wasPropertyExplicitlySet("contentName")) {
+                this.contentName(model.getContentName());
+            }
+            return this;
         }
     }
 
@@ -230,12 +244,12 @@ public final class LogAnalyticsImportCustomContent {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsImportCustomContent(");
+        sb.append("super=").append(super.toString());
         sb.append("parserNames=").append(String.valueOf(this.parserNames));
         sb.append(", sourceNames=").append(String.valueOf(this.sourceNames));
         sb.append(", fieldNames=").append(String.valueOf(this.fieldNames));
         sb.append(", changeList=").append(String.valueOf(this.changeList));
         sb.append(", contentName=").append(String.valueOf(this.contentName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -255,7 +269,7 @@ public final class LogAnalyticsImportCustomContent {
                 && java.util.Objects.equals(this.fieldNames, other.fieldNames)
                 && java.util.Objects.equals(this.changeList, other.changeList)
                 && java.util.Objects.equals(this.contentName, other.contentName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -267,16 +281,7 @@ public final class LogAnalyticsImportCustomContent {
         result = (result * PRIME) + (this.fieldNames == null ? 43 : this.fieldNames.hashCode());
         result = (result * PRIME) + (this.changeList == null ? 43 : this.changeList.hashCode());
         result = (result * PRIME) + (this.contentName == null ? 43 : this.contentName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

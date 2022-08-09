@@ -19,7 +19,8 @@ package com.oracle.bmc.aispeech.model;
     builder = TranscriptionTaskSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TranscriptionTaskSummary {
+public final class TranscriptionTaskSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -27,6 +28,7 @@ public final class TranscriptionTaskSummary {
         "percentComplete",
         "fileSizeInBytes",
         "fileDurationInSeconds",
+        "processingDurationInSeconds",
         "timeStarted",
         "timeFinished",
         "lifecycleState",
@@ -38,6 +40,7 @@ public final class TranscriptionTaskSummary {
             Integer percentComplete,
             Integer fileSizeInBytes,
             Integer fileDurationInSeconds,
+            Integer processingDurationInSeconds,
             java.util.Date timeStarted,
             java.util.Date timeFinished,
             TranscriptionTask.LifecycleState lifecycleState,
@@ -48,6 +51,7 @@ public final class TranscriptionTaskSummary {
         this.percentComplete = percentComplete;
         this.fileSizeInBytes = fileSizeInBytes;
         this.fileDurationInSeconds = fileDurationInSeconds;
+        this.processingDurationInSeconds = processingDurationInSeconds;
         this.timeStarted = timeStarted;
         this.timeFinished = timeFinished;
         this.lifecycleState = lifecycleState;
@@ -137,6 +141,22 @@ public final class TranscriptionTaskSummary {
             return this;
         }
         /**
+         * Task proccessing duration, which excludes waiting time in the system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("processingDurationInSeconds")
+        private Integer processingDurationInSeconds;
+
+        /**
+         * Task proccessing duration, which excludes waiting time in the system.
+         * @param processingDurationInSeconds the value to set
+         * @return this builder
+         **/
+        public Builder processingDurationInSeconds(Integer processingDurationInSeconds) {
+            this.processingDurationInSeconds = processingDurationInSeconds;
+            this.__explicitlySet__.add("processingDurationInSeconds");
+            return this;
+        }
+        /**
          * Task started time
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
@@ -205,36 +225,57 @@ public final class TranscriptionTaskSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TranscriptionTaskSummary build() {
-            TranscriptionTaskSummary __instance__ =
+            TranscriptionTaskSummary model =
                     new TranscriptionTaskSummary(
-                            id,
-                            displayName,
-                            percentComplete,
-                            fileSizeInBytes,
-                            fileDurationInSeconds,
-                            timeStarted,
-                            timeFinished,
-                            lifecycleState,
-                            lifecycleDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.percentComplete,
+                            this.fileSizeInBytes,
+                            this.fileDurationInSeconds,
+                            this.processingDurationInSeconds,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.lifecycleState,
+                            this.lifecycleDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TranscriptionTaskSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .percentComplete(o.getPercentComplete())
-                            .fileSizeInBytes(o.getFileSizeInBytes())
-                            .fileDurationInSeconds(o.getFileDurationInSeconds())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TranscriptionTaskSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("percentComplete")) {
+                this.percentComplete(model.getPercentComplete());
+            }
+            if (model.wasPropertyExplicitlySet("fileSizeInBytes")) {
+                this.fileSizeInBytes(model.getFileSizeInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("fileDurationInSeconds")) {
+                this.fileDurationInSeconds(model.getFileDurationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("processingDurationInSeconds")) {
+                this.processingDurationInSeconds(model.getProcessingDurationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            return this;
         }
     }
 
@@ -320,6 +361,20 @@ public final class TranscriptionTaskSummary {
     }
 
     /**
+     * Task proccessing duration, which excludes waiting time in the system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("processingDurationInSeconds")
+    private final Integer processingDurationInSeconds;
+
+    /**
+     * Task proccessing duration, which excludes waiting time in the system.
+     * @return the value
+     **/
+    public Integer getProcessingDurationInSeconds() {
+        return processingDurationInSeconds;
+    }
+
+    /**
      * Task started time
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
@@ -388,16 +443,18 @@ public final class TranscriptionTaskSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TranscriptionTaskSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", percentComplete=").append(String.valueOf(this.percentComplete));
         sb.append(", fileSizeInBytes=").append(String.valueOf(this.fileSizeInBytes));
         sb.append(", fileDurationInSeconds=").append(String.valueOf(this.fileDurationInSeconds));
+        sb.append(", processingDurationInSeconds=")
+                .append(String.valueOf(this.processingDurationInSeconds));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -417,11 +474,13 @@ public final class TranscriptionTaskSummary {
                 && java.util.Objects.equals(this.percentComplete, other.percentComplete)
                 && java.util.Objects.equals(this.fileSizeInBytes, other.fileSizeInBytes)
                 && java.util.Objects.equals(this.fileDurationInSeconds, other.fileDurationInSeconds)
+                && java.util.Objects.equals(
+                        this.processingDurationInSeconds, other.processingDurationInSeconds)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -441,6 +500,11 @@ public final class TranscriptionTaskSummary {
                         + (this.fileDurationInSeconds == null
                                 ? 43
                                 : this.fileDurationInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.processingDurationInSeconds == null
+                                ? 43
+                                : this.processingDurationInSeconds.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
         result =
@@ -449,16 +513,7 @@ public final class TranscriptionTaskSummary {
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -38,12 +38,18 @@ public class CreateAttachDataAssetResponse extends com.oracle.bmc.responses.BmcR
         return attachDataAssetInfo;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "attachDataAssetInfo"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "attachDataAssetInfo"
+    })
     private CreateAttachDataAssetResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.dataconnectivity.model.AttachDataAssetInfo attachDataAssetInfo) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.attachDataAssetInfo = attachDataAssetInfo;
     }
@@ -53,6 +59,13 @@ public class CreateAttachDataAssetResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class CreateAttachDataAssetResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(CreateAttachDataAssetResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             attachDataAssetInfo(o.getAttachDataAssetInfo());
 
@@ -109,7 +123,7 @@ public class CreateAttachDataAssetResponse extends com.oracle.bmc.responses.BmcR
          */
         public CreateAttachDataAssetResponse build() {
             return new CreateAttachDataAssetResponse(
-                    __httpStatusCode__, opcRequestId, attachDataAssetInfo);
+                    __httpStatusCode__, headers, opcRequestId, attachDataAssetInfo);
         }
     }
 

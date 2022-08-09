@@ -59,16 +59,18 @@ public class ListReportTypesResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "reportTypeCollection"
     })
     private ListReportTypesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.marketplace.model.ReportTypeCollection reportTypeCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.reportTypeCollection = reportTypeCollection;
@@ -79,6 +81,13 @@ public class ListReportTypesResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListReportTypesResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(ListReportTypesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             reportTypeCollection(o.getReportTypeCollection());
@@ -157,7 +167,7 @@ public class ListReportTypesResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public ListReportTypesResponse build() {
             return new ListReportTypesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, reportTypeCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, reportTypeCollection);
         }
     }
 

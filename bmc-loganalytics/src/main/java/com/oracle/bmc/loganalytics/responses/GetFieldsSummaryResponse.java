@@ -36,12 +36,18 @@ public class GetFieldsSummaryResponse extends com.oracle.bmc.responses.BmcRespon
         return fieldSummaryReport;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "fieldSummaryReport"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "fieldSummaryReport"
+    })
     private GetFieldsSummaryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.FieldSummaryReport fieldSummaryReport) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.fieldSummaryReport = fieldSummaryReport;
     }
@@ -51,6 +57,13 @@ public class GetFieldsSummaryResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -93,6 +106,7 @@ public class GetFieldsSummaryResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetFieldsSummaryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             fieldSummaryReport(o.getFieldSummaryReport());
 
@@ -105,7 +119,7 @@ public class GetFieldsSummaryResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public GetFieldsSummaryResponse build() {
             return new GetFieldsSummaryResponse(
-                    __httpStatusCode__, opcRequestId, fieldSummaryReport);
+                    __httpStatusCode__, headers, opcRequestId, fieldSummaryReport);
         }
     }
 

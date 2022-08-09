@@ -17,7 +17,7 @@ package com.oracle.bmc.databasemanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ManagedDatabase.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ManagedDatabase {
+public final class ManagedDatabase extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -434,58 +434,97 @@ public final class ManagedDatabase {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagedDatabase build() {
-            ManagedDatabase __instance__ =
+            ManagedDatabase model =
                     new ManagedDatabase(
-                            id,
-                            compartmentId,
-                            name,
-                            databaseType,
-                            databaseSubType,
-                            deploymentType,
-                            managementOption,
-                            workloadType,
-                            isCluster,
-                            parentContainerId,
-                            managedDatabaseGroups,
-                            timeCreated,
-                            databaseStatus,
-                            parentContainerName,
-                            parentContainerCompartmentId,
-                            instanceCount,
-                            instanceDetails,
-                            pdbCount,
-                            pdbStatus,
-                            additionalDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.name,
+                            this.databaseType,
+                            this.databaseSubType,
+                            this.deploymentType,
+                            this.managementOption,
+                            this.workloadType,
+                            this.isCluster,
+                            this.parentContainerId,
+                            this.managedDatabaseGroups,
+                            this.timeCreated,
+                            this.databaseStatus,
+                            this.parentContainerName,
+                            this.parentContainerCompartmentId,
+                            this.instanceCount,
+                            this.instanceDetails,
+                            this.pdbCount,
+                            this.pdbStatus,
+                            this.additionalDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManagedDatabase o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .name(o.getName())
-                            .databaseType(o.getDatabaseType())
-                            .databaseSubType(o.getDatabaseSubType())
-                            .deploymentType(o.getDeploymentType())
-                            .managementOption(o.getManagementOption())
-                            .workloadType(o.getWorkloadType())
-                            .isCluster(o.getIsCluster())
-                            .parentContainerId(o.getParentContainerId())
-                            .managedDatabaseGroups(o.getManagedDatabaseGroups())
-                            .timeCreated(o.getTimeCreated())
-                            .databaseStatus(o.getDatabaseStatus())
-                            .parentContainerName(o.getParentContainerName())
-                            .parentContainerCompartmentId(o.getParentContainerCompartmentId())
-                            .instanceCount(o.getInstanceCount())
-                            .instanceDetails(o.getInstanceDetails())
-                            .pdbCount(o.getPdbCount())
-                            .pdbStatus(o.getPdbStatus())
-                            .additionalDetails(o.getAdditionalDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManagedDatabase model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSubType")) {
+                this.databaseSubType(model.getDatabaseSubType());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentType")) {
+                this.deploymentType(model.getDeploymentType());
+            }
+            if (model.wasPropertyExplicitlySet("managementOption")) {
+                this.managementOption(model.getManagementOption());
+            }
+            if (model.wasPropertyExplicitlySet("workloadType")) {
+                this.workloadType(model.getWorkloadType());
+            }
+            if (model.wasPropertyExplicitlySet("isCluster")) {
+                this.isCluster(model.getIsCluster());
+            }
+            if (model.wasPropertyExplicitlySet("parentContainerId")) {
+                this.parentContainerId(model.getParentContainerId());
+            }
+            if (model.wasPropertyExplicitlySet("managedDatabaseGroups")) {
+                this.managedDatabaseGroups(model.getManagedDatabaseGroups());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("databaseStatus")) {
+                this.databaseStatus(model.getDatabaseStatus());
+            }
+            if (model.wasPropertyExplicitlySet("parentContainerName")) {
+                this.parentContainerName(model.getParentContainerName());
+            }
+            if (model.wasPropertyExplicitlySet("parentContainerCompartmentId")) {
+                this.parentContainerCompartmentId(model.getParentContainerCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("instanceCount")) {
+                this.instanceCount(model.getInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("instanceDetails")) {
+                this.instanceDetails(model.getInstanceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("pdbCount")) {
+                this.pdbCount(model.getPdbCount());
+            }
+            if (model.wasPropertyExplicitlySet("pdbStatus")) {
+                this.pdbStatus(model.getPdbStatus());
+            }
+            if (model.wasPropertyExplicitlySet("additionalDetails")) {
+                this.additionalDetails(model.getAdditionalDetails());
+            }
+            return this;
         }
     }
 
@@ -815,6 +854,7 @@ public final class ManagedDatabase {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagedDatabase(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -836,7 +876,6 @@ public final class ManagedDatabase {
         sb.append(", pdbCount=").append(String.valueOf(this.pdbCount));
         sb.append(", pdbStatus=").append(String.valueOf(this.pdbStatus));
         sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -872,7 +911,7 @@ public final class ManagedDatabase {
                 && java.util.Objects.equals(this.pdbCount, other.pdbCount)
                 && java.util.Objects.equals(this.pdbStatus, other.pdbStatus)
                 && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -929,16 +968,7 @@ public final class ManagedDatabase {
         result =
                 (result * PRIME)
                         + (this.additionalDetails == null ? 43 : this.additionalDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

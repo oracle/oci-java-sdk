@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TlsConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TlsConfig {
+public final class TlsConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "status",
@@ -127,28 +127,37 @@ public final class TlsConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TlsConfig build() {
-            TlsConfig __instance__ =
+            TlsConfig model =
                     new TlsConfig(
-                            status,
-                            certificateStoreType,
-                            storePassword,
-                            trustStoreContent,
-                            keyStoreContent);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.status,
+                            this.certificateStoreType,
+                            this.storePassword,
+                            this.trustStoreContent,
+                            this.keyStoreContent);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TlsConfig o) {
-            Builder copiedBuilder =
-                    status(o.getStatus())
-                            .certificateStoreType(o.getCertificateStoreType())
-                            .storePassword(o.getStorePassword())
-                            .trustStoreContent(o.getTrustStoreContent())
-                            .keyStoreContent(o.getKeyStoreContent());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TlsConfig model) {
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("certificateStoreType")) {
+                this.certificateStoreType(model.getCertificateStoreType());
+            }
+            if (model.wasPropertyExplicitlySet("storePassword")) {
+                this.storePassword(model.getStorePassword());
+            }
+            if (model.wasPropertyExplicitlySet("trustStoreContent")) {
+                this.trustStoreContent(model.getTrustStoreContent());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreContent")) {
+                this.keyStoreContent(model.getKeyStoreContent());
+            }
+            return this;
         }
     }
 
@@ -340,12 +349,12 @@ public final class TlsConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TlsConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("status=").append(String.valueOf(this.status));
         sb.append(", certificateStoreType=").append(String.valueOf(this.certificateStoreType));
         sb.append(", storePassword=").append(String.valueOf(this.storePassword));
         sb.append(", trustStoreContent=").append(String.valueOf(this.trustStoreContent));
         sb.append(", keyStoreContent=").append(String.valueOf(this.keyStoreContent));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -365,7 +374,7 @@ public final class TlsConfig {
                 && java.util.Objects.equals(this.storePassword, other.storePassword)
                 && java.util.Objects.equals(this.trustStoreContent, other.trustStoreContent)
                 && java.util.Objects.equals(this.keyStoreContent, other.keyStoreContent)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -387,16 +396,7 @@ public final class TlsConfig {
         result =
                 (result * PRIME)
                         + (this.keyStoreContent == null ? 43 : this.keyStoreContent.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

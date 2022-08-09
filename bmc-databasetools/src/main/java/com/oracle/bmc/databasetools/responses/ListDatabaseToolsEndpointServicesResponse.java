@@ -62,17 +62,19 @@ public class ListDatabaseToolsEndpointServicesResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "databaseToolsEndpointServiceCollection"
     })
     private ListDatabaseToolsEndpointServicesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.databasetools.model.DatabaseToolsEndpointServiceCollection
                     databaseToolsEndpointServiceCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.databaseToolsEndpointServiceCollection = databaseToolsEndpointServiceCollection;
@@ -83,6 +85,13 @@ public class ListDatabaseToolsEndpointServicesResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -150,6 +159,7 @@ public class ListDatabaseToolsEndpointServicesResponse
          */
         public Builder copy(ListDatabaseToolsEndpointServicesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             databaseToolsEndpointServiceCollection(o.getDatabaseToolsEndpointServiceCollection());
@@ -164,6 +174,7 @@ public class ListDatabaseToolsEndpointServicesResponse
         public ListDatabaseToolsEndpointServicesResponse build() {
             return new ListDatabaseToolsEndpointServicesResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     databaseToolsEndpointServiceCollection);

@@ -108,8 +108,8 @@ public class StartInstancePoolConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .StartInstancePoolResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.instancePool(response.getItem());
 

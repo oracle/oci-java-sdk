@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsSourcePattern.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsSourcePattern {
+public final class LogAnalyticsSourcePattern
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "convertedText",
@@ -402,56 +403,93 @@ public final class LogAnalyticsSourcePattern {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsSourcePattern build() {
-            LogAnalyticsSourcePattern __instance__ =
+            LogAnalyticsSourcePattern model =
                     new LogAnalyticsSourcePattern(
-                            convertedText,
-                            dbParserId,
-                            dbPatternDateTimeColumns,
-                            dbPatternDateTimeField,
-                            dbPatternSequenceColumn,
-                            fields,
-                            isInclude,
-                            isDefault,
-                            patternFilter,
-                            alias,
-                            description,
-                            isEnabled,
-                            patternId,
-                            isSystem,
-                            sourceId,
-                            isAgentWarningSuppressed,
-                            patternText,
-                            patternType,
-                            entityType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.convertedText,
+                            this.dbParserId,
+                            this.dbPatternDateTimeColumns,
+                            this.dbPatternDateTimeField,
+                            this.dbPatternSequenceColumn,
+                            this.fields,
+                            this.isInclude,
+                            this.isDefault,
+                            this.patternFilter,
+                            this.alias,
+                            this.description,
+                            this.isEnabled,
+                            this.patternId,
+                            this.isSystem,
+                            this.sourceId,
+                            this.isAgentWarningSuppressed,
+                            this.patternText,
+                            this.patternType,
+                            this.entityType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsSourcePattern o) {
-            Builder copiedBuilder =
-                    convertedText(o.getConvertedText())
-                            .dbParserId(o.getDbParserId())
-                            .dbPatternDateTimeColumns(o.getDbPatternDateTimeColumns())
-                            .dbPatternDateTimeField(o.getDbPatternDateTimeField())
-                            .dbPatternSequenceColumn(o.getDbPatternSequenceColumn())
-                            .fields(o.getFields())
-                            .isInclude(o.getIsInclude())
-                            .isDefault(o.getIsDefault())
-                            .patternFilter(o.getPatternFilter())
-                            .alias(o.getAlias())
-                            .description(o.getDescription())
-                            .isEnabled(o.getIsEnabled())
-                            .patternId(o.getPatternId())
-                            .isSystem(o.getIsSystem())
-                            .sourceId(o.getSourceId())
-                            .isAgentWarningSuppressed(o.getIsAgentWarningSuppressed())
-                            .patternText(o.getPatternText())
-                            .patternType(o.getPatternType())
-                            .entityType(o.getEntityType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsSourcePattern model) {
+            if (model.wasPropertyExplicitlySet("convertedText")) {
+                this.convertedText(model.getConvertedText());
+            }
+            if (model.wasPropertyExplicitlySet("dbParserId")) {
+                this.dbParserId(model.getDbParserId());
+            }
+            if (model.wasPropertyExplicitlySet("dbPatternDateTimeColumns")) {
+                this.dbPatternDateTimeColumns(model.getDbPatternDateTimeColumns());
+            }
+            if (model.wasPropertyExplicitlySet("dbPatternDateTimeField")) {
+                this.dbPatternDateTimeField(model.getDbPatternDateTimeField());
+            }
+            if (model.wasPropertyExplicitlySet("dbPatternSequenceColumn")) {
+                this.dbPatternSequenceColumn(model.getDbPatternSequenceColumn());
+            }
+            if (model.wasPropertyExplicitlySet("fields")) {
+                this.fields(model.getFields());
+            }
+            if (model.wasPropertyExplicitlySet("isInclude")) {
+                this.isInclude(model.getIsInclude());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            if (model.wasPropertyExplicitlySet("patternFilter")) {
+                this.patternFilter(model.getPatternFilter());
+            }
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("patternId")) {
+                this.patternId(model.getPatternId());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("isAgentWarningSuppressed")) {
+                this.isAgentWarningSuppressed(model.getIsAgentWarningSuppressed());
+            }
+            if (model.wasPropertyExplicitlySet("patternText")) {
+                this.patternText(model.getPatternText());
+            }
+            if (model.wasPropertyExplicitlySet("patternType")) {
+                this.patternType(model.getPatternType());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            return this;
         }
     }
 
@@ -752,6 +790,7 @@ public final class LogAnalyticsSourcePattern {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsSourcePattern(");
+        sb.append("super=").append(super.toString());
         sb.append("convertedText=").append(String.valueOf(this.convertedText));
         sb.append(", dbParserId=").append(String.valueOf(this.dbParserId));
         sb.append(", dbPatternDateTimeColumns=")
@@ -774,7 +813,6 @@ public final class LogAnalyticsSourcePattern {
         sb.append(", patternText=").append(String.valueOf(this.patternText));
         sb.append(", patternType=").append(String.valueOf(this.patternType));
         sb.append(", entityType=").append(String.valueOf(this.entityType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -812,7 +850,7 @@ public final class LogAnalyticsSourcePattern {
                 && java.util.Objects.equals(this.patternText, other.patternText)
                 && java.util.Objects.equals(this.patternType, other.patternType)
                 && java.util.Objects.equals(this.entityType, other.entityType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -858,16 +896,7 @@ public final class LogAnalyticsSourcePattern {
         result = (result * PRIME) + (this.patternText == null ? 43 : this.patternText.hashCode());
         result = (result * PRIME) + (this.patternType == null ? 43 : this.patternType.hashCode());
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

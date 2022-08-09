@@ -19,7 +19,7 @@ package com.oracle.bmc.streaming.model;
     builder = CreateCursorDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateCursorDetails {
+public final class CreateCursorDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"partition", "type", "offset", "time"})
     public CreateCursorDetails(String partition, Type type, Long offset, java.util.Date time) {
@@ -117,22 +117,29 @@ public final class CreateCursorDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateCursorDetails build() {
-            CreateCursorDetails __instance__ =
-                    new CreateCursorDetails(partition, type, offset, time);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateCursorDetails model =
+                    new CreateCursorDetails(this.partition, this.type, this.offset, this.time);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateCursorDetails o) {
-            Builder copiedBuilder =
-                    partition(o.getPartition())
-                            .type(o.getType())
-                            .offset(o.getOffset())
-                            .time(o.getTime());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateCursorDetails model) {
+            if (model.wasPropertyExplicitlySet("partition")) {
+                this.partition(model.getPartition());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("offset")) {
+                this.offset(model.getOffset());
+            }
+            if (model.wasPropertyExplicitlySet("time")) {
+                this.time(model.getTime());
+            }
+            return this;
         }
     }
 
@@ -277,11 +284,11 @@ public final class CreateCursorDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateCursorDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("partition=").append(String.valueOf(this.partition));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", offset=").append(String.valueOf(this.offset));
         sb.append(", time=").append(String.valueOf(this.time));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -300,7 +307,7 @@ public final class CreateCursorDetails {
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.offset, other.offset)
                 && java.util.Objects.equals(this.time, other.time)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -311,16 +318,7 @@ public final class CreateCursorDetails {
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
         result = (result * PRIME) + (this.time == null ? 43 : this.time.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

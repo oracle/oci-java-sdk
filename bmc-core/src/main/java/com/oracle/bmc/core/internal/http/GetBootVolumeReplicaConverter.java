@@ -102,8 +102,8 @@ public class GetBootVolumeReplicaConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetBootVolumeReplicaResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.bootVolumeReplica(response.getItem());
 

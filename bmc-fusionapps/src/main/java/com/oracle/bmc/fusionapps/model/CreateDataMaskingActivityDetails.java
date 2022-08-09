@@ -19,7 +19,8 @@ package com.oracle.bmc.fusionapps.model;
     builder = CreateDataMaskingActivityDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateDataMaskingActivityDetails {
+public final class CreateDataMaskingActivityDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isResumeDataMasking"})
     public CreateDataMaskingActivityDetails(Boolean isResumeDataMasking) {
@@ -50,18 +51,20 @@ public final class CreateDataMaskingActivityDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDataMaskingActivityDetails build() {
-            CreateDataMaskingActivityDetails __instance__ =
-                    new CreateDataMaskingActivityDetails(isResumeDataMasking);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateDataMaskingActivityDetails model =
+                    new CreateDataMaskingActivityDetails(this.isResumeDataMasking);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDataMaskingActivityDetails o) {
-            Builder copiedBuilder = isResumeDataMasking(o.getIsResumeDataMasking());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDataMaskingActivityDetails model) {
+            if (model.wasPropertyExplicitlySet("isResumeDataMasking")) {
+                this.isResumeDataMasking(model.getIsResumeDataMasking());
+            }
+            return this;
         }
     }
 
@@ -103,8 +106,8 @@ public final class CreateDataMaskingActivityDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDataMaskingActivityDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isResumeDataMasking=").append(String.valueOf(this.isResumeDataMasking));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -120,7 +123,7 @@ public final class CreateDataMaskingActivityDetails {
 
         CreateDataMaskingActivityDetails other = (CreateDataMaskingActivityDetails) o;
         return java.util.Objects.equals(this.isResumeDataMasking, other.isResumeDataMasking)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -132,16 +135,7 @@ public final class CreateDataMaskingActivityDetails {
                         + (this.isResumeDataMasking == null
                                 ? 43
                                 : this.isResumeDataMasking.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

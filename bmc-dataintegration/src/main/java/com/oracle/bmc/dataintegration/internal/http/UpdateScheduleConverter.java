@@ -121,8 +121,8 @@ public class UpdateScheduleConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .UpdateScheduleResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.schedule(response.getItem());
 

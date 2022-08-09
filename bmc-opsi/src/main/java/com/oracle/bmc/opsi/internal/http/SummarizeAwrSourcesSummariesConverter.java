@@ -161,8 +161,8 @@ public class SummarizeAwrSourcesSummariesConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeAwrSourcesSummariesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.summarizeAwrSourcesSummariesCollection(response.getItem());
 

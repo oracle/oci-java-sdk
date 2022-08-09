@@ -150,43 +150,65 @@ public final class CreateLoadBalancerTrafficShiftDeployStageDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateLoadBalancerTrafficShiftDeployStageDetails build() {
-            CreateLoadBalancerTrafficShiftDeployStageDetails __instance__ =
+            CreateLoadBalancerTrafficShiftDeployStageDetails model =
                     new CreateLoadBalancerTrafficShiftDeployStageDetails(
-                            description,
-                            displayName,
-                            deployPipelineId,
-                            deployStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            blueBackendIps,
-                            greenBackendIps,
-                            trafficShiftTarget,
-                            rolloutPolicy,
-                            loadBalancerConfig,
-                            rollbackPolicy);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.deployPipelineId,
+                            this.deployStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.blueBackendIps,
+                            this.greenBackendIps,
+                            this.trafficShiftTarget,
+                            this.rolloutPolicy,
+                            this.loadBalancerConfig,
+                            this.rollbackPolicy);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateLoadBalancerTrafficShiftDeployStageDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .deployPipelineId(o.getDeployPipelineId())
-                            .deployStagePredecessorCollection(
-                                    o.getDeployStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .blueBackendIps(o.getBlueBackendIps())
-                            .greenBackendIps(o.getGreenBackendIps())
-                            .trafficShiftTarget(o.getTrafficShiftTarget())
-                            .rolloutPolicy(o.getRolloutPolicy())
-                            .loadBalancerConfig(o.getLoadBalancerConfig())
-                            .rollbackPolicy(o.getRollbackPolicy());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateLoadBalancerTrafficShiftDeployStageDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessorCollection")) {
+                this.deployStagePredecessorCollection(model.getDeployStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("blueBackendIps")) {
+                this.blueBackendIps(model.getBlueBackendIps());
+            }
+            if (model.wasPropertyExplicitlySet("greenBackendIps")) {
+                this.greenBackendIps(model.getGreenBackendIps());
+            }
+            if (model.wasPropertyExplicitlySet("trafficShiftTarget")) {
+                this.trafficShiftTarget(model.getTrafficShiftTarget());
+            }
+            if (model.wasPropertyExplicitlySet("rolloutPolicy")) {
+                this.rolloutPolicy(model.getRolloutPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerConfig")) {
+                this.loadBalancerConfig(model.getLoadBalancerConfig());
+            }
+            if (model.wasPropertyExplicitlySet("rollbackPolicy")) {
+                this.rollbackPolicy(model.getRollbackPolicy());
+            }
+            return this;
         }
     }
 
@@ -299,7 +321,6 @@ public final class CreateLoadBalancerTrafficShiftDeployStageDetails
         sb.append(", rolloutPolicy=").append(String.valueOf(this.rolloutPolicy));
         sb.append(", loadBalancerConfig=").append(String.valueOf(this.loadBalancerConfig));
         sb.append(", rollbackPolicy=").append(String.valueOf(this.rollbackPolicy));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -321,8 +342,7 @@ public final class CreateLoadBalancerTrafficShiftDeployStageDetails
                 && java.util.Objects.equals(this.rolloutPolicy, other.rolloutPolicy)
                 && java.util.Objects.equals(this.loadBalancerConfig, other.loadBalancerConfig)
                 && java.util.Objects.equals(this.rollbackPolicy, other.rollbackPolicy)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -351,16 +371,6 @@ public final class CreateLoadBalancerTrafficShiftDeployStageDetails
         result =
                 (result * PRIME)
                         + (this.rollbackPolicy == null ? 43 : this.rollbackPolicy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

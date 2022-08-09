@@ -20,7 +20,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SearchResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SearchResult {
+public final class SearchResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -660,82 +660,145 @@ public final class SearchResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SearchResult build() {
-            SearchResult __instance__ =
+            SearchResult model =
                     new SearchResult(
-                            key,
-                            name,
-                            description,
-                            timeCreated,
-                            timeUpdated,
-                            tagSummary,
-                            termSummary,
-                            typeName,
-                            externalTypeName,
-                            externalDataType,
-                            dataAssetKey,
-                            dataAssetType,
-                            dataAssetName,
-                            folderKey,
-                            folderType,
-                            folderName,
-                            entitykey,
-                            entityType,
-                            entityName,
-                            glossaryKey,
-                            glossaryName,
-                            parentTermKey,
-                            parentTermName,
-                            createdById,
-                            updatedById,
-                            path,
-                            businessName,
-                            lifecycleState,
-                            attributeType,
-                            expression,
-                            customProperties,
-                            properties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.name,
+                            this.description,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.tagSummary,
+                            this.termSummary,
+                            this.typeName,
+                            this.externalTypeName,
+                            this.externalDataType,
+                            this.dataAssetKey,
+                            this.dataAssetType,
+                            this.dataAssetName,
+                            this.folderKey,
+                            this.folderType,
+                            this.folderName,
+                            this.entitykey,
+                            this.entityType,
+                            this.entityName,
+                            this.glossaryKey,
+                            this.glossaryName,
+                            this.parentTermKey,
+                            this.parentTermName,
+                            this.createdById,
+                            this.updatedById,
+                            this.path,
+                            this.businessName,
+                            this.lifecycleState,
+                            this.attributeType,
+                            this.expression,
+                            this.customProperties,
+                            this.properties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SearchResult o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .tagSummary(o.getTagSummary())
-                            .termSummary(o.getTermSummary())
-                            .typeName(o.getTypeName())
-                            .externalTypeName(o.getExternalTypeName())
-                            .externalDataType(o.getExternalDataType())
-                            .dataAssetKey(o.getDataAssetKey())
-                            .dataAssetType(o.getDataAssetType())
-                            .dataAssetName(o.getDataAssetName())
-                            .folderKey(o.getFolderKey())
-                            .folderType(o.getFolderType())
-                            .folderName(o.getFolderName())
-                            .entitykey(o.getEntitykey())
-                            .entityType(o.getEntityType())
-                            .entityName(o.getEntityName())
-                            .glossaryKey(o.getGlossaryKey())
-                            .glossaryName(o.getGlossaryName())
-                            .parentTermKey(o.getParentTermKey())
-                            .parentTermName(o.getParentTermName())
-                            .createdById(o.getCreatedById())
-                            .updatedById(o.getUpdatedById())
-                            .path(o.getPath())
-                            .businessName(o.getBusinessName())
-                            .lifecycleState(o.getLifecycleState())
-                            .attributeType(o.getAttributeType())
-                            .expression(o.getExpression())
-                            .customProperties(o.getCustomProperties())
-                            .properties(o.getProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SearchResult model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("tagSummary")) {
+                this.tagSummary(model.getTagSummary());
+            }
+            if (model.wasPropertyExplicitlySet("termSummary")) {
+                this.termSummary(model.getTermSummary());
+            }
+            if (model.wasPropertyExplicitlySet("typeName")) {
+                this.typeName(model.getTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("externalTypeName")) {
+                this.externalTypeName(model.getExternalTypeName());
+            }
+            if (model.wasPropertyExplicitlySet("externalDataType")) {
+                this.externalDataType(model.getExternalDataType());
+            }
+            if (model.wasPropertyExplicitlySet("dataAssetKey")) {
+                this.dataAssetKey(model.getDataAssetKey());
+            }
+            if (model.wasPropertyExplicitlySet("dataAssetType")) {
+                this.dataAssetType(model.getDataAssetType());
+            }
+            if (model.wasPropertyExplicitlySet("dataAssetName")) {
+                this.dataAssetName(model.getDataAssetName());
+            }
+            if (model.wasPropertyExplicitlySet("folderKey")) {
+                this.folderKey(model.getFolderKey());
+            }
+            if (model.wasPropertyExplicitlySet("folderType")) {
+                this.folderType(model.getFolderType());
+            }
+            if (model.wasPropertyExplicitlySet("folderName")) {
+                this.folderName(model.getFolderName());
+            }
+            if (model.wasPropertyExplicitlySet("entitykey")) {
+                this.entitykey(model.getEntitykey());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("entityName")) {
+                this.entityName(model.getEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("glossaryKey")) {
+                this.glossaryKey(model.getGlossaryKey());
+            }
+            if (model.wasPropertyExplicitlySet("glossaryName")) {
+                this.glossaryName(model.getGlossaryName());
+            }
+            if (model.wasPropertyExplicitlySet("parentTermKey")) {
+                this.parentTermKey(model.getParentTermKey());
+            }
+            if (model.wasPropertyExplicitlySet("parentTermName")) {
+                this.parentTermName(model.getParentTermName());
+            }
+            if (model.wasPropertyExplicitlySet("createdById")) {
+                this.createdById(model.getCreatedById());
+            }
+            if (model.wasPropertyExplicitlySet("updatedById")) {
+                this.updatedById(model.getUpdatedById());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("businessName")) {
+                this.businessName(model.getBusinessName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("attributeType")) {
+                this.attributeType(model.getAttributeType());
+            }
+            if (model.wasPropertyExplicitlySet("expression")) {
+                this.expression(model.getExpression());
+            }
+            if (model.wasPropertyExplicitlySet("customProperties")) {
+                this.customProperties(model.getCustomProperties());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            return this;
         }
     }
 
@@ -1227,6 +1290,7 @@ public final class SearchResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SearchResult(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -1259,7 +1323,6 @@ public final class SearchResult {
         sb.append(", expression=").append(String.valueOf(this.expression));
         sb.append(", customProperties=").append(String.valueOf(this.customProperties));
         sb.append(", properties=").append(String.valueOf(this.properties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1306,7 +1369,7 @@ public final class SearchResult {
                 && java.util.Objects.equals(this.expression, other.expression)
                 && java.util.Objects.equals(this.customProperties, other.customProperties)
                 && java.util.Objects.equals(this.properties, other.properties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1363,16 +1426,7 @@ public final class SearchResult {
                 (result * PRIME)
                         + (this.customProperties == null ? 43 : this.customProperties.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

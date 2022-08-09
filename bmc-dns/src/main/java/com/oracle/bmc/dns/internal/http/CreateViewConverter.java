@@ -104,7 +104,8 @@ public class CreateViewConverter {
 
                                 com.oracle.bmc.dns.responses.CreateViewResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.CreateViewResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.view(response.getItem());
 

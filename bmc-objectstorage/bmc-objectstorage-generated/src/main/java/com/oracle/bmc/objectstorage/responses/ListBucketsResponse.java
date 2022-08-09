@@ -82,6 +82,7 @@ public class ListBucketsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcClientRequestId",
         "opcRequestId",
         "opcNextPage",
@@ -89,11 +90,12 @@ public class ListBucketsResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ListBucketsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             String opcNextPage,
             java.util.List<com.oracle.bmc.objectstorage.model.BucketSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
@@ -105,6 +107,13 @@ public class ListBucketsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -195,6 +204,7 @@ public class ListBucketsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListBucketsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
@@ -209,7 +219,12 @@ public class ListBucketsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListBucketsResponse build() {
             return new ListBucketsResponse(
-                    __httpStatusCode__, opcClientRequestId, opcRequestId, opcNextPage, items);
+                    __httpStatusCode__,
+                    headers,
+                    opcClientRequestId,
+                    opcRequestId,
+                    opcNextPage,
+                    items);
         }
     }
 

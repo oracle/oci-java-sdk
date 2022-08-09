@@ -38,12 +38,18 @@ public class GetWindowsUpdateResponse extends com.oracle.bmc.responses.BmcRespon
         return windowsUpdate;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "windowsUpdate"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "windowsUpdate"
+    })
     private GetWindowsUpdateResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.osmanagement.model.WindowsUpdate windowsUpdate) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.windowsUpdate = windowsUpdate;
     }
@@ -53,6 +59,13 @@ public class GetWindowsUpdateResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetWindowsUpdateResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetWindowsUpdateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             windowsUpdate(o.getWindowsUpdate());
 
@@ -108,7 +122,8 @@ public class GetWindowsUpdateResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public GetWindowsUpdateResponse build() {
-            return new GetWindowsUpdateResponse(__httpStatusCode__, opcRequestId, windowsUpdate);
+            return new GetWindowsUpdateResponse(
+                    __httpStatusCode__, headers, opcRequestId, windowsUpdate);
         }
     }
 

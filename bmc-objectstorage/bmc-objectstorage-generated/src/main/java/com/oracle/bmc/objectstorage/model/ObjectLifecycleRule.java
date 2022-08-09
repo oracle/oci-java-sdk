@@ -22,7 +22,7 @@ package com.oracle.bmc.objectstorage.model;
     builder = ObjectLifecycleRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ObjectLifecycleRule {
+public final class ObjectLifecycleRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -203,32 +203,45 @@ public final class ObjectLifecycleRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectLifecycleRule build() {
-            ObjectLifecycleRule __instance__ =
+            ObjectLifecycleRule model =
                     new ObjectLifecycleRule(
-                            name,
-                            target,
-                            action,
-                            timeAmount,
-                            timeUnit,
-                            isEnabled,
-                            objectNameFilter);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.target,
+                            this.action,
+                            this.timeAmount,
+                            this.timeUnit,
+                            this.isEnabled,
+                            this.objectNameFilter);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ObjectLifecycleRule o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .target(o.getTarget())
-                            .action(o.getAction())
-                            .timeAmount(o.getTimeAmount())
-                            .timeUnit(o.getTimeUnit())
-                            .isEnabled(o.getIsEnabled())
-                            .objectNameFilter(o.getObjectNameFilter());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ObjectLifecycleRule model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("target")) {
+                this.target(model.getTarget());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("timeAmount")) {
+                this.timeAmount(model.getTimeAmount());
+            }
+            if (model.wasPropertyExplicitlySet("timeUnit")) {
+                this.timeUnit(model.getTimeUnit());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("objectNameFilter")) {
+                this.objectNameFilter(model.getObjectNameFilter());
+            }
+            return this;
         }
     }
 
@@ -437,6 +450,7 @@ public final class ObjectLifecycleRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ObjectLifecycleRule(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", target=").append(String.valueOf(this.target));
         sb.append(", action=").append(String.valueOf(this.action));
@@ -444,7 +458,6 @@ public final class ObjectLifecycleRule {
         sb.append(", timeUnit=").append(String.valueOf(this.timeUnit));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", objectNameFilter=").append(String.valueOf(this.objectNameFilter));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -466,7 +479,7 @@ public final class ObjectLifecycleRule {
                 && java.util.Objects.equals(this.timeUnit, other.timeUnit)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.objectNameFilter, other.objectNameFilter)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -482,16 +495,7 @@ public final class ObjectLifecycleRule {
         result =
                 (result * PRIME)
                         + (this.objectNameFilter == null ? 43 : this.objectNameFilter.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

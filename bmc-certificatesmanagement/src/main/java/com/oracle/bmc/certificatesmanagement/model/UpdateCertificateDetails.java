@@ -19,7 +19,8 @@ package com.oracle.bmc.certificatesmanagement.model;
     builder = UpdateCertificateDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateCertificateDetails {
+public final class UpdateCertificateDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -154,30 +155,41 @@ public final class UpdateCertificateDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateCertificateDetails build() {
-            UpdateCertificateDetails __instance__ =
+            UpdateCertificateDetails model =
                     new UpdateCertificateDetails(
-                            description,
-                            currentVersionNumber,
-                            certificateConfig,
-                            freeformTags,
-                            definedTags,
-                            certificateRules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.currentVersionNumber,
+                            this.certificateConfig,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.certificateRules);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateCertificateDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .currentVersionNumber(o.getCurrentVersionNumber())
-                            .certificateConfig(o.getCertificateConfig())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .certificateRules(o.getCertificateRules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateCertificateDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("currentVersionNumber")) {
+                this.currentVersionNumber(model.getCurrentVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("certificateConfig")) {
+                this.certificateConfig(model.getCertificateConfig());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("certificateRules")) {
+                this.certificateRules(model.getCertificateRules());
+            }
+            return this;
         }
     }
 
@@ -294,13 +306,13 @@ public final class UpdateCertificateDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateCertificateDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", currentVersionNumber=").append(String.valueOf(this.currentVersionNumber));
         sb.append(", certificateConfig=").append(String.valueOf(this.certificateConfig));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", certificateRules=").append(String.valueOf(this.certificateRules));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -321,7 +333,7 @@ public final class UpdateCertificateDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.certificateRules, other.certificateRules)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -342,16 +354,7 @@ public final class UpdateCertificateDetails {
         result =
                 (result * PRIME)
                         + (this.certificateRules == null ? 43 : this.certificateRules.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

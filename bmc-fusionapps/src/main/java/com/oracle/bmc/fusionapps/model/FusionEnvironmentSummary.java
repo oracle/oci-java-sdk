@@ -19,7 +19,8 @@ package com.oracle.bmc.fusionapps.model;
     builder = FusionEnvironmentSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FusionEnvironmentSummary {
+public final class FusionEnvironmentSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -398,56 +399,93 @@ public final class FusionEnvironmentSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FusionEnvironmentSummary build() {
-            FusionEnvironmentSummary __instance__ =
+            FusionEnvironmentSummary model =
                     new FusionEnvironmentSummary(
-                            id,
-                            displayName,
-                            timeUpcomingMaintenance,
-                            maintenancePolicy,
-                            compartmentId,
-                            fusionEnvironmentFamilyId,
-                            subscriptionIds,
-                            appliedPatchBundles,
-                            fusionEnvironmentType,
-                            version,
-                            publicUrl,
-                            dnsPrefix,
-                            additionalLanguagePacks,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.timeUpcomingMaintenance,
+                            this.maintenancePolicy,
+                            this.compartmentId,
+                            this.fusionEnvironmentFamilyId,
+                            this.subscriptionIds,
+                            this.appliedPatchBundles,
+                            this.fusionEnvironmentType,
+                            this.version,
+                            this.publicUrl,
+                            this.dnsPrefix,
+                            this.additionalLanguagePacks,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FusionEnvironmentSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .timeUpcomingMaintenance(o.getTimeUpcomingMaintenance())
-                            .maintenancePolicy(o.getMaintenancePolicy())
-                            .compartmentId(o.getCompartmentId())
-                            .fusionEnvironmentFamilyId(o.getFusionEnvironmentFamilyId())
-                            .subscriptionIds(o.getSubscriptionIds())
-                            .appliedPatchBundles(o.getAppliedPatchBundles())
-                            .fusionEnvironmentType(o.getFusionEnvironmentType())
-                            .version(o.getVersion())
-                            .publicUrl(o.getPublicUrl())
-                            .dnsPrefix(o.getDnsPrefix())
-                            .additionalLanguagePacks(o.getAdditionalLanguagePacks())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FusionEnvironmentSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpcomingMaintenance")) {
+                this.timeUpcomingMaintenance(model.getTimeUpcomingMaintenance());
+            }
+            if (model.wasPropertyExplicitlySet("maintenancePolicy")) {
+                this.maintenancePolicy(model.getMaintenancePolicy());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("fusionEnvironmentFamilyId")) {
+                this.fusionEnvironmentFamilyId(model.getFusionEnvironmentFamilyId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionIds")) {
+                this.subscriptionIds(model.getSubscriptionIds());
+            }
+            if (model.wasPropertyExplicitlySet("appliedPatchBundles")) {
+                this.appliedPatchBundles(model.getAppliedPatchBundles());
+            }
+            if (model.wasPropertyExplicitlySet("fusionEnvironmentType")) {
+                this.fusionEnvironmentType(model.getFusionEnvironmentType());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("publicUrl")) {
+                this.publicUrl(model.getPublicUrl());
+            }
+            if (model.wasPropertyExplicitlySet("dnsPrefix")) {
+                this.dnsPrefix(model.getDnsPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("additionalLanguagePacks")) {
+                this.additionalLanguagePacks(model.getAdditionalLanguagePacks());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -742,6 +780,7 @@ public final class FusionEnvironmentSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FusionEnvironmentSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", timeUpcomingMaintenance=")
@@ -764,7 +803,6 @@ public final class FusionEnvironmentSummary {
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -801,7 +839,7 @@ public final class FusionEnvironmentSummary {
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -857,16 +895,7 @@ public final class FusionEnvironmentSummary {
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -255,8 +255,8 @@ public class ListJobDefinitionsConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListJobDefinitionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.jobDefinitionCollection(response.getItem());
 

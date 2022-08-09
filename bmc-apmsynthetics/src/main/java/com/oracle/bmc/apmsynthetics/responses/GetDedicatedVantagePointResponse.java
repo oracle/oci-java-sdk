@@ -55,16 +55,18 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "dedicatedVantagePoint"
     })
     private GetDedicatedVantagePointResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.apmsynthetics.model.DedicatedVantagePoint dedicatedVantagePoint) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.dedicatedVantagePoint = dedicatedVantagePoint;
@@ -75,6 +77,13 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(GetDedicatedVantagePointResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             dedicatedVantagePoint(o.getDedicatedVantagePoint());
@@ -149,7 +159,7 @@ public class GetDedicatedVantagePointResponse extends com.oracle.bmc.responses.B
          */
         public GetDedicatedVantagePointResponse build() {
             return new GetDedicatedVantagePointResponse(
-                    __httpStatusCode__, etag, opcRequestId, dedicatedVantagePoint);
+                    __httpStatusCode__, headers, etag, opcRequestId, dedicatedVantagePoint);
         }
     }
 

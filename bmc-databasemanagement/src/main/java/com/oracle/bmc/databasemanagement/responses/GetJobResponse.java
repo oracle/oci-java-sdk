@@ -68,6 +68,7 @@ public class GetJobResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "location",
         "opcRequestId",
         "etag",
@@ -75,11 +76,12 @@ public class GetJobResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetJobResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String opcRequestId,
             String etag,
             com.oracle.bmc.databasemanagement.model.Job job) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.location = location;
         this.opcRequestId = opcRequestId;
         this.etag = etag;
@@ -91,6 +93,13 @@ public class GetJobResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -166,6 +175,7 @@ public class GetJobResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
@@ -179,7 +189,8 @@ public class GetJobResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetJobResponse build() {
-            return new GetJobResponse(__httpStatusCode__, location, opcRequestId, etag, job);
+            return new GetJobResponse(
+                    __httpStatusCode__, headers, location, opcRequestId, etag, job);
         }
     }
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.fusionapps.model;
     builder = ScheduledActivitySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ScheduledActivitySummary {
+public final class ScheduledActivitySummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -348,50 +349,81 @@ public final class ScheduledActivitySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScheduledActivitySummary build() {
-            ScheduledActivitySummary __instance__ =
+            ScheduledActivitySummary model =
                     new ScheduledActivitySummary(
-                            id,
-                            displayName,
-                            runCycle,
-                            fusionEnvironmentId,
-                            lifecycleState,
-                            actions,
-                            timeScheduledStart,
-                            timeExpectedFinish,
-                            timeFinished,
-                            delayInHours,
-                            serviceAvailability,
-                            timeAccepted,
-                            timeUpdated,
-                            lifecycleDetails,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.runCycle,
+                            this.fusionEnvironmentId,
+                            this.lifecycleState,
+                            this.actions,
+                            this.timeScheduledStart,
+                            this.timeExpectedFinish,
+                            this.timeFinished,
+                            this.delayInHours,
+                            this.serviceAvailability,
+                            this.timeAccepted,
+                            this.timeUpdated,
+                            this.lifecycleDetails,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ScheduledActivitySummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .runCycle(o.getRunCycle())
-                            .fusionEnvironmentId(o.getFusionEnvironmentId())
-                            .lifecycleState(o.getLifecycleState())
-                            .actions(o.getActions())
-                            .timeScheduledStart(o.getTimeScheduledStart())
-                            .timeExpectedFinish(o.getTimeExpectedFinish())
-                            .timeFinished(o.getTimeFinished())
-                            .delayInHours(o.getDelayInHours())
-                            .serviceAvailability(o.getServiceAvailability())
-                            .timeAccepted(o.getTimeAccepted())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ScheduledActivitySummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("runCycle")) {
+                this.runCycle(model.getRunCycle());
+            }
+            if (model.wasPropertyExplicitlySet("fusionEnvironmentId")) {
+                this.fusionEnvironmentId(model.getFusionEnvironmentId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("actions")) {
+                this.actions(model.getActions());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduledStart")) {
+                this.timeScheduledStart(model.getTimeScheduledStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpectedFinish")) {
+                this.timeExpectedFinish(model.getTimeExpectedFinish());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("delayInHours")) {
+                this.delayInHours(model.getDelayInHours());
+            }
+            if (model.wasPropertyExplicitlySet("serviceAvailability")) {
+                this.serviceAvailability(model.getServiceAvailability());
+            }
+            if (model.wasPropertyExplicitlySet("timeAccepted")) {
+                this.timeAccepted(model.getTimeAccepted());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -651,6 +683,7 @@ public final class ScheduledActivitySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ScheduledActivitySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", runCycle=").append(String.valueOf(this.runCycle));
@@ -667,7 +700,6 @@ public final class ScheduledActivitySummary {
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -698,7 +730,7 @@ public final class ScheduledActivitySummary {
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -741,16 +773,7 @@ public final class ScheduledActivitySummary {
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

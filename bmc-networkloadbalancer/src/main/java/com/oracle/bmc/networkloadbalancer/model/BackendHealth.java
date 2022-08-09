@@ -18,7 +18,7 @@ package com.oracle.bmc.networkloadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackendHealth.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BackendHealth {
+public final class BackendHealth extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"status", "healthCheckResults"})
     public BackendHealth(Status status, java.util.List<HealthCheckResult> healthCheckResults) {
@@ -88,18 +88,22 @@ public final class BackendHealth {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BackendHealth build() {
-            BackendHealth __instance__ = new BackendHealth(status, healthCheckResults);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BackendHealth model = new BackendHealth(this.status, this.healthCheckResults);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BackendHealth o) {
-            Builder copiedBuilder =
-                    status(o.getStatus()).healthCheckResults(o.getHealthCheckResults());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BackendHealth model) {
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("healthCheckResults")) {
+                this.healthCheckResults(model.getHealthCheckResults());
+            }
+            return this;
         }
     }
 
@@ -236,9 +240,9 @@ public final class BackendHealth {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BackendHealth(");
+        sb.append("super=").append(super.toString());
         sb.append("status=").append(String.valueOf(this.status));
         sb.append(", healthCheckResults=").append(String.valueOf(this.healthCheckResults));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -255,7 +259,7 @@ public final class BackendHealth {
         BackendHealth other = (BackendHealth) o;
         return java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.healthCheckResults, other.healthCheckResults)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -268,16 +272,7 @@ public final class BackendHealth {
                         + (this.healthCheckResults == null
                                 ? 43
                                 : this.healthCheckResults.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

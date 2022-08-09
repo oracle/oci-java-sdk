@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = ShapeSecureBootOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ShapeSecureBootOptions {
+public final class ShapeSecureBootOptions
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"allowedValues", "isDefaultEnabled"})
     public ShapeSecureBootOptions(java.util.List<Boolean> allowedValues, Boolean isDefaultEnabled) {
@@ -72,19 +73,23 @@ public final class ShapeSecureBootOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShapeSecureBootOptions build() {
-            ShapeSecureBootOptions __instance__ =
-                    new ShapeSecureBootOptions(allowedValues, isDefaultEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ShapeSecureBootOptions model =
+                    new ShapeSecureBootOptions(this.allowedValues, this.isDefaultEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ShapeSecureBootOptions o) {
-            Builder copiedBuilder =
-                    allowedValues(o.getAllowedValues()).isDefaultEnabled(o.getIsDefaultEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ShapeSecureBootOptions model) {
+            if (model.wasPropertyExplicitlySet("allowedValues")) {
+                this.allowedValues(model.getAllowedValues());
+            }
+            if (model.wasPropertyExplicitlySet("isDefaultEnabled")) {
+                this.isDefaultEnabled(model.getIsDefaultEnabled());
+            }
+            return this;
         }
     }
 
@@ -144,9 +149,9 @@ public final class ShapeSecureBootOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ShapeSecureBootOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("allowedValues=").append(String.valueOf(this.allowedValues));
         sb.append(", isDefaultEnabled=").append(String.valueOf(this.isDefaultEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -163,7 +168,7 @@ public final class ShapeSecureBootOptions {
         ShapeSecureBootOptions other = (ShapeSecureBootOptions) o;
         return java.util.Objects.equals(this.allowedValues, other.allowedValues)
                 && java.util.Objects.equals(this.isDefaultEnabled, other.isDefaultEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -176,16 +181,7 @@ public final class ShapeSecureBootOptions {
         result =
                 (result * PRIME)
                         + (this.isDefaultEnabled == null ? 43 : this.isDefaultEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

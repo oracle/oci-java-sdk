@@ -170,8 +170,8 @@ public class ListRoverNodesConverter {
                                         builder =
                                                 com.oracle.bmc.rover.responses
                                                         .ListRoverNodesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.roverNodeCollection(response.getItem());
 

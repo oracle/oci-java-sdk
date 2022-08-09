@@ -120,8 +120,8 @@ public class GetDedicatedVantagePointConverter {
                                         builder =
                                                 com.oracle.bmc.apmsynthetics.responses
                                                         .GetDedicatedVantagePointResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dedicatedVantagePoint(response.getItem());
 

@@ -101,8 +101,8 @@ public class CreateDbSystemConverter {
                                         builder =
                                                 com.oracle.bmc.mysql.responses
                                                         .CreateDbSystemResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dbSystem(response.getItem());
 

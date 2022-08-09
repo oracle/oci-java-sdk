@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MaskDataDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MaskDataDetails {
+public final class MaskDataDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "targetId",
@@ -224,34 +224,49 @@ public final class MaskDataDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MaskDataDetails build() {
-            MaskDataDetails __instance__ =
+            MaskDataDetails model =
                     new MaskDataDetails(
-                            targetId,
-                            isDecrypt,
-                            isRerun,
-                            tablespace,
-                            isIgnoreErrorsEnabled,
-                            seed,
-                            isMoveInterimTablesEnabled,
-                            isExecuteSavedScriptEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.targetId,
+                            this.isDecrypt,
+                            this.isRerun,
+                            this.tablespace,
+                            this.isIgnoreErrorsEnabled,
+                            this.seed,
+                            this.isMoveInterimTablesEnabled,
+                            this.isExecuteSavedScriptEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MaskDataDetails o) {
-            Builder copiedBuilder =
-                    targetId(o.getTargetId())
-                            .isDecrypt(o.getIsDecrypt())
-                            .isRerun(o.getIsRerun())
-                            .tablespace(o.getTablespace())
-                            .isIgnoreErrorsEnabled(o.getIsIgnoreErrorsEnabled())
-                            .seed(o.getSeed())
-                            .isMoveInterimTablesEnabled(o.getIsMoveInterimTablesEnabled())
-                            .isExecuteSavedScriptEnabled(o.getIsExecuteSavedScriptEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MaskDataDetails model) {
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("isDecrypt")) {
+                this.isDecrypt(model.getIsDecrypt());
+            }
+            if (model.wasPropertyExplicitlySet("isRerun")) {
+                this.isRerun(model.getIsRerun());
+            }
+            if (model.wasPropertyExplicitlySet("tablespace")) {
+                this.tablespace(model.getTablespace());
+            }
+            if (model.wasPropertyExplicitlySet("isIgnoreErrorsEnabled")) {
+                this.isIgnoreErrorsEnabled(model.getIsIgnoreErrorsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("seed")) {
+                this.seed(model.getSeed());
+            }
+            if (model.wasPropertyExplicitlySet("isMoveInterimTablesEnabled")) {
+                this.isMoveInterimTablesEnabled(model.getIsMoveInterimTablesEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isExecuteSavedScriptEnabled")) {
+                this.isExecuteSavedScriptEnabled(model.getIsExecuteSavedScriptEnabled());
+            }
+            return this;
         }
     }
 
@@ -431,6 +446,7 @@ public final class MaskDataDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MaskDataDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("targetId=").append(String.valueOf(this.targetId));
         sb.append(", isDecrypt=").append(String.valueOf(this.isDecrypt));
         sb.append(", isRerun=").append(String.valueOf(this.isRerun));
@@ -441,7 +457,6 @@ public final class MaskDataDetails {
                 .append(String.valueOf(this.isMoveInterimTablesEnabled));
         sb.append(", isExecuteSavedScriptEnabled=")
                 .append(String.valueOf(this.isExecuteSavedScriptEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -466,7 +481,7 @@ public final class MaskDataDetails {
                         this.isMoveInterimTablesEnabled, other.isMoveInterimTablesEnabled)
                 && java.util.Objects.equals(
                         this.isExecuteSavedScriptEnabled, other.isExecuteSavedScriptEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -493,16 +508,7 @@ public final class MaskDataDetails {
                         + (this.isExecuteSavedScriptEnabled == null
                                 ? 43
                                 : this.isExecuteSavedScriptEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

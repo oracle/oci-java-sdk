@@ -34,7 +34,8 @@ package com.oracle.bmc.vnmonitoring.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DrgRouteDistributionMatchCriteria {
+public class DrgRouteDistributionMatchCriteria
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected DrgRouteDistributionMatchCriteria() {
@@ -54,6 +55,7 @@ public class DrgRouteDistributionMatchCriteria {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DrgRouteDistributionMatchCriteria(");
+        sb.append("super=").append(super.toString());
         sb.append(")");
         return sb.toString();
     }
@@ -68,13 +70,14 @@ public class DrgRouteDistributionMatchCriteria {
         }
 
         DrgRouteDistributionMatchCriteria other = (DrgRouteDistributionMatchCriteria) o;
-        return true;
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

@@ -171,36 +171,53 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JwtAuthenticationPolicy build() {
-            JwtAuthenticationPolicy __instance__ =
+            JwtAuthenticationPolicy model =
                     new JwtAuthenticationPolicy(
-                            isAnonymousAccessAllowed,
-                            tokenHeader,
-                            tokenQueryParam,
-                            tokenAuthScheme,
-                            issuers,
-                            audiences,
-                            verifyClaims,
-                            maxClockSkewInSeconds,
-                            publicKeys);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isAnonymousAccessAllowed,
+                            this.tokenHeader,
+                            this.tokenQueryParam,
+                            this.tokenAuthScheme,
+                            this.issuers,
+                            this.audiences,
+                            this.verifyClaims,
+                            this.maxClockSkewInSeconds,
+                            this.publicKeys);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JwtAuthenticationPolicy o) {
-            Builder copiedBuilder =
-                    isAnonymousAccessAllowed(o.getIsAnonymousAccessAllowed())
-                            .tokenHeader(o.getTokenHeader())
-                            .tokenQueryParam(o.getTokenQueryParam())
-                            .tokenAuthScheme(o.getTokenAuthScheme())
-                            .issuers(o.getIssuers())
-                            .audiences(o.getAudiences())
-                            .verifyClaims(o.getVerifyClaims())
-                            .maxClockSkewInSeconds(o.getMaxClockSkewInSeconds())
-                            .publicKeys(o.getPublicKeys());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JwtAuthenticationPolicy model) {
+            if (model.wasPropertyExplicitlySet("isAnonymousAccessAllowed")) {
+                this.isAnonymousAccessAllowed(model.getIsAnonymousAccessAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("tokenHeader")) {
+                this.tokenHeader(model.getTokenHeader());
+            }
+            if (model.wasPropertyExplicitlySet("tokenQueryParam")) {
+                this.tokenQueryParam(model.getTokenQueryParam());
+            }
+            if (model.wasPropertyExplicitlySet("tokenAuthScheme")) {
+                this.tokenAuthScheme(model.getTokenAuthScheme());
+            }
+            if (model.wasPropertyExplicitlySet("issuers")) {
+                this.issuers(model.getIssuers());
+            }
+            if (model.wasPropertyExplicitlySet("audiences")) {
+                this.audiences(model.getAudiences());
+            }
+            if (model.wasPropertyExplicitlySet("verifyClaims")) {
+                this.verifyClaims(model.getVerifyClaims());
+            }
+            if (model.wasPropertyExplicitlySet("maxClockSkewInSeconds")) {
+                this.maxClockSkewInSeconds(model.getMaxClockSkewInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("publicKeys")) {
+                this.publicKeys(model.getPublicKeys());
+            }
+            return this;
         }
     }
 
@@ -372,7 +389,6 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
         sb.append(", verifyClaims=").append(String.valueOf(this.verifyClaims));
         sb.append(", maxClockSkewInSeconds=").append(String.valueOf(this.maxClockSkewInSeconds));
         sb.append(", publicKeys=").append(String.valueOf(this.publicKeys));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -395,8 +411,7 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
                 && java.util.Objects.equals(this.verifyClaims, other.verifyClaims)
                 && java.util.Objects.equals(this.maxClockSkewInSeconds, other.maxClockSkewInSeconds)
                 && java.util.Objects.equals(this.publicKeys, other.publicKeys)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -419,16 +434,6 @@ public final class JwtAuthenticationPolicy extends AuthenticationPolicy {
                                 ? 43
                                 : this.maxClockSkewInSeconds.hashCode());
         result = (result * PRIME) + (this.publicKeys == null ? 43 : this.publicKeys.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

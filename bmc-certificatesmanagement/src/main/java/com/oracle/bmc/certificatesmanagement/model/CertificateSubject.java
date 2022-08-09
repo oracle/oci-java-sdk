@@ -20,7 +20,7 @@ package com.oracle.bmc.certificatesmanagement.model;
     builder = CertificateSubject.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CertificateSubject {
+public final class CertificateSubject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "commonName",
@@ -358,52 +358,85 @@ public final class CertificateSubject {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CertificateSubject build() {
-            CertificateSubject __instance__ =
+            CertificateSubject model =
                     new CertificateSubject(
-                            commonName,
-                            country,
-                            domainComponent,
-                            distinguishedNameQualifier,
-                            generationQualifier,
-                            givenName,
-                            initials,
-                            localityName,
-                            organization,
-                            organizationalUnit,
-                            pseudonym,
-                            serialNumber,
-                            stateOrProvinceName,
-                            street,
-                            surname,
-                            title,
-                            userId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.commonName,
+                            this.country,
+                            this.domainComponent,
+                            this.distinguishedNameQualifier,
+                            this.generationQualifier,
+                            this.givenName,
+                            this.initials,
+                            this.localityName,
+                            this.organization,
+                            this.organizationalUnit,
+                            this.pseudonym,
+                            this.serialNumber,
+                            this.stateOrProvinceName,
+                            this.street,
+                            this.surname,
+                            this.title,
+                            this.userId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CertificateSubject o) {
-            Builder copiedBuilder =
-                    commonName(o.getCommonName())
-                            .country(o.getCountry())
-                            .domainComponent(o.getDomainComponent())
-                            .distinguishedNameQualifier(o.getDistinguishedNameQualifier())
-                            .generationQualifier(o.getGenerationQualifier())
-                            .givenName(o.getGivenName())
-                            .initials(o.getInitials())
-                            .localityName(o.getLocalityName())
-                            .organization(o.getOrganization())
-                            .organizationalUnit(o.getOrganizationalUnit())
-                            .pseudonym(o.getPseudonym())
-                            .serialNumber(o.getSerialNumber())
-                            .stateOrProvinceName(o.getStateOrProvinceName())
-                            .street(o.getStreet())
-                            .surname(o.getSurname())
-                            .title(o.getTitle())
-                            .userId(o.getUserId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CertificateSubject model) {
+            if (model.wasPropertyExplicitlySet("commonName")) {
+                this.commonName(model.getCommonName());
+            }
+            if (model.wasPropertyExplicitlySet("country")) {
+                this.country(model.getCountry());
+            }
+            if (model.wasPropertyExplicitlySet("domainComponent")) {
+                this.domainComponent(model.getDomainComponent());
+            }
+            if (model.wasPropertyExplicitlySet("distinguishedNameQualifier")) {
+                this.distinguishedNameQualifier(model.getDistinguishedNameQualifier());
+            }
+            if (model.wasPropertyExplicitlySet("generationQualifier")) {
+                this.generationQualifier(model.getGenerationQualifier());
+            }
+            if (model.wasPropertyExplicitlySet("givenName")) {
+                this.givenName(model.getGivenName());
+            }
+            if (model.wasPropertyExplicitlySet("initials")) {
+                this.initials(model.getInitials());
+            }
+            if (model.wasPropertyExplicitlySet("localityName")) {
+                this.localityName(model.getLocalityName());
+            }
+            if (model.wasPropertyExplicitlySet("organization")) {
+                this.organization(model.getOrganization());
+            }
+            if (model.wasPropertyExplicitlySet("organizationalUnit")) {
+                this.organizationalUnit(model.getOrganizationalUnit());
+            }
+            if (model.wasPropertyExplicitlySet("pseudonym")) {
+                this.pseudonym(model.getPseudonym());
+            }
+            if (model.wasPropertyExplicitlySet("serialNumber")) {
+                this.serialNumber(model.getSerialNumber());
+            }
+            if (model.wasPropertyExplicitlySet("stateOrProvinceName")) {
+                this.stateOrProvinceName(model.getStateOrProvinceName());
+            }
+            if (model.wasPropertyExplicitlySet("street")) {
+                this.street(model.getStreet());
+            }
+            if (model.wasPropertyExplicitlySet("surname")) {
+                this.surname(model.getSurname());
+            }
+            if (model.wasPropertyExplicitlySet("title")) {
+                this.title(model.getTitle());
+            }
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            return this;
         }
     }
 
@@ -669,6 +702,7 @@ public final class CertificateSubject {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CertificateSubject(");
+        sb.append("super=").append(super.toString());
         sb.append("commonName=").append(String.valueOf(this.commonName));
         sb.append(", country=").append(String.valueOf(this.country));
         sb.append(", domainComponent=").append(String.valueOf(this.domainComponent));
@@ -687,7 +721,6 @@ public final class CertificateSubject {
         sb.append(", surname=").append(String.valueOf(this.surname));
         sb.append(", title=").append(String.valueOf(this.title));
         sb.append(", userId=").append(String.valueOf(this.userId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -720,7 +753,7 @@ public final class CertificateSubject {
                 && java.util.Objects.equals(this.surname, other.surname)
                 && java.util.Objects.equals(this.title, other.title)
                 && java.util.Objects.equals(this.userId, other.userId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -762,16 +795,7 @@ public final class CertificateSubject {
         result = (result * PRIME) + (this.surname == null ? 43 : this.surname.hashCode());
         result = (result * PRIME) + (this.title == null ? 43 : this.title.hashCode());
         result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

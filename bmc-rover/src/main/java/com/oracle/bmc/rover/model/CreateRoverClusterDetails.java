@@ -19,7 +19,8 @@ package com.oracle.bmc.rover.model;
     builder = CreateRoverClusterDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateRoverClusterDetails {
+public final class CreateRoverClusterDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -540,70 +541,121 @@ public final class CreateRoverClusterDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateRoverClusterDetails build() {
-            CreateRoverClusterDetails __instance__ =
+            CreateRoverClusterDetails model =
                     new CreateRoverClusterDetails(
-                            displayName,
-                            compartmentId,
-                            clusterSize,
-                            customerShippingAddress,
-                            clusterWorkloads,
-                            clusterType,
-                            superUserPassword,
-                            enclosureType,
-                            unlockPassphrase,
-                            pointOfContact,
-                            pointOfContactPhoneNumber,
-                            shippingPreference,
-                            shippingVendor,
-                            timePickupExpected,
-                            oracleShippingTrackingUrl,
-                            subscriptionId,
-                            lifecycleState,
-                            lifecycleStateDetails,
-                            isImportRequested,
-                            importCompartmentId,
-                            importFileBucket,
-                            dataValidationCode,
-                            masterKeyId,
-                            freeformTags,
-                            definedTags,
-                            systemTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.compartmentId,
+                            this.clusterSize,
+                            this.customerShippingAddress,
+                            this.clusterWorkloads,
+                            this.clusterType,
+                            this.superUserPassword,
+                            this.enclosureType,
+                            this.unlockPassphrase,
+                            this.pointOfContact,
+                            this.pointOfContactPhoneNumber,
+                            this.shippingPreference,
+                            this.shippingVendor,
+                            this.timePickupExpected,
+                            this.oracleShippingTrackingUrl,
+                            this.subscriptionId,
+                            this.lifecycleState,
+                            this.lifecycleStateDetails,
+                            this.isImportRequested,
+                            this.importCompartmentId,
+                            this.importFileBucket,
+                            this.dataValidationCode,
+                            this.masterKeyId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateRoverClusterDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .clusterSize(o.getClusterSize())
-                            .customerShippingAddress(o.getCustomerShippingAddress())
-                            .clusterWorkloads(o.getClusterWorkloads())
-                            .clusterType(o.getClusterType())
-                            .superUserPassword(o.getSuperUserPassword())
-                            .enclosureType(o.getEnclosureType())
-                            .unlockPassphrase(o.getUnlockPassphrase())
-                            .pointOfContact(o.getPointOfContact())
-                            .pointOfContactPhoneNumber(o.getPointOfContactPhoneNumber())
-                            .shippingPreference(o.getShippingPreference())
-                            .shippingVendor(o.getShippingVendor())
-                            .timePickupExpected(o.getTimePickupExpected())
-                            .oracleShippingTrackingUrl(o.getOracleShippingTrackingUrl())
-                            .subscriptionId(o.getSubscriptionId())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleStateDetails(o.getLifecycleStateDetails())
-                            .isImportRequested(o.getIsImportRequested())
-                            .importCompartmentId(o.getImportCompartmentId())
-                            .importFileBucket(o.getImportFileBucket())
-                            .dataValidationCode(o.getDataValidationCode())
-                            .masterKeyId(o.getMasterKeyId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateRoverClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterSize")) {
+                this.clusterSize(model.getClusterSize());
+            }
+            if (model.wasPropertyExplicitlySet("customerShippingAddress")) {
+                this.customerShippingAddress(model.getCustomerShippingAddress());
+            }
+            if (model.wasPropertyExplicitlySet("clusterWorkloads")) {
+                this.clusterWorkloads(model.getClusterWorkloads());
+            }
+            if (model.wasPropertyExplicitlySet("clusterType")) {
+                this.clusterType(model.getClusterType());
+            }
+            if (model.wasPropertyExplicitlySet("superUserPassword")) {
+                this.superUserPassword(model.getSuperUserPassword());
+            }
+            if (model.wasPropertyExplicitlySet("enclosureType")) {
+                this.enclosureType(model.getEnclosureType());
+            }
+            if (model.wasPropertyExplicitlySet("unlockPassphrase")) {
+                this.unlockPassphrase(model.getUnlockPassphrase());
+            }
+            if (model.wasPropertyExplicitlySet("pointOfContact")) {
+                this.pointOfContact(model.getPointOfContact());
+            }
+            if (model.wasPropertyExplicitlySet("pointOfContactPhoneNumber")) {
+                this.pointOfContactPhoneNumber(model.getPointOfContactPhoneNumber());
+            }
+            if (model.wasPropertyExplicitlySet("shippingPreference")) {
+                this.shippingPreference(model.getShippingPreference());
+            }
+            if (model.wasPropertyExplicitlySet("shippingVendor")) {
+                this.shippingVendor(model.getShippingVendor());
+            }
+            if (model.wasPropertyExplicitlySet("timePickupExpected")) {
+                this.timePickupExpected(model.getTimePickupExpected());
+            }
+            if (model.wasPropertyExplicitlySet("oracleShippingTrackingUrl")) {
+                this.oracleShippingTrackingUrl(model.getOracleShippingTrackingUrl());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleStateDetails")) {
+                this.lifecycleStateDetails(model.getLifecycleStateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isImportRequested")) {
+                this.isImportRequested(model.getIsImportRequested());
+            }
+            if (model.wasPropertyExplicitlySet("importCompartmentId")) {
+                this.importCompartmentId(model.getImportCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("importFileBucket")) {
+                this.importFileBucket(model.getImportFileBucket());
+            }
+            if (model.wasPropertyExplicitlySet("dataValidationCode")) {
+                this.dataValidationCode(model.getDataValidationCode());
+            }
+            if (model.wasPropertyExplicitlySet("masterKeyId")) {
+                this.masterKeyId(model.getMasterKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            return this;
         }
     }
 
@@ -1041,6 +1093,7 @@ public final class CreateRoverClusterDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateRoverClusterDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", clusterSize=").append(String.valueOf(this.clusterSize));
@@ -1070,7 +1123,6 @@ public final class CreateRoverClusterDetails {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1114,7 +1166,7 @@ public final class CreateRoverClusterDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1201,16 +1253,7 @@ public final class CreateRoverClusterDetails {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

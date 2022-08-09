@@ -78,6 +78,7 @@ public class ListSourceLabelOperatorsResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcPrevPage",
         "opcNextPage",
         "opcRequestId",
@@ -85,12 +86,13 @@ public class ListSourceLabelOperatorsResponse extends com.oracle.bmc.responses.B
     })
     private ListSourceLabelOperatorsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcPrevPage,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogAnalyticsLabelOperatorCollection
                     logAnalyticsLabelOperatorCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcPrevPage = opcPrevPage;
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
@@ -102,6 +104,13 @@ public class ListSourceLabelOperatorsResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -188,6 +197,7 @@ public class ListSourceLabelOperatorsResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(ListSourceLabelOperatorsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcPrevPage(o.getOpcPrevPage());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
@@ -203,6 +213,7 @@ public class ListSourceLabelOperatorsResponse extends com.oracle.bmc.responses.B
         public ListSourceLabelOperatorsResponse build() {
             return new ListSourceLabelOperatorsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcPrevPage,
                     opcNextPage,
                     opcRequestId,

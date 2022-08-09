@@ -147,8 +147,8 @@ public class ListSightingImpactedResourcesConverter {
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListSightingImpactedResourcesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sightingImpactedResourceCollection(response.getItem());
 

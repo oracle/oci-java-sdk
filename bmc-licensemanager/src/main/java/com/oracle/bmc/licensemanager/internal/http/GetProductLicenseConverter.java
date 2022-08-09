@@ -109,8 +109,8 @@ public class GetProductLicenseConverter {
                                         builder =
                                                 com.oracle.bmc.licensemanager.responses
                                                         .GetProductLicenseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.productLicense(response.getItem());
 

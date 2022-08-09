@@ -19,7 +19,8 @@ package com.oracle.bmc.fusionapps.model;
     builder = FusionEnvironmentFamilyLimitsAndUsage.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FusionEnvironmentFamilyLimitsAndUsage {
+public final class FusionEnvironmentFamilyLimitsAndUsage
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "productionLimitAndUsage",
@@ -70,22 +71,29 @@ public final class FusionEnvironmentFamilyLimitsAndUsage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FusionEnvironmentFamilyLimitsAndUsage build() {
-            FusionEnvironmentFamilyLimitsAndUsage __instance__ =
+            FusionEnvironmentFamilyLimitsAndUsage model =
                     new FusionEnvironmentFamilyLimitsAndUsage(
-                            productionLimitAndUsage, testLimitAndUsage, developmentLimitAndUsage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.productionLimitAndUsage,
+                            this.testLimitAndUsage,
+                            this.developmentLimitAndUsage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FusionEnvironmentFamilyLimitsAndUsage o) {
-            Builder copiedBuilder =
-                    productionLimitAndUsage(o.getProductionLimitAndUsage())
-                            .testLimitAndUsage(o.getTestLimitAndUsage())
-                            .developmentLimitAndUsage(o.getDevelopmentLimitAndUsage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FusionEnvironmentFamilyLimitsAndUsage model) {
+            if (model.wasPropertyExplicitlySet("productionLimitAndUsage")) {
+                this.productionLimitAndUsage(model.getProductionLimitAndUsage());
+            }
+            if (model.wasPropertyExplicitlySet("testLimitAndUsage")) {
+                this.testLimitAndUsage(model.getTestLimitAndUsage());
+            }
+            if (model.wasPropertyExplicitlySet("developmentLimitAndUsage")) {
+                this.developmentLimitAndUsage(model.getDevelopmentLimitAndUsage());
+            }
+            return this;
         }
     }
 
@@ -134,11 +142,11 @@ public final class FusionEnvironmentFamilyLimitsAndUsage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FusionEnvironmentFamilyLimitsAndUsage(");
+        sb.append("super=").append(super.toString());
         sb.append("productionLimitAndUsage=").append(String.valueOf(this.productionLimitAndUsage));
         sb.append(", testLimitAndUsage=").append(String.valueOf(this.testLimitAndUsage));
         sb.append(", developmentLimitAndUsage=")
                 .append(String.valueOf(this.developmentLimitAndUsage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -157,7 +165,7 @@ public final class FusionEnvironmentFamilyLimitsAndUsage {
                 && java.util.Objects.equals(this.testLimitAndUsage, other.testLimitAndUsage)
                 && java.util.Objects.equals(
                         this.developmentLimitAndUsage, other.developmentLimitAndUsage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -177,16 +185,7 @@ public final class FusionEnvironmentFamilyLimitsAndUsage {
                         + (this.developmentLimitAndUsage == null
                                 ? 43
                                 : this.developmentLimitAndUsage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

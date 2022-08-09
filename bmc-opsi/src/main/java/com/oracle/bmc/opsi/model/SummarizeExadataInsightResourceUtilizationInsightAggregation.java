@@ -20,7 +20,8 @@ package com.oracle.bmc.opsi.model;
     builder = SummarizeExadataInsightResourceUtilizationInsightAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SummarizeExadataInsightResourceUtilizationInsightAggregation {
+public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeIntervalStart",
@@ -135,28 +136,37 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation 
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SummarizeExadataInsightResourceUtilizationInsightAggregation build() {
-            SummarizeExadataInsightResourceUtilizationInsightAggregation __instance__ =
+            SummarizeExadataInsightResourceUtilizationInsightAggregation model =
                     new SummarizeExadataInsightResourceUtilizationInsightAggregation(
-                            timeIntervalStart,
-                            timeIntervalEnd,
-                            exadataResourceMetric,
-                            exadataResourceType,
-                            utilization);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeIntervalStart,
+                            this.timeIntervalEnd,
+                            this.exadataResourceMetric,
+                            this.exadataResourceType,
+                            this.utilization);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SummarizeExadataInsightResourceUtilizationInsightAggregation o) {
-            Builder copiedBuilder =
-                    timeIntervalStart(o.getTimeIntervalStart())
-                            .timeIntervalEnd(o.getTimeIntervalEnd())
-                            .exadataResourceMetric(o.getExadataResourceMetric())
-                            .exadataResourceType(o.getExadataResourceType())
-                            .utilization(o.getUtilization());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SummarizeExadataInsightResourceUtilizationInsightAggregation model) {
+            if (model.wasPropertyExplicitlySet("timeIntervalStart")) {
+                this.timeIntervalStart(model.getTimeIntervalStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeIntervalEnd")) {
+                this.timeIntervalEnd(model.getTimeIntervalEnd());
+            }
+            if (model.wasPropertyExplicitlySet("exadataResourceMetric")) {
+                this.exadataResourceMetric(model.getExadataResourceMetric());
+            }
+            if (model.wasPropertyExplicitlySet("exadataResourceType")) {
+                this.exadataResourceType(model.getExadataResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("utilization")) {
+                this.utilization(model.getUtilization());
+            }
+            return this;
         }
     }
 
@@ -362,12 +372,12 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation 
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SummarizeExadataInsightResourceUtilizationInsightAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
         sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
         sb.append(", exadataResourceMetric=").append(String.valueOf(this.exadataResourceMetric));
         sb.append(", exadataResourceType=").append(String.valueOf(this.exadataResourceType));
         sb.append(", utilization=").append(String.valueOf(this.utilization));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -388,7 +398,7 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation 
                 && java.util.Objects.equals(this.exadataResourceMetric, other.exadataResourceMetric)
                 && java.util.Objects.equals(this.exadataResourceType, other.exadataResourceType)
                 && java.util.Objects.equals(this.utilization, other.utilization)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -412,16 +422,7 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation 
                                 ? 43
                                 : this.exadataResourceType.hashCode());
         result = (result * PRIME) + (this.utilization == null ? 43 : this.utilization.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

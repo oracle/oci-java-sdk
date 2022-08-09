@@ -19,7 +19,8 @@ package com.oracle.bmc.identity.model;
     builder = DomainReplicationStates.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DomainReplicationStates {
+public final class DomainReplicationStates
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"domainId", "state", "replicaRegion"})
     public DomainReplicationStates(String domainId, State state, String replicaRegion) {
@@ -86,21 +87,26 @@ public final class DomainReplicationStates {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DomainReplicationStates build() {
-            DomainReplicationStates __instance__ =
-                    new DomainReplicationStates(domainId, state, replicaRegion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DomainReplicationStates model =
+                    new DomainReplicationStates(this.domainId, this.state, this.replicaRegion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DomainReplicationStates o) {
-            Builder copiedBuilder =
-                    domainId(o.getDomainId())
-                            .state(o.getState())
-                            .replicaRegion(o.getReplicaRegion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DomainReplicationStates model) {
+            if (model.wasPropertyExplicitlySet("domainId")) {
+                this.domainId(model.getDomainId());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
+            }
+            if (model.wasPropertyExplicitlySet("replicaRegion")) {
+                this.replicaRegion(model.getReplicaRegion());
+            }
+            return this;
         }
     }
 
@@ -211,10 +217,10 @@ public final class DomainReplicationStates {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DomainReplicationStates(");
+        sb.append("super=").append(super.toString());
         sb.append("domainId=").append(String.valueOf(this.domainId));
         sb.append(", state=").append(String.valueOf(this.state));
         sb.append(", replicaRegion=").append(String.valueOf(this.replicaRegion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -232,7 +238,7 @@ public final class DomainReplicationStates {
         return java.util.Objects.equals(this.domainId, other.domainId)
                 && java.util.Objects.equals(this.state, other.state)
                 && java.util.Objects.equals(this.replicaRegion, other.replicaRegion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -244,16 +250,7 @@ public final class DomainReplicationStates {
         result =
                 (result * PRIME)
                         + (this.replicaRegion == null ? 43 : this.replicaRegion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

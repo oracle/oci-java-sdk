@@ -17,7 +17,7 @@ package com.oracle.bmc.loggingsearch.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FieldInfo.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FieldInfo {
+public final class FieldInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldName", "fieldType"})
     public FieldInfo(String fieldName, FieldType fieldType) {
@@ -75,17 +75,22 @@ public final class FieldInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FieldInfo build() {
-            FieldInfo __instance__ = new FieldInfo(fieldName, fieldType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FieldInfo model = new FieldInfo(this.fieldName, this.fieldType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FieldInfo o) {
-            Builder copiedBuilder = fieldName(o.getFieldName()).fieldType(o.getFieldType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FieldInfo model) {
+            if (model.wasPropertyExplicitlySet("fieldName")) {
+                this.fieldName(model.getFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("fieldType")) {
+                this.fieldType(model.getFieldType());
+            }
+            return this;
         }
     }
 
@@ -206,9 +211,9 @@ public final class FieldInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FieldInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("fieldName=").append(String.valueOf(this.fieldName));
         sb.append(", fieldType=").append(String.valueOf(this.fieldType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -225,7 +230,7 @@ public final class FieldInfo {
         FieldInfo other = (FieldInfo) o;
         return java.util.Objects.equals(this.fieldName, other.fieldName)
                 && java.util.Objects.equals(this.fieldType, other.fieldType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -234,16 +239,7 @@ public final class FieldInfo {
         int result = 1;
         result = (result * PRIME) + (this.fieldName == null ? 43 : this.fieldName.hashCode());
         result = (result * PRIME) + (this.fieldType == null ? 43 : this.fieldType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -109,8 +109,8 @@ public class CreateAnalyticsInstanceConverter {
                                         builder =
                                                 com.oracle.bmc.analytics.responses
                                                         .CreateAnalyticsInstanceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.analyticsInstance(response.getItem());
 

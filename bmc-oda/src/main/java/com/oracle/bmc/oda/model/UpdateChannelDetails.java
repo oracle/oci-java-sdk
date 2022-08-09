@@ -80,7 +80,7 @@ package com.oracle.bmc.oda.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class UpdateChannelDetails {
+public class UpdateChannelDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -177,6 +177,7 @@ public class UpdateChannelDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateChannelDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", sessionExpiryDurationInMilliseconds=")
                 .append(String.valueOf(this.sessionExpiryDurationInMilliseconds));
@@ -201,7 +202,8 @@ public class UpdateChannelDetails {
                         this.sessionExpiryDurationInMilliseconds,
                         other.sessionExpiryDurationInMilliseconds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.definedTags, other.definedTags);
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && super.equals(other);
     }
 
     @Override
@@ -216,6 +218,7 @@ public class UpdateChannelDetails {
                                 : this.sessionExpiryDurationInMilliseconds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

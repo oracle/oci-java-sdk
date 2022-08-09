@@ -38,12 +38,18 @@ public class GetDatabaseHomeMetricsResponse extends com.oracle.bmc.responses.Bmc
         return databaseHomeMetrics;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "databaseHomeMetrics"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "databaseHomeMetrics"
+    })
     private GetDatabaseHomeMetricsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.DatabaseHomeMetrics databaseHomeMetrics) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.databaseHomeMetrics = databaseHomeMetrics;
     }
@@ -53,6 +59,13 @@ public class GetDatabaseHomeMetricsResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetDatabaseHomeMetricsResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(GetDatabaseHomeMetricsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             databaseHomeMetrics(o.getDatabaseHomeMetrics());
 
@@ -109,7 +123,7 @@ public class GetDatabaseHomeMetricsResponse extends com.oracle.bmc.responses.Bmc
          */
         public GetDatabaseHomeMetricsResponse build() {
             return new GetDatabaseHomeMetricsResponse(
-                    __httpStatusCode__, opcRequestId, databaseHomeMetrics);
+                    __httpStatusCode__, headers, opcRequestId, databaseHomeMetrics);
         }
     }
 

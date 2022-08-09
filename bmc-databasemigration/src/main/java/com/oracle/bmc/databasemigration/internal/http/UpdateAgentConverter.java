@@ -115,8 +115,8 @@ public class UpdateAgentConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .UpdateAgentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.agent(response.getItem());
 

@@ -103,8 +103,8 @@ public class GetStreamPoolConverter {
                                         builder =
                                                 com.oracle.bmc.streaming.responses
                                                         .GetStreamPoolResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.streamPool(response.getItem());
 

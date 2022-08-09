@@ -79,6 +79,7 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcClientRequestId",
         "opcRequestId",
         "etag",
@@ -87,12 +88,13 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private GetRetentionRuleResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             String etag,
             java.util.Date lastModified,
             com.oracle.bmc.objectstorage.model.RetentionRule retentionRule) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
         this.etag = etag;
@@ -105,6 +107,13 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -194,6 +203,7 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetRetentionRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
@@ -210,6 +220,7 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
         public GetRetentionRuleResponse build() {
             return new GetRetentionRuleResponse(
                     __httpStatusCode__,
+                    headers,
                     opcClientRequestId,
                     opcRequestId,
                     etag,

@@ -18,7 +18,7 @@ package com.oracle.bmc.apmconfig.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Metric.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Metric {
+public final class Metric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "valueSource", "unit", "description"})
     public Metric(String name, String valueSource, String unit, String description) {
@@ -100,21 +100,28 @@ public final class Metric {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Metric build() {
-            Metric __instance__ = new Metric(name, valueSource, unit, description);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Metric model = new Metric(this.name, this.valueSource, this.unit, this.description);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Metric o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .valueSource(o.getValueSource())
-                            .unit(o.getUnit())
-                            .description(o.getDescription());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Metric model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("valueSource")) {
+                this.valueSource(model.getValueSource());
+            }
+            if (model.wasPropertyExplicitlySet("unit")) {
+                this.unit(model.getUnit());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            return this;
         }
     }
 
@@ -198,11 +205,11 @@ public final class Metric {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Metric(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", valueSource=").append(String.valueOf(this.valueSource));
         sb.append(", unit=").append(String.valueOf(this.unit));
         sb.append(", description=").append(String.valueOf(this.description));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -221,7 +228,7 @@ public final class Metric {
                 && java.util.Objects.equals(this.valueSource, other.valueSource)
                 && java.util.Objects.equals(this.unit, other.unit)
                 && java.util.Objects.equals(this.description, other.description)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -232,16 +239,7 @@ public final class Metric {
         result = (result * PRIME) + (this.valueSource == null ? 43 : this.valueSource.hashCode());
         result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

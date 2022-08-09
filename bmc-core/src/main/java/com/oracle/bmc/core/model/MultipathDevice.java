@@ -17,7 +17,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MultipathDevice.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MultipathDevice {
+public final class MultipathDevice extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ipv4", "iqn", "port"})
     public MultipathDevice(String ipv4, String iqn, Integer port) {
@@ -102,17 +102,25 @@ public final class MultipathDevice {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MultipathDevice build() {
-            MultipathDevice __instance__ = new MultipathDevice(ipv4, iqn, port);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MultipathDevice model = new MultipathDevice(this.ipv4, this.iqn, this.port);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MultipathDevice o) {
-            Builder copiedBuilder = ipv4(o.getIpv4()).iqn(o.getIqn()).port(o.getPort());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MultipathDevice model) {
+            if (model.wasPropertyExplicitlySet("ipv4")) {
+                this.ipv4(model.getIpv4());
+            }
+            if (model.wasPropertyExplicitlySet("iqn")) {
+                this.iqn(model.getIqn());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            return this;
         }
     }
 
@@ -202,10 +210,10 @@ public final class MultipathDevice {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MultipathDevice(");
+        sb.append("super=").append(super.toString());
         sb.append("ipv4=").append(String.valueOf(this.ipv4));
         sb.append(", iqn=").append(String.valueOf(this.iqn));
         sb.append(", port=").append(String.valueOf(this.port));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -223,7 +231,7 @@ public final class MultipathDevice {
         return java.util.Objects.equals(this.ipv4, other.ipv4)
                 && java.util.Objects.equals(this.iqn, other.iqn)
                 && java.util.Objects.equals(this.port, other.port)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -233,16 +241,7 @@ public final class MultipathDevice {
         result = (result * PRIME) + (this.ipv4 == null ? 43 : this.ipv4.hashCode());
         result = (result * PRIME) + (this.iqn == null ? 43 : this.iqn.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

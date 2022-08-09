@@ -19,7 +19,7 @@ package com.oracle.bmc.managementagent.model;
     builder = WorkSubmissionKey.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkSubmissionKey {
+public final class WorkSubmissionKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"workSubmissionKey"})
     public WorkSubmissionKey(String workSubmissionKey) {
@@ -50,17 +50,19 @@ public final class WorkSubmissionKey {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkSubmissionKey build() {
-            WorkSubmissionKey __instance__ = new WorkSubmissionKey(workSubmissionKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            WorkSubmissionKey model = new WorkSubmissionKey(this.workSubmissionKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkSubmissionKey o) {
-            Builder copiedBuilder = workSubmissionKey(o.getWorkSubmissionKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkSubmissionKey model) {
+            if (model.wasPropertyExplicitlySet("workSubmissionKey")) {
+                this.workSubmissionKey(model.getWorkSubmissionKey());
+            }
+            return this;
         }
     }
 
@@ -102,8 +104,8 @@ public final class WorkSubmissionKey {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkSubmissionKey(");
+        sb.append("super=").append(super.toString());
         sb.append("workSubmissionKey=").append(String.valueOf(this.workSubmissionKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +121,7 @@ public final class WorkSubmissionKey {
 
         WorkSubmissionKey other = (WorkSubmissionKey) o;
         return java.util.Objects.equals(this.workSubmissionKey, other.workSubmissionKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -129,16 +131,7 @@ public final class WorkSubmissionKey {
         result =
                 (result * PRIME)
                         + (this.workSubmissionKey == null ? 43 : this.workSubmissionKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

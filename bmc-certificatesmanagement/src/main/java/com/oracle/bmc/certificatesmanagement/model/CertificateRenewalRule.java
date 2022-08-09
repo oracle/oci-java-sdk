@@ -72,20 +72,23 @@ public final class CertificateRenewalRule extends CertificateRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CertificateRenewalRule build() {
-            CertificateRenewalRule __instance__ =
-                    new CertificateRenewalRule(renewalInterval, advanceRenewalPeriod);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CertificateRenewalRule model =
+                    new CertificateRenewalRule(this.renewalInterval, this.advanceRenewalPeriod);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CertificateRenewalRule o) {
-            Builder copiedBuilder =
-                    renewalInterval(o.getRenewalInterval())
-                            .advanceRenewalPeriod(o.getAdvanceRenewalPeriod());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CertificateRenewalRule model) {
+            if (model.wasPropertyExplicitlySet("renewalInterval")) {
+                this.renewalInterval(model.getRenewalInterval());
+            }
+            if (model.wasPropertyExplicitlySet("advanceRenewalPeriod")) {
+                this.advanceRenewalPeriod(model.getAdvanceRenewalPeriod());
+            }
+            return this;
         }
     }
 
@@ -159,7 +162,6 @@ public final class CertificateRenewalRule extends CertificateRule {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", renewalInterval=").append(String.valueOf(this.renewalInterval));
         sb.append(", advanceRenewalPeriod=").append(String.valueOf(this.advanceRenewalPeriod));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -176,8 +178,7 @@ public final class CertificateRenewalRule extends CertificateRule {
         CertificateRenewalRule other = (CertificateRenewalRule) o;
         return java.util.Objects.equals(this.renewalInterval, other.renewalInterval)
                 && java.util.Objects.equals(this.advanceRenewalPeriod, other.advanceRenewalPeriod)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -192,16 +193,6 @@ public final class CertificateRenewalRule extends CertificateRule {
                         + (this.advanceRenewalPeriod == null
                                 ? 43
                                 : this.advanceRenewalPeriod.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

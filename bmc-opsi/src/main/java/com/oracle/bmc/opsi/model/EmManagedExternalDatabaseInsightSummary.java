@@ -307,70 +307,119 @@ public final class EmManagedExternalDatabaseInsightSummary extends DatabaseInsig
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EmManagedExternalDatabaseInsightSummary build() {
-            EmManagedExternalDatabaseInsightSummary __instance__ =
+            EmManagedExternalDatabaseInsightSummary model =
                     new EmManagedExternalDatabaseInsightSummary(
-                            id,
-                            databaseId,
-                            compartmentId,
-                            databaseName,
-                            databaseDisplayName,
-                            databaseType,
-                            databaseVersion,
-                            databaseHostNames,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            processorCount,
-                            status,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            databaseConnectionStatusDetails,
-                            enterpriseManagerIdentifier,
-                            enterpriseManagerEntityName,
-                            enterpriseManagerEntityType,
-                            enterpriseManagerEntityIdentifier,
-                            enterpriseManagerEntityDisplayName,
-                            enterpriseManagerBridgeId,
-                            exadataInsightId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.databaseId,
+                            this.compartmentId,
+                            this.databaseName,
+                            this.databaseDisplayName,
+                            this.databaseType,
+                            this.databaseVersion,
+                            this.databaseHostNames,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.processorCount,
+                            this.status,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.databaseConnectionStatusDetails,
+                            this.enterpriseManagerIdentifier,
+                            this.enterpriseManagerEntityName,
+                            this.enterpriseManagerEntityType,
+                            this.enterpriseManagerEntityIdentifier,
+                            this.enterpriseManagerEntityDisplayName,
+                            this.enterpriseManagerBridgeId,
+                            this.exadataInsightId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EmManagedExternalDatabaseInsightSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .databaseId(o.getDatabaseId())
-                            .compartmentId(o.getCompartmentId())
-                            .databaseName(o.getDatabaseName())
-                            .databaseDisplayName(o.getDatabaseDisplayName())
-                            .databaseType(o.getDatabaseType())
-                            .databaseVersion(o.getDatabaseVersion())
-                            .databaseHostNames(o.getDatabaseHostNames())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .processorCount(o.getProcessorCount())
-                            .status(o.getStatus())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .databaseConnectionStatusDetails(o.getDatabaseConnectionStatusDetails())
-                            .enterpriseManagerIdentifier(o.getEnterpriseManagerIdentifier())
-                            .enterpriseManagerEntityName(o.getEnterpriseManagerEntityName())
-                            .enterpriseManagerEntityType(o.getEnterpriseManagerEntityType())
-                            .enterpriseManagerEntityIdentifier(
-                                    o.getEnterpriseManagerEntityIdentifier())
-                            .enterpriseManagerEntityDisplayName(
-                                    o.getEnterpriseManagerEntityDisplayName())
-                            .enterpriseManagerBridgeId(o.getEnterpriseManagerBridgeId())
-                            .exadataInsightId(o.getExadataInsightId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EmManagedExternalDatabaseInsightSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseName")) {
+                this.databaseName(model.getDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseDisplayName")) {
+                this.databaseDisplayName(model.getDatabaseDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("databaseHostNames")) {
+                this.databaseHostNames(model.getDatabaseHostNames());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("processorCount")) {
+                this.processorCount(model.getProcessorCount());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseConnectionStatusDetails")) {
+                this.databaseConnectionStatusDetails(model.getDatabaseConnectionStatusDetails());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerIdentifier")) {
+                this.enterpriseManagerIdentifier(model.getEnterpriseManagerIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityName")) {
+                this.enterpriseManagerEntityName(model.getEnterpriseManagerEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityType")) {
+                this.enterpriseManagerEntityType(model.getEnterpriseManagerEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityIdentifier")) {
+                this.enterpriseManagerEntityIdentifier(
+                        model.getEnterpriseManagerEntityIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityDisplayName")) {
+                this.enterpriseManagerEntityDisplayName(
+                        model.getEnterpriseManagerEntityDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerBridgeId")) {
+                this.enterpriseManagerBridgeId(model.getEnterpriseManagerBridgeId());
+            }
+            if (model.wasPropertyExplicitlySet("exadataInsightId")) {
+                this.exadataInsightId(model.getExadataInsightId());
+            }
+            return this;
         }
     }
 
@@ -565,7 +614,6 @@ public final class EmManagedExternalDatabaseInsightSummary extends DatabaseInsig
         sb.append(", enterpriseManagerBridgeId=")
                 .append(String.valueOf(this.enterpriseManagerBridgeId));
         sb.append(", exadataInsightId=").append(String.valueOf(this.exadataInsightId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -595,8 +643,7 @@ public final class EmManagedExternalDatabaseInsightSummary extends DatabaseInsig
                 && java.util.Objects.equals(
                         this.enterpriseManagerBridgeId, other.enterpriseManagerBridgeId)
                 && java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -636,16 +683,6 @@ public final class EmManagedExternalDatabaseInsightSummary extends DatabaseInsig
         result =
                 (result * PRIME)
                         + (this.exadataInsightId == null ? 43 : this.exadataInsightId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

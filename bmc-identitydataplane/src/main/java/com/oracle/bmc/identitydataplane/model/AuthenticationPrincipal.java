@@ -19,7 +19,8 @@ package com.oracle.bmc.identitydataplane.model;
     builder = AuthenticationPrincipal.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuthenticationPrincipal {
+public final class AuthenticationPrincipal
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tenant", "user"})
     public AuthenticationPrincipal(Tenant tenant, User user) {
@@ -67,17 +68,22 @@ public final class AuthenticationPrincipal {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuthenticationPrincipal build() {
-            AuthenticationPrincipal __instance__ = new AuthenticationPrincipal(tenant, user);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AuthenticationPrincipal model = new AuthenticationPrincipal(this.tenant, this.user);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AuthenticationPrincipal o) {
-            Builder copiedBuilder = tenant(o.getTenant()).user(o.getUser());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AuthenticationPrincipal model) {
+            if (model.wasPropertyExplicitlySet("tenant")) {
+                this.tenant(model.getTenant());
+            }
+            if (model.wasPropertyExplicitlySet("user")) {
+                this.user(model.getUser());
+            }
+            return this;
         }
     }
 
@@ -133,9 +139,9 @@ public final class AuthenticationPrincipal {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuthenticationPrincipal(");
+        sb.append("super=").append(super.toString());
         sb.append("tenant=").append(String.valueOf(this.tenant));
         sb.append(", user=").append(String.valueOf(this.user));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +158,7 @@ public final class AuthenticationPrincipal {
         AuthenticationPrincipal other = (AuthenticationPrincipal) o;
         return java.util.Objects.equals(this.tenant, other.tenant)
                 && java.util.Objects.equals(this.user, other.user)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +167,7 @@ public final class AuthenticationPrincipal {
         int result = 1;
         result = (result * PRIME) + (this.tenant == null ? 43 : this.tenant.hashCode());
         result = (result * PRIME) + (this.user == null ? 43 : this.user.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

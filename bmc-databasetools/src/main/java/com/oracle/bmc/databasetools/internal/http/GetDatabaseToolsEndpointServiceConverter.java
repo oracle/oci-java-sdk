@@ -117,8 +117,8 @@ public class GetDatabaseToolsEndpointServiceConverter {
                                                 com.oracle.bmc.databasetools.responses
                                                         .GetDatabaseToolsEndpointServiceResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseToolsEndpointService(response.getItem());
 

@@ -116,8 +116,8 @@ public class AddCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .AddCompartmentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityZone(response.getItem());
 

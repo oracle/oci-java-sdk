@@ -28,7 +28,8 @@ package com.oracle.bmc.core.model;
     builder = InstanceConfigurationLaunchInstanceShapeConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceConfigurationLaunchInstanceShapeConfigDetails {
+public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ocpus", "memoryInGBs", "baselineOcpuUtilization", "nvmes"})
     public InstanceConfigurationLaunchInstanceShapeConfigDetails(
@@ -134,23 +135,30 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceConfigurationLaunchInstanceShapeConfigDetails build() {
-            InstanceConfigurationLaunchInstanceShapeConfigDetails __instance__ =
+            InstanceConfigurationLaunchInstanceShapeConfigDetails model =
                     new InstanceConfigurationLaunchInstanceShapeConfigDetails(
-                            ocpus, memoryInGBs, baselineOcpuUtilization, nvmes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.ocpus, this.memoryInGBs, this.baselineOcpuUtilization, this.nvmes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceConfigurationLaunchInstanceShapeConfigDetails o) {
-            Builder copiedBuilder =
-                    ocpus(o.getOcpus())
-                            .memoryInGBs(o.getMemoryInGBs())
-                            .baselineOcpuUtilization(o.getBaselineOcpuUtilization())
-                            .nvmes(o.getNvmes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceConfigurationLaunchInstanceShapeConfigDetails model) {
+            if (model.wasPropertyExplicitlySet("ocpus")) {
+                this.ocpus(model.getOcpus());
+            }
+            if (model.wasPropertyExplicitlySet("memoryInGBs")) {
+                this.memoryInGBs(model.getMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("baselineOcpuUtilization")) {
+                this.baselineOcpuUtilization(model.getBaselineOcpuUtilization());
+            }
+            if (model.wasPropertyExplicitlySet("nvmes")) {
+                this.nvmes(model.getNvmes());
+            }
+            return this;
         }
     }
 
@@ -310,12 +318,12 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceConfigurationLaunchInstanceShapeConfigDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("ocpus=").append(String.valueOf(this.ocpus));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
         sb.append(", baselineOcpuUtilization=")
                 .append(String.valueOf(this.baselineOcpuUtilization));
         sb.append(", nvmes=").append(String.valueOf(this.nvmes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -336,7 +344,7 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails {
                 && java.util.Objects.equals(
                         this.baselineOcpuUtilization, other.baselineOcpuUtilization)
                 && java.util.Objects.equals(this.nvmes, other.nvmes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -351,16 +359,7 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails {
                                 ? 43
                                 : this.baselineOcpuUtilization.hashCode());
         result = (result * PRIME) + (this.nvmes == null ? 43 : this.nvmes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

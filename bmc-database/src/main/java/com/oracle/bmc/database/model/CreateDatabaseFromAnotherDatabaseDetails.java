@@ -19,7 +19,8 @@ package com.oracle.bmc.database.model;
     builder = CreateDatabaseFromAnotherDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateDatabaseFromAnotherDatabaseDetails {
+public final class CreateDatabaseFromAnotherDatabaseDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseId",
@@ -149,31 +150,41 @@ public final class CreateDatabaseFromAnotherDatabaseDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDatabaseFromAnotherDatabaseDetails build() {
-            CreateDatabaseFromAnotherDatabaseDetails __instance__ =
+            CreateDatabaseFromAnotherDatabaseDetails model =
                     new CreateDatabaseFromAnotherDatabaseDetails(
-                            databaseId,
-                            backupTDEPassword,
-                            adminPassword,
-                            dbUniqueName,
-                            dbName,
-                            timeStampForPointInTimeRecovery);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.databaseId,
+                            this.backupTDEPassword,
+                            this.adminPassword,
+                            this.dbUniqueName,
+                            this.dbName,
+                            this.timeStampForPointInTimeRecovery);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDatabaseFromAnotherDatabaseDetails o) {
-            Builder copiedBuilder =
-                    databaseId(o.getDatabaseId())
-                            .backupTDEPassword(o.getBackupTDEPassword())
-                            .adminPassword(o.getAdminPassword())
-                            .dbUniqueName(o.getDbUniqueName())
-                            .dbName(o.getDbName())
-                            .timeStampForPointInTimeRecovery(
-                                    o.getTimeStampForPointInTimeRecovery());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDatabaseFromAnotherDatabaseDetails model) {
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("backupTDEPassword")) {
+                this.backupTDEPassword(model.getBackupTDEPassword());
+            }
+            if (model.wasPropertyExplicitlySet("adminPassword")) {
+                this.adminPassword(model.getAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("dbUniqueName")) {
+                this.dbUniqueName(model.getDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("dbName")) {
+                this.dbName(model.getDbName());
+            }
+            if (model.wasPropertyExplicitlySet("timeStampForPointInTimeRecovery")) {
+                this.timeStampForPointInTimeRecovery(model.getTimeStampForPointInTimeRecovery());
+            }
+            return this;
         }
     }
 
@@ -285,6 +296,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDatabaseFromAnotherDatabaseDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", backupTDEPassword=").append(String.valueOf(this.backupTDEPassword));
         sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
@@ -292,7 +304,6 @@ public final class CreateDatabaseFromAnotherDatabaseDetails {
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", timeStampForPointInTimeRecovery=")
                 .append(String.valueOf(this.timeStampForPointInTimeRecovery));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -315,7 +326,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails {
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(
                         this.timeStampForPointInTimeRecovery, other.timeStampForPointInTimeRecovery)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -336,16 +347,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails {
                         + (this.timeStampForPointInTimeRecovery == null
                                 ? 43
                                 : this.timeStampForPointInTimeRecovery.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

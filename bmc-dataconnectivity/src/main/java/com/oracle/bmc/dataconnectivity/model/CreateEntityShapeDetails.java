@@ -44,7 +44,7 @@ package com.oracle.bmc.dataconnectivity.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateEntityShapeDetails {
+public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -370,6 +370,7 @@ public class CreateEntityShapeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateEntityShapeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", modelVersion=").append(String.valueOf(this.modelVersion));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
@@ -417,7 +418,8 @@ public class CreateEntityShapeDetails {
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.types, other.types)
-                && java.util.Objects.equals(this.entityProperties, other.entityProperties);
+                && java.util.Objects.equals(this.entityProperties, other.entityProperties)
+                && super.equals(other);
     }
 
     @Override
@@ -447,6 +449,7 @@ public class CreateEntityShapeDetails {
         result =
                 (result * PRIME)
                         + (this.entityProperties == null ? 43 : this.entityProperties.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

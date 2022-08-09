@@ -108,8 +108,8 @@ public class CreatePluggableDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .CreatePluggableDatabaseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pluggableDatabase(response.getItem());
 

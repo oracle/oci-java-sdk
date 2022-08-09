@@ -75,6 +75,7 @@ public class ListHostInsightsResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcTotalItems",
         "opcNextPage",
@@ -82,11 +83,12 @@ public class ListHostInsightsResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private ListHostInsightsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             Integer opcTotalItems,
             String opcNextPage,
             com.oracle.bmc.opsi.model.HostInsightSummaryCollection hostInsightSummaryCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcTotalItems = opcTotalItems;
         this.opcNextPage = opcNextPage;
@@ -98,6 +100,13 @@ public class ListHostInsightsResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -181,6 +190,7 @@ public class ListHostInsightsResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(ListHostInsightsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcTotalItems(o.getOpcTotalItems());
             opcNextPage(o.getOpcNextPage());
@@ -196,6 +206,7 @@ public class ListHostInsightsResponse extends com.oracle.bmc.responses.BmcRespon
         public ListHostInsightsResponse build() {
             return new ListHostInsightsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcTotalItems,
                     opcNextPage,

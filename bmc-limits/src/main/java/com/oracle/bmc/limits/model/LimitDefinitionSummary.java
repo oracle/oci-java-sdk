@@ -19,7 +19,8 @@ package com.oracle.bmc.limits.model;
     builder = LimitDefinitionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LimitDefinitionSummary {
+public final class LimitDefinitionSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -221,36 +222,53 @@ public final class LimitDefinitionSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LimitDefinitionSummary build() {
-            LimitDefinitionSummary __instance__ =
+            LimitDefinitionSummary model =
                     new LimitDefinitionSummary(
-                            name,
-                            serviceName,
-                            description,
-                            scopeType,
-                            areQuotasSupported,
-                            isResourceAvailabilitySupported,
-                            isDeprecated,
-                            isEligibleForLimitIncrease,
-                            isDynamic);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.serviceName,
+                            this.description,
+                            this.scopeType,
+                            this.areQuotasSupported,
+                            this.isResourceAvailabilitySupported,
+                            this.isDeprecated,
+                            this.isEligibleForLimitIncrease,
+                            this.isDynamic);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LimitDefinitionSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .serviceName(o.getServiceName())
-                            .description(o.getDescription())
-                            .scopeType(o.getScopeType())
-                            .areQuotasSupported(o.getAreQuotasSupported())
-                            .isResourceAvailabilitySupported(o.getIsResourceAvailabilitySupported())
-                            .isDeprecated(o.getIsDeprecated())
-                            .isEligibleForLimitIncrease(o.getIsEligibleForLimitIncrease())
-                            .isDynamic(o.getIsDynamic());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LimitDefinitionSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("serviceName")) {
+                this.serviceName(model.getServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("scopeType")) {
+                this.scopeType(model.getScopeType());
+            }
+            if (model.wasPropertyExplicitlySet("areQuotasSupported")) {
+                this.areQuotasSupported(model.getAreQuotasSupported());
+            }
+            if (model.wasPropertyExplicitlySet("isResourceAvailabilitySupported")) {
+                this.isResourceAvailabilitySupported(model.getIsResourceAvailabilitySupported());
+            }
+            if (model.wasPropertyExplicitlySet("isDeprecated")) {
+                this.isDeprecated(model.getIsDeprecated());
+            }
+            if (model.wasPropertyExplicitlySet("isEligibleForLimitIncrease")) {
+                this.isEligibleForLimitIncrease(model.getIsEligibleForLimitIncrease());
+            }
+            if (model.wasPropertyExplicitlySet("isDynamic")) {
+                this.isDynamic(model.getIsDynamic());
+            }
+            return this;
         }
     }
 
@@ -470,6 +488,7 @@ public final class LimitDefinitionSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LimitDefinitionSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -481,7 +500,6 @@ public final class LimitDefinitionSummary {
         sb.append(", isEligibleForLimitIncrease=")
                 .append(String.valueOf(this.isEligibleForLimitIncrease));
         sb.append(", isDynamic=").append(String.valueOf(this.isDynamic));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -507,7 +525,7 @@ public final class LimitDefinitionSummary {
                 && java.util.Objects.equals(
                         this.isEligibleForLimitIncrease, other.isEligibleForLimitIncrease)
                 && java.util.Objects.equals(this.isDynamic, other.isDynamic)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -535,16 +553,7 @@ public final class LimitDefinitionSummary {
                                 ? 43
                                 : this.isEligibleForLimitIncrease.hashCode());
         result = (result * PRIME) + (this.isDynamic == null ? 43 : this.isDynamic.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

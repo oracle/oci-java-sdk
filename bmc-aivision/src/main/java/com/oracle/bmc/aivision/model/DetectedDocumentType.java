@@ -19,7 +19,7 @@ package com.oracle.bmc.aivision.model;
     builder = DetectedDocumentType.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetectedDocumentType {
+public final class DetectedDocumentType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"documentType", "confidence"})
     public DetectedDocumentType(String documentType, Float confidence) {
@@ -67,17 +67,23 @@ public final class DetectedDocumentType {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetectedDocumentType build() {
-            DetectedDocumentType __instance__ = new DetectedDocumentType(documentType, confidence);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DetectedDocumentType model =
+                    new DetectedDocumentType(this.documentType, this.confidence);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DetectedDocumentType o) {
-            Builder copiedBuilder = documentType(o.getDocumentType()).confidence(o.getConfidence());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DetectedDocumentType model) {
+            if (model.wasPropertyExplicitlySet("documentType")) {
+                this.documentType(model.getDocumentType());
+            }
+            if (model.wasPropertyExplicitlySet("confidence")) {
+                this.confidence(model.getConfidence());
+            }
+            return this;
         }
     }
 
@@ -133,9 +139,9 @@ public final class DetectedDocumentType {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetectedDocumentType(");
+        sb.append("super=").append(super.toString());
         sb.append("documentType=").append(String.valueOf(this.documentType));
         sb.append(", confidence=").append(String.valueOf(this.confidence));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +158,7 @@ public final class DetectedDocumentType {
         DetectedDocumentType other = (DetectedDocumentType) o;
         return java.util.Objects.equals(this.documentType, other.documentType)
                 && java.util.Objects.equals(this.confidence, other.confidence)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +167,7 @@ public final class DetectedDocumentType {
         int result = 1;
         result = (result * PRIME) + (this.documentType == null ? 43 : this.documentType.hashCode());
         result = (result * PRIME) + (this.confidence == null ? 43 : this.confidence.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -451,7 +451,10 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "NetworkFirewall", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "NetworkFirewall",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/CancelWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -499,7 +502,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "ChangeNetworkFirewallCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/ChangeNetworkFirewallCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkFirewallCompartmentResponse>
                 transformer =
@@ -559,7 +562,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "ChangeNetworkFirewallPolicyCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/ChangeNetworkFirewallPolicyCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkFirewallPolicyCompartmentResponse>
                 transformer =
@@ -617,7 +620,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "CreateNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/CreateNetworkFirewall");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkFirewallResponse>
                 transformer =
                         CreateNetworkFirewallConverter.fromResponse(
@@ -672,7 +675,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "CreateNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/CreateNetworkFirewallPolicy");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateNetworkFirewallPolicyResponse>
                 transformer =
@@ -726,7 +729,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "DeleteNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/DeleteNetworkFirewall");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkFirewallResponse>
                 transformer =
                         DeleteNetworkFirewallConverter.fromResponse(
@@ -775,7 +778,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "DeleteNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/DeleteNetworkFirewallPolicy");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteNetworkFirewallPolicyResponse>
                 transformer =
@@ -821,7 +824,10 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 GetNetworkFirewallConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "NetworkFirewall", "GetNetworkFirewall", ib.getRequestUri().toString(), "");
+                        "NetworkFirewall",
+                        "GetNetworkFirewall",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/GetNetworkFirewall");
         final java.util.function.Function<javax.ws.rs.core.Response, GetNetworkFirewallResponse>
                 transformer =
                         GetNetworkFirewallConverter.fromResponse(
@@ -867,7 +873,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "GetNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/GetNetworkFirewallPolicy");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetNetworkFirewallPolicyResponse>
                 transformer =
@@ -912,7 +918,10 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "NetworkFirewall", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "NetworkFirewall",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -959,7 +968,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "ListNetworkFirewallPolicies",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/ListNetworkFirewallPolicies");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListNetworkFirewallPoliciesResponse>
                 transformer =
@@ -1008,7 +1017,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "ListNetworkFirewalls",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/ListNetworkFirewalls");
         final java.util.function.Function<javax.ws.rs.core.Response, ListNetworkFirewallsResponse>
                 transformer =
                         ListNetworkFirewallsConverter.fromResponse(
@@ -1055,7 +1064,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequestError/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1102,7 +1111,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequestLogEntry/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1146,7 +1155,10 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "NetworkFirewall", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "NetworkFirewall",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1192,7 +1204,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "UpdateNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/UpdateNetworkFirewall");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkFirewallResponse>
                 transformer =
                         UpdateNetworkFirewallConverter.fromResponse(
@@ -1246,7 +1258,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "UpdateNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/UpdateNetworkFirewallPolicy");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateNetworkFirewallPolicyResponse>
                 transformer =

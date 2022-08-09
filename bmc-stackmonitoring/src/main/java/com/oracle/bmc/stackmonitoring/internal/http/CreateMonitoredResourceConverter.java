@@ -118,8 +118,8 @@ public class CreateMonitoredResourceConverter {
                                         builder =
                                                 com.oracle.bmc.stackmonitoring.responses
                                                         .CreateMonitoredResourceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.monitoredResource(response.getItem());
 

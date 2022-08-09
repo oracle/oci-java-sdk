@@ -114,8 +114,8 @@ public class GetEndpointConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .GetEndpointResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.endpoint(response.getItem());
 

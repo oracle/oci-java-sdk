@@ -175,8 +175,8 @@ public class ListIncidentResourceTypesConverter {
                                         builder =
                                                 com.oracle.bmc.cims.responses
                                                         .ListIncidentResourceTypesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

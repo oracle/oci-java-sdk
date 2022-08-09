@@ -102,8 +102,8 @@ public class GetCpeDeviceConfigContentConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetCpeDeviceConfigContentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

@@ -129,8 +129,8 @@ public class UpdateDedicatedVantagePointConverter {
                                                 com.oracle.bmc.apmsynthetics.responses
                                                         .UpdateDedicatedVantagePointResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dedicatedVantagePoint(response.getItem());
 

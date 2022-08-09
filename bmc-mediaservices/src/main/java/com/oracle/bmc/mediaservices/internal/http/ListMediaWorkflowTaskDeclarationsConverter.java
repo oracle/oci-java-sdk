@@ -176,8 +176,8 @@ public class ListMediaWorkflowTaskDeclarationsConverter {
                                                 com.oracle.bmc.mediaservices.responses
                                                         .ListMediaWorkflowTaskDeclarationsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.mediaWorkflowTaskDeclarationCollection(response.getItem());
 

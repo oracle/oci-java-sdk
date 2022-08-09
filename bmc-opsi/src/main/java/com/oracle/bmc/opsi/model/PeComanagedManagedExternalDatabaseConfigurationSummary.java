@@ -187,46 +187,73 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PeComanagedManagedExternalDatabaseConfigurationSummary build() {
-            PeComanagedManagedExternalDatabaseConfigurationSummary __instance__ =
+            PeComanagedManagedExternalDatabaseConfigurationSummary model =
                     new PeComanagedManagedExternalDatabaseConfigurationSummary(
-                            databaseInsightId,
-                            compartmentId,
-                            databaseName,
-                            databaseDisplayName,
-                            databaseType,
-                            databaseVersion,
-                            cdbName,
-                            definedTags,
-                            freeformTags,
-                            processorCount,
-                            databaseId,
-                            parentId,
-                            opsiPrivateEndpointId,
-                            instances);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.databaseInsightId,
+                            this.compartmentId,
+                            this.databaseName,
+                            this.databaseDisplayName,
+                            this.databaseType,
+                            this.databaseVersion,
+                            this.cdbName,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.processorCount,
+                            this.databaseId,
+                            this.parentId,
+                            this.opsiPrivateEndpointId,
+                            this.instances);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PeComanagedManagedExternalDatabaseConfigurationSummary o) {
-            Builder copiedBuilder =
-                    databaseInsightId(o.getDatabaseInsightId())
-                            .compartmentId(o.getCompartmentId())
-                            .databaseName(o.getDatabaseName())
-                            .databaseDisplayName(o.getDatabaseDisplayName())
-                            .databaseType(o.getDatabaseType())
-                            .databaseVersion(o.getDatabaseVersion())
-                            .cdbName(o.getCdbName())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .processorCount(o.getProcessorCount())
-                            .databaseId(o.getDatabaseId())
-                            .parentId(o.getParentId())
-                            .opsiPrivateEndpointId(o.getOpsiPrivateEndpointId())
-                            .instances(o.getInstances());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PeComanagedManagedExternalDatabaseConfigurationSummary model) {
+            if (model.wasPropertyExplicitlySet("databaseInsightId")) {
+                this.databaseInsightId(model.getDatabaseInsightId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseName")) {
+                this.databaseName(model.getDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseDisplayName")) {
+                this.databaseDisplayName(model.getDatabaseDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("cdbName")) {
+                this.cdbName(model.getCdbName());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("processorCount")) {
+                this.processorCount(model.getProcessorCount());
+            }
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("parentId")) {
+                this.parentId(model.getParentId());
+            }
+            if (model.wasPropertyExplicitlySet("opsiPrivateEndpointId")) {
+                this.opsiPrivateEndpointId(model.getOpsiPrivateEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("instances")) {
+                this.instances(model.getInstances());
+            }
+            return this;
         }
     }
 
@@ -348,7 +375,6 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
         sb.append(", parentId=").append(String.valueOf(this.parentId));
         sb.append(", opsiPrivateEndpointId=").append(String.valueOf(this.opsiPrivateEndpointId));
         sb.append(", instances=").append(String.valueOf(this.instances));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -368,8 +394,7 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
                 && java.util.Objects.equals(this.parentId, other.parentId)
                 && java.util.Objects.equals(this.opsiPrivateEndpointId, other.opsiPrivateEndpointId)
                 && java.util.Objects.equals(this.instances, other.instances)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -384,16 +409,6 @@ public final class PeComanagedManagedExternalDatabaseConfigurationSummary
                                 ? 43
                                 : this.opsiPrivateEndpointId.hashCode());
         result = (result * PRIME) + (this.instances == null ? 43 : this.instances.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

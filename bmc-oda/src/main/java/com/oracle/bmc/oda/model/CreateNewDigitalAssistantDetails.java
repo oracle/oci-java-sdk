@@ -165,40 +165,61 @@ public final class CreateNewDigitalAssistantDetails extends CreateDigitalAssista
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateNewDigitalAssistantDetails build() {
-            CreateNewDigitalAssistantDetails __instance__ =
+            CreateNewDigitalAssistantDetails model =
                     new CreateNewDigitalAssistantDetails(
-                            category,
-                            description,
-                            platformVersion,
-                            multilingualMode,
-                            primaryLanguageTag,
-                            freeformTags,
-                            definedTags,
-                            name,
-                            displayName,
-                            version,
-                            nativeLanguageTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.category,
+                            this.description,
+                            this.platformVersion,
+                            this.multilingualMode,
+                            this.primaryLanguageTag,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.name,
+                            this.displayName,
+                            this.version,
+                            this.nativeLanguageTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateNewDigitalAssistantDetails o) {
-            Builder copiedBuilder =
-                    category(o.getCategory())
-                            .description(o.getDescription())
-                            .platformVersion(o.getPlatformVersion())
-                            .multilingualMode(o.getMultilingualMode())
-                            .primaryLanguageTag(o.getPrimaryLanguageTag())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .name(o.getName())
-                            .displayName(o.getDisplayName())
-                            .version(o.getVersion())
-                            .nativeLanguageTags(o.getNativeLanguageTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateNewDigitalAssistantDetails model) {
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("platformVersion")) {
+                this.platformVersion(model.getPlatformVersion());
+            }
+            if (model.wasPropertyExplicitlySet("multilingualMode")) {
+                this.multilingualMode(model.getMultilingualMode());
+            }
+            if (model.wasPropertyExplicitlySet("primaryLanguageTag")) {
+                this.primaryLanguageTag(model.getPrimaryLanguageTag());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("nativeLanguageTags")) {
+                this.nativeLanguageTags(model.getNativeLanguageTags());
+            }
+            return this;
         }
     }
 
@@ -320,7 +341,6 @@ public final class CreateNewDigitalAssistantDetails extends CreateDigitalAssista
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", nativeLanguageTags=").append(String.valueOf(this.nativeLanguageTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -339,8 +359,7 @@ public final class CreateNewDigitalAssistantDetails extends CreateDigitalAssista
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.nativeLanguageTags, other.nativeLanguageTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -355,16 +374,6 @@ public final class CreateNewDigitalAssistantDetails extends CreateDigitalAssista
                         + (this.nativeLanguageTags == null
                                 ? 43
                                 : this.nativeLanguageTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.licensemanager.model;
     builder = CreateLicenseRecordDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateLicenseRecordDetails {
+public final class CreateLicenseRecordDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -232,36 +233,53 @@ public final class CreateLicenseRecordDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateLicenseRecordDetails build() {
-            CreateLicenseRecordDetails __instance__ =
+            CreateLicenseRecordDetails model =
                     new CreateLicenseRecordDetails(
-                            displayName,
-                            isPerpetual,
-                            expirationDate,
-                            supportEndDate,
-                            isUnlimited,
-                            licenseCount,
-                            productId,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.isPerpetual,
+                            this.expirationDate,
+                            this.supportEndDate,
+                            this.isUnlimited,
+                            this.licenseCount,
+                            this.productId,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateLicenseRecordDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .isPerpetual(o.getIsPerpetual())
-                            .expirationDate(o.getExpirationDate())
-                            .supportEndDate(o.getSupportEndDate())
-                            .isUnlimited(o.getIsUnlimited())
-                            .licenseCount(o.getLicenseCount())
-                            .productId(o.getProductId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateLicenseRecordDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isPerpetual")) {
+                this.isPerpetual(model.getIsPerpetual());
+            }
+            if (model.wasPropertyExplicitlySet("expirationDate")) {
+                this.expirationDate(model.getExpirationDate());
+            }
+            if (model.wasPropertyExplicitlySet("supportEndDate")) {
+                this.supportEndDate(model.getSupportEndDate());
+            }
+            if (model.wasPropertyExplicitlySet("isUnlimited")) {
+                this.isUnlimited(model.getIsUnlimited());
+            }
+            if (model.wasPropertyExplicitlySet("licenseCount")) {
+                this.licenseCount(model.getLicenseCount());
+            }
+            if (model.wasPropertyExplicitlySet("productId")) {
+                this.productId(model.getProductId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -441,6 +459,7 @@ public final class CreateLicenseRecordDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateLicenseRecordDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", isPerpetual=").append(String.valueOf(this.isPerpetual));
         sb.append(", expirationDate=").append(String.valueOf(this.expirationDate));
@@ -450,7 +469,6 @@ public final class CreateLicenseRecordDetails {
         sb.append(", productId=").append(String.valueOf(this.productId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -474,7 +492,7 @@ public final class CreateLicenseRecordDetails {
                 && java.util.Objects.equals(this.productId, other.productId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -494,16 +512,7 @@ public final class CreateLicenseRecordDetails {
         result = (result * PRIME) + (this.productId == null ? 43 : this.productId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

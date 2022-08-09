@@ -40,7 +40,8 @@ package com.oracle.bmc.oda.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateDigitalAssistantDetails {
+public class CreateDigitalAssistantDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "category",
@@ -188,6 +189,7 @@ public class CreateDigitalAssistantDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDigitalAssistantDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("category=").append(String.valueOf(this.category));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", platformVersion=").append(String.valueOf(this.platformVersion));
@@ -215,7 +217,8 @@ public class CreateDigitalAssistantDetails {
                 && java.util.Objects.equals(this.multilingualMode, other.multilingualMode)
                 && java.util.Objects.equals(this.primaryLanguageTag, other.primaryLanguageTag)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.definedTags, other.definedTags);
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && super.equals(other);
     }
 
     @Override
@@ -237,6 +240,7 @@ public class CreateDigitalAssistantDetails {
                                 : this.primaryLanguageTag.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

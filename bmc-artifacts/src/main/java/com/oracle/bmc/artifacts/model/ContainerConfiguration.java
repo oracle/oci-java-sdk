@@ -19,7 +19,8 @@ package com.oracle.bmc.artifacts.model;
     builder = ContainerConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ContainerConfiguration {
+public final class ContainerConfiguration
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isRepositoryCreatedOnFirstPush", "namespace"})
     public ContainerConfiguration(Boolean isRepositoryCreatedOnFirstPush, String namespace) {
@@ -71,20 +72,23 @@ public final class ContainerConfiguration {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ContainerConfiguration build() {
-            ContainerConfiguration __instance__ =
-                    new ContainerConfiguration(isRepositoryCreatedOnFirstPush, namespace);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ContainerConfiguration model =
+                    new ContainerConfiguration(this.isRepositoryCreatedOnFirstPush, this.namespace);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ContainerConfiguration o) {
-            Builder copiedBuilder =
-                    isRepositoryCreatedOnFirstPush(o.getIsRepositoryCreatedOnFirstPush())
-                            .namespace(o.getNamespace());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ContainerConfiguration model) {
+            if (model.wasPropertyExplicitlySet("isRepositoryCreatedOnFirstPush")) {
+                this.isRepositoryCreatedOnFirstPush(model.getIsRepositoryCreatedOnFirstPush());
+            }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            return this;
         }
     }
 
@@ -144,10 +148,10 @@ public final class ContainerConfiguration {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ContainerConfiguration(");
+        sb.append("super=").append(super.toString());
         sb.append("isRepositoryCreatedOnFirstPush=")
                 .append(String.valueOf(this.isRepositoryCreatedOnFirstPush));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -165,7 +169,7 @@ public final class ContainerConfiguration {
         return java.util.Objects.equals(
                         this.isRepositoryCreatedOnFirstPush, other.isRepositoryCreatedOnFirstPush)
                 && java.util.Objects.equals(this.namespace, other.namespace)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -178,16 +182,7 @@ public final class ContainerConfiguration {
                                 ? 43
                                 : this.isRepositoryCreatedOnFirstPush.hashCode());
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

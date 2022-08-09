@@ -75,6 +75,7 @@ public class ListTranscriptionJobsResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opcPrevPage",
@@ -82,11 +83,12 @@ public class ListTranscriptionJobsResponse extends com.oracle.bmc.responses.BmcR
     })
     private ListTranscriptionJobsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
             com.oracle.bmc.aispeech.model.TranscriptionJobCollection transcriptionJobCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opcPrevPage = opcPrevPage;
@@ -98,6 +100,13 @@ public class ListTranscriptionJobsResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -181,6 +190,7 @@ public class ListTranscriptionJobsResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(ListTranscriptionJobsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());
@@ -196,6 +206,7 @@ public class ListTranscriptionJobsResponse extends com.oracle.bmc.responses.BmcR
         public ListTranscriptionJobsResponse build() {
             return new ListTranscriptionJobsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     opcPrevPage,

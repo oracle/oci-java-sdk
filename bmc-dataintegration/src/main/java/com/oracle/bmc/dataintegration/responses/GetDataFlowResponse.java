@@ -53,13 +53,20 @@ public class GetDataFlowResponse extends com.oracle.bmc.responses.BmcResponse {
         return dataFlow;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dataFlow"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "dataFlow"
+    })
     private GetDataFlowResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.DataFlow dataFlow) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.dataFlow = dataFlow;
@@ -70,6 +77,13 @@ public class GetDataFlowResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetDataFlowResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetDataFlowResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             dataFlow(o.getDataFlow());
@@ -142,7 +157,8 @@ public class GetDataFlowResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetDataFlowResponse build() {
-            return new GetDataFlowResponse(__httpStatusCode__, etag, opcRequestId, dataFlow);
+            return new GetDataFlowResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, dataFlow);
         }
     }
 

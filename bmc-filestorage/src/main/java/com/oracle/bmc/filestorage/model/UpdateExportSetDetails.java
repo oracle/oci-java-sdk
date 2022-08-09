@@ -19,7 +19,8 @@ package com.oracle.bmc.filestorage.model;
     builder = UpdateExportSetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateExportSetDetails {
+public final class UpdateExportSetDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "maxFsStatBytes", "maxFsStatFiles"})
     public UpdateExportSetDetails(String displayName, Long maxFsStatBytes, Long maxFsStatFiles) {
@@ -128,21 +129,27 @@ public final class UpdateExportSetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateExportSetDetails build() {
-            UpdateExportSetDetails __instance__ =
-                    new UpdateExportSetDetails(displayName, maxFsStatBytes, maxFsStatFiles);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateExportSetDetails model =
+                    new UpdateExportSetDetails(
+                            this.displayName, this.maxFsStatBytes, this.maxFsStatFiles);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateExportSetDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .maxFsStatBytes(o.getMaxFsStatBytes())
-                            .maxFsStatFiles(o.getMaxFsStatFiles());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateExportSetDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("maxFsStatBytes")) {
+                this.maxFsStatBytes(model.getMaxFsStatBytes());
+            }
+            if (model.wasPropertyExplicitlySet("maxFsStatFiles")) {
+                this.maxFsStatFiles(model.getMaxFsStatFiles());
+            }
+            return this;
         }
     }
 
@@ -256,10 +263,10 @@ public final class UpdateExportSetDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateExportSetDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", maxFsStatBytes=").append(String.valueOf(this.maxFsStatBytes));
         sb.append(", maxFsStatFiles=").append(String.valueOf(this.maxFsStatFiles));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -277,7 +284,7 @@ public final class UpdateExportSetDetails {
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.maxFsStatBytes, other.maxFsStatBytes)
                 && java.util.Objects.equals(this.maxFsStatFiles, other.maxFsStatFiles)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -291,16 +298,7 @@ public final class UpdateExportSetDetails {
         result =
                 (result * PRIME)
                         + (this.maxFsStatFiles == null ? 43 : this.maxFsStatFiles.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

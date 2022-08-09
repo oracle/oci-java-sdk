@@ -169,8 +169,8 @@ public class ListRecommendationStrategiesConverter {
                                                 com.oracle.bmc.optimizer.responses
                                                         .ListRecommendationStrategiesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.recommendationStrategyCollection(response.getItem());
 

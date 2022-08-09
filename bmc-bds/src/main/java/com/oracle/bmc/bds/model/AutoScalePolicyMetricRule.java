@@ -19,7 +19,8 @@ package com.oracle.bmc.bds.model;
     builder = AutoScalePolicyMetricRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutoScalePolicyMetricRule {
+public final class AutoScalePolicyMetricRule
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"metricType", "threshold"})
     public AutoScalePolicyMetricRule(MetricType metricType, MetricThresholdRule threshold) {
@@ -60,18 +61,23 @@ public final class AutoScalePolicyMetricRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutoScalePolicyMetricRule build() {
-            AutoScalePolicyMetricRule __instance__ =
-                    new AutoScalePolicyMetricRule(metricType, threshold);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AutoScalePolicyMetricRule model =
+                    new AutoScalePolicyMetricRule(this.metricType, this.threshold);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutoScalePolicyMetricRule o) {
-            Builder copiedBuilder = metricType(o.getMetricType()).threshold(o.getThreshold());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutoScalePolicyMetricRule model) {
+            if (model.wasPropertyExplicitlySet("metricType")) {
+                this.metricType(model.getMetricType());
+            }
+            if (model.wasPropertyExplicitlySet("threshold")) {
+                this.threshold(model.getThreshold());
+            }
+            return this;
         }
     }
 
@@ -167,9 +173,9 @@ public final class AutoScalePolicyMetricRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutoScalePolicyMetricRule(");
+        sb.append("super=").append(super.toString());
         sb.append("metricType=").append(String.valueOf(this.metricType));
         sb.append(", threshold=").append(String.valueOf(this.threshold));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +192,7 @@ public final class AutoScalePolicyMetricRule {
         AutoScalePolicyMetricRule other = (AutoScalePolicyMetricRule) o;
         return java.util.Objects.equals(this.metricType, other.metricType)
                 && java.util.Objects.equals(this.threshold, other.threshold)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -195,16 +201,7 @@ public final class AutoScalePolicyMetricRule {
         int result = 1;
         result = (result * PRIME) + (this.metricType == null ? 43 : this.metricType.hashCode());
         result = (result * PRIME) + (this.threshold == null ? 43 : this.threshold.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

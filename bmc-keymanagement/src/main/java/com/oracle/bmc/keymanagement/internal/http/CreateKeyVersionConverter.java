@@ -112,8 +112,8 @@ public class CreateKeyVersionConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .CreateKeyVersionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.keyVersion(response.getItem());
 

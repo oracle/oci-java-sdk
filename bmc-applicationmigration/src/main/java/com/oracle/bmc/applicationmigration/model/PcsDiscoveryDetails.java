@@ -66,20 +66,23 @@ public final class PcsDiscoveryDetails extends DiscoveryDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PcsDiscoveryDetails build() {
-            PcsDiscoveryDetails __instance__ =
-                    new PcsDiscoveryDetails(serviceInstanceUser, serviceInstancePassword);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PcsDiscoveryDetails model =
+                    new PcsDiscoveryDetails(this.serviceInstanceUser, this.serviceInstancePassword);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PcsDiscoveryDetails o) {
-            Builder copiedBuilder =
-                    serviceInstanceUser(o.getServiceInstanceUser())
-                            .serviceInstancePassword(o.getServiceInstancePassword());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PcsDiscoveryDetails model) {
+            if (model.wasPropertyExplicitlySet("serviceInstanceUser")) {
+                this.serviceInstanceUser(model.getServiceInstanceUser());
+            }
+            if (model.wasPropertyExplicitlySet("serviceInstancePassword")) {
+                this.serviceInstancePassword(model.getServiceInstancePassword());
+            }
+            return this;
         }
     }
 
@@ -146,7 +149,6 @@ public final class PcsDiscoveryDetails extends DiscoveryDetails {
         sb.append(", serviceInstanceUser=").append(String.valueOf(this.serviceInstanceUser));
         sb.append(", serviceInstancePassword=")
                 .append(String.valueOf(this.serviceInstancePassword));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -164,8 +166,7 @@ public final class PcsDiscoveryDetails extends DiscoveryDetails {
         return java.util.Objects.equals(this.serviceInstanceUser, other.serviceInstanceUser)
                 && java.util.Objects.equals(
                         this.serviceInstancePassword, other.serviceInstancePassword)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -182,16 +183,6 @@ public final class PcsDiscoveryDetails extends DiscoveryDetails {
                         + (this.serviceInstancePassword == null
                                 ? 43
                                 : this.serviceInstancePassword.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

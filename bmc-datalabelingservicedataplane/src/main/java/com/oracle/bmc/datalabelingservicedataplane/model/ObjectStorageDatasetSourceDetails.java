@@ -81,19 +81,26 @@ public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetail
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectStorageDatasetSourceDetails build() {
-            ObjectStorageDatasetSourceDetails __instance__ =
-                    new ObjectStorageDatasetSourceDetails(namespace, bucket, prefix);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ObjectStorageDatasetSourceDetails model =
+                    new ObjectStorageDatasetSourceDetails(this.namespace, this.bucket, this.prefix);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ObjectStorageDatasetSourceDetails o) {
-            Builder copiedBuilder =
-                    namespace(o.getNamespace()).bucket(o.getBucket()).prefix(o.getPrefix());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ObjectStorageDatasetSourceDetails model) {
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("bucket")) {
+                this.bucket(model.getBucket());
+            }
+            if (model.wasPropertyExplicitlySet("prefix")) {
+                this.prefix(model.getPrefix());
+            }
+            return this;
         }
     }
 
@@ -175,7 +182,6 @@ public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetail
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", bucket=").append(String.valueOf(this.bucket));
         sb.append(", prefix=").append(String.valueOf(this.prefix));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -193,8 +199,7 @@ public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetail
         return java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.bucket, other.bucket)
                 && java.util.Objects.equals(this.prefix, other.prefix)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -204,16 +209,6 @@ public final class ObjectStorageDatasetSourceDetails extends DatasetSourceDetail
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result = (result * PRIME) + (this.bucket == null ? 43 : this.bucket.hashCode());
         result = (result * PRIME) + (this.prefix == null ? 43 : this.prefix.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

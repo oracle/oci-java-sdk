@@ -19,7 +19,7 @@ package com.oracle.bmc.managementagent.model;
     builder = WorkRequestResource.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestResource {
+public final class WorkRequestResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "entityType",
@@ -271,40 +271,61 @@ public final class WorkRequestResource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestResource build() {
-            WorkRequestResource __instance__ =
+            WorkRequestResource model =
                     new WorkRequestResource(
-                            entityType,
-                            actionType,
-                            identifier,
-                            sourceId,
-                            sourceName,
-                            sourceVersion,
-                            entityUri,
-                            timeAccepted,
-                            timeStarted,
-                            timeFinished,
-                            metadata);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.entityType,
+                            this.actionType,
+                            this.identifier,
+                            this.sourceId,
+                            this.sourceName,
+                            this.sourceVersion,
+                            this.entityUri,
+                            this.timeAccepted,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.metadata);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkRequestResource o) {
-            Builder copiedBuilder =
-                    entityType(o.getEntityType())
-                            .actionType(o.getActionType())
-                            .identifier(o.getIdentifier())
-                            .sourceId(o.getSourceId())
-                            .sourceName(o.getSourceName())
-                            .sourceVersion(o.getSourceVersion())
-                            .entityUri(o.getEntityUri())
-                            .timeAccepted(o.getTimeAccepted())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .metadata(o.getMetadata());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkRequestResource model) {
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("actionType")) {
+                this.actionType(model.getActionType());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceName")) {
+                this.sourceName(model.getSourceName());
+            }
+            if (model.wasPropertyExplicitlySet("sourceVersion")) {
+                this.sourceVersion(model.getSourceVersion());
+            }
+            if (model.wasPropertyExplicitlySet("entityUri")) {
+                this.entityUri(model.getEntityUri());
+            }
+            if (model.wasPropertyExplicitlySet("timeAccepted")) {
+                this.timeAccepted(model.getTimeAccepted());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            return this;
         }
     }
 
@@ -514,6 +535,7 @@ public final class WorkRequestResource {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkRequestResource(");
+        sb.append("super=").append(super.toString());
         sb.append("entityType=").append(String.valueOf(this.entityType));
         sb.append(", actionType=").append(String.valueOf(this.actionType));
         sb.append(", identifier=").append(String.valueOf(this.identifier));
@@ -525,7 +547,6 @@ public final class WorkRequestResource {
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -551,7 +572,7 @@ public final class WorkRequestResource {
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
                 && java.util.Objects.equals(this.metadata, other.metadata)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -571,16 +592,7 @@ public final class WorkRequestResource {
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

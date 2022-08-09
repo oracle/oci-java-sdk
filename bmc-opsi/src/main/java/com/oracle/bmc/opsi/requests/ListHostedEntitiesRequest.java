@@ -281,6 +281,34 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Filter by one or more host types.
+     * Possible values are CLOUD-HOST, EXTERNAL-HOST
+     *
+     */
+    private java.util.List<String> hostType;
+
+    /**
+     * Filter by one or more host types.
+     * Possible values are CLOUD-HOST, EXTERNAL-HOST
+     *
+     */
+    public java.util.List<String> getHostType() {
+        return hostType;
+    }
+    /**
+     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)
+     *
+     */
+    private String hostId;
+
+    /**
+     * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)
+     *
+     */
+    public String getHostId() {
+        return hostId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -542,6 +570,53 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
+         * Filter by one or more host types.
+         * Possible values are CLOUD-HOST, EXTERNAL-HOST
+         *
+         */
+        private java.util.List<String> hostType = null;
+
+        /**
+         * Filter by one or more host types.
+         * Possible values are CLOUD-HOST, EXTERNAL-HOST
+         *
+         * @param hostType the value to set
+         * @return this builder instance
+         */
+        public Builder hostType(java.util.List<String> hostType) {
+            this.hostType = hostType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by one or more host types.
+         * Possible values are CLOUD-HOST, EXTERNAL-HOST
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder hostType(String singularValue) {
+            return this.hostType(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)
+         *
+         */
+        private String hostId = null;
+
+        /**
+         * Optional [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host (Compute Id)
+         *
+         * @param hostId the value to set
+         * @return this builder instance
+         */
+        public Builder hostId(String hostId) {
+            this.hostId = hostId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -581,6 +656,8 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            hostType(o.getHostType());
+            hostId(o.getHostId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -625,8 +702,10 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.hostType = hostType;
+            request.hostId = hostId;
             return request;
-            // new ListHostedEntitiesRequest(compartmentId, id, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, platformType, exadataInsightId, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListHostedEntitiesRequest(compartmentId, id, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, platformType, exadataInsightId, limit, page, sortOrder, sortBy, opcRequestId, hostType, hostId);
         }
     }
 
@@ -647,7 +726,9 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .hostType(hostType)
+                .hostId(hostId);
     }
 
     /**
@@ -675,6 +756,8 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",hostType=").append(String.valueOf(this.hostType));
+        sb.append(",hostId=").append(String.valueOf(this.hostId));
         sb.append(")");
         return sb.toString();
     }
@@ -701,7 +784,9 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.hostType, other.hostType)
+                && java.util.Objects.equals(this.hostId, other.hostId);
     }
 
     @Override
@@ -732,6 +817,8 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.hostType == null ? 43 : this.hostType.hashCode());
+        result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
         return result;
     }
 }

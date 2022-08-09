@@ -53,16 +53,18 @@ public class GetVmClusterPatchHistoryEntryResponse extends com.oracle.bmc.respon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "patchHistoryEntry"
     })
     private GetVmClusterPatchHistoryEntryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.PatchHistoryEntry patchHistoryEntry) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.patchHistoryEntry = patchHistoryEntry;
@@ -73,6 +75,13 @@ public class GetVmClusterPatchHistoryEntryResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetVmClusterPatchHistoryEntryResponse extends com.oracle.bmc.respon
          */
         public Builder copy(GetVmClusterPatchHistoryEntryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             patchHistoryEntry(o.getPatchHistoryEntry());
@@ -145,7 +155,7 @@ public class GetVmClusterPatchHistoryEntryResponse extends com.oracle.bmc.respon
          */
         public GetVmClusterPatchHistoryEntryResponse build() {
             return new GetVmClusterPatchHistoryEntryResponse(
-                    __httpStatusCode__, etag, opcRequestId, patchHistoryEntry);
+                    __httpStatusCode__, headers, etag, opcRequestId, patchHistoryEntry);
         }
     }
 

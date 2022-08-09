@@ -113,8 +113,8 @@ public class GetMirrorRecordConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .GetMirrorRecordResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.repositoryMirrorRecord(response.getItem());
 

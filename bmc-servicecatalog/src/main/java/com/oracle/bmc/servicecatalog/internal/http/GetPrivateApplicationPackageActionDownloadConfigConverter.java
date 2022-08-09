@@ -119,8 +119,8 @@ public class GetPrivateApplicationPackageActionDownloadConfigConverter {
                                                 com.oracle.bmc.servicecatalog.responses
                                                         .GetPrivateApplicationPackageActionDownloadConfigResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

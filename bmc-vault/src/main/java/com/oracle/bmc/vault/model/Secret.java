@@ -17,7 +17,7 @@ package com.oracle.bmc.vault.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Secret.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Secret {
+public final class Secret extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -369,50 +369,81 @@ public final class Secret {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Secret build() {
-            Secret __instance__ =
+            Secret model =
                     new Secret(
-                            compartmentId,
-                            currentVersionNumber,
-                            definedTags,
-                            description,
-                            freeformTags,
-                            id,
-                            keyId,
-                            lifecycleDetails,
-                            lifecycleState,
-                            metadata,
-                            secretName,
-                            secretRules,
-                            timeCreated,
-                            timeOfCurrentVersionExpiry,
-                            timeOfDeletion,
-                            vaultId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.currentVersionNumber,
+                            this.definedTags,
+                            this.description,
+                            this.freeformTags,
+                            this.id,
+                            this.keyId,
+                            this.lifecycleDetails,
+                            this.lifecycleState,
+                            this.metadata,
+                            this.secretName,
+                            this.secretRules,
+                            this.timeCreated,
+                            this.timeOfCurrentVersionExpiry,
+                            this.timeOfDeletion,
+                            this.vaultId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Secret o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .currentVersionNumber(o.getCurrentVersionNumber())
-                            .definedTags(o.getDefinedTags())
-                            .description(o.getDescription())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .keyId(o.getKeyId())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .lifecycleState(o.getLifecycleState())
-                            .metadata(o.getMetadata())
-                            .secretName(o.getSecretName())
-                            .secretRules(o.getSecretRules())
-                            .timeCreated(o.getTimeCreated())
-                            .timeOfCurrentVersionExpiry(o.getTimeOfCurrentVersionExpiry())
-                            .timeOfDeletion(o.getTimeOfDeletion())
-                            .vaultId(o.getVaultId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Secret model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("currentVersionNumber")) {
+                this.currentVersionNumber(model.getCurrentVersionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("keyId")) {
+                this.keyId(model.getKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("secretName")) {
+                this.secretName(model.getSecretName());
+            }
+            if (model.wasPropertyExplicitlySet("secretRules")) {
+                this.secretRules(model.getSecretRules());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfCurrentVersionExpiry")) {
+                this.timeOfCurrentVersionExpiry(model.getTimeOfCurrentVersionExpiry());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfDeletion")) {
+                this.timeOfDeletion(model.getTimeOfDeletion());
+            }
+            if (model.wasPropertyExplicitlySet("vaultId")) {
+                this.vaultId(model.getVaultId());
+            }
+            return this;
         }
     }
 
@@ -751,6 +782,7 @@ public final class Secret {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Secret(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", currentVersionNumber=").append(String.valueOf(this.currentVersionNumber));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -768,7 +800,6 @@ public final class Secret {
                 .append(String.valueOf(this.timeOfCurrentVersionExpiry));
         sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -800,7 +831,7 @@ public final class Secret {
                         this.timeOfCurrentVersionExpiry, other.timeOfCurrentVersionExpiry)
                 && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -839,16 +870,7 @@ public final class Secret {
                 (result * PRIME)
                         + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -128,8 +128,8 @@ public class UpdateResolverEndpointConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses
                                                         .UpdateResolverEndpointResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resolverEndpoint(response.getItem());
 

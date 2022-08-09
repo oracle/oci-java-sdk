@@ -100,8 +100,8 @@ public class GetMeshConverter {
                                         builder =
                                                 com.oracle.bmc.servicemesh.responses.GetMeshResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.mesh(response.getItem());
 

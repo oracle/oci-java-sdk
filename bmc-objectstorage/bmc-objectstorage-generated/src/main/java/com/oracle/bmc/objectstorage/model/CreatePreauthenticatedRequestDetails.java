@@ -19,7 +19,8 @@ package com.oracle.bmc.objectstorage.model;
     builder = CreatePreauthenticatedRequestDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreatePreauthenticatedRequestDetails {
+public final class CreatePreauthenticatedRequestDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -152,24 +153,37 @@ public final class CreatePreauthenticatedRequestDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreatePreauthenticatedRequestDetails build() {
-            CreatePreauthenticatedRequestDetails __instance__ =
+            CreatePreauthenticatedRequestDetails model =
                     new CreatePreauthenticatedRequestDetails(
-                            name, bucketListingAction, objectName, accessType, timeExpires);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.bucketListingAction,
+                            this.objectName,
+                            this.accessType,
+                            this.timeExpires);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreatePreauthenticatedRequestDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .bucketListingAction(o.getBucketListingAction())
-                            .objectName(o.getObjectName())
-                            .accessType(o.getAccessType())
-                            .timeExpires(o.getTimeExpires());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreatePreauthenticatedRequestDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("bucketListingAction")) {
+                this.bucketListingAction(model.getBucketListingAction());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("accessType")) {
+                this.accessType(model.getAccessType());
+            }
+            if (model.wasPropertyExplicitlySet("timeExpires")) {
+                this.timeExpires(model.getTimeExpires());
+            }
+            return this;
         }
     }
 
@@ -328,12 +342,12 @@ public final class CreatePreauthenticatedRequestDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreatePreauthenticatedRequestDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", bucketListingAction=").append(String.valueOf(this.bucketListingAction));
         sb.append(", objectName=").append(String.valueOf(this.objectName));
         sb.append(", accessType=").append(String.valueOf(this.accessType));
         sb.append(", timeExpires=").append(String.valueOf(this.timeExpires));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -353,7 +367,7 @@ public final class CreatePreauthenticatedRequestDetails {
                 && java.util.Objects.equals(this.objectName, other.objectName)
                 && java.util.Objects.equals(this.accessType, other.accessType)
                 && java.util.Objects.equals(this.timeExpires, other.timeExpires)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -369,16 +383,7 @@ public final class CreatePreauthenticatedRequestDetails {
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
         result = (result * PRIME) + (this.accessType == null ? 43 : this.accessType.hashCode());
         result = (result * PRIME) + (this.timeExpires == null ? 43 : this.timeExpires.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

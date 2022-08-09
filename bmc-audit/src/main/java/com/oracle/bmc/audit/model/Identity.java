@@ -18,7 +18,7 @@ package com.oracle.bmc.audit.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Identity.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Identity {
+public final class Identity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "principalName",
@@ -263,38 +263,57 @@ public final class Identity {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Identity build() {
-            Identity __instance__ =
+            Identity model =
                     new Identity(
-                            principalName,
-                            principalId,
-                            authType,
-                            callerName,
-                            callerId,
-                            tenantId,
-                            ipAddress,
-                            credentials,
-                            userAgent,
-                            consoleSessionId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.principalName,
+                            this.principalId,
+                            this.authType,
+                            this.callerName,
+                            this.callerId,
+                            this.tenantId,
+                            this.ipAddress,
+                            this.credentials,
+                            this.userAgent,
+                            this.consoleSessionId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Identity o) {
-            Builder copiedBuilder =
-                    principalName(o.getPrincipalName())
-                            .principalId(o.getPrincipalId())
-                            .authType(o.getAuthType())
-                            .callerName(o.getCallerName())
-                            .callerId(o.getCallerId())
-                            .tenantId(o.getTenantId())
-                            .ipAddress(o.getIpAddress())
-                            .credentials(o.getCredentials())
-                            .userAgent(o.getUserAgent())
-                            .consoleSessionId(o.getConsoleSessionId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Identity model) {
+            if (model.wasPropertyExplicitlySet("principalName")) {
+                this.principalName(model.getPrincipalName());
+            }
+            if (model.wasPropertyExplicitlySet("principalId")) {
+                this.principalId(model.getPrincipalId());
+            }
+            if (model.wasPropertyExplicitlySet("authType")) {
+                this.authType(model.getAuthType());
+            }
+            if (model.wasPropertyExplicitlySet("callerName")) {
+                this.callerName(model.getCallerName());
+            }
+            if (model.wasPropertyExplicitlySet("callerId")) {
+                this.callerId(model.getCallerId());
+            }
+            if (model.wasPropertyExplicitlySet("tenantId")) {
+                this.tenantId(model.getTenantId());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddress")) {
+                this.ipAddress(model.getIpAddress());
+            }
+            if (model.wasPropertyExplicitlySet("credentials")) {
+                this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("userAgent")) {
+                this.userAgent(model.getUserAgent());
+            }
+            if (model.wasPropertyExplicitlySet("consoleSessionId")) {
+                this.consoleSessionId(model.getConsoleSessionId());
+            }
+            return this;
         }
     }
 
@@ -502,6 +521,7 @@ public final class Identity {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Identity(");
+        sb.append("super=").append(super.toString());
         sb.append("principalName=").append(String.valueOf(this.principalName));
         sb.append(", principalId=").append(String.valueOf(this.principalId));
         sb.append(", authType=").append(String.valueOf(this.authType));
@@ -512,7 +532,6 @@ public final class Identity {
         sb.append(", credentials=").append(String.valueOf(this.credentials));
         sb.append(", userAgent=").append(String.valueOf(this.userAgent));
         sb.append(", consoleSessionId=").append(String.valueOf(this.consoleSessionId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -537,7 +556,7 @@ public final class Identity {
                 && java.util.Objects.equals(this.credentials, other.credentials)
                 && java.util.Objects.equals(this.userAgent, other.userAgent)
                 && java.util.Objects.equals(this.consoleSessionId, other.consoleSessionId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -558,16 +577,7 @@ public final class Identity {
         result =
                 (result * PRIME)
                         + (this.consoleSessionId == null ? 43 : this.consoleSessionId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

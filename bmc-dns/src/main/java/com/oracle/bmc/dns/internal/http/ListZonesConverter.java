@@ -211,7 +211,8 @@ public class ListZonesConverter {
 
                                 com.oracle.bmc.dns.responses.ListZonesResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.ListZonesResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

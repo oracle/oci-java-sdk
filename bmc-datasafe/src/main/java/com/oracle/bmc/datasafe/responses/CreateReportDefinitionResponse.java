@@ -68,6 +68,7 @@ public class CreateReportDefinitionResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcWorkRequestId",
         "opcRequestId",
@@ -75,11 +76,12 @@ public class CreateReportDefinitionResponse extends com.oracle.bmc.responses.Bmc
     })
     private CreateReportDefinitionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
             com.oracle.bmc.datasafe.model.ReportDefinition reportDefinition) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
@@ -91,6 +93,13 @@ public class CreateReportDefinitionResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -167,6 +176,7 @@ public class CreateReportDefinitionResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(CreateReportDefinitionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
@@ -181,7 +191,12 @@ public class CreateReportDefinitionResponse extends com.oracle.bmc.responses.Bmc
          */
         public CreateReportDefinitionResponse build() {
             return new CreateReportDefinitionResponse(
-                    __httpStatusCode__, etag, opcWorkRequestId, opcRequestId, reportDefinition);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    reportDefinition);
         }
     }
 

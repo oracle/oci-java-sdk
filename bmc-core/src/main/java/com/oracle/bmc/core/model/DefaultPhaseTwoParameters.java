@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = DefaultPhaseTwoParameters.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DefaultPhaseTwoParameters {
+public final class DefaultPhaseTwoParameters
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "defaultEncryptionAlgorithms",
@@ -93,24 +94,29 @@ public final class DefaultPhaseTwoParameters {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DefaultPhaseTwoParameters build() {
-            DefaultPhaseTwoParameters __instance__ =
+            DefaultPhaseTwoParameters model =
                     new DefaultPhaseTwoParameters(
-                            defaultEncryptionAlgorithms,
-                            defaultAuthenticationAlgorithms,
-                            defaultPfsDhGroup);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.defaultEncryptionAlgorithms,
+                            this.defaultAuthenticationAlgorithms,
+                            this.defaultPfsDhGroup);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DefaultPhaseTwoParameters o) {
-            Builder copiedBuilder =
-                    defaultEncryptionAlgorithms(o.getDefaultEncryptionAlgorithms())
-                            .defaultAuthenticationAlgorithms(o.getDefaultAuthenticationAlgorithms())
-                            .defaultPfsDhGroup(o.getDefaultPfsDhGroup());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DefaultPhaseTwoParameters model) {
+            if (model.wasPropertyExplicitlySet("defaultEncryptionAlgorithms")) {
+                this.defaultEncryptionAlgorithms(model.getDefaultEncryptionAlgorithms());
+            }
+            if (model.wasPropertyExplicitlySet("defaultAuthenticationAlgorithms")) {
+                this.defaultAuthenticationAlgorithms(model.getDefaultAuthenticationAlgorithms());
+            }
+            if (model.wasPropertyExplicitlySet("defaultPfsDhGroup")) {
+                this.defaultPfsDhGroup(model.getDefaultPfsDhGroup());
+            }
+            return this;
         }
     }
 
@@ -180,12 +186,12 @@ public final class DefaultPhaseTwoParameters {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DefaultPhaseTwoParameters(");
+        sb.append("super=").append(super.toString());
         sb.append("defaultEncryptionAlgorithms=")
                 .append(String.valueOf(this.defaultEncryptionAlgorithms));
         sb.append(", defaultAuthenticationAlgorithms=")
                 .append(String.valueOf(this.defaultAuthenticationAlgorithms));
         sb.append(", defaultPfsDhGroup=").append(String.valueOf(this.defaultPfsDhGroup));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -205,7 +211,7 @@ public final class DefaultPhaseTwoParameters {
                 && java.util.Objects.equals(
                         this.defaultAuthenticationAlgorithms, other.defaultAuthenticationAlgorithms)
                 && java.util.Objects.equals(this.defaultPfsDhGroup, other.defaultPfsDhGroup)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -225,16 +231,7 @@ public final class DefaultPhaseTwoParameters {
         result =
                 (result * PRIME)
                         + (this.defaultPfsDhGroup == null ? 43 : this.defaultPfsDhGroup.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

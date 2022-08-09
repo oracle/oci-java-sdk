@@ -92,7 +92,8 @@ public class AttachVnicConverter {
 
                                 com.oracle.bmc.core.responses.AttachVnicResponse.Builder builder =
                                         com.oracle.bmc.core.responses.AttachVnicResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.vnicAttachment(response.getItem());
 

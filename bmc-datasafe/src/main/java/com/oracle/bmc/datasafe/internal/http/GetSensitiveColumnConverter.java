@@ -111,8 +111,8 @@ public class GetSensitiveColumnConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetSensitiveColumnResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sensitiveColumn(response.getItem());
 

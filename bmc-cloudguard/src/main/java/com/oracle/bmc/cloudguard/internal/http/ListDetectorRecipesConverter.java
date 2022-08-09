@@ -182,8 +182,8 @@ public class ListDetectorRecipesConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListDetectorRecipesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.detectorRecipeCollection(response.getItem());
 

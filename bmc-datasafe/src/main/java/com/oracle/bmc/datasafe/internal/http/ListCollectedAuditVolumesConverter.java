@@ -168,8 +168,8 @@ public class ListCollectedAuditVolumesConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListCollectedAuditVolumesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.collectedAuditVolumeCollection(response.getItem());
 

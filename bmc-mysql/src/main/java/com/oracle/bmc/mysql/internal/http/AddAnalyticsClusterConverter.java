@@ -118,8 +118,8 @@ public class AddAnalyticsClusterConverter {
                                         builder =
                                                 com.oracle.bmc.mysql.responses
                                                         .AddAnalyticsClusterResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.analyticsCluster(response.getItem());
 

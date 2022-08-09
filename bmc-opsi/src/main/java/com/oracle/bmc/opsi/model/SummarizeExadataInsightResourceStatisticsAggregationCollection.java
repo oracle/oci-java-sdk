@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = SummarizeExadataInsightResourceStatisticsAggregationCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SummarizeExadataInsightResourceStatisticsAggregationCollection {
+public final class SummarizeExadataInsightResourceStatisticsAggregationCollection
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeIntervalStart",
@@ -99,15 +100,13 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
             return this;
         }
         /**
-         * Displays usage unit ( CORES, GB)
-         *
+         * Displays usage unit ( CORES, GB , PERCENT, MBPS)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
         private UsageUnit usageUnit;
 
         /**
-         * Displays usage unit ( CORES, GB)
-         *
+         * Displays usage unit ( CORES, GB , PERCENT, MBPS)
          * @param usageUnit the value to set
          * @return this builder
          **/
@@ -171,32 +170,45 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SummarizeExadataInsightResourceStatisticsAggregationCollection build() {
-            SummarizeExadataInsightResourceStatisticsAggregationCollection __instance__ =
+            SummarizeExadataInsightResourceStatisticsAggregationCollection model =
                     new SummarizeExadataInsightResourceStatisticsAggregationCollection(
-                            timeIntervalStart,
-                            timeIntervalEnd,
-                            items,
-                            usageUnit,
-                            exadataResourceMetric,
-                            exadataInsightId,
-                            exadataDisplayName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeIntervalStart,
+                            this.timeIntervalEnd,
+                            this.items,
+                            this.usageUnit,
+                            this.exadataResourceMetric,
+                            this.exadataInsightId,
+                            this.exadataDisplayName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SummarizeExadataInsightResourceStatisticsAggregationCollection o) {
-            Builder copiedBuilder =
-                    timeIntervalStart(o.getTimeIntervalStart())
-                            .timeIntervalEnd(o.getTimeIntervalEnd())
-                            .items(o.getItems())
-                            .usageUnit(o.getUsageUnit())
-                            .exadataResourceMetric(o.getExadataResourceMetric())
-                            .exadataInsightId(o.getExadataInsightId())
-                            .exadataDisplayName(o.getExadataDisplayName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SummarizeExadataInsightResourceStatisticsAggregationCollection model) {
+            if (model.wasPropertyExplicitlySet("timeIntervalStart")) {
+                this.timeIntervalStart(model.getTimeIntervalStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeIntervalEnd")) {
+                this.timeIntervalEnd(model.getTimeIntervalEnd());
+            }
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            if (model.wasPropertyExplicitlySet("usageUnit")) {
+                this.usageUnit(model.getUsageUnit());
+            }
+            if (model.wasPropertyExplicitlySet("exadataResourceMetric")) {
+                this.exadataResourceMetric(model.getExadataResourceMetric());
+            }
+            if (model.wasPropertyExplicitlySet("exadataInsightId")) {
+                this.exadataInsightId(model.getExadataInsightId());
+            }
+            if (model.wasPropertyExplicitlySet("exadataDisplayName")) {
+                this.exadataDisplayName(model.getExadataDisplayName());
+            }
+            return this;
         }
     }
 
@@ -254,15 +266,64 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
     }
 
     /**
-     * Displays usage unit ( CORES, GB)
-     *
+     * Displays usage unit ( CORES, GB , PERCENT, MBPS)
+     **/
+    public enum UsageUnit {
+        Cores("CORES"),
+        Gb("GB"),
+        Mbps("MBPS"),
+        Iops("IOPS"),
+        Percent("PERCENT"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(UsageUnit.class);
+
+        private final String value;
+        private static java.util.Map<String, UsageUnit> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (UsageUnit v : UsageUnit.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        UsageUnit(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static UsageUnit create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'UsageUnit', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Displays usage unit ( CORES, GB , PERCENT, MBPS)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageUnit")
     private final UsageUnit usageUnit;
 
     /**
-     * Displays usage unit ( CORES, GB)
-     *
+     * Displays usage unit ( CORES, GB , PERCENT, MBPS)
      * @return the value
      **/
     public UsageUnit getUsageUnit() {
@@ -379,6 +440,7 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SummarizeExadataInsightResourceStatisticsAggregationCollection(");
+        sb.append("super=").append(super.toString());
         sb.append("timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
         sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
         sb.append(", items=").append(String.valueOf(this.items));
@@ -386,7 +448,6 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
         sb.append(", exadataResourceMetric=").append(String.valueOf(this.exadataResourceMetric));
         sb.append(", exadataInsightId=").append(String.valueOf(this.exadataInsightId));
         sb.append(", exadataDisplayName=").append(String.valueOf(this.exadataDisplayName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -409,7 +470,7 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
                 && java.util.Objects.equals(this.exadataResourceMetric, other.exadataResourceMetric)
                 && java.util.Objects.equals(this.exadataInsightId, other.exadataInsightId)
                 && java.util.Objects.equals(this.exadataDisplayName, other.exadataDisplayName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -437,16 +498,7 @@ public final class SummarizeExadataInsightResourceStatisticsAggregationCollectio
                         + (this.exadataDisplayName == null
                                 ? 43
                                 : this.exadataDisplayName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

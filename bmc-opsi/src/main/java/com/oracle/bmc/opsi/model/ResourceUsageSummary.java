@@ -19,7 +19,7 @@ package com.oracle.bmc.opsi.model;
     builder = ResourceUsageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceUsageSummary {
+public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "exadataInsightId",
@@ -152,30 +152,41 @@ public final class ResourceUsageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceUsageSummary build() {
-            ResourceUsageSummary __instance__ =
+            ResourceUsageSummary model =
                     new ResourceUsageSummary(
-                            exadataInsightId,
-                            exadataDisplayName,
-                            usage,
-                            capacity,
-                            utilizationPercent,
-                            usageChangePercent);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.exadataInsightId,
+                            this.exadataDisplayName,
+                            this.usage,
+                            this.capacity,
+                            this.utilizationPercent,
+                            this.usageChangePercent);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResourceUsageSummary o) {
-            Builder copiedBuilder =
-                    exadataInsightId(o.getExadataInsightId())
-                            .exadataDisplayName(o.getExadataDisplayName())
-                            .usage(o.getUsage())
-                            .capacity(o.getCapacity())
-                            .utilizationPercent(o.getUtilizationPercent())
-                            .usageChangePercent(o.getUsageChangePercent());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResourceUsageSummary model) {
+            if (model.wasPropertyExplicitlySet("exadataInsightId")) {
+                this.exadataInsightId(model.getExadataInsightId());
+            }
+            if (model.wasPropertyExplicitlySet("exadataDisplayName")) {
+                this.exadataDisplayName(model.getExadataDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
+            }
+            if (model.wasPropertyExplicitlySet("capacity")) {
+                this.capacity(model.getCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("utilizationPercent")) {
+                this.utilizationPercent(model.getUtilizationPercent());
+            }
+            if (model.wasPropertyExplicitlySet("usageChangePercent")) {
+                this.usageChangePercent(model.getUsageChangePercent());
+            }
+            return this;
         }
     }
 
@@ -291,13 +302,13 @@ public final class ResourceUsageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResourceUsageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("exadataInsightId=").append(String.valueOf(this.exadataInsightId));
         sb.append(", exadataDisplayName=").append(String.valueOf(this.exadataDisplayName));
         sb.append(", usage=").append(String.valueOf(this.usage));
         sb.append(", capacity=").append(String.valueOf(this.capacity));
         sb.append(", utilizationPercent=").append(String.valueOf(this.utilizationPercent));
         sb.append(", usageChangePercent=").append(String.valueOf(this.usageChangePercent));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -318,7 +329,7 @@ public final class ResourceUsageSummary {
                 && java.util.Objects.equals(this.capacity, other.capacity)
                 && java.util.Objects.equals(this.utilizationPercent, other.utilizationPercent)
                 && java.util.Objects.equals(this.usageChangePercent, other.usageChangePercent)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -345,16 +356,7 @@ public final class ResourceUsageSummary {
                         + (this.usageChangePercent == null
                                 ? 43
                                 : this.usageChangePercent.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

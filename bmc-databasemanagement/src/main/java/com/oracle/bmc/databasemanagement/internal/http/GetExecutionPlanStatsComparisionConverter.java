@@ -138,8 +138,8 @@ public class GetExecutionPlanStatsComparisionConverter {
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .GetExecutionPlanStatsComparisionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.executionPlanStatsComparision(response.getItem());
 

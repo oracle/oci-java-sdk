@@ -164,8 +164,8 @@ public class ListPingMonitorsConverter {
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
                                                         .ListPingMonitorsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

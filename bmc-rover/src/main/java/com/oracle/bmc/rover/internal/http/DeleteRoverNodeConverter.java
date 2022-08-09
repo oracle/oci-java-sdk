@@ -105,8 +105,8 @@ public class DeleteRoverNodeConverter {
                                         builder =
                                                 com.oracle.bmc.rover.responses
                                                         .DeleteRoverNodeResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

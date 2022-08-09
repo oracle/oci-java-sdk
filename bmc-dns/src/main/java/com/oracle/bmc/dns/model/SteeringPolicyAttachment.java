@@ -25,7 +25,8 @@ package com.oracle.bmc.dns.model;
     builder = SteeringPolicyAttachment.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SteeringPolicyAttachment {
+public final class SteeringPolicyAttachment
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "steeringPolicyId",
@@ -248,38 +249,57 @@ public final class SteeringPolicyAttachment {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SteeringPolicyAttachment build() {
-            SteeringPolicyAttachment __instance__ =
+            SteeringPolicyAttachment model =
                     new SteeringPolicyAttachment(
-                            steeringPolicyId,
-                            zoneId,
-                            domainName,
-                            displayName,
-                            rtypes,
-                            compartmentId,
-                            self,
-                            id,
-                            timeCreated,
-                            lifecycleState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.steeringPolicyId,
+                            this.zoneId,
+                            this.domainName,
+                            this.displayName,
+                            this.rtypes,
+                            this.compartmentId,
+                            this.self,
+                            this.id,
+                            this.timeCreated,
+                            this.lifecycleState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SteeringPolicyAttachment o) {
-            Builder copiedBuilder =
-                    steeringPolicyId(o.getSteeringPolicyId())
-                            .zoneId(o.getZoneId())
-                            .domainName(o.getDomainName())
-                            .displayName(o.getDisplayName())
-                            .rtypes(o.getRtypes())
-                            .compartmentId(o.getCompartmentId())
-                            .self(o.getSelf())
-                            .id(o.getId())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleState(o.getLifecycleState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SteeringPolicyAttachment model) {
+            if (model.wasPropertyExplicitlySet("steeringPolicyId")) {
+                this.steeringPolicyId(model.getSteeringPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("zoneId")) {
+                this.zoneId(model.getZoneId());
+            }
+            if (model.wasPropertyExplicitlySet("domainName")) {
+                this.domainName(model.getDomainName());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("rtypes")) {
+                this.rtypes(model.getRtypes());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("self")) {
+                this.self(model.getSelf());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            return this;
         }
     }
 
@@ -514,6 +534,7 @@ public final class SteeringPolicyAttachment {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SteeringPolicyAttachment(");
+        sb.append("super=").append(super.toString());
         sb.append("steeringPolicyId=").append(String.valueOf(this.steeringPolicyId));
         sb.append(", zoneId=").append(String.valueOf(this.zoneId));
         sb.append(", domainName=").append(String.valueOf(this.domainName));
@@ -524,7 +545,6 @@ public final class SteeringPolicyAttachment {
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -549,7 +569,7 @@ public final class SteeringPolicyAttachment {
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -572,16 +592,7 @@ public final class SteeringPolicyAttachment {
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

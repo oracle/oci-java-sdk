@@ -38,12 +38,18 @@ public class GetOpsiDataObjectResponse extends com.oracle.bmc.responses.BmcRespo
         return opsiDataObject;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opsiDataObject"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opsiDataObject"
+    })
     private GetOpsiDataObjectResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.opsi.model.OpsiDataObject opsiDataObject) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opsiDataObject = opsiDataObject;
     }
@@ -53,6 +59,13 @@ public class GetOpsiDataObjectResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +109,7 @@ public class GetOpsiDataObjectResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetOpsiDataObjectResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opsiDataObject(o.getOpsiDataObject());
 
@@ -107,7 +121,8 @@ public class GetOpsiDataObjectResponse extends com.oracle.bmc.responses.BmcRespo
          * @return the response object
          */
         public GetOpsiDataObjectResponse build() {
-            return new GetOpsiDataObjectResponse(__httpStatusCode__, opcRequestId, opsiDataObject);
+            return new GetOpsiDataObjectResponse(
+                    __httpStatusCode__, headers, opcRequestId, opsiDataObject);
         }
     }
 

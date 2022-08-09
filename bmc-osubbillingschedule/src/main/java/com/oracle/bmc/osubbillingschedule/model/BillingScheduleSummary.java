@@ -20,7 +20,8 @@ package com.oracle.bmc.osubbillingschedule.model;
     builder = BillingScheduleSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BillingScheduleSummary {
+public final class BillingScheduleSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeStart",
@@ -278,42 +279,65 @@ public final class BillingScheduleSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BillingScheduleSummary build() {
-            BillingScheduleSummary __instance__ =
+            BillingScheduleSummary model =
                     new BillingScheduleSummary(
-                            timeStart,
-                            timeEnd,
-                            timeInvoicing,
-                            invoiceStatus,
-                            quantity,
-                            netUnitPrice,
-                            amount,
-                            billingFrequency,
-                            arInvoiceNumber,
-                            arCustomerTransactionId,
-                            orderNumber,
-                            product);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeStart,
+                            this.timeEnd,
+                            this.timeInvoicing,
+                            this.invoiceStatus,
+                            this.quantity,
+                            this.netUnitPrice,
+                            this.amount,
+                            this.billingFrequency,
+                            this.arInvoiceNumber,
+                            this.arCustomerTransactionId,
+                            this.orderNumber,
+                            this.product);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BillingScheduleSummary o) {
-            Builder copiedBuilder =
-                    timeStart(o.getTimeStart())
-                            .timeEnd(o.getTimeEnd())
-                            .timeInvoicing(o.getTimeInvoicing())
-                            .invoiceStatus(o.getInvoiceStatus())
-                            .quantity(o.getQuantity())
-                            .netUnitPrice(o.getNetUnitPrice())
-                            .amount(o.getAmount())
-                            .billingFrequency(o.getBillingFrequency())
-                            .arInvoiceNumber(o.getArInvoiceNumber())
-                            .arCustomerTransactionId(o.getArCustomerTransactionId())
-                            .orderNumber(o.getOrderNumber())
-                            .product(o.getProduct());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BillingScheduleSummary model) {
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("timeInvoicing")) {
+                this.timeInvoicing(model.getTimeInvoicing());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceStatus")) {
+                this.invoiceStatus(model.getInvoiceStatus());
+            }
+            if (model.wasPropertyExplicitlySet("quantity")) {
+                this.quantity(model.getQuantity());
+            }
+            if (model.wasPropertyExplicitlySet("netUnitPrice")) {
+                this.netUnitPrice(model.getNetUnitPrice());
+            }
+            if (model.wasPropertyExplicitlySet("amount")) {
+                this.amount(model.getAmount());
+            }
+            if (model.wasPropertyExplicitlySet("billingFrequency")) {
+                this.billingFrequency(model.getBillingFrequency());
+            }
+            if (model.wasPropertyExplicitlySet("arInvoiceNumber")) {
+                this.arInvoiceNumber(model.getArInvoiceNumber());
+            }
+            if (model.wasPropertyExplicitlySet("arCustomerTransactionId")) {
+                this.arCustomerTransactionId(model.getArCustomerTransactionId());
+            }
+            if (model.wasPropertyExplicitlySet("orderNumber")) {
+                this.orderNumber(model.getOrderNumber());
+            }
+            if (model.wasPropertyExplicitlySet("product")) {
+                this.product(model.getProduct());
+            }
+            return this;
         }
     }
 
@@ -573,6 +597,7 @@ public final class BillingScheduleSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BillingScheduleSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("timeStart=").append(String.valueOf(this.timeStart));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", timeInvoicing=").append(String.valueOf(this.timeInvoicing));
@@ -586,7 +611,6 @@ public final class BillingScheduleSummary {
                 .append(String.valueOf(this.arCustomerTransactionId));
         sb.append(", orderNumber=").append(String.valueOf(this.orderNumber));
         sb.append(", product=").append(String.valueOf(this.product));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -614,7 +638,7 @@ public final class BillingScheduleSummary {
                         this.arCustomerTransactionId, other.arCustomerTransactionId)
                 && java.util.Objects.equals(this.orderNumber, other.orderNumber)
                 && java.util.Objects.equals(this.product, other.product)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -645,16 +669,7 @@ public final class BillingScheduleSummary {
                                 : this.arCustomerTransactionId.hashCode());
         result = (result * PRIME) + (this.orderNumber == null ? 43 : this.orderNumber.hashCode());
         result = (result * PRIME) + (this.product == null ? 43 : this.product.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -177,8 +177,8 @@ public class ListApplicationsConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .ListApplicationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.applicationSummaryCollection(response.getItem());
 

@@ -18,7 +18,7 @@ package com.oracle.bmc.apigateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SdkLanguageTypes.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SdkLanguageTypes {
+public final class SdkLanguageTypes extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -138,23 +138,37 @@ public final class SdkLanguageTypes {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SdkLanguageTypes build() {
-            SdkLanguageTypes __instance__ =
-                    new SdkLanguageTypes(name, displayName, version, description, parameters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SdkLanguageTypes model =
+                    new SdkLanguageTypes(
+                            this.name,
+                            this.displayName,
+                            this.version,
+                            this.description,
+                            this.parameters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SdkLanguageTypes o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .displayName(o.getDisplayName())
-                            .version(o.getVersion())
-                            .description(o.getDescription())
-                            .parameters(o.getParameters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SdkLanguageTypes model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            return this;
         }
     }
 
@@ -262,12 +276,12 @@ public final class SdkLanguageTypes {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SdkLanguageTypes(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -287,7 +301,7 @@ public final class SdkLanguageTypes {
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.parameters, other.parameters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -299,16 +313,7 @@ public final class SdkLanguageTypes {
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

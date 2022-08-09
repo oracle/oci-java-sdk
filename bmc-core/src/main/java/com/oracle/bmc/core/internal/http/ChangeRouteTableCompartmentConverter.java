@@ -109,8 +109,8 @@ public class ChangeRouteTableCompartmentConverter {
                                                 com.oracle.bmc.core.responses
                                                         .ChangeRouteTableCompartmentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

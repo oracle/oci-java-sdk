@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RegexMatchResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RegexMatchResult {
+public final class RegexMatchResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "matchedLogEntryEndIndex",
@@ -127,28 +127,37 @@ public final class RegexMatchResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RegexMatchResult build() {
-            RegexMatchResult __instance__ =
+            RegexMatchResult model =
                     new RegexMatchResult(
-                            matchedLogEntryEndIndex,
-                            regexScore,
-                            regexStepsInfo,
-                            stepCount,
-                            subRegexesMatchInfo);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.matchedLogEntryEndIndex,
+                            this.regexScore,
+                            this.regexStepsInfo,
+                            this.stepCount,
+                            this.subRegexesMatchInfo);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RegexMatchResult o) {
-            Builder copiedBuilder =
-                    matchedLogEntryEndIndex(o.getMatchedLogEntryEndIndex())
-                            .regexScore(o.getRegexScore())
-                            .regexStepsInfo(o.getRegexStepsInfo())
-                            .stepCount(o.getStepCount())
-                            .subRegexesMatchInfo(o.getSubRegexesMatchInfo());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RegexMatchResult model) {
+            if (model.wasPropertyExplicitlySet("matchedLogEntryEndIndex")) {
+                this.matchedLogEntryEndIndex(model.getMatchedLogEntryEndIndex());
+            }
+            if (model.wasPropertyExplicitlySet("regexScore")) {
+                this.regexScore(model.getRegexScore());
+            }
+            if (model.wasPropertyExplicitlySet("regexStepsInfo")) {
+                this.regexStepsInfo(model.getRegexStepsInfo());
+            }
+            if (model.wasPropertyExplicitlySet("stepCount")) {
+                this.stepCount(model.getStepCount());
+            }
+            if (model.wasPropertyExplicitlySet("subRegexesMatchInfo")) {
+                this.subRegexesMatchInfo(model.getSubRegexesMatchInfo());
+            }
+            return this;
         }
     }
 
@@ -246,12 +255,12 @@ public final class RegexMatchResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RegexMatchResult(");
+        sb.append("super=").append(super.toString());
         sb.append("matchedLogEntryEndIndex=").append(String.valueOf(this.matchedLogEntryEndIndex));
         sb.append(", regexScore=").append(String.valueOf(this.regexScore));
         sb.append(", regexStepsInfo=").append(String.valueOf(this.regexStepsInfo));
         sb.append(", stepCount=").append(String.valueOf(this.stepCount));
         sb.append(", subRegexesMatchInfo=").append(String.valueOf(this.subRegexesMatchInfo));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -271,7 +280,7 @@ public final class RegexMatchResult {
                 && java.util.Objects.equals(this.regexStepsInfo, other.regexStepsInfo)
                 && java.util.Objects.equals(this.stepCount, other.stepCount)
                 && java.util.Objects.equals(this.subRegexesMatchInfo, other.subRegexesMatchInfo)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -293,16 +302,7 @@ public final class RegexMatchResult {
                         + (this.subRegexesMatchInfo == null
                                 ? 43
                                 : this.subRegexesMatchInfo.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -123,8 +123,8 @@ public class UpdateExternalPluggableDatabaseConverter {
                                                 com.oracle.bmc.database.responses
                                                         .UpdateExternalPluggableDatabaseResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.externalPluggableDatabase(response.getItem());
 

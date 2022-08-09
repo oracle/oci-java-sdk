@@ -32,7 +32,8 @@ package com.oracle.bmc.fusionapps.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateServiceInstanceDetails {
+public class CreateServiceInstanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "compartmentId"})
     protected CreateServiceInstanceDetails(String displayName, String compartmentId) {
@@ -82,6 +83,7 @@ public class CreateServiceInstanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateServiceInstanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(")");
@@ -99,7 +101,8 @@ public class CreateServiceInstanceDetails {
 
         CreateServiceInstanceDetails other = (CreateServiceInstanceDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId);
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && super.equals(other);
     }
 
     @Override
@@ -110,6 +113,7 @@ public class CreateServiceInstanceDetails {
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

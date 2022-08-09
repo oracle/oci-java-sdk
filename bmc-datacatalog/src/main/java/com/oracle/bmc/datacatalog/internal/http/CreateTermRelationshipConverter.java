@@ -129,8 +129,8 @@ public class CreateTermRelationshipConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .CreateTermRelationshipResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.termRelationship(response.getItem());
 

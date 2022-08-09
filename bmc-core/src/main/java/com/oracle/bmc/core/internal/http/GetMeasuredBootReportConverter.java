@@ -106,8 +106,8 @@ public class GetMeasuredBootReportConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetMeasuredBootReportResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.measuredBootReport(response.getItem());
 

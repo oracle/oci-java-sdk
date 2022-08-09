@@ -105,8 +105,8 @@ public class GetResponderRuleConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .GetResponderRuleResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.responderRule(response.getItem());
 

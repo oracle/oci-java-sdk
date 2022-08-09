@@ -102,8 +102,8 @@ public class UpdateProjectConverter {
                                         builder =
                                                 com.oracle.bmc.aivision.responses
                                                         .UpdateProjectResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

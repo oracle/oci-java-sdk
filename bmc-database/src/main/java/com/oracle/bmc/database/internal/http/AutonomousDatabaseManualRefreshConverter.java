@@ -125,8 +125,8 @@ public class AutonomousDatabaseManualRefreshConverter {
                                                 com.oracle.bmc.database.responses
                                                         .AutonomousDatabaseManualRefreshResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autonomousDatabase(response.getItem());
 

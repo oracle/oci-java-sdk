@@ -17,7 +17,7 @@ package com.oracle.bmc.dataconnectivity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KeyAttribute.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class KeyAttribute {
+public final class KeyAttribute extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"position", "attribute"})
     public KeyAttribute(Integer position, ShapeField attribute) {
@@ -58,17 +58,22 @@ public final class KeyAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KeyAttribute build() {
-            KeyAttribute __instance__ = new KeyAttribute(position, attribute);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            KeyAttribute model = new KeyAttribute(this.position, this.attribute);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(KeyAttribute o) {
-            Builder copiedBuilder = position(o.getPosition()).attribute(o.getAttribute());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(KeyAttribute model) {
+            if (model.wasPropertyExplicitlySet("position")) {
+                this.position(model.getPosition());
+            }
+            if (model.wasPropertyExplicitlySet("attribute")) {
+                this.attribute(model.getAttribute());
+            }
+            return this;
         }
     }
 
@@ -117,9 +122,9 @@ public final class KeyAttribute {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("KeyAttribute(");
+        sb.append("super=").append(super.toString());
         sb.append("position=").append(String.valueOf(this.position));
         sb.append(", attribute=").append(String.valueOf(this.attribute));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -136,7 +141,7 @@ public final class KeyAttribute {
         KeyAttribute other = (KeyAttribute) o;
         return java.util.Objects.equals(this.position, other.position)
                 && java.util.Objects.equals(this.attribute, other.attribute)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -145,16 +150,7 @@ public final class KeyAttribute {
         int result = 1;
         result = (result * PRIME) + (this.position == null ? 43 : this.position.hashCode());
         result = (result * PRIME) + (this.attribute == null ? 43 : this.attribute.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

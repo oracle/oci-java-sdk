@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = AddManagedDatabaseToManagedDatabaseGroupDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddManagedDatabaseToManagedDatabaseGroupDetails {
+public final class AddManagedDatabaseToManagedDatabaseGroupDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"managedDatabaseId"})
     public AddManagedDatabaseToManagedDatabaseGroupDetails(String managedDatabaseId) {
@@ -52,18 +53,20 @@ public final class AddManagedDatabaseToManagedDatabaseGroupDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddManagedDatabaseToManagedDatabaseGroupDetails build() {
-            AddManagedDatabaseToManagedDatabaseGroupDetails __instance__ =
-                    new AddManagedDatabaseToManagedDatabaseGroupDetails(managedDatabaseId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AddManagedDatabaseToManagedDatabaseGroupDetails model =
+                    new AddManagedDatabaseToManagedDatabaseGroupDetails(this.managedDatabaseId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddManagedDatabaseToManagedDatabaseGroupDetails o) {
-            Builder copiedBuilder = managedDatabaseId(o.getManagedDatabaseId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddManagedDatabaseToManagedDatabaseGroupDetails model) {
+            if (model.wasPropertyExplicitlySet("managedDatabaseId")) {
+                this.managedDatabaseId(model.getManagedDatabaseId());
+            }
+            return this;
         }
     }
 
@@ -107,8 +110,8 @@ public final class AddManagedDatabaseToManagedDatabaseGroupDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddManagedDatabaseToManagedDatabaseGroupDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -125,7 +128,7 @@ public final class AddManagedDatabaseToManagedDatabaseGroupDetails {
         AddManagedDatabaseToManagedDatabaseGroupDetails other =
                 (AddManagedDatabaseToManagedDatabaseGroupDetails) o;
         return java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -135,16 +138,7 @@ public final class AddManagedDatabaseToManagedDatabaseGroupDetails {
         result =
                 (result * PRIME)
                         + (this.managedDatabaseId == null ? 43 : this.managedDatabaseId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

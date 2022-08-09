@@ -23,7 +23,7 @@ package com.oracle.bmc.dns.model;
     builder = SteeringPolicyAnswer.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SteeringPolicyAnswer {
+public final class SteeringPolicyAnswer extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "rtype", "rdata", "pool", "isDisabled"})
     public SteeringPolicyAnswer(
@@ -233,23 +233,33 @@ public final class SteeringPolicyAnswer {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SteeringPolicyAnswer build() {
-            SteeringPolicyAnswer __instance__ =
-                    new SteeringPolicyAnswer(name, rtype, rdata, pool, isDisabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SteeringPolicyAnswer model =
+                    new SteeringPolicyAnswer(
+                            this.name, this.rtype, this.rdata, this.pool, this.isDisabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SteeringPolicyAnswer o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .rtype(o.getRtype())
-                            .rdata(o.getRdata())
-                            .pool(o.getPool())
-                            .isDisabled(o.getIsDisabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SteeringPolicyAnswer model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("rtype")) {
+                this.rtype(model.getRtype());
+            }
+            if (model.wasPropertyExplicitlySet("rdata")) {
+                this.rdata(model.getRdata());
+            }
+            if (model.wasPropertyExplicitlySet("pool")) {
+                this.pool(model.getPool());
+            }
+            if (model.wasPropertyExplicitlySet("isDisabled")) {
+                this.isDisabled(model.getIsDisabled());
+            }
+            return this;
         }
     }
 
@@ -457,12 +467,12 @@ public final class SteeringPolicyAnswer {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SteeringPolicyAnswer(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", rtype=").append(String.valueOf(this.rtype));
         sb.append(", rdata=").append(String.valueOf(this.rdata));
         sb.append(", pool=").append(String.valueOf(this.pool));
         sb.append(", isDisabled=").append(String.valueOf(this.isDisabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -482,7 +492,7 @@ public final class SteeringPolicyAnswer {
                 && java.util.Objects.equals(this.rdata, other.rdata)
                 && java.util.Objects.equals(this.pool, other.pool)
                 && java.util.Objects.equals(this.isDisabled, other.isDisabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -494,16 +504,7 @@ public final class SteeringPolicyAnswer {
         result = (result * PRIME) + (this.rdata == null ? 43 : this.rdata.hashCode());
         result = (result * PRIME) + (this.pool == null ? 43 : this.pool.hashCode());
         result = (result * PRIME) + (this.isDisabled == null ? 43 : this.isDisabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,7 @@ package com.oracle.bmc.waas.model;
     builder = AddressRateLimiting.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddressRateLimiting {
+public final class AddressRateLimiting extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -110,26 +110,33 @@ public final class AddressRateLimiting {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddressRateLimiting build() {
-            AddressRateLimiting __instance__ =
+            AddressRateLimiting model =
                     new AddressRateLimiting(
-                            isEnabled,
-                            allowedRatePerAddress,
-                            maxDelayedCountPerAddress,
-                            blockResponseCode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isEnabled,
+                            this.allowedRatePerAddress,
+                            this.maxDelayedCountPerAddress,
+                            this.blockResponseCode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddressRateLimiting o) {
-            Builder copiedBuilder =
-                    isEnabled(o.getIsEnabled())
-                            .allowedRatePerAddress(o.getAllowedRatePerAddress())
-                            .maxDelayedCountPerAddress(o.getMaxDelayedCountPerAddress())
-                            .blockResponseCode(o.getBlockResponseCode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddressRateLimiting model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("allowedRatePerAddress")) {
+                this.allowedRatePerAddress(model.getAllowedRatePerAddress());
+            }
+            if (model.wasPropertyExplicitlySet("maxDelayedCountPerAddress")) {
+                this.maxDelayedCountPerAddress(model.getMaxDelayedCountPerAddress());
+            }
+            if (model.wasPropertyExplicitlySet("blockResponseCode")) {
+                this.blockResponseCode(model.getBlockResponseCode());
+            }
+            return this;
         }
     }
 
@@ -213,12 +220,12 @@ public final class AddressRateLimiting {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddressRateLimiting(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", allowedRatePerAddress=").append(String.valueOf(this.allowedRatePerAddress));
         sb.append(", maxDelayedCountPerAddress=")
                 .append(String.valueOf(this.maxDelayedCountPerAddress));
         sb.append(", blockResponseCode=").append(String.valueOf(this.blockResponseCode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -238,7 +245,7 @@ public final class AddressRateLimiting {
                 && java.util.Objects.equals(
                         this.maxDelayedCountPerAddress, other.maxDelayedCountPerAddress)
                 && java.util.Objects.equals(this.blockResponseCode, other.blockResponseCode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -259,16 +266,7 @@ public final class AddressRateLimiting {
         result =
                 (result * PRIME)
                         + (this.blockResponseCode == null ? 43 : this.blockResponseCode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

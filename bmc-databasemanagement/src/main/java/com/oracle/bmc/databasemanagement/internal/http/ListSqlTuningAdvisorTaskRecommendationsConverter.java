@@ -174,8 +174,8 @@ public class ListSqlTuningAdvisorTaskRecommendationsConverter {
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListSqlTuningAdvisorTaskRecommendationsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sqlTuningAdvisorTaskRecommendationCollection(
                                         response.getItem());

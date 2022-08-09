@@ -28,7 +28,8 @@ package com.oracle.bmc.database.model;
     builder = DataGuardAssociationSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataGuardAssociationSummary {
+public final class DataGuardAssociationSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -381,50 +382,81 @@ public final class DataGuardAssociationSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataGuardAssociationSummary build() {
-            DataGuardAssociationSummary __instance__ =
+            DataGuardAssociationSummary model =
                     new DataGuardAssociationSummary(
-                            id,
-                            databaseId,
-                            role,
-                            lifecycleState,
-                            lifecycleDetails,
-                            peerDbSystemId,
-                            peerDbHomeId,
-                            peerDatabaseId,
-                            peerDataGuardAssociationId,
-                            peerRole,
-                            applyLag,
-                            applyRate,
-                            protectionMode,
-                            transportType,
-                            timeCreated,
-                            isActiveDataGuardEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.databaseId,
+                            this.role,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.peerDbSystemId,
+                            this.peerDbHomeId,
+                            this.peerDatabaseId,
+                            this.peerDataGuardAssociationId,
+                            this.peerRole,
+                            this.applyLag,
+                            this.applyRate,
+                            this.protectionMode,
+                            this.transportType,
+                            this.timeCreated,
+                            this.isActiveDataGuardEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataGuardAssociationSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .databaseId(o.getDatabaseId())
-                            .role(o.getRole())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .peerDbSystemId(o.getPeerDbSystemId())
-                            .peerDbHomeId(o.getPeerDbHomeId())
-                            .peerDatabaseId(o.getPeerDatabaseId())
-                            .peerDataGuardAssociationId(o.getPeerDataGuardAssociationId())
-                            .peerRole(o.getPeerRole())
-                            .applyLag(o.getApplyLag())
-                            .applyRate(o.getApplyRate())
-                            .protectionMode(o.getProtectionMode())
-                            .transportType(o.getTransportType())
-                            .timeCreated(o.getTimeCreated())
-                            .isActiveDataGuardEnabled(o.getIsActiveDataGuardEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataGuardAssociationSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("peerDbSystemId")) {
+                this.peerDbSystemId(model.getPeerDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("peerDbHomeId")) {
+                this.peerDbHomeId(model.getPeerDbHomeId());
+            }
+            if (model.wasPropertyExplicitlySet("peerDatabaseId")) {
+                this.peerDatabaseId(model.getPeerDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("peerDataGuardAssociationId")) {
+                this.peerDataGuardAssociationId(model.getPeerDataGuardAssociationId());
+            }
+            if (model.wasPropertyExplicitlySet("peerRole")) {
+                this.peerRole(model.getPeerRole());
+            }
+            if (model.wasPropertyExplicitlySet("applyLag")) {
+                this.applyLag(model.getApplyLag());
+            }
+            if (model.wasPropertyExplicitlySet("applyRate")) {
+                this.applyRate(model.getApplyRate());
+            }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("transportType")) {
+                this.transportType(model.getTransportType());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("isActiveDataGuardEnabled")) {
+                this.isActiveDataGuardEnabled(model.getIsActiveDataGuardEnabled());
+            }
+            return this;
         }
     }
 
@@ -963,6 +995,7 @@ public final class DataGuardAssociationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataGuardAssociationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", role=").append(String.valueOf(this.role));
@@ -981,7 +1014,6 @@ public final class DataGuardAssociationSummary {
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", isActiveDataGuardEnabled=")
                 .append(String.valueOf(this.isActiveDataGuardEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1014,7 +1046,7 @@ public final class DataGuardAssociationSummary {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(
                         this.isActiveDataGuardEnabled, other.isActiveDataGuardEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1057,16 +1089,7 @@ public final class DataGuardAssociationSummary {
                         + (this.isActiveDataGuardEnabled == null
                                 ? 43
                                 : this.isActiveDataGuardEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

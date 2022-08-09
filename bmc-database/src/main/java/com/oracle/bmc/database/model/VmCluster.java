@@ -18,7 +18,7 @@ package com.oracle.bmc.database.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VmCluster.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VmCluster {
+public final class VmCluster extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -560,72 +560,125 @@ public final class VmCluster {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VmCluster build() {
-            VmCluster __instance__ =
+            VmCluster model =
                     new VmCluster(
-                            id,
-                            compartmentId,
-                            lastPatchHistoryEntryId,
-                            lifecycleState,
-                            displayName,
-                            timeCreated,
-                            lifecycleDetails,
-                            timeZone,
-                            isLocalBackupEnabled,
-                            exadataInfrastructureId,
-                            isSparseDiskgroupEnabled,
-                            vmClusterNetworkId,
-                            cpusEnabled,
-                            ocpusEnabled,
-                            memorySizeInGBs,
-                            dbNodeStorageSizeInGBs,
-                            dataStorageSizeInTBs,
-                            dataStorageSizeInGBs,
-                            shape,
-                            giVersion,
-                            systemVersion,
-                            sshPublicKeys,
-                            licenseModel,
-                            dbServers,
-                            freeformTags,
-                            definedTags,
-                            dataCollectionOptions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.lastPatchHistoryEntryId,
+                            this.lifecycleState,
+                            this.displayName,
+                            this.timeCreated,
+                            this.lifecycleDetails,
+                            this.timeZone,
+                            this.isLocalBackupEnabled,
+                            this.exadataInfrastructureId,
+                            this.isSparseDiskgroupEnabled,
+                            this.vmClusterNetworkId,
+                            this.cpusEnabled,
+                            this.ocpusEnabled,
+                            this.memorySizeInGBs,
+                            this.dbNodeStorageSizeInGBs,
+                            this.dataStorageSizeInTBs,
+                            this.dataStorageSizeInGBs,
+                            this.shape,
+                            this.giVersion,
+                            this.systemVersion,
+                            this.sshPublicKeys,
+                            this.licenseModel,
+                            this.dbServers,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.dataCollectionOptions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VmCluster o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .lastPatchHistoryEntryId(o.getLastPatchHistoryEntryId())
-                            .lifecycleState(o.getLifecycleState())
-                            .displayName(o.getDisplayName())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .timeZone(o.getTimeZone())
-                            .isLocalBackupEnabled(o.getIsLocalBackupEnabled())
-                            .exadataInfrastructureId(o.getExadataInfrastructureId())
-                            .isSparseDiskgroupEnabled(o.getIsSparseDiskgroupEnabled())
-                            .vmClusterNetworkId(o.getVmClusterNetworkId())
-                            .cpusEnabled(o.getCpusEnabled())
-                            .ocpusEnabled(o.getOcpusEnabled())
-                            .memorySizeInGBs(o.getMemorySizeInGBs())
-                            .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
-                            .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
-                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
-                            .shape(o.getShape())
-                            .giVersion(o.getGiVersion())
-                            .systemVersion(o.getSystemVersion())
-                            .sshPublicKeys(o.getSshPublicKeys())
-                            .licenseModel(o.getLicenseModel())
-                            .dbServers(o.getDbServers())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .dataCollectionOptions(o.getDataCollectionOptions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VmCluster model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("lastPatchHistoryEntryId")) {
+                this.lastPatchHistoryEntryId(model.getLastPatchHistoryEntryId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeZone")) {
+                this.timeZone(model.getTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("isLocalBackupEnabled")) {
+                this.isLocalBackupEnabled(model.getIsLocalBackupEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("exadataInfrastructureId")) {
+                this.exadataInfrastructureId(model.getExadataInfrastructureId());
+            }
+            if (model.wasPropertyExplicitlySet("isSparseDiskgroupEnabled")) {
+                this.isSparseDiskgroupEnabled(model.getIsSparseDiskgroupEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("vmClusterNetworkId")) {
+                this.vmClusterNetworkId(model.getVmClusterNetworkId());
+            }
+            if (model.wasPropertyExplicitlySet("cpusEnabled")) {
+                this.cpusEnabled(model.getCpusEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("ocpusEnabled")) {
+                this.ocpusEnabled(model.getOcpusEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
+                this.memorySizeInGBs(model.getMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dbNodeStorageSizeInGBs")) {
+                this.dbNodeStorageSizeInGBs(model.getDbNodeStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInTBs")) {
+                this.dataStorageSizeInTBs(model.getDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
+                this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("giVersion")) {
+                this.giVersion(model.getGiVersion());
+            }
+            if (model.wasPropertyExplicitlySet("systemVersion")) {
+                this.systemVersion(model.getSystemVersion());
+            }
+            if (model.wasPropertyExplicitlySet("sshPublicKeys")) {
+                this.sshPublicKeys(model.getSshPublicKeys());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("dbServers")) {
+                this.dbServers(model.getDbServers());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
+                this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            return this;
         }
     }
 
@@ -1146,6 +1199,7 @@ public final class VmCluster {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VmCluster(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lastPatchHistoryEntryId=")
@@ -1176,7 +1230,6 @@ public final class VmCluster {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1222,7 +1275,7 @@ public final class VmCluster {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1304,16 +1357,7 @@ public final class VmCluster {
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

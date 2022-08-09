@@ -141,40 +141,61 @@ public final class ResolverVnicEndpointSummary extends ResolverEndpointSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResolverVnicEndpointSummary build() {
-            ResolverVnicEndpointSummary __instance__ =
+            ResolverVnicEndpointSummary model =
                     new ResolverVnicEndpointSummary(
-                            name,
-                            forwardingAddress,
-                            isForwarding,
-                            isListening,
-                            listeningAddress,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            self,
-                            subnetId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.forwardingAddress,
+                            this.isForwarding,
+                            this.isListening,
+                            this.listeningAddress,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.self,
+                            this.subnetId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResolverVnicEndpointSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .forwardingAddress(o.getForwardingAddress())
-                            .isForwarding(o.getIsForwarding())
-                            .isListening(o.getIsListening())
-                            .listeningAddress(o.getListeningAddress())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .self(o.getSelf())
-                            .subnetId(o.getSubnetId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResolverVnicEndpointSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("forwardingAddress")) {
+                this.forwardingAddress(model.getForwardingAddress());
+            }
+            if (model.wasPropertyExplicitlySet("isForwarding")) {
+                this.isForwarding(model.getIsForwarding());
+            }
+            if (model.wasPropertyExplicitlySet("isListening")) {
+                this.isListening(model.getIsListening());
+            }
+            if (model.wasPropertyExplicitlySet("listeningAddress")) {
+                this.listeningAddress(model.getListeningAddress());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("self")) {
+                this.self(model.getSelf());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            return this;
         }
     }
 
@@ -245,7 +266,6 @@ public final class ResolverVnicEndpointSummary extends ResolverEndpointSummary {
         sb.append("ResolverVnicEndpointSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -260,9 +280,7 @@ public final class ResolverVnicEndpointSummary extends ResolverEndpointSummary {
         }
 
         ResolverVnicEndpointSummary other = (ResolverVnicEndpointSummary) o;
-        return java.util.Objects.equals(this.subnetId, other.subnetId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.subnetId, other.subnetId) && super.equals(other);
     }
 
     @Override
@@ -270,16 +288,6 @@ public final class ResolverVnicEndpointSummary extends ResolverEndpointSummary {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

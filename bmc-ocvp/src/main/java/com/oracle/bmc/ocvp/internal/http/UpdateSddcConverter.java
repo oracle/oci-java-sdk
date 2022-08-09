@@ -102,7 +102,8 @@ public class UpdateSddcConverter {
 
                                 com.oracle.bmc.ocvp.responses.UpdateSddcResponse.Builder builder =
                                         com.oracle.bmc.ocvp.responses.UpdateSddcResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.sddc(response.getItem());
 

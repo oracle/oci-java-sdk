@@ -22,7 +22,7 @@ package com.oracle.bmc.filestorage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClientOptions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ClientOptions {
+public final class ClientOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "source",
@@ -197,30 +197,41 @@ public final class ClientOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClientOptions build() {
-            ClientOptions __instance__ =
+            ClientOptions model =
                     new ClientOptions(
-                            source,
-                            requirePrivilegedSourcePort,
-                            access,
-                            identitySquash,
-                            anonymousUid,
-                            anonymousGid);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.source,
+                            this.requirePrivilegedSourcePort,
+                            this.access,
+                            this.identitySquash,
+                            this.anonymousUid,
+                            this.anonymousGid);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ClientOptions o) {
-            Builder copiedBuilder =
-                    source(o.getSource())
-                            .requirePrivilegedSourcePort(o.getRequirePrivilegedSourcePort())
-                            .access(o.getAccess())
-                            .identitySquash(o.getIdentitySquash())
-                            .anonymousUid(o.getAnonymousUid())
-                            .anonymousGid(o.getAnonymousGid());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ClientOptions model) {
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("requirePrivilegedSourcePort")) {
+                this.requirePrivilegedSourcePort(model.getRequirePrivilegedSourcePort());
+            }
+            if (model.wasPropertyExplicitlySet("access")) {
+                this.access(model.getAccess());
+            }
+            if (model.wasPropertyExplicitlySet("identitySquash")) {
+                this.identitySquash(model.getIdentitySquash());
+            }
+            if (model.wasPropertyExplicitlySet("anonymousUid")) {
+                this.anonymousUid(model.getAnonymousUid());
+            }
+            if (model.wasPropertyExplicitlySet("anonymousGid")) {
+                this.anonymousGid(model.getAnonymousGid());
+            }
+            return this;
         }
     }
 
@@ -482,6 +493,7 @@ public final class ClientOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClientOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("source=").append(String.valueOf(this.source));
         sb.append(", requirePrivilegedSourcePort=")
                 .append(String.valueOf(this.requirePrivilegedSourcePort));
@@ -489,7 +501,6 @@ public final class ClientOptions {
         sb.append(", identitySquash=").append(String.valueOf(this.identitySquash));
         sb.append(", anonymousUid=").append(String.valueOf(this.anonymousUid));
         sb.append(", anonymousGid=").append(String.valueOf(this.anonymousGid));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -511,7 +522,7 @@ public final class ClientOptions {
                 && java.util.Objects.equals(this.identitySquash, other.identitySquash)
                 && java.util.Objects.equals(this.anonymousUid, other.anonymousUid)
                 && java.util.Objects.equals(this.anonymousGid, other.anonymousGid)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -530,16 +541,7 @@ public final class ClientOptions {
                         + (this.identitySquash == null ? 43 : this.identitySquash.hashCode());
         result = (result * PRIME) + (this.anonymousUid == null ? 43 : this.anonymousUid.hashCode());
         result = (result * PRIME) + (this.anonymousGid == null ? 43 : this.anonymousGid.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

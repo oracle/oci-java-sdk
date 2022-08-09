@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = EstimateRecallDataSizeResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EstimateRecallDataSizeResult {
+public final class EstimateRecallDataSizeResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeDataEnded",
@@ -116,27 +117,33 @@ public final class EstimateRecallDataSizeResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EstimateRecallDataSizeResult build() {
-            EstimateRecallDataSizeResult __instance__ =
+            EstimateRecallDataSizeResult model =
                     new EstimateRecallDataSizeResult(
-                            timeDataEnded,
-                            timeDataStarted,
-                            sizeInBytes,
-                            isOverlappingWithExistingRecalls);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeDataEnded,
+                            this.timeDataStarted,
+                            this.sizeInBytes,
+                            this.isOverlappingWithExistingRecalls);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EstimateRecallDataSizeResult o) {
-            Builder copiedBuilder =
-                    timeDataEnded(o.getTimeDataEnded())
-                            .timeDataStarted(o.getTimeDataStarted())
-                            .sizeInBytes(o.getSizeInBytes())
-                            .isOverlappingWithExistingRecalls(
-                                    o.getIsOverlappingWithExistingRecalls());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EstimateRecallDataSizeResult model) {
+            if (model.wasPropertyExplicitlySet("timeDataEnded")) {
+                this.timeDataEnded(model.getTimeDataEnded());
+            }
+            if (model.wasPropertyExplicitlySet("timeDataStarted")) {
+                this.timeDataStarted(model.getTimeDataStarted());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInBytes")) {
+                this.sizeInBytes(model.getSizeInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("isOverlappingWithExistingRecalls")) {
+                this.isOverlappingWithExistingRecalls(model.getIsOverlappingWithExistingRecalls());
+            }
+            return this;
         }
     }
 
@@ -226,12 +233,12 @@ public final class EstimateRecallDataSizeResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EstimateRecallDataSizeResult(");
+        sb.append("super=").append(super.toString());
         sb.append("timeDataEnded=").append(String.valueOf(this.timeDataEnded));
         sb.append(", timeDataStarted=").append(String.valueOf(this.timeDataStarted));
         sb.append(", sizeInBytes=").append(String.valueOf(this.sizeInBytes));
         sb.append(", isOverlappingWithExistingRecalls=")
                 .append(String.valueOf(this.isOverlappingWithExistingRecalls));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -252,7 +259,7 @@ public final class EstimateRecallDataSizeResult {
                 && java.util.Objects.equals(
                         this.isOverlappingWithExistingRecalls,
                         other.isOverlappingWithExistingRecalls)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -271,16 +278,7 @@ public final class EstimateRecallDataSizeResult {
                         + (this.isOverlappingWithExistingRecalls == null
                                 ? 43
                                 : this.isOverlappingWithExistingRecalls.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

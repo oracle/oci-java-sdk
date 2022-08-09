@@ -85,6 +85,7 @@ public class CreateModelResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "location",
         "opcWorkRequestId",
@@ -93,12 +94,13 @@ public class CreateModelResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private CreateModelResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String location,
             String opcWorkRequestId,
             String opcRequestId,
             com.oracle.bmc.aianomalydetection.model.Model model) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.location = location;
         this.opcWorkRequestId = opcWorkRequestId;
@@ -111,6 +113,13 @@ public class CreateModelResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -205,6 +214,7 @@ public class CreateModelResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(CreateModelResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             location(o.getLocation());
             opcWorkRequestId(o.getOpcWorkRequestId());
@@ -220,7 +230,13 @@ public class CreateModelResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public CreateModelResponse build() {
             return new CreateModelResponse(
-                    __httpStatusCode__, etag, location, opcWorkRequestId, opcRequestId, model);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    location,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    model);
         }
     }
 

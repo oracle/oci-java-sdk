@@ -125,8 +125,8 @@ public class GetLogAnalyticsObjectCollectionRuleConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetLogAnalyticsObjectCollectionRuleResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsObjectCollectionRule(response.getItem());
 

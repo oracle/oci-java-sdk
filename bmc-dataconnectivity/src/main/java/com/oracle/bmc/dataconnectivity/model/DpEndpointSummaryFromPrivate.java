@@ -224,50 +224,81 @@ public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DpEndpointSummaryFromPrivate build() {
-            DpEndpointSummaryFromPrivate __instance__ =
+            DpEndpointSummaryFromPrivate model =
                     new DpEndpointSummaryFromPrivate(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            objectStatus,
-                            identifier,
-                            dataAssets,
-                            dcmsEndpointId,
-                            peId,
-                            compartmentId,
-                            dnsProxyIp,
-                            privateEndpointIp,
-                            dnsZones,
-                            state);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.objectStatus,
+                            this.identifier,
+                            this.dataAssets,
+                            this.dcmsEndpointId,
+                            this.peId,
+                            this.compartmentId,
+                            this.dnsProxyIp,
+                            this.privateEndpointIp,
+                            this.dnsZones,
+                            this.state);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DpEndpointSummaryFromPrivate o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .dataAssets(o.getDataAssets())
-                            .dcmsEndpointId(o.getDcmsEndpointId())
-                            .peId(o.getPeId())
-                            .compartmentId(o.getCompartmentId())
-                            .dnsProxyIp(o.getDnsProxyIp())
-                            .privateEndpointIp(o.getPrivateEndpointIp())
-                            .dnsZones(o.getDnsZones())
-                            .state(o.getState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DpEndpointSummaryFromPrivate model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("dataAssets")) {
+                this.dataAssets(model.getDataAssets());
+            }
+            if (model.wasPropertyExplicitlySet("dcmsEndpointId")) {
+                this.dcmsEndpointId(model.getDcmsEndpointId());
+            }
+            if (model.wasPropertyExplicitlySet("peId")) {
+                this.peId(model.getPeId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("dnsProxyIp")) {
+                this.dnsProxyIp(model.getDnsProxyIp());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointIp")) {
+                this.privateEndpointIp(model.getPrivateEndpointIp());
+            }
+            if (model.wasPropertyExplicitlySet("dnsZones")) {
+                this.dnsZones(model.getDnsZones());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
+            }
+            return this;
         }
     }
 
@@ -473,7 +504,6 @@ public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
         sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
         sb.append(", dnsZones=").append(String.valueOf(this.dnsZones));
         sb.append(", state=").append(String.valueOf(this.state));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -495,8 +525,7 @@ public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
                 && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
                 && java.util.Objects.equals(this.dnsZones, other.dnsZones)
                 && java.util.Objects.equals(this.state, other.state)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -516,16 +545,6 @@ public final class DpEndpointSummaryFromPrivate extends DpEndpointSummary {
                         + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());
         result = (result * PRIME) + (this.dnsZones == null ? 43 : this.dnsZones.hashCode());
         result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

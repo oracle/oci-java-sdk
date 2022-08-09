@@ -113,8 +113,8 @@ public class CreateWebAppAccelerationPolicyConverter {
                                                 com.oracle.bmc.waa.responses
                                                         .CreateWebAppAccelerationPolicyResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.webAppAccelerationPolicy(response.getItem());
 

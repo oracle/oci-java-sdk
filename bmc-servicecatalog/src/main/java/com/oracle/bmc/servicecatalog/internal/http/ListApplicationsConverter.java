@@ -203,8 +203,8 @@ public class ListApplicationsConverter {
                                         builder =
                                                 com.oracle.bmc.servicecatalog.responses
                                                         .ListApplicationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.applicationCollection(response.getItem());
 

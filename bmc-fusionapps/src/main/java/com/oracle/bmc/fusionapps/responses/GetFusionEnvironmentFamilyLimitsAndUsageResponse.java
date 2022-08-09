@@ -58,17 +58,19 @@ public class GetFusionEnvironmentFamilyLimitsAndUsageResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "fusionEnvironmentFamilyLimitsAndUsage"
     })
     private GetFusionEnvironmentFamilyLimitsAndUsageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.fusionapps.model.FusionEnvironmentFamilyLimitsAndUsage
                     fusionEnvironmentFamilyLimitsAndUsage) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.fusionEnvironmentFamilyLimitsAndUsage = fusionEnvironmentFamilyLimitsAndUsage;
@@ -79,6 +81,13 @@ public class GetFusionEnvironmentFamilyLimitsAndUsageResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -142,6 +151,7 @@ public class GetFusionEnvironmentFamilyLimitsAndUsageResponse
          */
         public Builder copy(GetFusionEnvironmentFamilyLimitsAndUsageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             fusionEnvironmentFamilyLimitsAndUsage(o.getFusionEnvironmentFamilyLimitsAndUsage());
@@ -155,7 +165,11 @@ public class GetFusionEnvironmentFamilyLimitsAndUsageResponse
          */
         public GetFusionEnvironmentFamilyLimitsAndUsageResponse build() {
             return new GetFusionEnvironmentFamilyLimitsAndUsageResponse(
-                    __httpStatusCode__, etag, opcRequestId, fusionEnvironmentFamilyLimitsAndUsage);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    fusionEnvironmentFamilyLimitsAndUsage);
         }
     }
 

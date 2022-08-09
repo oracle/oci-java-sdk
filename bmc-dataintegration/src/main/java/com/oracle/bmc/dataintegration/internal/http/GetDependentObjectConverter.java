@@ -122,8 +122,8 @@ public class GetDependentObjectConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .GetDependentObjectResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dependentObject(response.getItem());
 

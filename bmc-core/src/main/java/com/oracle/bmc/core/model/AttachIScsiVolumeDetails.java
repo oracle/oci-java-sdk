@@ -141,36 +141,53 @@ public final class AttachIScsiVolumeDetails extends AttachVolumeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AttachIScsiVolumeDetails build() {
-            AttachIScsiVolumeDetails __instance__ =
+            AttachIScsiVolumeDetails model =
                     new AttachIScsiVolumeDetails(
-                            device,
-                            displayName,
-                            instanceId,
-                            isReadOnly,
-                            isShareable,
-                            volumeId,
-                            useChap,
-                            encryptionInTransitType,
-                            isAgentAutoIscsiLoginEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.device,
+                            this.displayName,
+                            this.instanceId,
+                            this.isReadOnly,
+                            this.isShareable,
+                            this.volumeId,
+                            this.useChap,
+                            this.encryptionInTransitType,
+                            this.isAgentAutoIscsiLoginEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AttachIScsiVolumeDetails o) {
-            Builder copiedBuilder =
-                    device(o.getDevice())
-                            .displayName(o.getDisplayName())
-                            .instanceId(o.getInstanceId())
-                            .isReadOnly(o.getIsReadOnly())
-                            .isShareable(o.getIsShareable())
-                            .volumeId(o.getVolumeId())
-                            .useChap(o.getUseChap())
-                            .encryptionInTransitType(o.getEncryptionInTransitType())
-                            .isAgentAutoIscsiLoginEnabled(o.getIsAgentAutoIscsiLoginEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AttachIScsiVolumeDetails model) {
+            if (model.wasPropertyExplicitlySet("device")) {
+                this.device(model.getDevice());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("isReadOnly")) {
+                this.isReadOnly(model.getIsReadOnly());
+            }
+            if (model.wasPropertyExplicitlySet("isShareable")) {
+                this.isShareable(model.getIsShareable());
+            }
+            if (model.wasPropertyExplicitlySet("volumeId")) {
+                this.volumeId(model.getVolumeId());
+            }
+            if (model.wasPropertyExplicitlySet("useChap")) {
+                this.useChap(model.getUseChap());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionInTransitType")) {
+                this.encryptionInTransitType(model.getEncryptionInTransitType());
+            }
+            if (model.wasPropertyExplicitlySet("isAgentAutoIscsiLoginEnabled")) {
+                this.isAgentAutoIscsiLoginEnabled(model.getIsAgentAutoIscsiLoginEnabled());
+            }
+            return this;
         }
     }
 
@@ -271,7 +288,6 @@ public final class AttachIScsiVolumeDetails extends AttachVolumeDetails {
                 .append(String.valueOf(this.encryptionInTransitType));
         sb.append(", isAgentAutoIscsiLoginEnabled=")
                 .append(String.valueOf(this.isAgentAutoIscsiLoginEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -291,8 +307,7 @@ public final class AttachIScsiVolumeDetails extends AttachVolumeDetails {
                         this.encryptionInTransitType, other.encryptionInTransitType)
                 && java.util.Objects.equals(
                         this.isAgentAutoIscsiLoginEnabled, other.isAgentAutoIscsiLoginEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -310,16 +325,6 @@ public final class AttachIScsiVolumeDetails extends AttachVolumeDetails {
                         + (this.isAgentAutoIscsiLoginEnabled == null
                                 ? 43
                                 : this.isAgentAutoIscsiLoginEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

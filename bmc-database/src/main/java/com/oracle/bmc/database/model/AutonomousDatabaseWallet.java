@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = AutonomousDatabaseWallet.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutonomousDatabaseWallet {
+public final class AutonomousDatabaseWallet
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"lifecycleState", "timeRotated"})
     public AutonomousDatabaseWallet(LifecycleState lifecycleState, java.util.Date timeRotated) {
@@ -68,19 +69,23 @@ public final class AutonomousDatabaseWallet {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseWallet build() {
-            AutonomousDatabaseWallet __instance__ =
-                    new AutonomousDatabaseWallet(lifecycleState, timeRotated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AutonomousDatabaseWallet model =
+                    new AutonomousDatabaseWallet(this.lifecycleState, this.timeRotated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDatabaseWallet o) {
-            Builder copiedBuilder =
-                    lifecycleState(o.getLifecycleState()).timeRotated(o.getTimeRotated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousDatabaseWallet model) {
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeRotated")) {
+                this.timeRotated(model.getTimeRotated());
+            }
+            return this;
         }
     }
 
@@ -184,9 +189,9 @@ public final class AutonomousDatabaseWallet {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousDatabaseWallet(");
+        sb.append("super=").append(super.toString());
         sb.append("lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeRotated=").append(String.valueOf(this.timeRotated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -203,7 +208,7 @@ public final class AutonomousDatabaseWallet {
         AutonomousDatabaseWallet other = (AutonomousDatabaseWallet) o;
         return java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeRotated, other.timeRotated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -214,16 +219,7 @@ public final class AutonomousDatabaseWallet {
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeRotated == null ? 43 : this.timeRotated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

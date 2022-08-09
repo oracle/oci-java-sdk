@@ -53,16 +53,18 @@ public class GetAutoScalingPolicyResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "autoScalingPolicy"
     })
     private GetAutoScalingPolicyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.autoscaling.model.AutoScalingPolicy autoScalingPolicy) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.autoScalingPolicy = autoScalingPolicy;
@@ -73,6 +75,13 @@ public class GetAutoScalingPolicyResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetAutoScalingPolicyResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(GetAutoScalingPolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             autoScalingPolicy(o.getAutoScalingPolicy());
@@ -145,7 +155,7 @@ public class GetAutoScalingPolicyResponse extends com.oracle.bmc.responses.BmcRe
          */
         public GetAutoScalingPolicyResponse build() {
             return new GetAutoScalingPolicyResponse(
-                    __httpStatusCode__, etag, opcRequestId, autoScalingPolicy);
+                    __httpStatusCode__, headers, etag, opcRequestId, autoScalingPolicy);
         }
     }
 

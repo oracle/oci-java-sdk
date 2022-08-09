@@ -42,15 +42,17 @@ public class GetSqlExecutionPlanResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "sqlTuningAdvisorTaskSqlExecutionPlan"
     })
     private GetSqlExecutionPlanResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSqlExecutionPlan
                     sqlTuningAdvisorTaskSqlExecutionPlan) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.sqlTuningAdvisorTaskSqlExecutionPlan = sqlTuningAdvisorTaskSqlExecutionPlan;
     }
@@ -60,6 +62,13 @@ public class GetSqlExecutionPlanResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -106,6 +115,7 @@ public class GetSqlExecutionPlanResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(GetSqlExecutionPlanResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             sqlTuningAdvisorTaskSqlExecutionPlan(o.getSqlTuningAdvisorTaskSqlExecutionPlan());
 
@@ -118,7 +128,10 @@ public class GetSqlExecutionPlanResponse extends com.oracle.bmc.responses.BmcRes
          */
         public GetSqlExecutionPlanResponse build() {
             return new GetSqlExecutionPlanResponse(
-                    __httpStatusCode__, opcRequestId, sqlTuningAdvisorTaskSqlExecutionPlan);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    sqlTuningAdvisorTaskSqlExecutionPlan);
         }
     }
 

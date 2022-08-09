@@ -68,6 +68,7 @@ public class RestartAutonomousDatabaseResponse extends com.oracle.bmc.responses.
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "opcWorkRequestId",
@@ -75,11 +76,12 @@ public class RestartAutonomousDatabaseResponse extends com.oracle.bmc.responses.
     })
     private RestartAutonomousDatabaseResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
             com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
@@ -91,6 +93,13 @@ public class RestartAutonomousDatabaseResponse extends com.oracle.bmc.responses.
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -167,6 +176,7 @@ public class RestartAutonomousDatabaseResponse extends com.oracle.bmc.responses.
          */
         public Builder copy(RestartAutonomousDatabaseResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
@@ -181,7 +191,12 @@ public class RestartAutonomousDatabaseResponse extends com.oracle.bmc.responses.
          */
         public RestartAutonomousDatabaseResponse build() {
             return new RestartAutonomousDatabaseResponse(
-                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, autonomousDatabase);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    autonomousDatabase);
         }
     }
 

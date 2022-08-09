@@ -19,7 +19,8 @@ package com.oracle.bmc.devops.model;
     builder = DeploymentExecutionProgress.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DeploymentExecutionProgress {
+public final class DeploymentExecutionProgress
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeStarted",
@@ -92,22 +93,27 @@ public final class DeploymentExecutionProgress {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DeploymentExecutionProgress build() {
-            DeploymentExecutionProgress __instance__ =
+            DeploymentExecutionProgress model =
                     new DeploymentExecutionProgress(
-                            timeStarted, timeFinished, deployStageExecutionProgress);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeStarted, this.timeFinished, this.deployStageExecutionProgress);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeploymentExecutionProgress o) {
-            Builder copiedBuilder =
-                    timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .deployStageExecutionProgress(o.getDeployStageExecutionProgress());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DeploymentExecutionProgress model) {
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("deployStageExecutionProgress")) {
+                this.deployStageExecutionProgress(model.getDeployStageExecutionProgress());
+            }
+            return this;
         }
     }
 
@@ -177,11 +183,11 @@ public final class DeploymentExecutionProgress {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DeploymentExecutionProgress(");
+        sb.append("super=").append(super.toString());
         sb.append("timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
         sb.append(", deployStageExecutionProgress=")
                 .append(String.valueOf(this.deployStageExecutionProgress));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -200,7 +206,7 @@ public final class DeploymentExecutionProgress {
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
                 && java.util.Objects.equals(
                         this.deployStageExecutionProgress, other.deployStageExecutionProgress)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -214,16 +220,7 @@ public final class DeploymentExecutionProgress {
                         + (this.deployStageExecutionProgress == null
                                 ? 43
                                 : this.deployStageExecutionProgress.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

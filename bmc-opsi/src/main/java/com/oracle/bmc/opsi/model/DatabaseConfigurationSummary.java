@@ -40,7 +40,8 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DatabaseConfigurationSummary {
+public class DatabaseConfigurationSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseInsightId",
@@ -239,6 +240,7 @@ public class DatabaseConfigurationSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseConfigurationSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("databaseInsightId=").append(String.valueOf(this.databaseInsightId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));
@@ -272,7 +274,8 @@ public class DatabaseConfigurationSummary {
                 && java.util.Objects.equals(this.cdbName, other.cdbName)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.processorCount, other.processorCount);
+                && java.util.Objects.equals(this.processorCount, other.processorCount)
+                && super.equals(other);
     }
 
     @Override
@@ -301,6 +304,7 @@ public class DatabaseConfigurationSummary {
         result =
                 (result * PRIME)
                         + (this.processorCount == null ? 43 : this.processorCount.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

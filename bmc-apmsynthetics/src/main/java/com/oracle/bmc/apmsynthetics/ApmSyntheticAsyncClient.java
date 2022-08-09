@@ -438,6 +438,59 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AggregateNetworkDataResponse> aggregateNetworkData(
+            AggregateNetworkDataRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AggregateNetworkDataRequest, AggregateNetworkDataResponse>
+                    handler) {
+        LOG.trace("Called async aggregateNetworkData");
+        final AggregateNetworkDataRequest interceptedRequest =
+                AggregateNetworkDataConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AggregateNetworkDataConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApmSynthetic",
+                        "AggregateNetworkData",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/AggregatedNetworkDataResult/AggregateNetworkData");
+        final java.util.function.Function<javax.ws.rs.core.Response, AggregateNetworkDataResponse>
+                transformer =
+                        AggregateNetworkDataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AggregateNetworkDataRequest, AggregateNetworkDataResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AggregateNetworkDataRequest, AggregateNetworkDataResponse>,
+                        java.util.concurrent.Future<AggregateNetworkDataResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAggregateNetworkDataDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AggregateNetworkDataRequest, AggregateNetworkDataResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDedicatedVantagePointResponse>
             createDedicatedVantagePoint(
                     CreateDedicatedVantagePointRequest request,

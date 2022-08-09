@@ -170,8 +170,8 @@ public class GetJobLogsConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .GetJobLogsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

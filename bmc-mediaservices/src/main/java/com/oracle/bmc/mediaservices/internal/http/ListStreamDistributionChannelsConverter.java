@@ -173,8 +173,8 @@ public class ListStreamDistributionChannelsConverter {
                                                 com.oracle.bmc.mediaservices.responses
                                                         .ListStreamDistributionChannelsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.streamDistributionChannelCollection(response.getItem());
 

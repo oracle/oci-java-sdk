@@ -19,7 +19,8 @@ package com.oracle.bmc.servicecatalog.model;
     builder = CreatePrivateApplicationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreatePrivateApplicationDetails {
+public final class CreatePrivateApplicationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -194,34 +195,49 @@ public final class CreatePrivateApplicationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreatePrivateApplicationDetails build() {
-            CreatePrivateApplicationDetails __instance__ =
+            CreatePrivateApplicationDetails model =
                     new CreatePrivateApplicationDetails(
-                            compartmentId,
-                            displayName,
-                            shortDescription,
-                            longDescription,
-                            logoFileBase64Encoded,
-                            packageDetails,
-                            definedTags,
-                            freeformTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.displayName,
+                            this.shortDescription,
+                            this.longDescription,
+                            this.logoFileBase64Encoded,
+                            this.packageDetails,
+                            this.definedTags,
+                            this.freeformTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreatePrivateApplicationDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .shortDescription(o.getShortDescription())
-                            .longDescription(o.getLongDescription())
-                            .logoFileBase64Encoded(o.getLogoFileBase64Encoded())
-                            .packageDetails(o.getPackageDetails())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreatePrivateApplicationDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("shortDescription")) {
+                this.shortDescription(model.getShortDescription());
+            }
+            if (model.wasPropertyExplicitlySet("longDescription")) {
+                this.longDescription(model.getLongDescription());
+            }
+            if (model.wasPropertyExplicitlySet("logoFileBase64Encoded")) {
+                this.logoFileBase64Encoded(model.getLogoFileBase64Encoded());
+            }
+            if (model.wasPropertyExplicitlySet("packageDetails")) {
+                this.packageDetails(model.getPackageDetails());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            return this;
         }
     }
 
@@ -368,6 +384,7 @@ public final class CreatePrivateApplicationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreatePrivateApplicationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", shortDescription=").append(String.valueOf(this.shortDescription));
@@ -376,7 +393,6 @@ public final class CreatePrivateApplicationDetails {
         sb.append(", packageDetails=").append(String.valueOf(this.packageDetails));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -399,7 +415,7 @@ public final class CreatePrivateApplicationDetails {
                 && java.util.Objects.equals(this.packageDetails, other.packageDetails)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -426,16 +442,7 @@ public final class CreatePrivateApplicationDetails {
                         + (this.packageDetails == null ? 43 : this.packageDetails.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

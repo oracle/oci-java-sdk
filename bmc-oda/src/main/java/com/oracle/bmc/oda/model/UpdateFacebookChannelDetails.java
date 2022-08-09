@@ -117,33 +117,46 @@ public final class UpdateFacebookChannelDetails extends UpdateChannelDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateFacebookChannelDetails build() {
-            UpdateFacebookChannelDetails __instance__ =
+            UpdateFacebookChannelDetails model =
                     new UpdateFacebookChannelDetails(
-                            description,
-                            sessionExpiryDurationInMilliseconds,
-                            freeformTags,
-                            definedTags,
-                            appSecret,
-                            pageAccessToken,
-                            botId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.sessionExpiryDurationInMilliseconds,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.appSecret,
+                            this.pageAccessToken,
+                            this.botId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateFacebookChannelDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .sessionExpiryDurationInMilliseconds(
-                                    o.getSessionExpiryDurationInMilliseconds())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .appSecret(o.getAppSecret())
-                            .pageAccessToken(o.getPageAccessToken())
-                            .botId(o.getBotId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateFacebookChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpiryDurationInMilliseconds")) {
+                this.sessionExpiryDurationInMilliseconds(
+                        model.getSessionExpiryDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("appSecret")) {
+                this.appSecret(model.getAppSecret());
+            }
+            if (model.wasPropertyExplicitlySet("pageAccessToken")) {
+                this.pageAccessToken(model.getPageAccessToken());
+            }
+            if (model.wasPropertyExplicitlySet("botId")) {
+                this.botId(model.getBotId());
+            }
+            return this;
         }
     }
 
@@ -232,7 +245,6 @@ public final class UpdateFacebookChannelDetails extends UpdateChannelDetails {
         sb.append(", appSecret=").append(String.valueOf(this.appSecret));
         sb.append(", pageAccessToken=").append(String.valueOf(this.pageAccessToken));
         sb.append(", botId=").append(String.valueOf(this.botId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -250,8 +262,7 @@ public final class UpdateFacebookChannelDetails extends UpdateChannelDetails {
         return java.util.Objects.equals(this.appSecret, other.appSecret)
                 && java.util.Objects.equals(this.pageAccessToken, other.pageAccessToken)
                 && java.util.Objects.equals(this.botId, other.botId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -263,16 +274,6 @@ public final class UpdateFacebookChannelDetails extends UpdateChannelDetails {
                 (result * PRIME)
                         + (this.pageAccessToken == null ? 43 : this.pageAccessToken.hashCode());
         result = (result * PRIME) + (this.botId == null ? 43 : this.botId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

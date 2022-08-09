@@ -167,8 +167,8 @@ public class ListObjectsConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .ListObjectsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.listObjects(response.getItem());
 

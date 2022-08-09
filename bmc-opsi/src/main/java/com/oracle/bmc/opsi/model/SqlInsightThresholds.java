@@ -19,7 +19,7 @@ package com.oracle.bmc.opsi.model;
     builder = SqlInsightThresholds.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlInsightThresholds {
+public final class SqlInsightThresholds extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "degradationInPct",
@@ -193,32 +193,45 @@ public final class SqlInsightThresholds {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlInsightThresholds build() {
-            SqlInsightThresholds __instance__ =
+            SqlInsightThresholds model =
                     new SqlInsightThresholds(
-                            degradationInPct,
-                            variability,
-                            inefficiencyInPct,
-                            increaseInIOInPct,
-                            increaseInCPUInPct,
-                            increaseInInefficientWaitInPct,
-                            improvedInPct);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.degradationInPct,
+                            this.variability,
+                            this.inefficiencyInPct,
+                            this.increaseInIOInPct,
+                            this.increaseInCPUInPct,
+                            this.increaseInInefficientWaitInPct,
+                            this.improvedInPct);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlInsightThresholds o) {
-            Builder copiedBuilder =
-                    degradationInPct(o.getDegradationInPct())
-                            .variability(o.getVariability())
-                            .inefficiencyInPct(o.getInefficiencyInPct())
-                            .increaseInIOInPct(o.getIncreaseInIOInPct())
-                            .increaseInCPUInPct(o.getIncreaseInCPUInPct())
-                            .increaseInInefficientWaitInPct(o.getIncreaseInInefficientWaitInPct())
-                            .improvedInPct(o.getImprovedInPct());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlInsightThresholds model) {
+            if (model.wasPropertyExplicitlySet("degradationInPct")) {
+                this.degradationInPct(model.getDegradationInPct());
+            }
+            if (model.wasPropertyExplicitlySet("variability")) {
+                this.variability(model.getVariability());
+            }
+            if (model.wasPropertyExplicitlySet("inefficiencyInPct")) {
+                this.inefficiencyInPct(model.getInefficiencyInPct());
+            }
+            if (model.wasPropertyExplicitlySet("increaseInIOInPct")) {
+                this.increaseInIOInPct(model.getIncreaseInIOInPct());
+            }
+            if (model.wasPropertyExplicitlySet("increaseInCPUInPct")) {
+                this.increaseInCPUInPct(model.getIncreaseInCPUInPct());
+            }
+            if (model.wasPropertyExplicitlySet("increaseInInefficientWaitInPct")) {
+                this.increaseInInefficientWaitInPct(model.getIncreaseInInefficientWaitInPct());
+            }
+            if (model.wasPropertyExplicitlySet("improvedInPct")) {
+                this.improvedInPct(model.getImprovedInPct());
+            }
+            return this;
         }
     }
 
@@ -370,6 +383,7 @@ public final class SqlInsightThresholds {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlInsightThresholds(");
+        sb.append("super=").append(super.toString());
         sb.append("degradationInPct=").append(String.valueOf(this.degradationInPct));
         sb.append(", variability=").append(String.valueOf(this.variability));
         sb.append(", inefficiencyInPct=").append(String.valueOf(this.inefficiencyInPct));
@@ -378,7 +392,6 @@ public final class SqlInsightThresholds {
         sb.append(", increaseInInefficientWaitInPct=")
                 .append(String.valueOf(this.increaseInInefficientWaitInPct));
         sb.append(", improvedInPct=").append(String.valueOf(this.improvedInPct));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -401,7 +414,7 @@ public final class SqlInsightThresholds {
                 && java.util.Objects.equals(
                         this.increaseInInefficientWaitInPct, other.increaseInInefficientWaitInPct)
                 && java.util.Objects.equals(this.improvedInPct, other.improvedInPct)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -431,16 +444,7 @@ public final class SqlInsightThresholds {
         result =
                 (result * PRIME)
                         + (this.improvedInPct == null ? 43 : this.improvedInPct.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

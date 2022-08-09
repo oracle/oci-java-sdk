@@ -40,14 +40,16 @@ public class ValidatePatternResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "validatePatternResult"
     })
     private ValidatePatternResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.ValidatePatternResult validatePatternResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.validatePatternResult = validatePatternResult;
     }
@@ -57,6 +59,13 @@ public class ValidatePatternResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -101,6 +110,7 @@ public class ValidatePatternResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(ValidatePatternResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             validatePatternResult(o.getValidatePatternResult());
 
@@ -113,7 +123,7 @@ public class ValidatePatternResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public ValidatePatternResponse build() {
             return new ValidatePatternResponse(
-                    __httpStatusCode__, opcRequestId, validatePatternResult);
+                    __httpStatusCode__, headers, opcRequestId, validatePatternResult);
         }
     }
 

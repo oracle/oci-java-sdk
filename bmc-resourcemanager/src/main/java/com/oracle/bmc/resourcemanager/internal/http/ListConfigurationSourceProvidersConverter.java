@@ -176,8 +176,8 @@ public class ListConfigurationSourceProvidersConverter {
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .ListConfigurationSourceProvidersResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.configurationSourceProviderCollection(response.getItem());
 

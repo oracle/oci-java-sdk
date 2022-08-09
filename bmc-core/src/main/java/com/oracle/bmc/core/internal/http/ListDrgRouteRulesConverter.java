@@ -132,8 +132,8 @@ public class ListDrgRouteRulesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListDrgRouteRulesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

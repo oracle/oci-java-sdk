@@ -88,21 +88,26 @@ public final class SubstringFormatEntry extends FormatEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SubstringFormatEntry build() {
-            SubstringFormatEntry __instance__ =
-                    new SubstringFormatEntry(description, startPosition, length);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SubstringFormatEntry model =
+                    new SubstringFormatEntry(this.description, this.startPosition, this.length);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SubstringFormatEntry o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .startPosition(o.getStartPosition())
-                            .length(o.getLength());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SubstringFormatEntry model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("startPosition")) {
+                this.startPosition(model.getStartPosition());
+            }
+            if (model.wasPropertyExplicitlySet("length")) {
+                this.length(model.getLength());
+            }
+            return this;
         }
     }
 
@@ -178,7 +183,6 @@ public final class SubstringFormatEntry extends FormatEntry {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", startPosition=").append(String.valueOf(this.startPosition));
         sb.append(", length=").append(String.valueOf(this.length));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -195,8 +199,7 @@ public final class SubstringFormatEntry extends FormatEntry {
         SubstringFormatEntry other = (SubstringFormatEntry) o;
         return java.util.Objects.equals(this.startPosition, other.startPosition)
                 && java.util.Objects.equals(this.length, other.length)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -207,16 +210,6 @@ public final class SubstringFormatEntry extends FormatEntry {
                 (result * PRIME)
                         + (this.startPosition == null ? 43 : this.startPosition.hashCode());
         result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

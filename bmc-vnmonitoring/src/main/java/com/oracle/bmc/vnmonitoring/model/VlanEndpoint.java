@@ -68,17 +68,22 @@ public final class VlanEndpoint extends Endpoint {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VlanEndpoint build() {
-            VlanEndpoint __instance__ = new VlanEndpoint(address, vlanId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VlanEndpoint model = new VlanEndpoint(this.address, this.vlanId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VlanEndpoint o) {
-            Builder copiedBuilder = address(o.getAddress()).vlanId(o.getVlanId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VlanEndpoint model) {
+            if (model.wasPropertyExplicitlySet("address")) {
+                this.address(model.getAddress());
+            }
+            if (model.wasPropertyExplicitlySet("vlanId")) {
+                this.vlanId(model.getVlanId());
+            }
+            return this;
         }
     }
 
@@ -150,7 +155,6 @@ public final class VlanEndpoint extends Endpoint {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", address=").append(String.valueOf(this.address));
         sb.append(", vlanId=").append(String.valueOf(this.vlanId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -167,8 +171,7 @@ public final class VlanEndpoint extends Endpoint {
         VlanEndpoint other = (VlanEndpoint) o;
         return java.util.Objects.equals(this.address, other.address)
                 && java.util.Objects.equals(this.vlanId, other.vlanId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -177,16 +180,6 @@ public final class VlanEndpoint extends Endpoint {
         int result = super.hashCode();
         result = (result * PRIME) + (this.address == null ? 43 : this.address.hashCode());
         result = (result * PRIME) + (this.vlanId == null ? 43 : this.vlanId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

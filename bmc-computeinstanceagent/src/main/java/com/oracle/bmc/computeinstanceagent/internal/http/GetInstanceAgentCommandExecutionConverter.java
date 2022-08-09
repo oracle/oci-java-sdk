@@ -129,8 +129,8 @@ public class GetInstanceAgentCommandExecutionConverter {
                                                 com.oracle.bmc.computeinstanceagent.responses
                                                         .GetInstanceAgentCommandExecutionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.instanceAgentCommandExecution(response.getItem());
 

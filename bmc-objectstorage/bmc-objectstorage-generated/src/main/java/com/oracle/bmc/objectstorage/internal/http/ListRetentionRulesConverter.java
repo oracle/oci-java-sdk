@@ -120,8 +120,8 @@ public class ListRetentionRulesConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .ListRetentionRulesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.retentionRuleCollection(response.getItem());
 

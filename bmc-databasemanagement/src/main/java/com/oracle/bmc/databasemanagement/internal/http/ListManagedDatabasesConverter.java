@@ -178,8 +178,8 @@ public class ListManagedDatabasesConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListManagedDatabasesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managedDatabaseCollection(response.getItem());
 

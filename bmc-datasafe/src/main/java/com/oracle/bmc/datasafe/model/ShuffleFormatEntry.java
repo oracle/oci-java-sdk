@@ -70,18 +70,23 @@ public final class ShuffleFormatEntry extends FormatEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShuffleFormatEntry build() {
-            ShuffleFormatEntry __instance__ = new ShuffleFormatEntry(description, groupingColumns);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ShuffleFormatEntry model =
+                    new ShuffleFormatEntry(this.description, this.groupingColumns);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ShuffleFormatEntry o) {
-            Builder copiedBuilder =
-                    description(o.getDescription()).groupingColumns(o.getGroupingColumns());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ShuffleFormatEntry model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("groupingColumns")) {
+                this.groupingColumns(model.getGroupingColumns());
+            }
+            return this;
         }
     }
 
@@ -137,7 +142,6 @@ public final class ShuffleFormatEntry extends FormatEntry {
         sb.append("ShuffleFormatEntry(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", groupingColumns=").append(String.valueOf(this.groupingColumns));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,8 +157,7 @@ public final class ShuffleFormatEntry extends FormatEntry {
 
         ShuffleFormatEntry other = (ShuffleFormatEntry) o;
         return java.util.Objects.equals(this.groupingColumns, other.groupingColumns)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -164,16 +167,6 @@ public final class ShuffleFormatEntry extends FormatEntry {
         result =
                 (result * PRIME)
                         + (this.groupingColumns == null ? 43 : this.groupingColumns.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -109,8 +109,8 @@ public class CreateGlossaryConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .CreateGlossaryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.glossary(response.getItem());
 

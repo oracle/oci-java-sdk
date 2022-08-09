@@ -53,19 +53,24 @@ public final class AddMetricBasedVerticalScalingPolicyDetails extends AddAutoSca
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddMetricBasedVerticalScalingPolicyDetails build() {
-            AddMetricBasedVerticalScalingPolicyDetails __instance__ =
-                    new AddMetricBasedVerticalScalingPolicyDetails(scaleUpConfig, scaleDownConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AddMetricBasedVerticalScalingPolicyDetails model =
+                    new AddMetricBasedVerticalScalingPolicyDetails(
+                            this.scaleUpConfig, this.scaleDownConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddMetricBasedVerticalScalingPolicyDetails o) {
-            Builder copiedBuilder =
-                    scaleUpConfig(o.getScaleUpConfig()).scaleDownConfig(o.getScaleDownConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddMetricBasedVerticalScalingPolicyDetails model) {
+            if (model.wasPropertyExplicitlySet("scaleUpConfig")) {
+                this.scaleUpConfig(model.getScaleUpConfig());
+            }
+            if (model.wasPropertyExplicitlySet("scaleDownConfig")) {
+                this.scaleDownConfig(model.getScaleDownConfig());
+            }
+            return this;
         }
     }
 
@@ -119,7 +124,6 @@ public final class AddMetricBasedVerticalScalingPolicyDetails extends AddAutoSca
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", scaleUpConfig=").append(String.valueOf(this.scaleUpConfig));
         sb.append(", scaleDownConfig=").append(String.valueOf(this.scaleDownConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -137,8 +141,7 @@ public final class AddMetricBasedVerticalScalingPolicyDetails extends AddAutoSca
                 (AddMetricBasedVerticalScalingPolicyDetails) o;
         return java.util.Objects.equals(this.scaleUpConfig, other.scaleUpConfig)
                 && java.util.Objects.equals(this.scaleDownConfig, other.scaleDownConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -151,16 +154,6 @@ public final class AddMetricBasedVerticalScalingPolicyDetails extends AddAutoSca
         result =
                 (result * PRIME)
                         + (this.scaleDownConfig == null ? 43 : this.scaleDownConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

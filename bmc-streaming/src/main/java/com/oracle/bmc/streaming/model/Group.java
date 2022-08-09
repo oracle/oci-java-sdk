@@ -18,7 +18,7 @@ package com.oracle.bmc.streaming.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Group.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Group {
+public final class Group extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"streamId", "groupName", "reservations"})
     public Group(
@@ -84,20 +84,25 @@ public final class Group {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Group build() {
-            Group __instance__ = new Group(streamId, groupName, reservations);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Group model = new Group(this.streamId, this.groupName, this.reservations);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Group o) {
-            Builder copiedBuilder =
-                    streamId(o.getStreamId())
-                            .groupName(o.getGroupName())
-                            .reservations(o.getReservations());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Group model) {
+            if (model.wasPropertyExplicitlySet("streamId")) {
+                this.streamId(model.getStreamId());
+            }
+            if (model.wasPropertyExplicitlySet("groupName")) {
+                this.groupName(model.getGroupName());
+            }
+            if (model.wasPropertyExplicitlySet("reservations")) {
+                this.reservations(model.getReservations());
+            }
+            return this;
         }
     }
 
@@ -167,10 +172,10 @@ public final class Group {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Group(");
+        sb.append("super=").append(super.toString());
         sb.append("streamId=").append(String.valueOf(this.streamId));
         sb.append(", groupName=").append(String.valueOf(this.groupName));
         sb.append(", reservations=").append(String.valueOf(this.reservations));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -188,7 +193,7 @@ public final class Group {
         return java.util.Objects.equals(this.streamId, other.streamId)
                 && java.util.Objects.equals(this.groupName, other.groupName)
                 && java.util.Objects.equals(this.reservations, other.reservations)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -198,16 +203,7 @@ public final class Group {
         result = (result * PRIME) + (this.streamId == null ? 43 : this.streamId.hashCode());
         result = (result * PRIME) + (this.groupName == null ? 43 : this.groupName.hashCode());
         result = (result * PRIME) + (this.reservations == null ? 43 : this.reservations.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -129,8 +129,8 @@ public class IgnoreRecipientInvitationConverter {
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
                                                         .IgnoreRecipientInvitationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.recipientInvitation(response.getItem());
 

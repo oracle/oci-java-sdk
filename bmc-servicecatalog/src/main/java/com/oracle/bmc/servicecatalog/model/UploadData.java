@@ -17,7 +17,7 @@ package com.oracle.bmc.servicecatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UploadData.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UploadData {
+public final class UploadData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "contentUrl", "mimeType"})
     public UploadData(String displayName, String contentUrl, String mimeType) {
@@ -82,20 +82,25 @@ public final class UploadData {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UploadData build() {
-            UploadData __instance__ = new UploadData(displayName, contentUrl, mimeType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UploadData model = new UploadData(this.displayName, this.contentUrl, this.mimeType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UploadData o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .contentUrl(o.getContentUrl())
-                            .mimeType(o.getMimeType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UploadData model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("contentUrl")) {
+                this.contentUrl(model.getContentUrl());
+            }
+            if (model.wasPropertyExplicitlySet("mimeType")) {
+                this.mimeType(model.getMimeType());
+            }
+            return this;
         }
     }
 
@@ -165,10 +170,10 @@ public final class UploadData {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UploadData(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", contentUrl=").append(String.valueOf(this.contentUrl));
         sb.append(", mimeType=").append(String.valueOf(this.mimeType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +191,7 @@ public final class UploadData {
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.contentUrl, other.contentUrl)
                 && java.util.Objects.equals(this.mimeType, other.mimeType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -196,16 +201,7 @@ public final class UploadData {
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.contentUrl == null ? 43 : this.contentUrl.hashCode());
         result = (result * PRIME) + (this.mimeType == null ? 43 : this.mimeType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

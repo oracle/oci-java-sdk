@@ -110,8 +110,8 @@ public class GetModelArtifactContentConverter {
                                         builder =
                                                 com.oracle.bmc.datascience.responses
                                                         .GetModelArtifactContentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

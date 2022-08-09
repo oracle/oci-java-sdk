@@ -139,8 +139,8 @@ public class ListAuthorsConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses.ListAuthorsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.repositoryAuthorCollection(response.getItem());
 

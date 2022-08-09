@@ -17,7 +17,7 @@ package com.oracle.bmc.databasemanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SnapshotDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SnapshotDetails {
+public final class SnapshotDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"snapshotId"})
     public SnapshotDetails(Long snapshotId) {
@@ -48,17 +48,19 @@ public final class SnapshotDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SnapshotDetails build() {
-            SnapshotDetails __instance__ = new SnapshotDetails(snapshotId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SnapshotDetails model = new SnapshotDetails(this.snapshotId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SnapshotDetails o) {
-            Builder copiedBuilder = snapshotId(o.getSnapshotId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SnapshotDetails model) {
+            if (model.wasPropertyExplicitlySet("snapshotId")) {
+                this.snapshotId(model.getSnapshotId());
+            }
+            return this;
         }
     }
 
@@ -100,8 +102,8 @@ public final class SnapshotDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SnapshotDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("snapshotId=").append(String.valueOf(this.snapshotId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -116,8 +118,7 @@ public final class SnapshotDetails {
         }
 
         SnapshotDetails other = (SnapshotDetails) o;
-        return java.util.Objects.equals(this.snapshotId, other.snapshotId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.snapshotId, other.snapshotId) && super.equals(other);
     }
 
     @Override
@@ -125,16 +126,7 @@ public final class SnapshotDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.snapshotId == null ? 43 : this.snapshotId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

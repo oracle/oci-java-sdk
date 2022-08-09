@@ -19,7 +19,8 @@ package com.oracle.bmc.osmanagement.model;
     builder = UpdateModuleStreamDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateModuleStreamDetails {
+public final class UpdateModuleStreamDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "streamName",
@@ -201,32 +202,45 @@ public final class UpdateModuleStreamDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateModuleStreamDetails build() {
-            UpdateModuleStreamDetails __instance__ =
+            UpdateModuleStreamDetails model =
                     new UpdateModuleStreamDetails(
-                            streamName,
-                            status,
-                            timeModified,
-                            softwareSourceName,
-                            softwareSourceUrl,
-                            isDefault,
-                            profiles);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.streamName,
+                            this.status,
+                            this.timeModified,
+                            this.softwareSourceName,
+                            this.softwareSourceUrl,
+                            this.isDefault,
+                            this.profiles);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateModuleStreamDetails o) {
-            Builder copiedBuilder =
-                    streamName(o.getStreamName())
-                            .status(o.getStatus())
-                            .timeModified(o.getTimeModified())
-                            .softwareSourceName(o.getSoftwareSourceName())
-                            .softwareSourceUrl(o.getSoftwareSourceUrl())
-                            .isDefault(o.getIsDefault())
-                            .profiles(o.getProfiles());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateModuleStreamDetails model) {
+            if (model.wasPropertyExplicitlySet("streamName")) {
+                this.streamName(model.getStreamName());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeModified")) {
+                this.timeModified(model.getTimeModified());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSourceName")) {
+                this.softwareSourceName(model.getSoftwareSourceName());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSourceUrl")) {
+                this.softwareSourceUrl(model.getSoftwareSourceUrl());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            if (model.wasPropertyExplicitlySet("profiles")) {
+                this.profiles(model.getProfiles());
+            }
+            return this;
         }
     }
 
@@ -436,6 +450,7 @@ public final class UpdateModuleStreamDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateModuleStreamDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("streamName=").append(String.valueOf(this.streamName));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", timeModified=").append(String.valueOf(this.timeModified));
@@ -443,7 +458,6 @@ public final class UpdateModuleStreamDetails {
         sb.append(", softwareSourceUrl=").append(String.valueOf(this.softwareSourceUrl));
         sb.append(", isDefault=").append(String.valueOf(this.isDefault));
         sb.append(", profiles=").append(String.valueOf(this.profiles));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -465,7 +479,7 @@ public final class UpdateModuleStreamDetails {
                 && java.util.Objects.equals(this.softwareSourceUrl, other.softwareSourceUrl)
                 && java.util.Objects.equals(this.isDefault, other.isDefault)
                 && java.util.Objects.equals(this.profiles, other.profiles)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -485,16 +499,7 @@ public final class UpdateModuleStreamDetails {
                         + (this.softwareSourceUrl == null ? 43 : this.softwareSourceUrl.hashCode());
         result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
         result = (result * PRIME) + (this.profiles == null ? 43 : this.profiles.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -4,11 +4,19 @@
  */
 package com.oracle.bmc.responses;
 
+import javax.ws.rs.core.MultivaluedMap;
+import java.util.Objects;
+
 public class BmcResponse {
     /**
      * HTTP status code returned by the operation.
      */
     private final int __httpStatusCode__;
+
+    /**
+     * HTTP response headers returned by the operation.
+     */
+    private final MultivaluedMap<String, String> headers;
 
     @java.lang.Override
     public boolean equals(final java.lang.Object o) {
@@ -16,8 +24,8 @@ public class BmcResponse {
         if (!(o instanceof BmcResponse)) return false;
         final BmcResponse other = (BmcResponse) o;
         if (!other.canEqual((java.lang.Object) this)) return false;
-        if (this.get__httpStatusCode__() != other.get__httpStatusCode__()) return false;
-        return true;
+        return this.get__httpStatusCode__() == other.get__httpStatusCode__()
+                && Objects.equals(this.getHeaders(), other.getHeaders());
     }
 
     protected boolean canEqual(final java.lang.Object other) {
@@ -26,15 +34,19 @@ public class BmcResponse {
 
     @java.lang.Override
     public int hashCode() {
-        final int PRIME = 59;
-        int result = 1;
-        result = result * PRIME + this.get__httpStatusCode__();
-        return result;
+        return Objects.hash(this.get__httpStatusCode__(), this.getHeaders());
     }
 
     @java.beans.ConstructorProperties({"__httpStatusCode__"})
     public BmcResponse(final int __httpStatusCode__) {
         this.__httpStatusCode__ = __httpStatusCode__;
+        this.headers = null;
+    }
+
+    @java.beans.ConstructorProperties({"__httpStatusCode__, headers"})
+    public BmcResponse(final int __httpStatusCode__, final MultivaluedMap<String, String> headers) {
+        this.__httpStatusCode__ = __httpStatusCode__;
+        this.headers = headers;
     }
 
     /**
@@ -42,5 +54,12 @@ public class BmcResponse {
      */
     public int get__httpStatusCode__() {
         return this.__httpStatusCode__;
+    }
+
+    /**
+     * HTTP response headers returned by the operation.
+     */
+    public MultivaluedMap<String, String> getHeaders() {
+        return this.headers;
     }
 }

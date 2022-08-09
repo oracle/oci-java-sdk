@@ -41,7 +41,7 @@ package com.oracle.bmc.resourcemanager.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ConfigSource {
+public class ConfigSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"workingDirectory"})
     protected ConfigSource(String workingDirectory) {
@@ -88,6 +88,7 @@ public class ConfigSource {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ConfigSource(");
+        sb.append("super=").append(super.toString());
         sb.append("workingDirectory=").append(String.valueOf(this.workingDirectory));
         sb.append(")");
         return sb.toString();
@@ -103,7 +104,8 @@ public class ConfigSource {
         }
 
         ConfigSource other = (ConfigSource) o;
-        return java.util.Objects.equals(this.workingDirectory, other.workingDirectory);
+        return java.util.Objects.equals(this.workingDirectory, other.workingDirectory)
+                && super.equals(other);
     }
 
     @Override
@@ -113,6 +115,7 @@ public class ConfigSource {
         result =
                 (result * PRIME)
                         + (this.workingDirectory == null ? 43 : this.workingDirectory.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

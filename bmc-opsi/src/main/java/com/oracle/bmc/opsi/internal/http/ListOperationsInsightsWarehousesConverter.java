@@ -172,8 +172,8 @@ public class ListOperationsInsightsWarehousesConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .ListOperationsInsightsWarehousesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.operationsInsightsWarehouseSummaryCollection(
                                         response.getItem());

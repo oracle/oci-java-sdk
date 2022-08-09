@@ -55,16 +55,18 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "governanceRule"
     })
     private GetGovernanceRuleResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.governancerulescontrolplane.model.GovernanceRule governanceRule) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.governanceRule = governanceRule;
@@ -75,6 +77,13 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetGovernanceRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             governanceRule(o.getGovernanceRule());
@@ -149,7 +159,7 @@ public class GetGovernanceRuleResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public GetGovernanceRuleResponse build() {
             return new GetGovernanceRuleResponse(
-                    __httpStatusCode__, etag, opcRequestId, governanceRule);
+                    __httpStatusCode__, headers, etag, opcRequestId, governanceRule);
         }
     }
 

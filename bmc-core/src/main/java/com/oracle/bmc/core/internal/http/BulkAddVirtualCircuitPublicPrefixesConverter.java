@@ -104,8 +104,8 @@ public class BulkAddVirtualCircuitPublicPrefixesConverter {
                                                 com.oracle.bmc.core.responses
                                                         .BulkAddVirtualCircuitPublicPrefixesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 com.oracle.bmc.core.responses
                                                 .BulkAddVirtualCircuitPublicPrefixesResponse

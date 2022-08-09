@@ -38,12 +38,18 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
         return computedUsage;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "computedUsage"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "computedUsage"
+    })
     private GetComputedUsageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.onesubscription.model.ComputedUsage computedUsage) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.computedUsage = computedUsage;
     }
@@ -53,6 +59,13 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetComputedUsageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             computedUsage(o.getComputedUsage());
 
@@ -108,7 +122,8 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public GetComputedUsageResponse build() {
-            return new GetComputedUsageResponse(__httpStatusCode__, opcRequestId, computedUsage);
+            return new GetComputedUsageResponse(
+                    __httpStatusCode__, headers, opcRequestId, computedUsage);
         }
     }
 

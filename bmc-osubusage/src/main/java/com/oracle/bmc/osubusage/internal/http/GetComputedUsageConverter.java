@@ -125,8 +125,8 @@ public class GetComputedUsageConverter {
                                         builder =
                                                 com.oracle.bmc.osubusage.responses
                                                         .GetComputedUsageResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.computedUsage(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.keymanagement.model;
     builder = ReplicationStatusDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReplicationStatusDetails {
+public final class ReplicationStatusDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"replicaDetails"})
     public ReplicationStatusDetails(java.util.List<ReplicaDetails> replicaDetails) {
@@ -43,17 +44,19 @@ public final class ReplicationStatusDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ReplicationStatusDetails build() {
-            ReplicationStatusDetails __instance__ = new ReplicationStatusDetails(replicaDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ReplicationStatusDetails model = new ReplicationStatusDetails(this.replicaDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ReplicationStatusDetails o) {
-            Builder copiedBuilder = replicaDetails(o.getReplicaDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ReplicationStatusDetails model) {
+            if (model.wasPropertyExplicitlySet("replicaDetails")) {
+                this.replicaDetails(model.getReplicaDetails());
+            }
+            return this;
         }
     }
 
@@ -88,8 +91,8 @@ public final class ReplicationStatusDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ReplicationStatusDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("replicaDetails=").append(String.valueOf(this.replicaDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -105,7 +108,7 @@ public final class ReplicationStatusDetails {
 
         ReplicationStatusDetails other = (ReplicationStatusDetails) o;
         return java.util.Objects.equals(this.replicaDetails, other.replicaDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -115,16 +118,7 @@ public final class ReplicationStatusDetails {
         result =
                 (result * PRIME)
                         + (this.replicaDetails == null ? 43 : this.replicaDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

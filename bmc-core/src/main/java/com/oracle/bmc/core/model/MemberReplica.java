@@ -17,7 +17,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MemberReplica.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MemberReplica {
+public final class MemberReplica extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"volumeReplicaId", "membershipState"})
     public MemberReplica(String volumeReplicaId, MembershipState membershipState) {
@@ -65,18 +65,22 @@ public final class MemberReplica {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MemberReplica build() {
-            MemberReplica __instance__ = new MemberReplica(volumeReplicaId, membershipState);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MemberReplica model = new MemberReplica(this.volumeReplicaId, this.membershipState);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MemberReplica o) {
-            Builder copiedBuilder =
-                    volumeReplicaId(o.getVolumeReplicaId()).membershipState(o.getMembershipState());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MemberReplica model) {
+            if (model.wasPropertyExplicitlySet("volumeReplicaId")) {
+                this.volumeReplicaId(model.getVolumeReplicaId());
+            }
+            if (model.wasPropertyExplicitlySet("membershipState")) {
+                this.membershipState(model.getMembershipState());
+            }
+            return this;
         }
     }
 
@@ -181,9 +185,9 @@ public final class MemberReplica {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MemberReplica(");
+        sb.append("super=").append(super.toString());
         sb.append("volumeReplicaId=").append(String.valueOf(this.volumeReplicaId));
         sb.append(", membershipState=").append(String.valueOf(this.membershipState));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -200,7 +204,7 @@ public final class MemberReplica {
         MemberReplica other = (MemberReplica) o;
         return java.util.Objects.equals(this.volumeReplicaId, other.volumeReplicaId)
                 && java.util.Objects.equals(this.membershipState, other.membershipState)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -213,16 +217,7 @@ public final class MemberReplica {
         result =
                 (result * PRIME)
                         + (this.membershipState == null ? 43 : this.membershipState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

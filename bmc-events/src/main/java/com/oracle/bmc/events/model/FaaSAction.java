@@ -92,30 +92,41 @@ public final class FaaSAction extends Action {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FaaSAction build() {
-            FaaSAction __instance__ =
+            FaaSAction model =
                     new FaaSAction(
-                            id,
-                            lifecycleMessage,
-                            lifecycleState,
-                            isEnabled,
-                            description,
-                            functionId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.lifecycleMessage,
+                            this.lifecycleState,
+                            this.isEnabled,
+                            this.description,
+                            this.functionId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FaaSAction o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .lifecycleMessage(o.getLifecycleMessage())
-                            .lifecycleState(o.getLifecycleState())
-                            .isEnabled(o.getIsEnabled())
-                            .description(o.getDescription())
-                            .functionId(o.getFunctionId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FaaSAction model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleMessage")) {
+                this.lifecycleMessage(model.getLifecycleMessage());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("functionId")) {
+                this.functionId(model.getFunctionId());
+            }
+            return this;
         }
     }
 
@@ -173,7 +184,6 @@ public final class FaaSAction extends Action {
         sb.append("FaaSAction(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", functionId=").append(String.valueOf(this.functionId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -188,9 +198,7 @@ public final class FaaSAction extends Action {
         }
 
         FaaSAction other = (FaaSAction) o;
-        return java.util.Objects.equals(this.functionId, other.functionId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.functionId, other.functionId) && super.equals(other);
     }
 
     @Override
@@ -198,16 +206,6 @@ public final class FaaSAction extends Action {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.functionId == null ? 43 : this.functionId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

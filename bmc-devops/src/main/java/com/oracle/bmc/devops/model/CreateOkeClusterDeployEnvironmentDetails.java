@@ -102,32 +102,45 @@ public final class CreateOkeClusterDeployEnvironmentDetails extends CreateDeploy
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateOkeClusterDeployEnvironmentDetails build() {
-            CreateOkeClusterDeployEnvironmentDetails __instance__ =
+            CreateOkeClusterDeployEnvironmentDetails model =
                     new CreateOkeClusterDeployEnvironmentDetails(
-                            description,
-                            displayName,
-                            projectId,
-                            freeformTags,
-                            definedTags,
-                            clusterId,
-                            networkChannel);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.projectId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.clusterId,
+                            this.networkChannel);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateOkeClusterDeployEnvironmentDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .projectId(o.getProjectId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .clusterId(o.getClusterId())
-                            .networkChannel(o.getNetworkChannel());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateOkeClusterDeployEnvironmentDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("projectId")) {
+                this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("clusterId")) {
+                this.clusterId(model.getClusterId());
+            }
+            if (model.wasPropertyExplicitlySet("networkChannel")) {
+                this.networkChannel(model.getNetworkChannel());
+            }
+            return this;
         }
     }
 
@@ -193,7 +206,6 @@ public final class CreateOkeClusterDeployEnvironmentDetails extends CreateDeploy
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", clusterId=").append(String.valueOf(this.clusterId));
         sb.append(", networkChannel=").append(String.valueOf(this.networkChannel));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -211,8 +223,7 @@ public final class CreateOkeClusterDeployEnvironmentDetails extends CreateDeploy
                 (CreateOkeClusterDeployEnvironmentDetails) o;
         return java.util.Objects.equals(this.clusterId, other.clusterId)
                 && java.util.Objects.equals(this.networkChannel, other.networkChannel)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -223,16 +234,6 @@ public final class CreateOkeClusterDeployEnvironmentDetails extends CreateDeploy
         result =
                 (result * PRIME)
                         + (this.networkChannel == null ? 43 : this.networkChannel.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

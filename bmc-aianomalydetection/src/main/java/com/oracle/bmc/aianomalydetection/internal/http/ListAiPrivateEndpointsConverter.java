@@ -170,8 +170,8 @@ public class ListAiPrivateEndpointsConverter {
                                         builder =
                                                 com.oracle.bmc.aianomalydetection.responses
                                                         .ListAiPrivateEndpointsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.aiPrivateEndpointCollection(response.getItem());
 

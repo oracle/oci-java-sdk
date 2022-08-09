@@ -19,7 +19,8 @@ package com.oracle.bmc.devops.model;
     builder = BitbucketServerFilterAttributes.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BitbucketServerFilterAttributes {
+public final class BitbucketServerFilterAttributes
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"headRef", "baseRef"})
     public BitbucketServerFilterAttributes(String headRef, String baseRef) {
@@ -67,18 +68,23 @@ public final class BitbucketServerFilterAttributes {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BitbucketServerFilterAttributes build() {
-            BitbucketServerFilterAttributes __instance__ =
-                    new BitbucketServerFilterAttributes(headRef, baseRef);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BitbucketServerFilterAttributes model =
+                    new BitbucketServerFilterAttributes(this.headRef, this.baseRef);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BitbucketServerFilterAttributes o) {
-            Builder copiedBuilder = headRef(o.getHeadRef()).baseRef(o.getBaseRef());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BitbucketServerFilterAttributes model) {
+            if (model.wasPropertyExplicitlySet("headRef")) {
+                this.headRef(model.getHeadRef());
+            }
+            if (model.wasPropertyExplicitlySet("baseRef")) {
+                this.baseRef(model.getBaseRef());
+            }
+            return this;
         }
     }
 
@@ -134,9 +140,9 @@ public final class BitbucketServerFilterAttributes {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BitbucketServerFilterAttributes(");
+        sb.append("super=").append(super.toString());
         sb.append("headRef=").append(String.valueOf(this.headRef));
         sb.append(", baseRef=").append(String.valueOf(this.baseRef));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,7 +159,7 @@ public final class BitbucketServerFilterAttributes {
         BitbucketServerFilterAttributes other = (BitbucketServerFilterAttributes) o;
         return java.util.Objects.equals(this.headRef, other.headRef)
                 && java.util.Objects.equals(this.baseRef, other.baseRef)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -162,16 +168,7 @@ public final class BitbucketServerFilterAttributes {
         int result = 1;
         result = (result * PRIME) + (this.headRef == null ? 43 : this.headRef.hashCode());
         result = (result * PRIME) + (this.baseRef == null ? 43 : this.baseRef.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

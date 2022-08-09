@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = RestoreAutonomousDatabaseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RestoreAutonomousDatabaseDetails {
+public final class RestoreAutonomousDatabaseDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timestamp", "databaseSCN", "latest"})
     public RestoreAutonomousDatabaseDetails(
@@ -90,21 +91,27 @@ public final class RestoreAutonomousDatabaseDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RestoreAutonomousDatabaseDetails build() {
-            RestoreAutonomousDatabaseDetails __instance__ =
-                    new RestoreAutonomousDatabaseDetails(timestamp, databaseSCN, latest);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RestoreAutonomousDatabaseDetails model =
+                    new RestoreAutonomousDatabaseDetails(
+                            this.timestamp, this.databaseSCN, this.latest);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RestoreAutonomousDatabaseDetails o) {
-            Builder copiedBuilder =
-                    timestamp(o.getTimestamp())
-                            .databaseSCN(o.getDatabaseSCN())
-                            .latest(o.getLatest());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RestoreAutonomousDatabaseDetails model) {
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSCN")) {
+                this.databaseSCN(model.getDatabaseSCN());
+            }
+            if (model.wasPropertyExplicitlySet("latest")) {
+                this.latest(model.getLatest());
+            }
+            return this;
         }
     }
 
@@ -178,10 +185,10 @@ public final class RestoreAutonomousDatabaseDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RestoreAutonomousDatabaseDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", databaseSCN=").append(String.valueOf(this.databaseSCN));
         sb.append(", latest=").append(String.valueOf(this.latest));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,7 +206,7 @@ public final class RestoreAutonomousDatabaseDetails {
         return java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.databaseSCN, other.databaseSCN)
                 && java.util.Objects.equals(this.latest, other.latest)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -209,16 +216,7 @@ public final class RestoreAutonomousDatabaseDetails {
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
         result = (result * PRIME) + (this.databaseSCN == null ? 43 : this.databaseSCN.hashCode());
         result = (result * PRIME) + (this.latest == null ? 43 : this.latest.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

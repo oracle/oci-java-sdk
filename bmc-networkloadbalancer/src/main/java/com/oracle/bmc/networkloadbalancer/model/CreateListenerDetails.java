@@ -22,7 +22,8 @@ package com.oracle.bmc.networkloadbalancer.model;
     builder = CreateListenerDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateListenerDetails {
+public final class CreateListenerDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -164,24 +165,37 @@ public final class CreateListenerDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateListenerDetails build() {
-            CreateListenerDetails __instance__ =
+            CreateListenerDetails model =
                     new CreateListenerDetails(
-                            name, defaultBackendSetName, port, protocol, ipVersion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.defaultBackendSetName,
+                            this.port,
+                            this.protocol,
+                            this.ipVersion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateListenerDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .defaultBackendSetName(o.getDefaultBackendSetName())
-                            .port(o.getPort())
-                            .protocol(o.getProtocol())
-                            .ipVersion(o.getIpVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateListenerDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("defaultBackendSetName")) {
+                this.defaultBackendSetName(model.getDefaultBackendSetName());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("ipVersion")) {
+                this.ipVersion(model.getIpVersion());
+            }
+            return this;
         }
     }
 
@@ -311,12 +325,12 @@ public final class CreateListenerDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateListenerDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", defaultBackendSetName=").append(String.valueOf(this.defaultBackendSetName));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", protocol=").append(String.valueOf(this.protocol));
         sb.append(", ipVersion=").append(String.valueOf(this.ipVersion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -336,7 +350,7 @@ public final class CreateListenerDetails {
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.protocol, other.protocol)
                 && java.util.Objects.equals(this.ipVersion, other.ipVersion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -352,16 +366,7 @@ public final class CreateListenerDetails {
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
         result = (result * PRIME) + (this.ipVersion == null ? 43 : this.ipVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

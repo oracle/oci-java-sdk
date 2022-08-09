@@ -64,17 +64,22 @@ public final class NginxCanaryStrategy extends OkeCanaryStrategy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NginxCanaryStrategy build() {
-            NginxCanaryStrategy __instance__ = new NginxCanaryStrategy(namespace, ingressName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NginxCanaryStrategy model = new NginxCanaryStrategy(this.namespace, this.ingressName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NginxCanaryStrategy o) {
-            Builder copiedBuilder = namespace(o.getNamespace()).ingressName(o.getIngressName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NginxCanaryStrategy model) {
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("ingressName")) {
+                this.ingressName(model.getIngressName());
+            }
+            return this;
         }
     }
 
@@ -140,7 +145,6 @@ public final class NginxCanaryStrategy extends OkeCanaryStrategy {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", ingressName=").append(String.valueOf(this.ingressName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -157,8 +161,7 @@ public final class NginxCanaryStrategy extends OkeCanaryStrategy {
         NginxCanaryStrategy other = (NginxCanaryStrategy) o;
         return java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.ingressName, other.ingressName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -167,16 +170,6 @@ public final class NginxCanaryStrategy extends OkeCanaryStrategy {
         int result = super.hashCode();
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result = (result * PRIME) + (this.ingressName == null ? 43 : this.ingressName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

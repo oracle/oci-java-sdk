@@ -57,18 +57,23 @@ public final class NodeSourceViaImageOption extends NodeSourceOption {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NodeSourceViaImageOption build() {
-            NodeSourceViaImageOption __instance__ =
-                    new NodeSourceViaImageOption(sourceName, imageId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            NodeSourceViaImageOption model =
+                    new NodeSourceViaImageOption(this.sourceName, this.imageId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(NodeSourceViaImageOption o) {
-            Builder copiedBuilder = sourceName(o.getSourceName()).imageId(o.getImageId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(NodeSourceViaImageOption model) {
+            if (model.wasPropertyExplicitlySet("sourceName")) {
+                this.sourceName(model.getSourceName());
+            }
+            if (model.wasPropertyExplicitlySet("imageId")) {
+                this.imageId(model.getImageId());
+            }
+            return this;
         }
     }
 
@@ -118,7 +123,6 @@ public final class NodeSourceViaImageOption extends NodeSourceOption {
         sb.append("NodeSourceViaImageOption(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -133,9 +137,7 @@ public final class NodeSourceViaImageOption extends NodeSourceOption {
         }
 
         NodeSourceViaImageOption other = (NodeSourceViaImageOption) o;
-        return java.util.Objects.equals(this.imageId, other.imageId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.imageId, other.imageId) && super.equals(other);
     }
 
     @Override
@@ -143,16 +145,6 @@ public final class NodeSourceViaImageOption extends NodeSourceOption {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

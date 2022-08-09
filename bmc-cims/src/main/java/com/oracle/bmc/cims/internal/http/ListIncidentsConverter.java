@@ -168,8 +168,8 @@ public class ListIncidentsConverter {
                                         builder =
                                                 com.oracle.bmc.cims.responses.ListIncidentsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

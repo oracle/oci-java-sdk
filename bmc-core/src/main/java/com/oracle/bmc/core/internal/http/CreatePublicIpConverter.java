@@ -95,8 +95,8 @@ public class CreatePublicIpConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses.CreatePublicIpResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.publicIp(response.getItem());
 

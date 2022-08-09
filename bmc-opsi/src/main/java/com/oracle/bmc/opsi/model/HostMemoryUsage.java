@@ -263,49 +263,78 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostMemoryUsage build() {
-            HostMemoryUsage __instance__ =
+            HostMemoryUsage model =
                     new HostMemoryUsage(
-                            timeCollected,
-                            memoryUsedInGB,
-                            memoryUtilizationInPercent,
-                            memoryLoadInGB,
-                            realMemoryInKB,
-                            freeMemoryInKB,
-                            logicalMemoryUsedInGB,
-                            logicalMemoryUtilizationInPercent,
-                            freeLogicalMemoryInKB,
-                            majorPageFaults,
-                            swapFreeInKB,
-                            anonHugePagesInKB,
-                            hugePagesFree,
-                            hugePagesReserved,
-                            hugePagesSurplus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeCollected,
+                            this.memoryUsedInGB,
+                            this.memoryUtilizationInPercent,
+                            this.memoryLoadInGB,
+                            this.realMemoryInKB,
+                            this.freeMemoryInKB,
+                            this.logicalMemoryUsedInGB,
+                            this.logicalMemoryUtilizationInPercent,
+                            this.freeLogicalMemoryInKB,
+                            this.majorPageFaults,
+                            this.swapFreeInKB,
+                            this.anonHugePagesInKB,
+                            this.hugePagesFree,
+                            this.hugePagesReserved,
+                            this.hugePagesSurplus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostMemoryUsage o) {
-            Builder copiedBuilder =
-                    timeCollected(o.getTimeCollected())
-                            .memoryUsedInGB(o.getMemoryUsedInGB())
-                            .memoryUtilizationInPercent(o.getMemoryUtilizationInPercent())
-                            .memoryLoadInGB(o.getMemoryLoadInGB())
-                            .realMemoryInKB(o.getRealMemoryInKB())
-                            .freeMemoryInKB(o.getFreeMemoryInKB())
-                            .logicalMemoryUsedInGB(o.getLogicalMemoryUsedInGB())
-                            .logicalMemoryUtilizationInPercent(
-                                    o.getLogicalMemoryUtilizationInPercent())
-                            .freeLogicalMemoryInKB(o.getFreeLogicalMemoryInKB())
-                            .majorPageFaults(o.getMajorPageFaults())
-                            .swapFreeInKB(o.getSwapFreeInKB())
-                            .anonHugePagesInKB(o.getAnonHugePagesInKB())
-                            .hugePagesFree(o.getHugePagesFree())
-                            .hugePagesReserved(o.getHugePagesReserved())
-                            .hugePagesSurplus(o.getHugePagesSurplus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostMemoryUsage model) {
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("memoryUsedInGB")) {
+                this.memoryUsedInGB(model.getMemoryUsedInGB());
+            }
+            if (model.wasPropertyExplicitlySet("memoryUtilizationInPercent")) {
+                this.memoryUtilizationInPercent(model.getMemoryUtilizationInPercent());
+            }
+            if (model.wasPropertyExplicitlySet("memoryLoadInGB")) {
+                this.memoryLoadInGB(model.getMemoryLoadInGB());
+            }
+            if (model.wasPropertyExplicitlySet("realMemoryInKB")) {
+                this.realMemoryInKB(model.getRealMemoryInKB());
+            }
+            if (model.wasPropertyExplicitlySet("freeMemoryInKB")) {
+                this.freeMemoryInKB(model.getFreeMemoryInKB());
+            }
+            if (model.wasPropertyExplicitlySet("logicalMemoryUsedInGB")) {
+                this.logicalMemoryUsedInGB(model.getLogicalMemoryUsedInGB());
+            }
+            if (model.wasPropertyExplicitlySet("logicalMemoryUtilizationInPercent")) {
+                this.logicalMemoryUtilizationInPercent(
+                        model.getLogicalMemoryUtilizationInPercent());
+            }
+            if (model.wasPropertyExplicitlySet("freeLogicalMemoryInKB")) {
+                this.freeLogicalMemoryInKB(model.getFreeLogicalMemoryInKB());
+            }
+            if (model.wasPropertyExplicitlySet("majorPageFaults")) {
+                this.majorPageFaults(model.getMajorPageFaults());
+            }
+            if (model.wasPropertyExplicitlySet("swapFreeInKB")) {
+                this.swapFreeInKB(model.getSwapFreeInKB());
+            }
+            if (model.wasPropertyExplicitlySet("anonHugePagesInKB")) {
+                this.anonHugePagesInKB(model.getAnonHugePagesInKB());
+            }
+            if (model.wasPropertyExplicitlySet("hugePagesFree")) {
+                this.hugePagesFree(model.getHugePagesFree());
+            }
+            if (model.wasPropertyExplicitlySet("hugePagesReserved")) {
+                this.hugePagesReserved(model.getHugePagesReserved());
+            }
+            if (model.wasPropertyExplicitlySet("hugePagesSurplus")) {
+                this.hugePagesSurplus(model.getHugePagesSurplus());
+            }
+            return this;
         }
     }
 
@@ -580,7 +609,6 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
         sb.append(", hugePagesFree=").append(String.valueOf(this.hugePagesFree));
         sb.append(", hugePagesReserved=").append(String.valueOf(this.hugePagesReserved));
         sb.append(", hugePagesSurplus=").append(String.valueOf(this.hugePagesSurplus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -612,8 +640,7 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
                 && java.util.Objects.equals(this.hugePagesFree, other.hugePagesFree)
                 && java.util.Objects.equals(this.hugePagesReserved, other.hugePagesReserved)
                 && java.util.Objects.equals(this.hugePagesSurplus, other.hugePagesSurplus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -668,16 +695,6 @@ public final class HostMemoryUsage extends HostPerformanceMetricGroup {
         result =
                 (result * PRIME)
                         + (this.hugePagesSurplus == null ? 43 : this.hugePagesSurplus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

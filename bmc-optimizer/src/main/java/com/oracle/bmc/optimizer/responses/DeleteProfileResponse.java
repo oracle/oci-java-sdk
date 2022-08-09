@@ -25,9 +25,12 @@ public class DeleteProfileResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
-    private DeleteProfileResponse(int __httpStatusCode__, String opcRequestId) {
-        super(__httpStatusCode__);
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    private DeleteProfileResponse(
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
@@ -36,6 +39,13 @@ public class DeleteProfileResponse extends com.oracle.bmc.responses.BmcResponse 
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -64,6 +74,7 @@ public class DeleteProfileResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public Builder copy(DeleteProfileResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
 
             return this;
@@ -74,7 +85,7 @@ public class DeleteProfileResponse extends com.oracle.bmc.responses.BmcResponse 
          * @return the response object
          */
         public DeleteProfileResponse build() {
-            return new DeleteProfileResponse(__httpStatusCode__, opcRequestId);
+            return new DeleteProfileResponse(__httpStatusCode__, headers, opcRequestId);
         }
     }
 

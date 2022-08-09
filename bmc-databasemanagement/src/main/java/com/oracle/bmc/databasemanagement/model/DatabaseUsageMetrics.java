@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemanagement.model;
     builder = DatabaseUsageMetrics.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseUsageMetrics {
+public final class DatabaseUsageMetrics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dbId",
@@ -228,38 +228,57 @@ public final class DatabaseUsageMetrics {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseUsageMetrics build() {
-            DatabaseUsageMetrics __instance__ =
+            DatabaseUsageMetrics model =
                     new DatabaseUsageMetrics(
-                            dbId,
-                            compartmentId,
-                            databaseType,
-                            databaseSubType,
-                            deploymentType,
-                            databaseVersion,
-                            workloadType,
-                            databaseName,
-                            databaseContainerId,
-                            metrics);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dbId,
+                            this.compartmentId,
+                            this.databaseType,
+                            this.databaseSubType,
+                            this.deploymentType,
+                            this.databaseVersion,
+                            this.workloadType,
+                            this.databaseName,
+                            this.databaseContainerId,
+                            this.metrics);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseUsageMetrics o) {
-            Builder copiedBuilder =
-                    dbId(o.getDbId())
-                            .compartmentId(o.getCompartmentId())
-                            .databaseType(o.getDatabaseType())
-                            .databaseSubType(o.getDatabaseSubType())
-                            .deploymentType(o.getDeploymentType())
-                            .databaseVersion(o.getDatabaseVersion())
-                            .workloadType(o.getWorkloadType())
-                            .databaseName(o.getDatabaseName())
-                            .databaseContainerId(o.getDatabaseContainerId())
-                            .metrics(o.getMetrics());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseUsageMetrics model) {
+            if (model.wasPropertyExplicitlySet("dbId")) {
+                this.dbId(model.getDbId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSubType")) {
+                this.databaseSubType(model.getDatabaseSubType());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentType")) {
+                this.deploymentType(model.getDeploymentType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("workloadType")) {
+                this.workloadType(model.getWorkloadType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseName")) {
+                this.databaseName(model.getDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseContainerId")) {
+                this.databaseContainerId(model.getDatabaseContainerId());
+            }
+            if (model.wasPropertyExplicitlySet("metrics")) {
+                this.metrics(model.getMetrics());
+            }
+            return this;
         }
     }
 
@@ -431,6 +450,7 @@ public final class DatabaseUsageMetrics {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseUsageMetrics(");
+        sb.append("super=").append(super.toString());
         sb.append("dbId=").append(String.valueOf(this.dbId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", databaseType=").append(String.valueOf(this.databaseType));
@@ -441,7 +461,6 @@ public final class DatabaseUsageMetrics {
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));
         sb.append(", databaseContainerId=").append(String.valueOf(this.databaseContainerId));
         sb.append(", metrics=").append(String.valueOf(this.metrics));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -466,7 +485,7 @@ public final class DatabaseUsageMetrics {
                 && java.util.Objects.equals(this.databaseName, other.databaseName)
                 && java.util.Objects.equals(this.databaseContainerId, other.databaseContainerId)
                 && java.util.Objects.equals(this.metrics, other.metrics)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -495,16 +514,7 @@ public final class DatabaseUsageMetrics {
                                 ? 43
                                 : this.databaseContainerId.hashCode());
         result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

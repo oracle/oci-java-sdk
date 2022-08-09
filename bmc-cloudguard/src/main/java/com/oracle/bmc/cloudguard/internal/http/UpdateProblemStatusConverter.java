@@ -115,8 +115,8 @@ public class UpdateProblemStatusConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .UpdateProblemStatusResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.problem(response.getItem());
 

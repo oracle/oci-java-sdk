@@ -110,8 +110,8 @@ public class RemoveQuotaLockConverter {
                                         builder =
                                                 com.oracle.bmc.limits.responses
                                                         .RemoveQuotaLockResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.quota(response.getItem());
 

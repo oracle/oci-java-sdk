@@ -32,7 +32,7 @@ package com.oracle.bmc.bastion.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class TargetResourceDetails {
+public class TargetResourceDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"targetResourcePort"})
     protected TargetResourceDetails(Integer targetResourcePort) {
@@ -67,6 +67,7 @@ public class TargetResourceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TargetResourceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("targetResourcePort=").append(String.valueOf(this.targetResourcePort));
         sb.append(")");
         return sb.toString();
@@ -82,7 +83,8 @@ public class TargetResourceDetails {
         }
 
         TargetResourceDetails other = (TargetResourceDetails) o;
-        return java.util.Objects.equals(this.targetResourcePort, other.targetResourcePort);
+        return java.util.Objects.equals(this.targetResourcePort, other.targetResourcePort)
+                && super.equals(other);
     }
 
     @Override
@@ -94,6 +96,7 @@ public class TargetResourceDetails {
                         + (this.targetResourcePort == null
                                 ? 43
                                 : this.targetResourcePort.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

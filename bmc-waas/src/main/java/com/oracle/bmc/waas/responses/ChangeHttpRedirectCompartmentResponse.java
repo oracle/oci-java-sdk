@@ -21,9 +21,12 @@ public class ChangeHttpRedirectCompartmentResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
-    private ChangeHttpRedirectCompartmentResponse(int __httpStatusCode__, String opcRequestId) {
-        super(__httpStatusCode__);
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    private ChangeHttpRedirectCompartmentResponse(
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
@@ -32,6 +35,13 @@ public class ChangeHttpRedirectCompartmentResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -56,6 +66,7 @@ public class ChangeHttpRedirectCompartmentResponse extends com.oracle.bmc.respon
          */
         public Builder copy(ChangeHttpRedirectCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
 
             return this;
@@ -66,7 +77,8 @@ public class ChangeHttpRedirectCompartmentResponse extends com.oracle.bmc.respon
          * @return the response object
          */
         public ChangeHttpRedirectCompartmentResponse build() {
-            return new ChangeHttpRedirectCompartmentResponse(__httpStatusCode__, opcRequestId);
+            return new ChangeHttpRedirectCompartmentResponse(
+                    __httpStatusCode__, headers, opcRequestId);
         }
     }
 

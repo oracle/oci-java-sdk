@@ -33,7 +33,7 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CredentialDetails {
+public class CredentialDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"credentialSourceName"})
     protected CredentialDetails(String credentialSourceName) {
@@ -68,6 +68,7 @@ public class CredentialDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CredentialDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("credentialSourceName=").append(String.valueOf(this.credentialSourceName));
         sb.append(")");
         return sb.toString();
@@ -83,7 +84,8 @@ public class CredentialDetails {
         }
 
         CredentialDetails other = (CredentialDetails) o;
-        return java.util.Objects.equals(this.credentialSourceName, other.credentialSourceName);
+        return java.util.Objects.equals(this.credentialSourceName, other.credentialSourceName)
+                && super.equals(other);
     }
 
     @Override
@@ -95,6 +97,7 @@ public class CredentialDetails {
                         + (this.credentialSourceName == null
                                 ? 43
                                 : this.credentialSourceName.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

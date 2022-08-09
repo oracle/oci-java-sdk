@@ -19,7 +19,8 @@ package com.oracle.bmc.marketplace.model;
     builder = ThirdPartyPaidListingEligibility.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ThirdPartyPaidListingEligibility {
+public final class ThirdPartyPaidListingEligibility
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isPaidListingEligible",
@@ -91,22 +92,29 @@ public final class ThirdPartyPaidListingEligibility {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ThirdPartyPaidListingEligibility build() {
-            ThirdPartyPaidListingEligibility __instance__ =
+            ThirdPartyPaidListingEligibility model =
                     new ThirdPartyPaidListingEligibility(
-                            isPaidListingEligible, isPaidListingThrottled, eligibilityReason);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isPaidListingEligible,
+                            this.isPaidListingThrottled,
+                            this.eligibilityReason);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ThirdPartyPaidListingEligibility o) {
-            Builder copiedBuilder =
-                    isPaidListingEligible(o.getIsPaidListingEligible())
-                            .isPaidListingThrottled(o.getIsPaidListingThrottled())
-                            .eligibilityReason(o.getEligibilityReason());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ThirdPartyPaidListingEligibility model) {
+            if (model.wasPropertyExplicitlySet("isPaidListingEligible")) {
+                this.isPaidListingEligible(model.getIsPaidListingEligible());
+            }
+            if (model.wasPropertyExplicitlySet("isPaidListingThrottled")) {
+                this.isPaidListingThrottled(model.getIsPaidListingThrottled());
+            }
+            if (model.wasPropertyExplicitlySet("eligibilityReason")) {
+                this.eligibilityReason(model.getEligibilityReason());
+            }
+            return this;
         }
     }
 
@@ -232,10 +240,10 @@ public final class ThirdPartyPaidListingEligibility {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ThirdPartyPaidListingEligibility(");
+        sb.append("super=").append(super.toString());
         sb.append("isPaidListingEligible=").append(String.valueOf(this.isPaidListingEligible));
         sb.append(", isPaidListingThrottled=").append(String.valueOf(this.isPaidListingThrottled));
         sb.append(", eligibilityReason=").append(String.valueOf(this.eligibilityReason));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -254,7 +262,7 @@ public final class ThirdPartyPaidListingEligibility {
                 && java.util.Objects.equals(
                         this.isPaidListingThrottled, other.isPaidListingThrottled)
                 && java.util.Objects.equals(this.eligibilityReason, other.eligibilityReason)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -274,16 +282,7 @@ public final class ThirdPartyPaidListingEligibility {
         result =
                 (result * PRIME)
                         + (this.eligibilityReason == null ? 43 : this.eligibilityReason.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

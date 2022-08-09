@@ -50,7 +50,7 @@ package com.oracle.bmc.dataflow.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateRunDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateRunDetails {
+public final class CreateRunDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "applicationId",
@@ -518,58 +518,97 @@ public final class CreateRunDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateRunDetails build() {
-            CreateRunDetails __instance__ =
+            CreateRunDetails model =
                     new CreateRunDetails(
-                            applicationId,
-                            archiveUri,
-                            arguments,
-                            compartmentId,
-                            configuration,
-                            definedTags,
-                            displayName,
-                            driverShape,
-                            driverShapeConfig,
-                            execute,
-                            executorShape,
-                            executorShapeConfig,
-                            freeformTags,
-                            logsBucketUri,
-                            metastoreId,
-                            numExecutors,
-                            parameters,
-                            sparkVersion,
-                            type,
-                            warehouseBucketUri);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.applicationId,
+                            this.archiveUri,
+                            this.arguments,
+                            this.compartmentId,
+                            this.configuration,
+                            this.definedTags,
+                            this.displayName,
+                            this.driverShape,
+                            this.driverShapeConfig,
+                            this.execute,
+                            this.executorShape,
+                            this.executorShapeConfig,
+                            this.freeformTags,
+                            this.logsBucketUri,
+                            this.metastoreId,
+                            this.numExecutors,
+                            this.parameters,
+                            this.sparkVersion,
+                            this.type,
+                            this.warehouseBucketUri);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateRunDetails o) {
-            Builder copiedBuilder =
-                    applicationId(o.getApplicationId())
-                            .archiveUri(o.getArchiveUri())
-                            .arguments(o.getArguments())
-                            .compartmentId(o.getCompartmentId())
-                            .configuration(o.getConfiguration())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .driverShape(o.getDriverShape())
-                            .driverShapeConfig(o.getDriverShapeConfig())
-                            .execute(o.getExecute())
-                            .executorShape(o.getExecutorShape())
-                            .executorShapeConfig(o.getExecutorShapeConfig())
-                            .freeformTags(o.getFreeformTags())
-                            .logsBucketUri(o.getLogsBucketUri())
-                            .metastoreId(o.getMetastoreId())
-                            .numExecutors(o.getNumExecutors())
-                            .parameters(o.getParameters())
-                            .sparkVersion(o.getSparkVersion())
-                            .type(o.getType())
-                            .warehouseBucketUri(o.getWarehouseBucketUri());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateRunDetails model) {
+            if (model.wasPropertyExplicitlySet("applicationId")) {
+                this.applicationId(model.getApplicationId());
+            }
+            if (model.wasPropertyExplicitlySet("archiveUri")) {
+                this.archiveUri(model.getArchiveUri());
+            }
+            if (model.wasPropertyExplicitlySet("arguments")) {
+                this.arguments(model.getArguments());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("configuration")) {
+                this.configuration(model.getConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("driverShape")) {
+                this.driverShape(model.getDriverShape());
+            }
+            if (model.wasPropertyExplicitlySet("driverShapeConfig")) {
+                this.driverShapeConfig(model.getDriverShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("execute")) {
+                this.execute(model.getExecute());
+            }
+            if (model.wasPropertyExplicitlySet("executorShape")) {
+                this.executorShape(model.getExecutorShape());
+            }
+            if (model.wasPropertyExplicitlySet("executorShapeConfig")) {
+                this.executorShapeConfig(model.getExecutorShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("logsBucketUri")) {
+                this.logsBucketUri(model.getLogsBucketUri());
+            }
+            if (model.wasPropertyExplicitlySet("metastoreId")) {
+                this.metastoreId(model.getMetastoreId());
+            }
+            if (model.wasPropertyExplicitlySet("numExecutors")) {
+                this.numExecutors(model.getNumExecutors());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("sparkVersion")) {
+                this.sparkVersion(model.getSparkVersion());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("warehouseBucketUri")) {
+                this.warehouseBucketUri(model.getWarehouseBucketUri());
+            }
+            return this;
         }
     }
 
@@ -949,6 +988,7 @@ public final class CreateRunDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateRunDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("applicationId=").append(String.valueOf(this.applicationId));
         sb.append(", archiveUri=").append(String.valueOf(this.archiveUri));
         sb.append(", arguments=").append(String.valueOf(this.arguments));
@@ -969,7 +1009,6 @@ public final class CreateRunDetails {
         sb.append(", sparkVersion=").append(String.valueOf(this.sparkVersion));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", warehouseBucketUri=").append(String.valueOf(this.warehouseBucketUri));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1004,7 +1043,7 @@ public final class CreateRunDetails {
                 && java.util.Objects.equals(this.sparkVersion, other.sparkVersion)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.warehouseBucketUri, other.warehouseBucketUri)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1051,16 +1090,7 @@ public final class CreateRunDetails {
                         + (this.warehouseBucketUri == null
                                 ? 43
                                 : this.warehouseBucketUri.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

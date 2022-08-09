@@ -116,8 +116,8 @@ public class GetRoverEntitlementConverter {
                                         builder =
                                                 com.oracle.bmc.rover.responses
                                                         .GetRoverEntitlementResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.roverEntitlement(response.getItem());
 

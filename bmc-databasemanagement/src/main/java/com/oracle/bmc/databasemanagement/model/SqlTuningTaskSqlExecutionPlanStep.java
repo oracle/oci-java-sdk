@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = SqlTuningTaskSqlExecutionPlanStep.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlTuningTaskSqlExecutionPlanStep {
+public final class SqlTuningTaskSqlExecutionPlanStep
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "planHashValue",
@@ -613,76 +614,133 @@ public final class SqlTuningTaskSqlExecutionPlanStep {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlTuningTaskSqlExecutionPlanStep build() {
-            SqlTuningTaskSqlExecutionPlanStep __instance__ =
+            SqlTuningTaskSqlExecutionPlanStep model =
                     new SqlTuningTaskSqlExecutionPlanStep(
-                            planHashValue,
-                            stepId,
-                            parentStepId,
-                            position,
-                            operation,
-                            options,
-                            optimizerMode,
-                            cost,
-                            cardinality,
-                            bytes,
-                            cpuCost,
-                            ioCost,
-                            tempSpace,
-                            time,
-                            objectNode,
-                            objectOwner,
-                            objectName,
-                            objectPosition,
-                            objectType,
-                            partitionStart,
-                            partitionStop,
-                            partitionId,
-                            remarks,
-                            numberOfSearchColumn,
-                            other,
-                            otherTag,
-                            attribute,
-                            accessPredicates,
-                            filterPredicates);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.planHashValue,
+                            this.stepId,
+                            this.parentStepId,
+                            this.position,
+                            this.operation,
+                            this.options,
+                            this.optimizerMode,
+                            this.cost,
+                            this.cardinality,
+                            this.bytes,
+                            this.cpuCost,
+                            this.ioCost,
+                            this.tempSpace,
+                            this.time,
+                            this.objectNode,
+                            this.objectOwner,
+                            this.objectName,
+                            this.objectPosition,
+                            this.objectType,
+                            this.partitionStart,
+                            this.partitionStop,
+                            this.partitionId,
+                            this.remarks,
+                            this.numberOfSearchColumn,
+                            this.other,
+                            this.otherTag,
+                            this.attribute,
+                            this.accessPredicates,
+                            this.filterPredicates);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlTuningTaskSqlExecutionPlanStep o) {
-            Builder copiedBuilder =
-                    planHashValue(o.getPlanHashValue())
-                            .stepId(o.getStepId())
-                            .parentStepId(o.getParentStepId())
-                            .position(o.getPosition())
-                            .operation(o.getOperation())
-                            .options(o.getOptions())
-                            .optimizerMode(o.getOptimizerMode())
-                            .cost(o.getCost())
-                            .cardinality(o.getCardinality())
-                            .bytes(o.getBytes())
-                            .cpuCost(o.getCpuCost())
-                            .ioCost(o.getIoCost())
-                            .tempSpace(o.getTempSpace())
-                            .time(o.getTime())
-                            .objectNode(o.getObjectNode())
-                            .objectOwner(o.getObjectOwner())
-                            .objectName(o.getObjectName())
-                            .objectPosition(o.getObjectPosition())
-                            .objectType(o.getObjectType())
-                            .partitionStart(o.getPartitionStart())
-                            .partitionStop(o.getPartitionStop())
-                            .partitionId(o.getPartitionId())
-                            .remarks(o.getRemarks())
-                            .numberOfSearchColumn(o.getNumberOfSearchColumn())
-                            .other(o.getOther())
-                            .otherTag(o.getOtherTag())
-                            .attribute(o.getAttribute())
-                            .accessPredicates(o.getAccessPredicates())
-                            .filterPredicates(o.getFilterPredicates());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlTuningTaskSqlExecutionPlanStep model) {
+            if (model.wasPropertyExplicitlySet("planHashValue")) {
+                this.planHashValue(model.getPlanHashValue());
+            }
+            if (model.wasPropertyExplicitlySet("stepId")) {
+                this.stepId(model.getStepId());
+            }
+            if (model.wasPropertyExplicitlySet("parentStepId")) {
+                this.parentStepId(model.getParentStepId());
+            }
+            if (model.wasPropertyExplicitlySet("position")) {
+                this.position(model.getPosition());
+            }
+            if (model.wasPropertyExplicitlySet("operation")) {
+                this.operation(model.getOperation());
+            }
+            if (model.wasPropertyExplicitlySet("options")) {
+                this.options(model.getOptions());
+            }
+            if (model.wasPropertyExplicitlySet("optimizerMode")) {
+                this.optimizerMode(model.getOptimizerMode());
+            }
+            if (model.wasPropertyExplicitlySet("cost")) {
+                this.cost(model.getCost());
+            }
+            if (model.wasPropertyExplicitlySet("cardinality")) {
+                this.cardinality(model.getCardinality());
+            }
+            if (model.wasPropertyExplicitlySet("bytes")) {
+                this.bytes(model.getBytes());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCost")) {
+                this.cpuCost(model.getCpuCost());
+            }
+            if (model.wasPropertyExplicitlySet("ioCost")) {
+                this.ioCost(model.getIoCost());
+            }
+            if (model.wasPropertyExplicitlySet("tempSpace")) {
+                this.tempSpace(model.getTempSpace());
+            }
+            if (model.wasPropertyExplicitlySet("time")) {
+                this.time(model.getTime());
+            }
+            if (model.wasPropertyExplicitlySet("objectNode")) {
+                this.objectNode(model.getObjectNode());
+            }
+            if (model.wasPropertyExplicitlySet("objectOwner")) {
+                this.objectOwner(model.getObjectOwner());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("objectPosition")) {
+                this.objectPosition(model.getObjectPosition());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("partitionStart")) {
+                this.partitionStart(model.getPartitionStart());
+            }
+            if (model.wasPropertyExplicitlySet("partitionStop")) {
+                this.partitionStop(model.getPartitionStop());
+            }
+            if (model.wasPropertyExplicitlySet("partitionId")) {
+                this.partitionId(model.getPartitionId());
+            }
+            if (model.wasPropertyExplicitlySet("remarks")) {
+                this.remarks(model.getRemarks());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfSearchColumn")) {
+                this.numberOfSearchColumn(model.getNumberOfSearchColumn());
+            }
+            if (model.wasPropertyExplicitlySet("other")) {
+                this.other(model.getOther());
+            }
+            if (model.wasPropertyExplicitlySet("otherTag")) {
+                this.otherTag(model.getOtherTag());
+            }
+            if (model.wasPropertyExplicitlySet("attribute")) {
+                this.attribute(model.getAttribute());
+            }
+            if (model.wasPropertyExplicitlySet("accessPredicates")) {
+                this.accessPredicates(model.getAccessPredicates());
+            }
+            if (model.wasPropertyExplicitlySet("filterPredicates")) {
+                this.filterPredicates(model.getFilterPredicates());
+            }
+            return this;
         }
     }
 
@@ -1144,6 +1202,7 @@ public final class SqlTuningTaskSqlExecutionPlanStep {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlTuningTaskSqlExecutionPlanStep(");
+        sb.append("super=").append(super.toString());
         sb.append("planHashValue=").append(String.valueOf(this.planHashValue));
         sb.append(", stepId=").append(String.valueOf(this.stepId));
         sb.append(", parentStepId=").append(String.valueOf(this.parentStepId));
@@ -1173,7 +1232,6 @@ public final class SqlTuningTaskSqlExecutionPlanStep {
         sb.append(", attribute=").append(String.valueOf(this.attribute));
         sb.append(", accessPredicates=").append(String.valueOf(this.accessPredicates));
         sb.append(", filterPredicates=").append(String.valueOf(this.filterPredicates));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1217,7 +1275,7 @@ public final class SqlTuningTaskSqlExecutionPlanStep {
                 && java.util.Objects.equals(this.attribute, other.attribute)
                 && java.util.Objects.equals(this.accessPredicates, other.accessPredicates)
                 && java.util.Objects.equals(this.filterPredicates, other.filterPredicates)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1271,16 +1329,7 @@ public final class SqlTuningTaskSqlExecutionPlanStep {
         result =
                 (result * PRIME)
                         + (this.filterPredicates == null ? 43 : this.filterPredicates.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

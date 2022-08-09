@@ -100,30 +100,41 @@ public final class CreateSingleDeployStageRedeploymentDetails extends CreateDepl
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateSingleDeployStageRedeploymentDetails build() {
-            CreateSingleDeployStageRedeploymentDetails __instance__ =
+            CreateSingleDeployStageRedeploymentDetails model =
                     new CreateSingleDeployStageRedeploymentDetails(
-                            deployPipelineId,
-                            displayName,
-                            freeformTags,
-                            definedTags,
-                            previousDeploymentId,
-                            deployStageId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.deployPipelineId,
+                            this.displayName,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.previousDeploymentId,
+                            this.deployStageId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateSingleDeployStageRedeploymentDetails o) {
-            Builder copiedBuilder =
-                    deployPipelineId(o.getDeployPipelineId())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .previousDeploymentId(o.getPreviousDeploymentId())
-                            .deployStageId(o.getDeployStageId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateSingleDeployStageRedeploymentDetails model) {
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("previousDeploymentId")) {
+                this.previousDeploymentId(model.getPreviousDeploymentId());
+            }
+            if (model.wasPropertyExplicitlySet("deployStageId")) {
+                this.deployStageId(model.getDeployStageId());
+            }
+            return this;
         }
     }
 
@@ -195,7 +206,6 @@ public final class CreateSingleDeployStageRedeploymentDetails extends CreateDepl
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", previousDeploymentId=").append(String.valueOf(this.previousDeploymentId));
         sb.append(", deployStageId=").append(String.valueOf(this.deployStageId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -213,8 +223,7 @@ public final class CreateSingleDeployStageRedeploymentDetails extends CreateDepl
                 (CreateSingleDeployStageRedeploymentDetails) o;
         return java.util.Objects.equals(this.previousDeploymentId, other.previousDeploymentId)
                 && java.util.Objects.equals(this.deployStageId, other.deployStageId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -229,16 +238,6 @@ public final class CreateSingleDeployStageRedeploymentDetails extends CreateDepl
         result =
                 (result * PRIME)
                         + (this.deployStageId == null ? 43 : this.deployStageId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

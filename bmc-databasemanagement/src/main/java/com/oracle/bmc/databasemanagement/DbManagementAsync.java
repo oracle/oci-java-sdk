@@ -532,6 +532,62 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
+     * Managed Database, findings, recommendations, rationale, and examples.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOptimizerStatisticsAdvisorExecutionResponse>
+            getOptimizerStatisticsAdvisorExecution(
+                    GetOptimizerStatisticsAdvisorExecutionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetOptimizerStatisticsAdvisorExecutionRequest,
+                                    GetOptimizerStatisticsAdvisorExecutionResponse>
+                            handler);
+
+    /**
+     * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOptimizerStatisticsAdvisorExecutionScriptResponse>
+            getOptimizerStatisticsAdvisorExecutionScript(
+                    GetOptimizerStatisticsAdvisorExecutionScriptRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetOptimizerStatisticsAdvisorExecutionScriptRequest,
+                                    GetOptimizerStatisticsAdvisorExecutionScriptResponse>
+                            handler);
+
+    /**
+     * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOptimizerStatisticsCollectionOperationResponse>
+            getOptimizerStatisticsCollectionOperation(
+                    GetOptimizerStatisticsCollectionOperationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetOptimizerStatisticsCollectionOperationRequest,
+                                    GetOptimizerStatisticsCollectionOperationResponse>
+                            handler);
+
+    /**
      * Gets a summary of the resource usage metrics such as CPU, User I/O, and Storage for each
      * PDB within a specific CDB. If comparmentId is specified, then the metrics for
      * each PDB (within the CDB) in the specified compartment are retrieved.
@@ -595,6 +651,24 @@ public interface DbManagementAsync extends AutoCloseable {
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                     handler);
+
+    /**
+     * Asynchronously implements the findings and recommendations of the Optimizer Statistics Advisor execution.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ImplementOptimizerStatisticsAdvisorRecommendationsResponse>
+            implementOptimizerStatisticsAdvisorRecommendations(
+                    ImplementOptimizerStatisticsAdvisorRecommendationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ImplementOptimizerStatisticsAdvisorRecommendationsRequest,
+                                    ImplementOptimizerStatisticsAdvisorRecommendationsResponse>
+                            handler);
 
     /**
      * Gets the list of ASM properties for the specified managedDatabaseId.
@@ -843,6 +917,76 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
+     * If the date-time range is not specified, then the executions in the last seven days are listed.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOptimizerStatisticsAdvisorExecutionsResponse>
+            listOptimizerStatisticsAdvisorExecutions(
+                    ListOptimizerStatisticsAdvisorExecutionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListOptimizerStatisticsAdvisorExecutionsRequest,
+                                    ListOptimizerStatisticsAdvisorExecutionsResponse>
+                            handler);
+
+    /**
+     * Gets a list of the optimizer statistics collection operations per hour, grouped by task or object status for the specified Managed Database.
+     * You must specify a value for GroupByQueryParam to determine whether the data should be grouped by task status or task object status.
+     * Optionally, you can specify a date-time range (of seven days) to obtain collection aggregations within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * You can further filter the results by providing the optional type of TaskTypeQueryParam.
+     * If the task type not provided, then both Auto and Manual tasks are considered for aggregation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOptimizerStatisticsCollectionAggregationsResponse>
+            listOptimizerStatisticsCollectionAggregations(
+                    ListOptimizerStatisticsCollectionAggregationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListOptimizerStatisticsCollectionAggregationsRequest,
+                                    ListOptimizerStatisticsCollectionAggregationsResponse>
+                            handler);
+
+    /**
+     * Lists the Optimizer Statistics Collection (Auto and Manual) task operation summary for the specified Managed Database.
+     * The summary includes the details of each operation and the number of tasks grouped by status: Completed, In Progress, Failed, and so on.
+     * Optionally, you can specify a date-time range (of seven days) to obtain the list of operations that fall within the specified time range.
+     * If the date-time range is not specified, then the operations in the last seven days are listed.
+     * This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
+     * If you use the same header value in a consecutive request, the next page records are returned.
+     * To obtain the required results, you can apply the different types of filters supported by this API.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOptimizerStatisticsCollectionOperationsResponse>
+            listOptimizerStatisticsCollectionOperations(
+                    ListOptimizerStatisticsCollectionOperationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListOptimizerStatisticsCollectionOperationsRequest,
+                                    ListOptimizerStatisticsCollectionOperationsResponse>
+                            handler);
+
+    /**
      * Gets the list of users on whose behalf the current user acts as proxy.
      *
      * @param request The request object containing the details to send
@@ -901,6 +1045,24 @@ public interface DbManagementAsync extends AutoCloseable {
             ListSystemPrivilegesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>
+                    handler);
+
+    /**
+     * Lists the database table statistics grouped by different statuses such as Not Stale Stats, Stale Stats, and No Stats.
+     * This also includes the percentage of each status.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTableStatisticsResponse> listTableStatistics(
+            ListTableStatisticsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTableStatisticsRequest, ListTableStatisticsResponse>
                     handler);
 
     /**

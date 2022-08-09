@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = ImageShapeCompatibilitySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImageShapeCompatibilitySummary {
+public final class ImageShapeCompatibilitySummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"imageId", "shape", "memoryConstraints", "ocpuConstraints"})
     public ImageShapeCompatibilitySummary(
@@ -91,23 +92,30 @@ public final class ImageShapeCompatibilitySummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageShapeCompatibilitySummary build() {
-            ImageShapeCompatibilitySummary __instance__ =
+            ImageShapeCompatibilitySummary model =
                     new ImageShapeCompatibilitySummary(
-                            imageId, shape, memoryConstraints, ocpuConstraints);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.imageId, this.shape, this.memoryConstraints, this.ocpuConstraints);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImageShapeCompatibilitySummary o) {
-            Builder copiedBuilder =
-                    imageId(o.getImageId())
-                            .shape(o.getShape())
-                            .memoryConstraints(o.getMemoryConstraints())
-                            .ocpuConstraints(o.getOcpuConstraints());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImageShapeCompatibilitySummary model) {
+            if (model.wasPropertyExplicitlySet("imageId")) {
+                this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("memoryConstraints")) {
+                this.memoryConstraints(model.getMemoryConstraints());
+            }
+            if (model.wasPropertyExplicitlySet("ocpuConstraints")) {
+                this.ocpuConstraints(model.getOcpuConstraints());
+            }
+            return this;
         }
     }
 
@@ -177,11 +185,11 @@ public final class ImageShapeCompatibilitySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImageShapeCompatibilitySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("imageId=").append(String.valueOf(this.imageId));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", memoryConstraints=").append(String.valueOf(this.memoryConstraints));
         sb.append(", ocpuConstraints=").append(String.valueOf(this.ocpuConstraints));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -200,7 +208,7 @@ public final class ImageShapeCompatibilitySummary {
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.memoryConstraints, other.memoryConstraints)
                 && java.util.Objects.equals(this.ocpuConstraints, other.ocpuConstraints)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -215,16 +223,7 @@ public final class ImageShapeCompatibilitySummary {
         result =
                 (result * PRIME)
                         + (this.ocpuConstraints == null ? 43 : this.ocpuConstraints.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

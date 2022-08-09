@@ -17,7 +17,7 @@ package com.oracle.bmc.containerengine.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AddOnOptions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddOnOptions {
+public final class AddOnOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isKubernetesDashboardEnabled", "isTillerEnabled"})
     public AddOnOptions(Boolean isKubernetesDashboardEnabled, Boolean isTillerEnabled) {
@@ -65,20 +65,23 @@ public final class AddOnOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddOnOptions build() {
-            AddOnOptions __instance__ =
-                    new AddOnOptions(isKubernetesDashboardEnabled, isTillerEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AddOnOptions model =
+                    new AddOnOptions(this.isKubernetesDashboardEnabled, this.isTillerEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddOnOptions o) {
-            Builder copiedBuilder =
-                    isKubernetesDashboardEnabled(o.getIsKubernetesDashboardEnabled())
-                            .isTillerEnabled(o.getIsTillerEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddOnOptions model) {
+            if (model.wasPropertyExplicitlySet("isKubernetesDashboardEnabled")) {
+                this.isKubernetesDashboardEnabled(model.getIsKubernetesDashboardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isTillerEnabled")) {
+                this.isTillerEnabled(model.getIsTillerEnabled());
+            }
+            return this;
         }
     }
 
@@ -134,10 +137,10 @@ public final class AddOnOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddOnOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("isKubernetesDashboardEnabled=")
                 .append(String.valueOf(this.isKubernetesDashboardEnabled));
         sb.append(", isTillerEnabled=").append(String.valueOf(this.isTillerEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +158,7 @@ public final class AddOnOptions {
         return java.util.Objects.equals(
                         this.isKubernetesDashboardEnabled, other.isKubernetesDashboardEnabled)
                 && java.util.Objects.equals(this.isTillerEnabled, other.isTillerEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -170,16 +173,7 @@ public final class AddOnOptions {
         result =
                 (result * PRIME)
                         + (this.isTillerEnabled == null ? 43 : this.isTillerEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

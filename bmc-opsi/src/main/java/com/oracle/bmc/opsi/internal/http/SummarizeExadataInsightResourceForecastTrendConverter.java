@@ -288,8 +288,8 @@ public class SummarizeExadataInsightResourceForecastTrendConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeExadataInsightResourceForecastTrendResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.summarizeExadataInsightResourceForecastTrendCollection(
                                         response.getItem());

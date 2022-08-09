@@ -17,7 +17,7 @@ package com.oracle.bmc.nosql.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateRowResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateRowResult {
+public final class UpdateRowResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "version",
@@ -134,24 +134,37 @@ public final class UpdateRowResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateRowResult build() {
-            UpdateRowResult __instance__ =
+            UpdateRowResult model =
                     new UpdateRowResult(
-                            version, existingVersion, existingValue, generatedValue, usage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.version,
+                            this.existingVersion,
+                            this.existingValue,
+                            this.generatedValue,
+                            this.usage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateRowResult o) {
-            Builder copiedBuilder =
-                    version(o.getVersion())
-                            .existingVersion(o.getExistingVersion())
-                            .existingValue(o.getExistingValue())
-                            .generatedValue(o.getGeneratedValue())
-                            .usage(o.getUsage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateRowResult model) {
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("existingVersion")) {
+                this.existingVersion(model.getExistingVersion());
+            }
+            if (model.wasPropertyExplicitlySet("existingValue")) {
+                this.existingValue(model.getExistingValue());
+            }
+            if (model.wasPropertyExplicitlySet("generatedValue")) {
+                this.generatedValue(model.getGeneratedValue());
+            }
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
+            }
+            return this;
         }
     }
 
@@ -256,12 +269,12 @@ public final class UpdateRowResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateRowResult(");
+        sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(", existingVersion=").append(String.valueOf(this.existingVersion));
         sb.append(", existingValue=").append(String.valueOf(this.existingValue));
         sb.append(", generatedValue=").append(String.valueOf(this.generatedValue));
         sb.append(", usage=").append(String.valueOf(this.usage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -281,7 +294,7 @@ public final class UpdateRowResult {
                 && java.util.Objects.equals(this.existingValue, other.existingValue)
                 && java.util.Objects.equals(this.generatedValue, other.generatedValue)
                 && java.util.Objects.equals(this.usage, other.usage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -299,16 +312,7 @@ public final class UpdateRowResult {
                 (result * PRIME)
                         + (this.generatedValue == null ? 43 : this.generatedValue.hashCode());
         result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

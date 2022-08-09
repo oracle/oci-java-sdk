@@ -19,7 +19,8 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
     builder = CreateAnnotationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateAnnotationDetails {
+public final class CreateAnnotationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "recordId",
@@ -138,24 +139,37 @@ public final class CreateAnnotationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateAnnotationDetails build() {
-            CreateAnnotationDetails __instance__ =
+            CreateAnnotationDetails model =
                     new CreateAnnotationDetails(
-                            recordId, compartmentId, entities, freeformTags, definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.recordId,
+                            this.compartmentId,
+                            this.entities,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateAnnotationDetails o) {
-            Builder copiedBuilder =
-                    recordId(o.getRecordId())
-                            .compartmentId(o.getCompartmentId())
-                            .entities(o.getEntities())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateAnnotationDetails model) {
+            if (model.wasPropertyExplicitlySet("recordId")) {
+                this.recordId(model.getRecordId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("entities")) {
+                this.entities(model.getEntities());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -261,12 +275,12 @@ public final class CreateAnnotationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAnnotationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("recordId=").append(String.valueOf(this.recordId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", entities=").append(String.valueOf(this.entities));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -286,7 +300,7 @@ public final class CreateAnnotationDetails {
                 && java.util.Objects.equals(this.entities, other.entities)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -300,16 +314,7 @@ public final class CreateAnnotationDetails {
         result = (result * PRIME) + (this.entities == null ? 43 : this.entities.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

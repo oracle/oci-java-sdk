@@ -56,16 +56,18 @@ public class IngestSqlTextResponse extends com.oracle.bmc.responses.BmcResponse 
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "ingestSqlTextResponseDetails"
     })
     private IngestSqlTextResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.opsi.model.IngestSqlTextResponseDetails ingestSqlTextResponseDetails) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.ingestSqlTextResponseDetails = ingestSqlTextResponseDetails;
@@ -76,6 +78,13 @@ public class IngestSqlTextResponse extends com.oracle.bmc.responses.BmcResponse 
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -138,6 +147,7 @@ public class IngestSqlTextResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public Builder copy(IngestSqlTextResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             ingestSqlTextResponseDetails(o.getIngestSqlTextResponseDetails());
@@ -151,7 +161,7 @@ public class IngestSqlTextResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public IngestSqlTextResponse build() {
             return new IngestSqlTextResponse(
-                    __httpStatusCode__, opcRequestId, etag, ingestSqlTextResponseDetails);
+                    __httpStatusCode__, headers, opcRequestId, etag, ingestSqlTextResponseDetails);
         }
     }
 

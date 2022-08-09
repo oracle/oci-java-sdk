@@ -108,8 +108,8 @@ public class GetLogSetsCountConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetLogSetsCountResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logSetsCount(response.getItem());
 

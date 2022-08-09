@@ -116,23 +116,30 @@ public final class DatabaseConnectionCredentialsByDetails extends DatabaseConnec
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseConnectionCredentialsByDetails build() {
-            DatabaseConnectionCredentialsByDetails __instance__ =
+            DatabaseConnectionCredentialsByDetails model =
                     new DatabaseConnectionCredentialsByDetails(
-                            credentialName, username, password, role);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.credentialName, this.username, this.password, this.role);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseConnectionCredentialsByDetails o) {
-            Builder copiedBuilder =
-                    credentialName(o.getCredentialName())
-                            .username(o.getUsername())
-                            .password(o.getPassword())
-                            .role(o.getRole());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseConnectionCredentialsByDetails model) {
+            if (model.wasPropertyExplicitlySet("credentialName")) {
+                this.credentialName(model.getCredentialName());
+            }
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            return this;
         }
     }
 
@@ -295,7 +302,6 @@ public final class DatabaseConnectionCredentialsByDetails extends DatabaseConnec
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append(String.valueOf(this.password));
         sb.append(", role=").append(String.valueOf(this.role));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -314,8 +320,7 @@ public final class DatabaseConnectionCredentialsByDetails extends DatabaseConnec
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.role, other.role)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -328,16 +333,6 @@ public final class DatabaseConnectionCredentialsByDetails extends DatabaseConnec
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -55,13 +55,20 @@ public class GetUsagePlanResponse extends com.oracle.bmc.responses.BmcResponse {
         return usagePlan;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "usagePlan"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "usagePlan"
+    })
     private GetUsagePlanResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.apigateway.model.UsagePlan usagePlan) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.usagePlan = usagePlan;
@@ -72,6 +79,13 @@ public class GetUsagePlanResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -134,6 +148,7 @@ public class GetUsagePlanResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetUsagePlanResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             usagePlan(o.getUsagePlan());
@@ -146,7 +161,8 @@ public class GetUsagePlanResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetUsagePlanResponse build() {
-            return new GetUsagePlanResponse(__httpStatusCode__, etag, opcRequestId, usagePlan);
+            return new GetUsagePlanResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, usagePlan);
         }
     }
 

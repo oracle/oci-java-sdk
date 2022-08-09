@@ -19,7 +19,8 @@ package com.oracle.bmc.marketplace.model;
     builder = ListingPackageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ListingPackageSummary {
+public final class ListingPackageSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "listingId",
@@ -170,32 +171,45 @@ public final class ListingPackageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ListingPackageSummary build() {
-            ListingPackageSummary __instance__ =
+            ListingPackageSummary model =
                     new ListingPackageSummary(
-                            listingId,
-                            packageVersion,
-                            packageType,
-                            pricing,
-                            regions,
-                            resourceId,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.listingId,
+                            this.packageVersion,
+                            this.packageType,
+                            this.pricing,
+                            this.regions,
+                            this.resourceId,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ListingPackageSummary o) {
-            Builder copiedBuilder =
-                    listingId(o.getListingId())
-                            .packageVersion(o.getPackageVersion())
-                            .packageType(o.getPackageType())
-                            .pricing(o.getPricing())
-                            .regions(o.getRegions())
-                            .resourceId(o.getResourceId())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ListingPackageSummary model) {
+            if (model.wasPropertyExplicitlySet("listingId")) {
+                this.listingId(model.getListingId());
+            }
+            if (model.wasPropertyExplicitlySet("packageVersion")) {
+                this.packageVersion(model.getPackageVersion());
+            }
+            if (model.wasPropertyExplicitlySet("packageType")) {
+                this.packageType(model.getPackageType());
+            }
+            if (model.wasPropertyExplicitlySet("pricing")) {
+                this.pricing(model.getPricing());
+            }
+            if (model.wasPropertyExplicitlySet("regions")) {
+                this.regions(model.getRegions());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -324,6 +338,7 @@ public final class ListingPackageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ListingPackageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("listingId=").append(String.valueOf(this.listingId));
         sb.append(", packageVersion=").append(String.valueOf(this.packageVersion));
         sb.append(", packageType=").append(String.valueOf(this.packageType));
@@ -331,7 +346,6 @@ public final class ListingPackageSummary {
         sb.append(", regions=").append(String.valueOf(this.regions));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -353,7 +367,7 @@ public final class ListingPackageSummary {
                 && java.util.Objects.equals(this.regions, other.regions)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -369,16 +383,7 @@ public final class ListingPackageSummary {
         result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
         result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

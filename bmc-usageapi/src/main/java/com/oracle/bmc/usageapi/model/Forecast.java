@@ -17,7 +17,7 @@ package com.oracle.bmc.usageapi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Forecast.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Forecast {
+public final class Forecast extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"forecastType", "timeForecastStarted", "timeForecastEnded"})
     public Forecast(
@@ -85,21 +85,27 @@ public final class Forecast {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Forecast build() {
-            Forecast __instance__ =
-                    new Forecast(forecastType, timeForecastStarted, timeForecastEnded);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Forecast model =
+                    new Forecast(
+                            this.forecastType, this.timeForecastStarted, this.timeForecastEnded);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Forecast o) {
-            Builder copiedBuilder =
-                    forecastType(o.getForecastType())
-                            .timeForecastStarted(o.getTimeForecastStarted())
-                            .timeForecastEnded(o.getTimeForecastEnded());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Forecast model) {
+            if (model.wasPropertyExplicitlySet("forecastType")) {
+                this.forecastType(model.getForecastType());
+            }
+            if (model.wasPropertyExplicitlySet("timeForecastStarted")) {
+                this.timeForecastStarted(model.getTimeForecastStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeForecastEnded")) {
+                this.timeForecastEnded(model.getTimeForecastEnded());
+            }
+            return this;
         }
     }
 
@@ -216,10 +222,10 @@ public final class Forecast {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Forecast(");
+        sb.append("super=").append(super.toString());
         sb.append("forecastType=").append(String.valueOf(this.forecastType));
         sb.append(", timeForecastStarted=").append(String.valueOf(this.timeForecastStarted));
         sb.append(", timeForecastEnded=").append(String.valueOf(this.timeForecastEnded));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -237,7 +243,7 @@ public final class Forecast {
         return java.util.Objects.equals(this.forecastType, other.forecastType)
                 && java.util.Objects.equals(this.timeForecastStarted, other.timeForecastStarted)
                 && java.util.Objects.equals(this.timeForecastEnded, other.timeForecastEnded)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -253,16 +259,7 @@ public final class Forecast {
         result =
                 (result * PRIME)
                         + (this.timeForecastEnded == null ? 43 : this.timeForecastEnded.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

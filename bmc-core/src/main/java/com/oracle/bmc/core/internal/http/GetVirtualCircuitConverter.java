@@ -98,8 +98,8 @@ public class GetVirtualCircuitConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetVirtualCircuitResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.virtualCircuit(response.getItem());
 

@@ -153,8 +153,8 @@ public class ListGroupsConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses.ListGroupsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ObjectMetadata.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ObjectMetadata {
+public final class ObjectMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "createdBy",
@@ -284,46 +284,73 @@ public final class ObjectMetadata {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectMetadata build() {
-            ObjectMetadata __instance__ =
+            ObjectMetadata model =
                     new ObjectMetadata(
-                            createdBy,
-                            createdByName,
-                            updatedBy,
-                            updatedByName,
-                            timeCreated,
-                            timeUpdated,
-                            aggregatorKey,
-                            aggregator,
-                            identifierPath,
-                            infoFields,
-                            registryVersion,
-                            labels,
-                            isFavorite,
-                            countStatistics);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.createdBy,
+                            this.createdByName,
+                            this.updatedBy,
+                            this.updatedByName,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.aggregatorKey,
+                            this.aggregator,
+                            this.identifierPath,
+                            this.infoFields,
+                            this.registryVersion,
+                            this.labels,
+                            this.isFavorite,
+                            this.countStatistics);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ObjectMetadata o) {
-            Builder copiedBuilder =
-                    createdBy(o.getCreatedBy())
-                            .createdByName(o.getCreatedByName())
-                            .updatedBy(o.getUpdatedBy())
-                            .updatedByName(o.getUpdatedByName())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .aggregatorKey(o.getAggregatorKey())
-                            .aggregator(o.getAggregator())
-                            .identifierPath(o.getIdentifierPath())
-                            .infoFields(o.getInfoFields())
-                            .registryVersion(o.getRegistryVersion())
-                            .labels(o.getLabels())
-                            .isFavorite(o.getIsFavorite())
-                            .countStatistics(o.getCountStatistics());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ObjectMetadata model) {
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("createdByName")) {
+                this.createdByName(model.getCreatedByName());
+            }
+            if (model.wasPropertyExplicitlySet("updatedBy")) {
+                this.updatedBy(model.getUpdatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("updatedByName")) {
+                this.updatedByName(model.getUpdatedByName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("aggregatorKey")) {
+                this.aggregatorKey(model.getAggregatorKey());
+            }
+            if (model.wasPropertyExplicitlySet("aggregator")) {
+                this.aggregator(model.getAggregator());
+            }
+            if (model.wasPropertyExplicitlySet("identifierPath")) {
+                this.identifierPath(model.getIdentifierPath());
+            }
+            if (model.wasPropertyExplicitlySet("infoFields")) {
+                this.infoFields(model.getInfoFields());
+            }
+            if (model.wasPropertyExplicitlySet("registryVersion")) {
+                this.registryVersion(model.getRegistryVersion());
+            }
+            if (model.wasPropertyExplicitlySet("labels")) {
+                this.labels(model.getLabels());
+            }
+            if (model.wasPropertyExplicitlySet("isFavorite")) {
+                this.isFavorite(model.getIsFavorite());
+            }
+            if (model.wasPropertyExplicitlySet("countStatistics")) {
+                this.countStatistics(model.getCountStatistics());
+            }
+            return this;
         }
     }
 
@@ -533,6 +560,7 @@ public final class ObjectMetadata {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ObjectMetadata(");
+        sb.append("super=").append(super.toString());
         sb.append("createdBy=").append(String.valueOf(this.createdBy));
         sb.append(", createdByName=").append(String.valueOf(this.createdByName));
         sb.append(", updatedBy=").append(String.valueOf(this.updatedBy));
@@ -547,7 +575,6 @@ public final class ObjectMetadata {
         sb.append(", labels=").append(String.valueOf(this.labels));
         sb.append(", isFavorite=").append(String.valueOf(this.isFavorite));
         sb.append(", countStatistics=").append(String.valueOf(this.countStatistics));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -576,7 +603,7 @@ public final class ObjectMetadata {
                 && java.util.Objects.equals(this.labels, other.labels)
                 && java.util.Objects.equals(this.isFavorite, other.isFavorite)
                 && java.util.Objects.equals(this.countStatistics, other.countStatistics)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -609,16 +636,7 @@ public final class ObjectMetadata {
         result =
                 (result * PRIME)
                         + (this.countStatistics == null ? 43 : this.countStatistics.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

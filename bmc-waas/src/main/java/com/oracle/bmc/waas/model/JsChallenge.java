@@ -17,7 +17,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JsChallenge.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JsChallenge {
+public final class JsChallenge extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -196,36 +196,53 @@ public final class JsChallenge {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JsChallenge build() {
-            JsChallenge __instance__ =
+            JsChallenge model =
                     new JsChallenge(
-                            isEnabled,
-                            action,
-                            failureThreshold,
-                            actionExpirationInSeconds,
-                            setHttpHeader,
-                            challengeSettings,
-                            areRedirectsChallenged,
-                            criteria,
-                            isNatEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isEnabled,
+                            this.action,
+                            this.failureThreshold,
+                            this.actionExpirationInSeconds,
+                            this.setHttpHeader,
+                            this.challengeSettings,
+                            this.areRedirectsChallenged,
+                            this.criteria,
+                            this.isNatEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JsChallenge o) {
-            Builder copiedBuilder =
-                    isEnabled(o.getIsEnabled())
-                            .action(o.getAction())
-                            .failureThreshold(o.getFailureThreshold())
-                            .actionExpirationInSeconds(o.getActionExpirationInSeconds())
-                            .setHttpHeader(o.getSetHttpHeader())
-                            .challengeSettings(o.getChallengeSettings())
-                            .areRedirectsChallenged(o.getAreRedirectsChallenged())
-                            .criteria(o.getCriteria())
-                            .isNatEnabled(o.getIsNatEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JsChallenge model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("failureThreshold")) {
+                this.failureThreshold(model.getFailureThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("actionExpirationInSeconds")) {
+                this.actionExpirationInSeconds(model.getActionExpirationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("setHttpHeader")) {
+                this.setHttpHeader(model.getSetHttpHeader());
+            }
+            if (model.wasPropertyExplicitlySet("challengeSettings")) {
+                this.challengeSettings(model.getChallengeSettings());
+            }
+            if (model.wasPropertyExplicitlySet("areRedirectsChallenged")) {
+                this.areRedirectsChallenged(model.getAreRedirectsChallenged());
+            }
+            if (model.wasPropertyExplicitlySet("criteria")) {
+                this.criteria(model.getCriteria());
+            }
+            if (model.wasPropertyExplicitlySet("isNatEnabled")) {
+                this.isNatEnabled(model.getIsNatEnabled());
+            }
+            return this;
         }
     }
 
@@ -419,6 +436,7 @@ public final class JsChallenge {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JsChallenge(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", failureThreshold=").append(String.valueOf(this.failureThreshold));
@@ -429,7 +447,6 @@ public final class JsChallenge {
         sb.append(", areRedirectsChallenged=").append(String.valueOf(this.areRedirectsChallenged));
         sb.append(", criteria=").append(String.valueOf(this.criteria));
         sb.append(", isNatEnabled=").append(String.valueOf(this.isNatEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -455,7 +472,7 @@ public final class JsChallenge {
                         this.areRedirectsChallenged, other.areRedirectsChallenged)
                 && java.util.Objects.equals(this.criteria, other.criteria)
                 && java.util.Objects.equals(this.isNatEnabled, other.isNatEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -485,16 +502,7 @@ public final class JsChallenge {
                                 : this.areRedirectsChallenged.hashCode());
         result = (result * PRIME) + (this.criteria == null ? 43 : this.criteria.hashCode());
         result = (result * PRIME) + (this.isNatEnabled == null ? 43 : this.isNatEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

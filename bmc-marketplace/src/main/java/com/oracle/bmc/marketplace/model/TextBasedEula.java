@@ -46,17 +46,19 @@ public final class TextBasedEula extends Eula {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TextBasedEula build() {
-            TextBasedEula __instance__ = new TextBasedEula(licenseText);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TextBasedEula model = new TextBasedEula(this.licenseText);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TextBasedEula o) {
-            Builder copiedBuilder = licenseText(o.getLicenseText());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TextBasedEula model) {
+            if (model.wasPropertyExplicitlySet("licenseText")) {
+                this.licenseText(model.getLicenseText());
+            }
+            return this;
         }
     }
 
@@ -106,7 +108,6 @@ public final class TextBasedEula extends Eula {
         sb.append("TextBasedEula(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", licenseText=").append(String.valueOf(this.licenseText));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -121,9 +122,7 @@ public final class TextBasedEula extends Eula {
         }
 
         TextBasedEula other = (TextBasedEula) o;
-        return java.util.Objects.equals(this.licenseText, other.licenseText)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.licenseText, other.licenseText) && super.equals(other);
     }
 
     @Override
@@ -131,16 +130,6 @@ public final class TextBasedEula extends Eula {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.licenseText == null ? 43 : this.licenseText.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

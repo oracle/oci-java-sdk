@@ -19,7 +19,8 @@ package com.oracle.bmc.osmanagement.model;
     builder = ModuleStreamProfileDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ModuleStreamProfileDetails {
+public final class ModuleStreamProfileDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"moduleName", "streamName", "profileName"})
     public ModuleStreamProfileDetails(String moduleName, String streamName, String profileName) {
@@ -84,21 +85,27 @@ public final class ModuleStreamProfileDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ModuleStreamProfileDetails build() {
-            ModuleStreamProfileDetails __instance__ =
-                    new ModuleStreamProfileDetails(moduleName, streamName, profileName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ModuleStreamProfileDetails model =
+                    new ModuleStreamProfileDetails(
+                            this.moduleName, this.streamName, this.profileName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ModuleStreamProfileDetails o) {
-            Builder copiedBuilder =
-                    moduleName(o.getModuleName())
-                            .streamName(o.getStreamName())
-                            .profileName(o.getProfileName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ModuleStreamProfileDetails model) {
+            if (model.wasPropertyExplicitlySet("moduleName")) {
+                this.moduleName(model.getModuleName());
+            }
+            if (model.wasPropertyExplicitlySet("streamName")) {
+                this.streamName(model.getStreamName());
+            }
+            if (model.wasPropertyExplicitlySet("profileName")) {
+                this.profileName(model.getProfileName());
+            }
+            return this;
         }
     }
 
@@ -168,10 +175,10 @@ public final class ModuleStreamProfileDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModuleStreamProfileDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("moduleName=").append(String.valueOf(this.moduleName));
         sb.append(", streamName=").append(String.valueOf(this.streamName));
         sb.append(", profileName=").append(String.valueOf(this.profileName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -189,7 +196,7 @@ public final class ModuleStreamProfileDetails {
         return java.util.Objects.equals(this.moduleName, other.moduleName)
                 && java.util.Objects.equals(this.streamName, other.streamName)
                 && java.util.Objects.equals(this.profileName, other.profileName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -199,16 +206,7 @@ public final class ModuleStreamProfileDetails {
         result = (result * PRIME) + (this.moduleName == null ? 43 : this.moduleName.hashCode());
         result = (result * PRIME) + (this.streamName == null ? 43 : this.streamName.hashCode());
         result = (result * PRIME) + (this.profileName == null ? 43 : this.profileName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

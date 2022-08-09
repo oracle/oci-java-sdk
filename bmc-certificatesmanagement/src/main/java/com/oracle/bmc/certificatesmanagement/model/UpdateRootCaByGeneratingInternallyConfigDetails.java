@@ -61,20 +61,27 @@ public final class UpdateRootCaByGeneratingInternallyConfigDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateRootCaByGeneratingInternallyConfigDetails build() {
-            UpdateRootCaByGeneratingInternallyConfigDetails __instance__ =
+            UpdateRootCaByGeneratingInternallyConfigDetails model =
                     new UpdateRootCaByGeneratingInternallyConfigDetails(
-                            versionName, stage, validity);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.versionName, this.stage, this.validity);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateRootCaByGeneratingInternallyConfigDetails o) {
-            Builder copiedBuilder =
-                    versionName(o.getVersionName()).stage(o.getStage()).validity(o.getValidity());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateRootCaByGeneratingInternallyConfigDetails model) {
+            if (model.wasPropertyExplicitlySet("versionName")) {
+                this.versionName(model.getVersionName());
+            }
+            if (model.wasPropertyExplicitlySet("stage")) {
+                this.stage(model.getStage());
+            }
+            if (model.wasPropertyExplicitlySet("validity")) {
+                this.validity(model.getValidity());
+            }
+            return this;
         }
     }
 
@@ -118,7 +125,6 @@ public final class UpdateRootCaByGeneratingInternallyConfigDetails
         sb.append("UpdateRootCaByGeneratingInternallyConfigDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", validity=").append(String.valueOf(this.validity));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -134,9 +140,7 @@ public final class UpdateRootCaByGeneratingInternallyConfigDetails
 
         UpdateRootCaByGeneratingInternallyConfigDetails other =
                 (UpdateRootCaByGeneratingInternallyConfigDetails) o;
-        return java.util.Objects.equals(this.validity, other.validity)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.validity, other.validity) && super.equals(other);
     }
 
     @Override
@@ -144,16 +148,6 @@ public final class UpdateRootCaByGeneratingInternallyConfigDetails
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.validity == null ? 43 : this.validity.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -106,8 +106,8 @@ public class GetVirtualServiceConverter {
                                         builder =
                                                 com.oracle.bmc.servicemesh.responses
                                                         .GetVirtualServiceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.virtualService(response.getItem());
 

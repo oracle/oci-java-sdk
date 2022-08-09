@@ -157,8 +157,8 @@ public class ListTechniquesConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .ListTechniquesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.techniqueCollection(response.getItem());
 

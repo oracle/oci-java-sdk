@@ -21,7 +21,8 @@ package com.oracle.bmc.apigateway.model;
     builder = RenameHeaderPolicyItem.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RenameHeaderPolicyItem {
+public final class RenameHeaderPolicyItem
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"from", "to"})
     public RenameHeaderPolicyItem(String from, String to) {
@@ -73,17 +74,22 @@ public final class RenameHeaderPolicyItem {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RenameHeaderPolicyItem build() {
-            RenameHeaderPolicyItem __instance__ = new RenameHeaderPolicyItem(from, to);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RenameHeaderPolicyItem model = new RenameHeaderPolicyItem(this.from, this.to);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RenameHeaderPolicyItem o) {
-            Builder copiedBuilder = from(o.getFrom()).to(o.getTo());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RenameHeaderPolicyItem model) {
+            if (model.wasPropertyExplicitlySet("from")) {
+                this.from(model.getFrom());
+            }
+            if (model.wasPropertyExplicitlySet("to")) {
+                this.to(model.getTo());
+            }
+            return this;
         }
     }
 
@@ -143,9 +149,9 @@ public final class RenameHeaderPolicyItem {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RenameHeaderPolicyItem(");
+        sb.append("super=").append(super.toString());
         sb.append("from=").append(String.valueOf(this.from));
         sb.append(", to=").append(String.valueOf(this.to));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -162,7 +168,7 @@ public final class RenameHeaderPolicyItem {
         RenameHeaderPolicyItem other = (RenameHeaderPolicyItem) o;
         return java.util.Objects.equals(this.from, other.from)
                 && java.util.Objects.equals(this.to, other.to)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -171,16 +177,7 @@ public final class RenameHeaderPolicyItem {
         int result = 1;
         result = (result * PRIME) + (this.from == null ? 43 : this.from.hashCode());
         result = (result * PRIME) + (this.to == null ? 43 : this.to.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

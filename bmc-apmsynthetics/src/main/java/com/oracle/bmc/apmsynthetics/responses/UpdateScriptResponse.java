@@ -53,13 +53,20 @@ public class UpdateScriptResponse extends com.oracle.bmc.responses.BmcResponse {
         return script;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "script"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "script"
+    })
     private UpdateScriptResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.apmsynthetics.model.Script script) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.script = script;
@@ -70,6 +77,13 @@ public class UpdateScriptResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateScriptResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UpdateScriptResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             script(o.getScript());
@@ -142,7 +157,8 @@ public class UpdateScriptResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public UpdateScriptResponse build() {
-            return new UpdateScriptResponse(__httpStatusCode__, etag, opcRequestId, script);
+            return new UpdateScriptResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, script);
         }
     }
 

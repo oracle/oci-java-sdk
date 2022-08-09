@@ -74,23 +74,33 @@ public final class ImageSourceViaObjectStorageUriDetails extends ImageSourceDeta
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageSourceViaObjectStorageUriDetails build() {
-            ImageSourceViaObjectStorageUriDetails __instance__ =
+            ImageSourceViaObjectStorageUriDetails model =
                     new ImageSourceViaObjectStorageUriDetails(
-                            operatingSystem, operatingSystemVersion, sourceImageType, sourceUri);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.operatingSystem,
+                            this.operatingSystemVersion,
+                            this.sourceImageType,
+                            this.sourceUri);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImageSourceViaObjectStorageUriDetails o) {
-            Builder copiedBuilder =
-                    operatingSystem(o.getOperatingSystem())
-                            .operatingSystemVersion(o.getOperatingSystemVersion())
-                            .sourceImageType(o.getSourceImageType())
-                            .sourceUri(o.getSourceUri());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImageSourceViaObjectStorageUriDetails model) {
+            if (model.wasPropertyExplicitlySet("operatingSystem")) {
+                this.operatingSystem(model.getOperatingSystem());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystemVersion")) {
+                this.operatingSystemVersion(model.getOperatingSystemVersion());
+            }
+            if (model.wasPropertyExplicitlySet("sourceImageType")) {
+                this.sourceImageType(model.getSourceImageType());
+            }
+            if (model.wasPropertyExplicitlySet("sourceUri")) {
+                this.sourceUri(model.getSourceUri());
+            }
+            return this;
         }
     }
 
@@ -144,7 +154,6 @@ public final class ImageSourceViaObjectStorageUriDetails extends ImageSourceDeta
         sb.append("ImageSourceViaObjectStorageUriDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sourceUri=").append(String.valueOf(this.sourceUri));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,9 +168,7 @@ public final class ImageSourceViaObjectStorageUriDetails extends ImageSourceDeta
         }
 
         ImageSourceViaObjectStorageUriDetails other = (ImageSourceViaObjectStorageUriDetails) o;
-        return java.util.Objects.equals(this.sourceUri, other.sourceUri)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.sourceUri, other.sourceUri) && super.equals(other);
     }
 
     @Override
@@ -169,16 +176,6 @@ public final class ImageSourceViaObjectStorageUriDetails extends ImageSourceDeta
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.sourceUri == null ? 43 : this.sourceUri.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

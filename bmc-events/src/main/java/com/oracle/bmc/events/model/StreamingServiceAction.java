@@ -94,25 +94,41 @@ public final class StreamingServiceAction extends Action {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StreamingServiceAction build() {
-            StreamingServiceAction __instance__ =
+            StreamingServiceAction model =
                     new StreamingServiceAction(
-                            id, lifecycleMessage, lifecycleState, isEnabled, description, streamId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.lifecycleMessage,
+                            this.lifecycleState,
+                            this.isEnabled,
+                            this.description,
+                            this.streamId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StreamingServiceAction o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .lifecycleMessage(o.getLifecycleMessage())
-                            .lifecycleState(o.getLifecycleState())
-                            .isEnabled(o.getIsEnabled())
-                            .description(o.getDescription())
-                            .streamId(o.getStreamId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StreamingServiceAction model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleMessage")) {
+                this.lifecycleMessage(model.getLifecycleMessage());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("streamId")) {
+                this.streamId(model.getStreamId());
+            }
+            return this;
         }
     }
 
@@ -170,7 +186,6 @@ public final class StreamingServiceAction extends Action {
         sb.append("StreamingServiceAction(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", streamId=").append(String.valueOf(this.streamId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -185,9 +200,7 @@ public final class StreamingServiceAction extends Action {
         }
 
         StreamingServiceAction other = (StreamingServiceAction) o;
-        return java.util.Objects.equals(this.streamId, other.streamId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.streamId, other.streamId) && super.equals(other);
     }
 
     @Override
@@ -195,16 +208,6 @@ public final class StreamingServiceAction extends Action {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.streamId == null ? 43 : this.streamId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

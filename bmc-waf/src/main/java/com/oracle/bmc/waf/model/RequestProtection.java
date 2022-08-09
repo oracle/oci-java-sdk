@@ -19,7 +19,7 @@ package com.oracle.bmc.waf.model;
     builder = RequestProtection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RequestProtection {
+public final class RequestProtection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "rules",
@@ -119,25 +119,30 @@ public final class RequestProtection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RequestProtection build() {
-            RequestProtection __instance__ =
+            RequestProtection model =
                     new RequestProtection(
-                            rules,
-                            bodyInspectionSizeLimitInBytes,
-                            bodyInspectionSizeLimitExceededActionName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.rules,
+                            this.bodyInspectionSizeLimitInBytes,
+                            this.bodyInspectionSizeLimitExceededActionName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RequestProtection o) {
-            Builder copiedBuilder =
-                    rules(o.getRules())
-                            .bodyInspectionSizeLimitInBytes(o.getBodyInspectionSizeLimitInBytes())
-                            .bodyInspectionSizeLimitExceededActionName(
-                                    o.getBodyInspectionSizeLimitExceededActionName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RequestProtection model) {
+            if (model.wasPropertyExplicitlySet("rules")) {
+                this.rules(model.getRules());
+            }
+            if (model.wasPropertyExplicitlySet("bodyInspectionSizeLimitInBytes")) {
+                this.bodyInspectionSizeLimitInBytes(model.getBodyInspectionSizeLimitInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("bodyInspectionSizeLimitExceededActionName")) {
+                this.bodyInspectionSizeLimitExceededActionName(
+                        model.getBodyInspectionSizeLimitExceededActionName());
+            }
+            return this;
         }
     }
 
@@ -233,12 +238,12 @@ public final class RequestProtection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RequestProtection(");
+        sb.append("super=").append(super.toString());
         sb.append("rules=").append(String.valueOf(this.rules));
         sb.append(", bodyInspectionSizeLimitInBytes=")
                 .append(String.valueOf(this.bodyInspectionSizeLimitInBytes));
         sb.append(", bodyInspectionSizeLimitExceededActionName=")
                 .append(String.valueOf(this.bodyInspectionSizeLimitExceededActionName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -259,7 +264,7 @@ public final class RequestProtection {
                 && java.util.Objects.equals(
                         this.bodyInspectionSizeLimitExceededActionName,
                         other.bodyInspectionSizeLimitExceededActionName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -277,16 +282,7 @@ public final class RequestProtection {
                         + (this.bodyInspectionSizeLimitExceededActionName == null
                                 ? 43
                                 : this.bodyInspectionSizeLimitExceededActionName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

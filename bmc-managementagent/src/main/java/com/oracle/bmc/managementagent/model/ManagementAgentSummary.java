@@ -19,7 +19,8 @@ package com.oracle.bmc.managementagent.model;
     builder = ManagementAgentSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ManagementAgentSummary {
+public final class ManagementAgentSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -490,64 +491,109 @@ public final class ManagementAgentSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagementAgentSummary build() {
-            ManagementAgentSummary __instance__ =
+            ManagementAgentSummary model =
                     new ManagementAgentSummary(
-                            id,
-                            installKeyId,
-                            displayName,
-                            platformType,
-                            platformName,
-                            platformVersion,
-                            version,
-                            resourceArtifactVersion,
-                            isAgentAutoUpgradable,
-                            timeCreated,
-                            timeUpdated,
-                            host,
-                            hostId,
-                            pluginList,
-                            compartmentId,
-                            timeLastHeartbeat,
-                            availabilityStatus,
-                            lifecycleState,
-                            lifecycleDetails,
-                            isCustomerDeployed,
-                            installType,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.installKeyId,
+                            this.displayName,
+                            this.platformType,
+                            this.platformName,
+                            this.platformVersion,
+                            this.version,
+                            this.resourceArtifactVersion,
+                            this.isAgentAutoUpgradable,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.host,
+                            this.hostId,
+                            this.pluginList,
+                            this.compartmentId,
+                            this.timeLastHeartbeat,
+                            this.availabilityStatus,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.isCustomerDeployed,
+                            this.installType,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManagementAgentSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .installKeyId(o.getInstallKeyId())
-                            .displayName(o.getDisplayName())
-                            .platformType(o.getPlatformType())
-                            .platformName(o.getPlatformName())
-                            .platformVersion(o.getPlatformVersion())
-                            .version(o.getVersion())
-                            .resourceArtifactVersion(o.getResourceArtifactVersion())
-                            .isAgentAutoUpgradable(o.getIsAgentAutoUpgradable())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .host(o.getHost())
-                            .hostId(o.getHostId())
-                            .pluginList(o.getPluginList())
-                            .compartmentId(o.getCompartmentId())
-                            .timeLastHeartbeat(o.getTimeLastHeartbeat())
-                            .availabilityStatus(o.getAvailabilityStatus())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .isCustomerDeployed(o.getIsCustomerDeployed())
-                            .installType(o.getInstallType())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManagementAgentSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("installKeyId")) {
+                this.installKeyId(model.getInstallKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("platformType")) {
+                this.platformType(model.getPlatformType());
+            }
+            if (model.wasPropertyExplicitlySet("platformName")) {
+                this.platformName(model.getPlatformName());
+            }
+            if (model.wasPropertyExplicitlySet("platformVersion")) {
+                this.platformVersion(model.getPlatformVersion());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("resourceArtifactVersion")) {
+                this.resourceArtifactVersion(model.getResourceArtifactVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isAgentAutoUpgradable")) {
+                this.isAgentAutoUpgradable(model.getIsAgentAutoUpgradable());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("host")) {
+                this.host(model.getHost());
+            }
+            if (model.wasPropertyExplicitlySet("hostId")) {
+                this.hostId(model.getHostId());
+            }
+            if (model.wasPropertyExplicitlySet("pluginList")) {
+                this.pluginList(model.getPluginList());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastHeartbeat")) {
+                this.timeLastHeartbeat(model.getTimeLastHeartbeat());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityStatus")) {
+                this.availabilityStatus(model.getAvailabilityStatus());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isCustomerDeployed")) {
+                this.isCustomerDeployed(model.getIsCustomerDeployed());
+            }
+            if (model.wasPropertyExplicitlySet("installType")) {
+                this.installType(model.getInstallType());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -915,6 +961,7 @@ public final class ManagementAgentSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagementAgentSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", installKeyId=").append(String.valueOf(this.installKeyId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -939,7 +986,6 @@ public final class ManagementAgentSummary {
         sb.append(", installType=").append(String.valueOf(this.installType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -978,7 +1024,7 @@ public final class ManagementAgentSummary {
                 && java.util.Objects.equals(this.installType, other.installType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1034,16 +1080,7 @@ public final class ManagementAgentSummary {
         result = (result * PRIME) + (this.installType == null ? 43 : this.installType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

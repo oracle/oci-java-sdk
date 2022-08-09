@@ -17,7 +17,7 @@ package com.oracle.bmc.osmanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ErratumSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ErratumSummary {
+public final class ErratumSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -184,34 +184,49 @@ public final class ErratumSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ErratumSummary build() {
-            ErratumSummary __instance__ =
+            ErratumSummary model =
                     new ErratumSummary(
-                            name,
-                            id,
-                            compartmentId,
-                            synopsis,
-                            issued,
-                            updated,
-                            advisoryType,
-                            relatedCves);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.id,
+                            this.compartmentId,
+                            this.synopsis,
+                            this.issued,
+                            this.updated,
+                            this.advisoryType,
+                            this.relatedCves);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ErratumSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .synopsis(o.getSynopsis())
-                            .issued(o.getIssued())
-                            .updated(o.getUpdated())
-                            .advisoryType(o.getAdvisoryType())
-                            .relatedCves(o.getRelatedCves());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ErratumSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("synopsis")) {
+                this.synopsis(model.getSynopsis());
+            }
+            if (model.wasPropertyExplicitlySet("issued")) {
+                this.issued(model.getIssued());
+            }
+            if (model.wasPropertyExplicitlySet("updated")) {
+                this.updated(model.getUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("advisoryType")) {
+                this.advisoryType(model.getAdvisoryType());
+            }
+            if (model.wasPropertyExplicitlySet("relatedCves")) {
+                this.relatedCves(model.getRelatedCves());
+            }
+            return this;
         }
     }
 
@@ -351,6 +366,7 @@ public final class ErratumSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ErratumSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -359,7 +375,6 @@ public final class ErratumSummary {
         sb.append(", updated=").append(String.valueOf(this.updated));
         sb.append(", advisoryType=").append(String.valueOf(this.advisoryType));
         sb.append(", relatedCves=").append(String.valueOf(this.relatedCves));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -382,7 +397,7 @@ public final class ErratumSummary {
                 && java.util.Objects.equals(this.updated, other.updated)
                 && java.util.Objects.equals(this.advisoryType, other.advisoryType)
                 && java.util.Objects.equals(this.relatedCves, other.relatedCves)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -399,16 +414,7 @@ public final class ErratumSummary {
         result = (result * PRIME) + (this.updated == null ? 43 : this.updated.hashCode());
         result = (result * PRIME) + (this.advisoryType == null ? 43 : this.advisoryType.hashCode());
         result = (result * PRIME) + (this.relatedCves == null ? 43 : this.relatedCves.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

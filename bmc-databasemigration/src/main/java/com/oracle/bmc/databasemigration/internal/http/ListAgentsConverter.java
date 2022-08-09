@@ -158,8 +158,8 @@ public class ListAgentsConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .ListAgentsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.agentCollection(response.getItem());
 

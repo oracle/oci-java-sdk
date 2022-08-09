@@ -158,7 +158,8 @@ public class ListSubnetsConverter {
 
                                 com.oracle.bmc.core.responses.ListSubnetsResponse.Builder builder =
                                         com.oracle.bmc.core.responses.ListSubnetsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

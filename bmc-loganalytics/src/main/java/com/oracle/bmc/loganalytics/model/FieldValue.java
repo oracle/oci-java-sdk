@@ -18,7 +18,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = FieldValue.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FieldValue {
+public final class FieldValue extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayValue", "internalValue", "isDeleted"})
     public FieldValue(String displayValue, Object internalValue, Boolean isDeleted) {
@@ -89,20 +89,26 @@ public final class FieldValue {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FieldValue build() {
-            FieldValue __instance__ = new FieldValue(displayValue, internalValue, isDeleted);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FieldValue model =
+                    new FieldValue(this.displayValue, this.internalValue, this.isDeleted);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FieldValue o) {
-            Builder copiedBuilder =
-                    displayValue(o.getDisplayValue())
-                            .internalValue(o.getInternalValue())
-                            .isDeleted(o.getIsDeleted());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FieldValue model) {
+            if (model.wasPropertyExplicitlySet("displayValue")) {
+                this.displayValue(model.getDisplayValue());
+            }
+            if (model.wasPropertyExplicitlySet("internalValue")) {
+                this.internalValue(model.getInternalValue());
+            }
+            if (model.wasPropertyExplicitlySet("isDeleted")) {
+                this.isDeleted(model.getIsDeleted());
+            }
+            return this;
         }
     }
 
@@ -178,10 +184,10 @@ public final class FieldValue {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FieldValue(");
+        sb.append("super=").append(super.toString());
         sb.append("displayValue=").append(String.valueOf(this.displayValue));
         sb.append(", internalValue=").append(String.valueOf(this.internalValue));
         sb.append(", isDeleted=").append(String.valueOf(this.isDeleted));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -199,7 +205,7 @@ public final class FieldValue {
         return java.util.Objects.equals(this.displayValue, other.displayValue)
                 && java.util.Objects.equals(this.internalValue, other.internalValue)
                 && java.util.Objects.equals(this.isDeleted, other.isDeleted)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -211,16 +217,7 @@ public final class FieldValue {
                 (result * PRIME)
                         + (this.internalValue == null ? 43 : this.internalValue.hashCode());
         result = (result * PRIME) + (this.isDeleted == null ? 43 : this.isDeleted.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

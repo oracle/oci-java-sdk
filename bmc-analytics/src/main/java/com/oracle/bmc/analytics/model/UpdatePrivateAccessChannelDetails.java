@@ -20,7 +20,8 @@ package com.oracle.bmc.analytics.model;
     builder = UpdatePrivateAccessChannelDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdatePrivateAccessChannelDetails {
+public final class UpdatePrivateAccessChannelDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "vcnId", "subnetId", "privateSourceDnsZones"})
     public UpdatePrivateAccessChannelDetails(
@@ -119,23 +120,33 @@ public final class UpdatePrivateAccessChannelDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdatePrivateAccessChannelDetails build() {
-            UpdatePrivateAccessChannelDetails __instance__ =
+            UpdatePrivateAccessChannelDetails model =
                     new UpdatePrivateAccessChannelDetails(
-                            displayName, vcnId, subnetId, privateSourceDnsZones);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.vcnId,
+                            this.subnetId,
+                            this.privateSourceDnsZones);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdatePrivateAccessChannelDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .vcnId(o.getVcnId())
-                            .subnetId(o.getSubnetId())
-                            .privateSourceDnsZones(o.getPrivateSourceDnsZones());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdatePrivateAccessChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("vcnId")) {
+                this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("privateSourceDnsZones")) {
+                this.privateSourceDnsZones(model.getPrivateSourceDnsZones());
+            }
+            return this;
         }
     }
 
@@ -231,11 +242,11 @@ public final class UpdatePrivateAccessChannelDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdatePrivateAccessChannelDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", privateSourceDnsZones=").append(String.valueOf(this.privateSourceDnsZones));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -254,7 +265,7 @@ public final class UpdatePrivateAccessChannelDetails {
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.privateSourceDnsZones, other.privateSourceDnsZones)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -269,16 +280,7 @@ public final class UpdatePrivateAccessChannelDetails {
                         + (this.privateSourceDnsZones == null
                                 ? 43
                                 : this.privateSourceDnsZones.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

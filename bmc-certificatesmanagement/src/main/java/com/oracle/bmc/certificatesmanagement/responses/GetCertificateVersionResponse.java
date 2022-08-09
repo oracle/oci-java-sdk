@@ -53,16 +53,18 @@ public class GetCertificateVersionResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "certificateVersion"
     })
     private GetCertificateVersionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.certificatesmanagement.model.CertificateVersion certificateVersion) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.certificateVersion = certificateVersion;
@@ -73,6 +75,13 @@ public class GetCertificateVersionResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetCertificateVersionResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(GetCertificateVersionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             certificateVersion(o.getCertificateVersion());
@@ -145,7 +155,7 @@ public class GetCertificateVersionResponse extends com.oracle.bmc.responses.BmcR
          */
         public GetCertificateVersionResponse build() {
             return new GetCertificateVersionResponse(
-                    __httpStatusCode__, etag, opcRequestId, certificateVersion);
+                    __httpStatusCode__, headers, etag, opcRequestId, certificateVersion);
         }
     }
 

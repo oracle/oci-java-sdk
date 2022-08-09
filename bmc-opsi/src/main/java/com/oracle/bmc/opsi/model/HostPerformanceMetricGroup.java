@@ -41,7 +41,7 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class HostPerformanceMetricGroup {
+public class HostPerformanceMetricGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeCollected"})
     protected HostPerformanceMetricGroup(java.util.Date timeCollected) {
@@ -80,6 +80,7 @@ public class HostPerformanceMetricGroup {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HostPerformanceMetricGroup(");
+        sb.append("super=").append(super.toString());
         sb.append("timeCollected=").append(String.valueOf(this.timeCollected));
         sb.append(")");
         return sb.toString();
@@ -95,7 +96,8 @@ public class HostPerformanceMetricGroup {
         }
 
         HostPerformanceMetricGroup other = (HostPerformanceMetricGroup) o;
-        return java.util.Objects.equals(this.timeCollected, other.timeCollected);
+        return java.util.Objects.equals(this.timeCollected, other.timeCollected)
+                && super.equals(other);
     }
 
     @Override
@@ -105,6 +107,7 @@ public class HostPerformanceMetricGroup {
         result =
                 (result * PRIME)
                         + (this.timeCollected == null ? 43 : this.timeCollected.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

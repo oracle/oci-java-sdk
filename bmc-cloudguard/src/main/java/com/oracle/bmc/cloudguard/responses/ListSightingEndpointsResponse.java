@@ -60,16 +60,18 @@ public class ListSightingEndpointsResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "sightingEndpointCollection"
     })
     private ListSightingEndpointsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.SightingEndpointCollection sightingEndpointCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.sightingEndpointCollection = sightingEndpointCollection;
@@ -80,6 +82,13 @@ public class ListSightingEndpointsResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -147,6 +156,7 @@ public class ListSightingEndpointsResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(ListSightingEndpointsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             sightingEndpointCollection(o.getSightingEndpointCollection());
@@ -160,7 +170,11 @@ public class ListSightingEndpointsResponse extends com.oracle.bmc.responses.BmcR
          */
         public ListSightingEndpointsResponse build() {
             return new ListSightingEndpointsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, sightingEndpointCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    sightingEndpointCollection);
         }
     }
 

@@ -65,16 +65,18 @@ public class ListTablesResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "tableCollection"
     })
     private ListTablesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.nosql.model.TableCollection tableCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.tableCollection = tableCollection;
@@ -85,6 +87,13 @@ public class ListTablesResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -155,6 +164,7 @@ public class ListTablesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListTablesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             tableCollection(o.getTableCollection());
@@ -168,7 +178,7 @@ public class ListTablesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListTablesResponse build() {
             return new ListTablesResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, tableCollection);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, tableCollection);
         }
     }
 

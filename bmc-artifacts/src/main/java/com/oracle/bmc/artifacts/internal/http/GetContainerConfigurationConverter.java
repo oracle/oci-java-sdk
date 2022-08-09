@@ -113,8 +113,8 @@ public class GetContainerConfigurationConverter {
                                         builder =
                                                 com.oracle.bmc.artifacts.responses
                                                         .GetContainerConfigurationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.containerConfiguration(response.getItem());
 

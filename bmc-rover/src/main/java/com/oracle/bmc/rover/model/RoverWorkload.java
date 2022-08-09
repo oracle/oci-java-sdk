@@ -17,7 +17,7 @@ package com.oracle.bmc.rover.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoverWorkload.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RoverWorkload {
+public final class RoverWorkload extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -222,38 +222,57 @@ public final class RoverWorkload {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RoverWorkload build() {
-            RoverWorkload __instance__ =
+            RoverWorkload model =
                     new RoverWorkload(
-                            name,
-                            compartmentId,
-                            id,
-                            size,
-                            objectCount,
-                            prefix,
-                            rangeStart,
-                            rangeEnd,
-                            workloadType,
-                            workRequestId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.compartmentId,
+                            this.id,
+                            this.size,
+                            this.objectCount,
+                            this.prefix,
+                            this.rangeStart,
+                            this.rangeEnd,
+                            this.workloadType,
+                            this.workRequestId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RoverWorkload o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .compartmentId(o.getCompartmentId())
-                            .id(o.getId())
-                            .size(o.getSize())
-                            .objectCount(o.getObjectCount())
-                            .prefix(o.getPrefix())
-                            .rangeStart(o.getRangeStart())
-                            .rangeEnd(o.getRangeEnd())
-                            .workloadType(o.getWorkloadType())
-                            .workRequestId(o.getWorkRequestId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RoverWorkload model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
+            if (model.wasPropertyExplicitlySet("objectCount")) {
+                this.objectCount(model.getObjectCount());
+            }
+            if (model.wasPropertyExplicitlySet("prefix")) {
+                this.prefix(model.getPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("rangeStart")) {
+                this.rangeStart(model.getRangeStart());
+            }
+            if (model.wasPropertyExplicitlySet("rangeEnd")) {
+                this.rangeEnd(model.getRangeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("workloadType")) {
+                this.workloadType(model.getWorkloadType());
+            }
+            if (model.wasPropertyExplicitlySet("workRequestId")) {
+                this.workRequestId(model.getWorkRequestId());
+            }
+            return this;
         }
     }
 
@@ -421,6 +440,7 @@ public final class RoverWorkload {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RoverWorkload(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", id=").append(String.valueOf(this.id));
@@ -431,7 +451,6 @@ public final class RoverWorkload {
         sb.append(", rangeEnd=").append(String.valueOf(this.rangeEnd));
         sb.append(", workloadType=").append(String.valueOf(this.workloadType));
         sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -456,7 +475,7 @@ public final class RoverWorkload {
                 && java.util.Objects.equals(this.rangeEnd, other.rangeEnd)
                 && java.util.Objects.equals(this.workloadType, other.workloadType)
                 && java.util.Objects.equals(this.workRequestId, other.workRequestId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -477,16 +496,7 @@ public final class RoverWorkload {
         result =
                 (result * PRIME)
                         + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

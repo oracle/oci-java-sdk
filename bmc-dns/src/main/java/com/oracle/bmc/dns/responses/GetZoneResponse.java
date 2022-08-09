@@ -57,13 +57,20 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
         return zone;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "eTag", "zone"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "eTag",
+        "zone"
+    })
     private GetZoneResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String eTag,
             com.oracle.bmc.dns.model.Zone zone) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.eTag = eTag;
         this.zone = zone;
@@ -74,6 +81,13 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -138,6 +152,7 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetZoneResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             eTag(o.getETag());
             zone(o.getZone());
@@ -150,7 +165,7 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetZoneResponse build() {
-            return new GetZoneResponse(__httpStatusCode__, opcRequestId, eTag, zone);
+            return new GetZoneResponse(__httpStatusCode__, headers, opcRequestId, eTag, zone);
         }
     }
 

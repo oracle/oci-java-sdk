@@ -130,7 +130,8 @@ public class UpdateZoneConverter {
 
                                 com.oracle.bmc.dns.responses.UpdateZoneResponse.Builder builder =
                                         com.oracle.bmc.dns.responses.UpdateZoneResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.zone(response.getItem());
 

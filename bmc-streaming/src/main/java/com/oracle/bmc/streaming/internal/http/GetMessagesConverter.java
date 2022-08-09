@@ -127,8 +127,8 @@ public class GetMessagesConverter {
                                         builder =
                                                 com.oracle.bmc.streaming.responses
                                                         .GetMessagesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

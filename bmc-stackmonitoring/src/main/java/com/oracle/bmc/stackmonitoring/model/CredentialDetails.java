@@ -19,7 +19,7 @@ package com.oracle.bmc.stackmonitoring.model;
     builder = CredentialDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CredentialDetails {
+public final class CredentialDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"credentialName", "credentialType", "properties"})
     public CredentialDetails(
@@ -78,21 +78,27 @@ public final class CredentialDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CredentialDetails build() {
-            CredentialDetails __instance__ =
-                    new CredentialDetails(credentialName, credentialType, properties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CredentialDetails model =
+                    new CredentialDetails(
+                            this.credentialName, this.credentialType, this.properties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CredentialDetails o) {
-            Builder copiedBuilder =
-                    credentialName(o.getCredentialName())
-                            .credentialType(o.getCredentialType())
-                            .properties(o.getProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CredentialDetails model) {
+            if (model.wasPropertyExplicitlySet("credentialName")) {
+                this.credentialName(model.getCredentialName());
+            }
+            if (model.wasPropertyExplicitlySet("credentialType")) {
+                this.credentialType(model.getCredentialType());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            return this;
         }
     }
 
@@ -155,10 +161,10 @@ public final class CredentialDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CredentialDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("credentialName=").append(String.valueOf(this.credentialName));
         sb.append(", credentialType=").append(String.valueOf(this.credentialType));
         sb.append(", properties=").append(String.valueOf(this.properties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -176,7 +182,7 @@ public final class CredentialDetails {
         return java.util.Objects.equals(this.credentialName, other.credentialName)
                 && java.util.Objects.equals(this.credentialType, other.credentialType)
                 && java.util.Objects.equals(this.properties, other.properties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -190,16 +196,7 @@ public final class CredentialDetails {
                 (result * PRIME)
                         + (this.credentialType == null ? 43 : this.credentialType.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

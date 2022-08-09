@@ -85,6 +85,7 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcClientRequestId",
         "opcRequestId",
         "lastModified",
@@ -93,12 +94,13 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private DeleteObjectResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             java.util.Date lastModified,
             String versionId,
             Boolean isDeleteMarker) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
         this.lastModified = lastModified;
@@ -111,6 +113,13 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -205,6 +214,7 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(DeleteObjectResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             lastModified(o.getLastModified());
@@ -221,6 +231,7 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         public DeleteObjectResponse build() {
             return new DeleteObjectResponse(
                     __httpStatusCode__,
+                    headers,
                     opcClientRequestId,
                     opcRequestId,
                     lastModified,

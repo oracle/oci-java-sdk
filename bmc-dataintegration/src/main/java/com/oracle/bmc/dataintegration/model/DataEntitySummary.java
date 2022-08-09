@@ -44,7 +44,7 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DataEntitySummary {
+public class DataEntitySummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"metadata"})
     protected DataEntitySummary(ObjectMetadata metadata) {
@@ -72,6 +72,7 @@ public class DataEntitySummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataEntitySummary(");
+        sb.append("super=").append(super.toString());
         sb.append("metadata=").append(String.valueOf(this.metadata));
         sb.append(")");
         return sb.toString();
@@ -87,7 +88,7 @@ public class DataEntitySummary {
         }
 
         DataEntitySummary other = (DataEntitySummary) o;
-        return java.util.Objects.equals(this.metadata, other.metadata);
+        return java.util.Objects.equals(this.metadata, other.metadata) && super.equals(other);
     }
 
     @Override
@@ -95,6 +96,7 @@ public class DataEntitySummary {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

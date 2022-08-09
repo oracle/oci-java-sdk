@@ -223,48 +223,77 @@ public final class Saml2IdentityProvider extends IdentityProvider {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Saml2IdentityProvider build() {
-            Saml2IdentityProvider __instance__ =
+            Saml2IdentityProvider model =
                     new Saml2IdentityProvider(
-                            id,
-                            compartmentId,
-                            name,
-                            description,
-                            productType,
-                            timeCreated,
-                            lifecycleState,
-                            inactiveStatus,
-                            freeformTags,
-                            definedTags,
-                            metadataUrl,
-                            metadata,
-                            signingCertificate,
-                            redirectUrl,
-                            freeformAttributes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.name,
+                            this.description,
+                            this.productType,
+                            this.timeCreated,
+                            this.lifecycleState,
+                            this.inactiveStatus,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.metadataUrl,
+                            this.metadata,
+                            this.signingCertificate,
+                            this.redirectUrl,
+                            this.freeformAttributes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Saml2IdentityProvider o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .productType(o.getProductType())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleState(o.getLifecycleState())
-                            .inactiveStatus(o.getInactiveStatus())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .metadataUrl(o.getMetadataUrl())
-                            .metadata(o.getMetadata())
-                            .signingCertificate(o.getSigningCertificate())
-                            .redirectUrl(o.getRedirectUrl())
-                            .freeformAttributes(o.getFreeformAttributes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Saml2IdentityProvider model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("productType")) {
+                this.productType(model.getProductType());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("inactiveStatus")) {
+                this.inactiveStatus(model.getInactiveStatus());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("metadataUrl")) {
+                this.metadataUrl(model.getMetadataUrl());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("signingCertificate")) {
+                this.signingCertificate(model.getSigningCertificate());
+            }
+            if (model.wasPropertyExplicitlySet("redirectUrl")) {
+                this.redirectUrl(model.getRedirectUrl());
+            }
+            if (model.wasPropertyExplicitlySet("freeformAttributes")) {
+                this.freeformAttributes(model.getFreeformAttributes());
+            }
+            return this;
         }
     }
 
@@ -421,7 +450,6 @@ public final class Saml2IdentityProvider extends IdentityProvider {
         sb.append(", signingCertificate=").append(String.valueOf(this.signingCertificate));
         sb.append(", redirectUrl=").append(String.valueOf(this.redirectUrl));
         sb.append(", freeformAttributes=").append(String.valueOf(this.freeformAttributes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -441,8 +469,7 @@ public final class Saml2IdentityProvider extends IdentityProvider {
                 && java.util.Objects.equals(this.signingCertificate, other.signingCertificate)
                 && java.util.Objects.equals(this.redirectUrl, other.redirectUrl)
                 && java.util.Objects.equals(this.freeformAttributes, other.freeformAttributes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -462,16 +489,6 @@ public final class Saml2IdentityProvider extends IdentityProvider {
                         + (this.freeformAttributes == null
                                 ? 43
                                 : this.freeformAttributes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

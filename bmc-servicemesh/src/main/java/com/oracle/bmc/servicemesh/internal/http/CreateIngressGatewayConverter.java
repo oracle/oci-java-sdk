@@ -108,8 +108,8 @@ public class CreateIngressGatewayConverter {
                                         builder =
                                                 com.oracle.bmc.servicemesh.responses
                                                         .CreateIngressGatewayResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.ingressGateway(response.getItem());
 

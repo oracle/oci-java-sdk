@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = VolumeGroupReplicaDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VolumeGroupReplicaDetails {
+public final class VolumeGroupReplicaDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "availabilityDomain"})
     public VolumeGroupReplicaDetails(String displayName, String availabilityDomain) {
@@ -77,19 +78,23 @@ public final class VolumeGroupReplicaDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VolumeGroupReplicaDetails build() {
-            VolumeGroupReplicaDetails __instance__ =
-                    new VolumeGroupReplicaDetails(displayName, availabilityDomain);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VolumeGroupReplicaDetails model =
+                    new VolumeGroupReplicaDetails(this.displayName, this.availabilityDomain);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VolumeGroupReplicaDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName()).availabilityDomain(o.getAvailabilityDomain());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VolumeGroupReplicaDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            return this;
         }
     }
 
@@ -155,9 +160,9 @@ public final class VolumeGroupReplicaDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VolumeGroupReplicaDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -174,7 +179,7 @@ public final class VolumeGroupReplicaDetails {
         VolumeGroupReplicaDetails other = (VolumeGroupReplicaDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -187,16 +192,7 @@ public final class VolumeGroupReplicaDetails {
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

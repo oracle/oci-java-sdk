@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RestCallConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RestCallConfig {
+public final class RestCallConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"methodType", "requestHeaders", "configValues"})
     public RestCallConfig(
@@ -78,21 +78,26 @@ public final class RestCallConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RestCallConfig build() {
-            RestCallConfig __instance__ =
-                    new RestCallConfig(methodType, requestHeaders, configValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RestCallConfig model =
+                    new RestCallConfig(this.methodType, this.requestHeaders, this.configValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RestCallConfig o) {
-            Builder copiedBuilder =
-                    methodType(o.getMethodType())
-                            .requestHeaders(o.getRequestHeaders())
-                            .configValues(o.getConfigValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RestCallConfig model) {
+            if (model.wasPropertyExplicitlySet("methodType")) {
+                this.methodType(model.getMethodType());
+            }
+            if (model.wasPropertyExplicitlySet("requestHeaders")) {
+                this.requestHeaders(model.getRequestHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            return this;
         }
     }
 
@@ -193,10 +198,10 @@ public final class RestCallConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RestCallConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("methodType=").append(String.valueOf(this.methodType));
         sb.append(", requestHeaders=").append(String.valueOf(this.requestHeaders));
         sb.append(", configValues=").append(String.valueOf(this.configValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -214,7 +219,7 @@ public final class RestCallConfig {
         return java.util.Objects.equals(this.methodType, other.methodType)
                 && java.util.Objects.equals(this.requestHeaders, other.requestHeaders)
                 && java.util.Objects.equals(this.configValues, other.configValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -226,16 +231,7 @@ public final class RestCallConfig {
                 (result * PRIME)
                         + (this.requestHeaders == null ? 43 : this.requestHeaders.hashCode());
         result = (result * PRIME) + (this.configValues == null ? 43 : this.configValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

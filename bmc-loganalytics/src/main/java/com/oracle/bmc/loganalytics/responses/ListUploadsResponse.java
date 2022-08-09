@@ -70,6 +70,7 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opcTotalItems",
@@ -77,11 +78,12 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ListUploadsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             Long opcTotalItems,
             com.oracle.bmc.loganalytics.model.UploadCollection uploadCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opcTotalItems = opcTotalItems;
@@ -93,6 +95,13 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -171,6 +180,7 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListUploadsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcTotalItems(o.getOpcTotalItems());
@@ -185,7 +195,12 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListUploadsResponse build() {
             return new ListUploadsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, opcTotalItems, uploadCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    opcTotalItems,
+                    uploadCollection);
         }
     }
 

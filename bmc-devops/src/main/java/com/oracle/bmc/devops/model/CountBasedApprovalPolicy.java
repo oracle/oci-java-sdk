@@ -48,18 +48,20 @@ public final class CountBasedApprovalPolicy extends ApprovalPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CountBasedApprovalPolicy build() {
-            CountBasedApprovalPolicy __instance__ =
-                    new CountBasedApprovalPolicy(numberOfApprovalsRequired);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CountBasedApprovalPolicy model =
+                    new CountBasedApprovalPolicy(this.numberOfApprovalsRequired);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CountBasedApprovalPolicy o) {
-            Builder copiedBuilder = numberOfApprovalsRequired(o.getNumberOfApprovalsRequired());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CountBasedApprovalPolicy model) {
+            if (model.wasPropertyExplicitlySet("numberOfApprovalsRequired")) {
+                this.numberOfApprovalsRequired(model.getNumberOfApprovalsRequired());
+            }
+            return this;
         }
     }
 
@@ -110,7 +112,6 @@ public final class CountBasedApprovalPolicy extends ApprovalPolicy {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", numberOfApprovalsRequired=")
                 .append(String.valueOf(this.numberOfApprovalsRequired));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -127,8 +128,7 @@ public final class CountBasedApprovalPolicy extends ApprovalPolicy {
         CountBasedApprovalPolicy other = (CountBasedApprovalPolicy) o;
         return java.util.Objects.equals(
                         this.numberOfApprovalsRequired, other.numberOfApprovalsRequired)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -140,16 +140,6 @@ public final class CountBasedApprovalPolicy extends ApprovalPolicy {
                         + (this.numberOfApprovalsRequired == null
                                 ? 43
                                 : this.numberOfApprovalsRequired.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

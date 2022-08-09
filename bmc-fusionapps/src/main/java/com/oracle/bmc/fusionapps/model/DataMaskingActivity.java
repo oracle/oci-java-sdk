@@ -19,7 +19,7 @@ package com.oracle.bmc.fusionapps.model;
     builder = DataMaskingActivity.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataMaskingActivity {
+public final class DataMaskingActivity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -129,28 +129,37 @@ public final class DataMaskingActivity {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataMaskingActivity build() {
-            DataMaskingActivity __instance__ =
+            DataMaskingActivity model =
                     new DataMaskingActivity(
-                            id,
-                            fusionEnvironmentId,
-                            lifecycleState,
-                            timeMaskingStart,
-                            timeMaskingFinish);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.fusionEnvironmentId,
+                            this.lifecycleState,
+                            this.timeMaskingStart,
+                            this.timeMaskingFinish);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataMaskingActivity o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .fusionEnvironmentId(o.getFusionEnvironmentId())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeMaskingStart(o.getTimeMaskingStart())
-                            .timeMaskingFinish(o.getTimeMaskingFinish());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataMaskingActivity model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("fusionEnvironmentId")) {
+                this.fusionEnvironmentId(model.getFusionEnvironmentId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeMaskingStart")) {
+                this.timeMaskingStart(model.getTimeMaskingStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeMaskingFinish")) {
+                this.timeMaskingFinish(model.getTimeMaskingFinish());
+            }
+            return this;
         }
     }
 
@@ -299,12 +308,12 @@ public final class DataMaskingActivity {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataMaskingActivity(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", fusionEnvironmentId=").append(String.valueOf(this.fusionEnvironmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeMaskingStart=").append(String.valueOf(this.timeMaskingStart));
         sb.append(", timeMaskingFinish=").append(String.valueOf(this.timeMaskingFinish));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -324,7 +333,7 @@ public final class DataMaskingActivity {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeMaskingStart, other.timeMaskingStart)
                 && java.util.Objects.equals(this.timeMaskingFinish, other.timeMaskingFinish)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -346,16 +355,7 @@ public final class DataMaskingActivity {
         result =
                 (result * PRIME)
                         + (this.timeMaskingFinish == null ? 43 : this.timeMaskingFinish.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

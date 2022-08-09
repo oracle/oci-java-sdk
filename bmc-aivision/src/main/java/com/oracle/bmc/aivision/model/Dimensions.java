@@ -17,7 +17,7 @@ package com.oracle.bmc.aivision.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Dimensions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Dimensions {
+public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"width", "height", "unit"})
     public Dimensions(Double width, Double height, Unit unit) {
@@ -82,17 +82,25 @@ public final class Dimensions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Dimensions build() {
-            Dimensions __instance__ = new Dimensions(width, height, unit);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Dimensions model = new Dimensions(this.width, this.height, this.unit);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Dimensions o) {
-            Builder copiedBuilder = width(o.getWidth()).height(o.getHeight()).unit(o.getUnit());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Dimensions model) {
+            if (model.wasPropertyExplicitlySet("width")) {
+                this.width(model.getWidth());
+            }
+            if (model.wasPropertyExplicitlySet("height")) {
+                this.height(model.getHeight());
+            }
+            if (model.wasPropertyExplicitlySet("unit")) {
+                this.unit(model.getUnit());
+            }
+            return this;
         }
     }
 
@@ -208,10 +216,10 @@ public final class Dimensions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Dimensions(");
+        sb.append("super=").append(super.toString());
         sb.append("width=").append(String.valueOf(this.width));
         sb.append(", height=").append(String.valueOf(this.height));
         sb.append(", unit=").append(String.valueOf(this.unit));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -229,7 +237,7 @@ public final class Dimensions {
         return java.util.Objects.equals(this.width, other.width)
                 && java.util.Objects.equals(this.height, other.height)
                 && java.util.Objects.equals(this.unit, other.unit)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -239,16 +247,7 @@ public final class Dimensions {
         result = (result * PRIME) + (this.width == null ? 43 : this.width.hashCode());
         result = (result * PRIME) + (this.height == null ? 43 : this.height.hashCode());
         result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

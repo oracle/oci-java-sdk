@@ -137,32 +137,45 @@ public final class HttpIngressGatewayTrafficRouteRule extends IngressGatewayTraf
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HttpIngressGatewayTrafficRouteRule build() {
-            HttpIngressGatewayTrafficRouteRule __instance__ =
+            HttpIngressGatewayTrafficRouteRule model =
                     new HttpIngressGatewayTrafficRouteRule(
-                            ingressGatewayHost,
-                            destinations,
-                            path,
-                            pathType,
-                            isGrpc,
-                            isHostRewriteEnabled,
-                            isPathRewriteEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.ingressGatewayHost,
+                            this.destinations,
+                            this.path,
+                            this.pathType,
+                            this.isGrpc,
+                            this.isHostRewriteEnabled,
+                            this.isPathRewriteEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HttpIngressGatewayTrafficRouteRule o) {
-            Builder copiedBuilder =
-                    ingressGatewayHost(o.getIngressGatewayHost())
-                            .destinations(o.getDestinations())
-                            .path(o.getPath())
-                            .pathType(o.getPathType())
-                            .isGrpc(o.getIsGrpc())
-                            .isHostRewriteEnabled(o.getIsHostRewriteEnabled())
-                            .isPathRewriteEnabled(o.getIsPathRewriteEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HttpIngressGatewayTrafficRouteRule model) {
+            if (model.wasPropertyExplicitlySet("ingressGatewayHost")) {
+                this.ingressGatewayHost(model.getIngressGatewayHost());
+            }
+            if (model.wasPropertyExplicitlySet("destinations")) {
+                this.destinations(model.getDestinations());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("pathType")) {
+                this.pathType(model.getPathType());
+            }
+            if (model.wasPropertyExplicitlySet("isGrpc")) {
+                this.isGrpc(model.getIsGrpc());
+            }
+            if (model.wasPropertyExplicitlySet("isHostRewriteEnabled")) {
+                this.isHostRewriteEnabled(model.getIsHostRewriteEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isPathRewriteEnabled")) {
+                this.isPathRewriteEnabled(model.getIsPathRewriteEnabled());
+            }
+            return this;
         }
     }
 
@@ -338,7 +351,6 @@ public final class HttpIngressGatewayTrafficRouteRule extends IngressGatewayTraf
         sb.append(", isGrpc=").append(String.valueOf(this.isGrpc));
         sb.append(", isHostRewriteEnabled=").append(String.valueOf(this.isHostRewriteEnabled));
         sb.append(", isPathRewriteEnabled=").append(String.valueOf(this.isPathRewriteEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -358,8 +370,7 @@ public final class HttpIngressGatewayTrafficRouteRule extends IngressGatewayTraf
                 && java.util.Objects.equals(this.isGrpc, other.isGrpc)
                 && java.util.Objects.equals(this.isHostRewriteEnabled, other.isHostRewriteEnabled)
                 && java.util.Objects.equals(this.isPathRewriteEnabled, other.isPathRewriteEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -379,16 +390,6 @@ public final class HttpIngressGatewayTrafficRouteRule extends IngressGatewayTraf
                         + (this.isPathRewriteEnabled == null
                                 ? 43
                                 : this.isPathRewriteEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

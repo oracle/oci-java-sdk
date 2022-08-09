@@ -117,8 +117,8 @@ public class ChangeAnalyticsInstanceCompartmentConverter {
                                                 com.oracle.bmc.analytics.responses
                                                         .ChangeAnalyticsInstanceCompartmentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

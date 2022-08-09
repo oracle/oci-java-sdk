@@ -124,8 +124,8 @@ public class GetJobExecutionConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .GetJobExecutionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.jobExecution(response.getItem());
 

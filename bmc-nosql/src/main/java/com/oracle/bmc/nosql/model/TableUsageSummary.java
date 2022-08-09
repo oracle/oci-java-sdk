@@ -23,7 +23,7 @@ package com.oracle.bmc.nosql.model;
     builder = TableUsageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TableUsageSummary {
+public final class TableUsageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "secondsInPeriod",
@@ -183,32 +183,45 @@ public final class TableUsageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TableUsageSummary build() {
-            TableUsageSummary __instance__ =
+            TableUsageSummary model =
                     new TableUsageSummary(
-                            secondsInPeriod,
-                            readUnits,
-                            writeUnits,
-                            storageInGBs,
-                            readThrottleCount,
-                            writeThrottleCount,
-                            storageThrottleCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.secondsInPeriod,
+                            this.readUnits,
+                            this.writeUnits,
+                            this.storageInGBs,
+                            this.readThrottleCount,
+                            this.writeThrottleCount,
+                            this.storageThrottleCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TableUsageSummary o) {
-            Builder copiedBuilder =
-                    secondsInPeriod(o.getSecondsInPeriod())
-                            .readUnits(o.getReadUnits())
-                            .writeUnits(o.getWriteUnits())
-                            .storageInGBs(o.getStorageInGBs())
-                            .readThrottleCount(o.getReadThrottleCount())
-                            .writeThrottleCount(o.getWriteThrottleCount())
-                            .storageThrottleCount(o.getStorageThrottleCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TableUsageSummary model) {
+            if (model.wasPropertyExplicitlySet("secondsInPeriod")) {
+                this.secondsInPeriod(model.getSecondsInPeriod());
+            }
+            if (model.wasPropertyExplicitlySet("readUnits")) {
+                this.readUnits(model.getReadUnits());
+            }
+            if (model.wasPropertyExplicitlySet("writeUnits")) {
+                this.writeUnits(model.getWriteUnits());
+            }
+            if (model.wasPropertyExplicitlySet("storageInGBs")) {
+                this.storageInGBs(model.getStorageInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("readThrottleCount")) {
+                this.readThrottleCount(model.getReadThrottleCount());
+            }
+            if (model.wasPropertyExplicitlySet("writeThrottleCount")) {
+                this.writeThrottleCount(model.getWriteThrottleCount());
+            }
+            if (model.wasPropertyExplicitlySet("storageThrottleCount")) {
+                this.storageThrottleCount(model.getStorageThrottleCount());
+            }
+            return this;
         }
     }
 
@@ -346,6 +359,7 @@ public final class TableUsageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TableUsageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("secondsInPeriod=").append(String.valueOf(this.secondsInPeriod));
         sb.append(", readUnits=").append(String.valueOf(this.readUnits));
         sb.append(", writeUnits=").append(String.valueOf(this.writeUnits));
@@ -353,7 +367,6 @@ public final class TableUsageSummary {
         sb.append(", readThrottleCount=").append(String.valueOf(this.readThrottleCount));
         sb.append(", writeThrottleCount=").append(String.valueOf(this.writeThrottleCount));
         sb.append(", storageThrottleCount=").append(String.valueOf(this.storageThrottleCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -375,7 +388,7 @@ public final class TableUsageSummary {
                 && java.util.Objects.equals(this.readThrottleCount, other.readThrottleCount)
                 && java.util.Objects.equals(this.writeThrottleCount, other.writeThrottleCount)
                 && java.util.Objects.equals(this.storageThrottleCount, other.storageThrottleCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -401,16 +414,7 @@ public final class TableUsageSummary {
                         + (this.storageThrottleCount == null
                                 ? 43
                                 : this.storageThrottleCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

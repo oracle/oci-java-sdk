@@ -19,7 +19,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UdpOptions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UdpOptions {
+public final class UdpOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"destinationPortRange", "sourcePortRange"})
     public UdpOptions(PortRange destinationPortRange, PortRange sourcePortRange) {
@@ -53,19 +53,22 @@ public final class UdpOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UdpOptions build() {
-            UdpOptions __instance__ = new UdpOptions(destinationPortRange, sourcePortRange);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UdpOptions model = new UdpOptions(this.destinationPortRange, this.sourcePortRange);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UdpOptions o) {
-            Builder copiedBuilder =
-                    destinationPortRange(o.getDestinationPortRange())
-                            .sourcePortRange(o.getSourcePortRange());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UdpOptions model) {
+            if (model.wasPropertyExplicitlySet("destinationPortRange")) {
+                this.destinationPortRange(model.getDestinationPortRange());
+            }
+            if (model.wasPropertyExplicitlySet("sourcePortRange")) {
+                this.sourcePortRange(model.getSourcePortRange());
+            }
+            return this;
         }
     }
 
@@ -107,9 +110,9 @@ public final class UdpOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UdpOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("destinationPortRange=").append(String.valueOf(this.destinationPortRange));
         sb.append(", sourcePortRange=").append(String.valueOf(this.sourcePortRange));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -126,7 +129,7 @@ public final class UdpOptions {
         UdpOptions other = (UdpOptions) o;
         return java.util.Objects.equals(this.destinationPortRange, other.destinationPortRange)
                 && java.util.Objects.equals(this.sourcePortRange, other.sourcePortRange)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -141,16 +144,7 @@ public final class UdpOptions {
         result =
                 (result * PRIME)
                         + (this.sourcePortRange == null ? 43 : this.sourcePortRange.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

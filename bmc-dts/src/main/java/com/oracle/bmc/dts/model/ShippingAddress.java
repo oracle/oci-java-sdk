@@ -17,7 +17,7 @@ package com.oracle.bmc.dts.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ShippingAddress.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ShippingAddress {
+public final class ShippingAddress extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "addressee",
@@ -176,42 +176,65 @@ public final class ShippingAddress {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShippingAddress build() {
-            ShippingAddress __instance__ =
+            ShippingAddress model =
                     new ShippingAddress(
-                            addressee,
-                            careOf,
-                            address1,
-                            address2,
-                            address3,
-                            address4,
-                            cityOrLocality,
-                            stateOrRegion,
-                            zipcode,
-                            country,
-                            phoneNumber,
-                            email);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.addressee,
+                            this.careOf,
+                            this.address1,
+                            this.address2,
+                            this.address3,
+                            this.address4,
+                            this.cityOrLocality,
+                            this.stateOrRegion,
+                            this.zipcode,
+                            this.country,
+                            this.phoneNumber,
+                            this.email);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ShippingAddress o) {
-            Builder copiedBuilder =
-                    addressee(o.getAddressee())
-                            .careOf(o.getCareOf())
-                            .address1(o.getAddress1())
-                            .address2(o.getAddress2())
-                            .address3(o.getAddress3())
-                            .address4(o.getAddress4())
-                            .cityOrLocality(o.getCityOrLocality())
-                            .stateOrRegion(o.getStateOrRegion())
-                            .zipcode(o.getZipcode())
-                            .country(o.getCountry())
-                            .phoneNumber(o.getPhoneNumber())
-                            .email(o.getEmail());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ShippingAddress model) {
+            if (model.wasPropertyExplicitlySet("addressee")) {
+                this.addressee(model.getAddressee());
+            }
+            if (model.wasPropertyExplicitlySet("careOf")) {
+                this.careOf(model.getCareOf());
+            }
+            if (model.wasPropertyExplicitlySet("address1")) {
+                this.address1(model.getAddress1());
+            }
+            if (model.wasPropertyExplicitlySet("address2")) {
+                this.address2(model.getAddress2());
+            }
+            if (model.wasPropertyExplicitlySet("address3")) {
+                this.address3(model.getAddress3());
+            }
+            if (model.wasPropertyExplicitlySet("address4")) {
+                this.address4(model.getAddress4());
+            }
+            if (model.wasPropertyExplicitlySet("cityOrLocality")) {
+                this.cityOrLocality(model.getCityOrLocality());
+            }
+            if (model.wasPropertyExplicitlySet("stateOrRegion")) {
+                this.stateOrRegion(model.getStateOrRegion());
+            }
+            if (model.wasPropertyExplicitlySet("zipcode")) {
+                this.zipcode(model.getZipcode());
+            }
+            if (model.wasPropertyExplicitlySet("country")) {
+                this.country(model.getCountry());
+            }
+            if (model.wasPropertyExplicitlySet("phoneNumber")) {
+                this.phoneNumber(model.getPhoneNumber());
+            }
+            if (model.wasPropertyExplicitlySet("email")) {
+                this.email(model.getEmail());
+            }
+            return this;
         }
     }
 
@@ -323,6 +346,7 @@ public final class ShippingAddress {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ShippingAddress(");
+        sb.append("super=").append(super.toString());
         sb.append("addressee=").append(String.valueOf(this.addressee));
         sb.append(", careOf=").append(String.valueOf(this.careOf));
         sb.append(", address1=").append(String.valueOf(this.address1));
@@ -335,7 +359,6 @@ public final class ShippingAddress {
         sb.append(", country=").append(String.valueOf(this.country));
         sb.append(", phoneNumber=").append(String.valueOf(this.phoneNumber));
         sb.append(", email=").append(String.valueOf(this.email));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -362,7 +385,7 @@ public final class ShippingAddress {
                 && java.util.Objects.equals(this.country, other.country)
                 && java.util.Objects.equals(this.phoneNumber, other.phoneNumber)
                 && java.util.Objects.equals(this.email, other.email)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -385,16 +408,7 @@ public final class ShippingAddress {
         result = (result * PRIME) + (this.country == null ? 43 : this.country.hashCode());
         result = (result * PRIME) + (this.phoneNumber == null ? 43 : this.phoneNumber.hashCode());
         result = (result * PRIME) + (this.email == null ? 43 : this.email.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

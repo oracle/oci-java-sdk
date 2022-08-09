@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = AssociatedDatabaseSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AssociatedDatabaseSummary {
+public final class AssociatedDatabaseSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "name", "compartmentId", "timeRegistered"})
     public AssociatedDatabaseSummary(
@@ -102,22 +103,30 @@ public final class AssociatedDatabaseSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AssociatedDatabaseSummary build() {
-            AssociatedDatabaseSummary __instance__ =
-                    new AssociatedDatabaseSummary(id, name, compartmentId, timeRegistered);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AssociatedDatabaseSummary model =
+                    new AssociatedDatabaseSummary(
+                            this.id, this.name, this.compartmentId, this.timeRegistered);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AssociatedDatabaseSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .compartmentId(o.getCompartmentId())
-                            .timeRegistered(o.getTimeRegistered());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AssociatedDatabaseSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeRegistered")) {
+                this.timeRegistered(model.getTimeRegistered());
+            }
+            return this;
         }
     }
 
@@ -201,11 +210,11 @@ public final class AssociatedDatabaseSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AssociatedDatabaseSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", timeRegistered=").append(String.valueOf(this.timeRegistered));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -224,7 +233,7 @@ public final class AssociatedDatabaseSummary {
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.timeRegistered, other.timeRegistered)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -239,16 +248,7 @@ public final class AssociatedDatabaseSummary {
         result =
                 (result * PRIME)
                         + (this.timeRegistered == null ? 43 : this.timeRegistered.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

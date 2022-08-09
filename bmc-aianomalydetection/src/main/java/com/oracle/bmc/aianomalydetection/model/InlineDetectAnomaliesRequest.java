@@ -75,19 +75,26 @@ public final class InlineDetectAnomaliesRequest extends DetectAnomaliesDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InlineDetectAnomaliesRequest build() {
-            InlineDetectAnomaliesRequest __instance__ =
-                    new InlineDetectAnomaliesRequest(modelId, signalNames, data);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            InlineDetectAnomaliesRequest model =
+                    new InlineDetectAnomaliesRequest(this.modelId, this.signalNames, this.data);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InlineDetectAnomaliesRequest o) {
-            Builder copiedBuilder =
-                    modelId(o.getModelId()).signalNames(o.getSignalNames()).data(o.getData());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InlineDetectAnomaliesRequest model) {
+            if (model.wasPropertyExplicitlySet("modelId")) {
+                this.modelId(model.getModelId());
+            }
+            if (model.wasPropertyExplicitlySet("signalNames")) {
+                this.signalNames(model.getSignalNames());
+            }
+            if (model.wasPropertyExplicitlySet("data")) {
+                this.data(model.getData());
+            }
+            return this;
         }
     }
 
@@ -154,7 +161,6 @@ public final class InlineDetectAnomaliesRequest extends DetectAnomaliesDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", signalNames=").append(String.valueOf(this.signalNames));
         sb.append(", data=").append(String.valueOf(this.data));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -171,8 +177,7 @@ public final class InlineDetectAnomaliesRequest extends DetectAnomaliesDetails {
         InlineDetectAnomaliesRequest other = (InlineDetectAnomaliesRequest) o;
         return java.util.Objects.equals(this.signalNames, other.signalNames)
                 && java.util.Objects.equals(this.data, other.data)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -181,16 +186,6 @@ public final class InlineDetectAnomaliesRequest extends DetectAnomaliesDetails {
         int result = super.hashCode();
         result = (result * PRIME) + (this.signalNames == null ? 43 : this.signalNames.hashCode());
         result = (result * PRIME) + (this.data == null ? 43 : this.data.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

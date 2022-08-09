@@ -78,17 +78,25 @@ public final class ImageMetadata extends RecordMetadata {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageMetadata build() {
-            ImageMetadata __instance__ = new ImageMetadata(height, width, depth);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ImageMetadata model = new ImageMetadata(this.height, this.width, this.depth);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImageMetadata o) {
-            Builder copiedBuilder = height(o.getHeight()).width(o.getWidth()).depth(o.getDepth());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImageMetadata model) {
+            if (model.wasPropertyExplicitlySet("height")) {
+                this.height(model.getHeight());
+            }
+            if (model.wasPropertyExplicitlySet("width")) {
+                this.width(model.getWidth());
+            }
+            if (model.wasPropertyExplicitlySet("depth")) {
+                this.depth(model.getDepth());
+            }
+            return this;
         }
     }
 
@@ -170,7 +178,6 @@ public final class ImageMetadata extends RecordMetadata {
         sb.append(", height=").append(String.valueOf(this.height));
         sb.append(", width=").append(String.valueOf(this.width));
         sb.append(", depth=").append(String.valueOf(this.depth));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -188,8 +195,7 @@ public final class ImageMetadata extends RecordMetadata {
         return java.util.Objects.equals(this.height, other.height)
                 && java.util.Objects.equals(this.width, other.width)
                 && java.util.Objects.equals(this.depth, other.depth)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -199,16 +205,6 @@ public final class ImageMetadata extends RecordMetadata {
         result = (result * PRIME) + (this.height == null ? 43 : this.height.hashCode());
         result = (result * PRIME) + (this.width == null ? 43 : this.width.hashCode());
         result = (result * PRIME) + (this.depth == null ? 43 : this.depth.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

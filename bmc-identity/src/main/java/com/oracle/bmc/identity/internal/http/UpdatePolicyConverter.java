@@ -103,8 +103,8 @@ public class UpdatePolicyConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .UpdatePolicyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.policy(response.getItem());
 

@@ -221,56 +221,93 @@ public final class SingleDeployStageRedeployment extends Deployment {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SingleDeployStageRedeployment build() {
-            SingleDeployStageRedeployment __instance__ =
+            SingleDeployStageRedeployment model =
                     new SingleDeployStageRedeployment(
-                            deployPipelineArtifacts,
-                            deployPipelineEnvironments,
-                            id,
-                            displayName,
-                            projectId,
-                            deployPipelineId,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            lifecycleDetails,
-                            deploymentArguments,
-                            deployArtifactOverrideArguments,
-                            deploymentExecutionProgress,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            previousDeploymentId,
-                            deployStageId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.deployPipelineArtifacts,
+                            this.deployPipelineEnvironments,
+                            this.id,
+                            this.displayName,
+                            this.projectId,
+                            this.deployPipelineId,
+                            this.compartmentId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.deploymentArguments,
+                            this.deployArtifactOverrideArguments,
+                            this.deploymentExecutionProgress,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.previousDeploymentId,
+                            this.deployStageId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SingleDeployStageRedeployment o) {
-            Builder copiedBuilder =
-                    deployPipelineArtifacts(o.getDeployPipelineArtifacts())
-                            .deployPipelineEnvironments(o.getDeployPipelineEnvironments())
-                            .id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .projectId(o.getProjectId())
-                            .deployPipelineId(o.getDeployPipelineId())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .deploymentArguments(o.getDeploymentArguments())
-                            .deployArtifactOverrideArguments(o.getDeployArtifactOverrideArguments())
-                            .deploymentExecutionProgress(o.getDeploymentExecutionProgress())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .previousDeploymentId(o.getPreviousDeploymentId())
-                            .deployStageId(o.getDeployStageId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SingleDeployStageRedeployment model) {
+            if (model.wasPropertyExplicitlySet("deployPipelineArtifacts")) {
+                this.deployPipelineArtifacts(model.getDeployPipelineArtifacts());
+            }
+            if (model.wasPropertyExplicitlySet("deployPipelineEnvironments")) {
+                this.deployPipelineEnvironments(model.getDeployPipelineEnvironments());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("projectId")) {
+                this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentArguments")) {
+                this.deploymentArguments(model.getDeploymentArguments());
+            }
+            if (model.wasPropertyExplicitlySet("deployArtifactOverrideArguments")) {
+                this.deployArtifactOverrideArguments(model.getDeployArtifactOverrideArguments());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentExecutionProgress")) {
+                this.deploymentExecutionProgress(model.getDeploymentExecutionProgress());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("previousDeploymentId")) {
+                this.previousDeploymentId(model.getPreviousDeploymentId());
+            }
+            if (model.wasPropertyExplicitlySet("deployStageId")) {
+                this.deployStageId(model.getDeployStageId());
+            }
+            return this;
         }
     }
 
@@ -372,7 +409,6 @@ public final class SingleDeployStageRedeployment extends Deployment {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", previousDeploymentId=").append(String.valueOf(this.previousDeploymentId));
         sb.append(", deployStageId=").append(String.valueOf(this.deployStageId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -389,8 +425,7 @@ public final class SingleDeployStageRedeployment extends Deployment {
         SingleDeployStageRedeployment other = (SingleDeployStageRedeployment) o;
         return java.util.Objects.equals(this.previousDeploymentId, other.previousDeploymentId)
                 && java.util.Objects.equals(this.deployStageId, other.deployStageId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -405,16 +440,6 @@ public final class SingleDeployStageRedeployment extends Deployment {
         result =
                 (result * PRIME)
                         + (this.deployStageId == null ? 43 : this.deployStageId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

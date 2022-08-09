@@ -108,8 +108,8 @@ public class UpdateNetworkSourceConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .UpdateNetworkSourceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkSources(response.getItem());
 

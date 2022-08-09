@@ -105,8 +105,8 @@ public class GetIamWorkRequestConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .GetIamWorkRequestResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.iamWorkRequest(response.getItem());
 

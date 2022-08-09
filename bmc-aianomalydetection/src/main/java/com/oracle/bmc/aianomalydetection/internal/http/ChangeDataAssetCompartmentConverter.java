@@ -127,8 +127,8 @@ public class ChangeDataAssetCompartmentConverter {
                                                 com.oracle.bmc.aianomalydetection.responses
                                                         .ChangeDataAssetCompartmentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataAsset(response.getItem());
 

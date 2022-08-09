@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = FacetedSearchSortRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FacetedSearchSortRequest {
+public final class FacetedSearchSortRequest
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sortBy", "sortOrder"})
     public FacetedSearchSortRequest(String sortBy, SortOrder sortOrder) {
@@ -67,17 +68,23 @@ public final class FacetedSearchSortRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FacetedSearchSortRequest build() {
-            FacetedSearchSortRequest __instance__ = new FacetedSearchSortRequest(sortBy, sortOrder);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FacetedSearchSortRequest model =
+                    new FacetedSearchSortRequest(this.sortBy, this.sortOrder);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FacetedSearchSortRequest o) {
-            Builder copiedBuilder = sortBy(o.getSortBy()).sortOrder(o.getSortOrder());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FacetedSearchSortRequest model) {
+            if (model.wasPropertyExplicitlySet("sortBy")) {
+                this.sortBy(model.getSortBy());
+            }
+            if (model.wasPropertyExplicitlySet("sortOrder")) {
+                this.sortOrder(model.getSortOrder());
+            }
+            return this;
         }
     }
 
@@ -168,9 +175,9 @@ public final class FacetedSearchSortRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FacetedSearchSortRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("sortBy=").append(String.valueOf(this.sortBy));
         sb.append(", sortOrder=").append(String.valueOf(this.sortOrder));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -187,7 +194,7 @@ public final class FacetedSearchSortRequest {
         FacetedSearchSortRequest other = (FacetedSearchSortRequest) o;
         return java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -196,16 +203,7 @@ public final class FacetedSearchSortRequest {
         int result = 1;
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

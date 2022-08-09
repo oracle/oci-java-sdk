@@ -19,7 +19,7 @@ package com.oracle.bmc.database.model;
     builder = BackupDestination.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BackupDestination {
+public final class BackupDestination extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -358,50 +358,81 @@ public final class BackupDestination {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BackupDestination build() {
-            BackupDestination __instance__ =
+            BackupDestination model =
                     new BackupDestination(
-                            id,
-                            displayName,
-                            compartmentId,
-                            type,
-                            associatedDatabases,
-                            connectionString,
-                            vpcUsers,
-                            localMountPointPath,
-                            nfsMountType,
-                            nfsServer,
-                            nfsServerExport,
-                            lifecycleState,
-                            timeCreated,
-                            lifecycleDetails,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.compartmentId,
+                            this.type,
+                            this.associatedDatabases,
+                            this.connectionString,
+                            this.vpcUsers,
+                            this.localMountPointPath,
+                            this.nfsMountType,
+                            this.nfsServer,
+                            this.nfsServerExport,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.lifecycleDetails,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BackupDestination o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .type(o.getType())
-                            .associatedDatabases(o.getAssociatedDatabases())
-                            .connectionString(o.getConnectionString())
-                            .vpcUsers(o.getVpcUsers())
-                            .localMountPointPath(o.getLocalMountPointPath())
-                            .nfsMountType(o.getNfsMountType())
-                            .nfsServer(o.getNfsServer())
-                            .nfsServerExport(o.getNfsServerExport())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BackupDestination model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("associatedDatabases")) {
+                this.associatedDatabases(model.getAssociatedDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("connectionString")) {
+                this.connectionString(model.getConnectionString());
+            }
+            if (model.wasPropertyExplicitlySet("vpcUsers")) {
+                this.vpcUsers(model.getVpcUsers());
+            }
+            if (model.wasPropertyExplicitlySet("localMountPointPath")) {
+                this.localMountPointPath(model.getLocalMountPointPath());
+            }
+            if (model.wasPropertyExplicitlySet("nfsMountType")) {
+                this.nfsMountType(model.getNfsMountType());
+            }
+            if (model.wasPropertyExplicitlySet("nfsServer")) {
+                this.nfsServer(model.getNfsServer());
+            }
+            if (model.wasPropertyExplicitlySet("nfsServerExport")) {
+                this.nfsServerExport(model.getNfsServerExport());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -814,6 +845,7 @@ public final class BackupDestination {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BackupDestination(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -830,7 +862,6 @@ public final class BackupDestination {
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -861,7 +892,7 @@ public final class BackupDestination {
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -902,16 +933,7 @@ public final class BackupDestination {
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

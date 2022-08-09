@@ -19,7 +19,8 @@ package com.oracle.bmc.certificatesmanagement.model;
     builder = CertificateAuthorityCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CertificateAuthorityCollection {
+public final class CertificateAuthorityCollection
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public CertificateAuthorityCollection(java.util.List<CertificateAuthoritySummary> items) {
@@ -50,17 +51,19 @@ public final class CertificateAuthorityCollection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CertificateAuthorityCollection build() {
-            CertificateAuthorityCollection __instance__ = new CertificateAuthorityCollection(items);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CertificateAuthorityCollection model = new CertificateAuthorityCollection(this.items);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CertificateAuthorityCollection o) {
-            Builder copiedBuilder = items(o.getItems());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CertificateAuthorityCollection model) {
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            return this;
         }
     }
 
@@ -102,8 +105,8 @@ public final class CertificateAuthorityCollection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CertificateAuthorityCollection(");
+        sb.append("super=").append(super.toString());
         sb.append("items=").append(String.valueOf(this.items));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -118,8 +121,7 @@ public final class CertificateAuthorityCollection {
         }
 
         CertificateAuthorityCollection other = (CertificateAuthorityCollection) o;
-        return java.util.Objects.equals(this.items, other.items)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.items, other.items) && super.equals(other);
     }
 
     @Override
@@ -127,16 +129,7 @@ public final class CertificateAuthorityCollection {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

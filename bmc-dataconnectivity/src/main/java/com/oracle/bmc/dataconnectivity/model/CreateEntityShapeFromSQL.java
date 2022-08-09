@@ -200,54 +200,89 @@ public final class CreateEntityShapeFromSQL extends CreateEntityShapeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateEntityShapeFromSQL build() {
-            CreateEntityShapeFromSQL __instance__ =
+            CreateEntityShapeFromSQL model =
                     new CreateEntityShapeFromSQL(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            objectVersion,
-                            externalKey,
-                            shape,
-                            shapeId,
-                            entityType,
-                            otherTypeLabel,
-                            uniqueKeys,
-                            foreignKeys,
-                            resourceName,
-                            objectStatus,
-                            identifier,
-                            types,
-                            entityProperties,
-                            sqlQuery);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.objectVersion,
+                            this.externalKey,
+                            this.shape,
+                            this.shapeId,
+                            this.entityType,
+                            this.otherTypeLabel,
+                            this.uniqueKeys,
+                            this.foreignKeys,
+                            this.resourceName,
+                            this.objectStatus,
+                            this.identifier,
+                            this.types,
+                            this.entityProperties,
+                            this.sqlQuery);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateEntityShapeFromSQL o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .objectVersion(o.getObjectVersion())
-                            .externalKey(o.getExternalKey())
-                            .shape(o.getShape())
-                            .shapeId(o.getShapeId())
-                            .entityType(o.getEntityType())
-                            .otherTypeLabel(o.getOtherTypeLabel())
-                            .uniqueKeys(o.getUniqueKeys())
-                            .foreignKeys(o.getForeignKeys())
-                            .resourceName(o.getResourceName())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .types(o.getTypes())
-                            .entityProperties(o.getEntityProperties())
-                            .sqlQuery(o.getSqlQuery());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateEntityShapeFromSQL model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("externalKey")) {
+                this.externalKey(model.getExternalKey());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("shapeId")) {
+                this.shapeId(model.getShapeId());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("otherTypeLabel")) {
+                this.otherTypeLabel(model.getOtherTypeLabel());
+            }
+            if (model.wasPropertyExplicitlySet("uniqueKeys")) {
+                this.uniqueKeys(model.getUniqueKeys());
+            }
+            if (model.wasPropertyExplicitlySet("foreignKeys")) {
+                this.foreignKeys(model.getForeignKeys());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("types")) {
+                this.types(model.getTypes());
+            }
+            if (model.wasPropertyExplicitlySet("entityProperties")) {
+                this.entityProperties(model.getEntityProperties());
+            }
+            if (model.wasPropertyExplicitlySet("sqlQuery")) {
+                this.sqlQuery(model.getSqlQuery());
+            }
+            return this;
         }
     }
 
@@ -332,7 +367,6 @@ public final class CreateEntityShapeFromSQL extends CreateEntityShapeDetails {
         sb.append("CreateEntityShapeFromSQL(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sqlQuery=").append(String.valueOf(this.sqlQuery));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -347,9 +381,7 @@ public final class CreateEntityShapeFromSQL extends CreateEntityShapeDetails {
         }
 
         CreateEntityShapeFromSQL other = (CreateEntityShapeFromSQL) o;
-        return java.util.Objects.equals(this.sqlQuery, other.sqlQuery)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.sqlQuery, other.sqlQuery) && super.equals(other);
     }
 
     @Override
@@ -357,16 +389,6 @@ public final class CreateEntityShapeFromSQL extends CreateEntityShapeDetails {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.sqlQuery == null ? 43 : this.sqlQuery.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

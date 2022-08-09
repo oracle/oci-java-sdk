@@ -19,7 +19,8 @@ package com.oracle.bmc.containerengine.model;
     builder = ClusterEndpointConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ClusterEndpointConfig {
+public final class ClusterEndpointConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"subnetId", "nsgIds", "isPublicIpEnabled"})
     public ClusterEndpointConfig(
@@ -87,21 +88,26 @@ public final class ClusterEndpointConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClusterEndpointConfig build() {
-            ClusterEndpointConfig __instance__ =
-                    new ClusterEndpointConfig(subnetId, nsgIds, isPublicIpEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ClusterEndpointConfig model =
+                    new ClusterEndpointConfig(this.subnetId, this.nsgIds, this.isPublicIpEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ClusterEndpointConfig o) {
-            Builder copiedBuilder =
-                    subnetId(o.getSubnetId())
-                            .nsgIds(o.getNsgIds())
-                            .isPublicIpEnabled(o.getIsPublicIpEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ClusterEndpointConfig model) {
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("isPublicIpEnabled")) {
+                this.isPublicIpEnabled(model.getIsPublicIpEnabled());
+            }
+            return this;
         }
     }
 
@@ -173,10 +179,10 @@ public final class ClusterEndpointConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClusterEndpointConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", isPublicIpEnabled=").append(String.valueOf(this.isPublicIpEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -194,7 +200,7 @@ public final class ClusterEndpointConfig {
         return java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.isPublicIpEnabled, other.isPublicIpEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -206,16 +212,7 @@ public final class ClusterEndpointConfig {
         result =
                 (result * PRIME)
                         + (this.isPublicIpEnabled == null ? 43 : this.isPublicIpEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -107,8 +107,8 @@ public class GetTraceConverter {
                                         builder =
                                                 com.oracle.bmc.apmtraces.responses.GetTraceResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.trace(response.getItem());
 

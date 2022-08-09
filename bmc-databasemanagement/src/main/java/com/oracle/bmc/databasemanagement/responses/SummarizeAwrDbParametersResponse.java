@@ -61,17 +61,19 @@ public class SummarizeAwrDbParametersResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "awrDbParameterCollection"
     })
     private SummarizeAwrDbParametersResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.databasemanagement.model.AwrDbParameterCollection
                     awrDbParameterCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.awrDbParameterCollection = awrDbParameterCollection;
@@ -82,6 +84,13 @@ public class SummarizeAwrDbParametersResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class SummarizeAwrDbParametersResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(SummarizeAwrDbParametersResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             awrDbParameterCollection(o.getAwrDbParameterCollection());
@@ -162,7 +172,11 @@ public class SummarizeAwrDbParametersResponse extends com.oracle.bmc.responses.B
          */
         public SummarizeAwrDbParametersResponse build() {
             return new SummarizeAwrDbParametersResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, awrDbParameterCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    awrDbParameterCollection);
         }
     }
 

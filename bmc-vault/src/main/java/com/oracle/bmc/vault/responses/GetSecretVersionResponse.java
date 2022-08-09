@@ -53,16 +53,18 @@ public class GetSecretVersionResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "secretVersion"
     })
     private GetSecretVersionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.vault.model.SecretVersion secretVersion) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.secretVersion = secretVersion;
@@ -73,6 +75,13 @@ public class GetSecretVersionResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +140,7 @@ public class GetSecretVersionResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GetSecretVersionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             secretVersion(o.getSecretVersion());
@@ -144,7 +154,7 @@ public class GetSecretVersionResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public GetSecretVersionResponse build() {
             return new GetSecretVersionResponse(
-                    __httpStatusCode__, etag, opcRequestId, secretVersion);
+                    __httpStatusCode__, headers, etag, opcRequestId, secretVersion);
         }
     }
 

@@ -108,8 +108,8 @@ public class UpdateOdaInstanceConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses
                                                         .UpdateOdaInstanceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.odaInstance(response.getItem());
 

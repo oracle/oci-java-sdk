@@ -68,6 +68,7 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "location",
         "opcRequestId",
         "etag",
@@ -75,11 +76,12 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
     })
     private CreateManagedInstanceGroupResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String opcRequestId,
             String etag,
             com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.location = location;
         this.opcRequestId = opcRequestId;
         this.etag = etag;
@@ -91,6 +93,13 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -167,6 +176,7 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
          */
         public Builder copy(CreateManagedInstanceGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
@@ -181,7 +191,12 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
          */
         public CreateManagedInstanceGroupResponse build() {
             return new CreateManagedInstanceGroupResponse(
-                    __httpStatusCode__, location, opcRequestId, etag, managedInstanceGroup);
+                    __httpStatusCode__,
+                    headers,
+                    location,
+                    opcRequestId,
+                    etag,
+                    managedInstanceGroup);
         }
     }
 

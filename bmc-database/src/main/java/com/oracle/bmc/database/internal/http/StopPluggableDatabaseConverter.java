@@ -117,8 +117,8 @@ public class StopPluggableDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .StopPluggableDatabaseResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pluggableDatabase(response.getItem());
 

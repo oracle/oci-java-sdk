@@ -169,8 +169,8 @@ public class ListSessionsConverter {
                                         builder =
                                                 com.oracle.bmc.bastion.responses
                                                         .ListSessionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

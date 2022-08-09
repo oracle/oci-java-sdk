@@ -131,8 +131,8 @@ public class UpdateExternalPublicationConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .UpdateExternalPublicationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.externalPublication(response.getItem());
 

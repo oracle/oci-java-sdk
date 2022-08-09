@@ -34,10 +34,18 @@ public class UpdateWhitelistsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcWorkRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
     private UpdateWhitelistsResponse(
-            int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            String opcWorkRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
     }
@@ -47,6 +55,13 @@ public class UpdateWhitelistsResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -86,6 +101,7 @@ public class UpdateWhitelistsResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(UpdateWhitelistsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
 
@@ -97,7 +113,8 @@ public class UpdateWhitelistsResponse extends com.oracle.bmc.responses.BmcRespon
          * @return the response object
          */
         public UpdateWhitelistsResponse build() {
-            return new UpdateWhitelistsResponse(__httpStatusCode__, opcRequestId, opcWorkRequestId);
+            return new UpdateWhitelistsResponse(
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
         }
     }
 

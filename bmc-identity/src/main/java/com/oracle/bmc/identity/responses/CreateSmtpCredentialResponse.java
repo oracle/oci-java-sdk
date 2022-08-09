@@ -53,16 +53,18 @@ public class CreateSmtpCredentialResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "smtpCredential"
     })
     private CreateSmtpCredentialResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.SmtpCredential smtpCredential) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.smtpCredential = smtpCredential;
@@ -73,6 +75,13 @@ public class CreateSmtpCredentialResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +140,7 @@ public class CreateSmtpCredentialResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(CreateSmtpCredentialResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             smtpCredential(o.getSmtpCredential());
@@ -144,7 +154,7 @@ public class CreateSmtpCredentialResponse extends com.oracle.bmc.responses.BmcRe
          */
         public CreateSmtpCredentialResponse build() {
             return new CreateSmtpCredentialResponse(
-                    __httpStatusCode__, opcRequestId, etag, smtpCredential);
+                    __httpStatusCode__, headers, opcRequestId, etag, smtpCredential);
         }
     }
 

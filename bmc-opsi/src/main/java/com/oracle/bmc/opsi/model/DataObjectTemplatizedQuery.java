@@ -129,30 +129,41 @@ public final class DataObjectTemplatizedQuery extends DataObjectQuery {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataObjectTemplatizedQuery build() {
-            DataObjectTemplatizedQuery __instance__ =
+            DataObjectTemplatizedQuery model =
                     new DataObjectTemplatizedQuery(
-                            selectList,
-                            whereConditionsList,
-                            groupByList,
-                            havingConditionsList,
-                            orderByList,
-                            timeFilters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.selectList,
+                            this.whereConditionsList,
+                            this.groupByList,
+                            this.havingConditionsList,
+                            this.orderByList,
+                            this.timeFilters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataObjectTemplatizedQuery o) {
-            Builder copiedBuilder =
-                    selectList(o.getSelectList())
-                            .whereConditionsList(o.getWhereConditionsList())
-                            .groupByList(o.getGroupByList())
-                            .havingConditionsList(o.getHavingConditionsList())
-                            .orderByList(o.getOrderByList())
-                            .timeFilters(o.getTimeFilters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataObjectTemplatizedQuery model) {
+            if (model.wasPropertyExplicitlySet("selectList")) {
+                this.selectList(model.getSelectList());
+            }
+            if (model.wasPropertyExplicitlySet("whereConditionsList")) {
+                this.whereConditionsList(model.getWhereConditionsList());
+            }
+            if (model.wasPropertyExplicitlySet("groupByList")) {
+                this.groupByList(model.getGroupByList());
+            }
+            if (model.wasPropertyExplicitlySet("havingConditionsList")) {
+                this.havingConditionsList(model.getHavingConditionsList());
+            }
+            if (model.wasPropertyExplicitlySet("orderByList")) {
+                this.orderByList(model.getOrderByList());
+            }
+            if (model.wasPropertyExplicitlySet("timeFilters")) {
+                this.timeFilters(model.getTimeFilters());
+            }
+            return this;
         }
     }
 
@@ -289,7 +300,6 @@ public final class DataObjectTemplatizedQuery extends DataObjectQuery {
         sb.append(", havingConditionsList=").append(String.valueOf(this.havingConditionsList));
         sb.append(", orderByList=").append(String.valueOf(this.orderByList));
         sb.append(", timeFilters=").append(String.valueOf(this.timeFilters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -310,8 +320,7 @@ public final class DataObjectTemplatizedQuery extends DataObjectQuery {
                 && java.util.Objects.equals(this.havingConditionsList, other.havingConditionsList)
                 && java.util.Objects.equals(this.orderByList, other.orderByList)
                 && java.util.Objects.equals(this.timeFilters, other.timeFilters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -332,16 +341,6 @@ public final class DataObjectTemplatizedQuery extends DataObjectQuery {
                                 : this.havingConditionsList.hashCode());
         result = (result * PRIME) + (this.orderByList == null ? 43 : this.orderByList.hashCode());
         result = (result * PRIME) + (this.timeFilters == null ? 43 : this.timeFilters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -73,6 +73,7 @@ public class ListDiscoveryAnalyticsResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opcPrevPage",
@@ -80,12 +81,13 @@ public class ListDiscoveryAnalyticsResponse extends com.oracle.bmc.responses.Bmc
     })
     private ListDiscoveryAnalyticsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
             com.oracle.bmc.datasafe.model.DiscoveryAnalyticsCollection
                     discoveryAnalyticsCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opcPrevPage = opcPrevPage;
@@ -97,6 +99,13 @@ public class ListDiscoveryAnalyticsResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -179,6 +188,7 @@ public class ListDiscoveryAnalyticsResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(ListDiscoveryAnalyticsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());
@@ -194,6 +204,7 @@ public class ListDiscoveryAnalyticsResponse extends com.oracle.bmc.responses.Bmc
         public ListDiscoveryAnalyticsResponse build() {
             return new ListDiscoveryAnalyticsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     opcPrevPage,

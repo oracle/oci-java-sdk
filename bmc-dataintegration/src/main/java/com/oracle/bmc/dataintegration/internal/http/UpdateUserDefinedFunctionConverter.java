@@ -126,8 +126,8 @@ public class UpdateUserDefinedFunctionConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .UpdateUserDefinedFunctionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.userDefinedFunction(response.getItem());
 

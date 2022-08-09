@@ -20,7 +20,8 @@ package com.oracle.bmc.apigateway.model;
     builder = HeaderTransformationPolicy.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HeaderTransformationPolicy {
+public final class HeaderTransformationPolicy
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"setHeaders", "renameHeaders", "filterHeaders"})
     public HeaderTransformationPolicy(
@@ -67,21 +68,27 @@ public final class HeaderTransformationPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HeaderTransformationPolicy build() {
-            HeaderTransformationPolicy __instance__ =
-                    new HeaderTransformationPolicy(setHeaders, renameHeaders, filterHeaders);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HeaderTransformationPolicy model =
+                    new HeaderTransformationPolicy(
+                            this.setHeaders, this.renameHeaders, this.filterHeaders);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HeaderTransformationPolicy o) {
-            Builder copiedBuilder =
-                    setHeaders(o.getSetHeaders())
-                            .renameHeaders(o.getRenameHeaders())
-                            .filterHeaders(o.getFilterHeaders());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HeaderTransformationPolicy model) {
+            if (model.wasPropertyExplicitlySet("setHeaders")) {
+                this.setHeaders(model.getSetHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("renameHeaders")) {
+                this.renameHeaders(model.getRenameHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("filterHeaders")) {
+                this.filterHeaders(model.getFilterHeaders());
+            }
+            return this;
         }
     }
 
@@ -130,10 +137,10 @@ public final class HeaderTransformationPolicy {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HeaderTransformationPolicy(");
+        sb.append("super=").append(super.toString());
         sb.append("setHeaders=").append(String.valueOf(this.setHeaders));
         sb.append(", renameHeaders=").append(String.valueOf(this.renameHeaders));
         sb.append(", filterHeaders=").append(String.valueOf(this.filterHeaders));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -151,7 +158,7 @@ public final class HeaderTransformationPolicy {
         return java.util.Objects.equals(this.setHeaders, other.setHeaders)
                 && java.util.Objects.equals(this.renameHeaders, other.renameHeaders)
                 && java.util.Objects.equals(this.filterHeaders, other.filterHeaders)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -165,16 +172,7 @@ public final class HeaderTransformationPolicy {
         result =
                 (result * PRIME)
                         + (this.filterHeaders == null ? 43 : this.filterHeaders.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -124,8 +124,8 @@ public class SummarizeResourceInventoryConverter {
                                                 com.oracle.bmc.jms.responses
                                                         .SummarizeResourceInventoryResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceInventory(response.getItem());
 

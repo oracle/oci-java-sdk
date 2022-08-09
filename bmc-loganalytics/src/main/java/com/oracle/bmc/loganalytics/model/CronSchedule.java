@@ -79,22 +79,33 @@ public final class CronSchedule extends Schedule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CronSchedule build() {
-            CronSchedule __instance__ =
-                    new CronSchedule(misfirePolicy, timeOfFirstExecution, expression, timeZone);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CronSchedule model =
+                    new CronSchedule(
+                            this.misfirePolicy,
+                            this.timeOfFirstExecution,
+                            this.expression,
+                            this.timeZone);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CronSchedule o) {
-            Builder copiedBuilder =
-                    misfirePolicy(o.getMisfirePolicy())
-                            .timeOfFirstExecution(o.getTimeOfFirstExecution())
-                            .expression(o.getExpression())
-                            .timeZone(o.getTimeZone());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CronSchedule model) {
+            if (model.wasPropertyExplicitlySet("misfirePolicy")) {
+                this.misfirePolicy(model.getMisfirePolicy());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfFirstExecution")) {
+                this.timeOfFirstExecution(model.getTimeOfFirstExecution());
+            }
+            if (model.wasPropertyExplicitlySet("expression")) {
+                this.expression(model.getExpression());
+            }
+            if (model.wasPropertyExplicitlySet("timeZone")) {
+                this.timeZone(model.getTimeZone());
+            }
+            return this;
         }
     }
 
@@ -164,7 +175,6 @@ public final class CronSchedule extends Schedule {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", expression=").append(String.valueOf(this.expression));
         sb.append(", timeZone=").append(String.valueOf(this.timeZone));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -181,8 +191,7 @@ public final class CronSchedule extends Schedule {
         CronSchedule other = (CronSchedule) o;
         return java.util.Objects.equals(this.expression, other.expression)
                 && java.util.Objects.equals(this.timeZone, other.timeZone)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -191,16 +200,6 @@ public final class CronSchedule extends Schedule {
         int result = super.hashCode();
         result = (result * PRIME) + (this.expression == null ? 43 : this.expression.hashCode());
         result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

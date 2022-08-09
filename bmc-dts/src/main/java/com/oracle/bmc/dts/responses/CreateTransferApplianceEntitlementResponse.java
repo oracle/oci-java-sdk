@@ -50,16 +50,18 @@ public class CreateTransferApplianceEntitlementResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "transferApplianceEntitlement"
     })
     private CreateTransferApplianceEntitlementResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.transferApplianceEntitlement = transferApplianceEntitlement;
@@ -70,6 +72,13 @@ public class CreateTransferApplianceEntitlementResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +135,7 @@ public class CreateTransferApplianceEntitlementResponse
          */
         public Builder copy(CreateTransferApplianceEntitlementResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             transferApplianceEntitlement(o.getTransferApplianceEntitlement());
@@ -139,7 +149,7 @@ public class CreateTransferApplianceEntitlementResponse
          */
         public CreateTransferApplianceEntitlementResponse build() {
             return new CreateTransferApplianceEntitlementResponse(
-                    __httpStatusCode__, opcRequestId, etag, transferApplianceEntitlement);
+                    __httpStatusCode__, headers, opcRequestId, etag, transferApplianceEntitlement);
         }
     }
 

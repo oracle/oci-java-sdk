@@ -19,7 +19,8 @@ package com.oracle.bmc.osmanagement.model;
     builder = ModuleStreamOnManagedInstanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ModuleStreamOnManagedInstanceSummary {
+public final class ModuleStreamOnManagedInstanceSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "moduleName",
@@ -187,30 +188,41 @@ public final class ModuleStreamOnManagedInstanceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ModuleStreamOnManagedInstanceSummary build() {
-            ModuleStreamOnManagedInstanceSummary __instance__ =
+            ModuleStreamOnManagedInstanceSummary model =
                     new ModuleStreamOnManagedInstanceSummary(
-                            moduleName,
-                            streamName,
-                            status,
-                            profiles,
-                            softwareSourceId,
-                            timeModified);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.moduleName,
+                            this.streamName,
+                            this.status,
+                            this.profiles,
+                            this.softwareSourceId,
+                            this.timeModified);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ModuleStreamOnManagedInstanceSummary o) {
-            Builder copiedBuilder =
-                    moduleName(o.getModuleName())
-                            .streamName(o.getStreamName())
-                            .status(o.getStatus())
-                            .profiles(o.getProfiles())
-                            .softwareSourceId(o.getSoftwareSourceId())
-                            .timeModified(o.getTimeModified());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ModuleStreamOnManagedInstanceSummary model) {
+            if (model.wasPropertyExplicitlySet("moduleName")) {
+                this.moduleName(model.getModuleName());
+            }
+            if (model.wasPropertyExplicitlySet("streamName")) {
+                this.streamName(model.getStreamName());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("profiles")) {
+                this.profiles(model.getProfiles());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSourceId")) {
+                this.softwareSourceId(model.getSoftwareSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("timeModified")) {
+                this.timeModified(model.getTimeModified());
+            }
+            return this;
         }
     }
 
@@ -422,13 +434,13 @@ public final class ModuleStreamOnManagedInstanceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModuleStreamOnManagedInstanceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("moduleName=").append(String.valueOf(this.moduleName));
         sb.append(", streamName=").append(String.valueOf(this.streamName));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", profiles=").append(String.valueOf(this.profiles));
         sb.append(", softwareSourceId=").append(String.valueOf(this.softwareSourceId));
         sb.append(", timeModified=").append(String.valueOf(this.timeModified));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -449,7 +461,7 @@ public final class ModuleStreamOnManagedInstanceSummary {
                 && java.util.Objects.equals(this.profiles, other.profiles)
                 && java.util.Objects.equals(this.softwareSourceId, other.softwareSourceId)
                 && java.util.Objects.equals(this.timeModified, other.timeModified)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -464,16 +476,7 @@ public final class ModuleStreamOnManagedInstanceSummary {
                 (result * PRIME)
                         + (this.softwareSourceId == null ? 43 : this.softwareSourceId.hashCode());
         result = (result * PRIME) + (this.timeModified == null ? 43 : this.timeModified.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

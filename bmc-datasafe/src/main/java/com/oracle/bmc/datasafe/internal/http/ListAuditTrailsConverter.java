@@ -196,8 +196,8 @@ public class ListAuditTrailsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListAuditTrailsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.auditTrailCollection(response.getItem());
 

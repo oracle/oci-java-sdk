@@ -84,28 +84,37 @@ public final class CreateDeployPipelineRedeploymentDetails extends CreateDeploym
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDeployPipelineRedeploymentDetails build() {
-            CreateDeployPipelineRedeploymentDetails __instance__ =
+            CreateDeployPipelineRedeploymentDetails model =
                     new CreateDeployPipelineRedeploymentDetails(
-                            deployPipelineId,
-                            displayName,
-                            freeformTags,
-                            definedTags,
-                            previousDeploymentId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.deployPipelineId,
+                            this.displayName,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.previousDeploymentId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDeployPipelineRedeploymentDetails o) {
-            Builder copiedBuilder =
-                    deployPipelineId(o.getDeployPipelineId())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .previousDeploymentId(o.getPreviousDeploymentId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDeployPipelineRedeploymentDetails model) {
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("previousDeploymentId")) {
+                this.previousDeploymentId(model.getPreviousDeploymentId());
+            }
+            return this;
         }
     }
 
@@ -160,7 +169,6 @@ public final class CreateDeployPipelineRedeploymentDetails extends CreateDeploym
         sb.append("CreateDeployPipelineRedeploymentDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", previousDeploymentId=").append(String.valueOf(this.previousDeploymentId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -176,8 +184,7 @@ public final class CreateDeployPipelineRedeploymentDetails extends CreateDeploym
 
         CreateDeployPipelineRedeploymentDetails other = (CreateDeployPipelineRedeploymentDetails) o;
         return java.util.Objects.equals(this.previousDeploymentId, other.previousDeploymentId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -189,16 +196,6 @@ public final class CreateDeployPipelineRedeploymentDetails extends CreateDeploym
                         + (this.previousDeploymentId == null
                                 ? 43
                                 : this.previousDeploymentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

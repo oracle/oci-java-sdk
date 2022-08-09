@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsParserFunctionParameter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsParserFunctionParameter {
+public final class LogAnalyticsParserFunctionParameter
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "parserFunctionId",
@@ -161,32 +162,45 @@ public final class LogAnalyticsParserFunctionParameter {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsParserFunctionParameter build() {
-            LogAnalyticsParserFunctionParameter __instance__ =
+            LogAnalyticsParserFunctionParameter model =
                     new LogAnalyticsParserFunctionParameter(
-                            parserFunctionId,
-                            parserFunctionParameterName,
-                            parserFunctionParameterId,
-                            parserMetaPluginParameterName,
-                            parserMetaPluginParameterValue,
-                            parserName,
-                            parserMetaPluginParameter);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.parserFunctionId,
+                            this.parserFunctionParameterName,
+                            this.parserFunctionParameterId,
+                            this.parserMetaPluginParameterName,
+                            this.parserMetaPluginParameterValue,
+                            this.parserName,
+                            this.parserMetaPluginParameter);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsParserFunctionParameter o) {
-            Builder copiedBuilder =
-                    parserFunctionId(o.getParserFunctionId())
-                            .parserFunctionParameterName(o.getParserFunctionParameterName())
-                            .parserFunctionParameterId(o.getParserFunctionParameterId())
-                            .parserMetaPluginParameterName(o.getParserMetaPluginParameterName())
-                            .parserMetaPluginParameterValue(o.getParserMetaPluginParameterValue())
-                            .parserName(o.getParserName())
-                            .parserMetaPluginParameter(o.getParserMetaPluginParameter());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsParserFunctionParameter model) {
+            if (model.wasPropertyExplicitlySet("parserFunctionId")) {
+                this.parserFunctionId(model.getParserFunctionId());
+            }
+            if (model.wasPropertyExplicitlySet("parserFunctionParameterName")) {
+                this.parserFunctionParameterName(model.getParserFunctionParameterName());
+            }
+            if (model.wasPropertyExplicitlySet("parserFunctionParameterId")) {
+                this.parserFunctionParameterId(model.getParserFunctionParameterId());
+            }
+            if (model.wasPropertyExplicitlySet("parserMetaPluginParameterName")) {
+                this.parserMetaPluginParameterName(model.getParserMetaPluginParameterName());
+            }
+            if (model.wasPropertyExplicitlySet("parserMetaPluginParameterValue")) {
+                this.parserMetaPluginParameterValue(model.getParserMetaPluginParameterValue());
+            }
+            if (model.wasPropertyExplicitlySet("parserName")) {
+                this.parserName(model.getParserName());
+            }
+            if (model.wasPropertyExplicitlySet("parserMetaPluginParameter")) {
+                this.parserMetaPluginParameter(model.getParserMetaPluginParameter());
+            }
+            return this;
         }
     }
 
@@ -305,6 +319,7 @@ public final class LogAnalyticsParserFunctionParameter {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsParserFunctionParameter(");
+        sb.append("super=").append(super.toString());
         sb.append("parserFunctionId=").append(String.valueOf(this.parserFunctionId));
         sb.append(", parserFunctionParameterName=")
                 .append(String.valueOf(this.parserFunctionParameterName));
@@ -317,7 +332,6 @@ public final class LogAnalyticsParserFunctionParameter {
         sb.append(", parserName=").append(String.valueOf(this.parserName));
         sb.append(", parserMetaPluginParameter=")
                 .append(String.valueOf(this.parserMetaPluginParameter));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -344,7 +358,7 @@ public final class LogAnalyticsParserFunctionParameter {
                 && java.util.Objects.equals(this.parserName, other.parserName)
                 && java.util.Objects.equals(
                         this.parserMetaPluginParameter, other.parserMetaPluginParameter)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -380,16 +394,7 @@ public final class LogAnalyticsParserFunctionParameter {
                         + (this.parserMetaPluginParameter == null
                                 ? 43
                                 : this.parserMetaPluginParameter.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

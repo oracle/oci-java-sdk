@@ -112,8 +112,8 @@ public class CreateRegionSubscriptionConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .CreateRegionSubscriptionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.regionSubscription(response.getItem());
 

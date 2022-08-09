@@ -20,7 +20,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InstancePool.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstancePool {
+public final class InstancePool extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -281,40 +281,61 @@ public final class InstancePool {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstancePool build() {
-            InstancePool __instance__ =
+            InstancePool model =
                     new InstancePool(
-                            id,
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            instanceConfigurationId,
-                            lifecycleState,
-                            placementConfigurations,
-                            size,
-                            timeCreated,
-                            loadBalancers);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.instanceConfigurationId,
+                            this.lifecycleState,
+                            this.placementConfigurations,
+                            this.size,
+                            this.timeCreated,
+                            this.loadBalancers);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstancePool o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .instanceConfigurationId(o.getInstanceConfigurationId())
-                            .lifecycleState(o.getLifecycleState())
-                            .placementConfigurations(o.getPlacementConfigurations())
-                            .size(o.getSize())
-                            .timeCreated(o.getTimeCreated())
-                            .loadBalancers(o.getLoadBalancers());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstancePool model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
+                this.instanceConfigurationId(model.getInstanceConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("placementConfigurations")) {
+                this.placementConfigurations(model.getPlacementConfigurations());
+            }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancers")) {
+                this.loadBalancers(model.getLoadBalancers());
+            }
+            return this;
         }
     }
 
@@ -584,6 +605,7 @@ public final class InstancePool {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstancePool(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -597,7 +619,6 @@ public final class InstancePool {
         sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", loadBalancers=").append(String.valueOf(this.loadBalancers));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -625,7 +646,7 @@ public final class InstancePool {
                 && java.util.Objects.equals(this.size, other.size)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.loadBalancers, other.loadBalancers)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -657,16 +678,7 @@ public final class InstancePool {
         result =
                 (result * PRIME)
                         + (this.loadBalancers == null ? 43 : this.loadBalancers.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

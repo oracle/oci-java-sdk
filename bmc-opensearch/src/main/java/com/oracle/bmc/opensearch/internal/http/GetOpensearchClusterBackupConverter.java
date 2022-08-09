@@ -115,8 +115,8 @@ public class GetOpensearchClusterBackupConverter {
                                                 com.oracle.bmc.opensearch.responses
                                                         .GetOpensearchClusterBackupResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.opensearchClusterBackup(response.getItem());
 

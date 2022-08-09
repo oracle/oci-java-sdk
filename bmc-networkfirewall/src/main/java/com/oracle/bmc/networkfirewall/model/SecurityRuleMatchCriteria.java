@@ -21,7 +21,8 @@ package com.oracle.bmc.networkfirewall.model;
     builder = SecurityRuleMatchCriteria.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SecurityRuleMatchCriteria {
+public final class SecurityRuleMatchCriteria
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sources", "destinations", "applications", "urls"})
     public SecurityRuleMatchCriteria(
@@ -107,22 +108,30 @@ public final class SecurityRuleMatchCriteria {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecurityRuleMatchCriteria build() {
-            SecurityRuleMatchCriteria __instance__ =
-                    new SecurityRuleMatchCriteria(sources, destinations, applications, urls);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SecurityRuleMatchCriteria model =
+                    new SecurityRuleMatchCriteria(
+                            this.sources, this.destinations, this.applications, this.urls);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SecurityRuleMatchCriteria o) {
-            Builder copiedBuilder =
-                    sources(o.getSources())
-                            .destinations(o.getDestinations())
-                            .applications(o.getApplications())
-                            .urls(o.getUrls());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SecurityRuleMatchCriteria model) {
+            if (model.wasPropertyExplicitlySet("sources")) {
+                this.sources(model.getSources());
+            }
+            if (model.wasPropertyExplicitlySet("destinations")) {
+                this.destinations(model.getDestinations());
+            }
+            if (model.wasPropertyExplicitlySet("applications")) {
+                this.applications(model.getApplications());
+            }
+            if (model.wasPropertyExplicitlySet("urls")) {
+                this.urls(model.getUrls());
+            }
+            return this;
         }
     }
 
@@ -206,11 +215,11 @@ public final class SecurityRuleMatchCriteria {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SecurityRuleMatchCriteria(");
+        sb.append("super=").append(super.toString());
         sb.append("sources=").append(String.valueOf(this.sources));
         sb.append(", destinations=").append(String.valueOf(this.destinations));
         sb.append(", applications=").append(String.valueOf(this.applications));
         sb.append(", urls=").append(String.valueOf(this.urls));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -229,7 +238,7 @@ public final class SecurityRuleMatchCriteria {
                 && java.util.Objects.equals(this.destinations, other.destinations)
                 && java.util.Objects.equals(this.applications, other.applications)
                 && java.util.Objects.equals(this.urls, other.urls)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -240,16 +249,7 @@ public final class SecurityRuleMatchCriteria {
         result = (result * PRIME) + (this.destinations == null ? 43 : this.destinations.hashCode());
         result = (result * PRIME) + (this.applications == null ? 43 : this.applications.hashCode());
         result = (result * PRIME) + (this.urls == null ? 43 : this.urls.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

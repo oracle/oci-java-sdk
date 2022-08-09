@@ -21,7 +21,8 @@ package com.oracle.bmc.core.model;
     builder = LaunchInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LaunchInstanceDetails {
+public final class LaunchInstanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -709,68 +710,117 @@ public final class LaunchInstanceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LaunchInstanceDetails build() {
-            LaunchInstanceDetails __instance__ =
+            LaunchInstanceDetails model =
                     new LaunchInstanceDetails(
-                            availabilityDomain,
-                            capacityReservationId,
-                            compartmentId,
-                            createVnicDetails,
-                            dedicatedVmHostId,
-                            definedTags,
-                            displayName,
-                            extendedMetadata,
-                            faultDomain,
-                            freeformTags,
-                            hostnameLabel,
-                            imageId,
-                            ipxeScript,
-                            launchOptions,
-                            instanceOptions,
-                            availabilityConfig,
-                            preemptibleInstanceConfig,
-                            metadata,
-                            agentConfig,
-                            shape,
-                            shapeConfig,
-                            sourceDetails,
-                            subnetId,
-                            isPvEncryptionInTransitEnabled,
-                            platformConfig);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.capacityReservationId,
+                            this.compartmentId,
+                            this.createVnicDetails,
+                            this.dedicatedVmHostId,
+                            this.definedTags,
+                            this.displayName,
+                            this.extendedMetadata,
+                            this.faultDomain,
+                            this.freeformTags,
+                            this.hostnameLabel,
+                            this.imageId,
+                            this.ipxeScript,
+                            this.launchOptions,
+                            this.instanceOptions,
+                            this.availabilityConfig,
+                            this.preemptibleInstanceConfig,
+                            this.metadata,
+                            this.agentConfig,
+                            this.shape,
+                            this.shapeConfig,
+                            this.sourceDetails,
+                            this.subnetId,
+                            this.isPvEncryptionInTransitEnabled,
+                            this.platformConfig);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LaunchInstanceDetails o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .capacityReservationId(o.getCapacityReservationId())
-                            .compartmentId(o.getCompartmentId())
-                            .createVnicDetails(o.getCreateVnicDetails())
-                            .dedicatedVmHostId(o.getDedicatedVmHostId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .extendedMetadata(o.getExtendedMetadata())
-                            .faultDomain(o.getFaultDomain())
-                            .freeformTags(o.getFreeformTags())
-                            .hostnameLabel(o.getHostnameLabel())
-                            .imageId(o.getImageId())
-                            .ipxeScript(o.getIpxeScript())
-                            .launchOptions(o.getLaunchOptions())
-                            .instanceOptions(o.getInstanceOptions())
-                            .availabilityConfig(o.getAvailabilityConfig())
-                            .preemptibleInstanceConfig(o.getPreemptibleInstanceConfig())
-                            .metadata(o.getMetadata())
-                            .agentConfig(o.getAgentConfig())
-                            .shape(o.getShape())
-                            .shapeConfig(o.getShapeConfig())
-                            .sourceDetails(o.getSourceDetails())
-                            .subnetId(o.getSubnetId())
-                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
-                            .platformConfig(o.getPlatformConfig());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LaunchInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("capacityReservationId")) {
+                this.capacityReservationId(model.getCapacityReservationId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("createVnicDetails")) {
+                this.createVnicDetails(model.getCreateVnicDetails());
+            }
+            if (model.wasPropertyExplicitlySet("dedicatedVmHostId")) {
+                this.dedicatedVmHostId(model.getDedicatedVmHostId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("extendedMetadata")) {
+                this.extendedMetadata(model.getExtendedMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomain")) {
+                this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("hostnameLabel")) {
+                this.hostnameLabel(model.getHostnameLabel());
+            }
+            if (model.wasPropertyExplicitlySet("imageId")) {
+                this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("ipxeScript")) {
+                this.ipxeScript(model.getIpxeScript());
+            }
+            if (model.wasPropertyExplicitlySet("launchOptions")) {
+                this.launchOptions(model.getLaunchOptions());
+            }
+            if (model.wasPropertyExplicitlySet("instanceOptions")) {
+                this.instanceOptions(model.getInstanceOptions());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityConfig")) {
+                this.availabilityConfig(model.getAvailabilityConfig());
+            }
+            if (model.wasPropertyExplicitlySet("preemptibleInstanceConfig")) {
+                this.preemptibleInstanceConfig(model.getPreemptibleInstanceConfig());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("agentConfig")) {
+                this.agentConfig(model.getAgentConfig());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("shapeConfig")) {
+                this.shapeConfig(model.getShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDetails")) {
+                this.sourceDetails(model.getSourceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
+                this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("platformConfig")) {
+                this.platformConfig(model.getPlatformConfig());
+            }
+            return this;
         }
     }
 
@@ -1343,6 +1393,7 @@ public final class LaunchInstanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LaunchInstanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -1370,7 +1421,6 @@ public final class LaunchInstanceDetails {
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
         sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1412,7 +1462,7 @@ public final class LaunchInstanceDetails {
                 && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
                 && java.util.Objects.equals(this.platformConfig, other.platformConfig)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1482,16 +1532,7 @@ public final class LaunchInstanceDetails {
         result =
                 (result * PRIME)
                         + (this.platformConfig == null ? 43 : this.platformConfig.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

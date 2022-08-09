@@ -148,36 +148,53 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ReadOperationConfig build() {
-            ReadOperationConfig __instance__ =
+            ReadOperationConfig model =
                     new ReadOperationConfig(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            operations,
-                            dataFormat,
-                            partitionConfig,
-                            readAttribute,
-                            objectStatus,
-                            readRawData);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.operations,
+                            this.dataFormat,
+                            this.partitionConfig,
+                            this.readAttribute,
+                            this.objectStatus,
+                            this.readRawData);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ReadOperationConfig o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .operations(o.getOperations())
-                            .dataFormat(o.getDataFormat())
-                            .partitionConfig(o.getPartitionConfig())
-                            .readAttribute(o.getReadAttribute())
-                            .objectStatus(o.getObjectStatus())
-                            .readRawData(o.getReadRawData());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ReadOperationConfig model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("operations")) {
+                this.operations(model.getOperations());
+            }
+            if (model.wasPropertyExplicitlySet("dataFormat")) {
+                this.dataFormat(model.getDataFormat());
+            }
+            if (model.wasPropertyExplicitlySet("partitionConfig")) {
+                this.partitionConfig(model.getPartitionConfig());
+            }
+            if (model.wasPropertyExplicitlySet("readAttribute")) {
+                this.readAttribute(model.getReadAttribute());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("readRawData")) {
+                this.readRawData(model.getReadRawData());
+            }
+            return this;
         }
     }
 
@@ -336,7 +353,6 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
         sb.append(", readAttribute=").append(String.valueOf(this.readAttribute));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
         sb.append(", readRawData=").append(String.valueOf(this.readRawData));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -360,8 +376,7 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
                 && java.util.Objects.equals(this.readAttribute, other.readAttribute)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
                 && java.util.Objects.equals(this.readRawData, other.readRawData)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -381,16 +396,6 @@ public final class ReadOperationConfig extends AbstractDataOperationConfig {
                         + (this.readAttribute == null ? 43 : this.readAttribute.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
         result = (result * PRIME) + (this.readRawData == null ? 43 : this.readRawData.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

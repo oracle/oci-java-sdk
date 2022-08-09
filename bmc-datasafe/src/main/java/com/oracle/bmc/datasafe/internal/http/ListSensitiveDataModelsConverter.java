@@ -207,8 +207,8 @@ public class ListSensitiveDataModelsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListSensitiveDataModelsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.sensitiveDataModelCollection(response.getItem());
 

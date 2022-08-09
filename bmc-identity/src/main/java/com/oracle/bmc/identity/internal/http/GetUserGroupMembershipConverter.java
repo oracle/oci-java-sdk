@@ -106,8 +106,8 @@ public class GetUserGroupMembershipConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .GetUserGroupMembershipResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.userGroupMembership(response.getItem());
 

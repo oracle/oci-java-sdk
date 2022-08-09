@@ -51,18 +51,20 @@ public final class PersistedGetPathAnalysisDetails extends GetPathAnalysisDetail
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PersistedGetPathAnalysisDetails build() {
-            PersistedGetPathAnalysisDetails __instance__ =
-                    new PersistedGetPathAnalysisDetails(pathAnalyzerTestId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PersistedGetPathAnalysisDetails model =
+                    new PersistedGetPathAnalysisDetails(this.pathAnalyzerTestId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PersistedGetPathAnalysisDetails o) {
-            Builder copiedBuilder = pathAnalyzerTestId(o.getPathAnalyzerTestId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PersistedGetPathAnalysisDetails model) {
+            if (model.wasPropertyExplicitlySet("pathAnalyzerTestId")) {
+                this.pathAnalyzerTestId(model.getPathAnalyzerTestId());
+            }
+            return this;
         }
     }
 
@@ -114,7 +116,6 @@ public final class PersistedGetPathAnalysisDetails extends GetPathAnalysisDetail
         sb.append("PersistedGetPathAnalysisDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", pathAnalyzerTestId=").append(String.valueOf(this.pathAnalyzerTestId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -130,8 +131,7 @@ public final class PersistedGetPathAnalysisDetails extends GetPathAnalysisDetail
 
         PersistedGetPathAnalysisDetails other = (PersistedGetPathAnalysisDetails) o;
         return java.util.Objects.equals(this.pathAnalyzerTestId, other.pathAnalyzerTestId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -143,16 +143,6 @@ public final class PersistedGetPathAnalysisDetails extends GetPathAnalysisDetail
                         + (this.pathAnalyzerTestId == null
                                 ? 43
                                 : this.pathAnalyzerTestId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -169,8 +169,8 @@ public class ListStreamPoolsConverter {
                                         builder =
                                                 com.oracle.bmc.streaming.responses
                                                         .ListStreamPoolsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

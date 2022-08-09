@@ -120,8 +120,8 @@ public class UpdateEndpointConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .UpdateEndpointResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.endpoint(response.getItem());
 

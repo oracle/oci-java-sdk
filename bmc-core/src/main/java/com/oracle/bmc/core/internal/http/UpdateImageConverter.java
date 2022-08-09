@@ -103,7 +103,8 @@ public class UpdateImageConverter {
 
                                 com.oracle.bmc.core.responses.UpdateImageResponse.Builder builder =
                                         com.oracle.bmc.core.responses.UpdateImageResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.image(response.getItem());
 

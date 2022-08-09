@@ -130,7 +130,8 @@ public class GetRowConverter {
 
                                 com.oracle.bmc.nosql.responses.GetRowResponse.Builder builder =
                                         com.oracle.bmc.nosql.responses.GetRowResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.row(response.getItem());
 

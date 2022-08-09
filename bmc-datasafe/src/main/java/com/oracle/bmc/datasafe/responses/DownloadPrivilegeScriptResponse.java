@@ -66,6 +66,7 @@ public class DownloadPrivilegeScriptResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "contentLength",
@@ -73,11 +74,12 @@ public class DownloadPrivilegeScriptResponse extends com.oracle.bmc.responses.Bm
     })
     private DownloadPrivilegeScriptResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             Long contentLength,
             java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.contentLength = contentLength;
@@ -89,6 +91,13 @@ public class DownloadPrivilegeScriptResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -162,6 +171,7 @@ public class DownloadPrivilegeScriptResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(DownloadPrivilegeScriptResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             contentLength(o.getContentLength());
@@ -176,7 +186,7 @@ public class DownloadPrivilegeScriptResponse extends com.oracle.bmc.responses.Bm
          */
         public DownloadPrivilegeScriptResponse build() {
             return new DownloadPrivilegeScriptResponse(
-                    __httpStatusCode__, opcRequestId, etag, contentLength, inputStream);
+                    __httpStatusCode__, headers, opcRequestId, etag, contentLength, inputStream);
         }
     }
 

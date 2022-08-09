@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = InstanceConfigurationCreateVolumeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceConfigurationCreateVolumeDetails {
+public final class InstanceConfigurationCreateVolumeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -279,38 +280,57 @@ public final class InstanceConfigurationCreateVolumeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceConfigurationCreateVolumeDetails build() {
-            InstanceConfigurationCreateVolumeDetails __instance__ =
+            InstanceConfigurationCreateVolumeDetails model =
                     new InstanceConfigurationCreateVolumeDetails(
-                            availabilityDomain,
-                            backupPolicyId,
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            kmsKeyId,
-                            vpusPerGB,
-                            sizeInGBs,
-                            sourceDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.backupPolicyId,
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.kmsKeyId,
+                            this.vpusPerGB,
+                            this.sizeInGBs,
+                            this.sourceDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceConfigurationCreateVolumeDetails o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .backupPolicyId(o.getBackupPolicyId())
-                            .compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .vpusPerGB(o.getVpusPerGB())
-                            .sizeInGBs(o.getSizeInGBs())
-                            .sourceDetails(o.getSourceDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceConfigurationCreateVolumeDetails model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("backupPolicyId")) {
+                this.backupPolicyId(model.getBackupPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("vpusPerGB")) {
+                this.vpusPerGB(model.getVpusPerGB());
+            }
+            if (model.wasPropertyExplicitlySet("sizeInGBs")) {
+                this.sizeInGBs(model.getSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDetails")) {
+                this.sourceDetails(model.getSourceDetails());
+            }
+            return this;
         }
     }
 
@@ -531,6 +551,7 @@ public final class InstanceConfigurationCreateVolumeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceConfigurationCreateVolumeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", backupPolicyId=").append(String.valueOf(this.backupPolicyId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -541,7 +562,6 @@ public final class InstanceConfigurationCreateVolumeDetails {
         sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
         sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -567,7 +587,7 @@ public final class InstanceConfigurationCreateVolumeDetails {
                 && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
                 && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -594,16 +614,7 @@ public final class InstanceConfigurationCreateVolumeDetails {
         result =
                 (result * PRIME)
                         + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

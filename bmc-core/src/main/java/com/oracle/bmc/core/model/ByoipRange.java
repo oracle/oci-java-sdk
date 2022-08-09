@@ -18,7 +18,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ByoipRange.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ByoipRange {
+public final class ByoipRange extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "byoipRangeVcnIpv6Allocations",
@@ -374,48 +374,77 @@ public final class ByoipRange {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ByoipRange build() {
-            ByoipRange __instance__ =
+            ByoipRange model =
                     new ByoipRange(
-                            byoipRangeVcnIpv6Allocations,
-                            cidrBlock,
-                            compartmentId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            id,
-                            ipv6CidrBlock,
-                            lifecycleDetails,
-                            lifecycleState,
-                            timeCreated,
-                            timeValidated,
-                            timeAdvertised,
-                            timeWithdrawn,
-                            validationToken);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.byoipRangeVcnIpv6Allocations,
+                            this.cidrBlock,
+                            this.compartmentId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.id,
+                            this.ipv6CidrBlock,
+                            this.lifecycleDetails,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeValidated,
+                            this.timeAdvertised,
+                            this.timeWithdrawn,
+                            this.validationToken);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ByoipRange o) {
-            Builder copiedBuilder =
-                    byoipRangeVcnIpv6Allocations(o.getByoipRangeVcnIpv6Allocations())
-                            .cidrBlock(o.getCidrBlock())
-                            .compartmentId(o.getCompartmentId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .ipv6CidrBlock(o.getIpv6CidrBlock())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeValidated(o.getTimeValidated())
-                            .timeAdvertised(o.getTimeAdvertised())
-                            .timeWithdrawn(o.getTimeWithdrawn())
-                            .validationToken(o.getValidationToken());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ByoipRange model) {
+            if (model.wasPropertyExplicitlySet("byoipRangeVcnIpv6Allocations")) {
+                this.byoipRangeVcnIpv6Allocations(model.getByoipRangeVcnIpv6Allocations());
+            }
+            if (model.wasPropertyExplicitlySet("cidrBlock")) {
+                this.cidrBlock(model.getCidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlock")) {
+                this.ipv6CidrBlock(model.getIpv6CidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeValidated")) {
+                this.timeValidated(model.getTimeValidated());
+            }
+            if (model.wasPropertyExplicitlySet("timeAdvertised")) {
+                this.timeAdvertised(model.getTimeAdvertised());
+            }
+            if (model.wasPropertyExplicitlySet("timeWithdrawn")) {
+                this.timeWithdrawn(model.getTimeWithdrawn());
+            }
+            if (model.wasPropertyExplicitlySet("validationToken")) {
+                this.validationToken(model.getValidationToken());
+            }
+            return this;
         }
     }
 
@@ -813,6 +842,7 @@ public final class ByoipRange {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ByoipRange(");
+        sb.append("super=").append(super.toString());
         sb.append("byoipRangeVcnIpv6Allocations=")
                 .append(String.valueOf(this.byoipRangeVcnIpv6Allocations));
         sb.append(", cidrBlock=").append(String.valueOf(this.cidrBlock));
@@ -829,7 +859,6 @@ public final class ByoipRange {
         sb.append(", timeAdvertised=").append(String.valueOf(this.timeAdvertised));
         sb.append(", timeWithdrawn=").append(String.valueOf(this.timeWithdrawn));
         sb.append(", validationToken=").append(String.valueOf(this.validationToken));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -860,7 +889,7 @@ public final class ByoipRange {
                 && java.util.Objects.equals(this.timeAdvertised, other.timeAdvertised)
                 && java.util.Objects.equals(this.timeWithdrawn, other.timeWithdrawn)
                 && java.util.Objects.equals(this.validationToken, other.validationToken)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -902,16 +931,7 @@ public final class ByoipRange {
         result =
                 (result * PRIME)
                         + (this.validationToken == null ? 43 : this.validationToken.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

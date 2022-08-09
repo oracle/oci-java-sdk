@@ -78,6 +78,7 @@ public class GetPreferencesResponse extends com.oracle.bmc.responses.BmcResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcPrevPage",
         "opcNextPage",
         "opcRequestId",
@@ -85,12 +86,13 @@ public class GetPreferencesResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private GetPreferencesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcPrevPage,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogAnalyticsPreferenceCollection
                     logAnalyticsPreferenceCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcPrevPage = opcPrevPage;
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
@@ -102,6 +104,13 @@ public class GetPreferencesResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -188,6 +197,7 @@ public class GetPreferencesResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetPreferencesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcPrevPage(o.getOpcPrevPage());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
@@ -203,6 +213,7 @@ public class GetPreferencesResponse extends com.oracle.bmc.responses.BmcResponse
         public GetPreferencesResponse build() {
             return new GetPreferencesResponse(
                     __httpStatusCode__,
+                    headers,
                     opcPrevPage,
                     opcNextPage,
                     opcRequestId,

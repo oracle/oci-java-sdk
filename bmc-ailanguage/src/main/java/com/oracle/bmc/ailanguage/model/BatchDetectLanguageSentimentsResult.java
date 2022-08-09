@@ -19,7 +19,8 @@ package com.oracle.bmc.ailanguage.model;
     builder = BatchDetectLanguageSentimentsResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BatchDetectLanguageSentimentsResult {
+public final class BatchDetectLanguageSentimentsResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"documents", "errors"})
     public BatchDetectLanguageSentimentsResult(
@@ -69,18 +70,23 @@ public final class BatchDetectLanguageSentimentsResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BatchDetectLanguageSentimentsResult build() {
-            BatchDetectLanguageSentimentsResult __instance__ =
-                    new BatchDetectLanguageSentimentsResult(documents, errors);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BatchDetectLanguageSentimentsResult model =
+                    new BatchDetectLanguageSentimentsResult(this.documents, this.errors);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BatchDetectLanguageSentimentsResult o) {
-            Builder copiedBuilder = documents(o.getDocuments()).errors(o.getErrors());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BatchDetectLanguageSentimentsResult model) {
+            if (model.wasPropertyExplicitlySet("documents")) {
+                this.documents(model.getDocuments());
+            }
+            if (model.wasPropertyExplicitlySet("errors")) {
+                this.errors(model.getErrors());
+            }
+            return this;
         }
     }
 
@@ -136,9 +142,9 @@ public final class BatchDetectLanguageSentimentsResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchDetectLanguageSentimentsResult(");
+        sb.append("super=").append(super.toString());
         sb.append("documents=").append(String.valueOf(this.documents));
         sb.append(", errors=").append(String.valueOf(this.errors));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +161,7 @@ public final class BatchDetectLanguageSentimentsResult {
         BatchDetectLanguageSentimentsResult other = (BatchDetectLanguageSentimentsResult) o;
         return java.util.Objects.equals(this.documents, other.documents)
                 && java.util.Objects.equals(this.errors, other.errors)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -164,16 +170,7 @@ public final class BatchDetectLanguageSentimentsResult {
         int result = 1;
         result = (result * PRIME) + (this.documents == null ? 43 : this.documents.hashCode());
         result = (result * PRIME) + (this.errors == null ? 43 : this.errors.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

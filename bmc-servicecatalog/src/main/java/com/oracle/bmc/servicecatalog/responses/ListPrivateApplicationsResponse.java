@@ -61,17 +61,19 @@ public class ListPrivateApplicationsResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "privateApplicationCollection"
     })
     private ListPrivateApplicationsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.servicecatalog.model.PrivateApplicationCollection
                     privateApplicationCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.privateApplicationCollection = privateApplicationCollection;
@@ -82,6 +84,13 @@ public class ListPrivateApplicationsResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListPrivateApplicationsResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(ListPrivateApplicationsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             privateApplicationCollection(o.getPrivateApplicationCollection());
@@ -162,7 +172,11 @@ public class ListPrivateApplicationsResponse extends com.oracle.bmc.responses.Bm
          */
         public ListPrivateApplicationsResponse build() {
             return new ListPrivateApplicationsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, privateApplicationCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    privateApplicationCollection);
         }
     }
 

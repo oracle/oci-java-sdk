@@ -19,7 +19,8 @@ package com.oracle.bmc.blockchain.model;
     builder = ScaledBlockchainPlatformPreview.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ScaledBlockchainPlatformPreview {
+public final class ScaledBlockchainPlatformPreview
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -299,51 +300,82 @@ public final class ScaledBlockchainPlatformPreview {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScaledBlockchainPlatformPreview build() {
-            ScaledBlockchainPlatformPreview __instance__ =
+            ScaledBlockchainPlatformPreview model =
                     new ScaledBlockchainPlatformPreview(
-                            id,
-                            displayName,
-                            compartmentId,
-                            description,
-                            computeShape,
-                            storageSizeInTBs,
-                            storageSizeInTBsPostScaling,
-                            componentDetails,
-                            replicas,
-                            componentDetailsPostScaling,
-                            replicasPostScaling,
-                            hostOcpuUtilizationInfo,
-                            hostOcpuUtilizationInfoPostScaling,
-                            newVmCount,
-                            meteringPreview,
-                            scalePayload);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.compartmentId,
+                            this.description,
+                            this.computeShape,
+                            this.storageSizeInTBs,
+                            this.storageSizeInTBsPostScaling,
+                            this.componentDetails,
+                            this.replicas,
+                            this.componentDetailsPostScaling,
+                            this.replicasPostScaling,
+                            this.hostOcpuUtilizationInfo,
+                            this.hostOcpuUtilizationInfoPostScaling,
+                            this.newVmCount,
+                            this.meteringPreview,
+                            this.scalePayload);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ScaledBlockchainPlatformPreview o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .description(o.getDescription())
-                            .computeShape(o.getComputeShape())
-                            .storageSizeInTBs(o.getStorageSizeInTBs())
-                            .storageSizeInTBsPostScaling(o.getStorageSizeInTBsPostScaling())
-                            .componentDetails(o.getComponentDetails())
-                            .replicas(o.getReplicas())
-                            .componentDetailsPostScaling(o.getComponentDetailsPostScaling())
-                            .replicasPostScaling(o.getReplicasPostScaling())
-                            .hostOcpuUtilizationInfo(o.getHostOcpuUtilizationInfo())
-                            .hostOcpuUtilizationInfoPostScaling(
-                                    o.getHostOcpuUtilizationInfoPostScaling())
-                            .newVmCount(o.getNewVmCount())
-                            .meteringPreview(o.getMeteringPreview())
-                            .scalePayload(o.getScalePayload());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ScaledBlockchainPlatformPreview model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("computeShape")) {
+                this.computeShape(model.getComputeShape());
+            }
+            if (model.wasPropertyExplicitlySet("storageSizeInTBs")) {
+                this.storageSizeInTBs(model.getStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("storageSizeInTBsPostScaling")) {
+                this.storageSizeInTBsPostScaling(model.getStorageSizeInTBsPostScaling());
+            }
+            if (model.wasPropertyExplicitlySet("componentDetails")) {
+                this.componentDetails(model.getComponentDetails());
+            }
+            if (model.wasPropertyExplicitlySet("replicas")) {
+                this.replicas(model.getReplicas());
+            }
+            if (model.wasPropertyExplicitlySet("componentDetailsPostScaling")) {
+                this.componentDetailsPostScaling(model.getComponentDetailsPostScaling());
+            }
+            if (model.wasPropertyExplicitlySet("replicasPostScaling")) {
+                this.replicasPostScaling(model.getReplicasPostScaling());
+            }
+            if (model.wasPropertyExplicitlySet("hostOcpuUtilizationInfo")) {
+                this.hostOcpuUtilizationInfo(model.getHostOcpuUtilizationInfo());
+            }
+            if (model.wasPropertyExplicitlySet("hostOcpuUtilizationInfoPostScaling")) {
+                this.hostOcpuUtilizationInfoPostScaling(
+                        model.getHostOcpuUtilizationInfoPostScaling());
+            }
+            if (model.wasPropertyExplicitlySet("newVmCount")) {
+                this.newVmCount(model.getNewVmCount());
+            }
+            if (model.wasPropertyExplicitlySet("meteringPreview")) {
+                this.meteringPreview(model.getMeteringPreview());
+            }
+            if (model.wasPropertyExplicitlySet("scalePayload")) {
+                this.scalePayload(model.getScalePayload());
+            }
+            return this;
         }
     }
 
@@ -553,6 +585,7 @@ public final class ScaledBlockchainPlatformPreview {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ScaledBlockchainPlatformPreview(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -573,7 +606,6 @@ public final class ScaledBlockchainPlatformPreview {
         sb.append(", newVmCount=").append(String.valueOf(this.newVmCount));
         sb.append(", meteringPreview=").append(String.valueOf(this.meteringPreview));
         sb.append(", scalePayload=").append(String.valueOf(this.scalePayload));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -609,7 +641,7 @@ public final class ScaledBlockchainPlatformPreview {
                 && java.util.Objects.equals(this.newVmCount, other.newVmCount)
                 && java.util.Objects.equals(this.meteringPreview, other.meteringPreview)
                 && java.util.Objects.equals(this.scalePayload, other.scalePayload)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -660,16 +692,7 @@ public final class ScaledBlockchainPlatformPreview {
                 (result * PRIME)
                         + (this.meteringPreview == null ? 43 : this.meteringPreview.hashCode());
         result = (result * PRIME) + (this.scalePayload == null ? 43 : this.scalePayload.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,7 @@ package com.oracle.bmc.blockchain.model;
     builder = BlockchainPlatform.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BlockchainPlatform {
+public final class BlockchainPlatform extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -505,68 +505,117 @@ public final class BlockchainPlatform {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BlockchainPlatform build() {
-            BlockchainPlatform __instance__ =
+            BlockchainPlatform model =
                     new BlockchainPlatform(
-                            id,
-                            displayName,
-                            compartmentId,
-                            description,
-                            isByol,
-                            timeCreated,
-                            timeUpdated,
-                            platformVersion,
-                            serviceVersion,
-                            platformRole,
-                            computeShape,
-                            platformShapeType,
-                            loadBalancerShape,
-                            serviceEndpoint,
-                            lifecycleState,
-                            lifecycleDetails,
-                            storageSizeInTBs,
-                            storageUsedInTBs,
-                            isMultiAD,
-                            totalOcpuCapacity,
-                            componentDetails,
-                            replicas,
-                            hostOcpuUtilizationInfo,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.compartmentId,
+                            this.description,
+                            this.isByol,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.platformVersion,
+                            this.serviceVersion,
+                            this.platformRole,
+                            this.computeShape,
+                            this.platformShapeType,
+                            this.loadBalancerShape,
+                            this.serviceEndpoint,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.storageSizeInTBs,
+                            this.storageUsedInTBs,
+                            this.isMultiAD,
+                            this.totalOcpuCapacity,
+                            this.componentDetails,
+                            this.replicas,
+                            this.hostOcpuUtilizationInfo,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BlockchainPlatform o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .description(o.getDescription())
-                            .isByol(o.getIsByol())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .platformVersion(o.getPlatformVersion())
-                            .serviceVersion(o.getServiceVersion())
-                            .platformRole(o.getPlatformRole())
-                            .computeShape(o.getComputeShape())
-                            .platformShapeType(o.getPlatformShapeType())
-                            .loadBalancerShape(o.getLoadBalancerShape())
-                            .serviceEndpoint(o.getServiceEndpoint())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .storageSizeInTBs(o.getStorageSizeInTBs())
-                            .storageUsedInTBs(o.getStorageUsedInTBs())
-                            .isMultiAD(o.getIsMultiAD())
-                            .totalOcpuCapacity(o.getTotalOcpuCapacity())
-                            .componentDetails(o.getComponentDetails())
-                            .replicas(o.getReplicas())
-                            .hostOcpuUtilizationInfo(o.getHostOcpuUtilizationInfo())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BlockchainPlatform model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isByol")) {
+                this.isByol(model.getIsByol());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("platformVersion")) {
+                this.platformVersion(model.getPlatformVersion());
+            }
+            if (model.wasPropertyExplicitlySet("serviceVersion")) {
+                this.serviceVersion(model.getServiceVersion());
+            }
+            if (model.wasPropertyExplicitlySet("platformRole")) {
+                this.platformRole(model.getPlatformRole());
+            }
+            if (model.wasPropertyExplicitlySet("computeShape")) {
+                this.computeShape(model.getComputeShape());
+            }
+            if (model.wasPropertyExplicitlySet("platformShapeType")) {
+                this.platformShapeType(model.getPlatformShapeType());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerShape")) {
+                this.loadBalancerShape(model.getLoadBalancerShape());
+            }
+            if (model.wasPropertyExplicitlySet("serviceEndpoint")) {
+                this.serviceEndpoint(model.getServiceEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("storageSizeInTBs")) {
+                this.storageSizeInTBs(model.getStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("storageUsedInTBs")) {
+                this.storageUsedInTBs(model.getStorageUsedInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("isMultiAD")) {
+                this.isMultiAD(model.getIsMultiAD());
+            }
+            if (model.wasPropertyExplicitlySet("totalOcpuCapacity")) {
+                this.totalOcpuCapacity(model.getTotalOcpuCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("componentDetails")) {
+                this.componentDetails(model.getComponentDetails());
+            }
+            if (model.wasPropertyExplicitlySet("replicas")) {
+                this.replicas(model.getReplicas());
+            }
+            if (model.wasPropertyExplicitlySet("hostOcpuUtilizationInfo")) {
+                this.hostOcpuUtilizationInfo(model.getHostOcpuUtilizationInfo());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -1188,6 +1237,7 @@ public final class BlockchainPlatform {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BlockchainPlatform(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -1214,7 +1264,6 @@ public final class BlockchainPlatform {
                 .append(String.valueOf(this.hostOcpuUtilizationInfo));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1255,7 +1304,7 @@ public final class BlockchainPlatform {
                         this.hostOcpuUtilizationInfo, other.hostOcpuUtilizationInfo)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1315,16 +1364,7 @@ public final class BlockchainPlatform {
                                 : this.hostOcpuUtilizationInfo.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -129,8 +129,8 @@ public class GetAutonomousDatabaseDataguardAssociationConverter {
                                                 com.oracle.bmc.database.responses
                                                         .GetAutonomousDatabaseDataguardAssociationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.autonomousDatabaseDataguardAssociation(response.getItem());
 

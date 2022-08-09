@@ -102,8 +102,8 @@ public class GetVolumeGroupReplicaConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetVolumeGroupReplicaResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.volumeGroupReplica(response.getItem());
 

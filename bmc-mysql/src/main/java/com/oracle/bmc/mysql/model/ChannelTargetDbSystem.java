@@ -86,21 +86,27 @@ public final class ChannelTargetDbSystem extends ChannelTarget {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChannelTargetDbSystem build() {
-            ChannelTargetDbSystem __instance__ =
-                    new ChannelTargetDbSystem(dbSystemId, channelName, applierUsername);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ChannelTargetDbSystem model =
+                    new ChannelTargetDbSystem(
+                            this.dbSystemId, this.channelName, this.applierUsername);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ChannelTargetDbSystem o) {
-            Builder copiedBuilder =
-                    dbSystemId(o.getDbSystemId())
-                            .channelName(o.getChannelName())
-                            .applierUsername(o.getApplierUsername());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ChannelTargetDbSystem model) {
+            if (model.wasPropertyExplicitlySet("dbSystemId")) {
+                this.dbSystemId(model.getDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("channelName")) {
+                this.channelName(model.getChannelName());
+            }
+            if (model.wasPropertyExplicitlySet("applierUsername")) {
+                this.applierUsername(model.getApplierUsername());
+            }
+            return this;
         }
     }
 
@@ -188,7 +194,6 @@ public final class ChannelTargetDbSystem extends ChannelTarget {
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", channelName=").append(String.valueOf(this.channelName));
         sb.append(", applierUsername=").append(String.valueOf(this.applierUsername));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -206,8 +211,7 @@ public final class ChannelTargetDbSystem extends ChannelTarget {
         return java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.channelName, other.channelName)
                 && java.util.Objects.equals(this.applierUsername, other.applierUsername)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -219,16 +223,6 @@ public final class ChannelTargetDbSystem extends ChannelTarget {
         result =
                 (result * PRIME)
                         + (this.applierUsername == null ? 43 : this.applierUsername.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

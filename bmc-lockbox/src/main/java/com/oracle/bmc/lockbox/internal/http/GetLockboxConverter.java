@@ -100,8 +100,8 @@ public class GetLockboxConverter {
                                         builder =
                                                 com.oracle.bmc.lockbox.responses.GetLockboxResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.lockbox(response.getItem());
 

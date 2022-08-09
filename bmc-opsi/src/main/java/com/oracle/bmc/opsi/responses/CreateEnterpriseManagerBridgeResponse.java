@@ -96,6 +96,7 @@ public class CreateEnterpriseManagerBridgeResponse extends com.oracle.bmc.respon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "opcRequestId",
         "location",
@@ -105,13 +106,14 @@ public class CreateEnterpriseManagerBridgeResponse extends com.oracle.bmc.respon
     })
     private CreateEnterpriseManagerBridgeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String location,
             String contentLocation,
             String etag,
             com.oracle.bmc.opsi.model.EnterpriseManagerBridge enterpriseManagerBridge) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.location = location;
@@ -125,6 +127,13 @@ public class CreateEnterpriseManagerBridgeResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -233,6 +242,7 @@ public class CreateEnterpriseManagerBridgeResponse extends com.oracle.bmc.respon
          */
         public Builder copy(CreateEnterpriseManagerBridgeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             location(o.getLocation());
@@ -250,6 +260,7 @@ public class CreateEnterpriseManagerBridgeResponse extends com.oracle.bmc.respon
         public CreateEnterpriseManagerBridgeResponse build() {
             return new CreateEnterpriseManagerBridgeResponse(
                     __httpStatusCode__,
+                    headers,
                     opcWorkRequestId,
                     opcRequestId,
                     location,

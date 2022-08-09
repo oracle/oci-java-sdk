@@ -17,7 +17,7 @@ package com.oracle.bmc.certificatesmanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Certificate.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Certificate {
+public final class Certificate extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -394,57 +394,93 @@ public final class Certificate {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Certificate build() {
-            Certificate __instance__ =
+            Certificate model =
                     new Certificate(
-                            id,
-                            issuerCertificateAuthorityId,
-                            name,
-                            description,
-                            certificateRules,
-                            timeCreated,
-                            timeOfDeletion,
-                            lifecycleState,
-                            lifecycleDetails,
-                            compartmentId,
-                            currentVersion,
-                            subject,
-                            certificateRevocationListDetails,
-                            configType,
-                            keyAlgorithm,
-                            signatureAlgorithm,
-                            certificateProfileType,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.issuerCertificateAuthorityId,
+                            this.name,
+                            this.description,
+                            this.certificateRules,
+                            this.timeCreated,
+                            this.timeOfDeletion,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.compartmentId,
+                            this.currentVersion,
+                            this.subject,
+                            this.certificateRevocationListDetails,
+                            this.configType,
+                            this.keyAlgorithm,
+                            this.signatureAlgorithm,
+                            this.certificateProfileType,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Certificate o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .issuerCertificateAuthorityId(o.getIssuerCertificateAuthorityId())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .certificateRules(o.getCertificateRules())
-                            .timeCreated(o.getTimeCreated())
-                            .timeOfDeletion(o.getTimeOfDeletion())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .compartmentId(o.getCompartmentId())
-                            .currentVersion(o.getCurrentVersion())
-                            .subject(o.getSubject())
-                            .certificateRevocationListDetails(
-                                    o.getCertificateRevocationListDetails())
-                            .configType(o.getConfigType())
-                            .keyAlgorithm(o.getKeyAlgorithm())
-                            .signatureAlgorithm(o.getSignatureAlgorithm())
-                            .certificateProfileType(o.getCertificateProfileType())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Certificate model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("issuerCertificateAuthorityId")) {
+                this.issuerCertificateAuthorityId(model.getIssuerCertificateAuthorityId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("certificateRules")) {
+                this.certificateRules(model.getCertificateRules());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfDeletion")) {
+                this.timeOfDeletion(model.getTimeOfDeletion());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("currentVersion")) {
+                this.currentVersion(model.getCurrentVersion());
+            }
+            if (model.wasPropertyExplicitlySet("subject")) {
+                this.subject(model.getSubject());
+            }
+            if (model.wasPropertyExplicitlySet("certificateRevocationListDetails")) {
+                this.certificateRevocationListDetails(model.getCertificateRevocationListDetails());
+            }
+            if (model.wasPropertyExplicitlySet("configType")) {
+                this.configType(model.getConfigType());
+            }
+            if (model.wasPropertyExplicitlySet("keyAlgorithm")) {
+                this.keyAlgorithm(model.getKeyAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("signatureAlgorithm")) {
+                this.signatureAlgorithm(model.getSignatureAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("certificateProfileType")) {
+                this.certificateProfileType(model.getCertificateProfileType());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -737,6 +773,7 @@ public final class Certificate {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Certificate(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", issuerCertificateAuthorityId=")
                 .append(String.valueOf(this.issuerCertificateAuthorityId));
@@ -758,7 +795,6 @@ public final class Certificate {
         sb.append(", certificateProfileType=").append(String.valueOf(this.certificateProfileType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -796,7 +832,7 @@ public final class Certificate {
                         this.certificateProfileType, other.certificateProfileType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -850,16 +886,7 @@ public final class Certificate {
                                 : this.certificateProfileType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

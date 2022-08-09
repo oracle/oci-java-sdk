@@ -136,8 +136,8 @@ public class ListApmDomainWorkRequestsConverter {
                                         builder =
                                                 com.oracle.bmc.apmcontrolplane.responses
                                                         .ListApmDomainWorkRequestsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

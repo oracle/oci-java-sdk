@@ -19,7 +19,8 @@ package com.oracle.bmc.servicecatalog.model;
     builder = CreateServiceCatalogAssociationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateServiceCatalogAssociationDetails {
+public final class CreateServiceCatalogAssociationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"serviceCatalogId", "entityId", "entityType"})
     public CreateServiceCatalogAssociationDetails(
@@ -85,22 +86,27 @@ public final class CreateServiceCatalogAssociationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateServiceCatalogAssociationDetails build() {
-            CreateServiceCatalogAssociationDetails __instance__ =
+            CreateServiceCatalogAssociationDetails model =
                     new CreateServiceCatalogAssociationDetails(
-                            serviceCatalogId, entityId, entityType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.serviceCatalogId, this.entityId, this.entityType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateServiceCatalogAssociationDetails o) {
-            Builder copiedBuilder =
-                    serviceCatalogId(o.getServiceCatalogId())
-                            .entityId(o.getEntityId())
-                            .entityType(o.getEntityType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateServiceCatalogAssociationDetails model) {
+            if (model.wasPropertyExplicitlySet("serviceCatalogId")) {
+                this.serviceCatalogId(model.getServiceCatalogId());
+            }
+            if (model.wasPropertyExplicitlySet("entityId")) {
+                this.entityId(model.getEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("entityType")) {
+                this.entityType(model.getEntityType());
+            }
+            return this;
         }
     }
 
@@ -170,10 +176,10 @@ public final class CreateServiceCatalogAssociationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateServiceCatalogAssociationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("serviceCatalogId=").append(String.valueOf(this.serviceCatalogId));
         sb.append(", entityId=").append(String.valueOf(this.entityId));
         sb.append(", entityType=").append(String.valueOf(this.entityType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -191,7 +197,7 @@ public final class CreateServiceCatalogAssociationDetails {
         return java.util.Objects.equals(this.serviceCatalogId, other.serviceCatalogId)
                 && java.util.Objects.equals(this.entityId, other.entityId)
                 && java.util.Objects.equals(this.entityType, other.entityType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -203,16 +209,7 @@ public final class CreateServiceCatalogAssociationDetails {
                         + (this.serviceCatalogId == null ? 43 : this.serviceCatalogId.hashCode());
         result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

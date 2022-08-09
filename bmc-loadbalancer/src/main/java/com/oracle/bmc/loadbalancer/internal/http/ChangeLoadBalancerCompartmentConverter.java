@@ -115,8 +115,8 @@ public class ChangeLoadBalancerCompartmentConverter {
                                                 com.oracle.bmc.loadbalancer.responses
                                                         .ChangeLoadBalancerCompartmentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

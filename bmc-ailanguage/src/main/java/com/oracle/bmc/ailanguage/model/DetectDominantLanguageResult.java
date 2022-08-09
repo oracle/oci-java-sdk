@@ -19,7 +19,8 @@ package com.oracle.bmc.ailanguage.model;
     builder = DetectDominantLanguageResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetectDominantLanguageResult {
+public final class DetectDominantLanguageResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"languages"})
     public DetectDominantLanguageResult(java.util.List<DetectedLanguage> languages) {
@@ -52,17 +53,19 @@ public final class DetectDominantLanguageResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetectDominantLanguageResult build() {
-            DetectDominantLanguageResult __instance__ = new DetectDominantLanguageResult(languages);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DetectDominantLanguageResult model = new DetectDominantLanguageResult(this.languages);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DetectDominantLanguageResult o) {
-            Builder copiedBuilder = languages(o.getLanguages());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DetectDominantLanguageResult model) {
+            if (model.wasPropertyExplicitlySet("languages")) {
+                this.languages(model.getLanguages());
+            }
+            return this;
         }
     }
 
@@ -106,8 +109,8 @@ public final class DetectDominantLanguageResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetectDominantLanguageResult(");
+        sb.append("super=").append(super.toString());
         sb.append("languages=").append(String.valueOf(this.languages));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -122,8 +125,7 @@ public final class DetectDominantLanguageResult {
         }
 
         DetectDominantLanguageResult other = (DetectDominantLanguageResult) o;
-        return java.util.Objects.equals(this.languages, other.languages)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.languages, other.languages) && super.equals(other);
     }
 
     @Override
@@ -131,16 +133,7 @@ public final class DetectDominantLanguageResult {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.languages == null ? 43 : this.languages.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

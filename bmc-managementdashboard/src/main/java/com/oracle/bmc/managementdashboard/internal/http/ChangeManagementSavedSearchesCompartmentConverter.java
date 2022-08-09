@@ -137,8 +137,8 @@ public class ChangeManagementSavedSearchesCompartmentConverter {
                                                 com.oracle.bmc.managementdashboard.responses
                                                         .ChangeManagementSavedSearchesCompartmentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managementSavedSearch(response.getItem());
 

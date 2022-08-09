@@ -19,7 +19,7 @@ package com.oracle.bmc.mysql.model;
     builder = StopDbSystemDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StopDbSystemDetails {
+public final class StopDbSystemDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shutdownType"})
     public StopDbSystemDetails(InnoDbShutdownMode shutdownType) {
@@ -54,17 +54,19 @@ public final class StopDbSystemDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StopDbSystemDetails build() {
-            StopDbSystemDetails __instance__ = new StopDbSystemDetails(shutdownType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StopDbSystemDetails model = new StopDbSystemDetails(this.shutdownType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StopDbSystemDetails o) {
-            Builder copiedBuilder = shutdownType(o.getShutdownType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StopDbSystemDetails model) {
+            if (model.wasPropertyExplicitlySet("shutdownType")) {
+                this.shutdownType(model.getShutdownType());
+            }
+            return this;
         }
     }
 
@@ -110,8 +112,8 @@ public final class StopDbSystemDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("StopDbSystemDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("shutdownType=").append(String.valueOf(this.shutdownType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -127,7 +129,7 @@ public final class StopDbSystemDetails {
 
         StopDbSystemDetails other = (StopDbSystemDetails) o;
         return java.util.Objects.equals(this.shutdownType, other.shutdownType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -135,16 +137,7 @@ public final class StopDbSystemDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.shutdownType == null ? 43 : this.shutdownType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = CreateAppCatalogSubscriptionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateAppCatalogSubscriptionDetails {
+public final class CreateAppCatalogSubscriptionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -171,32 +172,45 @@ public final class CreateAppCatalogSubscriptionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateAppCatalogSubscriptionDetails build() {
-            CreateAppCatalogSubscriptionDetails __instance__ =
+            CreateAppCatalogSubscriptionDetails model =
                     new CreateAppCatalogSubscriptionDetails(
-                            compartmentId,
-                            listingId,
-                            listingResourceVersion,
-                            oracleTermsOfUseLink,
-                            eulaLink,
-                            timeRetrieved,
-                            signature);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.listingId,
+                            this.listingResourceVersion,
+                            this.oracleTermsOfUseLink,
+                            this.eulaLink,
+                            this.timeRetrieved,
+                            this.signature);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateAppCatalogSubscriptionDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .listingId(o.getListingId())
-                            .listingResourceVersion(o.getListingResourceVersion())
-                            .oracleTermsOfUseLink(o.getOracleTermsOfUseLink())
-                            .eulaLink(o.getEulaLink())
-                            .timeRetrieved(o.getTimeRetrieved())
-                            .signature(o.getSignature());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateAppCatalogSubscriptionDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("listingId")) {
+                this.listingId(model.getListingId());
+            }
+            if (model.wasPropertyExplicitlySet("listingResourceVersion")) {
+                this.listingResourceVersion(model.getListingResourceVersion());
+            }
+            if (model.wasPropertyExplicitlySet("oracleTermsOfUseLink")) {
+                this.oracleTermsOfUseLink(model.getOracleTermsOfUseLink());
+            }
+            if (model.wasPropertyExplicitlySet("eulaLink")) {
+                this.eulaLink(model.getEulaLink());
+            }
+            if (model.wasPropertyExplicitlySet("timeRetrieved")) {
+                this.timeRetrieved(model.getTimeRetrieved());
+            }
+            if (model.wasPropertyExplicitlySet("signature")) {
+                this.signature(model.getSignature());
+            }
+            return this;
         }
     }
 
@@ -326,6 +340,7 @@ public final class CreateAppCatalogSubscriptionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAppCatalogSubscriptionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", listingId=").append(String.valueOf(this.listingId));
         sb.append(", listingResourceVersion=").append(String.valueOf(this.listingResourceVersion));
@@ -333,7 +348,6 @@ public final class CreateAppCatalogSubscriptionDetails {
         sb.append(", eulaLink=").append(String.valueOf(this.eulaLink));
         sb.append(", timeRetrieved=").append(String.valueOf(this.timeRetrieved));
         sb.append(", signature=").append(String.valueOf(this.signature));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -356,7 +370,7 @@ public final class CreateAppCatalogSubscriptionDetails {
                 && java.util.Objects.equals(this.eulaLink, other.eulaLink)
                 && java.util.Objects.equals(this.timeRetrieved, other.timeRetrieved)
                 && java.util.Objects.equals(this.signature, other.signature)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -382,16 +396,7 @@ public final class CreateAppCatalogSubscriptionDetails {
                 (result * PRIME)
                         + (this.timeRetrieved == null ? 43 : this.timeRetrieved.hashCode());
         result = (result * PRIME) + (this.signature == null ? 43 : this.signature.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

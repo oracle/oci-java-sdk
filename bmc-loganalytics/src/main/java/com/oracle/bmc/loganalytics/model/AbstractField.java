@@ -35,7 +35,7 @@ package com.oracle.bmc.loganalytics.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = SortField.class, name = "SORT")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AbstractField {
+public class AbstractField extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -248,6 +248,7 @@ public class AbstractField {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AbstractField(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", isDeclared=").append(String.valueOf(this.isDeclared));
         sb.append(", originalDisplayNames=").append(String.valueOf(this.originalDisplayNames));
@@ -281,7 +282,8 @@ public class AbstractField {
                 && java.util.Objects.equals(this.isDuration, other.isDuration)
                 && java.util.Objects.equals(this.alias, other.alias)
                 && java.util.Objects.equals(this.filterQueryString, other.filterQueryString)
-                && java.util.Objects.equals(this.unitType, other.unitType);
+                && java.util.Objects.equals(this.unitType, other.unitType)
+                && super.equals(other);
     }
 
     @Override
@@ -304,6 +306,7 @@ public class AbstractField {
                 (result * PRIME)
                         + (this.filterQueryString == null ? 43 : this.filterQueryString.hashCode());
         result = (result * PRIME) + (this.unitType == null ? 43 : this.unitType.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

@@ -19,7 +19,7 @@ package com.oracle.bmc.datacatalog.model;
     builder = JobDefinitionScope.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobDefinitionScope {
+public final class JobDefinitionScope extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "folderName",
@@ -148,30 +148,41 @@ public final class JobDefinitionScope {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobDefinitionScope build() {
-            JobDefinitionScope __instance__ =
+            JobDefinitionScope model =
                     new JobDefinitionScope(
-                            folderName,
-                            entityName,
-                            folderNameFilter,
-                            entityNameFilter,
-                            isSampleDataExtracted,
-                            sampleDataSizeInMBs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.folderName,
+                            this.entityName,
+                            this.folderNameFilter,
+                            this.entityNameFilter,
+                            this.isSampleDataExtracted,
+                            this.sampleDataSizeInMBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(JobDefinitionScope o) {
-            Builder copiedBuilder =
-                    folderName(o.getFolderName())
-                            .entityName(o.getEntityName())
-                            .folderNameFilter(o.getFolderNameFilter())
-                            .entityNameFilter(o.getEntityNameFilter())
-                            .isSampleDataExtracted(o.getIsSampleDataExtracted())
-                            .sampleDataSizeInMBs(o.getSampleDataSizeInMBs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(JobDefinitionScope model) {
+            if (model.wasPropertyExplicitlySet("folderName")) {
+                this.folderName(model.getFolderName());
+            }
+            if (model.wasPropertyExplicitlySet("entityName")) {
+                this.entityName(model.getEntityName());
+            }
+            if (model.wasPropertyExplicitlySet("folderNameFilter")) {
+                this.folderNameFilter(model.getFolderNameFilter());
+            }
+            if (model.wasPropertyExplicitlySet("entityNameFilter")) {
+                this.entityNameFilter(model.getEntityNameFilter());
+            }
+            if (model.wasPropertyExplicitlySet("isSampleDataExtracted")) {
+                this.isSampleDataExtracted(model.getIsSampleDataExtracted());
+            }
+            if (model.wasPropertyExplicitlySet("sampleDataSizeInMBs")) {
+                this.sampleDataSizeInMBs(model.getSampleDataSizeInMBs());
+            }
+            return this;
         }
     }
 
@@ -283,13 +294,13 @@ public final class JobDefinitionScope {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("JobDefinitionScope(");
+        sb.append("super=").append(super.toString());
         sb.append("folderName=").append(String.valueOf(this.folderName));
         sb.append(", entityName=").append(String.valueOf(this.entityName));
         sb.append(", folderNameFilter=").append(String.valueOf(this.folderNameFilter));
         sb.append(", entityNameFilter=").append(String.valueOf(this.entityNameFilter));
         sb.append(", isSampleDataExtracted=").append(String.valueOf(this.isSampleDataExtracted));
         sb.append(", sampleDataSizeInMBs=").append(String.valueOf(this.sampleDataSizeInMBs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -310,7 +321,7 @@ public final class JobDefinitionScope {
                 && java.util.Objects.equals(this.entityNameFilter, other.entityNameFilter)
                 && java.util.Objects.equals(this.isSampleDataExtracted, other.isSampleDataExtracted)
                 && java.util.Objects.equals(this.sampleDataSizeInMBs, other.sampleDataSizeInMBs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -335,16 +346,7 @@ public final class JobDefinitionScope {
                         + (this.sampleDataSizeInMBs == null
                                 ? 43
                                 : this.sampleDataSizeInMBs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

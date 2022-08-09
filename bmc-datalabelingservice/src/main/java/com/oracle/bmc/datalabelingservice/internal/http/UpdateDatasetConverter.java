@@ -113,8 +113,8 @@ public class UpdateDatasetConverter {
                                         builder =
                                                 com.oracle.bmc.datalabelingservice.responses
                                                         .UpdateDatasetResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataset(response.getItem());
 

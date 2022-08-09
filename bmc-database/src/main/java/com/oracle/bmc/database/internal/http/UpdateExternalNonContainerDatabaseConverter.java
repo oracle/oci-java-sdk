@@ -124,8 +124,8 @@ public class UpdateExternalNonContainerDatabaseConverter {
                                                 com.oracle.bmc.database.responses
                                                         .UpdateExternalNonContainerDatabaseResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.externalNonContainerDatabase(response.getItem());
 

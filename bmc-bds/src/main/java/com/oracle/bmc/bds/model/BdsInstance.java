@@ -17,7 +17,7 @@ package com.oracle.bmc.bds.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BdsInstance.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BdsInstance {
+public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -400,58 +400,97 @@ public final class BdsInstance {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BdsInstance build() {
-            BdsInstance __instance__ =
+            BdsInstance model =
                     new BdsInstance(
-                            id,
-                            compartmentId,
-                            displayName,
-                            lifecycleState,
-                            clusterVersion,
-                            isHighAvailability,
-                            isSecure,
-                            isCloudSqlConfigured,
-                            networkConfig,
-                            clusterDetails,
-                            nodes,
-                            cloudSqlDetails,
-                            createdBy,
-                            timeCreated,
-                            timeUpdated,
-                            numberOfNodes,
-                            bootstrapScriptUrl,
-                            freeformTags,
-                            definedTags,
-                            kmsKeyId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.lifecycleState,
+                            this.clusterVersion,
+                            this.isHighAvailability,
+                            this.isSecure,
+                            this.isCloudSqlConfigured,
+                            this.networkConfig,
+                            this.clusterDetails,
+                            this.nodes,
+                            this.cloudSqlDetails,
+                            this.createdBy,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.numberOfNodes,
+                            this.bootstrapScriptUrl,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.kmsKeyId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BdsInstance o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .lifecycleState(o.getLifecycleState())
-                            .clusterVersion(o.getClusterVersion())
-                            .isHighAvailability(o.getIsHighAvailability())
-                            .isSecure(o.getIsSecure())
-                            .isCloudSqlConfigured(o.getIsCloudSqlConfigured())
-                            .networkConfig(o.getNetworkConfig())
-                            .clusterDetails(o.getClusterDetails())
-                            .nodes(o.getNodes())
-                            .cloudSqlDetails(o.getCloudSqlDetails())
-                            .createdBy(o.getCreatedBy())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .numberOfNodes(o.getNumberOfNodes())
-                            .bootstrapScriptUrl(o.getBootstrapScriptUrl())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .kmsKeyId(o.getKmsKeyId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BdsInstance model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("clusterVersion")) {
+                this.clusterVersion(model.getClusterVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isHighAvailability")) {
+                this.isHighAvailability(model.getIsHighAvailability());
+            }
+            if (model.wasPropertyExplicitlySet("isSecure")) {
+                this.isSecure(model.getIsSecure());
+            }
+            if (model.wasPropertyExplicitlySet("isCloudSqlConfigured")) {
+                this.isCloudSqlConfigured(model.getIsCloudSqlConfigured());
+            }
+            if (model.wasPropertyExplicitlySet("networkConfig")) {
+                this.networkConfig(model.getNetworkConfig());
+            }
+            if (model.wasPropertyExplicitlySet("clusterDetails")) {
+                this.clusterDetails(model.getClusterDetails());
+            }
+            if (model.wasPropertyExplicitlySet("nodes")) {
+                this.nodes(model.getNodes());
+            }
+            if (model.wasPropertyExplicitlySet("cloudSqlDetails")) {
+                this.cloudSqlDetails(model.getCloudSqlDetails());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfNodes")) {
+                this.numberOfNodes(model.getNumberOfNodes());
+            }
+            if (model.wasPropertyExplicitlySet("bootstrapScriptUrl")) {
+                this.bootstrapScriptUrl(model.getBootstrapScriptUrl());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            return this;
         }
     }
 
@@ -851,6 +890,7 @@ public final class BdsInstance {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BdsInstance(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -871,7 +911,6 @@ public final class BdsInstance {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -906,7 +945,7 @@ public final class BdsInstance {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -959,16 +998,7 @@ public final class BdsInstance {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

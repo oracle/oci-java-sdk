@@ -19,7 +19,8 @@ package com.oracle.bmc.osmanagement.model;
     builder = ManagedInstanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ManagedInstanceSummary {
+public final class ManagedInstanceSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -224,38 +225,57 @@ public final class ManagedInstanceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagedInstanceSummary build() {
-            ManagedInstanceSummary __instance__ =
+            ManagedInstanceSummary model =
                     new ManagedInstanceSummary(
-                            displayName,
-                            id,
-                            lastCheckin,
-                            lastBoot,
-                            updatesAvailable,
-                            compartmentId,
-                            description,
-                            status,
-                            osFamily,
-                            isRebootRequired);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.id,
+                            this.lastCheckin,
+                            this.lastBoot,
+                            this.updatesAvailable,
+                            this.compartmentId,
+                            this.description,
+                            this.status,
+                            this.osFamily,
+                            this.isRebootRequired);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ManagedInstanceSummary o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .id(o.getId())
-                            .lastCheckin(o.getLastCheckin())
-                            .lastBoot(o.getLastBoot())
-                            .updatesAvailable(o.getUpdatesAvailable())
-                            .compartmentId(o.getCompartmentId())
-                            .description(o.getDescription())
-                            .status(o.getStatus())
-                            .osFamily(o.getOsFamily())
-                            .isRebootRequired(o.getIsRebootRequired());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ManagedInstanceSummary model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lastCheckin")) {
+                this.lastCheckin(model.getLastCheckin());
+            }
+            if (model.wasPropertyExplicitlySet("lastBoot")) {
+                this.lastBoot(model.getLastBoot());
+            }
+            if (model.wasPropertyExplicitlySet("updatesAvailable")) {
+                this.updatesAvailable(model.getUpdatesAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("osFamily")) {
+                this.osFamily(model.getOsFamily());
+            }
+            if (model.wasPropertyExplicitlySet("isRebootRequired")) {
+                this.isRebootRequired(model.getIsRebootRequired());
+            }
+            return this;
         }
     }
 
@@ -472,6 +492,7 @@ public final class ManagedInstanceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagedInstanceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", lastCheckin=").append(String.valueOf(this.lastCheckin));
@@ -482,7 +503,6 @@ public final class ManagedInstanceSummary {
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", osFamily=").append(String.valueOf(this.osFamily));
         sb.append(", isRebootRequired=").append(String.valueOf(this.isRebootRequired));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -507,7 +527,7 @@ public final class ManagedInstanceSummary {
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
                 && java.util.Objects.equals(this.isRebootRequired, other.isRebootRequired)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -530,16 +550,7 @@ public final class ManagedInstanceSummary {
         result =
                 (result * PRIME)
                         + (this.isRebootRequired == null ? 43 : this.isRebootRequired.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

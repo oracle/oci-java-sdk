@@ -91,6 +91,7 @@ public class GetRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcTotalItems",
         "opcRequestId",
@@ -99,12 +100,13 @@ public class GetRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetRRSetResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             Integer opcTotalItems,
             String opcRequestId,
             String eTag,
             com.oracle.bmc.dns.model.RRSet rRSet) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcTotalItems = opcTotalItems;
         this.opcRequestId = opcRequestId;
@@ -117,6 +119,13 @@ public class GetRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -217,6 +226,7 @@ public class GetRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetRRSetResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcTotalItems(o.getOpcTotalItems());
             opcRequestId(o.getOpcRequestId());
@@ -232,7 +242,13 @@ public class GetRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public GetRRSetResponse build() {
             return new GetRRSetResponse(
-                    __httpStatusCode__, opcNextPage, opcTotalItems, opcRequestId, eTag, rRSet);
+                    __httpStatusCode__,
+                    headers,
+                    opcNextPage,
+                    opcTotalItems,
+                    opcRequestId,
+                    eTag,
+                    rRSet);
         }
     }
 

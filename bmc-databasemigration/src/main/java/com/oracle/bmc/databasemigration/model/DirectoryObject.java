@@ -18,7 +18,7 @@ package com.oracle.bmc.databasemigration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DirectoryObject.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DirectoryObject {
+public final class DirectoryObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "path"})
     public DirectoryObject(String name, String path) {
@@ -70,17 +70,22 @@ public final class DirectoryObject {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DirectoryObject build() {
-            DirectoryObject __instance__ = new DirectoryObject(name, path);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DirectoryObject model = new DirectoryObject(this.name, this.path);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DirectoryObject o) {
-            Builder copiedBuilder = name(o.getName()).path(o.getPath());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DirectoryObject model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            return this;
         }
     }
 
@@ -140,9 +145,9 @@ public final class DirectoryObject {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DirectoryObject(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", path=").append(String.valueOf(this.path));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,7 +164,7 @@ public final class DirectoryObject {
         DirectoryObject other = (DirectoryObject) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.path, other.path)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +173,7 @@ public final class DirectoryObject {
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

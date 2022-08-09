@@ -158,8 +158,8 @@ public class ListInstanceDevicesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListInstanceDevicesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.osmanagement.model;
     builder = DetachChildSoftwareSourceFromManagedInstanceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetachChildSoftwareSourceFromManagedInstanceDetails {
+public final class DetachChildSoftwareSourceFromManagedInstanceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"softwareSourceId"})
     public DetachChildSoftwareSourceFromManagedInstanceDetails(String softwareSourceId) {
@@ -50,18 +51,20 @@ public final class DetachChildSoftwareSourceFromManagedInstanceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetachChildSoftwareSourceFromManagedInstanceDetails build() {
-            DetachChildSoftwareSourceFromManagedInstanceDetails __instance__ =
-                    new DetachChildSoftwareSourceFromManagedInstanceDetails(softwareSourceId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DetachChildSoftwareSourceFromManagedInstanceDetails model =
+                    new DetachChildSoftwareSourceFromManagedInstanceDetails(this.softwareSourceId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DetachChildSoftwareSourceFromManagedInstanceDetails o) {
-            Builder copiedBuilder = softwareSourceId(o.getSoftwareSourceId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DetachChildSoftwareSourceFromManagedInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("softwareSourceId")) {
+                this.softwareSourceId(model.getSoftwareSourceId());
+            }
+            return this;
         }
     }
 
@@ -103,8 +106,8 @@ public final class DetachChildSoftwareSourceFromManagedInstanceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DetachChildSoftwareSourceFromManagedInstanceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("softwareSourceId=").append(String.valueOf(this.softwareSourceId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -121,7 +124,7 @@ public final class DetachChildSoftwareSourceFromManagedInstanceDetails {
         DetachChildSoftwareSourceFromManagedInstanceDetails other =
                 (DetachChildSoftwareSourceFromManagedInstanceDetails) o;
         return java.util.Objects.equals(this.softwareSourceId, other.softwareSourceId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -131,16 +134,7 @@ public final class DetachChildSoftwareSourceFromManagedInstanceDetails {
         result =
                 (result * PRIME)
                         + (this.softwareSourceId == null ? 43 : this.softwareSourceId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

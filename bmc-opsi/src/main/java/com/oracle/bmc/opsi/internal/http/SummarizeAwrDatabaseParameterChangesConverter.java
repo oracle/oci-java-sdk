@@ -204,8 +204,8 @@ public class SummarizeAwrDatabaseParameterChangesConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeAwrDatabaseParameterChangesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.awrDatabaseParameterChangeCollection(response.getItem());
 

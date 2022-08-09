@@ -19,7 +19,7 @@ package com.oracle.bmc.waas.model;
     builder = CachingRuleCriteria.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CachingRuleCriteria {
+public final class CachingRuleCriteria extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"condition", "value"})
     public CachingRuleCriteria(Condition condition, String value) {
@@ -85,17 +85,22 @@ public final class CachingRuleCriteria {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CachingRuleCriteria build() {
-            CachingRuleCriteria __instance__ = new CachingRuleCriteria(condition, value);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CachingRuleCriteria model = new CachingRuleCriteria(this.condition, this.value);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CachingRuleCriteria o) {
-            Builder copiedBuilder = condition(o.getCondition()).value(o.getValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CachingRuleCriteria model) {
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            return this;
         }
     }
 
@@ -228,9 +233,9 @@ public final class CachingRuleCriteria {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CachingRuleCriteria(");
+        sb.append("super=").append(super.toString());
         sb.append("condition=").append(String.valueOf(this.condition));
         sb.append(", value=").append(String.valueOf(this.value));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -247,7 +252,7 @@ public final class CachingRuleCriteria {
         CachingRuleCriteria other = (CachingRuleCriteria) o;
         return java.util.Objects.equals(this.condition, other.condition)
                 && java.util.Objects.equals(this.value, other.value)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -256,16 +261,7 @@ public final class CachingRuleCriteria {
         int result = 1;
         result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

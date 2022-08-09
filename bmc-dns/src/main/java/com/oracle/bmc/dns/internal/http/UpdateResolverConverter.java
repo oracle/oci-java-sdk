@@ -117,8 +117,8 @@ public class UpdateResolverConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses.UpdateResolverResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resolver(response.getItem());
 

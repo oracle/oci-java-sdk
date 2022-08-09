@@ -19,7 +19,8 @@ package com.oracle.bmc.datasafe.model;
     builder = GenerateReportDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GenerateReportDetails {
+public final class GenerateReportDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -190,34 +191,49 @@ public final class GenerateReportDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenerateReportDetails build() {
-            GenerateReportDetails __instance__ =
+            GenerateReportDetails model =
                     new GenerateReportDetails(
-                            displayName,
-                            targetIds,
-                            description,
-                            compartmentId,
-                            mimeType,
-                            timeLessThan,
-                            timeGreaterThan,
-                            rowLimit);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.targetIds,
+                            this.description,
+                            this.compartmentId,
+                            this.mimeType,
+                            this.timeLessThan,
+                            this.timeGreaterThan,
+                            this.rowLimit);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GenerateReportDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .targetIds(o.getTargetIds())
-                            .description(o.getDescription())
-                            .compartmentId(o.getCompartmentId())
-                            .mimeType(o.getMimeType())
-                            .timeLessThan(o.getTimeLessThan())
-                            .timeGreaterThan(o.getTimeGreaterThan())
-                            .rowLimit(o.getRowLimit());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GenerateReportDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("targetIds")) {
+                this.targetIds(model.getTargetIds());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("mimeType")) {
+                this.mimeType(model.getMimeType());
+            }
+            if (model.wasPropertyExplicitlySet("timeLessThan")) {
+                this.timeLessThan(model.getTimeLessThan());
+            }
+            if (model.wasPropertyExplicitlySet("timeGreaterThan")) {
+                this.timeGreaterThan(model.getTimeGreaterThan());
+            }
+            if (model.wasPropertyExplicitlySet("rowLimit")) {
+                this.rowLimit(model.getRowLimit());
+            }
+            return this;
         }
     }
 
@@ -396,6 +412,7 @@ public final class GenerateReportDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GenerateReportDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", targetIds=").append(String.valueOf(this.targetIds));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -404,7 +421,6 @@ public final class GenerateReportDetails {
         sb.append(", timeLessThan=").append(String.valueOf(this.timeLessThan));
         sb.append(", timeGreaterThan=").append(String.valueOf(this.timeGreaterThan));
         sb.append(", rowLimit=").append(String.valueOf(this.rowLimit));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -427,7 +443,7 @@ public final class GenerateReportDetails {
                 && java.util.Objects.equals(this.timeLessThan, other.timeLessThan)
                 && java.util.Objects.equals(this.timeGreaterThan, other.timeGreaterThan)
                 && java.util.Objects.equals(this.rowLimit, other.rowLimit)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -446,16 +462,7 @@ public final class GenerateReportDetails {
                 (result * PRIME)
                         + (this.timeGreaterThan == null ? 43 : this.timeGreaterThan.hashCode());
         result = (result * PRIME) + (this.rowLimit == null ? 43 : this.rowLimit.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

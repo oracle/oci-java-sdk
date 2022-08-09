@@ -115,8 +115,8 @@ public class CancelKeyDeletionConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .CancelKeyDeletionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.key(response.getItem());
 

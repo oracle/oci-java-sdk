@@ -108,32 +108,45 @@ public final class PrivateApplicationStackPackage extends PrivateApplicationPack
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PrivateApplicationStackPackage build() {
-            PrivateApplicationStackPackage __instance__ =
+            PrivateApplicationStackPackage model =
                     new PrivateApplicationStackPackage(
-                            id,
-                            privateApplicationId,
-                            displayName,
-                            version,
-                            timeCreated,
-                            contentUrl,
-                            mimeType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.privateApplicationId,
+                            this.displayName,
+                            this.version,
+                            this.timeCreated,
+                            this.contentUrl,
+                            this.mimeType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PrivateApplicationStackPackage o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .privateApplicationId(o.getPrivateApplicationId())
-                            .displayName(o.getDisplayName())
-                            .version(o.getVersion())
-                            .timeCreated(o.getTimeCreated())
-                            .contentUrl(o.getContentUrl())
-                            .mimeType(o.getMimeType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PrivateApplicationStackPackage model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("privateApplicationId")) {
+                this.privateApplicationId(model.getPrivateApplicationId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("contentUrl")) {
+                this.contentUrl(model.getContentUrl());
+            }
+            if (model.wasPropertyExplicitlySet("mimeType")) {
+                this.mimeType(model.getMimeType());
+            }
+            return this;
         }
     }
 
@@ -206,7 +219,6 @@ public final class PrivateApplicationStackPackage extends PrivateApplicationPack
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", contentUrl=").append(String.valueOf(this.contentUrl));
         sb.append(", mimeType=").append(String.valueOf(this.mimeType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -223,8 +235,7 @@ public final class PrivateApplicationStackPackage extends PrivateApplicationPack
         PrivateApplicationStackPackage other = (PrivateApplicationStackPackage) o;
         return java.util.Objects.equals(this.contentUrl, other.contentUrl)
                 && java.util.Objects.equals(this.mimeType, other.mimeType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -233,16 +244,6 @@ public final class PrivateApplicationStackPackage extends PrivateApplicationPack
         int result = super.hashCode();
         result = (result * PRIME) + (this.contentUrl == null ? 43 : this.contentUrl.hashCode());
         result = (result * PRIME) + (this.mimeType == null ? 43 : this.mimeType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

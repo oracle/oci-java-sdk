@@ -134,8 +134,8 @@ public class ListLocalPeeringGatewaysConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListLocalPeeringGatewaysResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

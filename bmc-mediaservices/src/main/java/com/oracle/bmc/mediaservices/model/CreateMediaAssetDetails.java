@@ -19,7 +19,8 @@ package com.oracle.bmc.mediaservices.model;
     builder = CreateMediaAssetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateMediaAssetDetails {
+public final class CreateMediaAssetDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceMediaWorkflowId",
@@ -385,54 +386,89 @@ public final class CreateMediaAssetDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateMediaAssetDetails build() {
-            CreateMediaAssetDetails __instance__ =
+            CreateMediaAssetDetails model =
                     new CreateMediaAssetDetails(
-                            sourceMediaWorkflowId,
-                            mediaWorkflowJobId,
-                            sourceMediaWorkflowVersion,
-                            displayName,
-                            compartmentId,
-                            type,
-                            parentMediaAssetId,
-                            masterMediaAssetId,
-                            bucketName,
-                            namespaceName,
-                            objectName,
-                            objectEtag,
-                            metadata,
-                            segmentRangeStartIndex,
-                            segmentRangeEndIndex,
-                            mediaAssetTags,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sourceMediaWorkflowId,
+                            this.mediaWorkflowJobId,
+                            this.sourceMediaWorkflowVersion,
+                            this.displayName,
+                            this.compartmentId,
+                            this.type,
+                            this.parentMediaAssetId,
+                            this.masterMediaAssetId,
+                            this.bucketName,
+                            this.namespaceName,
+                            this.objectName,
+                            this.objectEtag,
+                            this.metadata,
+                            this.segmentRangeStartIndex,
+                            this.segmentRangeEndIndex,
+                            this.mediaAssetTags,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateMediaAssetDetails o) {
-            Builder copiedBuilder =
-                    sourceMediaWorkflowId(o.getSourceMediaWorkflowId())
-                            .mediaWorkflowJobId(o.getMediaWorkflowJobId())
-                            .sourceMediaWorkflowVersion(o.getSourceMediaWorkflowVersion())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .type(o.getType())
-                            .parentMediaAssetId(o.getParentMediaAssetId())
-                            .masterMediaAssetId(o.getMasterMediaAssetId())
-                            .bucketName(o.getBucketName())
-                            .namespaceName(o.getNamespaceName())
-                            .objectName(o.getObjectName())
-                            .objectEtag(o.getObjectEtag())
-                            .metadata(o.getMetadata())
-                            .segmentRangeStartIndex(o.getSegmentRangeStartIndex())
-                            .segmentRangeEndIndex(o.getSegmentRangeEndIndex())
-                            .mediaAssetTags(o.getMediaAssetTags())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateMediaAssetDetails model) {
+            if (model.wasPropertyExplicitlySet("sourceMediaWorkflowId")) {
+                this.sourceMediaWorkflowId(model.getSourceMediaWorkflowId());
+            }
+            if (model.wasPropertyExplicitlySet("mediaWorkflowJobId")) {
+                this.mediaWorkflowJobId(model.getMediaWorkflowJobId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceMediaWorkflowVersion")) {
+                this.sourceMediaWorkflowVersion(model.getSourceMediaWorkflowVersion());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("parentMediaAssetId")) {
+                this.parentMediaAssetId(model.getParentMediaAssetId());
+            }
+            if (model.wasPropertyExplicitlySet("masterMediaAssetId")) {
+                this.masterMediaAssetId(model.getMasterMediaAssetId());
+            }
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("namespaceName")) {
+                this.namespaceName(model.getNamespaceName());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("objectEtag")) {
+                this.objectEtag(model.getObjectEtag());
+            }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("segmentRangeStartIndex")) {
+                this.segmentRangeStartIndex(model.getSegmentRangeStartIndex());
+            }
+            if (model.wasPropertyExplicitlySet("segmentRangeEndIndex")) {
+                this.segmentRangeEndIndex(model.getSegmentRangeEndIndex());
+            }
+            if (model.wasPropertyExplicitlySet("mediaAssetTags")) {
+                this.mediaAssetTags(model.getMediaAssetTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -720,6 +756,7 @@ public final class CreateMediaAssetDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateMediaAssetDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("sourceMediaWorkflowId=").append(String.valueOf(this.sourceMediaWorkflowId));
         sb.append(", mediaWorkflowJobId=").append(String.valueOf(this.mediaWorkflowJobId));
         sb.append(", sourceMediaWorkflowVersion=")
@@ -739,7 +776,6 @@ public final class CreateMediaAssetDetails {
         sb.append(", mediaAssetTags=").append(String.valueOf(this.mediaAssetTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -774,7 +810,7 @@ public final class CreateMediaAssetDetails {
                 && java.util.Objects.equals(this.mediaAssetTags, other.mediaAssetTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -833,16 +869,7 @@ public final class CreateMediaAssetDetails {
                         + (this.mediaAssetTags == null ? 43 : this.mediaAssetTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,7 @@ package com.oracle.bmc.core.model;
     builder = UpdateVtapDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateVtapDetails {
+public final class UpdateVtapDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTags",
@@ -387,50 +387,81 @@ public final class UpdateVtapDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateVtapDetails build() {
-            UpdateVtapDetails __instance__ =
+            UpdateVtapDetails model =
                     new UpdateVtapDetails(
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            sourceId,
-                            targetId,
-                            targetIp,
-                            captureFilterId,
-                            encapsulationProtocol,
-                            vxlanNetworkIdentifier,
-                            isVtapEnabled,
-                            trafficMode,
-                            maxPacketSize,
-                            sourcePrivateEndpointIp,
-                            sourcePrivateEndpointSubnetId,
-                            targetType,
-                            sourceType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.sourceId,
+                            this.targetId,
+                            this.targetIp,
+                            this.captureFilterId,
+                            this.encapsulationProtocol,
+                            this.vxlanNetworkIdentifier,
+                            this.isVtapEnabled,
+                            this.trafficMode,
+                            this.maxPacketSize,
+                            this.sourcePrivateEndpointIp,
+                            this.sourcePrivateEndpointSubnetId,
+                            this.targetType,
+                            this.sourceType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateVtapDetails o) {
-            Builder copiedBuilder =
-                    definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .sourceId(o.getSourceId())
-                            .targetId(o.getTargetId())
-                            .targetIp(o.getTargetIp())
-                            .captureFilterId(o.getCaptureFilterId())
-                            .encapsulationProtocol(o.getEncapsulationProtocol())
-                            .vxlanNetworkIdentifier(o.getVxlanNetworkIdentifier())
-                            .isVtapEnabled(o.getIsVtapEnabled())
-                            .trafficMode(o.getTrafficMode())
-                            .maxPacketSize(o.getMaxPacketSize())
-                            .sourcePrivateEndpointIp(o.getSourcePrivateEndpointIp())
-                            .sourcePrivateEndpointSubnetId(o.getSourcePrivateEndpointSubnetId())
-                            .targetType(o.getTargetType())
-                            .sourceType(o.getSourceType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateVtapDetails model) {
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("targetIp")) {
+                this.targetIp(model.getTargetIp());
+            }
+            if (model.wasPropertyExplicitlySet("captureFilterId")) {
+                this.captureFilterId(model.getCaptureFilterId());
+            }
+            if (model.wasPropertyExplicitlySet("encapsulationProtocol")) {
+                this.encapsulationProtocol(model.getEncapsulationProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("vxlanNetworkIdentifier")) {
+                this.vxlanNetworkIdentifier(model.getVxlanNetworkIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("isVtapEnabled")) {
+                this.isVtapEnabled(model.getIsVtapEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("trafficMode")) {
+                this.trafficMode(model.getTrafficMode());
+            }
+            if (model.wasPropertyExplicitlySet("maxPacketSize")) {
+                this.maxPacketSize(model.getMaxPacketSize());
+            }
+            if (model.wasPropertyExplicitlySet("sourcePrivateEndpointIp")) {
+                this.sourcePrivateEndpointIp(model.getSourcePrivateEndpointIp());
+            }
+            if (model.wasPropertyExplicitlySet("sourcePrivateEndpointSubnetId")) {
+                this.sourcePrivateEndpointSubnetId(model.getSourcePrivateEndpointSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("targetType")) {
+                this.targetType(model.getTargetType());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            return this;
         }
     }
 
@@ -877,6 +908,7 @@ public final class UpdateVtapDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateVtapDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -895,7 +927,6 @@ public final class UpdateVtapDetails {
                 .append(String.valueOf(this.sourcePrivateEndpointSubnetId));
         sb.append(", targetType=").append(String.valueOf(this.targetType));
         sb.append(", sourceType=").append(String.valueOf(this.sourceType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -929,7 +960,7 @@ public final class UpdateVtapDetails {
                         this.sourcePrivateEndpointSubnetId, other.sourcePrivateEndpointSubnetId)
                 && java.util.Objects.equals(this.targetType, other.targetType)
                 && java.util.Objects.equals(this.sourceType, other.sourceType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -974,16 +1005,7 @@ public final class UpdateVtapDetails {
                                 : this.sourcePrivateEndpointSubnetId.hashCode());
         result = (result * PRIME) + (this.targetType == null ? 43 : this.targetType.hashCode());
         result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

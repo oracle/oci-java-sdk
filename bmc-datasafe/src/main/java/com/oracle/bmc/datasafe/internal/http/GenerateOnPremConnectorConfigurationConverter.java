@@ -121,8 +121,8 @@ public class GenerateOnPremConnectorConfigurationConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .GenerateOnPremConnectorConfigurationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

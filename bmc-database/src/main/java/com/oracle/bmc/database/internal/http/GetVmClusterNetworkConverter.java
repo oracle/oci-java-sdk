@@ -112,8 +112,8 @@ public class GetVmClusterNetworkConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetVmClusterNetworkResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.vmClusterNetwork(response.getItem());
 

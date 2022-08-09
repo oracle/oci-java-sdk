@@ -21,7 +21,7 @@ package com.oracle.bmc.core.model;
     builder = VolumeBackupSchedule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VolumeBackupSchedule {
+public final class VolumeBackupSchedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "backupType",
@@ -278,38 +278,57 @@ public final class VolumeBackupSchedule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VolumeBackupSchedule build() {
-            VolumeBackupSchedule __instance__ =
+            VolumeBackupSchedule model =
                     new VolumeBackupSchedule(
-                            backupType,
-                            offsetSeconds,
-                            period,
-                            offsetType,
-                            hourOfDay,
-                            dayOfWeek,
-                            dayOfMonth,
-                            month,
-                            retentionSeconds,
-                            timeZone);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.backupType,
+                            this.offsetSeconds,
+                            this.period,
+                            this.offsetType,
+                            this.hourOfDay,
+                            this.dayOfWeek,
+                            this.dayOfMonth,
+                            this.month,
+                            this.retentionSeconds,
+                            this.timeZone);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VolumeBackupSchedule o) {
-            Builder copiedBuilder =
-                    backupType(o.getBackupType())
-                            .offsetSeconds(o.getOffsetSeconds())
-                            .period(o.getPeriod())
-                            .offsetType(o.getOffsetType())
-                            .hourOfDay(o.getHourOfDay())
-                            .dayOfWeek(o.getDayOfWeek())
-                            .dayOfMonth(o.getDayOfMonth())
-                            .month(o.getMonth())
-                            .retentionSeconds(o.getRetentionSeconds())
-                            .timeZone(o.getTimeZone());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VolumeBackupSchedule model) {
+            if (model.wasPropertyExplicitlySet("backupType")) {
+                this.backupType(model.getBackupType());
+            }
+            if (model.wasPropertyExplicitlySet("offsetSeconds")) {
+                this.offsetSeconds(model.getOffsetSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("period")) {
+                this.period(model.getPeriod());
+            }
+            if (model.wasPropertyExplicitlySet("offsetType")) {
+                this.offsetType(model.getOffsetType());
+            }
+            if (model.wasPropertyExplicitlySet("hourOfDay")) {
+                this.hourOfDay(model.getHourOfDay());
+            }
+            if (model.wasPropertyExplicitlySet("dayOfWeek")) {
+                this.dayOfWeek(model.getDayOfWeek());
+            }
+            if (model.wasPropertyExplicitlySet("dayOfMonth")) {
+                this.dayOfMonth(model.getDayOfMonth());
+            }
+            if (model.wasPropertyExplicitlySet("month")) {
+                this.month(model.getMonth());
+            }
+            if (model.wasPropertyExplicitlySet("retentionSeconds")) {
+                this.retentionSeconds(model.getRetentionSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("timeZone")) {
+                this.timeZone(model.getTimeZone());
+            }
+            return this;
         }
     }
 
@@ -856,6 +875,7 @@ public final class VolumeBackupSchedule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VolumeBackupSchedule(");
+        sb.append("super=").append(super.toString());
         sb.append("backupType=").append(String.valueOf(this.backupType));
         sb.append(", offsetSeconds=").append(String.valueOf(this.offsetSeconds));
         sb.append(", period=").append(String.valueOf(this.period));
@@ -866,7 +886,6 @@ public final class VolumeBackupSchedule {
         sb.append(", month=").append(String.valueOf(this.month));
         sb.append(", retentionSeconds=").append(String.valueOf(this.retentionSeconds));
         sb.append(", timeZone=").append(String.valueOf(this.timeZone));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -891,7 +910,7 @@ public final class VolumeBackupSchedule {
                 && java.util.Objects.equals(this.month, other.month)
                 && java.util.Objects.equals(this.retentionSeconds, other.retentionSeconds)
                 && java.util.Objects.equals(this.timeZone, other.timeZone)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -912,16 +931,7 @@ public final class VolumeBackupSchedule {
                 (result * PRIME)
                         + (this.retentionSeconds == null ? 43 : this.retentionSeconds.hashCode());
         result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

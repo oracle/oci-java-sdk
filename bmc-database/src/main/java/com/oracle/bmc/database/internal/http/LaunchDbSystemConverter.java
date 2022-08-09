@@ -97,8 +97,8 @@ public class LaunchDbSystemConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .LaunchDbSystemResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dbSystem(response.getItem());
 

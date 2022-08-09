@@ -117,8 +117,8 @@ public class GetLaunchEligibilityConverter {
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
                                                         .GetLaunchEligibilityResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.launchEligibility(response.getItem());
 

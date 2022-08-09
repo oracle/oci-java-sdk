@@ -17,7 +17,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Order.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Order {
+public final class Order extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "orderNumber",
@@ -127,23 +127,37 @@ public final class Order {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Order build() {
-            Order __instance__ =
-                    new Order(orderNumber, dataCenterRegion, adminEmail, orderState, subscriptions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Order model =
+                    new Order(
+                            this.orderNumber,
+                            this.dataCenterRegion,
+                            this.adminEmail,
+                            this.orderState,
+                            this.subscriptions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Order o) {
-            Builder copiedBuilder =
-                    orderNumber(o.getOrderNumber())
-                            .dataCenterRegion(o.getDataCenterRegion())
-                            .adminEmail(o.getAdminEmail())
-                            .orderState(o.getOrderState())
-                            .subscriptions(o.getSubscriptions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Order model) {
+            if (model.wasPropertyExplicitlySet("orderNumber")) {
+                this.orderNumber(model.getOrderNumber());
+            }
+            if (model.wasPropertyExplicitlySet("dataCenterRegion")) {
+                this.dataCenterRegion(model.getDataCenterRegion());
+            }
+            if (model.wasPropertyExplicitlySet("adminEmail")) {
+                this.adminEmail(model.getAdminEmail());
+            }
+            if (model.wasPropertyExplicitlySet("orderState")) {
+                this.orderState(model.getOrderState());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptions")) {
+                this.subscriptions(model.getSubscriptions());
+            }
+            return this;
         }
     }
 
@@ -241,12 +255,12 @@ public final class Order {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Order(");
+        sb.append("super=").append(super.toString());
         sb.append("orderNumber=").append(String.valueOf(this.orderNumber));
         sb.append(", dataCenterRegion=").append(String.valueOf(this.dataCenterRegion));
         sb.append(", adminEmail=").append(String.valueOf(this.adminEmail));
         sb.append(", orderState=").append(String.valueOf(this.orderState));
         sb.append(", subscriptions=").append(String.valueOf(this.subscriptions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -266,7 +280,7 @@ public final class Order {
                 && java.util.Objects.equals(this.adminEmail, other.adminEmail)
                 && java.util.Objects.equals(this.orderState, other.orderState)
                 && java.util.Objects.equals(this.subscriptions, other.subscriptions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -282,16 +296,7 @@ public final class Order {
         result =
                 (result * PRIME)
                         + (this.subscriptions == null ? 43 : this.subscriptions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

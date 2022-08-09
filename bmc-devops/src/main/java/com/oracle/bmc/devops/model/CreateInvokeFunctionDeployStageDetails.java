@@ -155,39 +155,57 @@ public final class CreateInvokeFunctionDeployStageDetails extends CreateDeploySt
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateInvokeFunctionDeployStageDetails build() {
-            CreateInvokeFunctionDeployStageDetails __instance__ =
+            CreateInvokeFunctionDeployStageDetails model =
                     new CreateInvokeFunctionDeployStageDetails(
-                            description,
-                            displayName,
-                            deployPipelineId,
-                            deployStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            functionDeployEnvironmentId,
-                            deployArtifactId,
-                            isAsync,
-                            isValidationEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.displayName,
+                            this.deployPipelineId,
+                            this.deployStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.functionDeployEnvironmentId,
+                            this.deployArtifactId,
+                            this.isAsync,
+                            this.isValidationEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateInvokeFunctionDeployStageDetails o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .deployPipelineId(o.getDeployPipelineId())
-                            .deployStagePredecessorCollection(
-                                    o.getDeployStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .functionDeployEnvironmentId(o.getFunctionDeployEnvironmentId())
-                            .deployArtifactId(o.getDeployArtifactId())
-                            .isAsync(o.getIsAsync())
-                            .isValidationEnabled(o.getIsValidationEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateInvokeFunctionDeployStageDetails model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessorCollection")) {
+                this.deployStagePredecessorCollection(model.getDeployStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("functionDeployEnvironmentId")) {
+                this.functionDeployEnvironmentId(model.getFunctionDeployEnvironmentId());
+            }
+            if (model.wasPropertyExplicitlySet("deployArtifactId")) {
+                this.deployArtifactId(model.getDeployArtifactId());
+            }
+            if (model.wasPropertyExplicitlySet("isAsync")) {
+                this.isAsync(model.getIsAsync());
+            }
+            if (model.wasPropertyExplicitlySet("isValidationEnabled")) {
+                this.isValidationEnabled(model.getIsValidationEnabled());
+            }
+            return this;
         }
     }
 
@@ -306,7 +324,6 @@ public final class CreateInvokeFunctionDeployStageDetails extends CreateDeploySt
         sb.append(", deployArtifactId=").append(String.valueOf(this.deployArtifactId));
         sb.append(", isAsync=").append(String.valueOf(this.isAsync));
         sb.append(", isValidationEnabled=").append(String.valueOf(this.isValidationEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -326,8 +343,7 @@ public final class CreateInvokeFunctionDeployStageDetails extends CreateDeploySt
                 && java.util.Objects.equals(this.deployArtifactId, other.deployArtifactId)
                 && java.util.Objects.equals(this.isAsync, other.isAsync)
                 && java.util.Objects.equals(this.isValidationEnabled, other.isValidationEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -348,16 +364,6 @@ public final class CreateInvokeFunctionDeployStageDetails extends CreateDeploySt
                         + (this.isValidationEnabled == null
                                 ? 43
                                 : this.isValidationEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

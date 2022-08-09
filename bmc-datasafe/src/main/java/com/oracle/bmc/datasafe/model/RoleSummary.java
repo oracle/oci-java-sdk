@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoleSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RoleSummary {
+public final class RoleSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "roleName",
@@ -165,32 +165,45 @@ public final class RoleSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RoleSummary build() {
-            RoleSummary __instance__ =
+            RoleSummary model =
                     new RoleSummary(
-                            roleName,
-                            authenticationType,
-                            isPasswordRequired,
-                            isCommon,
-                            isOracleMaintained,
-                            isInherited,
-                            isImplicit);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.roleName,
+                            this.authenticationType,
+                            this.isPasswordRequired,
+                            this.isCommon,
+                            this.isOracleMaintained,
+                            this.isInherited,
+                            this.isImplicit);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RoleSummary o) {
-            Builder copiedBuilder =
-                    roleName(o.getRoleName())
-                            .authenticationType(o.getAuthenticationType())
-                            .isPasswordRequired(o.getIsPasswordRequired())
-                            .isCommon(o.getIsCommon())
-                            .isOracleMaintained(o.getIsOracleMaintained())
-                            .isInherited(o.getIsInherited())
-                            .isImplicit(o.getIsImplicit());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RoleSummary model) {
+            if (model.wasPropertyExplicitlySet("roleName")) {
+                this.roleName(model.getRoleName());
+            }
+            if (model.wasPropertyExplicitlySet("authenticationType")) {
+                this.authenticationType(model.getAuthenticationType());
+            }
+            if (model.wasPropertyExplicitlySet("isPasswordRequired")) {
+                this.isPasswordRequired(model.getIsPasswordRequired());
+            }
+            if (model.wasPropertyExplicitlySet("isCommon")) {
+                this.isCommon(model.getIsCommon());
+            }
+            if (model.wasPropertyExplicitlySet("isOracleMaintained")) {
+                this.isOracleMaintained(model.getIsOracleMaintained());
+            }
+            if (model.wasPropertyExplicitlySet("isInherited")) {
+                this.isInherited(model.getIsInherited());
+            }
+            if (model.wasPropertyExplicitlySet("isImplicit")) {
+                this.isImplicit(model.getIsImplicit());
+            }
+            return this;
         }
     }
 
@@ -316,6 +329,7 @@ public final class RoleSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RoleSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("roleName=").append(String.valueOf(this.roleName));
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", isPasswordRequired=").append(String.valueOf(this.isPasswordRequired));
@@ -323,7 +337,6 @@ public final class RoleSummary {
         sb.append(", isOracleMaintained=").append(String.valueOf(this.isOracleMaintained));
         sb.append(", isInherited=").append(String.valueOf(this.isInherited));
         sb.append(", isImplicit=").append(String.valueOf(this.isImplicit));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -345,7 +358,7 @@ public final class RoleSummary {
                 && java.util.Objects.equals(this.isOracleMaintained, other.isOracleMaintained)
                 && java.util.Objects.equals(this.isInherited, other.isInherited)
                 && java.util.Objects.equals(this.isImplicit, other.isImplicit)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -371,16 +384,7 @@ public final class RoleSummary {
                                 : this.isOracleMaintained.hashCode());
         result = (result * PRIME) + (this.isInherited == null ? 43 : this.isInherited.hashCode());
         result = (result * PRIME) + (this.isImplicit == null ? 43 : this.isImplicit.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

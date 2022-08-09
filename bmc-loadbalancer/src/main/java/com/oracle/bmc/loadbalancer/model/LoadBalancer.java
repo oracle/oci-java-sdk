@@ -27,7 +27,7 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LoadBalancer.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LoadBalancer {
+public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -498,62 +498,105 @@ public final class LoadBalancer {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LoadBalancer build() {
-            LoadBalancer __instance__ =
+            LoadBalancer model =
                     new LoadBalancer(
-                            id,
-                            compartmentId,
-                            displayName,
-                            lifecycleState,
-                            timeCreated,
-                            ipAddresses,
-                            shapeName,
-                            shapeDetails,
-                            isPrivate,
-                            subnetIds,
-                            networkSecurityGroupIds,
-                            listeners,
-                            hostnames,
-                            sslCipherSuites,
-                            certificates,
-                            backendSets,
-                            pathRouteSets,
-                            freeformTags,
-                            definedTags,
-                            systemTags,
-                            ruleSets,
-                            routingPolicies);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.displayName,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.ipAddresses,
+                            this.shapeName,
+                            this.shapeDetails,
+                            this.isPrivate,
+                            this.subnetIds,
+                            this.networkSecurityGroupIds,
+                            this.listeners,
+                            this.hostnames,
+                            this.sslCipherSuites,
+                            this.certificates,
+                            this.backendSets,
+                            this.pathRouteSets,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags,
+                            this.ruleSets,
+                            this.routingPolicies);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LoadBalancer o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .ipAddresses(o.getIpAddresses())
-                            .shapeName(o.getShapeName())
-                            .shapeDetails(o.getShapeDetails())
-                            .isPrivate(o.getIsPrivate())
-                            .subnetIds(o.getSubnetIds())
-                            .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
-                            .listeners(o.getListeners())
-                            .hostnames(o.getHostnames())
-                            .sslCipherSuites(o.getSslCipherSuites())
-                            .certificates(o.getCertificates())
-                            .backendSets(o.getBackendSets())
-                            .pathRouteSets(o.getPathRouteSets())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags())
-                            .ruleSets(o.getRuleSets())
-                            .routingPolicies(o.getRoutingPolicies());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LoadBalancer model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("ipAddresses")) {
+                this.ipAddresses(model.getIpAddresses());
+            }
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("shapeDetails")) {
+                this.shapeDetails(model.getShapeDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isPrivate")) {
+                this.isPrivate(model.getIsPrivate());
+            }
+            if (model.wasPropertyExplicitlySet("subnetIds")) {
+                this.subnetIds(model.getSubnetIds());
+            }
+            if (model.wasPropertyExplicitlySet("networkSecurityGroupIds")) {
+                this.networkSecurityGroupIds(model.getNetworkSecurityGroupIds());
+            }
+            if (model.wasPropertyExplicitlySet("listeners")) {
+                this.listeners(model.getListeners());
+            }
+            if (model.wasPropertyExplicitlySet("hostnames")) {
+                this.hostnames(model.getHostnames());
+            }
+            if (model.wasPropertyExplicitlySet("sslCipherSuites")) {
+                this.sslCipherSuites(model.getSslCipherSuites());
+            }
+            if (model.wasPropertyExplicitlySet("certificates")) {
+                this.certificates(model.getCertificates());
+            }
+            if (model.wasPropertyExplicitlySet("backendSets")) {
+                this.backendSets(model.getBackendSets());
+            }
+            if (model.wasPropertyExplicitlySet("pathRouteSets")) {
+                this.pathRouteSets(model.getPathRouteSets());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("ruleSets")) {
+                this.ruleSets(model.getRuleSets());
+            }
+            if (model.wasPropertyExplicitlySet("routingPolicies")) {
+                this.routingPolicies(model.getRoutingPolicies());
+            }
+            return this;
         }
     }
 
@@ -978,6 +1021,7 @@ public final class LoadBalancer {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LoadBalancer(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -1001,7 +1045,6 @@ public final class LoadBalancer {
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", ruleSets=").append(String.valueOf(this.ruleSets));
         sb.append(", routingPolicies=").append(String.valueOf(this.routingPolicies));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1039,7 +1082,7 @@ public final class LoadBalancer {
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.ruleSets, other.ruleSets)
                 && java.util.Objects.equals(this.routingPolicies, other.routingPolicies)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1082,16 +1125,7 @@ public final class LoadBalancer {
         result =
                 (result * PRIME)
                         + (this.routingPolicies == null ? 43 : this.routingPolicies.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.devops.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RepositoryCommit.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RepositoryCommit {
+public final class RepositoryCommit extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "commitId",
@@ -203,36 +203,53 @@ public final class RepositoryCommit {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RepositoryCommit build() {
-            RepositoryCommit __instance__ =
+            RepositoryCommit model =
                     new RepositoryCommit(
-                            commitId,
-                            commitMessage,
-                            authorName,
-                            authorEmail,
-                            committerName,
-                            committerEmail,
-                            parentCommitIds,
-                            timeCreated,
-                            treeId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.commitId,
+                            this.commitMessage,
+                            this.authorName,
+                            this.authorEmail,
+                            this.committerName,
+                            this.committerEmail,
+                            this.parentCommitIds,
+                            this.timeCreated,
+                            this.treeId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RepositoryCommit o) {
-            Builder copiedBuilder =
-                    commitId(o.getCommitId())
-                            .commitMessage(o.getCommitMessage())
-                            .authorName(o.getAuthorName())
-                            .authorEmail(o.getAuthorEmail())
-                            .committerName(o.getCommitterName())
-                            .committerEmail(o.getCommitterEmail())
-                            .parentCommitIds(o.getParentCommitIds())
-                            .timeCreated(o.getTimeCreated())
-                            .treeId(o.getTreeId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RepositoryCommit model) {
+            if (model.wasPropertyExplicitlySet("commitId")) {
+                this.commitId(model.getCommitId());
+            }
+            if (model.wasPropertyExplicitlySet("commitMessage")) {
+                this.commitMessage(model.getCommitMessage());
+            }
+            if (model.wasPropertyExplicitlySet("authorName")) {
+                this.authorName(model.getAuthorName());
+            }
+            if (model.wasPropertyExplicitlySet("authorEmail")) {
+                this.authorEmail(model.getAuthorEmail());
+            }
+            if (model.wasPropertyExplicitlySet("committerName")) {
+                this.committerName(model.getCommitterName());
+            }
+            if (model.wasPropertyExplicitlySet("committerEmail")) {
+                this.committerEmail(model.getCommitterEmail());
+            }
+            if (model.wasPropertyExplicitlySet("parentCommitIds")) {
+                this.parentCommitIds(model.getParentCommitIds());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("treeId")) {
+                this.treeId(model.getTreeId());
+            }
+            return this;
         }
     }
 
@@ -386,6 +403,7 @@ public final class RepositoryCommit {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RepositoryCommit(");
+        sb.append("super=").append(super.toString());
         sb.append("commitId=").append(String.valueOf(this.commitId));
         sb.append(", commitMessage=").append(String.valueOf(this.commitMessage));
         sb.append(", authorName=").append(String.valueOf(this.authorName));
@@ -395,7 +413,6 @@ public final class RepositoryCommit {
         sb.append(", parentCommitIds=").append(String.valueOf(this.parentCommitIds));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", treeId=").append(String.valueOf(this.treeId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -419,7 +436,7 @@ public final class RepositoryCommit {
                 && java.util.Objects.equals(this.parentCommitIds, other.parentCommitIds)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.treeId, other.treeId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -443,16 +460,7 @@ public final class RepositoryCommit {
                         + (this.parentCommitIds == null ? 43 : this.parentCommitIds.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.treeId == null ? 43 : this.treeId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

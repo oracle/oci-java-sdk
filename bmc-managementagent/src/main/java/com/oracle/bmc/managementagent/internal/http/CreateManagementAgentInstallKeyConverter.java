@@ -119,8 +119,8 @@ public class CreateManagementAgentInstallKeyConverter {
                                                 com.oracle.bmc.managementagent.responses
                                                         .CreateManagementAgentInstallKeyResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managementAgentInstallKey(response.getItem());
 

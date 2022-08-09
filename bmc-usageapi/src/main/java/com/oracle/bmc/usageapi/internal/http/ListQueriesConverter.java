@@ -138,8 +138,8 @@ public class ListQueriesConverter {
                                         builder =
                                                 com.oracle.bmc.usageapi.responses
                                                         .ListQueriesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.queryCollection(response.getItem());
 

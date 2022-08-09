@@ -27,6 +27,7 @@ public class ExplicitlySetFilter extends SimpleBeanPropertyFilter {
     public void serializeAsField(
             Object pojo, JsonGenerator jgen, SerializerProvider provider, PropertyWriter writer)
             throws Exception {
+
         if (include(writer)) {
             Field field = getMatchingDeclaredField(pojo.getClass(), writer.getName());
             boolean accessible = field.isAccessible();
@@ -36,20 +37,19 @@ public class ExplicitlySetFilter extends SimpleBeanPropertyFilter {
                 if (fieldValue != null) {
                     // not null, definitely serialize
                     writer.serializeAsField(pojo, jgen, provider);
-                } else {
-                    // null, find out if null was explicitly set
-                    Field explicitField = pojo.getClass().getDeclaredField(FIELD_NAME);
-                    boolean explicitAccessible = explicitField.isAccessible();
-                    try {
-                        explicitField.setAccessible(true);
-                        Set<String> explicitlySet = (Set<String>) explicitField.get(pojo);
-                        if (explicitlySet.contains(writer.getName())) {
-                            // explicitly set, serialize
-                            writer.serializeAsField(pojo, jgen, provider);
-                        }
-                    } finally {
-                        explicitField.setAccessible(explicitAccessible);
+                }
+                // null, find out if null was explicitly set using the
+                //      method from BmcModel common class
+                else if (pojo instanceof ExplicitlySetBmcModel) {
+                    if (((ExplicitlySetBmcModel) pojo).wasPropertyExplicitlySet(writer.getName())) {
+                        writer.serializeAsField(pojo, jgen, provider);
                     }
+                }
+                // To be removed on the next architecture-level change
+                //      kept for compatibility reasons
+                // null, find out if model has explicitlySet property
+                else if (hasExplicitlySetInAField(pojo, writer)) {
+                    writer.serializeAsField(pojo, jgen, provider);
                 }
             } finally {
                 field.setAccessible(accessible);
@@ -58,6 +58,24 @@ public class ExplicitlySetFilter extends SimpleBeanPropertyFilter {
             // since 2.3
             writer.serializeAsOmittedField(pojo, jgen, provider);
         }
+    }
+
+    @Deprecated
+    @SuppressWarnings("unchecked")
+    private boolean hasExplicitlySetInAField(Object pojo, PropertyWriter writer) throws Exception {
+        Field explicitField = pojo.getClass().getDeclaredField(FIELD_NAME);
+        boolean explicitAccessible = explicitField.isAccessible();
+        try {
+            explicitField.setAccessible(true);
+            Set<String> explicitlySet = (Set<String>) explicitField.get(pojo);
+            if (explicitlySet.contains(writer.getName())) {
+                return true;
+            }
+        } finally {
+            explicitField.setAccessible(explicitAccessible);
+        }
+
+        return false;
     }
 
     private static Field getDeclaredField(Class<?> pojoClass, String fieldName)
@@ -85,7 +103,6 @@ public class ExplicitlySetFilter extends SimpleBeanPropertyFilter {
         // If not found, try converting the field name from snake case to camel case
         String lowerCamelCased = lowerUnderscoreToLowerCamel(fieldName);
         try {
-            // If not found, try converting the field name from snake case to camel case
             return getDeclaredField(pojoClass, lowerCamelCased);
         } catch (NoSuchFieldException nsfe) {
             LOG.debug(
@@ -106,7 +123,7 @@ public class ExplicitlySetFilter extends SimpleBeanPropertyFilter {
 
     @Override
     protected boolean include(BeanPropertyWriter writer) {
-        return !FIELD_NAME.equals(writer.getName());
+        return include((PropertyWriter) writer);
     }
 
     @Override

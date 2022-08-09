@@ -40,7 +40,7 @@ package com.oracle.bmc.core.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AttachVolumeDetails {
+public class AttachVolumeDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "device",
@@ -175,6 +175,7 @@ public class AttachVolumeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AttachVolumeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("device=").append(String.valueOf(this.device));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
@@ -200,7 +201,8 @@ public class AttachVolumeDetails {
                 && java.util.Objects.equals(this.instanceId, other.instanceId)
                 && java.util.Objects.equals(this.isReadOnly, other.isReadOnly)
                 && java.util.Objects.equals(this.isShareable, other.isShareable)
-                && java.util.Objects.equals(this.volumeId, other.volumeId);
+                && java.util.Objects.equals(this.volumeId, other.volumeId)
+                && super.equals(other);
     }
 
     @Override
@@ -213,6 +215,7 @@ public class AttachVolumeDetails {
         result = (result * PRIME) + (this.isReadOnly == null ? 43 : this.isReadOnly.hashCode());
         result = (result * PRIME) + (this.isShareable == null ? 43 : this.isShareable.hashCode());
         result = (result * PRIME) + (this.volumeId == null ? 43 : this.volumeId.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

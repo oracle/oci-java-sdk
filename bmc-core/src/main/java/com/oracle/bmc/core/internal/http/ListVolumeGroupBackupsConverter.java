@@ -157,8 +157,8 @@ public class ListVolumeGroupBackupsConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListVolumeGroupBackupsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

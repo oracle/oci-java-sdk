@@ -105,23 +105,33 @@ public final class AttachExistingInstanceDetails extends CreateServiceAttachment
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AttachExistingInstanceDetails build() {
-            AttachExistingInstanceDetails __instance__ =
+            AttachExistingInstanceDetails model =
                     new AttachExistingInstanceDetails(
-                            serviceInstanceType, instanceId, freeformTags, definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.serviceInstanceType,
+                            this.instanceId,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AttachExistingInstanceDetails o) {
-            Builder copiedBuilder =
-                    serviceInstanceType(o.getServiceInstanceType())
-                            .instanceId(o.getInstanceId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AttachExistingInstanceDetails model) {
+            if (model.wasPropertyExplicitlySet("serviceInstanceType")) {
+                this.serviceInstanceType(model.getServiceInstanceType());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -266,7 +276,6 @@ public final class AttachExistingInstanceDetails extends CreateServiceAttachment
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -285,8 +294,7 @@ public final class AttachExistingInstanceDetails extends CreateServiceAttachment
                 && java.util.Objects.equals(this.instanceId, other.instanceId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -301,16 +309,6 @@ public final class AttachExistingInstanceDetails extends CreateServiceAttachment
         result = (result * PRIME) + (this.instanceId == null ? 43 : this.instanceId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

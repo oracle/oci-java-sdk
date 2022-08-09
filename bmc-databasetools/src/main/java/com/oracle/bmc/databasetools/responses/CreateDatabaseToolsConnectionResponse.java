@@ -83,6 +83,7 @@ public class CreateDatabaseToolsConnectionResponse extends com.oracle.bmc.respon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "location",
         "etag",
         "opcWorkRequestId",
@@ -91,12 +92,13 @@ public class CreateDatabaseToolsConnectionResponse extends com.oracle.bmc.respon
     })
     private CreateDatabaseToolsConnectionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
             com.oracle.bmc.databasetools.model.DatabaseToolsConnection databaseToolsConnection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.location = location;
         this.etag = etag;
         this.opcWorkRequestId = opcWorkRequestId;
@@ -109,6 +111,13 @@ public class CreateDatabaseToolsConnectionResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -203,6 +212,7 @@ public class CreateDatabaseToolsConnectionResponse extends com.oracle.bmc.respon
          */
         public Builder copy(CreateDatabaseToolsConnectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             location(o.getLocation());
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
@@ -219,6 +229,7 @@ public class CreateDatabaseToolsConnectionResponse extends com.oracle.bmc.respon
         public CreateDatabaseToolsConnectionResponse build() {
             return new CreateDatabaseToolsConnectionResponse(
                     __httpStatusCode__,
+                    headers,
                     location,
                     etag,
                     opcWorkRequestId,

@@ -87,6 +87,7 @@ public class ListAlertPolicyRulesResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "opcNextPage",
@@ -95,12 +96,13 @@ public class ListAlertPolicyRulesResponse extends com.oracle.bmc.responses.BmcRe
     })
     private ListAlertPolicyRulesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
             com.oracle.bmc.datasafe.model.AlertPolicyRuleCollection alertPolicyRuleCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
@@ -113,6 +115,13 @@ public class ListAlertPolicyRulesResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -210,6 +219,7 @@ public class ListAlertPolicyRulesResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(ListAlertPolicyRulesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
@@ -226,6 +236,7 @@ public class ListAlertPolicyRulesResponse extends com.oracle.bmc.responses.BmcRe
         public ListAlertPolicyRulesResponse build() {
             return new ListAlertPolicyRulesResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcRequestId,
                     opcNextPage,

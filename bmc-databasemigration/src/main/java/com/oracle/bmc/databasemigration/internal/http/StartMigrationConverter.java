@@ -116,8 +116,8 @@ public class StartMigrationConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .StartMigrationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.job(response.getItem());
 

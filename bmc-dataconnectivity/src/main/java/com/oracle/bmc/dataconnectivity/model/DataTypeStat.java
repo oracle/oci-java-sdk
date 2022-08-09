@@ -17,7 +17,7 @@ package com.oracle.bmc.dataconnectivity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataTypeStat.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataTypeStat {
+public final class DataTypeStat extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"value", "confidence", "freq", "freqPercentage"})
     public DataTypeStat(String value, Integer confidence, Long freq, Double freqPercentage) {
@@ -99,21 +99,29 @@ public final class DataTypeStat {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataTypeStat build() {
-            DataTypeStat __instance__ = new DataTypeStat(value, confidence, freq, freqPercentage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DataTypeStat model =
+                    new DataTypeStat(this.value, this.confidence, this.freq, this.freqPercentage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataTypeStat o) {
-            Builder copiedBuilder =
-                    value(o.getValue())
-                            .confidence(o.getConfidence())
-                            .freq(o.getFreq())
-                            .freqPercentage(o.getFreqPercentage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataTypeStat model) {
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("confidence")) {
+                this.confidence(model.getConfidence());
+            }
+            if (model.wasPropertyExplicitlySet("freq")) {
+                this.freq(model.getFreq());
+            }
+            if (model.wasPropertyExplicitlySet("freqPercentage")) {
+                this.freqPercentage(model.getFreqPercentage());
+            }
+            return this;
         }
     }
 
@@ -197,11 +205,11 @@ public final class DataTypeStat {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataTypeStat(");
+        sb.append("super=").append(super.toString());
         sb.append("value=").append(String.valueOf(this.value));
         sb.append(", confidence=").append(String.valueOf(this.confidence));
         sb.append(", freq=").append(String.valueOf(this.freq));
         sb.append(", freqPercentage=").append(String.valueOf(this.freqPercentage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -220,7 +228,7 @@ public final class DataTypeStat {
                 && java.util.Objects.equals(this.confidence, other.confidence)
                 && java.util.Objects.equals(this.freq, other.freq)
                 && java.util.Objects.equals(this.freqPercentage, other.freqPercentage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -233,16 +241,7 @@ public final class DataTypeStat {
         result =
                 (result * PRIME)
                         + (this.freqPercentage == null ? 43 : this.freqPercentage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

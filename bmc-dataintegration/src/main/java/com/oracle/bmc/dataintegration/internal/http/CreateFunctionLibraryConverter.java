@@ -120,8 +120,8 @@ public class CreateFunctionLibraryConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .CreateFunctionLibraryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.functionLibrary(response.getItem());
 

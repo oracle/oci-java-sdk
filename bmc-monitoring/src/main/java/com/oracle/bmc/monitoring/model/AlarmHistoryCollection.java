@@ -20,7 +20,8 @@ package com.oracle.bmc.monitoring.model;
     builder = AlarmHistoryCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AlarmHistoryCollection {
+public final class AlarmHistoryCollection
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"alarmId", "isEnabled", "entries"})
     public AlarmHistoryCollection(
@@ -96,19 +97,26 @@ public final class AlarmHistoryCollection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AlarmHistoryCollection build() {
-            AlarmHistoryCollection __instance__ =
-                    new AlarmHistoryCollection(alarmId, isEnabled, entries);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AlarmHistoryCollection model =
+                    new AlarmHistoryCollection(this.alarmId, this.isEnabled, this.entries);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AlarmHistoryCollection o) {
-            Builder copiedBuilder =
-                    alarmId(o.getAlarmId()).isEnabled(o.getIsEnabled()).entries(o.getEntries());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AlarmHistoryCollection model) {
+            if (model.wasPropertyExplicitlySet("alarmId")) {
+                this.alarmId(model.getAlarmId());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("entries")) {
+                this.entries(model.getEntries());
+            }
+            return this;
         }
     }
 
@@ -188,10 +196,10 @@ public final class AlarmHistoryCollection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AlarmHistoryCollection(");
+        sb.append("super=").append(super.toString());
         sb.append("alarmId=").append(String.valueOf(this.alarmId));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", entries=").append(String.valueOf(this.entries));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -209,7 +217,7 @@ public final class AlarmHistoryCollection {
         return java.util.Objects.equals(this.alarmId, other.alarmId)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.entries, other.entries)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -219,16 +227,7 @@ public final class AlarmHistoryCollection {
         result = (result * PRIME) + (this.alarmId == null ? 43 : this.alarmId.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.entries == null ? 43 : this.entries.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

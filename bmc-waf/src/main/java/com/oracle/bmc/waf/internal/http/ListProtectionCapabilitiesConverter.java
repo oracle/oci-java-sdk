@@ -185,8 +185,8 @@ public class ListProtectionCapabilitiesConverter {
                                                 com.oracle.bmc.waf.responses
                                                         .ListProtectionCapabilitiesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.protectionCapabilityCollection(response.getItem());
 

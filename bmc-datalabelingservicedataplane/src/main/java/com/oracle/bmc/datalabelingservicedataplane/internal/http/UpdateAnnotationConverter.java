@@ -121,8 +121,8 @@ public class UpdateAnnotationConverter {
                                                 com.oracle.bmc.datalabelingservicedataplane
                                                         .responses.UpdateAnnotationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.annotation(response.getItem());
 

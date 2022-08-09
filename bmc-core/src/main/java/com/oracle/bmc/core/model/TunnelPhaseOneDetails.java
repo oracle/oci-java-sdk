@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = TunnelPhaseOneDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TunnelPhaseOneDetails {
+public final class TunnelPhaseOneDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isCustomPhaseOneConfig",
@@ -254,41 +255,62 @@ public final class TunnelPhaseOneDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TunnelPhaseOneDetails build() {
-            TunnelPhaseOneDetails __instance__ =
+            TunnelPhaseOneDetails model =
                     new TunnelPhaseOneDetails(
-                            isCustomPhaseOneConfig,
-                            lifetime,
-                            remainingLifetime,
-                            customAuthenticationAlgorithm,
-                            negotiatedAuthenticationAlgorithm,
-                            customEncryptionAlgorithm,
-                            negotiatedEncryptionAlgorithm,
-                            customDhGroup,
-                            negotiatedDhGroup,
-                            isIkeEstablished,
-                            remainingLifetimeLastRetrieved);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isCustomPhaseOneConfig,
+                            this.lifetime,
+                            this.remainingLifetime,
+                            this.customAuthenticationAlgorithm,
+                            this.negotiatedAuthenticationAlgorithm,
+                            this.customEncryptionAlgorithm,
+                            this.negotiatedEncryptionAlgorithm,
+                            this.customDhGroup,
+                            this.negotiatedDhGroup,
+                            this.isIkeEstablished,
+                            this.remainingLifetimeLastRetrieved);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TunnelPhaseOneDetails o) {
-            Builder copiedBuilder =
-                    isCustomPhaseOneConfig(o.getIsCustomPhaseOneConfig())
-                            .lifetime(o.getLifetime())
-                            .remainingLifetime(o.getRemainingLifetime())
-                            .customAuthenticationAlgorithm(o.getCustomAuthenticationAlgorithm())
-                            .negotiatedAuthenticationAlgorithm(
-                                    o.getNegotiatedAuthenticationAlgorithm())
-                            .customEncryptionAlgorithm(o.getCustomEncryptionAlgorithm())
-                            .negotiatedEncryptionAlgorithm(o.getNegotiatedEncryptionAlgorithm())
-                            .customDhGroup(o.getCustomDhGroup())
-                            .negotiatedDhGroup(o.getNegotiatedDhGroup())
-                            .isIkeEstablished(o.getIsIkeEstablished())
-                            .remainingLifetimeLastRetrieved(o.getRemainingLifetimeLastRetrieved());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TunnelPhaseOneDetails model) {
+            if (model.wasPropertyExplicitlySet("isCustomPhaseOneConfig")) {
+                this.isCustomPhaseOneConfig(model.getIsCustomPhaseOneConfig());
+            }
+            if (model.wasPropertyExplicitlySet("lifetime")) {
+                this.lifetime(model.getLifetime());
+            }
+            if (model.wasPropertyExplicitlySet("remainingLifetime")) {
+                this.remainingLifetime(model.getRemainingLifetime());
+            }
+            if (model.wasPropertyExplicitlySet("customAuthenticationAlgorithm")) {
+                this.customAuthenticationAlgorithm(model.getCustomAuthenticationAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("negotiatedAuthenticationAlgorithm")) {
+                this.negotiatedAuthenticationAlgorithm(
+                        model.getNegotiatedAuthenticationAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("customEncryptionAlgorithm")) {
+                this.customEncryptionAlgorithm(model.getCustomEncryptionAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("negotiatedEncryptionAlgorithm")) {
+                this.negotiatedEncryptionAlgorithm(model.getNegotiatedEncryptionAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("customDhGroup")) {
+                this.customDhGroup(model.getCustomDhGroup());
+            }
+            if (model.wasPropertyExplicitlySet("negotiatedDhGroup")) {
+                this.negotiatedDhGroup(model.getNegotiatedDhGroup());
+            }
+            if (model.wasPropertyExplicitlySet("isIkeEstablished")) {
+                this.isIkeEstablished(model.getIsIkeEstablished());
+            }
+            if (model.wasPropertyExplicitlySet("remainingLifetimeLastRetrieved")) {
+                this.remainingLifetimeLastRetrieved(model.getRemainingLifetimeLastRetrieved());
+            }
+            return this;
         }
     }
 
@@ -480,6 +502,7 @@ public final class TunnelPhaseOneDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TunnelPhaseOneDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("isCustomPhaseOneConfig=").append(String.valueOf(this.isCustomPhaseOneConfig));
         sb.append(", lifetime=").append(String.valueOf(this.lifetime));
         sb.append(", remainingLifetime=").append(String.valueOf(this.remainingLifetime));
@@ -496,7 +519,6 @@ public final class TunnelPhaseOneDetails {
         sb.append(", isIkeEstablished=").append(String.valueOf(this.isIkeEstablished));
         sb.append(", remainingLifetimeLastRetrieved=")
                 .append(String.valueOf(this.remainingLifetimeLastRetrieved));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -528,7 +550,7 @@ public final class TunnelPhaseOneDetails {
                 && java.util.Objects.equals(this.isIkeEstablished, other.isIkeEstablished)
                 && java.util.Objects.equals(
                         this.remainingLifetimeLastRetrieved, other.remainingLifetimeLastRetrieved)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -578,16 +600,7 @@ public final class TunnelPhaseOneDetails {
                         + (this.remainingLifetimeLastRetrieved == null
                                 ? 43
                                 : this.remainingLifetimeLastRetrieved.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

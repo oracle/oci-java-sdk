@@ -133,30 +133,41 @@ public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetB
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PdbConversionToNewDatabaseDetails build() {
-            PdbConversionToNewDatabaseDetails __instance__ =
+            PdbConversionToNewDatabaseDetails model =
                     new PdbConversionToNewDatabaseDetails(
-                            cdbName,
-                            cdbAdminPassword,
-                            pdbAdminPassword,
-                            cdbTdeWalletPassword,
-                            nonCdbTdeWalletPassword,
-                            additionalCdbParams);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.cdbName,
+                            this.cdbAdminPassword,
+                            this.pdbAdminPassword,
+                            this.cdbTdeWalletPassword,
+                            this.nonCdbTdeWalletPassword,
+                            this.additionalCdbParams);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PdbConversionToNewDatabaseDetails o) {
-            Builder copiedBuilder =
-                    cdbName(o.getCdbName())
-                            .cdbAdminPassword(o.getCdbAdminPassword())
-                            .pdbAdminPassword(o.getPdbAdminPassword())
-                            .cdbTdeWalletPassword(o.getCdbTdeWalletPassword())
-                            .nonCdbTdeWalletPassword(o.getNonCdbTdeWalletPassword())
-                            .additionalCdbParams(o.getAdditionalCdbParams());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PdbConversionToNewDatabaseDetails model) {
+            if (model.wasPropertyExplicitlySet("cdbName")) {
+                this.cdbName(model.getCdbName());
+            }
+            if (model.wasPropertyExplicitlySet("cdbAdminPassword")) {
+                this.cdbAdminPassword(model.getCdbAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("pdbAdminPassword")) {
+                this.pdbAdminPassword(model.getPdbAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("cdbTdeWalletPassword")) {
+                this.cdbTdeWalletPassword(model.getCdbTdeWalletPassword());
+            }
+            if (model.wasPropertyExplicitlySet("nonCdbTdeWalletPassword")) {
+                this.nonCdbTdeWalletPassword(model.getNonCdbTdeWalletPassword());
+            }
+            if (model.wasPropertyExplicitlySet("additionalCdbParams")) {
+                this.additionalCdbParams(model.getAdditionalCdbParams());
+            }
+            return this;
         }
     }
 
@@ -297,7 +308,6 @@ public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetB
         sb.append(", nonCdbTdeWalletPassword=")
                 .append(String.valueOf(this.nonCdbTdeWalletPassword));
         sb.append(", additionalCdbParams=").append(String.valueOf(this.additionalCdbParams));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -319,8 +329,7 @@ public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetB
                 && java.util.Objects.equals(
                         this.nonCdbTdeWalletPassword, other.nonCdbTdeWalletPassword)
                 && java.util.Objects.equals(this.additionalCdbParams, other.additionalCdbParams)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -349,16 +358,6 @@ public final class PdbConversionToNewDatabaseDetails extends ConvertToPdbTargetB
                         + (this.additionalCdbParams == null
                                 ? 43
                                 : this.additionalCdbParams.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

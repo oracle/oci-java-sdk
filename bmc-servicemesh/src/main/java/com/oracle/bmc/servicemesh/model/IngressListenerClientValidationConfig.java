@@ -20,7 +20,8 @@ package com.oracle.bmc.servicemesh.model;
     builder = IngressListenerClientValidationConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IngressListenerClientValidationConfig {
+public final class IngressListenerClientValidationConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"trustedCaBundle", "subjectAlternateNames"})
     public IngressListenerClientValidationConfig(
@@ -64,21 +65,24 @@ public final class IngressListenerClientValidationConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IngressListenerClientValidationConfig build() {
-            IngressListenerClientValidationConfig __instance__ =
+            IngressListenerClientValidationConfig model =
                     new IngressListenerClientValidationConfig(
-                            trustedCaBundle, subjectAlternateNames);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.trustedCaBundle, this.subjectAlternateNames);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IngressListenerClientValidationConfig o) {
-            Builder copiedBuilder =
-                    trustedCaBundle(o.getTrustedCaBundle())
-                            .subjectAlternateNames(o.getSubjectAlternateNames());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IngressListenerClientValidationConfig model) {
+            if (model.wasPropertyExplicitlySet("trustedCaBundle")) {
+                this.trustedCaBundle(model.getTrustedCaBundle());
+            }
+            if (model.wasPropertyExplicitlySet("subjectAlternateNames")) {
+                this.subjectAlternateNames(model.getSubjectAlternateNames());
+            }
+            return this;
         }
     }
 
@@ -129,9 +133,9 @@ public final class IngressListenerClientValidationConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IngressListenerClientValidationConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("trustedCaBundle=").append(String.valueOf(this.trustedCaBundle));
         sb.append(", subjectAlternateNames=").append(String.valueOf(this.subjectAlternateNames));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -148,7 +152,7 @@ public final class IngressListenerClientValidationConfig {
         IngressListenerClientValidationConfig other = (IngressListenerClientValidationConfig) o;
         return java.util.Objects.equals(this.trustedCaBundle, other.trustedCaBundle)
                 && java.util.Objects.equals(this.subjectAlternateNames, other.subjectAlternateNames)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -163,16 +167,7 @@ public final class IngressListenerClientValidationConfig {
                         + (this.subjectAlternateNames == null
                                 ? 43
                                 : this.subjectAlternateNames.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -116,8 +116,8 @@ public class UpdateDataFlowConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .UpdateDataFlowResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataFlow(response.getItem());
 

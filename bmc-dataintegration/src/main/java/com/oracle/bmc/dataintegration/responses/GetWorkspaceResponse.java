@@ -53,13 +53,20 @@ public class GetWorkspaceResponse extends com.oracle.bmc.responses.BmcResponse {
         return workspace;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "workspace"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "workspace"
+    })
     private GetWorkspaceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.Workspace workspace) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.workspace = workspace;
@@ -70,6 +77,13 @@ public class GetWorkspaceResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetWorkspaceResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetWorkspaceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             workspace(o.getWorkspace());
@@ -142,7 +157,8 @@ public class GetWorkspaceResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetWorkspaceResponse build() {
-            return new GetWorkspaceResponse(__httpStatusCode__, etag, opcRequestId, workspace);
+            return new GetWorkspaceResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, workspace);
         }
     }
 

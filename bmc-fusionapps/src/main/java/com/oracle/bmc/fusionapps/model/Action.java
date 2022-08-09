@@ -30,7 +30,7 @@ package com.oracle.bmc.fusionapps.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = VertexAction.class, name = "VERTEX")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Action {
+public class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"referenceKey", "state", "description"})
     protected Action(String referenceKey, State state, String description) {
@@ -145,6 +145,7 @@ public class Action {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Action(");
+        sb.append("super=").append(super.toString());
         sb.append("referenceKey=").append(String.valueOf(this.referenceKey));
         sb.append(", state=").append(String.valueOf(this.state));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -164,7 +165,8 @@ public class Action {
         Action other = (Action) o;
         return java.util.Objects.equals(this.referenceKey, other.referenceKey)
                 && java.util.Objects.equals(this.state, other.state)
-                && java.util.Objects.equals(this.description, other.description);
+                && java.util.Objects.equals(this.description, other.description)
+                && super.equals(other);
     }
 
     @Override
@@ -174,6 +176,7 @@ public class Action {
         result = (result * PRIME) + (this.referenceKey == null ? 43 : this.referenceKey.hashCode());
         result = (result * PRIME) + (this.state == null ? 43 : this.state.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

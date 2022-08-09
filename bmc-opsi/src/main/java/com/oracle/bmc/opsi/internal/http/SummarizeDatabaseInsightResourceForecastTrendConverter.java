@@ -318,8 +318,8 @@ public class SummarizeDatabaseInsightResourceForecastTrendConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeDatabaseInsightResourceForecastTrendResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.summarizeDatabaseInsightResourceForecastTrendAggregation(
                                         response.getItem());

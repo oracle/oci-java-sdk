@@ -51,13 +51,20 @@ public class GetKeyVersionResponse extends com.oracle.bmc.responses.BmcResponse 
         return keyVersion;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "keyVersion"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "keyVersion"
+    })
     private GetKeyVersionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.keymanagement.model.KeyVersion keyVersion) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.keyVersion = keyVersion;
@@ -68,6 +75,13 @@ public class GetKeyVersionResponse extends com.oracle.bmc.responses.BmcResponse 
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -126,6 +140,7 @@ public class GetKeyVersionResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public Builder copy(GetKeyVersionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             keyVersion(o.getKeyVersion());
@@ -138,7 +153,8 @@ public class GetKeyVersionResponse extends com.oracle.bmc.responses.BmcResponse 
          * @return the response object
          */
         public GetKeyVersionResponse build() {
-            return new GetKeyVersionResponse(__httpStatusCode__, etag, opcRequestId, keyVersion);
+            return new GetKeyVersionResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, keyVersion);
         }
     }
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsParserMetaPluginParameter.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsParserMetaPluginParameter {
+public final class LogAnalyticsParserMetaPluginParameter
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -152,25 +153,41 @@ public final class LogAnalyticsParserMetaPluginParameter {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsParserMetaPluginParameter build() {
-            LogAnalyticsParserMetaPluginParameter __instance__ =
+            LogAnalyticsParserMetaPluginParameter model =
                     new LogAnalyticsParserMetaPluginParameter(
-                            description, name, isMandatory, isRepeatable, pluginName, type);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.description,
+                            this.name,
+                            this.isMandatory,
+                            this.isRepeatable,
+                            this.pluginName,
+                            this.type);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsParserMetaPluginParameter o) {
-            Builder copiedBuilder =
-                    description(o.getDescription())
-                            .name(o.getName())
-                            .isMandatory(o.getIsMandatory())
-                            .isRepeatable(o.getIsRepeatable())
-                            .pluginName(o.getPluginName())
-                            .type(o.getType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsParserMetaPluginParameter model) {
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("isMandatory")) {
+                this.isMandatory(model.getIsMandatory());
+            }
+            if (model.wasPropertyExplicitlySet("isRepeatable")) {
+                this.isRepeatable(model.getIsRepeatable());
+            }
+            if (model.wasPropertyExplicitlySet("pluginName")) {
+                this.pluginName(model.getPluginName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            return this;
         }
     }
 
@@ -286,13 +303,13 @@ public final class LogAnalyticsParserMetaPluginParameter {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsParserMetaPluginParameter(");
+        sb.append("super=").append(super.toString());
         sb.append("description=").append(String.valueOf(this.description));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", isMandatory=").append(String.valueOf(this.isMandatory));
         sb.append(", isRepeatable=").append(String.valueOf(this.isRepeatable));
         sb.append(", pluginName=").append(String.valueOf(this.pluginName));
         sb.append(", type=").append(String.valueOf(this.type));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -313,7 +330,7 @@ public final class LogAnalyticsParserMetaPluginParameter {
                 && java.util.Objects.equals(this.isRepeatable, other.isRepeatable)
                 && java.util.Objects.equals(this.pluginName, other.pluginName)
                 && java.util.Objects.equals(this.type, other.type)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -326,16 +343,7 @@ public final class LogAnalyticsParserMetaPluginParameter {
         result = (result * PRIME) + (this.isRepeatable == null ? 43 : this.isRepeatable.hashCode());
         result = (result * PRIME) + (this.pluginName == null ? 43 : this.pluginName.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

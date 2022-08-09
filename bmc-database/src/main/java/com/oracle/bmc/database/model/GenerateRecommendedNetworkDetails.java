@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = GenerateRecommendedNetworkDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GenerateRecommendedNetworkDetails {
+public final class GenerateRecommendedNetworkDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -219,36 +220,53 @@ public final class GenerateRecommendedNetworkDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenerateRecommendedNetworkDetails build() {
-            GenerateRecommendedNetworkDetails __instance__ =
+            GenerateRecommendedNetworkDetails model =
                     new GenerateRecommendedNetworkDetails(
-                            compartmentId,
-                            displayName,
-                            scanListenerPortTcp,
-                            scanListenerPortTcpSsl,
-                            networks,
-                            dns,
-                            ntp,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.displayName,
+                            this.scanListenerPortTcp,
+                            this.scanListenerPortTcpSsl,
+                            this.networks,
+                            this.dns,
+                            this.ntp,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GenerateRecommendedNetworkDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .scanListenerPortTcp(o.getScanListenerPortTcp())
-                            .scanListenerPortTcpSsl(o.getScanListenerPortTcpSsl())
-                            .networks(o.getNetworks())
-                            .dns(o.getDns())
-                            .ntp(o.getNtp())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GenerateRecommendedNetworkDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortTcp")) {
+                this.scanListenerPortTcp(model.getScanListenerPortTcp());
+            }
+            if (model.wasPropertyExplicitlySet("scanListenerPortTcpSsl")) {
+                this.scanListenerPortTcpSsl(model.getScanListenerPortTcpSsl());
+            }
+            if (model.wasPropertyExplicitlySet("networks")) {
+                this.networks(model.getNetworks());
+            }
+            if (model.wasPropertyExplicitlySet("dns")) {
+                this.dns(model.getDns());
+            }
+            if (model.wasPropertyExplicitlySet("ntp")) {
+                this.ntp(model.getNtp());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -414,6 +432,7 @@ public final class GenerateRecommendedNetworkDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GenerateRecommendedNetworkDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", scanListenerPortTcp=").append(String.valueOf(this.scanListenerPortTcp));
@@ -423,7 +442,6 @@ public final class GenerateRecommendedNetworkDetails {
         sb.append(", ntp=").append(String.valueOf(this.ntp));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -448,7 +466,7 @@ public final class GenerateRecommendedNetworkDetails {
                 && java.util.Objects.equals(this.ntp, other.ntp)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -474,16 +492,7 @@ public final class GenerateRecommendedNetworkDetails {
         result = (result * PRIME) + (this.ntp == null ? 43 : this.ntp.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

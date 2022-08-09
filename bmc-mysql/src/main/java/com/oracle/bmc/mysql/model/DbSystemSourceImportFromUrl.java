@@ -33,17 +33,16 @@ public final class DbSystemSourceImportFromUrl extends DbSystemSource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbSystemSourceImportFromUrl build() {
-            DbSystemSourceImportFromUrl __instance__ = new DbSystemSourceImportFromUrl();
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DbSystemSourceImportFromUrl model = new DbSystemSourceImportFromUrl();
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DbSystemSourceImportFromUrl o) {
-            Builder copiedBuilder = this;
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DbSystemSourceImportFromUrl model) {
+            return this;
         }
     }
 
@@ -77,7 +76,6 @@ public final class DbSystemSourceImportFromUrl extends DbSystemSource {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DbSystemSourceImportFromUrl(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -92,24 +90,13 @@ public final class DbSystemSourceImportFromUrl extends DbSystemSource {
         }
 
         DbSystemSourceImportFromUrl other = (DbSystemSourceImportFromUrl) o;
-        return java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

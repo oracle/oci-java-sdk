@@ -32,7 +32,7 @@ package com.oracle.bmc.vnmonitoring.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class SecurityAction {
+public class SecurityAction extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"actionType"})
     protected SecurityAction(ActionType actionType) {
@@ -115,6 +115,7 @@ public class SecurityAction {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SecurityAction(");
+        sb.append("super=").append(super.toString());
         sb.append("actionType=").append(String.valueOf(this.actionType));
         sb.append(")");
         return sb.toString();
@@ -130,7 +131,7 @@ public class SecurityAction {
         }
 
         SecurityAction other = (SecurityAction) o;
-        return java.util.Objects.equals(this.actionType, other.actionType);
+        return java.util.Objects.equals(this.actionType, other.actionType) && super.equals(other);
     }
 
     @Override
@@ -138,6 +139,7 @@ public class SecurityAction {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.actionType == null ? 43 : this.actionType.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

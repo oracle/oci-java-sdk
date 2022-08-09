@@ -125,8 +125,8 @@ public class GetCertificateAuthorityVersionConverter {
                                                 com.oracle.bmc.certificatesmanagement.responses
                                                         .GetCertificateAuthorityVersionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.certificateAuthorityVersion(response.getItem());
 

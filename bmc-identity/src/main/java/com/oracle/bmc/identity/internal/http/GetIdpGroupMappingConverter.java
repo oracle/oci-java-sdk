@@ -106,8 +106,8 @@ public class GetIdpGroupMappingConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .GetIdpGroupMappingResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.idpGroupMapping(response.getItem());
 

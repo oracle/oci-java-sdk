@@ -117,8 +117,8 @@ public class GetCommitmentConverter {
                                         builder =
                                                 com.oracle.bmc.osubsubscription.responses
                                                         .GetCommitmentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.commitmentDetail(response.getItem());
 

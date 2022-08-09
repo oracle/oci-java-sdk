@@ -38,10 +38,13 @@ public class GetSpanResponse extends com.oracle.bmc.responses.BmcResponse {
         return span;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "span"})
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "span"})
     private GetSpanResponse(
-            int __httpStatusCode__, String opcRequestId, com.oracle.bmc.apmtraces.model.Span span) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            com.oracle.bmc.apmtraces.model.Span span) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.span = span;
     }
@@ -51,6 +54,13 @@ public class GetSpanResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -94,6 +104,7 @@ public class GetSpanResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetSpanResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             span(o.getSpan());
 
@@ -105,7 +116,7 @@ public class GetSpanResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetSpanResponse build() {
-            return new GetSpanResponse(__httpStatusCode__, opcRequestId, span);
+            return new GetSpanResponse(__httpStatusCode__, headers, opcRequestId, span);
         }
     }
 

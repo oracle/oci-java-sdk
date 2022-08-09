@@ -19,7 +19,7 @@ package com.oracle.bmc.core.model;
     builder = IngressSecurityRule.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IngressSecurityRule {
+public final class IngressSecurityRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "icmpOptions",
@@ -223,34 +223,49 @@ public final class IngressSecurityRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IngressSecurityRule build() {
-            IngressSecurityRule __instance__ =
+            IngressSecurityRule model =
                     new IngressSecurityRule(
-                            icmpOptions,
-                            isStateless,
-                            protocol,
-                            source,
-                            sourceType,
-                            tcpOptions,
-                            udpOptions,
-                            description);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.icmpOptions,
+                            this.isStateless,
+                            this.protocol,
+                            this.source,
+                            this.sourceType,
+                            this.tcpOptions,
+                            this.udpOptions,
+                            this.description);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IngressSecurityRule o) {
-            Builder copiedBuilder =
-                    icmpOptions(o.getIcmpOptions())
-                            .isStateless(o.getIsStateless())
-                            .protocol(o.getProtocol())
-                            .source(o.getSource())
-                            .sourceType(o.getSourceType())
-                            .tcpOptions(o.getTcpOptions())
-                            .udpOptions(o.getUdpOptions())
-                            .description(o.getDescription());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IngressSecurityRule model) {
+            if (model.wasPropertyExplicitlySet("icmpOptions")) {
+                this.icmpOptions(model.getIcmpOptions());
+            }
+            if (model.wasPropertyExplicitlySet("isStateless")) {
+                this.isStateless(model.getIsStateless());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("tcpOptions")) {
+                this.tcpOptions(model.getTcpOptions());
+            }
+            if (model.wasPropertyExplicitlySet("udpOptions")) {
+                this.udpOptions(model.getUdpOptions());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            return this;
         }
     }
 
@@ -482,6 +497,7 @@ public final class IngressSecurityRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IngressSecurityRule(");
+        sb.append("super=").append(super.toString());
         sb.append("icmpOptions=").append(String.valueOf(this.icmpOptions));
         sb.append(", isStateless=").append(String.valueOf(this.isStateless));
         sb.append(", protocol=").append(String.valueOf(this.protocol));
@@ -490,7 +506,6 @@ public final class IngressSecurityRule {
         sb.append(", tcpOptions=").append(String.valueOf(this.tcpOptions));
         sb.append(", udpOptions=").append(String.valueOf(this.udpOptions));
         sb.append(", description=").append(String.valueOf(this.description));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -513,7 +528,7 @@ public final class IngressSecurityRule {
                 && java.util.Objects.equals(this.tcpOptions, other.tcpOptions)
                 && java.util.Objects.equals(this.udpOptions, other.udpOptions)
                 && java.util.Objects.equals(this.description, other.description)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -528,16 +543,7 @@ public final class IngressSecurityRule {
         result = (result * PRIME) + (this.tcpOptions == null ? 43 : this.tcpOptions.hashCode());
         result = (result * PRIME) + (this.udpOptions == null ? 43 : this.udpOptions.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

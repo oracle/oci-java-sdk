@@ -106,8 +106,8 @@ public class CreateCertificateConverter {
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
                                                         .CreateCertificateResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.certificate(response.getItem());
 

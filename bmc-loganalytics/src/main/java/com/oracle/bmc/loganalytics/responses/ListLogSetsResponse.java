@@ -57,16 +57,18 @@ public class ListLogSetsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "logSetCollection"
     })
     private ListLogSetsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.loganalytics.model.LogSetCollection logSetCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.logSetCollection = logSetCollection;
@@ -77,6 +79,13 @@ public class ListLogSetsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -140,6 +149,7 @@ public class ListLogSetsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListLogSetsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             logSetCollection(o.getLogSetCollection());
@@ -153,7 +163,7 @@ public class ListLogSetsResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListLogSetsResponse build() {
             return new ListLogSetsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, logSetCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, logSetCollection);
         }
     }
 

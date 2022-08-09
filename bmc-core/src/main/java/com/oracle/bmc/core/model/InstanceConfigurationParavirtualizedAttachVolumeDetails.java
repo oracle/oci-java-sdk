@@ -84,28 +84,37 @@ public final class InstanceConfigurationParavirtualizedAttachVolumeDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceConfigurationParavirtualizedAttachVolumeDetails build() {
-            InstanceConfigurationParavirtualizedAttachVolumeDetails __instance__ =
+            InstanceConfigurationParavirtualizedAttachVolumeDetails model =
                     new InstanceConfigurationParavirtualizedAttachVolumeDetails(
-                            displayName,
-                            isReadOnly,
-                            device,
-                            isShareable,
-                            isPvEncryptionInTransitEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.isReadOnly,
+                            this.device,
+                            this.isShareable,
+                            this.isPvEncryptionInTransitEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceConfigurationParavirtualizedAttachVolumeDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .isReadOnly(o.getIsReadOnly())
-                            .device(o.getDevice())
-                            .isShareable(o.getIsShareable())
-                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceConfigurationParavirtualizedAttachVolumeDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isReadOnly")) {
+                this.isReadOnly(model.getIsReadOnly());
+            }
+            if (model.wasPropertyExplicitlySet("device")) {
+                this.device(model.getDevice());
+            }
+            if (model.wasPropertyExplicitlySet("isShareable")) {
+                this.isShareable(model.getIsShareable());
+            }
+            if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
+                this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
+            }
+            return this;
         }
     }
 
@@ -161,7 +170,6 @@ public final class InstanceConfigurationParavirtualizedAttachVolumeDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -179,8 +187,7 @@ public final class InstanceConfigurationParavirtualizedAttachVolumeDetails
                 (InstanceConfigurationParavirtualizedAttachVolumeDetails) o;
         return java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -192,16 +199,6 @@ public final class InstanceConfigurationParavirtualizedAttachVolumeDetails
                         + (this.isPvEncryptionInTransitEnabled == null
                                 ? 43
                                 : this.isPvEncryptionInTransitEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

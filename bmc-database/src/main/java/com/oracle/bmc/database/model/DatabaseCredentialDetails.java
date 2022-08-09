@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = DatabaseCredentialDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseCredentialDetails {
+public final class DatabaseCredentialDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userName", "passwordSecretId"})
     public DatabaseCredentialDetails(String userName, String passwordSecretId) {
@@ -68,19 +69,23 @@ public final class DatabaseCredentialDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseCredentialDetails build() {
-            DatabaseCredentialDetails __instance__ =
-                    new DatabaseCredentialDetails(userName, passwordSecretId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DatabaseCredentialDetails model =
+                    new DatabaseCredentialDetails(this.userName, this.passwordSecretId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseCredentialDetails o) {
-            Builder copiedBuilder =
-                    userName(o.getUserName()).passwordSecretId(o.getPasswordSecretId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseCredentialDetails model) {
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
+            return this;
         }
     }
 
@@ -136,9 +141,9 @@ public final class DatabaseCredentialDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseCredentialDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("userName=").append(String.valueOf(this.userName));
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +160,7 @@ public final class DatabaseCredentialDetails {
         DatabaseCredentialDetails other = (DatabaseCredentialDetails) o;
         return java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -166,16 +171,7 @@ public final class DatabaseCredentialDetails {
         result =
                 (result * PRIME)
                         + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -66,6 +66,7 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "retryAfter",
@@ -73,11 +74,12 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
     })
     private GetStorageWorkRequestResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             Float retryAfter,
             com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.retryAfter = retryAfter;
@@ -89,6 +91,13 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -163,6 +172,7 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(GetStorageWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             retryAfter(o.getRetryAfter());
@@ -177,7 +187,12 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
          */
         public GetStorageWorkRequestResponse build() {
             return new GetStorageWorkRequestResponse(
-                    __httpStatusCode__, opcRequestId, etag, retryAfter, storageWorkRequest);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    etag,
+                    retryAfter,
+                    storageWorkRequest);
         }
     }
 

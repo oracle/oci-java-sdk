@@ -139,8 +139,8 @@ public class GetCertificateAuthorityBundleConverter {
                                                 com.oracle.bmc.certificates.responses
                                                         .GetCertificateAuthorityBundleResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.certificateAuthorityBundle(response.getItem());
 

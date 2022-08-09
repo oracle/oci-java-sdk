@@ -325,62 +325,105 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IScsiVolumeAttachment build() {
-            IScsiVolumeAttachment __instance__ =
+            IScsiVolumeAttachment model =
                     new IScsiVolumeAttachment(
-                            availabilityDomain,
-                            compartmentId,
-                            device,
-                            displayName,
-                            id,
-                            instanceId,
-                            isReadOnly,
-                            isShareable,
-                            lifecycleState,
-                            timeCreated,
-                            volumeId,
-                            isPvEncryptionInTransitEnabled,
-                            isMultipath,
-                            iscsiLoginState,
-                            chapSecret,
-                            chapUsername,
-                            ipv4,
-                            iqn,
-                            port,
-                            multipathDevices,
-                            encryptionInTransitType,
-                            isAgentAutoIscsiLoginEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.compartmentId,
+                            this.device,
+                            this.displayName,
+                            this.id,
+                            this.instanceId,
+                            this.isReadOnly,
+                            this.isShareable,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.volumeId,
+                            this.isPvEncryptionInTransitEnabled,
+                            this.isMultipath,
+                            this.iscsiLoginState,
+                            this.chapSecret,
+                            this.chapUsername,
+                            this.ipv4,
+                            this.iqn,
+                            this.port,
+                            this.multipathDevices,
+                            this.encryptionInTransitType,
+                            this.isAgentAutoIscsiLoginEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IScsiVolumeAttachment o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .compartmentId(o.getCompartmentId())
-                            .device(o.getDevice())
-                            .displayName(o.getDisplayName())
-                            .id(o.getId())
-                            .instanceId(o.getInstanceId())
-                            .isReadOnly(o.getIsReadOnly())
-                            .isShareable(o.getIsShareable())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .volumeId(o.getVolumeId())
-                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
-                            .isMultipath(o.getIsMultipath())
-                            .iscsiLoginState(o.getIscsiLoginState())
-                            .chapSecret(o.getChapSecret())
-                            .chapUsername(o.getChapUsername())
-                            .ipv4(o.getIpv4())
-                            .iqn(o.getIqn())
-                            .port(o.getPort())
-                            .multipathDevices(o.getMultipathDevices())
-                            .encryptionInTransitType(o.getEncryptionInTransitType())
-                            .isAgentAutoIscsiLoginEnabled(o.getIsAgentAutoIscsiLoginEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IScsiVolumeAttachment model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("device")) {
+                this.device(model.getDevice());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("instanceId")) {
+                this.instanceId(model.getInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("isReadOnly")) {
+                this.isReadOnly(model.getIsReadOnly());
+            }
+            if (model.wasPropertyExplicitlySet("isShareable")) {
+                this.isShareable(model.getIsShareable());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("volumeId")) {
+                this.volumeId(model.getVolumeId());
+            }
+            if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
+                this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isMultipath")) {
+                this.isMultipath(model.getIsMultipath());
+            }
+            if (model.wasPropertyExplicitlySet("iscsiLoginState")) {
+                this.iscsiLoginState(model.getIscsiLoginState());
+            }
+            if (model.wasPropertyExplicitlySet("chapSecret")) {
+                this.chapSecret(model.getChapSecret());
+            }
+            if (model.wasPropertyExplicitlySet("chapUsername")) {
+                this.chapUsername(model.getChapUsername());
+            }
+            if (model.wasPropertyExplicitlySet("ipv4")) {
+                this.ipv4(model.getIpv4());
+            }
+            if (model.wasPropertyExplicitlySet("iqn")) {
+                this.iqn(model.getIqn());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("multipathDevices")) {
+                this.multipathDevices(model.getMultipathDevices());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionInTransitType")) {
+                this.encryptionInTransitType(model.getEncryptionInTransitType());
+            }
+            if (model.wasPropertyExplicitlySet("isAgentAutoIscsiLoginEnabled")) {
+                this.isAgentAutoIscsiLoginEnabled(model.getIsAgentAutoIscsiLoginEnabled());
+            }
+            return this;
         }
     }
 
@@ -620,7 +663,6 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
                 .append(String.valueOf(this.encryptionInTransitType));
         sb.append(", isAgentAutoIscsiLoginEnabled=")
                 .append(String.valueOf(this.isAgentAutoIscsiLoginEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -645,8 +687,7 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
                         this.encryptionInTransitType, other.encryptionInTransitType)
                 && java.util.Objects.equals(
                         this.isAgentAutoIscsiLoginEnabled, other.isAgentAutoIscsiLoginEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -671,16 +712,6 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
                         + (this.isAgentAutoIscsiLoginEnabled == null
                                 ? 43
                                 : this.isAgentAutoIscsiLoginEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

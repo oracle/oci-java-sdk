@@ -113,8 +113,8 @@ public class UpdateLogSavedSearchConverter {
                                         builder =
                                                 com.oracle.bmc.logging.responses
                                                         .UpdateLogSavedSearchResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logSavedSearch(response.getItem());
 

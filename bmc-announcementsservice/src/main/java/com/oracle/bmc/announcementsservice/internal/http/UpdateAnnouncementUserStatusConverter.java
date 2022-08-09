@@ -124,8 +124,8 @@ public class UpdateAnnouncementUserStatusConverter {
                                                 com.oracle.bmc.announcementsservice.responses
                                                         .UpdateAnnouncementUserStatusResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.announcementUserStatusDetails(response.getItem());
 

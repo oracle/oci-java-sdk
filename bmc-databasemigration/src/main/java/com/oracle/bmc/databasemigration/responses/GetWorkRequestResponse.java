@@ -38,12 +38,18 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
         return workRequest;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "workRequest"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "workRequest"
+    })
     private GetWorkRequestResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemigration.model.WorkRequest workRequest) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.workRequest = workRequest;
     }
@@ -53,6 +59,13 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -96,6 +109,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             workRequest(o.getWorkRequest());
 
@@ -107,7 +121,8 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetWorkRequestResponse build() {
-            return new GetWorkRequestResponse(__httpStatusCode__, opcRequestId, workRequest);
+            return new GetWorkRequestResponse(
+                    __httpStatusCode__, headers, opcRequestId, workRequest);
         }
     }
 

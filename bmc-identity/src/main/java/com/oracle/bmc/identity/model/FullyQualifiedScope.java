@@ -19,7 +19,7 @@ package com.oracle.bmc.identity.model;
     builder = FullyQualifiedScope.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FullyQualifiedScope {
+public final class FullyQualifiedScope extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"audience", "scope"})
     public FullyQualifiedScope(String audience, String scope) {
@@ -67,17 +67,22 @@ public final class FullyQualifiedScope {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FullyQualifiedScope build() {
-            FullyQualifiedScope __instance__ = new FullyQualifiedScope(audience, scope);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FullyQualifiedScope model = new FullyQualifiedScope(this.audience, this.scope);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FullyQualifiedScope o) {
-            Builder copiedBuilder = audience(o.getAudience()).scope(o.getScope());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FullyQualifiedScope model) {
+            if (model.wasPropertyExplicitlySet("audience")) {
+                this.audience(model.getAudience());
+            }
+            if (model.wasPropertyExplicitlySet("scope")) {
+                this.scope(model.getScope());
+            }
+            return this;
         }
     }
 
@@ -133,9 +138,9 @@ public final class FullyQualifiedScope {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FullyQualifiedScope(");
+        sb.append("super=").append(super.toString());
         sb.append("audience=").append(String.valueOf(this.audience));
         sb.append(", scope=").append(String.valueOf(this.scope));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +157,7 @@ public final class FullyQualifiedScope {
         FullyQualifiedScope other = (FullyQualifiedScope) o;
         return java.util.Objects.equals(this.audience, other.audience)
                 && java.util.Objects.equals(this.scope, other.scope)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +166,7 @@ public final class FullyQualifiedScope {
         int result = 1;
         result = (result * PRIME) + (this.audience == null ? 43 : this.audience.hashCode());
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

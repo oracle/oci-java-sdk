@@ -21,7 +21,7 @@ package com.oracle.bmc.apmsynthetics.model;
     builder = ScriptParameterInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ScriptParameterInfo {
+public final class ScriptParameterInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"scriptParameter", "isOverwritten"})
     public ScriptParameterInfo(ScriptParameter scriptParameter, Boolean isOverwritten) {
@@ -64,19 +64,23 @@ public final class ScriptParameterInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScriptParameterInfo build() {
-            ScriptParameterInfo __instance__ =
-                    new ScriptParameterInfo(scriptParameter, isOverwritten);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ScriptParameterInfo model =
+                    new ScriptParameterInfo(this.scriptParameter, this.isOverwritten);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ScriptParameterInfo o) {
-            Builder copiedBuilder =
-                    scriptParameter(o.getScriptParameter()).isOverwritten(o.getIsOverwritten());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ScriptParameterInfo model) {
+            if (model.wasPropertyExplicitlySet("scriptParameter")) {
+                this.scriptParameter(model.getScriptParameter());
+            }
+            if (model.wasPropertyExplicitlySet("isOverwritten")) {
+                this.isOverwritten(model.getIsOverwritten());
+            }
+            return this;
         }
     }
 
@@ -127,9 +131,9 @@ public final class ScriptParameterInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ScriptParameterInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("scriptParameter=").append(String.valueOf(this.scriptParameter));
         sb.append(", isOverwritten=").append(String.valueOf(this.isOverwritten));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -146,7 +150,7 @@ public final class ScriptParameterInfo {
         ScriptParameterInfo other = (ScriptParameterInfo) o;
         return java.util.Objects.equals(this.scriptParameter, other.scriptParameter)
                 && java.util.Objects.equals(this.isOverwritten, other.isOverwritten)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +163,7 @@ public final class ScriptParameterInfo {
         result =
                 (result * PRIME)
                         + (this.isOverwritten == null ? 43 : this.isOverwritten.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

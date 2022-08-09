@@ -170,8 +170,8 @@ public class ListCaBundlesConverter {
                                         builder =
                                                 com.oracle.bmc.certificatesmanagement.responses
                                                         .ListCaBundlesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.caBundleCollection(response.getItem());
 

@@ -40,12 +40,18 @@ public class SummarizeStatementResponse extends com.oracle.bmc.responses.BmcResp
         return statementSummary;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "statementSummary"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "statementSummary"
+    })
     private SummarizeStatementResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.nosql.model.StatementSummary statementSummary) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.statementSummary = statementSummary;
     }
@@ -55,6 +61,13 @@ public class SummarizeStatementResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -101,6 +114,7 @@ public class SummarizeStatementResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(SummarizeStatementResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             statementSummary(o.getStatementSummary());
 
@@ -113,7 +127,7 @@ public class SummarizeStatementResponse extends com.oracle.bmc.responses.BmcResp
          */
         public SummarizeStatementResponse build() {
             return new SummarizeStatementResponse(
-                    __httpStatusCode__, opcRequestId, statementSummary);
+                    __httpStatusCode__, headers, opcRequestId, statementSummary);
         }
     }
 

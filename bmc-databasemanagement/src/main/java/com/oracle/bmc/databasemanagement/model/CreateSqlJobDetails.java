@@ -232,52 +232,85 @@ public final class CreateSqlJobDetails extends CreateJobDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateSqlJobDetails build() {
-            CreateSqlJobDetails __instance__ =
+            CreateSqlJobDetails model =
                     new CreateSqlJobDetails(
-                            name,
-                            description,
-                            compartmentId,
-                            managedDatabaseGroupId,
-                            managedDatabaseId,
-                            databaseSubType,
-                            scheduleType,
-                            timeout,
-                            resultLocation,
-                            scheduleDetails,
-                            sqlText,
-                            sqlType,
-                            operationType,
-                            userName,
-                            password,
-                            secretId,
-                            role);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.description,
+                            this.compartmentId,
+                            this.managedDatabaseGroupId,
+                            this.managedDatabaseId,
+                            this.databaseSubType,
+                            this.scheduleType,
+                            this.timeout,
+                            this.resultLocation,
+                            this.scheduleDetails,
+                            this.sqlText,
+                            this.sqlType,
+                            this.operationType,
+                            this.userName,
+                            this.password,
+                            this.secretId,
+                            this.role);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateSqlJobDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .description(o.getDescription())
-                            .compartmentId(o.getCompartmentId())
-                            .managedDatabaseGroupId(o.getManagedDatabaseGroupId())
-                            .managedDatabaseId(o.getManagedDatabaseId())
-                            .databaseSubType(o.getDatabaseSubType())
-                            .scheduleType(o.getScheduleType())
-                            .timeout(o.getTimeout())
-                            .resultLocation(o.getResultLocation())
-                            .scheduleDetails(o.getScheduleDetails())
-                            .sqlText(o.getSqlText())
-                            .sqlType(o.getSqlType())
-                            .operationType(o.getOperationType())
-                            .userName(o.getUserName())
-                            .password(o.getPassword())
-                            .secretId(o.getSecretId())
-                            .role(o.getRole());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateSqlJobDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("managedDatabaseGroupId")) {
+                this.managedDatabaseGroupId(model.getManagedDatabaseGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("managedDatabaseId")) {
+                this.managedDatabaseId(model.getManagedDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSubType")) {
+                this.databaseSubType(model.getDatabaseSubType());
+            }
+            if (model.wasPropertyExplicitlySet("scheduleType")) {
+                this.scheduleType(model.getScheduleType());
+            }
+            if (model.wasPropertyExplicitlySet("timeout")) {
+                this.timeout(model.getTimeout());
+            }
+            if (model.wasPropertyExplicitlySet("resultLocation")) {
+                this.resultLocation(model.getResultLocation());
+            }
+            if (model.wasPropertyExplicitlySet("scheduleDetails")) {
+                this.scheduleDetails(model.getScheduleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("sqlText")) {
+                this.sqlText(model.getSqlText());
+            }
+            if (model.wasPropertyExplicitlySet("sqlType")) {
+                this.sqlType(model.getSqlType());
+            }
+            if (model.wasPropertyExplicitlySet("operationType")) {
+                this.operationType(model.getOperationType());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("secretId")) {
+                this.secretId(model.getSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            return this;
         }
     }
 
@@ -449,7 +482,6 @@ public final class CreateSqlJobDetails extends CreateJobDetails {
         sb.append(", password=").append(String.valueOf(this.password));
         sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", role=").append(String.valueOf(this.role));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -471,8 +503,7 @@ public final class CreateSqlJobDetails extends CreateJobDetails {
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.role, other.role)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -488,16 +519,6 @@ public final class CreateSqlJobDetails extends CreateJobDetails {
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
         result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

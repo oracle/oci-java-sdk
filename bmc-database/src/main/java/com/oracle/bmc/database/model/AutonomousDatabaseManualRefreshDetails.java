@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = AutonomousDatabaseManualRefreshDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutonomousDatabaseManualRefreshDetails {
+public final class AutonomousDatabaseManualRefreshDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeRefreshCutoff"})
     public AutonomousDatabaseManualRefreshDetails(java.util.Date timeRefreshCutoff) {
@@ -51,18 +52,20 @@ public final class AutonomousDatabaseManualRefreshDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseManualRefreshDetails build() {
-            AutonomousDatabaseManualRefreshDetails __instance__ =
-                    new AutonomousDatabaseManualRefreshDetails(timeRefreshCutoff);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AutonomousDatabaseManualRefreshDetails model =
+                    new AutonomousDatabaseManualRefreshDetails(this.timeRefreshCutoff);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDatabaseManualRefreshDetails o) {
-            Builder copiedBuilder = timeRefreshCutoff(o.getTimeRefreshCutoff());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousDatabaseManualRefreshDetails model) {
+            if (model.wasPropertyExplicitlySet("timeRefreshCutoff")) {
+                this.timeRefreshCutoff(model.getTimeRefreshCutoff());
+            }
+            return this;
         }
     }
 
@@ -104,8 +107,8 @@ public final class AutonomousDatabaseManualRefreshDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousDatabaseManualRefreshDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("timeRefreshCutoff=").append(String.valueOf(this.timeRefreshCutoff));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -121,7 +124,7 @@ public final class AutonomousDatabaseManualRefreshDetails {
 
         AutonomousDatabaseManualRefreshDetails other = (AutonomousDatabaseManualRefreshDetails) o;
         return java.util.Objects.equals(this.timeRefreshCutoff, other.timeRefreshCutoff)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -131,16 +134,7 @@ public final class AutonomousDatabaseManualRefreshDetails {
         result =
                 (result * PRIME)
                         + (this.timeRefreshCutoff == null ? 43 : this.timeRefreshCutoff.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

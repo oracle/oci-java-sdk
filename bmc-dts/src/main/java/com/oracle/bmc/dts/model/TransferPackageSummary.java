@@ -19,7 +19,8 @@ package com.oracle.bmc.dts.model;
     builder = TransferPackageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TransferPackageSummary {
+public final class TransferPackageSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"label", "lifecycleState", "creationTime"})
     public TransferPackageSummary(
@@ -64,21 +65,26 @@ public final class TransferPackageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TransferPackageSummary build() {
-            TransferPackageSummary __instance__ =
-                    new TransferPackageSummary(label, lifecycleState, creationTime);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TransferPackageSummary model =
+                    new TransferPackageSummary(this.label, this.lifecycleState, this.creationTime);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TransferPackageSummary o) {
-            Builder copiedBuilder =
-                    label(o.getLabel())
-                            .lifecycleState(o.getLifecycleState())
-                            .creationTime(o.getCreationTime());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TransferPackageSummary model) {
+            if (model.wasPropertyExplicitlySet("label")) {
+                this.label(model.getLabel());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("creationTime")) {
+                this.creationTime(model.getCreationTime());
+            }
+            return this;
         }
     }
 
@@ -182,10 +188,10 @@ public final class TransferPackageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TransferPackageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("label=").append(String.valueOf(this.label));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", creationTime=").append(String.valueOf(this.creationTime));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -203,7 +209,7 @@ public final class TransferPackageSummary {
         return java.util.Objects.equals(this.label, other.label)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.creationTime, other.creationTime)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -215,16 +221,7 @@ public final class TransferPackageSummary {
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.creationTime == null ? 43 : this.creationTime.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -42,15 +42,17 @@ public class DetectLanguageKeyPhrasesResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "detectLanguageKeyPhrasesResult"
     })
     private DetectLanguageKeyPhrasesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.ailanguage.model.DetectLanguageKeyPhrasesResult
                     detectLanguageKeyPhrasesResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.detectLanguageKeyPhrasesResult = detectLanguageKeyPhrasesResult;
     }
@@ -60,6 +62,13 @@ public class DetectLanguageKeyPhrasesResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -106,6 +115,7 @@ public class DetectLanguageKeyPhrasesResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(DetectLanguageKeyPhrasesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             detectLanguageKeyPhrasesResult(o.getDetectLanguageKeyPhrasesResult());
 
@@ -118,7 +128,7 @@ public class DetectLanguageKeyPhrasesResponse extends com.oracle.bmc.responses.B
          */
         public DetectLanguageKeyPhrasesResponse build() {
             return new DetectLanguageKeyPhrasesResponse(
-                    __httpStatusCode__, opcRequestId, detectLanguageKeyPhrasesResult);
+                    __httpStatusCode__, headers, opcRequestId, detectLanguageKeyPhrasesResult);
         }
     }
 

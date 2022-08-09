@@ -149,8 +149,8 @@ public class GetCompatibleFormatsForSensitiveTypesConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetCompatibleFormatsForSensitiveTypesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.compatibleFormatsForSensitiveTypes(response.getItem());
 

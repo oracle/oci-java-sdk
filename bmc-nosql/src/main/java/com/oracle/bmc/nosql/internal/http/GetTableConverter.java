@@ -105,7 +105,8 @@ public class GetTableConverter {
 
                                 com.oracle.bmc.nosql.responses.GetTableResponse.Builder builder =
                                         com.oracle.bmc.nosql.responses.GetTableResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.table(response.getItem());
 

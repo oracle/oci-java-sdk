@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = ShapeAlternativeObject.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ShapeAlternativeObject {
+public final class ShapeAlternativeObject
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shapeName"})
     public ShapeAlternativeObject(String shapeName) {
@@ -53,17 +54,19 @@ public final class ShapeAlternativeObject {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShapeAlternativeObject build() {
-            ShapeAlternativeObject __instance__ = new ShapeAlternativeObject(shapeName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ShapeAlternativeObject model = new ShapeAlternativeObject(this.shapeName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ShapeAlternativeObject o) {
-            Builder copiedBuilder = shapeName(o.getShapeName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ShapeAlternativeObject model) {
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            return this;
         }
     }
 
@@ -107,8 +110,8 @@ public final class ShapeAlternativeObject {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ShapeAlternativeObject(");
+        sb.append("super=").append(super.toString());
         sb.append("shapeName=").append(String.valueOf(this.shapeName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -123,8 +126,7 @@ public final class ShapeAlternativeObject {
         }
 
         ShapeAlternativeObject other = (ShapeAlternativeObject) o;
-        return java.util.Objects.equals(this.shapeName, other.shapeName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.shapeName, other.shapeName) && super.equals(other);
     }
 
     @Override
@@ -132,16 +134,7 @@ public final class ShapeAlternativeObject {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

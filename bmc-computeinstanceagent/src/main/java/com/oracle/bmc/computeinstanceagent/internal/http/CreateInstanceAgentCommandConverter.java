@@ -119,8 +119,8 @@ public class CreateInstanceAgentCommandConverter {
                                                 com.oracle.bmc.computeinstanceagent.responses
                                                         .CreateInstanceAgentCommandResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.instanceAgentCommand(response.getItem());
 

@@ -158,8 +158,8 @@ public class ListProductsConverter {
                                         builder =
                                                 com.oracle.bmc.usage.responses.ListProductsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.productCollection(response.getItem());
 

@@ -53,13 +53,20 @@ public class UpdateRecordResponse extends com.oracle.bmc.responses.BmcResponse {
         return record;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "record"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "record"
+    })
     private UpdateRecordResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datalabelingservicedataplane.model.Record record) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.record = record;
@@ -70,6 +77,13 @@ public class UpdateRecordResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdateRecordResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(UpdateRecordResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             record(o.getRecord());
@@ -142,7 +157,8 @@ public class UpdateRecordResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public UpdateRecordResponse build() {
-            return new UpdateRecordResponse(__httpStatusCode__, etag, opcRequestId, record);
+            return new UpdateRecordResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, record);
         }
     }
 

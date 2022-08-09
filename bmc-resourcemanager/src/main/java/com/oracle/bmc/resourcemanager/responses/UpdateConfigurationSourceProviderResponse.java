@@ -52,17 +52,19 @@ public class UpdateConfigurationSourceProviderResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "configurationSourceProvider"
     })
     private UpdateConfigurationSourceProviderResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.resourcemanager.model.ConfigurationSourceProvider
                     configurationSourceProvider) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.configurationSourceProvider = configurationSourceProvider;
@@ -73,6 +75,13 @@ public class UpdateConfigurationSourceProviderResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +139,7 @@ public class UpdateConfigurationSourceProviderResponse
          */
         public Builder copy(UpdateConfigurationSourceProviderResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             configurationSourceProvider(o.getConfigurationSourceProvider());
@@ -143,7 +153,7 @@ public class UpdateConfigurationSourceProviderResponse
          */
         public UpdateConfigurationSourceProviderResponse build() {
             return new UpdateConfigurationSourceProviderResponse(
-                    __httpStatusCode__, opcRequestId, etag, configurationSourceProvider);
+                    __httpStatusCode__, headers, opcRequestId, etag, configurationSourceProvider);
         }
     }
 

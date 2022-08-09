@@ -53,17 +53,19 @@ public final class LogRuleTaskDetails extends TaskDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogRuleTaskDetails build() {
-            LogRuleTaskDetails __instance__ = new LogRuleTaskDetails(condition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LogRuleTaskDetails model = new LogRuleTaskDetails(this.condition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogRuleTaskDetails o) {
-            Builder copiedBuilder = condition(o.getCondition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogRuleTaskDetails model) {
+            if (model.wasPropertyExplicitlySet("condition")) {
+                this.condition(model.getCondition());
+            }
+            return this;
         }
     }
 
@@ -115,7 +117,6 @@ public final class LogRuleTaskDetails extends TaskDetails {
         sb.append("LogRuleTaskDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", condition=").append(String.valueOf(this.condition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -130,9 +131,7 @@ public final class LogRuleTaskDetails extends TaskDetails {
         }
 
         LogRuleTaskDetails other = (LogRuleTaskDetails) o;
-        return java.util.Objects.equals(this.condition, other.condition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.condition, other.condition) && super.equals(other);
     }
 
     @Override
@@ -140,16 +139,6 @@ public final class LogRuleTaskDetails extends TaskDetails {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.condition == null ? 43 : this.condition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

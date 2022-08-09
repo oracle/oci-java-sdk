@@ -156,8 +156,8 @@ public class AddmTasksConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .AddmTasksResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.addmTasksCollection(response.getItem());
 

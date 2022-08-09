@@ -80,22 +80,27 @@ public final class GenericDeployArtifactSource extends DeployArtifactSource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenericDeployArtifactSource build() {
-            GenericDeployArtifactSource __instance__ =
+            GenericDeployArtifactSource model =
                     new GenericDeployArtifactSource(
-                            repositoryId, deployArtifactPath, deployArtifactVersion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.repositoryId, this.deployArtifactPath, this.deployArtifactVersion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GenericDeployArtifactSource o) {
-            Builder copiedBuilder =
-                    repositoryId(o.getRepositoryId())
-                            .deployArtifactPath(o.getDeployArtifactPath())
-                            .deployArtifactVersion(o.getDeployArtifactVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GenericDeployArtifactSource model) {
+            if (model.wasPropertyExplicitlySet("repositoryId")) {
+                this.repositoryId(model.getRepositoryId());
+            }
+            if (model.wasPropertyExplicitlySet("deployArtifactPath")) {
+                this.deployArtifactPath(model.getDeployArtifactPath());
+            }
+            if (model.wasPropertyExplicitlySet("deployArtifactVersion")) {
+                this.deployArtifactVersion(model.getDeployArtifactVersion());
+            }
+            return this;
         }
     }
 
@@ -178,7 +183,6 @@ public final class GenericDeployArtifactSource extends DeployArtifactSource {
         sb.append(", repositoryId=").append(String.valueOf(this.repositoryId));
         sb.append(", deployArtifactPath=").append(String.valueOf(this.deployArtifactPath));
         sb.append(", deployArtifactVersion=").append(String.valueOf(this.deployArtifactVersion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -196,8 +200,7 @@ public final class GenericDeployArtifactSource extends DeployArtifactSource {
         return java.util.Objects.equals(this.repositoryId, other.repositoryId)
                 && java.util.Objects.equals(this.deployArtifactPath, other.deployArtifactPath)
                 && java.util.Objects.equals(this.deployArtifactVersion, other.deployArtifactVersion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -215,16 +218,6 @@ public final class GenericDeployArtifactSource extends DeployArtifactSource {
                         + (this.deployArtifactVersion == null
                                 ? 43
                                 : this.deployArtifactVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

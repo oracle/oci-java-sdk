@@ -121,36 +121,53 @@ public final class TriggerDeploymentPipelineStageRunProgress extends BuildPipeli
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TriggerDeploymentPipelineStageRunProgress build() {
-            TriggerDeploymentPipelineStageRunProgress __instance__ =
+            TriggerDeploymentPipelineStageRunProgress model =
                     new TriggerDeploymentPipelineStageRunProgress(
-                            stageDisplayName,
-                            buildPipelineStageId,
-                            timeStarted,
-                            timeFinished,
-                            status,
-                            buildPipelineStagePredecessors,
-                            exportedVariables,
-                            artifactOverrideParameters,
-                            deploymentId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.stageDisplayName,
+                            this.buildPipelineStageId,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.status,
+                            this.buildPipelineStagePredecessors,
+                            this.exportedVariables,
+                            this.artifactOverrideParameters,
+                            this.deploymentId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TriggerDeploymentPipelineStageRunProgress o) {
-            Builder copiedBuilder =
-                    stageDisplayName(o.getStageDisplayName())
-                            .buildPipelineStageId(o.getBuildPipelineStageId())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .status(o.getStatus())
-                            .buildPipelineStagePredecessors(o.getBuildPipelineStagePredecessors())
-                            .exportedVariables(o.getExportedVariables())
-                            .artifactOverrideParameters(o.getArtifactOverrideParameters())
-                            .deploymentId(o.getDeploymentId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TriggerDeploymentPipelineStageRunProgress model) {
+            if (model.wasPropertyExplicitlySet("stageDisplayName")) {
+                this.stageDisplayName(model.getStageDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineStageId")) {
+                this.buildPipelineStageId(model.getBuildPipelineStageId());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineStagePredecessors")) {
+                this.buildPipelineStagePredecessors(model.getBuildPipelineStagePredecessors());
+            }
+            if (model.wasPropertyExplicitlySet("exportedVariables")) {
+                this.exportedVariables(model.getExportedVariables());
+            }
+            if (model.wasPropertyExplicitlySet("artifactOverrideParameters")) {
+                this.artifactOverrideParameters(model.getArtifactOverrideParameters());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentId")) {
+                this.deploymentId(model.getDeploymentId());
+            }
+            return this;
         }
     }
 
@@ -234,7 +251,6 @@ public final class TriggerDeploymentPipelineStageRunProgress extends BuildPipeli
         sb.append(", artifactOverrideParameters=")
                 .append(String.valueOf(this.artifactOverrideParameters));
         sb.append(", deploymentId=").append(String.valueOf(this.deploymentId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -254,8 +270,7 @@ public final class TriggerDeploymentPipelineStageRunProgress extends BuildPipeli
                 && java.util.Objects.equals(
                         this.artifactOverrideParameters, other.artifactOverrideParameters)
                 && java.util.Objects.equals(this.deploymentId, other.deploymentId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -271,16 +286,6 @@ public final class TriggerDeploymentPipelineStageRunProgress extends BuildPipeli
                                 ? 43
                                 : this.artifactOverrideParameters.hashCode());
         result = (result * PRIME) + (this.deploymentId == null ? 43 : this.deploymentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

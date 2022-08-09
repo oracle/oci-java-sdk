@@ -120,8 +120,8 @@ public class GetTransferApplianceEncryptionPassphraseConverter {
                                                 com.oracle.bmc.dts.responses
                                                         .GetTransferApplianceEncryptionPassphraseResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.transferApplianceEncryptionPassphrase(response.getItem());
 

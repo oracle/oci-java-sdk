@@ -17,7 +17,7 @@ package com.oracle.bmc.ospgateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Country.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Country {
+public final class Country extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "countryId",
@@ -127,23 +127,37 @@ public final class Country {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Country build() {
-            Country __instance__ =
-                    new Country(countryId, countryCode, countryName, languageId, ascii3CountryCode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Country model =
+                    new Country(
+                            this.countryId,
+                            this.countryCode,
+                            this.countryName,
+                            this.languageId,
+                            this.ascii3CountryCode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Country o) {
-            Builder copiedBuilder =
-                    countryId(o.getCountryId())
-                            .countryCode(o.getCountryCode())
-                            .countryName(o.getCountryName())
-                            .languageId(o.getLanguageId())
-                            .ascii3CountryCode(o.getAscii3CountryCode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Country model) {
+            if (model.wasPropertyExplicitlySet("countryId")) {
+                this.countryId(model.getCountryId());
+            }
+            if (model.wasPropertyExplicitlySet("countryCode")) {
+                this.countryCode(model.getCountryCode());
+            }
+            if (model.wasPropertyExplicitlySet("countryName")) {
+                this.countryName(model.getCountryName());
+            }
+            if (model.wasPropertyExplicitlySet("languageId")) {
+                this.languageId(model.getLanguageId());
+            }
+            if (model.wasPropertyExplicitlySet("ascii3CountryCode")) {
+                this.ascii3CountryCode(model.getAscii3CountryCode());
+            }
+            return this;
         }
     }
 
@@ -241,12 +255,12 @@ public final class Country {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Country(");
+        sb.append("super=").append(super.toString());
         sb.append("countryId=").append(String.valueOf(this.countryId));
         sb.append(", countryCode=").append(String.valueOf(this.countryCode));
         sb.append(", countryName=").append(String.valueOf(this.countryName));
         sb.append(", languageId=").append(String.valueOf(this.languageId));
         sb.append(", ascii3CountryCode=").append(String.valueOf(this.ascii3CountryCode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -266,7 +280,7 @@ public final class Country {
                 && java.util.Objects.equals(this.countryName, other.countryName)
                 && java.util.Objects.equals(this.languageId, other.languageId)
                 && java.util.Objects.equals(this.ascii3CountryCode, other.ascii3CountryCode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -280,16 +294,7 @@ public final class Country {
         result =
                 (result * PRIME)
                         + (this.ascii3CountryCode == null ? 43 : this.ascii3CountryCode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

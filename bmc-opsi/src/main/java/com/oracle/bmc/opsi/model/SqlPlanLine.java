@@ -17,7 +17,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlPlanLine.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlPlanLine {
+public final class SqlPlanLine extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "version",
@@ -877,92 +877,165 @@ public final class SqlPlanLine {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlPlanLine build() {
-            SqlPlanLine __instance__ =
+            SqlPlanLine model =
                     new SqlPlanLine(
-                            version,
-                            sqlIdentifier,
-                            planHash,
-                            timeCollected,
-                            operation,
-                            remark,
-                            options,
-                            objectNode,
-                            objectOwner,
-                            objectName,
-                            objectAlias,
-                            objectInstance,
-                            objectType,
-                            optimizer,
-                            searchColumns,
-                            identifier,
-                            parentIdentifier,
-                            depth,
-                            position,
-                            cost,
-                            cardinality,
-                            bytes,
-                            other,
-                            otherTag,
-                            partitionStart,
-                            partitionStop,
-                            partitionIdentifier,
-                            distribution,
-                            cpuCost,
-                            ioCost,
-                            tempSpace,
-                            accessPredicates,
-                            filterPredicates,
-                            projection,
-                            qblockName,
-                            elapsedTimeInSec,
-                            otherXML);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.version,
+                            this.sqlIdentifier,
+                            this.planHash,
+                            this.timeCollected,
+                            this.operation,
+                            this.remark,
+                            this.options,
+                            this.objectNode,
+                            this.objectOwner,
+                            this.objectName,
+                            this.objectAlias,
+                            this.objectInstance,
+                            this.objectType,
+                            this.optimizer,
+                            this.searchColumns,
+                            this.identifier,
+                            this.parentIdentifier,
+                            this.depth,
+                            this.position,
+                            this.cost,
+                            this.cardinality,
+                            this.bytes,
+                            this.other,
+                            this.otherTag,
+                            this.partitionStart,
+                            this.partitionStop,
+                            this.partitionIdentifier,
+                            this.distribution,
+                            this.cpuCost,
+                            this.ioCost,
+                            this.tempSpace,
+                            this.accessPredicates,
+                            this.filterPredicates,
+                            this.projection,
+                            this.qblockName,
+                            this.elapsedTimeInSec,
+                            this.otherXML);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlPlanLine o) {
-            Builder copiedBuilder =
-                    version(o.getVersion())
-                            .sqlIdentifier(o.getSqlIdentifier())
-                            .planHash(o.getPlanHash())
-                            .timeCollected(o.getTimeCollected())
-                            .operation(o.getOperation())
-                            .remark(o.getRemark())
-                            .options(o.getOptions())
-                            .objectNode(o.getObjectNode())
-                            .objectOwner(o.getObjectOwner())
-                            .objectName(o.getObjectName())
-                            .objectAlias(o.getObjectAlias())
-                            .objectInstance(o.getObjectInstance())
-                            .objectType(o.getObjectType())
-                            .optimizer(o.getOptimizer())
-                            .searchColumns(o.getSearchColumns())
-                            .identifier(o.getIdentifier())
-                            .parentIdentifier(o.getParentIdentifier())
-                            .depth(o.getDepth())
-                            .position(o.getPosition())
-                            .cost(o.getCost())
-                            .cardinality(o.getCardinality())
-                            .bytes(o.getBytes())
-                            .other(o.getOther())
-                            .otherTag(o.getOtherTag())
-                            .partitionStart(o.getPartitionStart())
-                            .partitionStop(o.getPartitionStop())
-                            .partitionIdentifier(o.getPartitionIdentifier())
-                            .distribution(o.getDistribution())
-                            .cpuCost(o.getCpuCost())
-                            .ioCost(o.getIoCost())
-                            .tempSpace(o.getTempSpace())
-                            .accessPredicates(o.getAccessPredicates())
-                            .filterPredicates(o.getFilterPredicates())
-                            .projection(o.getProjection())
-                            .qblockName(o.getQblockName())
-                            .elapsedTimeInSec(o.getElapsedTimeInSec())
-                            .otherXML(o.getOtherXML());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlPlanLine model) {
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("sqlIdentifier")) {
+                this.sqlIdentifier(model.getSqlIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("planHash")) {
+                this.planHash(model.getPlanHash());
+            }
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("operation")) {
+                this.operation(model.getOperation());
+            }
+            if (model.wasPropertyExplicitlySet("remark")) {
+                this.remark(model.getRemark());
+            }
+            if (model.wasPropertyExplicitlySet("options")) {
+                this.options(model.getOptions());
+            }
+            if (model.wasPropertyExplicitlySet("objectNode")) {
+                this.objectNode(model.getObjectNode());
+            }
+            if (model.wasPropertyExplicitlySet("objectOwner")) {
+                this.objectOwner(model.getObjectOwner());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            if (model.wasPropertyExplicitlySet("objectAlias")) {
+                this.objectAlias(model.getObjectAlias());
+            }
+            if (model.wasPropertyExplicitlySet("objectInstance")) {
+                this.objectInstance(model.getObjectInstance());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("optimizer")) {
+                this.optimizer(model.getOptimizer());
+            }
+            if (model.wasPropertyExplicitlySet("searchColumns")) {
+                this.searchColumns(model.getSearchColumns());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("parentIdentifier")) {
+                this.parentIdentifier(model.getParentIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("depth")) {
+                this.depth(model.getDepth());
+            }
+            if (model.wasPropertyExplicitlySet("position")) {
+                this.position(model.getPosition());
+            }
+            if (model.wasPropertyExplicitlySet("cost")) {
+                this.cost(model.getCost());
+            }
+            if (model.wasPropertyExplicitlySet("cardinality")) {
+                this.cardinality(model.getCardinality());
+            }
+            if (model.wasPropertyExplicitlySet("bytes")) {
+                this.bytes(model.getBytes());
+            }
+            if (model.wasPropertyExplicitlySet("other")) {
+                this.other(model.getOther());
+            }
+            if (model.wasPropertyExplicitlySet("otherTag")) {
+                this.otherTag(model.getOtherTag());
+            }
+            if (model.wasPropertyExplicitlySet("partitionStart")) {
+                this.partitionStart(model.getPartitionStart());
+            }
+            if (model.wasPropertyExplicitlySet("partitionStop")) {
+                this.partitionStop(model.getPartitionStop());
+            }
+            if (model.wasPropertyExplicitlySet("partitionIdentifier")) {
+                this.partitionIdentifier(model.getPartitionIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("distribution")) {
+                this.distribution(model.getDistribution());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCost")) {
+                this.cpuCost(model.getCpuCost());
+            }
+            if (model.wasPropertyExplicitlySet("ioCost")) {
+                this.ioCost(model.getIoCost());
+            }
+            if (model.wasPropertyExplicitlySet("tempSpace")) {
+                this.tempSpace(model.getTempSpace());
+            }
+            if (model.wasPropertyExplicitlySet("accessPredicates")) {
+                this.accessPredicates(model.getAccessPredicates());
+            }
+            if (model.wasPropertyExplicitlySet("filterPredicates")) {
+                this.filterPredicates(model.getFilterPredicates());
+            }
+            if (model.wasPropertyExplicitlySet("projection")) {
+                this.projection(model.getProjection());
+            }
+            if (model.wasPropertyExplicitlySet("qblockName")) {
+                this.qblockName(model.getQblockName());
+            }
+            if (model.wasPropertyExplicitlySet("elapsedTimeInSec")) {
+                this.elapsedTimeInSec(model.getElapsedTimeInSec());
+            }
+            if (model.wasPropertyExplicitlySet("otherXML")) {
+                this.otherXML(model.getOtherXML());
+            }
+            return this;
         }
     }
 
@@ -1650,6 +1723,7 @@ public final class SqlPlanLine {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlPlanLine(");
+        sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(", sqlIdentifier=").append(String.valueOf(this.sqlIdentifier));
         sb.append(", planHash=").append(String.valueOf(this.planHash));
@@ -1687,7 +1761,6 @@ public final class SqlPlanLine {
         sb.append(", qblockName=").append(String.valueOf(this.qblockName));
         sb.append(", elapsedTimeInSec=").append(String.valueOf(this.elapsedTimeInSec));
         sb.append(", otherXML=").append(String.valueOf(this.otherXML));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1739,7 +1812,7 @@ public final class SqlPlanLine {
                 && java.util.Objects.equals(this.qblockName, other.qblockName)
                 && java.util.Objects.equals(this.elapsedTimeInSec, other.elapsedTimeInSec)
                 && java.util.Objects.equals(this.otherXML, other.otherXML)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1807,16 +1880,7 @@ public final class SqlPlanLine {
                 (result * PRIME)
                         + (this.elapsedTimeInSec == null ? 43 : this.elapsedTimeInSec.hashCode());
         result = (result * PRIME) + (this.otherXML == null ? 43 : this.otherXML.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

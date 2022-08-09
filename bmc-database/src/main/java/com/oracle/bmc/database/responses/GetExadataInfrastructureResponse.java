@@ -53,16 +53,18 @@ public class GetExadataInfrastructureResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "exadataInfrastructure"
     })
     private GetExadataInfrastructureResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.ExadataInfrastructure exadataInfrastructure) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.exadataInfrastructure = exadataInfrastructure;
@@ -73,6 +75,13 @@ public class GetExadataInfrastructureResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetExadataInfrastructureResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(GetExadataInfrastructureResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             exadataInfrastructure(o.getExadataInfrastructure());
@@ -145,7 +155,7 @@ public class GetExadataInfrastructureResponse extends com.oracle.bmc.responses.B
          */
         public GetExadataInfrastructureResponse build() {
             return new GetExadataInfrastructureResponse(
-                    __httpStatusCode__, etag, opcRequestId, exadataInfrastructure);
+                    __httpStatusCode__, headers, etag, opcRequestId, exadataInfrastructure);
         }
     }
 

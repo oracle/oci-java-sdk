@@ -19,7 +19,8 @@ package com.oracle.bmc.usageapi.model;
     builder = RequestSummarizedUsagesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RequestSummarizedUsagesDetails {
+public final class RequestSummarizedUsagesDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tenantId",
@@ -267,40 +268,61 @@ public final class RequestSummarizedUsagesDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RequestSummarizedUsagesDetails build() {
-            RequestSummarizedUsagesDetails __instance__ =
+            RequestSummarizedUsagesDetails model =
                     new RequestSummarizedUsagesDetails(
-                            tenantId,
-                            timeUsageStarted,
-                            timeUsageEnded,
-                            granularity,
-                            isAggregateByTime,
-                            forecast,
-                            queryType,
-                            groupBy,
-                            groupByTag,
-                            compartmentDepth,
-                            filter);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.tenantId,
+                            this.timeUsageStarted,
+                            this.timeUsageEnded,
+                            this.granularity,
+                            this.isAggregateByTime,
+                            this.forecast,
+                            this.queryType,
+                            this.groupBy,
+                            this.groupByTag,
+                            this.compartmentDepth,
+                            this.filter);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RequestSummarizedUsagesDetails o) {
-            Builder copiedBuilder =
-                    tenantId(o.getTenantId())
-                            .timeUsageStarted(o.getTimeUsageStarted())
-                            .timeUsageEnded(o.getTimeUsageEnded())
-                            .granularity(o.getGranularity())
-                            .isAggregateByTime(o.getIsAggregateByTime())
-                            .forecast(o.getForecast())
-                            .queryType(o.getQueryType())
-                            .groupBy(o.getGroupBy())
-                            .groupByTag(o.getGroupByTag())
-                            .compartmentDepth(o.getCompartmentDepth())
-                            .filter(o.getFilter());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RequestSummarizedUsagesDetails model) {
+            if (model.wasPropertyExplicitlySet("tenantId")) {
+                this.tenantId(model.getTenantId());
+            }
+            if (model.wasPropertyExplicitlySet("timeUsageStarted")) {
+                this.timeUsageStarted(model.getTimeUsageStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeUsageEnded")) {
+                this.timeUsageEnded(model.getTimeUsageEnded());
+            }
+            if (model.wasPropertyExplicitlySet("granularity")) {
+                this.granularity(model.getGranularity());
+            }
+            if (model.wasPropertyExplicitlySet("isAggregateByTime")) {
+                this.isAggregateByTime(model.getIsAggregateByTime());
+            }
+            if (model.wasPropertyExplicitlySet("forecast")) {
+                this.forecast(model.getForecast());
+            }
+            if (model.wasPropertyExplicitlySet("queryType")) {
+                this.queryType(model.getQueryType());
+            }
+            if (model.wasPropertyExplicitlySet("groupBy")) {
+                this.groupBy(model.getGroupBy());
+            }
+            if (model.wasPropertyExplicitlySet("groupByTag")) {
+                this.groupByTag(model.getGroupByTag());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentDepth")) {
+                this.compartmentDepth(model.getCompartmentDepth());
+            }
+            if (model.wasPropertyExplicitlySet("filter")) {
+                this.filter(model.getFilter());
+            }
+            return this;
         }
     }
 
@@ -592,6 +614,7 @@ public final class RequestSummarizedUsagesDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RequestSummarizedUsagesDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("tenantId=").append(String.valueOf(this.tenantId));
         sb.append(", timeUsageStarted=").append(String.valueOf(this.timeUsageStarted));
         sb.append(", timeUsageEnded=").append(String.valueOf(this.timeUsageEnded));
@@ -603,7 +626,6 @@ public final class RequestSummarizedUsagesDetails {
         sb.append(", groupByTag=").append(String.valueOf(this.groupByTag));
         sb.append(", compartmentDepth=").append(String.valueOf(this.compartmentDepth));
         sb.append(", filter=").append(String.valueOf(this.filter));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -629,7 +651,7 @@ public final class RequestSummarizedUsagesDetails {
                 && java.util.Objects.equals(this.groupByTag, other.groupByTag)
                 && java.util.Objects.equals(this.compartmentDepth, other.compartmentDepth)
                 && java.util.Objects.equals(this.filter, other.filter)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -655,16 +677,7 @@ public final class RequestSummarizedUsagesDetails {
                 (result * PRIME)
                         + (this.compartmentDepth == null ? 43 : this.compartmentDepth.hashCode());
         result = (result * PRIME) + (this.filter == null ? 43 : this.filter.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

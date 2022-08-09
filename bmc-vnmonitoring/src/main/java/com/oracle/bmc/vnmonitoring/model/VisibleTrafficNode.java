@@ -107,30 +107,41 @@ public final class VisibleTrafficNode extends TrafficNode {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VisibleTrafficNode build() {
-            VisibleTrafficNode __instance__ =
+            VisibleTrafficNode model =
                     new VisibleTrafficNode(
-                            egressTraffic,
-                            nextHopRoutingAction,
-                            egressSecurityAction,
-                            ingressSecurityAction,
-                            entityId,
-                            transformationDescription);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.egressTraffic,
+                            this.nextHopRoutingAction,
+                            this.egressSecurityAction,
+                            this.ingressSecurityAction,
+                            this.entityId,
+                            this.transformationDescription);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VisibleTrafficNode o) {
-            Builder copiedBuilder =
-                    egressTraffic(o.getEgressTraffic())
-                            .nextHopRoutingAction(o.getNextHopRoutingAction())
-                            .egressSecurityAction(o.getEgressSecurityAction())
-                            .ingressSecurityAction(o.getIngressSecurityAction())
-                            .entityId(o.getEntityId())
-                            .transformationDescription(o.getTransformationDescription());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VisibleTrafficNode model) {
+            if (model.wasPropertyExplicitlySet("egressTraffic")) {
+                this.egressTraffic(model.getEgressTraffic());
+            }
+            if (model.wasPropertyExplicitlySet("nextHopRoutingAction")) {
+                this.nextHopRoutingAction(model.getNextHopRoutingAction());
+            }
+            if (model.wasPropertyExplicitlySet("egressSecurityAction")) {
+                this.egressSecurityAction(model.getEgressSecurityAction());
+            }
+            if (model.wasPropertyExplicitlySet("ingressSecurityAction")) {
+                this.ingressSecurityAction(model.getIngressSecurityAction());
+            }
+            if (model.wasPropertyExplicitlySet("entityId")) {
+                this.entityId(model.getEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("transformationDescription")) {
+                this.transformationDescription(model.getTransformationDescription());
+            }
+            return this;
         }
     }
 
@@ -211,7 +222,6 @@ public final class VisibleTrafficNode extends TrafficNode {
         sb.append(", entityId=").append(String.valueOf(this.entityId));
         sb.append(", transformationDescription=")
                 .append(String.valueOf(this.transformationDescription));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -229,8 +239,7 @@ public final class VisibleTrafficNode extends TrafficNode {
         return java.util.Objects.equals(this.entityId, other.entityId)
                 && java.util.Objects.equals(
                         this.transformationDescription, other.transformationDescription)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -243,16 +252,6 @@ public final class VisibleTrafficNode extends TrafficNode {
                         + (this.transformationDescription == null
                                 ? 43
                                 : this.transformationDescription.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

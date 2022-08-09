@@ -60,16 +60,18 @@ public class ListByoipAllocatedRangesResponse extends com.oracle.bmc.responses.B
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "byoipAllocatedRangeCollection"
     })
     private ListByoipAllocatedRangesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.core.model.ByoipAllocatedRangeCollection byoipAllocatedRangeCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.byoipAllocatedRangeCollection = byoipAllocatedRangeCollection;
@@ -80,6 +82,13 @@ public class ListByoipAllocatedRangesResponse extends com.oracle.bmc.responses.B
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -147,6 +156,7 @@ public class ListByoipAllocatedRangesResponse extends com.oracle.bmc.responses.B
          */
         public Builder copy(ListByoipAllocatedRangesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             byoipAllocatedRangeCollection(o.getByoipAllocatedRangeCollection());
@@ -160,7 +170,11 @@ public class ListByoipAllocatedRangesResponse extends com.oracle.bmc.responses.B
          */
         public ListByoipAllocatedRangesResponse build() {
             return new ListByoipAllocatedRangesResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, byoipAllocatedRangeCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcNextPage,
+                    opcRequestId,
+                    byoipAllocatedRangeCollection);
         }
     }
 

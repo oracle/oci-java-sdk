@@ -106,8 +106,8 @@ public class GetTranscriptionJobConverter {
                                         builder =
                                                 com.oracle.bmc.aispeech.responses
                                                         .GetTranscriptionJobResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.transcriptionJob(response.getItem());
 

@@ -99,25 +99,41 @@ public final class AwrDbWaitEventBucketCollection extends AwrQueryResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrDbWaitEventBucketCollection build() {
-            AwrDbWaitEventBucketCollection __instance__ =
+            AwrDbWaitEventBucketCollection model =
                     new AwrDbWaitEventBucketCollection(
-                            name, version, queryKey, dbQueryTimeInSecs, totalWaits, items);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.version,
+                            this.queryKey,
+                            this.dbQueryTimeInSecs,
+                            this.totalWaits,
+                            this.items);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrDbWaitEventBucketCollection o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .version(o.getVersion())
-                            .queryKey(o.getQueryKey())
-                            .dbQueryTimeInSecs(o.getDbQueryTimeInSecs())
-                            .totalWaits(o.getTotalWaits())
-                            .items(o.getItems());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrDbWaitEventBucketCollection model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("queryKey")) {
+                this.queryKey(model.getQueryKey());
+            }
+            if (model.wasPropertyExplicitlySet("dbQueryTimeInSecs")) {
+                this.dbQueryTimeInSecs(model.getDbQueryTimeInSecs());
+            }
+            if (model.wasPropertyExplicitlySet("totalWaits")) {
+                this.totalWaits(model.getTotalWaits());
+            }
+            if (model.wasPropertyExplicitlySet("items")) {
+                this.items(model.getItems());
+            }
+            return this;
         }
     }
 
@@ -189,7 +205,6 @@ public final class AwrDbWaitEventBucketCollection extends AwrQueryResult {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", totalWaits=").append(String.valueOf(this.totalWaits));
         sb.append(", items=").append(String.valueOf(this.items));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -206,8 +221,7 @@ public final class AwrDbWaitEventBucketCollection extends AwrQueryResult {
         AwrDbWaitEventBucketCollection other = (AwrDbWaitEventBucketCollection) o;
         return java.util.Objects.equals(this.totalWaits, other.totalWaits)
                 && java.util.Objects.equals(this.items, other.items)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -216,16 +230,6 @@ public final class AwrDbWaitEventBucketCollection extends AwrQueryResult {
         int result = super.hashCode();
         result = (result * PRIME) + (this.totalWaits == null ? 43 : this.totalWaits.hashCode());
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

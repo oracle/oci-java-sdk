@@ -95,30 +95,41 @@ public final class FieldSummaryCommandDescriptor extends AbstractCommandDescript
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FieldSummaryCommandDescriptor build() {
-            FieldSummaryCommandDescriptor __instance__ =
+            FieldSummaryCommandDescriptor model =
                     new FieldSummaryCommandDescriptor(
-                            displayQueryString,
-                            internalQueryString,
-                            category,
-                            referencedFields,
-                            declaredFields,
-                            maxValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayQueryString,
+                            this.internalQueryString,
+                            this.category,
+                            this.referencedFields,
+                            this.declaredFields,
+                            this.maxValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FieldSummaryCommandDescriptor o) {
-            Builder copiedBuilder =
-                    displayQueryString(o.getDisplayQueryString())
-                            .internalQueryString(o.getInternalQueryString())
-                            .category(o.getCategory())
-                            .referencedFields(o.getReferencedFields())
-                            .declaredFields(o.getDeclaredFields())
-                            .maxValues(o.getMaxValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FieldSummaryCommandDescriptor model) {
+            if (model.wasPropertyExplicitlySet("displayQueryString")) {
+                this.displayQueryString(model.getDisplayQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("internalQueryString")) {
+                this.internalQueryString(model.getInternalQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("referencedFields")) {
+                this.referencedFields(model.getReferencedFields());
+            }
+            if (model.wasPropertyExplicitlySet("declaredFields")) {
+                this.declaredFields(model.getDeclaredFields());
+            }
+            if (model.wasPropertyExplicitlySet("maxValues")) {
+                this.maxValues(model.getMaxValues());
+            }
+            return this;
         }
     }
 
@@ -176,7 +187,6 @@ public final class FieldSummaryCommandDescriptor extends AbstractCommandDescript
         sb.append("FieldSummaryCommandDescriptor(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", maxValues=").append(String.valueOf(this.maxValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -191,9 +201,7 @@ public final class FieldSummaryCommandDescriptor extends AbstractCommandDescript
         }
 
         FieldSummaryCommandDescriptor other = (FieldSummaryCommandDescriptor) o;
-        return java.util.Objects.equals(this.maxValues, other.maxValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.maxValues, other.maxValues) && super.equals(other);
     }
 
     @Override
@@ -201,16 +209,6 @@ public final class FieldSummaryCommandDescriptor extends AbstractCommandDescript
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.maxValues == null ? 43 : this.maxValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

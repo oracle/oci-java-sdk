@@ -118,8 +118,8 @@ public class GetCertificateVersionConverter {
                                         builder =
                                                 com.oracle.bmc.certificatesmanagement.responses
                                                         .GetCertificateVersionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.certificateVersion(response.getItem());
 

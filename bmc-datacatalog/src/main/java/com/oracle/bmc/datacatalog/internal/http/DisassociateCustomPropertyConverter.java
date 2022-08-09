@@ -125,8 +125,8 @@ public class DisassociateCustomPropertyConverter {
                                                 com.oracle.bmc.datacatalog.responses
                                                         .DisassociateCustomPropertyResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.type(response.getItem());
 

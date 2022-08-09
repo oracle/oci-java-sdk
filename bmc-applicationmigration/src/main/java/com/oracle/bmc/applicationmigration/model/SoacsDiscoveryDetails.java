@@ -67,19 +67,23 @@ public final class SoacsDiscoveryDetails extends DiscoveryDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SoacsDiscoveryDetails build() {
-            SoacsDiscoveryDetails __instance__ =
-                    new SoacsDiscoveryDetails(weblogicUser, weblogicPassword);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SoacsDiscoveryDetails model =
+                    new SoacsDiscoveryDetails(this.weblogicUser, this.weblogicPassword);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SoacsDiscoveryDetails o) {
-            Builder copiedBuilder =
-                    weblogicUser(o.getWeblogicUser()).weblogicPassword(o.getWeblogicPassword());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SoacsDiscoveryDetails model) {
+            if (model.wasPropertyExplicitlySet("weblogicUser")) {
+                this.weblogicUser(model.getWeblogicUser());
+            }
+            if (model.wasPropertyExplicitlySet("weblogicPassword")) {
+                this.weblogicPassword(model.getWeblogicPassword());
+            }
+            return this;
         }
     }
 
@@ -145,7 +149,6 @@ public final class SoacsDiscoveryDetails extends DiscoveryDetails {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", weblogicUser=").append(String.valueOf(this.weblogicUser));
         sb.append(", weblogicPassword=").append(String.valueOf(this.weblogicPassword));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -162,8 +165,7 @@ public final class SoacsDiscoveryDetails extends DiscoveryDetails {
         SoacsDiscoveryDetails other = (SoacsDiscoveryDetails) o;
         return java.util.Objects.equals(this.weblogicUser, other.weblogicUser)
                 && java.util.Objects.equals(this.weblogicPassword, other.weblogicPassword)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -174,16 +176,6 @@ public final class SoacsDiscoveryDetails extends DiscoveryDetails {
         result =
                 (result * PRIME)
                         + (this.weblogicPassword == null ? 43 : this.weblogicPassword.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

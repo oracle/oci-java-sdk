@@ -106,8 +106,8 @@ public class GetContainerImageConverter {
                                         builder =
                                                 com.oracle.bmc.artifacts.responses
                                                         .GetContainerImageResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.containerImage(response.getItem());
 

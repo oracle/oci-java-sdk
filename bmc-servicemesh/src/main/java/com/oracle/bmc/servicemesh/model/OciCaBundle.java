@@ -46,17 +46,19 @@ public final class OciCaBundle extends CaBundle {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OciCaBundle build() {
-            OciCaBundle __instance__ = new OciCaBundle(caBundleId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OciCaBundle model = new OciCaBundle(this.caBundleId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OciCaBundle o) {
-            Builder copiedBuilder = caBundleId(o.getCaBundleId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OciCaBundle model) {
+            if (model.wasPropertyExplicitlySet("caBundleId")) {
+                this.caBundleId(model.getCaBundleId());
+            }
+            return this;
         }
     }
 
@@ -106,7 +108,6 @@ public final class OciCaBundle extends CaBundle {
         sb.append("OciCaBundle(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", caBundleId=").append(String.valueOf(this.caBundleId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -121,9 +122,7 @@ public final class OciCaBundle extends CaBundle {
         }
 
         OciCaBundle other = (OciCaBundle) o;
-        return java.util.Objects.equals(this.caBundleId, other.caBundleId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.caBundleId, other.caBundleId) && super.equals(other);
     }
 
     @Override
@@ -131,16 +130,6 @@ public final class OciCaBundle extends CaBundle {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.caBundleId == null ? 43 : this.caBundleId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

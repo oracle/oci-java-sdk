@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = UiParserTestMetadata.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UiParserTestMetadata {
+public final class UiParserTestMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"lastModifiedTime", "logFileName", "timeZone"})
     public UiParserTestMetadata(
@@ -85,21 +85,27 @@ public final class UiParserTestMetadata {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UiParserTestMetadata build() {
-            UiParserTestMetadata __instance__ =
-                    new UiParserTestMetadata(lastModifiedTime, logFileName, timeZone);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UiParserTestMetadata model =
+                    new UiParserTestMetadata(
+                            this.lastModifiedTime, this.logFileName, this.timeZone);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UiParserTestMetadata o) {
-            Builder copiedBuilder =
-                    lastModifiedTime(o.getLastModifiedTime())
-                            .logFileName(o.getLogFileName())
-                            .timeZone(o.getTimeZone());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UiParserTestMetadata model) {
+            if (model.wasPropertyExplicitlySet("lastModifiedTime")) {
+                this.lastModifiedTime(model.getLastModifiedTime());
+            }
+            if (model.wasPropertyExplicitlySet("logFileName")) {
+                this.logFileName(model.getLogFileName());
+            }
+            if (model.wasPropertyExplicitlySet("timeZone")) {
+                this.timeZone(model.getTimeZone());
+            }
+            return this;
         }
     }
 
@@ -169,10 +175,10 @@ public final class UiParserTestMetadata {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UiParserTestMetadata(");
+        sb.append("super=").append(super.toString());
         sb.append("lastModifiedTime=").append(String.valueOf(this.lastModifiedTime));
         sb.append(", logFileName=").append(String.valueOf(this.logFileName));
         sb.append(", timeZone=").append(String.valueOf(this.timeZone));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,7 +196,7 @@ public final class UiParserTestMetadata {
         return java.util.Objects.equals(this.lastModifiedTime, other.lastModifiedTime)
                 && java.util.Objects.equals(this.logFileName, other.logFileName)
                 && java.util.Objects.equals(this.timeZone, other.timeZone)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -202,16 +208,7 @@ public final class UiParserTestMetadata {
                         + (this.lastModifiedTime == null ? 43 : this.lastModifiedTime.hashCode());
         result = (result * PRIME) + (this.logFileName == null ? 43 : this.logFileName.hashCode());
         result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

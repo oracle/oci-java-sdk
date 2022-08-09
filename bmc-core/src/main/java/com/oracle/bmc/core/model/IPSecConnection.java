@@ -38,7 +38,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IPSecConnection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IPSecConnection {
+public final class IPSecConnection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -366,42 +366,65 @@ public final class IPSecConnection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IPSecConnection build() {
-            IPSecConnection __instance__ =
+            IPSecConnection model =
                     new IPSecConnection(
-                            compartmentId,
-                            cpeId,
-                            definedTags,
-                            displayName,
-                            drgId,
-                            freeformTags,
-                            id,
-                            lifecycleState,
-                            cpeLocalIdentifier,
-                            cpeLocalIdentifierType,
-                            staticRoutes,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.cpeId,
+                            this.definedTags,
+                            this.displayName,
+                            this.drgId,
+                            this.freeformTags,
+                            this.id,
+                            this.lifecycleState,
+                            this.cpeLocalIdentifier,
+                            this.cpeLocalIdentifierType,
+                            this.staticRoutes,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IPSecConnection o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .cpeId(o.getCpeId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .drgId(o.getDrgId())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
-                            .cpeLocalIdentifier(o.getCpeLocalIdentifier())
-                            .cpeLocalIdentifierType(o.getCpeLocalIdentifierType())
-                            .staticRoutes(o.getStaticRoutes())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IPSecConnection model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("cpeId")) {
+                this.cpeId(model.getCpeId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("drgId")) {
+                this.drgId(model.getDrgId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("cpeLocalIdentifier")) {
+                this.cpeLocalIdentifier(model.getCpeLocalIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("cpeLocalIdentifierType")) {
+                this.cpeLocalIdentifierType(model.getCpeLocalIdentifierType());
+            }
+            if (model.wasPropertyExplicitlySet("staticRoutes")) {
+                this.staticRoutes(model.getStaticRoutes());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -781,6 +804,7 @@ public final class IPSecConnection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IPSecConnection(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", cpeId=").append(String.valueOf(this.cpeId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -793,7 +817,6 @@ public final class IPSecConnection {
         sb.append(", cpeLocalIdentifierType=").append(String.valueOf(this.cpeLocalIdentifierType));
         sb.append(", staticRoutes=").append(String.valueOf(this.staticRoutes));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -821,7 +844,7 @@ public final class IPSecConnection {
                         this.cpeLocalIdentifierType, other.cpeLocalIdentifierType)
                 && java.util.Objects.equals(this.staticRoutes, other.staticRoutes)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -852,16 +875,7 @@ public final class IPSecConnection {
                                 : this.cpeLocalIdentifierType.hashCode());
         result = (result * PRIME) + (this.staticRoutes == null ? 43 : this.staticRoutes.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.dataconnectivity.model;
     builder = CreateDeReferenceArtifactDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateDeReferenceArtifactDetails {
+public final class CreateDeReferenceArtifactDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"serviceArtifactId"})
     public CreateDeReferenceArtifactDetails(String serviceArtifactId) {
@@ -50,18 +51,20 @@ public final class CreateDeReferenceArtifactDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDeReferenceArtifactDetails build() {
-            CreateDeReferenceArtifactDetails __instance__ =
-                    new CreateDeReferenceArtifactDetails(serviceArtifactId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateDeReferenceArtifactDetails model =
+                    new CreateDeReferenceArtifactDetails(this.serviceArtifactId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDeReferenceArtifactDetails o) {
-            Builder copiedBuilder = serviceArtifactId(o.getServiceArtifactId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDeReferenceArtifactDetails model) {
+            if (model.wasPropertyExplicitlySet("serviceArtifactId")) {
+                this.serviceArtifactId(model.getServiceArtifactId());
+            }
+            return this;
         }
     }
 
@@ -103,8 +106,8 @@ public final class CreateDeReferenceArtifactDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateDeReferenceArtifactDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("serviceArtifactId=").append(String.valueOf(this.serviceArtifactId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -120,7 +123,7 @@ public final class CreateDeReferenceArtifactDetails {
 
         CreateDeReferenceArtifactDetails other = (CreateDeReferenceArtifactDetails) o;
         return java.util.Objects.equals(this.serviceArtifactId, other.serviceArtifactId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -130,16 +133,7 @@ public final class CreateDeReferenceArtifactDetails {
         result =
                 (result * PRIME)
                         + (this.serviceArtifactId == null ? 43 : this.serviceArtifactId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

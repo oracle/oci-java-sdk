@@ -19,7 +19,8 @@ package com.oracle.bmc.osmanagement.model;
     builder = InstalledPackageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstalledPackageSummary {
+public final class InstalledPackageSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -186,34 +187,49 @@ public final class InstalledPackageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstalledPackageSummary build() {
-            InstalledPackageSummary __instance__ =
+            InstalledPackageSummary model =
                     new InstalledPackageSummary(
-                            displayName,
-                            name,
-                            type,
-                            version,
-                            architecture,
-                            installTime,
-                            issued,
-                            softwareSources);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.name,
+                            this.type,
+                            this.version,
+                            this.architecture,
+                            this.installTime,
+                            this.issued,
+                            this.softwareSources);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstalledPackageSummary o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .name(o.getName())
-                            .type(o.getType())
-                            .version(o.getVersion())
-                            .architecture(o.getArchitecture())
-                            .installTime(o.getInstallTime())
-                            .issued(o.getIssued())
-                            .softwareSources(o.getSoftwareSources());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstalledPackageSummary model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("architecture")) {
+                this.architecture(model.getArchitecture());
+            }
+            if (model.wasPropertyExplicitlySet("installTime")) {
+                this.installTime(model.getInstallTime());
+            }
+            if (model.wasPropertyExplicitlySet("issued")) {
+                this.issued(model.getIssued());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSources")) {
+                this.softwareSources(model.getSoftwareSources());
+            }
+            return this;
         }
     }
 
@@ -353,6 +369,7 @@ public final class InstalledPackageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstalledPackageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -361,7 +378,6 @@ public final class InstalledPackageSummary {
         sb.append(", installTime=").append(String.valueOf(this.installTime));
         sb.append(", issued=").append(String.valueOf(this.issued));
         sb.append(", softwareSources=").append(String.valueOf(this.softwareSources));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -384,7 +400,7 @@ public final class InstalledPackageSummary {
                 && java.util.Objects.equals(this.installTime, other.installTime)
                 && java.util.Objects.equals(this.issued, other.issued)
                 && java.util.Objects.equals(this.softwareSources, other.softwareSources)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -401,16 +417,7 @@ public final class InstalledPackageSummary {
         result =
                 (result * PRIME)
                         + (this.softwareSources == null ? 43 : this.softwareSources.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

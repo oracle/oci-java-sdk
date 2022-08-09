@@ -130,8 +130,8 @@ public class ListCategoriesConverter {
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
                                                         .ListCategoriesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

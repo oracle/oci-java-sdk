@@ -19,7 +19,7 @@ package com.oracle.bmc.dts.model;
     builder = ApplianceExportJob.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApplianceExportJob {
+public final class ApplianceExportJob extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -604,83 +604,146 @@ public final class ApplianceExportJob {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApplianceExportJob build() {
-            ApplianceExportJob __instance__ =
+            ApplianceExportJob model =
                     new ApplianceExportJob(
-                            id,
-                            compartmentId,
-                            bucketName,
-                            displayName,
-                            creationTime,
-                            lifecycleState,
-                            lifecycleStateDetails,
-                            applianceSerialNumber,
-                            applianceDecryptionPassphrase,
-                            applianceDeliveryVendor,
-                            applianceDeliveryTrackingNumber,
-                            applianceReturnDeliveryTrackingNumber,
-                            sendingSecurityTie,
-                            receivingSecurityTie,
-                            prefix,
-                            rangeStart,
-                            rangeEnd,
-                            numberOfObjects,
-                            totalSizeInBytes,
-                            firstObject,
-                            lastObject,
-                            nextObject,
-                            manifestFile,
-                            manifestMd5,
-                            bucketAccessPolicies,
-                            returnShippingLabelUri,
-                            expectedReturnDate,
-                            pickupWindowStartTime,
-                            pickupWindowEndTime,
-                            customerShippingAddress,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.bucketName,
+                            this.displayName,
+                            this.creationTime,
+                            this.lifecycleState,
+                            this.lifecycleStateDetails,
+                            this.applianceSerialNumber,
+                            this.applianceDecryptionPassphrase,
+                            this.applianceDeliveryVendor,
+                            this.applianceDeliveryTrackingNumber,
+                            this.applianceReturnDeliveryTrackingNumber,
+                            this.sendingSecurityTie,
+                            this.receivingSecurityTie,
+                            this.prefix,
+                            this.rangeStart,
+                            this.rangeEnd,
+                            this.numberOfObjects,
+                            this.totalSizeInBytes,
+                            this.firstObject,
+                            this.lastObject,
+                            this.nextObject,
+                            this.manifestFile,
+                            this.manifestMd5,
+                            this.bucketAccessPolicies,
+                            this.returnShippingLabelUri,
+                            this.expectedReturnDate,
+                            this.pickupWindowStartTime,
+                            this.pickupWindowEndTime,
+                            this.customerShippingAddress,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApplianceExportJob o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .bucketName(o.getBucketName())
-                            .displayName(o.getDisplayName())
-                            .creationTime(o.getCreationTime())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleStateDetails(o.getLifecycleStateDetails())
-                            .applianceSerialNumber(o.getApplianceSerialNumber())
-                            .applianceDecryptionPassphrase(o.getApplianceDecryptionPassphrase())
-                            .applianceDeliveryVendor(o.getApplianceDeliveryVendor())
-                            .applianceDeliveryTrackingNumber(o.getApplianceDeliveryTrackingNumber())
-                            .applianceReturnDeliveryTrackingNumber(
-                                    o.getApplianceReturnDeliveryTrackingNumber())
-                            .sendingSecurityTie(o.getSendingSecurityTie())
-                            .receivingSecurityTie(o.getReceivingSecurityTie())
-                            .prefix(o.getPrefix())
-                            .rangeStart(o.getRangeStart())
-                            .rangeEnd(o.getRangeEnd())
-                            .numberOfObjects(o.getNumberOfObjects())
-                            .totalSizeInBytes(o.getTotalSizeInBytes())
-                            .firstObject(o.getFirstObject())
-                            .lastObject(o.getLastObject())
-                            .nextObject(o.getNextObject())
-                            .manifestFile(o.getManifestFile())
-                            .manifestMd5(o.getManifestMd5())
-                            .bucketAccessPolicies(o.getBucketAccessPolicies())
-                            .returnShippingLabelUri(o.getReturnShippingLabelUri())
-                            .expectedReturnDate(o.getExpectedReturnDate())
-                            .pickupWindowStartTime(o.getPickupWindowStartTime())
-                            .pickupWindowEndTime(o.getPickupWindowEndTime())
-                            .customerShippingAddress(o.getCustomerShippingAddress())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApplianceExportJob model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("creationTime")) {
+                this.creationTime(model.getCreationTime());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleStateDetails")) {
+                this.lifecycleStateDetails(model.getLifecycleStateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("applianceSerialNumber")) {
+                this.applianceSerialNumber(model.getApplianceSerialNumber());
+            }
+            if (model.wasPropertyExplicitlySet("applianceDecryptionPassphrase")) {
+                this.applianceDecryptionPassphrase(model.getApplianceDecryptionPassphrase());
+            }
+            if (model.wasPropertyExplicitlySet("applianceDeliveryVendor")) {
+                this.applianceDeliveryVendor(model.getApplianceDeliveryVendor());
+            }
+            if (model.wasPropertyExplicitlySet("applianceDeliveryTrackingNumber")) {
+                this.applianceDeliveryTrackingNumber(model.getApplianceDeliveryTrackingNumber());
+            }
+            if (model.wasPropertyExplicitlySet("applianceReturnDeliveryTrackingNumber")) {
+                this.applianceReturnDeliveryTrackingNumber(
+                        model.getApplianceReturnDeliveryTrackingNumber());
+            }
+            if (model.wasPropertyExplicitlySet("sendingSecurityTie")) {
+                this.sendingSecurityTie(model.getSendingSecurityTie());
+            }
+            if (model.wasPropertyExplicitlySet("receivingSecurityTie")) {
+                this.receivingSecurityTie(model.getReceivingSecurityTie());
+            }
+            if (model.wasPropertyExplicitlySet("prefix")) {
+                this.prefix(model.getPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("rangeStart")) {
+                this.rangeStart(model.getRangeStart());
+            }
+            if (model.wasPropertyExplicitlySet("rangeEnd")) {
+                this.rangeEnd(model.getRangeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfObjects")) {
+                this.numberOfObjects(model.getNumberOfObjects());
+            }
+            if (model.wasPropertyExplicitlySet("totalSizeInBytes")) {
+                this.totalSizeInBytes(model.getTotalSizeInBytes());
+            }
+            if (model.wasPropertyExplicitlySet("firstObject")) {
+                this.firstObject(model.getFirstObject());
+            }
+            if (model.wasPropertyExplicitlySet("lastObject")) {
+                this.lastObject(model.getLastObject());
+            }
+            if (model.wasPropertyExplicitlySet("nextObject")) {
+                this.nextObject(model.getNextObject());
+            }
+            if (model.wasPropertyExplicitlySet("manifestFile")) {
+                this.manifestFile(model.getManifestFile());
+            }
+            if (model.wasPropertyExplicitlySet("manifestMd5")) {
+                this.manifestMd5(model.getManifestMd5());
+            }
+            if (model.wasPropertyExplicitlySet("bucketAccessPolicies")) {
+                this.bucketAccessPolicies(model.getBucketAccessPolicies());
+            }
+            if (model.wasPropertyExplicitlySet("returnShippingLabelUri")) {
+                this.returnShippingLabelUri(model.getReturnShippingLabelUri());
+            }
+            if (model.wasPropertyExplicitlySet("expectedReturnDate")) {
+                this.expectedReturnDate(model.getExpectedReturnDate());
+            }
+            if (model.wasPropertyExplicitlySet("pickupWindowStartTime")) {
+                this.pickupWindowStartTime(model.getPickupWindowStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("pickupWindowEndTime")) {
+                this.pickupWindowEndTime(model.getPickupWindowEndTime());
+            }
+            if (model.wasPropertyExplicitlySet("customerShippingAddress")) {
+                this.customerShippingAddress(model.getCustomerShippingAddress());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -1169,6 +1232,7 @@ public final class ApplianceExportJob {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApplianceExportJob(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", bucketName=").append(String.valueOf(this.bucketName));
@@ -1206,7 +1270,6 @@ public final class ApplianceExportJob {
                 .append(String.valueOf(this.customerShippingAddress));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1260,7 +1323,7 @@ public final class ApplianceExportJob {
                         this.customerShippingAddress, other.customerShippingAddress)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1363,16 +1426,7 @@ public final class ApplianceExportJob {
                                 : this.customerShippingAddress.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

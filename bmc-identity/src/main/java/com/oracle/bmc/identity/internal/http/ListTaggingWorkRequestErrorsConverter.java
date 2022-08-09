@@ -130,8 +130,8 @@ public class ListTaggingWorkRequestErrorsConverter {
                                                 com.oracle.bmc.identity.responses
                                                         .ListTaggingWorkRequestErrorsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

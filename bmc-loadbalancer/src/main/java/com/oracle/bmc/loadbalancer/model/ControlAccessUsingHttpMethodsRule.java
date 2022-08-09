@@ -110,19 +110,23 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ControlAccessUsingHttpMethodsRule build() {
-            ControlAccessUsingHttpMethodsRule __instance__ =
-                    new ControlAccessUsingHttpMethodsRule(allowedMethods, statusCode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ControlAccessUsingHttpMethodsRule model =
+                    new ControlAccessUsingHttpMethodsRule(this.allowedMethods, this.statusCode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ControlAccessUsingHttpMethodsRule o) {
-            Builder copiedBuilder =
-                    allowedMethods(o.getAllowedMethods()).statusCode(o.getStatusCode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ControlAccessUsingHttpMethodsRule model) {
+            if (model.wasPropertyExplicitlySet("allowedMethods")) {
+                this.allowedMethods(model.getAllowedMethods());
+            }
+            if (model.wasPropertyExplicitlySet("statusCode")) {
+                this.statusCode(model.getStatusCode());
+            }
+            return this;
         }
     }
 
@@ -225,7 +229,6 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", allowedMethods=").append(String.valueOf(this.allowedMethods));
         sb.append(", statusCode=").append(String.valueOf(this.statusCode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -242,8 +245,7 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
         ControlAccessUsingHttpMethodsRule other = (ControlAccessUsingHttpMethodsRule) o;
         return java.util.Objects.equals(this.allowedMethods, other.allowedMethods)
                 && java.util.Objects.equals(this.statusCode, other.statusCode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -254,16 +256,6 @@ public final class ControlAccessUsingHttpMethodsRule extends Rule {
                 (result * PRIME)
                         + (this.allowedMethods == null ? 43 : this.allowedMethods.hashCode());
         result = (result * PRIME) + (this.statusCode == null ? 43 : this.statusCode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

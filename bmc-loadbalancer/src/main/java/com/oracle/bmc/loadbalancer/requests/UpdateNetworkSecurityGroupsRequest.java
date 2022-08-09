@@ -73,6 +73,37 @@ public class UpdateNetworkSecurityGroupsRequest
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+     * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+     * or POST response for any resource of that load balancer.
+     * <p>
+     * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+     * <p>
+     * The resource is updated or deleted only if the ETag you provide matches the resource's current
+     * ETag value.
+     * <p>
+     * Example: {@code example-etag}
+     *
+     */
+    private String ifMatch;
+
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+     * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+     * or POST response for any resource of that load balancer.
+     * <p>
+     * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+     * <p>
+     * The resource is updated or deleted only if the ETag you provide matches the resource's current
+     * ETag value.
+     * <p>
+     * Example: {@code example-etag}
+     *
+     */
+    public String getIfMatch() {
+        return ifMatch;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -170,6 +201,41 @@ public class UpdateNetworkSecurityGroupsRequest
         }
 
         /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+         * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+         * or POST response for any resource of that load balancer.
+         * <p>
+         * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+         * <p>
+         * The resource is updated or deleted only if the ETag you provide matches the resource's current
+         * ETag value.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         */
+        private String ifMatch = null;
+
+        /**
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+         * parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+         * or POST response for any resource of that load balancer.
+         * <p>
+         * For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+         * <p>
+         * The resource is updated or deleted only if the ETag you provide matches the resource's current
+         * ETag value.
+         * <p>
+         * Example: {@code example-etag}
+         *
+         * @param ifMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifMatch(String ifMatch) {
+            this.ifMatch = ifMatch;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -201,6 +267,7 @@ public class UpdateNetworkSecurityGroupsRequest
             loadBalancerId(o.getLoadBalancerId());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            ifMatch(o.getIfMatch());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -249,8 +316,9 @@ public class UpdateNetworkSecurityGroupsRequest
             request.loadBalancerId = loadBalancerId;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
+            request.ifMatch = ifMatch;
             return request;
-            // new UpdateNetworkSecurityGroupsRequest(updateNetworkSecurityGroupsDetails, loadBalancerId, opcRequestId, opcRetryToken);
+            // new UpdateNetworkSecurityGroupsRequest(updateNetworkSecurityGroupsDetails, loadBalancerId, opcRequestId, opcRetryToken, ifMatch);
         }
     }
 
@@ -263,7 +331,8 @@ public class UpdateNetworkSecurityGroupsRequest
                 .updateNetworkSecurityGroupsDetails(updateNetworkSecurityGroupsDetails)
                 .loadBalancerId(loadBalancerId)
                 .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .ifMatch(ifMatch);
     }
 
     /**
@@ -284,6 +353,7 @@ public class UpdateNetworkSecurityGroupsRequest
         sb.append(",loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(")");
         return sb.toString();
     }
@@ -304,7 +374,8 @@ public class UpdateNetworkSecurityGroupsRequest
                         other.updateNetworkSecurityGroupsDetails)
                 && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
     }
 
     @Override
@@ -323,6 +394,7 @@ public class UpdateNetworkSecurityGroupsRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         return result;
     }
 }

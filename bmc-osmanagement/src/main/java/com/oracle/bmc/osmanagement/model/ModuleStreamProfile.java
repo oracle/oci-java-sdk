@@ -19,7 +19,7 @@ package com.oracle.bmc.osmanagement.model;
     builder = ModuleStreamProfile.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ModuleStreamProfile {
+public final class ModuleStreamProfile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "moduleName",
@@ -156,25 +156,41 @@ public final class ModuleStreamProfile {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ModuleStreamProfile build() {
-            ModuleStreamProfile __instance__ =
+            ModuleStreamProfile model =
                     new ModuleStreamProfile(
-                            moduleName, streamName, profileName, isDefault, description, packages);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.moduleName,
+                            this.streamName,
+                            this.profileName,
+                            this.isDefault,
+                            this.description,
+                            this.packages);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ModuleStreamProfile o) {
-            Builder copiedBuilder =
-                    moduleName(o.getModuleName())
-                            .streamName(o.getStreamName())
-                            .profileName(o.getProfileName())
-                            .isDefault(o.getIsDefault())
-                            .description(o.getDescription())
-                            .packages(o.getPackages());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ModuleStreamProfile model) {
+            if (model.wasPropertyExplicitlySet("moduleName")) {
+                this.moduleName(model.getModuleName());
+            }
+            if (model.wasPropertyExplicitlySet("streamName")) {
+                this.streamName(model.getStreamName());
+            }
+            if (model.wasPropertyExplicitlySet("profileName")) {
+                this.profileName(model.getProfileName());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("packages")) {
+                this.packages(model.getPackages());
+            }
+            return this;
         }
     }
 
@@ -294,13 +310,13 @@ public final class ModuleStreamProfile {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ModuleStreamProfile(");
+        sb.append("super=").append(super.toString());
         sb.append("moduleName=").append(String.valueOf(this.moduleName));
         sb.append(", streamName=").append(String.valueOf(this.streamName));
         sb.append(", profileName=").append(String.valueOf(this.profileName));
         sb.append(", isDefault=").append(String.valueOf(this.isDefault));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", packages=").append(String.valueOf(this.packages));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -321,7 +337,7 @@ public final class ModuleStreamProfile {
                 && java.util.Objects.equals(this.isDefault, other.isDefault)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.packages, other.packages)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -334,16 +350,7 @@ public final class ModuleStreamProfile {
         result = (result * PRIME) + (this.isDefault == null ? 43 : this.isDefault.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

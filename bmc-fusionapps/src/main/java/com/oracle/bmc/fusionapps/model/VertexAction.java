@@ -72,22 +72,30 @@ public final class VertexAction extends Action {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VertexAction build() {
-            VertexAction __instance__ =
-                    new VertexAction(referenceKey, state, description, artifact);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VertexAction model =
+                    new VertexAction(
+                            this.referenceKey, this.state, this.description, this.artifact);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VertexAction o) {
-            Builder copiedBuilder =
-                    referenceKey(o.getReferenceKey())
-                            .state(o.getState())
-                            .description(o.getDescription())
-                            .artifact(o.getArtifact());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VertexAction model) {
+            if (model.wasPropertyExplicitlySet("referenceKey")) {
+                this.referenceKey(model.getReferenceKey());
+            }
+            if (model.wasPropertyExplicitlySet("state")) {
+                this.state(model.getState());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("artifact")) {
+                this.artifact(model.getArtifact());
+            }
+            return this;
         }
     }
 
@@ -137,7 +145,6 @@ public final class VertexAction extends Action {
         sb.append("VertexAction(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", artifact=").append(String.valueOf(this.artifact));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,9 +159,7 @@ public final class VertexAction extends Action {
         }
 
         VertexAction other = (VertexAction) o;
-        return java.util.Objects.equals(this.artifact, other.artifact)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.artifact, other.artifact) && super.equals(other);
     }
 
     @Override
@@ -162,16 +167,6 @@ public final class VertexAction extends Action {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.artifact == null ? 43 : this.artifact.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

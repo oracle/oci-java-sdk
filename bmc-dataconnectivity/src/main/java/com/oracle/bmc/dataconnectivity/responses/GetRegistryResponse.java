@@ -53,13 +53,20 @@ public class GetRegistryResponse extends com.oracle.bmc.responses.BmcResponse {
         return registry;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "registry"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "registry"
+    })
     private GetRegistryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataconnectivity.model.Registry registry) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.registry = registry;
@@ -70,6 +77,13 @@ public class GetRegistryResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetRegistryResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(GetRegistryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             registry(o.getRegistry());
@@ -142,7 +157,8 @@ public class GetRegistryResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         public GetRegistryResponse build() {
-            return new GetRegistryResponse(__httpStatusCode__, etag, opcRequestId, registry);
+            return new GetRegistryResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, registry);
         }
     }
 

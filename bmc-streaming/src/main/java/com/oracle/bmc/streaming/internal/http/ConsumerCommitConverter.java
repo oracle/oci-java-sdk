@@ -110,8 +110,8 @@ public class ConsumerCommitConverter {
                                         builder =
                                                 com.oracle.bmc.streaming.responses
                                                         .ConsumerCommitResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.cursor(response.getItem());
 

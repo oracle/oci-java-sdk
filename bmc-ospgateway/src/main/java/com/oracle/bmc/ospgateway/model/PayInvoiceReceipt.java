@@ -19,7 +19,7 @@ package com.oracle.bmc.ospgateway.model;
     builder = PayInvoiceReceipt.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PayInvoiceReceipt {
+public final class PayInvoiceReceipt extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"url", "headerId", "token"})
     public PayInvoiceReceipt(String url, String headerId, String token) {
@@ -84,17 +84,25 @@ public final class PayInvoiceReceipt {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PayInvoiceReceipt build() {
-            PayInvoiceReceipt __instance__ = new PayInvoiceReceipt(url, headerId, token);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PayInvoiceReceipt model = new PayInvoiceReceipt(this.url, this.headerId, this.token);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PayInvoiceReceipt o) {
-            Builder copiedBuilder = url(o.getUrl()).headerId(o.getHeaderId()).token(o.getToken());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PayInvoiceReceipt model) {
+            if (model.wasPropertyExplicitlySet("url")) {
+                this.url(model.getUrl());
+            }
+            if (model.wasPropertyExplicitlySet("headerId")) {
+                this.headerId(model.getHeaderId());
+            }
+            if (model.wasPropertyExplicitlySet("token")) {
+                this.token(model.getToken());
+            }
+            return this;
         }
     }
 
@@ -164,10 +172,10 @@ public final class PayInvoiceReceipt {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PayInvoiceReceipt(");
+        sb.append("super=").append(super.toString());
         sb.append("url=").append(String.valueOf(this.url));
         sb.append(", headerId=").append(String.valueOf(this.headerId));
         sb.append(", token=").append(String.valueOf(this.token));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -185,7 +193,7 @@ public final class PayInvoiceReceipt {
         return java.util.Objects.equals(this.url, other.url)
                 && java.util.Objects.equals(this.headerId, other.headerId)
                 && java.util.Objects.equals(this.token, other.token)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -195,16 +203,7 @@ public final class PayInvoiceReceipt {
         result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
         result = (result * PRIME) + (this.headerId == null ? 43 : this.headerId.hashCode());
         result = (result * PRIME) + (this.token == null ? 43 : this.token.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

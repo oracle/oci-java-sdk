@@ -78,6 +78,7 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcPreviousPage",
         "opcRequestId",
@@ -85,12 +86,13 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private ListAnnouncementsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcPreviousPage,
             String opcRequestId,
             com.oracle.bmc.announcementsservice.model.AnnouncementsCollection
                     announcementsCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcPreviousPage = opcPreviousPage;
         this.opcRequestId = opcRequestId;
@@ -102,6 +104,13 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -188,6 +197,7 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(ListAnnouncementsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcPreviousPage(o.getOpcPreviousPage());
             opcRequestId(o.getOpcRequestId());
@@ -203,6 +213,7 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
         public ListAnnouncementsResponse build() {
             return new ListAnnouncementsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcNextPage,
                     opcPreviousPage,
                     opcRequestId,

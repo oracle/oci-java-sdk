@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = DatabaseConnectionStrings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DatabaseConnectionStrings {
+public final class DatabaseConnectionStrings
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"cdbDefault", "cdbIpDefault", "allConnectionStrings"})
     public DatabaseConnectionStrings(
@@ -88,21 +89,27 @@ public final class DatabaseConnectionStrings {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseConnectionStrings build() {
-            DatabaseConnectionStrings __instance__ =
-                    new DatabaseConnectionStrings(cdbDefault, cdbIpDefault, allConnectionStrings);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DatabaseConnectionStrings model =
+                    new DatabaseConnectionStrings(
+                            this.cdbDefault, this.cdbIpDefault, this.allConnectionStrings);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DatabaseConnectionStrings o) {
-            Builder copiedBuilder =
-                    cdbDefault(o.getCdbDefault())
-                            .cdbIpDefault(o.getCdbIpDefault())
-                            .allConnectionStrings(o.getAllConnectionStrings());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DatabaseConnectionStrings model) {
+            if (model.wasPropertyExplicitlySet("cdbDefault")) {
+                this.cdbDefault(model.getCdbDefault());
+            }
+            if (model.wasPropertyExplicitlySet("cdbIpDefault")) {
+                this.cdbIpDefault(model.getCdbIpDefault());
+            }
+            if (model.wasPropertyExplicitlySet("allConnectionStrings")) {
+                this.allConnectionStrings(model.getAllConnectionStrings());
+            }
+            return this;
         }
     }
 
@@ -172,10 +179,10 @@ public final class DatabaseConnectionStrings {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DatabaseConnectionStrings(");
+        sb.append("super=").append(super.toString());
         sb.append("cdbDefault=").append(String.valueOf(this.cdbDefault));
         sb.append(", cdbIpDefault=").append(String.valueOf(this.cdbIpDefault));
         sb.append(", allConnectionStrings=").append(String.valueOf(this.allConnectionStrings));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -193,7 +200,7 @@ public final class DatabaseConnectionStrings {
         return java.util.Objects.equals(this.cdbDefault, other.cdbDefault)
                 && java.util.Objects.equals(this.cdbIpDefault, other.cdbIpDefault)
                 && java.util.Objects.equals(this.allConnectionStrings, other.allConnectionStrings)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -207,16 +214,7 @@ public final class DatabaseConnectionStrings {
                         + (this.allConnectionStrings == null
                                 ? 43
                                 : this.allConnectionStrings.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

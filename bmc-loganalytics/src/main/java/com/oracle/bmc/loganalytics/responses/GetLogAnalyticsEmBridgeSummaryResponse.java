@@ -40,15 +40,17 @@ public class GetLogAnalyticsEmBridgeSummaryResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "logAnalyticsEmBridgeSummaryReport"
     })
     private GetLogAnalyticsEmBridgeSummaryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeSummaryReport
                     logAnalyticsEmBridgeSummaryReport) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.logAnalyticsEmBridgeSummaryReport = logAnalyticsEmBridgeSummaryReport;
     }
@@ -58,6 +60,13 @@ public class GetLogAnalyticsEmBridgeSummaryResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -102,6 +111,7 @@ public class GetLogAnalyticsEmBridgeSummaryResponse extends com.oracle.bmc.respo
          */
         public Builder copy(GetLogAnalyticsEmBridgeSummaryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             logAnalyticsEmBridgeSummaryReport(o.getLogAnalyticsEmBridgeSummaryReport());
 
@@ -114,7 +124,7 @@ public class GetLogAnalyticsEmBridgeSummaryResponse extends com.oracle.bmc.respo
          */
         public GetLogAnalyticsEmBridgeSummaryResponse build() {
             return new GetLogAnalyticsEmBridgeSummaryResponse(
-                    __httpStatusCode__, opcRequestId, logAnalyticsEmBridgeSummaryReport);
+                    __httpStatusCode__, headers, opcRequestId, logAnalyticsEmBridgeSummaryReport);
         }
     }
 

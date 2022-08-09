@@ -120,8 +120,8 @@ public class ActivateMfaTotpDeviceConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .ActivateMfaTotpDeviceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.mfaTotpDeviceSummary(response.getItem());
 

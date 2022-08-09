@@ -20,7 +20,8 @@ package com.oracle.bmc.opsi.model;
     builder = SummarizeHostInsightResourceUtilizationInsightAggregation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SummarizeHostInsightResourceUtilizationInsightAggregation {
+public final class SummarizeHostInsightResourceUtilizationInsightAggregation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeIntervalStart",
@@ -119,28 +120,37 @@ public final class SummarizeHostInsightResourceUtilizationInsightAggregation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SummarizeHostInsightResourceUtilizationInsightAggregation build() {
-            SummarizeHostInsightResourceUtilizationInsightAggregation __instance__ =
+            SummarizeHostInsightResourceUtilizationInsightAggregation model =
                     new SummarizeHostInsightResourceUtilizationInsightAggregation(
-                            timeIntervalStart,
-                            timeIntervalEnd,
-                            resourceMetric,
-                            projectedUtilization,
-                            currentUtilization);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeIntervalStart,
+                            this.timeIntervalEnd,
+                            this.resourceMetric,
+                            this.projectedUtilization,
+                            this.currentUtilization);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SummarizeHostInsightResourceUtilizationInsightAggregation o) {
-            Builder copiedBuilder =
-                    timeIntervalStart(o.getTimeIntervalStart())
-                            .timeIntervalEnd(o.getTimeIntervalEnd())
-                            .resourceMetric(o.getResourceMetric())
-                            .projectedUtilization(o.getProjectedUtilization())
-                            .currentUtilization(o.getCurrentUtilization());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SummarizeHostInsightResourceUtilizationInsightAggregation model) {
+            if (model.wasPropertyExplicitlySet("timeIntervalStart")) {
+                this.timeIntervalStart(model.getTimeIntervalStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeIntervalEnd")) {
+                this.timeIntervalEnd(model.getTimeIntervalEnd());
+            }
+            if (model.wasPropertyExplicitlySet("resourceMetric")) {
+                this.resourceMetric(model.getResourceMetric());
+            }
+            if (model.wasPropertyExplicitlySet("projectedUtilization")) {
+                this.projectedUtilization(model.getProjectedUtilization());
+            }
+            if (model.wasPropertyExplicitlySet("currentUtilization")) {
+                this.currentUtilization(model.getCurrentUtilization());
+            }
+            return this;
         }
     }
 
@@ -276,12 +286,12 @@ public final class SummarizeHostInsightResourceUtilizationInsightAggregation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SummarizeHostInsightResourceUtilizationInsightAggregation(");
+        sb.append("super=").append(super.toString());
         sb.append("timeIntervalStart=").append(String.valueOf(this.timeIntervalStart));
         sb.append(", timeIntervalEnd=").append(String.valueOf(this.timeIntervalEnd));
         sb.append(", resourceMetric=").append(String.valueOf(this.resourceMetric));
         sb.append(", projectedUtilization=").append(String.valueOf(this.projectedUtilization));
         sb.append(", currentUtilization=").append(String.valueOf(this.currentUtilization));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -302,7 +312,7 @@ public final class SummarizeHostInsightResourceUtilizationInsightAggregation {
                 && java.util.Objects.equals(this.resourceMetric, other.resourceMetric)
                 && java.util.Objects.equals(this.projectedUtilization, other.projectedUtilization)
                 && java.util.Objects.equals(this.currentUtilization, other.currentUtilization)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -328,16 +338,7 @@ public final class SummarizeHostInsightResourceUtilizationInsightAggregation {
                         + (this.currentUtilization == null
                                 ? 43
                                 : this.currentUtilization.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

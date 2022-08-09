@@ -105,8 +105,8 @@ public class CreateBucketConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .CreateBucketResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.bucket(response.getItem());
 

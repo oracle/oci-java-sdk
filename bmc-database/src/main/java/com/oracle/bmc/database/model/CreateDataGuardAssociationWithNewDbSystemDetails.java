@@ -487,68 +487,117 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDataGuardAssociationWithNewDbSystemDetails build() {
-            CreateDataGuardAssociationWithNewDbSystemDetails __instance__ =
+            CreateDataGuardAssociationWithNewDbSystemDetails model =
                     new CreateDataGuardAssociationWithNewDbSystemDetails(
-                            databaseSoftwareImageId,
-                            databaseAdminPassword,
-                            protectionMode,
-                            transportType,
-                            isActiveDataGuardEnabled,
-                            peerDbUniqueName,
-                            peerSidPrefix,
-                            displayName,
-                            availabilityDomain,
-                            shape,
-                            cpuCoreCount,
-                            storageVolumePerformanceMode,
-                            nodeCount,
-                            subnetId,
-                            nsgIds,
-                            backupNetworkNsgIds,
-                            hostname,
-                            timeZone,
-                            faultDomains,
-                            privateIp,
-                            licenseModel,
-                            dbSystemFreeformTags,
-                            dbSystemDefinedTags,
-                            databaseFreeformTags,
-                            databaseDefinedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.databaseSoftwareImageId,
+                            this.databaseAdminPassword,
+                            this.protectionMode,
+                            this.transportType,
+                            this.isActiveDataGuardEnabled,
+                            this.peerDbUniqueName,
+                            this.peerSidPrefix,
+                            this.displayName,
+                            this.availabilityDomain,
+                            this.shape,
+                            this.cpuCoreCount,
+                            this.storageVolumePerformanceMode,
+                            this.nodeCount,
+                            this.subnetId,
+                            this.nsgIds,
+                            this.backupNetworkNsgIds,
+                            this.hostname,
+                            this.timeZone,
+                            this.faultDomains,
+                            this.privateIp,
+                            this.licenseModel,
+                            this.dbSystemFreeformTags,
+                            this.dbSystemDefinedTags,
+                            this.databaseFreeformTags,
+                            this.databaseDefinedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDataGuardAssociationWithNewDbSystemDetails o) {
-            Builder copiedBuilder =
-                    databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
-                            .databaseAdminPassword(o.getDatabaseAdminPassword())
-                            .protectionMode(o.getProtectionMode())
-                            .transportType(o.getTransportType())
-                            .isActiveDataGuardEnabled(o.getIsActiveDataGuardEnabled())
-                            .peerDbUniqueName(o.getPeerDbUniqueName())
-                            .peerSidPrefix(o.getPeerSidPrefix())
-                            .displayName(o.getDisplayName())
-                            .availabilityDomain(o.getAvailabilityDomain())
-                            .shape(o.getShape())
-                            .cpuCoreCount(o.getCpuCoreCount())
-                            .storageVolumePerformanceMode(o.getStorageVolumePerformanceMode())
-                            .nodeCount(o.getNodeCount())
-                            .subnetId(o.getSubnetId())
-                            .nsgIds(o.getNsgIds())
-                            .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
-                            .hostname(o.getHostname())
-                            .timeZone(o.getTimeZone())
-                            .faultDomains(o.getFaultDomains())
-                            .privateIp(o.getPrivateIp())
-                            .licenseModel(o.getLicenseModel())
-                            .dbSystemFreeformTags(o.getDbSystemFreeformTags())
-                            .dbSystemDefinedTags(o.getDbSystemDefinedTags())
-                            .databaseFreeformTags(o.getDatabaseFreeformTags())
-                            .databaseDefinedTags(o.getDatabaseDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDataGuardAssociationWithNewDbSystemDetails model) {
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
+                this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseAdminPassword")) {
+                this.databaseAdminPassword(model.getDatabaseAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("transportType")) {
+                this.transportType(model.getTransportType());
+            }
+            if (model.wasPropertyExplicitlySet("isActiveDataGuardEnabled")) {
+                this.isActiveDataGuardEnabled(model.getIsActiveDataGuardEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("peerDbUniqueName")) {
+                this.peerDbUniqueName(model.getPeerDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("peerSidPrefix")) {
+                this.peerSidPrefix(model.getPeerSidPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
+                this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("storageVolumePerformanceMode")) {
+                this.storageVolumePerformanceMode(model.getStorageVolumePerformanceMode());
+            }
+            if (model.wasPropertyExplicitlySet("nodeCount")) {
+                this.nodeCount(model.getNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("backupNetworkNsgIds")) {
+                this.backupNetworkNsgIds(model.getBackupNetworkNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("timeZone")) {
+                this.timeZone(model.getTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("faultDomains")) {
+                this.faultDomains(model.getFaultDomains());
+            }
+            if (model.wasPropertyExplicitlySet("privateIp")) {
+                this.privateIp(model.getPrivateIp());
+            }
+            if (model.wasPropertyExplicitlySet("licenseModel")) {
+                this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("dbSystemFreeformTags")) {
+                this.dbSystemFreeformTags(model.getDbSystemFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("dbSystemDefinedTags")) {
+                this.dbSystemDefinedTags(model.getDbSystemDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("databaseFreeformTags")) {
+                this.databaseFreeformTags(model.getDatabaseFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("databaseDefinedTags")) {
+                this.databaseDefinedTags(model.getDatabaseDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -1073,7 +1122,6 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         sb.append(", dbSystemDefinedTags=").append(String.valueOf(this.dbSystemDefinedTags));
         sb.append(", databaseFreeformTags=").append(String.valueOf(this.databaseFreeformTags));
         sb.append(", databaseDefinedTags=").append(String.valueOf(this.databaseDefinedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1108,8 +1156,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                 && java.util.Objects.equals(this.dbSystemDefinedTags, other.dbSystemDefinedTags)
                 && java.util.Objects.equals(this.databaseFreeformTags, other.databaseFreeformTags)
                 && java.util.Objects.equals(this.databaseDefinedTags, other.databaseDefinedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -1162,16 +1209,6 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                         + (this.databaseDefinedTags == null
                                 ? 43
                                 : this.databaseDefinedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

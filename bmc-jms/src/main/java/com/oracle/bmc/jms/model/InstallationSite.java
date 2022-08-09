@@ -19,7 +19,7 @@ package com.oracle.bmc.jms.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InstallationSite.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstallationSite {
+public final class InstallationSite extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "installationKey",
@@ -239,40 +239,61 @@ public final class InstallationSite {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstallationSite build() {
-            InstallationSite __instance__ =
+            InstallationSite model =
                     new InstallationSite(
-                            installationKey,
-                            managedInstanceId,
-                            jre,
-                            path,
-                            operatingSystem,
-                            approximateApplicationCount,
-                            timeLastSeen,
-                            blocklist,
-                            lifecycleState,
-                            managedInstanceType,
-                            hostname);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.installationKey,
+                            this.managedInstanceId,
+                            this.jre,
+                            this.path,
+                            this.operatingSystem,
+                            this.approximateApplicationCount,
+                            this.timeLastSeen,
+                            this.blocklist,
+                            this.lifecycleState,
+                            this.managedInstanceType,
+                            this.hostname);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstallationSite o) {
-            Builder copiedBuilder =
-                    installationKey(o.getInstallationKey())
-                            .managedInstanceId(o.getManagedInstanceId())
-                            .jre(o.getJre())
-                            .path(o.getPath())
-                            .operatingSystem(o.getOperatingSystem())
-                            .approximateApplicationCount(o.getApproximateApplicationCount())
-                            .timeLastSeen(o.getTimeLastSeen())
-                            .blocklist(o.getBlocklist())
-                            .lifecycleState(o.getLifecycleState())
-                            .managedInstanceType(o.getManagedInstanceType())
-                            .hostname(o.getHostname());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstallationSite model) {
+            if (model.wasPropertyExplicitlySet("installationKey")) {
+                this.installationKey(model.getInstallationKey());
+            }
+            if (model.wasPropertyExplicitlySet("managedInstanceId")) {
+                this.managedInstanceId(model.getManagedInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("jre")) {
+                this.jre(model.getJre());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystem")) {
+                this.operatingSystem(model.getOperatingSystem());
+            }
+            if (model.wasPropertyExplicitlySet("approximateApplicationCount")) {
+                this.approximateApplicationCount(model.getApproximateApplicationCount());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSeen")) {
+                this.timeLastSeen(model.getTimeLastSeen());
+            }
+            if (model.wasPropertyExplicitlySet("blocklist")) {
+                this.blocklist(model.getBlocklist());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("managedInstanceType")) {
+                this.managedInstanceType(model.getManagedInstanceType());
+            }
+            if (model.wasPropertyExplicitlySet("hostname")) {
+                this.hostname(model.getHostname());
+            }
+            return this;
         }
     }
 
@@ -450,6 +471,7 @@ public final class InstallationSite {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstallationSite(");
+        sb.append("super=").append(super.toString());
         sb.append("installationKey=").append(String.valueOf(this.installationKey));
         sb.append(", managedInstanceId=").append(String.valueOf(this.managedInstanceId));
         sb.append(", jre=").append(String.valueOf(this.jre));
@@ -462,7 +484,6 @@ public final class InstallationSite {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", managedInstanceType=").append(String.valueOf(this.managedInstanceType));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -489,7 +510,7 @@ public final class InstallationSite {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.managedInstanceType, other.managedInstanceType)
                 && java.util.Objects.equals(this.hostname, other.hostname)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -523,16 +544,7 @@ public final class InstallationSite {
                                 ? 43
                                 : this.managedInstanceType.hashCode());
         result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

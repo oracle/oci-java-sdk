@@ -59,16 +59,18 @@ public class ListQueriesResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "queryCollection"
     })
     private ListQueriesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.usageapi.model.QueryCollection queryCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.queryCollection = queryCollection;
@@ -79,6 +81,13 @@ public class ListQueriesResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class ListQueriesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListQueriesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             queryCollection(o.getQueryCollection());
@@ -157,7 +167,7 @@ public class ListQueriesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListQueriesResponse build() {
             return new ListQueriesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, queryCollection);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, queryCollection);
         }
     }
 

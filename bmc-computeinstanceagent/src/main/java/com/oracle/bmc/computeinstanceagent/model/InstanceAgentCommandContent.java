@@ -19,7 +19,8 @@ package com.oracle.bmc.computeinstanceagent.model;
     builder = InstanceAgentCommandContent.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceAgentCommandContent {
+public final class InstanceAgentCommandContent
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"source", "output"})
     public InstanceAgentCommandContent(
@@ -68,18 +69,23 @@ public final class InstanceAgentCommandContent {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceAgentCommandContent build() {
-            InstanceAgentCommandContent __instance__ =
-                    new InstanceAgentCommandContent(source, output);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            InstanceAgentCommandContent model =
+                    new InstanceAgentCommandContent(this.source, this.output);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceAgentCommandContent o) {
-            Builder copiedBuilder = source(o.getSource()).output(o.getOutput());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceAgentCommandContent model) {
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("output")) {
+                this.output(model.getOutput());
+            }
+            return this;
         }
     }
 
@@ -135,9 +141,9 @@ public final class InstanceAgentCommandContent {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceAgentCommandContent(");
+        sb.append("super=").append(super.toString());
         sb.append("source=").append(String.valueOf(this.source));
         sb.append(", output=").append(String.valueOf(this.output));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,7 +160,7 @@ public final class InstanceAgentCommandContent {
         InstanceAgentCommandContent other = (InstanceAgentCommandContent) o;
         return java.util.Objects.equals(this.source, other.source)
                 && java.util.Objects.equals(this.output, other.output)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -163,16 +169,7 @@ public final class InstanceAgentCommandContent {
         int result = 1;
         result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
         result = (result * PRIME) + (this.output == null ? 43 : this.output.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = InstanceConfigurationAvailabilityConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceConfigurationAvailabilityConfig {
+public final class InstanceConfigurationAvailabilityConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"recoveryAction"})
     public InstanceConfigurationAvailabilityConfig(RecoveryAction recoveryAction) {
@@ -59,18 +60,20 @@ public final class InstanceConfigurationAvailabilityConfig {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceConfigurationAvailabilityConfig build() {
-            InstanceConfigurationAvailabilityConfig __instance__ =
-                    new InstanceConfigurationAvailabilityConfig(recoveryAction);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            InstanceConfigurationAvailabilityConfig model =
+                    new InstanceConfigurationAvailabilityConfig(this.recoveryAction);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceConfigurationAvailabilityConfig o) {
-            Builder copiedBuilder = recoveryAction(o.getRecoveryAction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceConfigurationAvailabilityConfig model) {
+            if (model.wasPropertyExplicitlySet("recoveryAction")) {
+                this.recoveryAction(model.getRecoveryAction());
+            }
+            return this;
         }
     }
 
@@ -172,8 +175,8 @@ public final class InstanceConfigurationAvailabilityConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceConfigurationAvailabilityConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("recoveryAction=").append(String.valueOf(this.recoveryAction));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -189,7 +192,7 @@ public final class InstanceConfigurationAvailabilityConfig {
 
         InstanceConfigurationAvailabilityConfig other = (InstanceConfigurationAvailabilityConfig) o;
         return java.util.Objects.equals(this.recoveryAction, other.recoveryAction)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -199,16 +202,7 @@ public final class InstanceConfigurationAvailabilityConfig {
         result =
                 (result * PRIME)
                         + (this.recoveryAction == null ? 43 : this.recoveryAction.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

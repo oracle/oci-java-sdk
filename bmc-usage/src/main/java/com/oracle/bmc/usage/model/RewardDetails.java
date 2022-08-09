@@ -17,7 +17,7 @@ package com.oracle.bmc.usage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RewardDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RewardDetails {
+public final class RewardDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tenancyId",
@@ -146,30 +146,41 @@ public final class RewardDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RewardDetails build() {
-            RewardDetails __instance__ =
+            RewardDetails model =
                     new RewardDetails(
-                            tenancyId,
-                            subscriptionId,
-                            currency,
-                            rewardsRate,
-                            totalRewardsAvailable,
-                            redemptionCode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.tenancyId,
+                            this.subscriptionId,
+                            this.currency,
+                            this.rewardsRate,
+                            this.totalRewardsAvailable,
+                            this.redemptionCode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RewardDetails o) {
-            Builder copiedBuilder =
-                    tenancyId(o.getTenancyId())
-                            .subscriptionId(o.getSubscriptionId())
-                            .currency(o.getCurrency())
-                            .rewardsRate(o.getRewardsRate())
-                            .totalRewardsAvailable(o.getTotalRewardsAvailable())
-                            .redemptionCode(o.getRedemptionCode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RewardDetails model) {
+            if (model.wasPropertyExplicitlySet("tenancyId")) {
+                this.tenancyId(model.getTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
+            if (model.wasPropertyExplicitlySet("currency")) {
+                this.currency(model.getCurrency());
+            }
+            if (model.wasPropertyExplicitlySet("rewardsRate")) {
+                this.rewardsRate(model.getRewardsRate());
+            }
+            if (model.wasPropertyExplicitlySet("totalRewardsAvailable")) {
+                this.totalRewardsAvailable(model.getTotalRewardsAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("redemptionCode")) {
+                this.redemptionCode(model.getRedemptionCode());
+            }
+            return this;
         }
     }
 
@@ -281,13 +292,13 @@ public final class RewardDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RewardDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", currency=").append(String.valueOf(this.currency));
         sb.append(", rewardsRate=").append(String.valueOf(this.rewardsRate));
         sb.append(", totalRewardsAvailable=").append(String.valueOf(this.totalRewardsAvailable));
         sb.append(", redemptionCode=").append(String.valueOf(this.redemptionCode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -308,7 +319,7 @@ public final class RewardDetails {
                 && java.util.Objects.equals(this.rewardsRate, other.rewardsRate)
                 && java.util.Objects.equals(this.totalRewardsAvailable, other.totalRewardsAvailable)
                 && java.util.Objects.equals(this.redemptionCode, other.redemptionCode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -329,16 +340,7 @@ public final class RewardDetails {
         result =
                 (result * PRIME)
                         + (this.redemptionCode == null ? 43 : this.redemptionCode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

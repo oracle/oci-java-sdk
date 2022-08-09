@@ -160,8 +160,8 @@ public class ListAuditTrailAnalyticsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListAuditTrailAnalyticsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.auditTrailAnalyticCollection(response.getItem());
 

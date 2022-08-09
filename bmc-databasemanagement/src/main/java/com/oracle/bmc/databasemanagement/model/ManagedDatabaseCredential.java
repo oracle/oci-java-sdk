@@ -32,7 +32,7 @@ package com.oracle.bmc.databasemanagement.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ManagedDatabaseCredential {
+public class ManagedDatabaseCredential extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"username", "role"})
     protected ManagedDatabaseCredential(String username, Role role) {
@@ -117,6 +117,7 @@ public class ManagedDatabaseCredential {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ManagedDatabaseCredential(");
+        sb.append("super=").append(super.toString());
         sb.append("username=").append(String.valueOf(this.username));
         sb.append(", role=").append(String.valueOf(this.role));
         sb.append(")");
@@ -134,7 +135,8 @@ public class ManagedDatabaseCredential {
 
         ManagedDatabaseCredential other = (ManagedDatabaseCredential) o;
         return java.util.Objects.equals(this.username, other.username)
-                && java.util.Objects.equals(this.role, other.role);
+                && java.util.Objects.equals(this.role, other.role)
+                && super.equals(other);
     }
 
     @Override
@@ -143,6 +145,7 @@ public class ManagedDatabaseCredential {
         int result = 1;
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

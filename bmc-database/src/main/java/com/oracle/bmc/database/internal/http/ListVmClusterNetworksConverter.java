@@ -170,8 +170,8 @@ public class ListVmClusterNetworksConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListVmClusterNetworksResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

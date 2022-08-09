@@ -17,7 +17,7 @@ package com.oracle.bmc.identitydataplane.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = User.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class User {
+public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "name", "isOTP", "isMfaActivated", "isMfaVerified"})
     public User(
@@ -117,22 +117,37 @@ public final class User {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public User build() {
-            User __instance__ = new User(id, name, isOTP, isMfaActivated, isMfaVerified);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            User model =
+                    new User(
+                            this.id,
+                            this.name,
+                            this.isOTP,
+                            this.isMfaActivated,
+                            this.isMfaVerified);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(User o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .isOTP(o.getIsOTP())
-                            .isMfaActivated(o.getIsMfaActivated())
-                            .isMfaVerified(o.getIsMfaVerified());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(User model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("isOTP")) {
+                this.isOTP(model.getIsOTP());
+            }
+            if (model.wasPropertyExplicitlySet("isMfaActivated")) {
+                this.isMfaActivated(model.getIsMfaActivated());
+            }
+            if (model.wasPropertyExplicitlySet("isMfaVerified")) {
+                this.isMfaVerified(model.getIsMfaVerified());
+            }
+            return this;
         }
     }
 
@@ -230,12 +245,12 @@ public final class User {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("User(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", isOTP=").append(String.valueOf(this.isOTP));
         sb.append(", isMfaActivated=").append(String.valueOf(this.isMfaActivated));
         sb.append(", isMfaVerified=").append(String.valueOf(this.isMfaVerified));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -255,7 +270,7 @@ public final class User {
                 && java.util.Objects.equals(this.isOTP, other.isOTP)
                 && java.util.Objects.equals(this.isMfaActivated, other.isMfaActivated)
                 && java.util.Objects.equals(this.isMfaVerified, other.isMfaVerified)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -271,16 +286,7 @@ public final class User {
         result =
                 (result * PRIME)
                         + (this.isMfaVerified == null ? 43 : this.isMfaVerified.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

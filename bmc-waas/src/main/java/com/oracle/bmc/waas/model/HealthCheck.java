@@ -18,7 +18,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HealthCheck.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HealthCheck {
+public final class HealthCheck extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -255,40 +255,61 @@ public final class HealthCheck {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HealthCheck build() {
-            HealthCheck __instance__ =
+            HealthCheck model =
                     new HealthCheck(
-                            isEnabled,
-                            method,
-                            path,
-                            headers,
-                            expectedResponseCodeGroup,
-                            isResponseTextCheckEnabled,
-                            expectedResponseText,
-                            intervalInSeconds,
-                            timeoutInSeconds,
-                            healthyThreshold,
-                            unhealthyThreshold);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isEnabled,
+                            this.method,
+                            this.path,
+                            this.headers,
+                            this.expectedResponseCodeGroup,
+                            this.isResponseTextCheckEnabled,
+                            this.expectedResponseText,
+                            this.intervalInSeconds,
+                            this.timeoutInSeconds,
+                            this.healthyThreshold,
+                            this.unhealthyThreshold);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HealthCheck o) {
-            Builder copiedBuilder =
-                    isEnabled(o.getIsEnabled())
-                            .method(o.getMethod())
-                            .path(o.getPath())
-                            .headers(o.getHeaders())
-                            .expectedResponseCodeGroup(o.getExpectedResponseCodeGroup())
-                            .isResponseTextCheckEnabled(o.getIsResponseTextCheckEnabled())
-                            .expectedResponseText(o.getExpectedResponseText())
-                            .intervalInSeconds(o.getIntervalInSeconds())
-                            .timeoutInSeconds(o.getTimeoutInSeconds())
-                            .healthyThreshold(o.getHealthyThreshold())
-                            .unhealthyThreshold(o.getUnhealthyThreshold());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HealthCheck model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("method")) {
+                this.method(model.getMethod());
+            }
+            if (model.wasPropertyExplicitlySet("path")) {
+                this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("headers")) {
+                this.headers(model.getHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("expectedResponseCodeGroup")) {
+                this.expectedResponseCodeGroup(model.getExpectedResponseCodeGroup());
+            }
+            if (model.wasPropertyExplicitlySet("isResponseTextCheckEnabled")) {
+                this.isResponseTextCheckEnabled(model.getIsResponseTextCheckEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("expectedResponseText")) {
+                this.expectedResponseText(model.getExpectedResponseText());
+            }
+            if (model.wasPropertyExplicitlySet("intervalInSeconds")) {
+                this.intervalInSeconds(model.getIntervalInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInSeconds")) {
+                this.timeoutInSeconds(model.getTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("healthyThreshold")) {
+                this.healthyThreshold(model.getHealthyThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("unhealthyThreshold")) {
+                this.unhealthyThreshold(model.getUnhealthyThreshold());
+            }
+            return this;
         }
     }
 
@@ -579,6 +600,7 @@ public final class HealthCheck {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HealthCheck(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", method=").append(String.valueOf(this.method));
         sb.append(", path=").append(String.valueOf(this.path));
@@ -592,7 +614,6 @@ public final class HealthCheck {
         sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
         sb.append(", healthyThreshold=").append(String.valueOf(this.healthyThreshold));
         sb.append(", unhealthyThreshold=").append(String.valueOf(this.unhealthyThreshold));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -620,7 +641,7 @@ public final class HealthCheck {
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
                 && java.util.Objects.equals(this.healthyThreshold, other.healthyThreshold)
                 && java.util.Objects.equals(this.unhealthyThreshold, other.unhealthyThreshold)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -660,16 +681,7 @@ public final class HealthCheck {
                         + (this.unhealthyThreshold == null
                                 ? 43
                                 : this.unhealthyThreshold.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -163,38 +163,57 @@ public final class UpdateDatabaseToolsConnectionMySqlDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDatabaseToolsConnectionMySqlDetails build() {
-            UpdateDatabaseToolsConnectionMySqlDetails __instance__ =
+            UpdateDatabaseToolsConnectionMySqlDetails model =
                     new UpdateDatabaseToolsConnectionMySqlDetails(
-                            displayName,
-                            definedTags,
-                            freeformTags,
-                            relatedResource,
-                            connectionString,
-                            userName,
-                            userPassword,
-                            advancedProperties,
-                            keyStores,
-                            privateEndpointId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.relatedResource,
+                            this.connectionString,
+                            this.userName,
+                            this.userPassword,
+                            this.advancedProperties,
+                            this.keyStores,
+                            this.privateEndpointId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateDatabaseToolsConnectionMySqlDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .relatedResource(o.getRelatedResource())
-                            .connectionString(o.getConnectionString())
-                            .userName(o.getUserName())
-                            .userPassword(o.getUserPassword())
-                            .advancedProperties(o.getAdvancedProperties())
-                            .keyStores(o.getKeyStores())
-                            .privateEndpointId(o.getPrivateEndpointId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateDatabaseToolsConnectionMySqlDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("relatedResource")) {
+                this.relatedResource(model.getRelatedResource());
+            }
+            if (model.wasPropertyExplicitlySet("connectionString")) {
+                this.connectionString(model.getConnectionString());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("userPassword")) {
+                this.userPassword(model.getUserPassword());
+            }
+            if (model.wasPropertyExplicitlySet("advancedProperties")) {
+                this.advancedProperties(model.getAdvancedProperties());
+            }
+            if (model.wasPropertyExplicitlySet("keyStores")) {
+                this.keyStores(model.getKeyStores());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointId")) {
+                this.privateEndpointId(model.getPrivateEndpointId());
+            }
+            return this;
         }
     }
 
@@ -340,7 +359,6 @@ public final class UpdateDatabaseToolsConnectionMySqlDetails
         sb.append(", advancedProperties=").append(String.valueOf(this.advancedProperties));
         sb.append(", keyStores=").append(String.valueOf(this.keyStores));
         sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -363,8 +381,7 @@ public final class UpdateDatabaseToolsConnectionMySqlDetails
                 && java.util.Objects.equals(this.advancedProperties, other.advancedProperties)
                 && java.util.Objects.equals(this.keyStores, other.keyStores)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -388,16 +405,6 @@ public final class UpdateDatabaseToolsConnectionMySqlDetails
         result =
                 (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

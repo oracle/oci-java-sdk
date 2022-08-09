@@ -198,8 +198,8 @@ public class ListReportDefinitionsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListReportDefinitionsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.reportDefinitionCollection(response.getItem());
 

@@ -20,7 +20,7 @@ package com.oracle.bmc.integration.model;
     builder = VirtualCloudNetwork.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VirtualCloudNetwork {
+public final class VirtualCloudNetwork extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "allowlistedIps"})
     public VirtualCloudNetwork(String id, java.util.List<String> allowlistedIps) {
@@ -50,14 +50,16 @@ public final class VirtualCloudNetwork {
             return this;
         }
         /**
-         * Source IP addresses or IP address ranges ingress rules.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
+         * An invalid IP or CIDR block will result in a 400 response.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowlistedIps")
         private java.util.List<String> allowlistedIps;
 
         /**
-         * Source IP addresses or IP address ranges ingress rules.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
+         * An invalid IP or CIDR block will result in a 400 response.
          *
          * @param allowlistedIps the value to set
          * @return this builder
@@ -72,17 +74,22 @@ public final class VirtualCloudNetwork {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VirtualCloudNetwork build() {
-            VirtualCloudNetwork __instance__ = new VirtualCloudNetwork(id, allowlistedIps);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VirtualCloudNetwork model = new VirtualCloudNetwork(this.id, this.allowlistedIps);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VirtualCloudNetwork o) {
-            Builder copiedBuilder = id(o.getId()).allowlistedIps(o.getAllowlistedIps());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VirtualCloudNetwork model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("allowlistedIps")) {
+                this.allowlistedIps(model.getAllowlistedIps());
+            }
+            return this;
         }
     }
 
@@ -114,14 +121,16 @@ public final class VirtualCloudNetwork {
     }
 
     /**
-     * Source IP addresses or IP address ranges ingress rules.
+     * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
+     * An invalid IP or CIDR block will result in a 400 response.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowlistedIps")
     private final java.util.List<String> allowlistedIps;
 
     /**
-     * Source IP addresses or IP address ranges ingress rules.
+     * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
+     * An invalid IP or CIDR block will result in a 400 response.
      *
      * @return the value
      **/
@@ -142,9 +151,9 @@ public final class VirtualCloudNetwork {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VirtualCloudNetwork(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", allowlistedIps=").append(String.valueOf(this.allowlistedIps));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -161,7 +170,7 @@ public final class VirtualCloudNetwork {
         VirtualCloudNetwork other = (VirtualCloudNetwork) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.allowlistedIps, other.allowlistedIps)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -172,16 +181,7 @@ public final class VirtualCloudNetwork {
         result =
                 (result * PRIME)
                         + (this.allowlistedIps == null ? 43 : this.allowlistedIps.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

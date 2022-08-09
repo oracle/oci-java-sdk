@@ -127,8 +127,8 @@ public class UpdateTaskScheduleConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .UpdateTaskScheduleResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.taskSchedule(response.getItem());
 

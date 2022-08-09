@@ -49,18 +49,20 @@ public final class ComputeInstanceGroupFailurePolicyByCount
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComputeInstanceGroupFailurePolicyByCount build() {
-            ComputeInstanceGroupFailurePolicyByCount __instance__ =
-                    new ComputeInstanceGroupFailurePolicyByCount(failureCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ComputeInstanceGroupFailurePolicyByCount model =
+                    new ComputeInstanceGroupFailurePolicyByCount(this.failureCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ComputeInstanceGroupFailurePolicyByCount o) {
-            Builder copiedBuilder = failureCount(o.getFailureCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ComputeInstanceGroupFailurePolicyByCount model) {
+            if (model.wasPropertyExplicitlySet("failureCount")) {
+                this.failureCount(model.getFailureCount());
+            }
+            return this;
         }
     }
 
@@ -110,7 +112,6 @@ public final class ComputeInstanceGroupFailurePolicyByCount
         sb.append("ComputeInstanceGroupFailurePolicyByCount(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", failureCount=").append(String.valueOf(this.failureCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -127,8 +128,7 @@ public final class ComputeInstanceGroupFailurePolicyByCount
         ComputeInstanceGroupFailurePolicyByCount other =
                 (ComputeInstanceGroupFailurePolicyByCount) o;
         return java.util.Objects.equals(this.failureCount, other.failureCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -136,16 +136,6 @@ public final class ComputeInstanceGroupFailurePolicyByCount
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.failureCount == null ? 43 : this.failureCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

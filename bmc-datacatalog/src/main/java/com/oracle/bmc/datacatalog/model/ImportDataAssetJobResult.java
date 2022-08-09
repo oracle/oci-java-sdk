@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = ImportDataAssetJobResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImportDataAssetJobResult {
+public final class ImportDataAssetJobResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dataAssetKey",
@@ -129,28 +130,37 @@ public final class ImportDataAssetJobResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImportDataAssetJobResult build() {
-            ImportDataAssetJobResult __instance__ =
+            ImportDataAssetJobResult model =
                     new ImportDataAssetJobResult(
-                            dataAssetKey,
-                            importJobDefinitionKey,
-                            importJobKey,
-                            importJobExecutionKey,
-                            importJobExecutionStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.dataAssetKey,
+                            this.importJobDefinitionKey,
+                            this.importJobKey,
+                            this.importJobExecutionKey,
+                            this.importJobExecutionStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImportDataAssetJobResult o) {
-            Builder copiedBuilder =
-                    dataAssetKey(o.getDataAssetKey())
-                            .importJobDefinitionKey(o.getImportJobDefinitionKey())
-                            .importJobKey(o.getImportJobKey())
-                            .importJobExecutionKey(o.getImportJobExecutionKey())
-                            .importJobExecutionStatus(o.getImportJobExecutionStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImportDataAssetJobResult model) {
+            if (model.wasPropertyExplicitlySet("dataAssetKey")) {
+                this.dataAssetKey(model.getDataAssetKey());
+            }
+            if (model.wasPropertyExplicitlySet("importJobDefinitionKey")) {
+                this.importJobDefinitionKey(model.getImportJobDefinitionKey());
+            }
+            if (model.wasPropertyExplicitlySet("importJobKey")) {
+                this.importJobKey(model.getImportJobKey());
+            }
+            if (model.wasPropertyExplicitlySet("importJobExecutionKey")) {
+                this.importJobExecutionKey(model.getImportJobExecutionKey());
+            }
+            if (model.wasPropertyExplicitlySet("importJobExecutionStatus")) {
+                this.importJobExecutionStatus(model.getImportJobExecutionStatus());
+            }
+            return this;
         }
     }
 
@@ -248,13 +258,13 @@ public final class ImportDataAssetJobResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImportDataAssetJobResult(");
+        sb.append("super=").append(super.toString());
         sb.append("dataAssetKey=").append(String.valueOf(this.dataAssetKey));
         sb.append(", importJobDefinitionKey=").append(String.valueOf(this.importJobDefinitionKey));
         sb.append(", importJobKey=").append(String.valueOf(this.importJobKey));
         sb.append(", importJobExecutionKey=").append(String.valueOf(this.importJobExecutionKey));
         sb.append(", importJobExecutionStatus=")
                 .append(String.valueOf(this.importJobExecutionStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -276,7 +286,7 @@ public final class ImportDataAssetJobResult {
                 && java.util.Objects.equals(this.importJobExecutionKey, other.importJobExecutionKey)
                 && java.util.Objects.equals(
                         this.importJobExecutionStatus, other.importJobExecutionStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -300,16 +310,7 @@ public final class ImportDataAssetJobResult {
                         + (this.importJobExecutionStatus == null
                                 ? 43
                                 : this.importJobExecutionStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

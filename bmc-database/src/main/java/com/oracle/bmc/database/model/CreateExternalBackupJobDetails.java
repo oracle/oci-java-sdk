@@ -19,7 +19,8 @@ package com.oracle.bmc.database.model;
     builder = CreateExternalBackupJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateExternalBackupJobDetails {
+public final class CreateExternalBackupJobDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -266,42 +267,65 @@ public final class CreateExternalBackupJobDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateExternalBackupJobDetails build() {
-            CreateExternalBackupJobDetails __instance__ =
+            CreateExternalBackupJobDetails model =
                     new CreateExternalBackupJobDetails(
-                            availabilityDomain,
-                            compartmentId,
-                            displayName,
-                            dbVersion,
-                            dbName,
-                            dbUniqueName,
-                            pdbName,
-                            externalDatabaseIdentifier,
-                            characterSet,
-                            ncharacterSet,
-                            databaseMode,
-                            databaseEdition);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.availabilityDomain,
+                            this.compartmentId,
+                            this.displayName,
+                            this.dbVersion,
+                            this.dbName,
+                            this.dbUniqueName,
+                            this.pdbName,
+                            this.externalDatabaseIdentifier,
+                            this.characterSet,
+                            this.ncharacterSet,
+                            this.databaseMode,
+                            this.databaseEdition);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateExternalBackupJobDetails o) {
-            Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .dbVersion(o.getDbVersion())
-                            .dbName(o.getDbName())
-                            .dbUniqueName(o.getDbUniqueName())
-                            .pdbName(o.getPdbName())
-                            .externalDatabaseIdentifier(o.getExternalDatabaseIdentifier())
-                            .characterSet(o.getCharacterSet())
-                            .ncharacterSet(o.getNcharacterSet())
-                            .databaseMode(o.getDatabaseMode())
-                            .databaseEdition(o.getDatabaseEdition());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateExternalBackupJobDetails model) {
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dbName")) {
+                this.dbName(model.getDbName());
+            }
+            if (model.wasPropertyExplicitlySet("dbUniqueName")) {
+                this.dbUniqueName(model.getDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("pdbName")) {
+                this.pdbName(model.getPdbName());
+            }
+            if (model.wasPropertyExplicitlySet("externalDatabaseIdentifier")) {
+                this.externalDatabaseIdentifier(model.getExternalDatabaseIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("characterSet")) {
+                this.characterSet(model.getCharacterSet());
+            }
+            if (model.wasPropertyExplicitlySet("ncharacterSet")) {
+                this.ncharacterSet(model.getNcharacterSet());
+            }
+            if (model.wasPropertyExplicitlySet("databaseMode")) {
+                this.databaseMode(model.getDatabaseMode());
+            }
+            if (model.wasPropertyExplicitlySet("databaseEdition")) {
+                this.databaseEdition(model.getDatabaseEdition());
+            }
+            return this;
         }
     }
 
@@ -575,6 +599,7 @@ public final class CreateExternalBackupJobDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateExternalBackupJobDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -588,7 +613,6 @@ public final class CreateExternalBackupJobDetails {
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
         sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
         sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -616,7 +640,7 @@ public final class CreateExternalBackupJobDetails {
                 && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
                 && java.util.Objects.equals(this.databaseMode, other.databaseMode)
                 && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -649,16 +673,7 @@ public final class CreateExternalBackupJobDetails {
         result =
                 (result * PRIME)
                         + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

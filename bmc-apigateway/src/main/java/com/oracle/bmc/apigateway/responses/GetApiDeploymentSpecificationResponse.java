@@ -57,16 +57,18 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "apiSpecification"
     })
     private GetApiDeploymentSpecificationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.apigateway.model.ApiSpecification apiSpecification) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.apiSpecification = apiSpecification;
@@ -77,6 +79,13 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -140,6 +149,7 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
          */
         public Builder copy(GetApiDeploymentSpecificationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             apiSpecification(o.getApiSpecification());
@@ -153,7 +163,7 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
          */
         public GetApiDeploymentSpecificationResponse build() {
             return new GetApiDeploymentSpecificationResponse(
-                    __httpStatusCode__, etag, opcRequestId, apiSpecification);
+                    __httpStatusCode__, headers, etag, opcRequestId, apiSpecification);
         }
     }
 

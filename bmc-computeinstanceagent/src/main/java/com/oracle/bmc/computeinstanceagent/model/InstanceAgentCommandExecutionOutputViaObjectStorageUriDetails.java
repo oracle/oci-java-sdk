@@ -66,20 +66,27 @@ public final class InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails build() {
-            InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails __instance__ =
+            InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails model =
                     new InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails(
-                            exitCode, message, outputUri);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.exitCode, this.message, this.outputUri);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails o) {
-            Builder copiedBuilder =
-                    exitCode(o.getExitCode()).message(o.getMessage()).outputUri(o.getOutputUri());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails model) {
+            if (model.wasPropertyExplicitlySet("exitCode")) {
+                this.exitCode(model.getExitCode());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("outputUri")) {
+                this.outputUri(model.getOutputUri());
+            }
+            return this;
         }
     }
 
@@ -130,7 +137,6 @@ public final class InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails
         sb.append("InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", outputUri=").append(String.valueOf(this.outputUri));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -146,9 +152,7 @@ public final class InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails
 
         InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails other =
                 (InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails) o;
-        return java.util.Objects.equals(this.outputUri, other.outputUri)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.outputUri, other.outputUri) && super.equals(other);
     }
 
     @Override
@@ -156,16 +160,6 @@ public final class InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.outputUri == null ? 43 : this.outputUri.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -164,8 +164,8 @@ public class GetNetworkConnectivityStatusCollectionConverter {
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .GetNetworkConnectivityStatusCollectionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkConnectivityStatusCollection(response.getItem());
 

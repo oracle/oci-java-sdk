@@ -17,7 +17,7 @@ package com.oracle.bmc.cims.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UpdateIncident.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateIncident {
+public final class UpdateIncident extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ticket"})
     public UpdateIncident(UpdateTicketDetails ticket) {
@@ -41,17 +41,19 @@ public final class UpdateIncident {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateIncident build() {
-            UpdateIncident __instance__ = new UpdateIncident(ticket);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateIncident model = new UpdateIncident(this.ticket);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateIncident o) {
-            Builder copiedBuilder = ticket(o.getTicket());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateIncident model) {
+            if (model.wasPropertyExplicitlySet("ticket")) {
+                this.ticket(model.getTicket());
+            }
+            return this;
         }
     }
 
@@ -86,8 +88,8 @@ public final class UpdateIncident {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateIncident(");
+        sb.append("super=").append(super.toString());
         sb.append("ticket=").append(String.valueOf(this.ticket));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -102,8 +104,7 @@ public final class UpdateIncident {
         }
 
         UpdateIncident other = (UpdateIncident) o;
-        return java.util.Objects.equals(this.ticket, other.ticket)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.ticket, other.ticket) && super.equals(other);
     }
 
     @Override
@@ -111,16 +112,7 @@ public final class UpdateIncident {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.ticket == null ? 43 : this.ticket.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

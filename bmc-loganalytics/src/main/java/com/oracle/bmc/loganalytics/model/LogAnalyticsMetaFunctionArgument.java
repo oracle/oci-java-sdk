@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsMetaFunctionArgument.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsMetaFunctionArgument {
+public final class LogAnalyticsMetaFunctionArgument
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isOverrideOutputFields",
@@ -300,46 +301,73 @@ public final class LogAnalyticsMetaFunctionArgument {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsMetaFunctionArgument build() {
-            LogAnalyticsMetaFunctionArgument __instance__ =
+            LogAnalyticsMetaFunctionArgument model =
                     new LogAnalyticsMetaFunctionArgument(
-                            isOverrideOutputFields,
-                            argumentDisplayName,
-                            argumentExample,
-                            argumentService,
-                            argumentDataType,
-                            argumentDescription,
-                            argumentName,
-                            argumentOrder,
-                            argumentType,
-                            argumentId,
-                            argumentLookupColumn,
-                            argumentLookupColumnPosition,
-                            argumentValue,
-                            argumentReference);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isOverrideOutputFields,
+                            this.argumentDisplayName,
+                            this.argumentExample,
+                            this.argumentService,
+                            this.argumentDataType,
+                            this.argumentDescription,
+                            this.argumentName,
+                            this.argumentOrder,
+                            this.argumentType,
+                            this.argumentId,
+                            this.argumentLookupColumn,
+                            this.argumentLookupColumnPosition,
+                            this.argumentValue,
+                            this.argumentReference);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsMetaFunctionArgument o) {
-            Builder copiedBuilder =
-                    isOverrideOutputFields(o.getIsOverrideOutputFields())
-                            .argumentDisplayName(o.getArgumentDisplayName())
-                            .argumentExample(o.getArgumentExample())
-                            .argumentService(o.getArgumentService())
-                            .argumentDataType(o.getArgumentDataType())
-                            .argumentDescription(o.getArgumentDescription())
-                            .argumentName(o.getArgumentName())
-                            .argumentOrder(o.getArgumentOrder())
-                            .argumentType(o.getArgumentType())
-                            .argumentId(o.getArgumentId())
-                            .argumentLookupColumn(o.getArgumentLookupColumn())
-                            .argumentLookupColumnPosition(o.getArgumentLookupColumnPosition())
-                            .argumentValue(o.getArgumentValue())
-                            .argumentReference(o.getArgumentReference());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsMetaFunctionArgument model) {
+            if (model.wasPropertyExplicitlySet("isOverrideOutputFields")) {
+                this.isOverrideOutputFields(model.getIsOverrideOutputFields());
+            }
+            if (model.wasPropertyExplicitlySet("argumentDisplayName")) {
+                this.argumentDisplayName(model.getArgumentDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("argumentExample")) {
+                this.argumentExample(model.getArgumentExample());
+            }
+            if (model.wasPropertyExplicitlySet("argumentService")) {
+                this.argumentService(model.getArgumentService());
+            }
+            if (model.wasPropertyExplicitlySet("argumentDataType")) {
+                this.argumentDataType(model.getArgumentDataType());
+            }
+            if (model.wasPropertyExplicitlySet("argumentDescription")) {
+                this.argumentDescription(model.getArgumentDescription());
+            }
+            if (model.wasPropertyExplicitlySet("argumentName")) {
+                this.argumentName(model.getArgumentName());
+            }
+            if (model.wasPropertyExplicitlySet("argumentOrder")) {
+                this.argumentOrder(model.getArgumentOrder());
+            }
+            if (model.wasPropertyExplicitlySet("argumentType")) {
+                this.argumentType(model.getArgumentType());
+            }
+            if (model.wasPropertyExplicitlySet("argumentId")) {
+                this.argumentId(model.getArgumentId());
+            }
+            if (model.wasPropertyExplicitlySet("argumentLookupColumn")) {
+                this.argumentLookupColumn(model.getArgumentLookupColumn());
+            }
+            if (model.wasPropertyExplicitlySet("argumentLookupColumnPosition")) {
+                this.argumentLookupColumnPosition(model.getArgumentLookupColumnPosition());
+            }
+            if (model.wasPropertyExplicitlySet("argumentValue")) {
+                this.argumentValue(model.getArgumentValue());
+            }
+            if (model.wasPropertyExplicitlySet("argumentReference")) {
+                this.argumentReference(model.getArgumentReference());
+            }
+            return this;
         }
     }
 
@@ -563,6 +591,7 @@ public final class LogAnalyticsMetaFunctionArgument {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsMetaFunctionArgument(");
+        sb.append("super=").append(super.toString());
         sb.append("isOverrideOutputFields=").append(String.valueOf(this.isOverrideOutputFields));
         sb.append(", argumentDisplayName=").append(String.valueOf(this.argumentDisplayName));
         sb.append(", argumentExample=").append(String.valueOf(this.argumentExample));
@@ -578,7 +607,6 @@ public final class LogAnalyticsMetaFunctionArgument {
                 .append(String.valueOf(this.argumentLookupColumnPosition));
         sb.append(", argumentValue=").append(String.valueOf(this.argumentValue));
         sb.append(", argumentReference=").append(String.valueOf(this.argumentReference));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -608,7 +636,7 @@ public final class LogAnalyticsMetaFunctionArgument {
                         this.argumentLookupColumnPosition, other.argumentLookupColumnPosition)
                 && java.util.Objects.equals(this.argumentValue, other.argumentValue)
                 && java.util.Objects.equals(this.argumentReference, other.argumentReference)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -661,16 +689,7 @@ public final class LogAnalyticsMetaFunctionArgument {
         result =
                 (result * PRIME)
                         + (this.argumentReference == null ? 43 : this.argumentReference.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -63,17 +63,19 @@ public class ListDbSystemUpgradeHistoryEntriesResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "items"
     })
     private ListDbSystemUpgradeHistoryEntriesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             java.util.List<com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary>
                     items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.items = items;
@@ -84,6 +86,13 @@ public class ListDbSystemUpgradeHistoryEntriesResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -153,6 +162,7 @@ public class ListDbSystemUpgradeHistoryEntriesResponse
          */
         public Builder copy(ListDbSystemUpgradeHistoryEntriesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             items(o.getItems());
@@ -166,7 +176,7 @@ public class ListDbSystemUpgradeHistoryEntriesResponse
          */
         public ListDbSystemUpgradeHistoryEntriesResponse build() {
             return new ListDbSystemUpgradeHistoryEntriesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, items);
+                    __httpStatusCode__, headers, opcRequestId, opcNextPage, items);
         }
     }
 

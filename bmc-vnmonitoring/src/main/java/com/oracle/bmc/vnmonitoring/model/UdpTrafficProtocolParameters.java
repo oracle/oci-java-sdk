@@ -64,19 +64,23 @@ public final class UdpTrafficProtocolParameters extends TrafficProtocolParameter
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UdpTrafficProtocolParameters build() {
-            UdpTrafficProtocolParameters __instance__ =
-                    new UdpTrafficProtocolParameters(sourcePort, destinationPort);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UdpTrafficProtocolParameters model =
+                    new UdpTrafficProtocolParameters(this.sourcePort, this.destinationPort);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UdpTrafficProtocolParameters o) {
-            Builder copiedBuilder =
-                    sourcePort(o.getSourcePort()).destinationPort(o.getDestinationPort());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UdpTrafficProtocolParameters model) {
+            if (model.wasPropertyExplicitlySet("sourcePort")) {
+                this.sourcePort(model.getSourcePort());
+            }
+            if (model.wasPropertyExplicitlySet("destinationPort")) {
+                this.destinationPort(model.getDestinationPort());
+            }
+            return this;
         }
     }
 
@@ -142,7 +146,6 @@ public final class UdpTrafficProtocolParameters extends TrafficProtocolParameter
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sourcePort=").append(String.valueOf(this.sourcePort));
         sb.append(", destinationPort=").append(String.valueOf(this.destinationPort));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -159,8 +162,7 @@ public final class UdpTrafficProtocolParameters extends TrafficProtocolParameter
         UdpTrafficProtocolParameters other = (UdpTrafficProtocolParameters) o;
         return java.util.Objects.equals(this.sourcePort, other.sourcePort)
                 && java.util.Objects.equals(this.destinationPort, other.destinationPort)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -171,16 +173,6 @@ public final class UdpTrafficProtocolParameters extends TrafficProtocolParameter
         result =
                 (result * PRIME)
                         + (this.destinationPort == null ? 43 : this.destinationPort.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

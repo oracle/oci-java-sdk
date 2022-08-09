@@ -23,9 +23,12 @@ public class DeleteLogAnalyticsLogGroupResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
-    private DeleteLogAnalyticsLogGroupResponse(int __httpStatusCode__, String opcRequestId) {
-        super(__httpStatusCode__);
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    private DeleteLogAnalyticsLogGroupResponse(
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
@@ -34,6 +37,13 @@ public class DeleteLogAnalyticsLogGroupResponse extends com.oracle.bmc.responses
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -60,6 +70,7 @@ public class DeleteLogAnalyticsLogGroupResponse extends com.oracle.bmc.responses
          */
         public Builder copy(DeleteLogAnalyticsLogGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
 
             return this;
@@ -70,7 +81,8 @@ public class DeleteLogAnalyticsLogGroupResponse extends com.oracle.bmc.responses
          * @return the response object
          */
         public DeleteLogAnalyticsLogGroupResponse build() {
-            return new DeleteLogAnalyticsLogGroupResponse(__httpStatusCode__, opcRequestId);
+            return new DeleteLogAnalyticsLogGroupResponse(
+                    __httpStatusCode__, headers, opcRequestId);
         }
     }
 

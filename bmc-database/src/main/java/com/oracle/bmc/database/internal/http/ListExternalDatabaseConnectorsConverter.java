@@ -174,8 +174,8 @@ public class ListExternalDatabaseConnectorsConverter {
                                                 com.oracle.bmc.database.responses
                                                         .ListExternalDatabaseConnectorsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

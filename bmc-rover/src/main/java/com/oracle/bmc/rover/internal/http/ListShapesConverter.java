@@ -133,7 +133,8 @@ public class ListShapesConverter {
 
                                 com.oracle.bmc.rover.responses.ListShapesResponse.Builder builder =
                                         com.oracle.bmc.rover.responses.ListShapesResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.shapeCollection(response.getItem());
 

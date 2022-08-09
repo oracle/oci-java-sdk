@@ -197,46 +197,73 @@ public final class Parameter extends TypedObject {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Parameter build() {
-            Parameter __instance__ =
+            Parameter model =
                     new Parameter(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            configValues,
-                            objectStatus,
-                            name,
-                            description,
-                            type,
-                            defaultValue,
-                            rootObjectDefaultValue,
-                            isInput,
-                            isOutput,
-                            outputAggregationType,
-                            typeName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.configValues,
+                            this.objectStatus,
+                            this.name,
+                            this.description,
+                            this.type,
+                            this.defaultValue,
+                            this.rootObjectDefaultValue,
+                            this.isInput,
+                            this.isOutput,
+                            this.outputAggregationType,
+                            this.typeName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Parameter o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .configValues(o.getConfigValues())
-                            .objectStatus(o.getObjectStatus())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .type(o.getType())
-                            .defaultValue(o.getDefaultValue())
-                            .rootObjectDefaultValue(o.getRootObjectDefaultValue())
-                            .isInput(o.getIsInput())
-                            .isOutput(o.getIsOutput())
-                            .outputAggregationType(o.getOutputAggregationType())
-                            .typeName(o.getTypeName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Parameter model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("defaultValue")) {
+                this.defaultValue(model.getDefaultValue());
+            }
+            if (model.wasPropertyExplicitlySet("rootObjectDefaultValue")) {
+                this.rootObjectDefaultValue(model.getRootObjectDefaultValue());
+            }
+            if (model.wasPropertyExplicitlySet("isInput")) {
+                this.isInput(model.getIsInput());
+            }
+            if (model.wasPropertyExplicitlySet("isOutput")) {
+                this.isOutput(model.getIsOutput());
+            }
+            if (model.wasPropertyExplicitlySet("outputAggregationType")) {
+                this.outputAggregationType(model.getOutputAggregationType());
+            }
+            if (model.wasPropertyExplicitlySet("typeName")) {
+                this.typeName(model.getTypeName());
+            }
+            return this;
         }
     }
 
@@ -426,7 +453,6 @@ public final class Parameter extends TypedObject {
         sb.append(", isOutput=").append(String.valueOf(this.isOutput));
         sb.append(", outputAggregationType=").append(String.valueOf(this.outputAggregationType));
         sb.append(", typeName=").append(String.valueOf(this.typeName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -449,8 +475,7 @@ public final class Parameter extends TypedObject {
                 && java.util.Objects.equals(this.isOutput, other.isOutput)
                 && java.util.Objects.equals(this.outputAggregationType, other.outputAggregationType)
                 && java.util.Objects.equals(this.typeName, other.typeName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -472,16 +497,6 @@ public final class Parameter extends TypedObject {
                                 ? 43
                                 : this.outputAggregationType.hashCode());
         result = (result * PRIME) + (this.typeName == null ? 43 : this.typeName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

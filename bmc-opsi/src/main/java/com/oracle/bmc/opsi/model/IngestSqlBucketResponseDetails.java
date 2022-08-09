@@ -20,7 +20,8 @@ package com.oracle.bmc.opsi.model;
     builder = IngestSqlBucketResponseDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IngestSqlBucketResponseDetails {
+public final class IngestSqlBucketResponseDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"message"})
     public IngestSqlBucketResponseDetails(String message) {
@@ -53,18 +54,19 @@ public final class IngestSqlBucketResponseDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IngestSqlBucketResponseDetails build() {
-            IngestSqlBucketResponseDetails __instance__ =
-                    new IngestSqlBucketResponseDetails(message);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            IngestSqlBucketResponseDetails model = new IngestSqlBucketResponseDetails(this.message);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IngestSqlBucketResponseDetails o) {
-            Builder copiedBuilder = message(o.getMessage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IngestSqlBucketResponseDetails model) {
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            return this;
         }
     }
 
@@ -108,8 +110,8 @@ public final class IngestSqlBucketResponseDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IngestSqlBucketResponseDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("message=").append(String.valueOf(this.message));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -124,8 +126,7 @@ public final class IngestSqlBucketResponseDetails {
         }
 
         IngestSqlBucketResponseDetails other = (IngestSqlBucketResponseDetails) o;
-        return java.util.Objects.equals(this.message, other.message)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.message, other.message) && super.equals(other);
     }
 
     @Override
@@ -133,16 +134,7 @@ public final class IngestSqlBucketResponseDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

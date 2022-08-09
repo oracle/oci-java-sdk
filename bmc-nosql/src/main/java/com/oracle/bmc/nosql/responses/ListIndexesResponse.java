@@ -65,16 +65,18 @@ public class ListIndexesResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcRequestId",
         "indexCollection"
     })
     private ListIndexesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.nosql.model.IndexCollection indexCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcRequestId = opcRequestId;
         this.indexCollection = indexCollection;
@@ -85,6 +87,13 @@ public class ListIndexesResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -155,6 +164,7 @@ public class ListIndexesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListIndexesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             indexCollection(o.getIndexCollection());
@@ -168,7 +178,7 @@ public class ListIndexesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListIndexesResponse build() {
             return new ListIndexesResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, indexCollection);
+                    __httpStatusCode__, headers, opcNextPage, opcRequestId, indexCollection);
         }
     }
 

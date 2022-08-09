@@ -24,7 +24,7 @@ package com.oracle.bmc.dns.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Resolver.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Resolver {
+public final class Resolver extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -373,48 +373,77 @@ public final class Resolver {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Resolver build() {
-            Resolver __instance__ =
+            Resolver model =
                     new Resolver(
-                            compartmentId,
-                            attachedVcnId,
-                            displayName,
-                            freeformTags,
-                            definedTags,
-                            id,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            self,
-                            defaultViewId,
-                            isProtected,
-                            endpoints,
-                            attachedViews,
-                            rules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.attachedVcnId,
+                            this.displayName,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.id,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.self,
+                            this.defaultViewId,
+                            this.isProtected,
+                            this.endpoints,
+                            this.attachedViews,
+                            this.rules);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Resolver o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .attachedVcnId(o.getAttachedVcnId())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .id(o.getId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .self(o.getSelf())
-                            .defaultViewId(o.getDefaultViewId())
-                            .isProtected(o.getIsProtected())
-                            .endpoints(o.getEndpoints())
-                            .attachedViews(o.getAttachedViews())
-                            .rules(o.getRules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Resolver model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("attachedVcnId")) {
+                this.attachedVcnId(model.getAttachedVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("self")) {
+                this.self(model.getSelf());
+            }
+            if (model.wasPropertyExplicitlySet("defaultViewId")) {
+                this.defaultViewId(model.getDefaultViewId());
+            }
+            if (model.wasPropertyExplicitlySet("isProtected")) {
+                this.isProtected(model.getIsProtected());
+            }
+            if (model.wasPropertyExplicitlySet("endpoints")) {
+                this.endpoints(model.getEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("attachedViews")) {
+                this.attachedViews(model.getAttachedViews());
+            }
+            if (model.wasPropertyExplicitlySet("rules")) {
+                this.rules(model.getRules());
+            }
+            return this;
         }
     }
 
@@ -752,6 +781,7 @@ public final class Resolver {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Resolver(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", attachedVcnId=").append(String.valueOf(this.attachedVcnId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -767,7 +797,6 @@ public final class Resolver {
         sb.append(", endpoints=").append(String.valueOf(this.endpoints));
         sb.append(", attachedViews=").append(String.valueOf(this.attachedViews));
         sb.append(", rules=").append(String.valueOf(this.rules));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -797,7 +826,7 @@ public final class Resolver {
                 && java.util.Objects.equals(this.endpoints, other.endpoints)
                 && java.util.Objects.equals(this.attachedViews, other.attachedViews)
                 && java.util.Objects.equals(this.rules, other.rules)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -829,16 +858,7 @@ public final class Resolver {
                 (result * PRIME)
                         + (this.attachedViews == null ? 43 : this.attachedViews.hashCode());
         result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

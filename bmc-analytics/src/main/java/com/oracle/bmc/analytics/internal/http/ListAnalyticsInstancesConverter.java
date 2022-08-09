@@ -179,8 +179,8 @@ public class ListAnalyticsInstancesConverter {
                                         builder =
                                                 com.oracle.bmc.analytics.responses
                                                         .ListAnalyticsInstancesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

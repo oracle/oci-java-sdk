@@ -17,7 +17,7 @@ package com.oracle.bmc.marketplace.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ListingSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ListingSummary {
+public final class ListingSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -307,48 +307,77 @@ public final class ListingSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ListingSummary build() {
-            ListingSummary __instance__ =
+            ListingSummary model =
                     new ListingSummary(
-                            id,
-                            name,
-                            shortDescription,
-                            isRoverExportable,
-                            tagline,
-                            icon,
-                            packageType,
-                            pricingTypes,
-                            compatibleArchitectures,
-                            regions,
-                            isFeatured,
-                            categories,
-                            publisher,
-                            supportedOperatingSystems,
-                            listingType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.name,
+                            this.shortDescription,
+                            this.isRoverExportable,
+                            this.tagline,
+                            this.icon,
+                            this.packageType,
+                            this.pricingTypes,
+                            this.compatibleArchitectures,
+                            this.regions,
+                            this.isFeatured,
+                            this.categories,
+                            this.publisher,
+                            this.supportedOperatingSystems,
+                            this.listingType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ListingSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .name(o.getName())
-                            .shortDescription(o.getShortDescription())
-                            .isRoverExportable(o.getIsRoverExportable())
-                            .tagline(o.getTagline())
-                            .icon(o.getIcon())
-                            .packageType(o.getPackageType())
-                            .pricingTypes(o.getPricingTypes())
-                            .compatibleArchitectures(o.getCompatibleArchitectures())
-                            .regions(o.getRegions())
-                            .isFeatured(o.getIsFeatured())
-                            .categories(o.getCategories())
-                            .publisher(o.getPublisher())
-                            .supportedOperatingSystems(o.getSupportedOperatingSystems())
-                            .listingType(o.getListingType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ListingSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("shortDescription")) {
+                this.shortDescription(model.getShortDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isRoverExportable")) {
+                this.isRoverExportable(model.getIsRoverExportable());
+            }
+            if (model.wasPropertyExplicitlySet("tagline")) {
+                this.tagline(model.getTagline());
+            }
+            if (model.wasPropertyExplicitlySet("icon")) {
+                this.icon(model.getIcon());
+            }
+            if (model.wasPropertyExplicitlySet("packageType")) {
+                this.packageType(model.getPackageType());
+            }
+            if (model.wasPropertyExplicitlySet("pricingTypes")) {
+                this.pricingTypes(model.getPricingTypes());
+            }
+            if (model.wasPropertyExplicitlySet("compatibleArchitectures")) {
+                this.compatibleArchitectures(model.getCompatibleArchitectures());
+            }
+            if (model.wasPropertyExplicitlySet("regions")) {
+                this.regions(model.getRegions());
+            }
+            if (model.wasPropertyExplicitlySet("isFeatured")) {
+                this.isFeatured(model.getIsFeatured());
+            }
+            if (model.wasPropertyExplicitlySet("categories")) {
+                this.categories(model.getCategories());
+            }
+            if (model.wasPropertyExplicitlySet("publisher")) {
+                this.publisher(model.getPublisher());
+            }
+            if (model.wasPropertyExplicitlySet("supportedOperatingSystems")) {
+                this.supportedOperatingSystems(model.getSupportedOperatingSystems());
+            }
+            if (model.wasPropertyExplicitlySet("listingType")) {
+                this.listingType(model.getListingType());
+            }
+            return this;
         }
     }
 
@@ -669,6 +698,7 @@ public final class ListingSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ListingSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", shortDescription=").append(String.valueOf(this.shortDescription));
@@ -686,7 +716,6 @@ public final class ListingSummary {
         sb.append(", supportedOperatingSystems=")
                 .append(String.valueOf(this.supportedOperatingSystems));
         sb.append(", listingType=").append(String.valueOf(this.listingType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -718,7 +747,7 @@ public final class ListingSummary {
                 && java.util.Objects.equals(
                         this.supportedOperatingSystems, other.supportedOperatingSystems)
                 && java.util.Objects.equals(this.listingType, other.listingType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -752,16 +781,7 @@ public final class ListingSummary {
                                 ? 43
                                 : this.supportedOperatingSystems.hashCode());
         result = (result * PRIME) + (this.listingType == null ? 43 : this.listingType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

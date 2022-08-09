@@ -53,13 +53,20 @@ public class GetApplicationResponse extends com.oracle.bmc.responses.BmcResponse
         return application;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "application"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "application"
+    })
     private GetApplicationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.Application application) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.application = application;
@@ -70,6 +77,13 @@ public class GetApplicationResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetApplicationResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetApplicationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             application(o.getApplication());
@@ -142,7 +157,8 @@ public class GetApplicationResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetApplicationResponse build() {
-            return new GetApplicationResponse(__httpStatusCode__, etag, opcRequestId, application);
+            return new GetApplicationResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, application);
         }
     }
 

@@ -62,6 +62,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "retryAfter",
         "opcRequestId",
@@ -69,11 +70,12 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private GetWorkRequestResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             Float retryAfter,
             String opcRequestId,
             com.oracle.bmc.waas.model.WorkRequest workRequest) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.retryAfter = retryAfter;
         this.opcRequestId = opcRequestId;
@@ -85,6 +87,13 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -154,6 +163,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             retryAfter(o.getRetryAfter());
             opcRequestId(o.getOpcRequestId());
@@ -168,7 +178,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public GetWorkRequestResponse build() {
             return new GetWorkRequestResponse(
-                    __httpStatusCode__, etag, retryAfter, opcRequestId, workRequest);
+                    __httpStatusCode__, headers, etag, retryAfter, opcRequestId, workRequest);
         }
     }
 

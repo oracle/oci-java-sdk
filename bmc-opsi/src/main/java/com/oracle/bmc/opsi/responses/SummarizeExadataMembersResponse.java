@@ -74,6 +74,7 @@ public class SummarizeExadataMembersResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcTotalItems",
         "opcNextPage",
@@ -81,11 +82,12 @@ public class SummarizeExadataMembersResponse extends com.oracle.bmc.responses.Bm
     })
     private SummarizeExadataMembersResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             Integer opcTotalItems,
             String opcNextPage,
             com.oracle.bmc.opsi.model.ExadataMemberCollection exadataMemberCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcTotalItems = opcTotalItems;
         this.opcNextPage = opcNextPage;
@@ -97,6 +99,13 @@ public class SummarizeExadataMembersResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -179,6 +188,7 @@ public class SummarizeExadataMembersResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(SummarizeExadataMembersResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcTotalItems(o.getOpcTotalItems());
             opcNextPage(o.getOpcNextPage());
@@ -194,6 +204,7 @@ public class SummarizeExadataMembersResponse extends com.oracle.bmc.responses.Bm
         public SummarizeExadataMembersResponse build() {
             return new SummarizeExadataMembersResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcTotalItems,
                     opcNextPage,

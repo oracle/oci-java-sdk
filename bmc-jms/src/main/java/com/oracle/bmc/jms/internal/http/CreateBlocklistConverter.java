@@ -106,8 +106,8 @@ public class CreateBlocklistConverter {
                                         builder =
                                                 com.oracle.bmc.jms.responses.CreateBlocklistResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.blocklist(response.getItem());
 

@@ -43,15 +43,17 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "sqlTuningAdvisorTaskSummaryReport"
     })
     private GetSqlTuningAdvisorTaskSummaryReportResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSummaryReport
                     sqlTuningAdvisorTaskSummaryReport) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.sqlTuningAdvisorTaskSummaryReport = sqlTuningAdvisorTaskSummaryReport;
     }
@@ -61,6 +63,13 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -107,6 +116,7 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
          */
         public Builder copy(GetSqlTuningAdvisorTaskSummaryReportResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             sqlTuningAdvisorTaskSummaryReport(o.getSqlTuningAdvisorTaskSummaryReport());
 
@@ -119,7 +129,7 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
          */
         public GetSqlTuningAdvisorTaskSummaryReportResponse build() {
             return new GetSqlTuningAdvisorTaskSummaryReportResponse(
-                    __httpStatusCode__, opcRequestId, sqlTuningAdvisorTaskSummaryReport);
+                    __httpStatusCode__, headers, opcRequestId, sqlTuningAdvisorTaskSummaryReport);
         }
     }
 

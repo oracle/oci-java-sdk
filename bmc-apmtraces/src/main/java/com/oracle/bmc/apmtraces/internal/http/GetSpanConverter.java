@@ -109,7 +109,8 @@ public class GetSpanConverter {
 
                                 com.oracle.bmc.apmtraces.responses.GetSpanResponse.Builder builder =
                                         com.oracle.bmc.apmtraces.responses.GetSpanResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.span(response.getItem());
 

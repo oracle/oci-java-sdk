@@ -17,7 +17,7 @@ package com.oracle.bmc.aivision.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Line.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Line {
+public final class Line extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"text", "confidence", "boundingPolygon", "wordIndexes"})
     public Line(
@@ -96,21 +96,29 @@ public final class Line {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Line build() {
-            Line __instance__ = new Line(text, confidence, boundingPolygon, wordIndexes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Line model =
+                    new Line(this.text, this.confidence, this.boundingPolygon, this.wordIndexes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Line o) {
-            Builder copiedBuilder =
-                    text(o.getText())
-                            .confidence(o.getConfidence())
-                            .boundingPolygon(o.getBoundingPolygon())
-                            .wordIndexes(o.getWordIndexes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Line model) {
+            if (model.wasPropertyExplicitlySet("text")) {
+                this.text(model.getText());
+            }
+            if (model.wasPropertyExplicitlySet("confidence")) {
+                this.confidence(model.getConfidence());
+            }
+            if (model.wasPropertyExplicitlySet("boundingPolygon")) {
+                this.boundingPolygon(model.getBoundingPolygon());
+            }
+            if (model.wasPropertyExplicitlySet("wordIndexes")) {
+                this.wordIndexes(model.getWordIndexes());
+            }
+            return this;
         }
     }
 
@@ -187,11 +195,11 @@ public final class Line {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Line(");
+        sb.append("super=").append(super.toString());
         sb.append("text=").append(String.valueOf(this.text));
         sb.append(", confidence=").append(String.valueOf(this.confidence));
         sb.append(", boundingPolygon=").append(String.valueOf(this.boundingPolygon));
         sb.append(", wordIndexes=").append(String.valueOf(this.wordIndexes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -210,7 +218,7 @@ public final class Line {
                 && java.util.Objects.equals(this.confidence, other.confidence)
                 && java.util.Objects.equals(this.boundingPolygon, other.boundingPolygon)
                 && java.util.Objects.equals(this.wordIndexes, other.wordIndexes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -223,16 +231,7 @@ public final class Line {
                 (result * PRIME)
                         + (this.boundingPolygon == null ? 43 : this.boundingPolygon.hashCode());
         result = (result * PRIME) + (this.wordIndexes == null ? 43 : this.wordIndexes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -105,8 +105,8 @@ public class GetModelConverter {
                                         builder =
                                                 com.oracle.bmc.aianomalydetection.responses
                                                         .GetModelResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.model(response.getItem());
 

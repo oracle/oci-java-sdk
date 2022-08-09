@@ -238,50 +238,81 @@ public final class TypedNamePatternRule extends ProjectionRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TypedNamePatternRule build() {
-            TypedNamePatternRule __instance__ =
+            TypedNamePatternRule model =
                     new TypedNamePatternRule(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            isJavaRegexSyntax,
-                            configValues,
-                            objectStatus,
-                            description,
-                            types,
-                            isSkipRemainingRulesOnMatch,
-                            scope,
-                            isCascade,
-                            matchingStrategy,
-                            isCaseSensitive,
-                            ruleType,
-                            pattern,
-                            names);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.isJavaRegexSyntax,
+                            this.configValues,
+                            this.objectStatus,
+                            this.description,
+                            this.types,
+                            this.isSkipRemainingRulesOnMatch,
+                            this.scope,
+                            this.isCascade,
+                            this.matchingStrategy,
+                            this.isCaseSensitive,
+                            this.ruleType,
+                            this.pattern,
+                            this.names);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TypedNamePatternRule o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .isJavaRegexSyntax(o.getIsJavaRegexSyntax())
-                            .configValues(o.getConfigValues())
-                            .objectStatus(o.getObjectStatus())
-                            .description(o.getDescription())
-                            .types(o.getTypes())
-                            .isSkipRemainingRulesOnMatch(o.getIsSkipRemainingRulesOnMatch())
-                            .scope(o.getScope())
-                            .isCascade(o.getIsCascade())
-                            .matchingStrategy(o.getMatchingStrategy())
-                            .isCaseSensitive(o.getIsCaseSensitive())
-                            .ruleType(o.getRuleType())
-                            .pattern(o.getPattern())
-                            .names(o.getNames());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TypedNamePatternRule model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("isJavaRegexSyntax")) {
+                this.isJavaRegexSyntax(model.getIsJavaRegexSyntax());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("types")) {
+                this.types(model.getTypes());
+            }
+            if (model.wasPropertyExplicitlySet("isSkipRemainingRulesOnMatch")) {
+                this.isSkipRemainingRulesOnMatch(model.getIsSkipRemainingRulesOnMatch());
+            }
+            if (model.wasPropertyExplicitlySet("scope")) {
+                this.scope(model.getScope());
+            }
+            if (model.wasPropertyExplicitlySet("isCascade")) {
+                this.isCascade(model.getIsCascade());
+            }
+            if (model.wasPropertyExplicitlySet("matchingStrategy")) {
+                this.matchingStrategy(model.getMatchingStrategy());
+            }
+            if (model.wasPropertyExplicitlySet("isCaseSensitive")) {
+                this.isCaseSensitive(model.getIsCaseSensitive());
+            }
+            if (model.wasPropertyExplicitlySet("ruleType")) {
+                this.ruleType(model.getRuleType());
+            }
+            if (model.wasPropertyExplicitlySet("pattern")) {
+                this.pattern(model.getPattern());
+            }
+            if (model.wasPropertyExplicitlySet("names")) {
+                this.names(model.getNames());
+            }
+            return this;
         }
     }
 
@@ -580,7 +611,6 @@ public final class TypedNamePatternRule extends ProjectionRule {
         sb.append(", ruleType=").append(String.valueOf(this.ruleType));
         sb.append(", pattern=").append(String.valueOf(this.pattern));
         sb.append(", names=").append(String.valueOf(this.names));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -605,8 +635,7 @@ public final class TypedNamePatternRule extends ProjectionRule {
                 && java.util.Objects.equals(this.ruleType, other.ruleType)
                 && java.util.Objects.equals(this.pattern, other.pattern)
                 && java.util.Objects.equals(this.names, other.names)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -630,16 +659,6 @@ public final class TypedNamePatternRule extends ProjectionRule {
         result = (result * PRIME) + (this.ruleType == null ? 43 : this.ruleType.hashCode());
         result = (result * PRIME) + (this.pattern == null ? 43 : this.pattern.hashCode());
         result = (result * PRIME) + (this.names == null ? 43 : this.names.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

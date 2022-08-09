@@ -17,7 +17,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlStats.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlStats {
+public final class SqlStats extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlIdentifier",
@@ -1312,150 +1312,281 @@ public final class SqlStats {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SqlStats build() {
-            SqlStats __instance__ =
+            SqlStats model =
                     new SqlStats(
-                            sqlIdentifier,
-                            planHashValue,
-                            timeCollected,
-                            instanceName,
-                            lastActiveTime,
-                            parseCalls,
-                            diskReads,
-                            directReads,
-                            directWrites,
-                            bufferGets,
-                            rowsProcessed,
-                            serializableAborts,
-                            fetches,
-                            executions,
-                            avoidedExecutions,
-                            endOfFetchCount,
-                            loads,
-                            versionCount,
-                            invalidations,
-                            obsoleteCount,
-                            pxServersExecutions,
-                            cpuTimeInUs,
-                            elapsedTimeInUs,
-                            avgHardParseTimeInUs,
-                            concurrencyWaitTimeInUs,
-                            applicationWaitTimeInUs,
-                            clusterWaitTimeInUs,
-                            userIoWaitTimeInUs,
-                            plsqlExecTimeInUs,
-                            javaExecTimeInUs,
-                            sorts,
-                            sharableMem,
-                            totalSharableMem,
-                            typeCheckMem,
-                            ioCellOffloadEligibleBytes,
-                            ioInterconnectBytes,
-                            physicalReadRequests,
-                            physicalReadBytes,
-                            physicalWriteRequests,
-                            physicalWriteBytes,
-                            exactMatchingSignature,
-                            forceMatchingSignature,
-                            ioCellUncompressedBytes,
-                            ioCellOffloadReturnedBytes,
-                            childNumber,
-                            commandType,
-                            usersOpening,
-                            usersExecuting,
-                            optimizerCost,
-                            fullPlanHashValue,
-                            module,
-                            service,
-                            action,
-                            sqlProfile,
-                            sqlPatch,
-                            sqlPlanBaseline,
-                            deltaExecutionCount,
-                            deltaCpuTime,
-                            deltaIoBytes,
-                            deltaCpuRank,
-                            deltaExecsRank,
-                            sharableMemRank,
-                            deltaIoRank,
-                            harmonicSum,
-                            wtHarmonicSum,
-                            totalSqlCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.sqlIdentifier,
+                            this.planHashValue,
+                            this.timeCollected,
+                            this.instanceName,
+                            this.lastActiveTime,
+                            this.parseCalls,
+                            this.diskReads,
+                            this.directReads,
+                            this.directWrites,
+                            this.bufferGets,
+                            this.rowsProcessed,
+                            this.serializableAborts,
+                            this.fetches,
+                            this.executions,
+                            this.avoidedExecutions,
+                            this.endOfFetchCount,
+                            this.loads,
+                            this.versionCount,
+                            this.invalidations,
+                            this.obsoleteCount,
+                            this.pxServersExecutions,
+                            this.cpuTimeInUs,
+                            this.elapsedTimeInUs,
+                            this.avgHardParseTimeInUs,
+                            this.concurrencyWaitTimeInUs,
+                            this.applicationWaitTimeInUs,
+                            this.clusterWaitTimeInUs,
+                            this.userIoWaitTimeInUs,
+                            this.plsqlExecTimeInUs,
+                            this.javaExecTimeInUs,
+                            this.sorts,
+                            this.sharableMem,
+                            this.totalSharableMem,
+                            this.typeCheckMem,
+                            this.ioCellOffloadEligibleBytes,
+                            this.ioInterconnectBytes,
+                            this.physicalReadRequests,
+                            this.physicalReadBytes,
+                            this.physicalWriteRequests,
+                            this.physicalWriteBytes,
+                            this.exactMatchingSignature,
+                            this.forceMatchingSignature,
+                            this.ioCellUncompressedBytes,
+                            this.ioCellOffloadReturnedBytes,
+                            this.childNumber,
+                            this.commandType,
+                            this.usersOpening,
+                            this.usersExecuting,
+                            this.optimizerCost,
+                            this.fullPlanHashValue,
+                            this.module,
+                            this.service,
+                            this.action,
+                            this.sqlProfile,
+                            this.sqlPatch,
+                            this.sqlPlanBaseline,
+                            this.deltaExecutionCount,
+                            this.deltaCpuTime,
+                            this.deltaIoBytes,
+                            this.deltaCpuRank,
+                            this.deltaExecsRank,
+                            this.sharableMemRank,
+                            this.deltaIoRank,
+                            this.harmonicSum,
+                            this.wtHarmonicSum,
+                            this.totalSqlCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SqlStats o) {
-            Builder copiedBuilder =
-                    sqlIdentifier(o.getSqlIdentifier())
-                            .planHashValue(o.getPlanHashValue())
-                            .timeCollected(o.getTimeCollected())
-                            .instanceName(o.getInstanceName())
-                            .lastActiveTime(o.getLastActiveTime())
-                            .parseCalls(o.getParseCalls())
-                            .diskReads(o.getDiskReads())
-                            .directReads(o.getDirectReads())
-                            .directWrites(o.getDirectWrites())
-                            .bufferGets(o.getBufferGets())
-                            .rowsProcessed(o.getRowsProcessed())
-                            .serializableAborts(o.getSerializableAborts())
-                            .fetches(o.getFetches())
-                            .executions(o.getExecutions())
-                            .avoidedExecutions(o.getAvoidedExecutions())
-                            .endOfFetchCount(o.getEndOfFetchCount())
-                            .loads(o.getLoads())
-                            .versionCount(o.getVersionCount())
-                            .invalidations(o.getInvalidations())
-                            .obsoleteCount(o.getObsoleteCount())
-                            .pxServersExecutions(o.getPxServersExecutions())
-                            .cpuTimeInUs(o.getCpuTimeInUs())
-                            .elapsedTimeInUs(o.getElapsedTimeInUs())
-                            .avgHardParseTimeInUs(o.getAvgHardParseTimeInUs())
-                            .concurrencyWaitTimeInUs(o.getConcurrencyWaitTimeInUs())
-                            .applicationWaitTimeInUs(o.getApplicationWaitTimeInUs())
-                            .clusterWaitTimeInUs(o.getClusterWaitTimeInUs())
-                            .userIoWaitTimeInUs(o.getUserIoWaitTimeInUs())
-                            .plsqlExecTimeInUs(o.getPlsqlExecTimeInUs())
-                            .javaExecTimeInUs(o.getJavaExecTimeInUs())
-                            .sorts(o.getSorts())
-                            .sharableMem(o.getSharableMem())
-                            .totalSharableMem(o.getTotalSharableMem())
-                            .typeCheckMem(o.getTypeCheckMem())
-                            .ioCellOffloadEligibleBytes(o.getIoCellOffloadEligibleBytes())
-                            .ioInterconnectBytes(o.getIoInterconnectBytes())
-                            .physicalReadRequests(o.getPhysicalReadRequests())
-                            .physicalReadBytes(o.getPhysicalReadBytes())
-                            .physicalWriteRequests(o.getPhysicalWriteRequests())
-                            .physicalWriteBytes(o.getPhysicalWriteBytes())
-                            .exactMatchingSignature(o.getExactMatchingSignature())
-                            .forceMatchingSignature(o.getForceMatchingSignature())
-                            .ioCellUncompressedBytes(o.getIoCellUncompressedBytes())
-                            .ioCellOffloadReturnedBytes(o.getIoCellOffloadReturnedBytes())
-                            .childNumber(o.getChildNumber())
-                            .commandType(o.getCommandType())
-                            .usersOpening(o.getUsersOpening())
-                            .usersExecuting(o.getUsersExecuting())
-                            .optimizerCost(o.getOptimizerCost())
-                            .fullPlanHashValue(o.getFullPlanHashValue())
-                            .module(o.getModule())
-                            .service(o.getService())
-                            .action(o.getAction())
-                            .sqlProfile(o.getSqlProfile())
-                            .sqlPatch(o.getSqlPatch())
-                            .sqlPlanBaseline(o.getSqlPlanBaseline())
-                            .deltaExecutionCount(o.getDeltaExecutionCount())
-                            .deltaCpuTime(o.getDeltaCpuTime())
-                            .deltaIoBytes(o.getDeltaIoBytes())
-                            .deltaCpuRank(o.getDeltaCpuRank())
-                            .deltaExecsRank(o.getDeltaExecsRank())
-                            .sharableMemRank(o.getSharableMemRank())
-                            .deltaIoRank(o.getDeltaIoRank())
-                            .harmonicSum(o.getHarmonicSum())
-                            .wtHarmonicSum(o.getWtHarmonicSum())
-                            .totalSqlCount(o.getTotalSqlCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SqlStats model) {
+            if (model.wasPropertyExplicitlySet("sqlIdentifier")) {
+                this.sqlIdentifier(model.getSqlIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("planHashValue")) {
+                this.planHashValue(model.getPlanHashValue());
+            }
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("instanceName")) {
+                this.instanceName(model.getInstanceName());
+            }
+            if (model.wasPropertyExplicitlySet("lastActiveTime")) {
+                this.lastActiveTime(model.getLastActiveTime());
+            }
+            if (model.wasPropertyExplicitlySet("parseCalls")) {
+                this.parseCalls(model.getParseCalls());
+            }
+            if (model.wasPropertyExplicitlySet("diskReads")) {
+                this.diskReads(model.getDiskReads());
+            }
+            if (model.wasPropertyExplicitlySet("directReads")) {
+                this.directReads(model.getDirectReads());
+            }
+            if (model.wasPropertyExplicitlySet("directWrites")) {
+                this.directWrites(model.getDirectWrites());
+            }
+            if (model.wasPropertyExplicitlySet("bufferGets")) {
+                this.bufferGets(model.getBufferGets());
+            }
+            if (model.wasPropertyExplicitlySet("rowsProcessed")) {
+                this.rowsProcessed(model.getRowsProcessed());
+            }
+            if (model.wasPropertyExplicitlySet("serializableAborts")) {
+                this.serializableAborts(model.getSerializableAborts());
+            }
+            if (model.wasPropertyExplicitlySet("fetches")) {
+                this.fetches(model.getFetches());
+            }
+            if (model.wasPropertyExplicitlySet("executions")) {
+                this.executions(model.getExecutions());
+            }
+            if (model.wasPropertyExplicitlySet("avoidedExecutions")) {
+                this.avoidedExecutions(model.getAvoidedExecutions());
+            }
+            if (model.wasPropertyExplicitlySet("endOfFetchCount")) {
+                this.endOfFetchCount(model.getEndOfFetchCount());
+            }
+            if (model.wasPropertyExplicitlySet("loads")) {
+                this.loads(model.getLoads());
+            }
+            if (model.wasPropertyExplicitlySet("versionCount")) {
+                this.versionCount(model.getVersionCount());
+            }
+            if (model.wasPropertyExplicitlySet("invalidations")) {
+                this.invalidations(model.getInvalidations());
+            }
+            if (model.wasPropertyExplicitlySet("obsoleteCount")) {
+                this.obsoleteCount(model.getObsoleteCount());
+            }
+            if (model.wasPropertyExplicitlySet("pxServersExecutions")) {
+                this.pxServersExecutions(model.getPxServersExecutions());
+            }
+            if (model.wasPropertyExplicitlySet("cpuTimeInUs")) {
+                this.cpuTimeInUs(model.getCpuTimeInUs());
+            }
+            if (model.wasPropertyExplicitlySet("elapsedTimeInUs")) {
+                this.elapsedTimeInUs(model.getElapsedTimeInUs());
+            }
+            if (model.wasPropertyExplicitlySet("avgHardParseTimeInUs")) {
+                this.avgHardParseTimeInUs(model.getAvgHardParseTimeInUs());
+            }
+            if (model.wasPropertyExplicitlySet("concurrencyWaitTimeInUs")) {
+                this.concurrencyWaitTimeInUs(model.getConcurrencyWaitTimeInUs());
+            }
+            if (model.wasPropertyExplicitlySet("applicationWaitTimeInUs")) {
+                this.applicationWaitTimeInUs(model.getApplicationWaitTimeInUs());
+            }
+            if (model.wasPropertyExplicitlySet("clusterWaitTimeInUs")) {
+                this.clusterWaitTimeInUs(model.getClusterWaitTimeInUs());
+            }
+            if (model.wasPropertyExplicitlySet("userIoWaitTimeInUs")) {
+                this.userIoWaitTimeInUs(model.getUserIoWaitTimeInUs());
+            }
+            if (model.wasPropertyExplicitlySet("plsqlExecTimeInUs")) {
+                this.plsqlExecTimeInUs(model.getPlsqlExecTimeInUs());
+            }
+            if (model.wasPropertyExplicitlySet("javaExecTimeInUs")) {
+                this.javaExecTimeInUs(model.getJavaExecTimeInUs());
+            }
+            if (model.wasPropertyExplicitlySet("sorts")) {
+                this.sorts(model.getSorts());
+            }
+            if (model.wasPropertyExplicitlySet("sharableMem")) {
+                this.sharableMem(model.getSharableMem());
+            }
+            if (model.wasPropertyExplicitlySet("totalSharableMem")) {
+                this.totalSharableMem(model.getTotalSharableMem());
+            }
+            if (model.wasPropertyExplicitlySet("typeCheckMem")) {
+                this.typeCheckMem(model.getTypeCheckMem());
+            }
+            if (model.wasPropertyExplicitlySet("ioCellOffloadEligibleBytes")) {
+                this.ioCellOffloadEligibleBytes(model.getIoCellOffloadEligibleBytes());
+            }
+            if (model.wasPropertyExplicitlySet("ioInterconnectBytes")) {
+                this.ioInterconnectBytes(model.getIoInterconnectBytes());
+            }
+            if (model.wasPropertyExplicitlySet("physicalReadRequests")) {
+                this.physicalReadRequests(model.getPhysicalReadRequests());
+            }
+            if (model.wasPropertyExplicitlySet("physicalReadBytes")) {
+                this.physicalReadBytes(model.getPhysicalReadBytes());
+            }
+            if (model.wasPropertyExplicitlySet("physicalWriteRequests")) {
+                this.physicalWriteRequests(model.getPhysicalWriteRequests());
+            }
+            if (model.wasPropertyExplicitlySet("physicalWriteBytes")) {
+                this.physicalWriteBytes(model.getPhysicalWriteBytes());
+            }
+            if (model.wasPropertyExplicitlySet("exactMatchingSignature")) {
+                this.exactMatchingSignature(model.getExactMatchingSignature());
+            }
+            if (model.wasPropertyExplicitlySet("forceMatchingSignature")) {
+                this.forceMatchingSignature(model.getForceMatchingSignature());
+            }
+            if (model.wasPropertyExplicitlySet("ioCellUncompressedBytes")) {
+                this.ioCellUncompressedBytes(model.getIoCellUncompressedBytes());
+            }
+            if (model.wasPropertyExplicitlySet("ioCellOffloadReturnedBytes")) {
+                this.ioCellOffloadReturnedBytes(model.getIoCellOffloadReturnedBytes());
+            }
+            if (model.wasPropertyExplicitlySet("childNumber")) {
+                this.childNumber(model.getChildNumber());
+            }
+            if (model.wasPropertyExplicitlySet("commandType")) {
+                this.commandType(model.getCommandType());
+            }
+            if (model.wasPropertyExplicitlySet("usersOpening")) {
+                this.usersOpening(model.getUsersOpening());
+            }
+            if (model.wasPropertyExplicitlySet("usersExecuting")) {
+                this.usersExecuting(model.getUsersExecuting());
+            }
+            if (model.wasPropertyExplicitlySet("optimizerCost")) {
+                this.optimizerCost(model.getOptimizerCost());
+            }
+            if (model.wasPropertyExplicitlySet("fullPlanHashValue")) {
+                this.fullPlanHashValue(model.getFullPlanHashValue());
+            }
+            if (model.wasPropertyExplicitlySet("module")) {
+                this.module(model.getModule());
+            }
+            if (model.wasPropertyExplicitlySet("service")) {
+                this.service(model.getService());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("sqlProfile")) {
+                this.sqlProfile(model.getSqlProfile());
+            }
+            if (model.wasPropertyExplicitlySet("sqlPatch")) {
+                this.sqlPatch(model.getSqlPatch());
+            }
+            if (model.wasPropertyExplicitlySet("sqlPlanBaseline")) {
+                this.sqlPlanBaseline(model.getSqlPlanBaseline());
+            }
+            if (model.wasPropertyExplicitlySet("deltaExecutionCount")) {
+                this.deltaExecutionCount(model.getDeltaExecutionCount());
+            }
+            if (model.wasPropertyExplicitlySet("deltaCpuTime")) {
+                this.deltaCpuTime(model.getDeltaCpuTime());
+            }
+            if (model.wasPropertyExplicitlySet("deltaIoBytes")) {
+                this.deltaIoBytes(model.getDeltaIoBytes());
+            }
+            if (model.wasPropertyExplicitlySet("deltaCpuRank")) {
+                this.deltaCpuRank(model.getDeltaCpuRank());
+            }
+            if (model.wasPropertyExplicitlySet("deltaExecsRank")) {
+                this.deltaExecsRank(model.getDeltaExecsRank());
+            }
+            if (model.wasPropertyExplicitlySet("sharableMemRank")) {
+                this.sharableMemRank(model.getSharableMemRank());
+            }
+            if (model.wasPropertyExplicitlySet("deltaIoRank")) {
+                this.deltaIoRank(model.getDeltaIoRank());
+            }
+            if (model.wasPropertyExplicitlySet("harmonicSum")) {
+                this.harmonicSum(model.getHarmonicSum());
+            }
+            if (model.wasPropertyExplicitlySet("wtHarmonicSum")) {
+                this.wtHarmonicSum(model.getWtHarmonicSum());
+            }
+            if (model.wasPropertyExplicitlySet("totalSqlCount")) {
+                this.totalSqlCount(model.getTotalSqlCount());
+            }
+            return this;
         }
     }
 
@@ -2433,6 +2564,7 @@ public final class SqlStats {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SqlStats(");
+        sb.append("super=").append(super.toString());
         sb.append("sqlIdentifier=").append(String.valueOf(this.sqlIdentifier));
         sb.append(", planHashValue=").append(String.valueOf(this.planHashValue));
         sb.append(", timeCollected=").append(String.valueOf(this.timeCollected));
@@ -2504,7 +2636,6 @@ public final class SqlStats {
         sb.append(", harmonicSum=").append(String.valueOf(this.harmonicSum));
         sb.append(", wtHarmonicSum=").append(String.valueOf(this.wtHarmonicSum));
         sb.append(", totalSqlCount=").append(String.valueOf(this.totalSqlCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -2592,7 +2723,7 @@ public final class SqlStats {
                 && java.util.Objects.equals(this.harmonicSum, other.harmonicSum)
                 && java.util.Objects.equals(this.wtHarmonicSum, other.wtHarmonicSum)
                 && java.util.Objects.equals(this.totalSqlCount, other.totalSqlCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -2777,16 +2908,7 @@ public final class SqlStats {
         result =
                 (result * PRIME)
                         + (this.totalSqlCount == null ? 43 : this.totalSqlCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

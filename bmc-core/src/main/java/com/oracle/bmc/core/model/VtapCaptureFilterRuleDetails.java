@@ -20,7 +20,8 @@ package com.oracle.bmc.core.model;
     builder = VtapCaptureFilterRuleDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VtapCaptureFilterRuleDetails {
+public final class VtapCaptureFilterRuleDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "trafficDirection",
@@ -184,34 +185,49 @@ public final class VtapCaptureFilterRuleDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VtapCaptureFilterRuleDetails build() {
-            VtapCaptureFilterRuleDetails __instance__ =
+            VtapCaptureFilterRuleDetails model =
                     new VtapCaptureFilterRuleDetails(
-                            trafficDirection,
-                            ruleAction,
-                            sourceCidr,
-                            destinationCidr,
-                            protocol,
-                            icmpOptions,
-                            tcpOptions,
-                            udpOptions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.trafficDirection,
+                            this.ruleAction,
+                            this.sourceCidr,
+                            this.destinationCidr,
+                            this.protocol,
+                            this.icmpOptions,
+                            this.tcpOptions,
+                            this.udpOptions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VtapCaptureFilterRuleDetails o) {
-            Builder copiedBuilder =
-                    trafficDirection(o.getTrafficDirection())
-                            .ruleAction(o.getRuleAction())
-                            .sourceCidr(o.getSourceCidr())
-                            .destinationCidr(o.getDestinationCidr())
-                            .protocol(o.getProtocol())
-                            .icmpOptions(o.getIcmpOptions())
-                            .tcpOptions(o.getTcpOptions())
-                            .udpOptions(o.getUdpOptions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VtapCaptureFilterRuleDetails model) {
+            if (model.wasPropertyExplicitlySet("trafficDirection")) {
+                this.trafficDirection(model.getTrafficDirection());
+            }
+            if (model.wasPropertyExplicitlySet("ruleAction")) {
+                this.ruleAction(model.getRuleAction());
+            }
+            if (model.wasPropertyExplicitlySet("sourceCidr")) {
+                this.sourceCidr(model.getSourceCidr());
+            }
+            if (model.wasPropertyExplicitlySet("destinationCidr")) {
+                this.destinationCidr(model.getDestinationCidr());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("icmpOptions")) {
+                this.icmpOptions(model.getIcmpOptions());
+            }
+            if (model.wasPropertyExplicitlySet("tcpOptions")) {
+                this.tcpOptions(model.getTcpOptions());
+            }
+            if (model.wasPropertyExplicitlySet("udpOptions")) {
+                this.udpOptions(model.getUdpOptions());
+            }
+            return this;
         }
     }
 
@@ -446,6 +462,7 @@ public final class VtapCaptureFilterRuleDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("VtapCaptureFilterRuleDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("trafficDirection=").append(String.valueOf(this.trafficDirection));
         sb.append(", ruleAction=").append(String.valueOf(this.ruleAction));
         sb.append(", sourceCidr=").append(String.valueOf(this.sourceCidr));
@@ -454,7 +471,6 @@ public final class VtapCaptureFilterRuleDetails {
         sb.append(", icmpOptions=").append(String.valueOf(this.icmpOptions));
         sb.append(", tcpOptions=").append(String.valueOf(this.tcpOptions));
         sb.append(", udpOptions=").append(String.valueOf(this.udpOptions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -477,7 +493,7 @@ public final class VtapCaptureFilterRuleDetails {
                 && java.util.Objects.equals(this.icmpOptions, other.icmpOptions)
                 && java.util.Objects.equals(this.tcpOptions, other.tcpOptions)
                 && java.util.Objects.equals(this.udpOptions, other.udpOptions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -496,16 +512,7 @@ public final class VtapCaptureFilterRuleDetails {
         result = (result * PRIME) + (this.icmpOptions == null ? 43 : this.icmpOptions.hashCode());
         result = (result * PRIME) + (this.tcpOptions == null ? 43 : this.tcpOptions.hashCode());
         result = (result * PRIME) + (this.udpOptions == null ? 43 : this.udpOptions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

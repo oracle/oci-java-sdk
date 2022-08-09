@@ -17,7 +17,7 @@ package com.oracle.bmc.streaming.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Message.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Message {
+public final class Message extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "stream",
@@ -146,23 +146,41 @@ public final class Message {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Message build() {
-            Message __instance__ = new Message(stream, partition, key, value, offset, timestamp);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Message model =
+                    new Message(
+                            this.stream,
+                            this.partition,
+                            this.key,
+                            this.value,
+                            this.offset,
+                            this.timestamp);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Message o) {
-            Builder copiedBuilder =
-                    stream(o.getStream())
-                            .partition(o.getPartition())
-                            .key(o.getKey())
-                            .value(o.getValue())
-                            .offset(o.getOffset())
-                            .timestamp(o.getTimestamp());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Message model) {
+            if (model.wasPropertyExplicitlySet("stream")) {
+                this.stream(model.getStream());
+            }
+            if (model.wasPropertyExplicitlySet("partition")) {
+                this.partition(model.getPartition());
+            }
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("offset")) {
+                this.offset(model.getOffset());
+            }
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            return this;
         }
     }
 
@@ -274,6 +292,7 @@ public final class Message {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Message(");
+        sb.append("super=").append(super.toString());
         sb.append("stream=").append(String.valueOf(this.stream));
         sb.append(", partition=").append(String.valueOf(this.partition));
         sb.append(", key=")
@@ -294,7 +313,6 @@ public final class Message {
                                                 : ""))));
         sb.append(", offset=").append(String.valueOf(this.offset));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -315,7 +333,7 @@ public final class Message {
                 && java.util.Arrays.equals(this.value, other.value)
                 && java.util.Objects.equals(this.offset, other.offset)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -328,16 +346,7 @@ public final class Message {
         result = (result * PRIME) + java.util.Arrays.hashCode(this.value);
         result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

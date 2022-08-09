@@ -107,8 +107,8 @@ public class GetImportedPackageConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses
                                                         .GetImportedPackageResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.importedPackage(response.getItem());
 

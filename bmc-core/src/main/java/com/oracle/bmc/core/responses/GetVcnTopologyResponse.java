@@ -53,13 +53,20 @@ public class GetVcnTopologyResponse extends com.oracle.bmc.responses.BmcResponse
         return vcnTopology;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "vcnTopology"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "vcnTopology"
+    })
     private GetVcnTopologyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.VcnTopology vcnTopology) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.vcnTopology = vcnTopology;
@@ -70,6 +77,13 @@ public class GetVcnTopologyResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetVcnTopologyResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetVcnTopologyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             vcnTopology(o.getVcnTopology());
@@ -142,7 +157,8 @@ public class GetVcnTopologyResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetVcnTopologyResponse build() {
-            return new GetVcnTopologyResponse(__httpStatusCode__, etag, opcRequestId, vcnTopology);
+            return new GetVcnTopologyResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, vcnTopology);
         }
     }
 

@@ -20,7 +20,8 @@ package com.oracle.bmc.onesubscription.model;
     builder = SubscribedServiceUser.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SubscribedServiceUser {
+public final class SubscribedServiceUser
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -203,34 +204,49 @@ public final class SubscribedServiceUser {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SubscribedServiceUser build() {
-            SubscribedServiceUser __instance__ =
+            SubscribedServiceUser model =
                     new SubscribedServiceUser(
-                            name,
-                            username,
-                            firstName,
-                            lastName,
-                            email,
-                            tcaContactId,
-                            tcaCustAccntSiteId,
-                            tcaPartyId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.username,
+                            this.firstName,
+                            this.lastName,
+                            this.email,
+                            this.tcaContactId,
+                            this.tcaCustAccntSiteId,
+                            this.tcaPartyId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SubscribedServiceUser o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .username(o.getUsername())
-                            .firstName(o.getFirstName())
-                            .lastName(o.getLastName())
-                            .email(o.getEmail())
-                            .tcaContactId(o.getTcaContactId())
-                            .tcaCustAccntSiteId(o.getTcaCustAccntSiteId())
-                            .tcaPartyId(o.getTcaPartyId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SubscribedServiceUser model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("username")) {
+                this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("firstName")) {
+                this.firstName(model.getFirstName());
+            }
+            if (model.wasPropertyExplicitlySet("lastName")) {
+                this.lastName(model.getLastName());
+            }
+            if (model.wasPropertyExplicitlySet("email")) {
+                this.email(model.getEmail());
+            }
+            if (model.wasPropertyExplicitlySet("tcaContactId")) {
+                this.tcaContactId(model.getTcaContactId());
+            }
+            if (model.wasPropertyExplicitlySet("tcaCustAccntSiteId")) {
+                this.tcaCustAccntSiteId(model.getTcaCustAccntSiteId());
+            }
+            if (model.wasPropertyExplicitlySet("tcaPartyId")) {
+                this.tcaPartyId(model.getTcaPartyId());
+            }
+            return this;
         }
     }
 
@@ -386,6 +402,7 @@ public final class SubscribedServiceUser {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SubscribedServiceUser(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", firstName=").append(String.valueOf(this.firstName));
@@ -394,7 +411,6 @@ public final class SubscribedServiceUser {
         sb.append(", tcaContactId=").append(String.valueOf(this.tcaContactId));
         sb.append(", tcaCustAccntSiteId=").append(String.valueOf(this.tcaCustAccntSiteId));
         sb.append(", tcaPartyId=").append(String.valueOf(this.tcaPartyId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -417,7 +433,7 @@ public final class SubscribedServiceUser {
                 && java.util.Objects.equals(this.tcaContactId, other.tcaContactId)
                 && java.util.Objects.equals(this.tcaCustAccntSiteId, other.tcaCustAccntSiteId)
                 && java.util.Objects.equals(this.tcaPartyId, other.tcaPartyId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -436,16 +452,7 @@ public final class SubscribedServiceUser {
                                 ? 43
                                 : this.tcaCustAccntSiteId.hashCode());
         result = (result * PRIME) + (this.tcaPartyId == null ? 43 : this.tcaPartyId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

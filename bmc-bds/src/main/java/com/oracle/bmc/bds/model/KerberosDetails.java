@@ -17,7 +17,7 @@ package com.oracle.bmc.bds.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KerberosDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class KerberosDetails {
+public final class KerberosDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"principalName", "keytabFile"})
     public KerberosDetails(String principalName, String keytabFile) {
@@ -65,18 +65,22 @@ public final class KerberosDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KerberosDetails build() {
-            KerberosDetails __instance__ = new KerberosDetails(principalName, keytabFile);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            KerberosDetails model = new KerberosDetails(this.principalName, this.keytabFile);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(KerberosDetails o) {
-            Builder copiedBuilder =
-                    principalName(o.getPrincipalName()).keytabFile(o.getKeytabFile());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(KerberosDetails model) {
+            if (model.wasPropertyExplicitlySet("principalName")) {
+                this.principalName(model.getPrincipalName());
+            }
+            if (model.wasPropertyExplicitlySet("keytabFile")) {
+                this.keytabFile(model.getKeytabFile());
+            }
+            return this;
         }
     }
 
@@ -132,9 +136,9 @@ public final class KerberosDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("KerberosDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("principalName=").append(String.valueOf(this.principalName));
         sb.append(", keytabFile=").append(String.valueOf(this.keytabFile));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -151,7 +155,7 @@ public final class KerberosDetails {
         KerberosDetails other = (KerberosDetails) o;
         return java.util.Objects.equals(this.principalName, other.principalName)
                 && java.util.Objects.equals(this.keytabFile, other.keytabFile)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -162,16 +166,7 @@ public final class KerberosDetails {
                 (result * PRIME)
                         + (this.principalName == null ? 43 : this.principalName.hashCode());
         result = (result * PRIME) + (this.keytabFile == null ? 43 : this.keytabFile.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

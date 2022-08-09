@@ -53,13 +53,20 @@ public class UpdatePrivateIpResponse extends com.oracle.bmc.responses.BmcRespons
         return privateIp;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "privateIp"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "privateIp"
+    })
     private UpdatePrivateIpResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.PrivateIp privateIp) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.privateIp = privateIp;
@@ -70,6 +77,13 @@ public class UpdatePrivateIpResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class UpdatePrivateIpResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(UpdatePrivateIpResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             privateIp(o.getPrivateIp());
@@ -142,7 +157,8 @@ public class UpdatePrivateIpResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public UpdatePrivateIpResponse build() {
-            return new UpdatePrivateIpResponse(__httpStatusCode__, etag, opcRequestId, privateIp);
+            return new UpdatePrivateIpResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, privateIp);
         }
     }
 

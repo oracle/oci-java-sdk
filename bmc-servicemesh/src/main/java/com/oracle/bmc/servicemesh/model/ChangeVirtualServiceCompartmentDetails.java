@@ -19,7 +19,8 @@ package com.oracle.bmc.servicemesh.model;
     builder = ChangeVirtualServiceCompartmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ChangeVirtualServiceCompartmentDetails {
+public final class ChangeVirtualServiceCompartmentDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId"})
     public ChangeVirtualServiceCompartmentDetails(String compartmentId) {
@@ -52,18 +53,20 @@ public final class ChangeVirtualServiceCompartmentDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChangeVirtualServiceCompartmentDetails build() {
-            ChangeVirtualServiceCompartmentDetails __instance__ =
-                    new ChangeVirtualServiceCompartmentDetails(compartmentId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ChangeVirtualServiceCompartmentDetails model =
+                    new ChangeVirtualServiceCompartmentDetails(this.compartmentId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ChangeVirtualServiceCompartmentDetails o) {
-            Builder copiedBuilder = compartmentId(o.getCompartmentId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ChangeVirtualServiceCompartmentDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            return this;
         }
     }
 
@@ -107,8 +110,8 @@ public final class ChangeVirtualServiceCompartmentDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ChangeVirtualServiceCompartmentDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -124,7 +127,7 @@ public final class ChangeVirtualServiceCompartmentDetails {
 
         ChangeVirtualServiceCompartmentDetails other = (ChangeVirtualServiceCompartmentDetails) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -134,16 +137,7 @@ public final class ChangeVirtualServiceCompartmentDetails {
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

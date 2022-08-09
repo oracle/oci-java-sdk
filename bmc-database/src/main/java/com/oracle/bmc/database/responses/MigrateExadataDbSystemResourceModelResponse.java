@@ -69,6 +69,7 @@ public class MigrateExadataDbSystemResourceModelResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcWorkRequestId",
         "opcRequestId",
         "etag",
@@ -76,11 +77,12 @@ public class MigrateExadataDbSystemResourceModelResponse
     })
     private MigrateExadataDbSystemResourceModelResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String etag,
             com.oracle.bmc.database.model.ExadataDbSystemMigration exadataDbSystemMigration) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.etag = etag;
@@ -92,6 +94,13 @@ public class MigrateExadataDbSystemResourceModelResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -168,6 +177,7 @@ public class MigrateExadataDbSystemResourceModelResponse
          */
         public Builder copy(MigrateExadataDbSystemResourceModelResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
@@ -183,6 +193,7 @@ public class MigrateExadataDbSystemResourceModelResponse
         public MigrateExadataDbSystemResourceModelResponse build() {
             return new MigrateExadataDbSystemResourceModelResponse(
                     __httpStatusCode__,
+                    headers,
                     opcWorkRequestId,
                     opcRequestId,
                     etag,

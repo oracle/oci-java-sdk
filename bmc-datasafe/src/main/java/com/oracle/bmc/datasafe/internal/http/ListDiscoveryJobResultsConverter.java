@@ -194,8 +194,8 @@ public class ListDiscoveryJobResultsConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .ListDiscoveryJobResultsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.discoveryJobResultCollection(response.getItem());
 

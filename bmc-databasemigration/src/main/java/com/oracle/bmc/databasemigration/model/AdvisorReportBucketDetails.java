@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemigration.model;
     builder = AdvisorReportBucketDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AdvisorReportBucketDetails {
+public final class AdvisorReportBucketDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"bucketName", "namespace", "objectName"})
     public AdvisorReportBucketDetails(String bucketName, String namespace, String objectName) {
@@ -91,21 +92,27 @@ public final class AdvisorReportBucketDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AdvisorReportBucketDetails build() {
-            AdvisorReportBucketDetails __instance__ =
-                    new AdvisorReportBucketDetails(bucketName, namespace, objectName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AdvisorReportBucketDetails model =
+                    new AdvisorReportBucketDetails(
+                            this.bucketName, this.namespace, this.objectName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AdvisorReportBucketDetails o) {
-            Builder copiedBuilder =
-                    bucketName(o.getBucketName())
-                            .namespace(o.getNamespace())
-                            .objectName(o.getObjectName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AdvisorReportBucketDetails model) {
+            if (model.wasPropertyExplicitlySet("bucketName")) {
+                this.bucketName(model.getBucketName());
+            }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("objectName")) {
+                this.objectName(model.getObjectName());
+            }
+            return this;
         }
     }
 
@@ -181,10 +188,10 @@ public final class AdvisorReportBucketDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AdvisorReportBucketDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("bucketName=").append(String.valueOf(this.bucketName));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", objectName=").append(String.valueOf(this.objectName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -202,7 +209,7 @@ public final class AdvisorReportBucketDetails {
         return java.util.Objects.equals(this.bucketName, other.bucketName)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.objectName, other.objectName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -212,16 +219,7 @@ public final class AdvisorReportBucketDetails {
         result = (result * PRIME) + (this.bucketName == null ? 43 : this.bucketName.hashCode());
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.ailanguage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DocumentError.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DocumentError {
+public final class DocumentError extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "error"})
     public DocumentError(String key, ErrorDetails error) {
@@ -58,17 +58,22 @@ public final class DocumentError {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DocumentError build() {
-            DocumentError __instance__ = new DocumentError(key, error);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DocumentError model = new DocumentError(this.key, this.error);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DocumentError o) {
-            Builder copiedBuilder = key(o.getKey()).error(o.getError());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DocumentError model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("error")) {
+                this.error(model.getError());
+            }
+            return this;
         }
     }
 
@@ -117,9 +122,9 @@ public final class DocumentError {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DocumentError(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", error=").append(String.valueOf(this.error));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -136,7 +141,7 @@ public final class DocumentError {
         DocumentError other = (DocumentError) o;
         return java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.error, other.error)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -145,16 +150,7 @@ public final class DocumentError {
         int result = 1;
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.error == null ? 43 : this.error.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

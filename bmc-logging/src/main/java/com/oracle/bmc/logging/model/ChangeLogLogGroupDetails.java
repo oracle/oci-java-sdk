@@ -19,7 +19,8 @@ package com.oracle.bmc.logging.model;
     builder = ChangeLogLogGroupDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ChangeLogLogGroupDetails {
+public final class ChangeLogLogGroupDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"targetLogGroupId"})
     public ChangeLogLogGroupDetails(String targetLogGroupId) {
@@ -50,17 +51,19 @@ public final class ChangeLogLogGroupDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChangeLogLogGroupDetails build() {
-            ChangeLogLogGroupDetails __instance__ = new ChangeLogLogGroupDetails(targetLogGroupId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ChangeLogLogGroupDetails model = new ChangeLogLogGroupDetails(this.targetLogGroupId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ChangeLogLogGroupDetails o) {
-            Builder copiedBuilder = targetLogGroupId(o.getTargetLogGroupId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ChangeLogLogGroupDetails model) {
+            if (model.wasPropertyExplicitlySet("targetLogGroupId")) {
+                this.targetLogGroupId(model.getTargetLogGroupId());
+            }
+            return this;
         }
     }
 
@@ -102,8 +105,8 @@ public final class ChangeLogLogGroupDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ChangeLogLogGroupDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("targetLogGroupId=").append(String.valueOf(this.targetLogGroupId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +122,7 @@ public final class ChangeLogLogGroupDetails {
 
         ChangeLogLogGroupDetails other = (ChangeLogLogGroupDetails) o;
         return java.util.Objects.equals(this.targetLogGroupId, other.targetLogGroupId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -129,16 +132,7 @@ public final class ChangeLogLogGroupDetails {
         result =
                 (result * PRIME)
                         + (this.targetLogGroupId == null ? 43 : this.targetLogGroupId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

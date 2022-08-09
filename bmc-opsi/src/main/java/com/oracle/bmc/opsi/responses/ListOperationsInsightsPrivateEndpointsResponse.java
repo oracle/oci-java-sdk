@@ -62,17 +62,19 @@ public class ListOperationsInsightsPrivateEndpointsResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "operationsInsightsPrivateEndpointCollection"
     })
     private ListOperationsInsightsPrivateEndpointsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointCollection
                     operationsInsightsPrivateEndpointCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.operationsInsightsPrivateEndpointCollection =
@@ -84,6 +86,13 @@ public class ListOperationsInsightsPrivateEndpointsResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -152,6 +161,7 @@ public class ListOperationsInsightsPrivateEndpointsResponse
          */
         public Builder copy(ListOperationsInsightsPrivateEndpointsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             operationsInsightsPrivateEndpointCollection(
@@ -167,6 +177,7 @@ public class ListOperationsInsightsPrivateEndpointsResponse
         public ListOperationsInsightsPrivateEndpointsResponse build() {
             return new ListOperationsInsightsPrivateEndpointsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     operationsInsightsPrivateEndpointCollection);

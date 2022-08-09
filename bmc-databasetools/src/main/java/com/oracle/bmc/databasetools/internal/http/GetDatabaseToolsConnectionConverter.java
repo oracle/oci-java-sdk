@@ -116,8 +116,8 @@ public class GetDatabaseToolsConnectionConverter {
                                                 com.oracle.bmc.databasetools.responses
                                                         .GetDatabaseToolsConnectionResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.databaseToolsConnection(response.getItem());
 

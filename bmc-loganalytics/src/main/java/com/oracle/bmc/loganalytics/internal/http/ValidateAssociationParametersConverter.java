@@ -156,8 +156,8 @@ public class ValidateAssociationParametersConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ValidateAssociationParametersResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsAssociationParameterCollection(
                                         response.getItem());

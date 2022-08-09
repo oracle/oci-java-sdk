@@ -117,8 +117,8 @@ public class DownloadPdfContentConverter {
                                         builder =
                                                 com.oracle.bmc.ospgateway.responses
                                                         .DownloadPdfContentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

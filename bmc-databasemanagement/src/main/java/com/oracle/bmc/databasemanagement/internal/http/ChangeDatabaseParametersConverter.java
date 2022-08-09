@@ -123,8 +123,8 @@ public class ChangeDatabaseParametersConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ChangeDatabaseParametersResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.updateDatabaseParametersResult(response.getItem());
 

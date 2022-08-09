@@ -44,10 +44,18 @@ public class DeleteComputeCapacityReservationResponse extends com.oracle.bmc.res
         return opcWorkRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
     private DeleteComputeCapacityReservationResponse(
-            int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
-        super(__httpStatusCode__);
+            int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            String opcRequestId,
+            String opcWorkRequestId) {
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
     }
@@ -57,6 +65,13 @@ public class DeleteComputeCapacityReservationResponse extends com.oracle.bmc.res
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -106,6 +121,7 @@ public class DeleteComputeCapacityReservationResponse extends com.oracle.bmc.res
          */
         public Builder copy(DeleteComputeCapacityReservationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
 
@@ -118,7 +134,7 @@ public class DeleteComputeCapacityReservationResponse extends com.oracle.bmc.res
          */
         public DeleteComputeCapacityReservationResponse build() {
             return new DeleteComputeCapacityReservationResponse(
-                    __httpStatusCode__, opcRequestId, opcWorkRequestId);
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
         }
     }
 

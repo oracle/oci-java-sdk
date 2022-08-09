@@ -301,66 +301,113 @@ public final class Target extends Operator {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Target build() {
-            Target __instance__ =
+            Target model =
                     new Target(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectVersion,
-                            inputPorts,
-                            outputPorts,
-                            objectStatus,
-                            identifier,
-                            parameters,
-                            opConfigValues,
-                            entity,
-                            isReadAccess,
-                            isCopyFields,
-                            isPredefinedShape,
-                            isUseSameSourceName,
-                            targetEntityNamePrefix,
-                            targetEntityNameSuffix,
-                            dataProperty,
-                            schemaDriftConfig,
-                            fixedDataShape,
-                            writeOperationConfig,
-                            loadOrder);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectVersion,
+                            this.inputPorts,
+                            this.outputPorts,
+                            this.objectStatus,
+                            this.identifier,
+                            this.parameters,
+                            this.opConfigValues,
+                            this.entity,
+                            this.isReadAccess,
+                            this.isCopyFields,
+                            this.isPredefinedShape,
+                            this.isUseSameSourceName,
+                            this.targetEntityNamePrefix,
+                            this.targetEntityNameSuffix,
+                            this.dataProperty,
+                            this.schemaDriftConfig,
+                            this.fixedDataShape,
+                            this.writeOperationConfig,
+                            this.loadOrder);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Target o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectVersion(o.getObjectVersion())
-                            .inputPorts(o.getInputPorts())
-                            .outputPorts(o.getOutputPorts())
-                            .objectStatus(o.getObjectStatus())
-                            .identifier(o.getIdentifier())
-                            .parameters(o.getParameters())
-                            .opConfigValues(o.getOpConfigValues())
-                            .entity(o.getEntity())
-                            .isReadAccess(o.getIsReadAccess())
-                            .isCopyFields(o.getIsCopyFields())
-                            .isPredefinedShape(o.getIsPredefinedShape())
-                            .isUseSameSourceName(o.getIsUseSameSourceName())
-                            .targetEntityNamePrefix(o.getTargetEntityNamePrefix())
-                            .targetEntityNameSuffix(o.getTargetEntityNameSuffix())
-                            .dataProperty(o.getDataProperty())
-                            .schemaDriftConfig(o.getSchemaDriftConfig())
-                            .fixedDataShape(o.getFixedDataShape())
-                            .writeOperationConfig(o.getWriteOperationConfig())
-                            .loadOrder(o.getLoadOrder());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Target model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("inputPorts")) {
+                this.inputPorts(model.getInputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("outputPorts")) {
+                this.outputPorts(model.getOutputPorts());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("opConfigValues")) {
+                this.opConfigValues(model.getOpConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("entity")) {
+                this.entity(model.getEntity());
+            }
+            if (model.wasPropertyExplicitlySet("isReadAccess")) {
+                this.isReadAccess(model.getIsReadAccess());
+            }
+            if (model.wasPropertyExplicitlySet("isCopyFields")) {
+                this.isCopyFields(model.getIsCopyFields());
+            }
+            if (model.wasPropertyExplicitlySet("isPredefinedShape")) {
+                this.isPredefinedShape(model.getIsPredefinedShape());
+            }
+            if (model.wasPropertyExplicitlySet("isUseSameSourceName")) {
+                this.isUseSameSourceName(model.getIsUseSameSourceName());
+            }
+            if (model.wasPropertyExplicitlySet("targetEntityNamePrefix")) {
+                this.targetEntityNamePrefix(model.getTargetEntityNamePrefix());
+            }
+            if (model.wasPropertyExplicitlySet("targetEntityNameSuffix")) {
+                this.targetEntityNameSuffix(model.getTargetEntityNameSuffix());
+            }
+            if (model.wasPropertyExplicitlySet("dataProperty")) {
+                this.dataProperty(model.getDataProperty());
+            }
+            if (model.wasPropertyExplicitlySet("schemaDriftConfig")) {
+                this.schemaDriftConfig(model.getSchemaDriftConfig());
+            }
+            if (model.wasPropertyExplicitlySet("fixedDataShape")) {
+                this.fixedDataShape(model.getFixedDataShape());
+            }
+            if (model.wasPropertyExplicitlySet("writeOperationConfig")) {
+                this.writeOperationConfig(model.getWriteOperationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("loadOrder")) {
+                this.loadOrder(model.getLoadOrder());
+            }
+            return this;
         }
     }
 
@@ -646,7 +693,6 @@ public final class Target extends Operator {
         sb.append(", fixedDataShape=").append(String.valueOf(this.fixedDataShape));
         sb.append(", writeOperationConfig=").append(String.valueOf(this.writeOperationConfig));
         sb.append(", loadOrder=").append(String.valueOf(this.loadOrder));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -675,8 +721,7 @@ public final class Target extends Operator {
                 && java.util.Objects.equals(this.fixedDataShape, other.fixedDataShape)
                 && java.util.Objects.equals(this.writeOperationConfig, other.writeOperationConfig)
                 && java.util.Objects.equals(this.loadOrder, other.loadOrder)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -717,16 +762,6 @@ public final class Target extends Operator {
                                 ? 43
                                 : this.writeOperationConfig.hashCode());
         result = (result * PRIME) + (this.loadOrder == null ? 43 : this.loadOrder.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

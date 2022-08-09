@@ -56,17 +56,19 @@ public class UpdateStreamDistributionChannelResponse extends com.oracle.bmc.resp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "streamDistributionChannel"
     })
     private UpdateStreamDistributionChannelResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.mediaservices.model.StreamDistributionChannel
                     streamDistributionChannel) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.streamDistributionChannel = streamDistributionChannel;
@@ -77,6 +79,13 @@ public class UpdateStreamDistributionChannelResponse extends com.oracle.bmc.resp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -140,6 +149,7 @@ public class UpdateStreamDistributionChannelResponse extends com.oracle.bmc.resp
          */
         public Builder copy(UpdateStreamDistributionChannelResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             streamDistributionChannel(o.getStreamDistributionChannel());
@@ -153,7 +163,7 @@ public class UpdateStreamDistributionChannelResponse extends com.oracle.bmc.resp
          */
         public UpdateStreamDistributionChannelResponse build() {
             return new UpdateStreamDistributionChannelResponse(
-                    __httpStatusCode__, etag, opcRequestId, streamDistributionChannel);
+                    __httpStatusCode__, headers, etag, opcRequestId, streamDistributionChannel);
         }
     }
 

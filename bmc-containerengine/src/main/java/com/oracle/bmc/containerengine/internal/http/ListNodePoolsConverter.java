@@ -173,8 +173,8 @@ public class ListNodePoolsConverter {
                                         builder =
                                                 com.oracle.bmc.containerengine.responses
                                                         .ListNodePoolsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

@@ -61,17 +61,19 @@ public class ListOpensearchVersionsResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opensearchVersionsCollection"
     })
     private ListOpensearchVersionsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.opensearch.model.OpensearchVersionsCollection
                     opensearchVersionsCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opensearchVersionsCollection = opensearchVersionsCollection;
@@ -82,6 +84,13 @@ public class ListOpensearchVersionsResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -149,6 +158,7 @@ public class ListOpensearchVersionsResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(ListOpensearchVersionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opensearchVersionsCollection(o.getOpensearchVersionsCollection());
@@ -162,7 +172,11 @@ public class ListOpensearchVersionsResponse extends com.oracle.bmc.responses.Bmc
          */
         public ListOpensearchVersionsResponse build() {
             return new ListOpensearchVersionsResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, opensearchVersionsCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    opensearchVersionsCollection);
         }
     }
 

@@ -20,7 +20,8 @@ package com.oracle.bmc.datascience.model;
     builder = CreateNotebookSessionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateNotebookSessionDetails {
+public final class CreateNotebookSessionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -182,36 +183,51 @@ public final class CreateNotebookSessionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateNotebookSessionDetails build() {
-            CreateNotebookSessionDetails __instance__ =
+            CreateNotebookSessionDetails model =
                     new CreateNotebookSessionDetails(
-                            displayName,
-                            projectId,
-                            compartmentId,
-                            notebookSessionConfigurationDetails,
-                            notebookSessionConfigDetails,
-                            freeformTags,
-                            definedTags,
-                            notebookSessionRuntimeConfigDetails);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.projectId,
+                            this.compartmentId,
+                            this.notebookSessionConfigurationDetails,
+                            this.notebookSessionConfigDetails,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.notebookSessionRuntimeConfigDetails);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateNotebookSessionDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .projectId(o.getProjectId())
-                            .compartmentId(o.getCompartmentId())
-                            .notebookSessionConfigurationDetails(
-                                    o.getNotebookSessionConfigurationDetails())
-                            .notebookSessionConfigDetails(o.getNotebookSessionConfigDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .notebookSessionRuntimeConfigDetails(
-                                    o.getNotebookSessionRuntimeConfigDetails());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateNotebookSessionDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("projectId")) {
+                this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("notebookSessionConfigurationDetails")) {
+                this.notebookSessionConfigurationDetails(
+                        model.getNotebookSessionConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("notebookSessionConfigDetails")) {
+                this.notebookSessionConfigDetails(model.getNotebookSessionConfigDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("notebookSessionRuntimeConfigDetails")) {
+                this.notebookSessionRuntimeConfigDetails(
+                        model.getNotebookSessionRuntimeConfigDetails());
+            }
+            return this;
         }
     }
 
@@ -342,6 +358,7 @@ public final class CreateNotebookSessionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateNotebookSessionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", projectId=").append(String.valueOf(this.projectId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -353,7 +370,6 @@ public final class CreateNotebookSessionDetails {
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", notebookSessionRuntimeConfigDetails=")
                 .append(String.valueOf(this.notebookSessionRuntimeConfigDetails));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -381,7 +397,7 @@ public final class CreateNotebookSessionDetails {
                 && java.util.Objects.equals(
                         this.notebookSessionRuntimeConfigDetails,
                         other.notebookSessionRuntimeConfigDetails)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -410,16 +426,7 @@ public final class CreateNotebookSessionDetails {
                         + (this.notebookSessionRuntimeConfigDetails == null
                                 ? 43
                                 : this.notebookSessionRuntimeConfigDetails.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

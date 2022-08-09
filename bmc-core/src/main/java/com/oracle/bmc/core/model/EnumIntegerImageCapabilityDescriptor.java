@@ -72,19 +72,27 @@ public final class EnumIntegerImageCapabilityDescriptor extends ImageCapabilityS
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EnumIntegerImageCapabilityDescriptor build() {
-            EnumIntegerImageCapabilityDescriptor __instance__ =
-                    new EnumIntegerImageCapabilityDescriptor(source, values, defaultValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            EnumIntegerImageCapabilityDescriptor model =
+                    new EnumIntegerImageCapabilityDescriptor(
+                            this.source, this.values, this.defaultValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EnumIntegerImageCapabilityDescriptor o) {
-            Builder copiedBuilder =
-                    source(o.getSource()).values(o.getValues()).defaultValue(o.getDefaultValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EnumIntegerImageCapabilityDescriptor model) {
+            if (model.wasPropertyExplicitlySet("source")) {
+                this.source(model.getSource());
+            }
+            if (model.wasPropertyExplicitlySet("values")) {
+                this.values(model.getValues());
+            }
+            if (model.wasPropertyExplicitlySet("defaultValue")) {
+                this.defaultValue(model.getDefaultValue());
+            }
+            return this;
         }
     }
 
@@ -151,7 +159,6 @@ public final class EnumIntegerImageCapabilityDescriptor extends ImageCapabilityS
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", values=").append(String.valueOf(this.values));
         sb.append(", defaultValue=").append(String.valueOf(this.defaultValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -168,8 +175,7 @@ public final class EnumIntegerImageCapabilityDescriptor extends ImageCapabilityS
         EnumIntegerImageCapabilityDescriptor other = (EnumIntegerImageCapabilityDescriptor) o;
         return java.util.Objects.equals(this.values, other.values)
                 && java.util.Objects.equals(this.defaultValue, other.defaultValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -178,16 +184,6 @@ public final class EnumIntegerImageCapabilityDescriptor extends ImageCapabilityS
         int result = super.hashCode();
         result = (result * PRIME) + (this.values == null ? 43 : this.values.hashCode());
         result = (result * PRIME) + (this.defaultValue == null ? 43 : this.defaultValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

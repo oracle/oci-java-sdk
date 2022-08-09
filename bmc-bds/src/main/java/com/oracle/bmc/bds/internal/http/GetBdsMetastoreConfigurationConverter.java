@@ -115,8 +115,8 @@ public class GetBdsMetastoreConfigurationConverter {
                                                 com.oracle.bmc.bds.responses
                                                         .GetBdsMetastoreConfigurationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.bdsMetastoreConfiguration(response.getItem());
 

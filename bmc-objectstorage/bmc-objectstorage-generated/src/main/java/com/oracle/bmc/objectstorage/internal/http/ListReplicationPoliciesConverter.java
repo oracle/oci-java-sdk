@@ -140,8 +140,8 @@ public class ListReplicationPoliciesConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .ListReplicationPoliciesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

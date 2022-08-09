@@ -19,7 +19,7 @@ package com.oracle.bmc.opsi.model;
     builder = HistoricalDataItem.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HistoricalDataItem {
+public final class HistoricalDataItem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"endTimestamp", "usage"})
     public HistoricalDataItem(java.util.Date endTimestamp, Double usage) {
@@ -69,17 +69,22 @@ public final class HistoricalDataItem {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HistoricalDataItem build() {
-            HistoricalDataItem __instance__ = new HistoricalDataItem(endTimestamp, usage);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HistoricalDataItem model = new HistoricalDataItem(this.endTimestamp, this.usage);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HistoricalDataItem o) {
-            Builder copiedBuilder = endTimestamp(o.getEndTimestamp()).usage(o.getUsage());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HistoricalDataItem model) {
+            if (model.wasPropertyExplicitlySet("endTimestamp")) {
+                this.endTimestamp(model.getEndTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("usage")) {
+                this.usage(model.getUsage());
+            }
+            return this;
         }
     }
 
@@ -137,9 +142,9 @@ public final class HistoricalDataItem {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HistoricalDataItem(");
+        sb.append("super=").append(super.toString());
         sb.append("endTimestamp=").append(String.valueOf(this.endTimestamp));
         sb.append(", usage=").append(String.valueOf(this.usage));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -156,7 +161,7 @@ public final class HistoricalDataItem {
         HistoricalDataItem other = (HistoricalDataItem) o;
         return java.util.Objects.equals(this.endTimestamp, other.endTimestamp)
                 && java.util.Objects.equals(this.usage, other.usage)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -165,16 +170,7 @@ public final class HistoricalDataItem {
         int result = 1;
         result = (result * PRIME) + (this.endTimestamp == null ? 43 : this.endTimestamp.hashCode());
         result = (result * PRIME) + (this.usage == null ? 43 : this.usage.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

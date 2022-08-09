@@ -138,40 +138,61 @@ public final class AutonomousDatabaseConfigurationSummary extends DatabaseConfig
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseConfigurationSummary build() {
-            AutonomousDatabaseConfigurationSummary __instance__ =
+            AutonomousDatabaseConfigurationSummary model =
                     new AutonomousDatabaseConfigurationSummary(
-                            databaseInsightId,
-                            compartmentId,
-                            databaseName,
-                            databaseDisplayName,
-                            databaseType,
-                            databaseVersion,
-                            cdbName,
-                            definedTags,
-                            freeformTags,
-                            processorCount,
-                            databaseId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.databaseInsightId,
+                            this.compartmentId,
+                            this.databaseName,
+                            this.databaseDisplayName,
+                            this.databaseType,
+                            this.databaseVersion,
+                            this.cdbName,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.processorCount,
+                            this.databaseId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDatabaseConfigurationSummary o) {
-            Builder copiedBuilder =
-                    databaseInsightId(o.getDatabaseInsightId())
-                            .compartmentId(o.getCompartmentId())
-                            .databaseName(o.getDatabaseName())
-                            .databaseDisplayName(o.getDatabaseDisplayName())
-                            .databaseType(o.getDatabaseType())
-                            .databaseVersion(o.getDatabaseVersion())
-                            .cdbName(o.getCdbName())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .processorCount(o.getProcessorCount())
-                            .databaseId(o.getDatabaseId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousDatabaseConfigurationSummary model) {
+            if (model.wasPropertyExplicitlySet("databaseInsightId")) {
+                this.databaseInsightId(model.getDatabaseInsightId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseName")) {
+                this.databaseName(model.getDatabaseName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseDisplayName")) {
+                this.databaseDisplayName(model.getDatabaseDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("cdbName")) {
+                this.cdbName(model.getCdbName());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("processorCount")) {
+                this.processorCount(model.getProcessorCount());
+            }
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            return this;
         }
     }
 
@@ -242,7 +263,6 @@ public final class AutonomousDatabaseConfigurationSummary extends DatabaseConfig
         sb.append("AutonomousDatabaseConfigurationSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -257,9 +277,7 @@ public final class AutonomousDatabaseConfigurationSummary extends DatabaseConfig
         }
 
         AutonomousDatabaseConfigurationSummary other = (AutonomousDatabaseConfigurationSummary) o;
-        return java.util.Objects.equals(this.databaseId, other.databaseId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.databaseId, other.databaseId) && super.equals(other);
     }
 
     @Override
@@ -267,16 +285,6 @@ public final class AutonomousDatabaseConfigurationSummary extends DatabaseConfig
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = PeComanagedDatabaseConnectionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PeComanagedDatabaseConnectionDetails {
+public final class PeComanagedDatabaseConnectionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hosts", "protocol", "serviceName"})
     public PeComanagedDatabaseConnectionDetails(
@@ -87,19 +88,27 @@ public final class PeComanagedDatabaseConnectionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PeComanagedDatabaseConnectionDetails build() {
-            PeComanagedDatabaseConnectionDetails __instance__ =
-                    new PeComanagedDatabaseConnectionDetails(hosts, protocol, serviceName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PeComanagedDatabaseConnectionDetails model =
+                    new PeComanagedDatabaseConnectionDetails(
+                            this.hosts, this.protocol, this.serviceName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PeComanagedDatabaseConnectionDetails o) {
-            Builder copiedBuilder =
-                    hosts(o.getHosts()).protocol(o.getProtocol()).serviceName(o.getServiceName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PeComanagedDatabaseConnectionDetails model) {
+            if (model.wasPropertyExplicitlySet("hosts")) {
+                this.hosts(model.getHosts());
+            }
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("serviceName")) {
+                this.serviceName(model.getServiceName());
+            }
+            return this;
         }
     }
 
@@ -217,10 +226,10 @@ public final class PeComanagedDatabaseConnectionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PeComanagedDatabaseConnectionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("hosts=").append(String.valueOf(this.hosts));
         sb.append(", protocol=").append(String.valueOf(this.protocol));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -238,7 +247,7 @@ public final class PeComanagedDatabaseConnectionDetails {
         return java.util.Objects.equals(this.hosts, other.hosts)
                 && java.util.Objects.equals(this.protocol, other.protocol)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -248,16 +257,7 @@ public final class PeComanagedDatabaseConnectionDetails {
         result = (result * PRIME) + (this.hosts == null ? 43 : this.hosts.hashCode());
         result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

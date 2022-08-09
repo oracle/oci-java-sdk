@@ -19,7 +19,8 @@ package com.oracle.bmc.waas.model;
     builder = HumanInteractionChallenge.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HumanInteractionChallenge {
+public final class HumanInteractionChallenge
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -218,39 +219,58 @@ public final class HumanInteractionChallenge {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HumanInteractionChallenge build() {
-            HumanInteractionChallenge __instance__ =
+            HumanInteractionChallenge model =
                     new HumanInteractionChallenge(
-                            isEnabled,
-                            action,
-                            failureThreshold,
-                            actionExpirationInSeconds,
-                            failureThresholdExpirationInSeconds,
-                            interactionThreshold,
-                            recordingPeriodInSeconds,
-                            setHttpHeader,
-                            challengeSettings,
-                            isNatEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isEnabled,
+                            this.action,
+                            this.failureThreshold,
+                            this.actionExpirationInSeconds,
+                            this.failureThresholdExpirationInSeconds,
+                            this.interactionThreshold,
+                            this.recordingPeriodInSeconds,
+                            this.setHttpHeader,
+                            this.challengeSettings,
+                            this.isNatEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HumanInteractionChallenge o) {
-            Builder copiedBuilder =
-                    isEnabled(o.getIsEnabled())
-                            .action(o.getAction())
-                            .failureThreshold(o.getFailureThreshold())
-                            .actionExpirationInSeconds(o.getActionExpirationInSeconds())
-                            .failureThresholdExpirationInSeconds(
-                                    o.getFailureThresholdExpirationInSeconds())
-                            .interactionThreshold(o.getInteractionThreshold())
-                            .recordingPeriodInSeconds(o.getRecordingPeriodInSeconds())
-                            .setHttpHeader(o.getSetHttpHeader())
-                            .challengeSettings(o.getChallengeSettings())
-                            .isNatEnabled(o.getIsNatEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HumanInteractionChallenge model) {
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("failureThreshold")) {
+                this.failureThreshold(model.getFailureThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("actionExpirationInSeconds")) {
+                this.actionExpirationInSeconds(model.getActionExpirationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("failureThresholdExpirationInSeconds")) {
+                this.failureThresholdExpirationInSeconds(
+                        model.getFailureThresholdExpirationInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("interactionThreshold")) {
+                this.interactionThreshold(model.getInteractionThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("recordingPeriodInSeconds")) {
+                this.recordingPeriodInSeconds(model.getRecordingPeriodInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("setHttpHeader")) {
+                this.setHttpHeader(model.getSetHttpHeader());
+            }
+            if (model.wasPropertyExplicitlySet("challengeSettings")) {
+                this.challengeSettings(model.getChallengeSettings());
+            }
+            if (model.wasPropertyExplicitlySet("isNatEnabled")) {
+                this.isNatEnabled(model.getIsNatEnabled());
+            }
+            return this;
         }
     }
 
@@ -458,6 +478,7 @@ public final class HumanInteractionChallenge {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HumanInteractionChallenge(");
+        sb.append("super=").append(super.toString());
         sb.append("isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", failureThreshold=").append(String.valueOf(this.failureThreshold));
@@ -471,7 +492,6 @@ public final class HumanInteractionChallenge {
         sb.append(", setHttpHeader=").append(String.valueOf(this.setHttpHeader));
         sb.append(", challengeSettings=").append(String.valueOf(this.challengeSettings));
         sb.append(", isNatEnabled=").append(String.valueOf(this.isNatEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -500,7 +520,7 @@ public final class HumanInteractionChallenge {
                 && java.util.Objects.equals(this.setHttpHeader, other.setHttpHeader)
                 && java.util.Objects.equals(this.challengeSettings, other.challengeSettings)
                 && java.util.Objects.equals(this.isNatEnabled, other.isNatEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -539,16 +559,7 @@ public final class HumanInteractionChallenge {
                 (result * PRIME)
                         + (this.challengeSettings == null ? 43 : this.challengeSettings.hashCode());
         result = (result * PRIME) + (this.isNatEnabled == null ? 43 : this.isNatEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

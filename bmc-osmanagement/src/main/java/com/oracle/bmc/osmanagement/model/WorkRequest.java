@@ -17,7 +17,7 @@ package com.oracle.bmc.osmanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequest.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequest {
+public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationType",
@@ -328,48 +328,77 @@ public final class WorkRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequest build() {
-            WorkRequest __instance__ =
+            WorkRequest model =
                     new WorkRequest(
-                            operationType,
-                            status,
-                            id,
-                            compartmentId,
-                            description,
-                            message,
-                            managedInstanceId,
-                            resources,
-                            percentComplete,
-                            timeAccepted,
-                            timeStarted,
-                            timeFinished,
-                            osFamily,
-                            parentId,
-                            childrenIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.operationType,
+                            this.status,
+                            this.id,
+                            this.compartmentId,
+                            this.description,
+                            this.message,
+                            this.managedInstanceId,
+                            this.resources,
+                            this.percentComplete,
+                            this.timeAccepted,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.osFamily,
+                            this.parentId,
+                            this.childrenIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkRequest o) {
-            Builder copiedBuilder =
-                    operationType(o.getOperationType())
-                            .status(o.getStatus())
-                            .id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .description(o.getDescription())
-                            .message(o.getMessage())
-                            .managedInstanceId(o.getManagedInstanceId())
-                            .resources(o.getResources())
-                            .percentComplete(o.getPercentComplete())
-                            .timeAccepted(o.getTimeAccepted())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .osFamily(o.getOsFamily())
-                            .parentId(o.getParentId())
-                            .childrenIds(o.getChildrenIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkRequest model) {
+            if (model.wasPropertyExplicitlySet("operationType")) {
+                this.operationType(model.getOperationType());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("managedInstanceId")) {
+                this.managedInstanceId(model.getManagedInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("resources")) {
+                this.resources(model.getResources());
+            }
+            if (model.wasPropertyExplicitlySet("percentComplete")) {
+                this.percentComplete(model.getPercentComplete());
+            }
+            if (model.wasPropertyExplicitlySet("timeAccepted")) {
+                this.timeAccepted(model.getTimeAccepted());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("osFamily")) {
+                this.osFamily(model.getOsFamily());
+            }
+            if (model.wasPropertyExplicitlySet("parentId")) {
+                this.parentId(model.getParentId());
+            }
+            if (model.wasPropertyExplicitlySet("childrenIds")) {
+                this.childrenIds(model.getChildrenIds());
+            }
+            return this;
         }
     }
 
@@ -618,6 +647,7 @@ public final class WorkRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("operationType=").append(String.valueOf(this.operationType));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", id=").append(String.valueOf(this.id));
@@ -633,7 +663,6 @@ public final class WorkRequest {
         sb.append(", osFamily=").append(String.valueOf(this.osFamily));
         sb.append(", parentId=").append(String.valueOf(this.parentId));
         sb.append(", childrenIds=").append(String.valueOf(this.childrenIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -663,7 +692,7 @@ public final class WorkRequest {
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
                 && java.util.Objects.equals(this.parentId, other.parentId)
                 && java.util.Objects.equals(this.childrenIds, other.childrenIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -693,16 +722,7 @@ public final class WorkRequest {
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
         result = (result * PRIME) + (this.parentId == null ? 43 : this.parentId.hashCode());
         result = (result * PRIME) + (this.childrenIds == null ? 43 : this.childrenIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

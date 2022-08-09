@@ -38,12 +38,18 @@ public class GetDrgRedundancyStatusResponse extends com.oracle.bmc.responses.Bmc
         return drgRedundancyStatus;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "drgRedundancyStatus"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "drgRedundancyStatus"
+    })
     private GetDrgRedundancyStatusResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.core.model.DrgRedundancyStatus drgRedundancyStatus) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.drgRedundancyStatus = drgRedundancyStatus;
     }
@@ -53,6 +59,13 @@ public class GetDrgRedundancyStatusResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetDrgRedundancyStatusResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(GetDrgRedundancyStatusResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             drgRedundancyStatus(o.getDrgRedundancyStatus());
 
@@ -109,7 +123,7 @@ public class GetDrgRedundancyStatusResponse extends com.oracle.bmc.responses.Bmc
          */
         public GetDrgRedundancyStatusResponse build() {
             return new GetDrgRedundancyStatusResponse(
-                    __httpStatusCode__, opcRequestId, drgRedundancyStatus);
+                    __httpStatusCode__, headers, opcRequestId, drgRedundancyStatus);
         }
     }
 

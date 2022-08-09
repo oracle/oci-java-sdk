@@ -53,16 +53,18 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "digitalAssistantParameter"
     })
     private UpdateDigitalAssistantParameterResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.oda.model.DigitalAssistantParameter digitalAssistantParameter) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.digitalAssistantParameter = digitalAssistantParameter;
@@ -73,6 +75,13 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
          */
         public Builder copy(UpdateDigitalAssistantParameterResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             digitalAssistantParameter(o.getDigitalAssistantParameter());
@@ -145,7 +155,7 @@ public class UpdateDigitalAssistantParameterResponse extends com.oracle.bmc.resp
          */
         public UpdateDigitalAssistantParameterResponse build() {
             return new UpdateDigitalAssistantParameterResponse(
-                    __httpStatusCode__, etag, opcRequestId, digitalAssistantParameter);
+                    __httpStatusCode__, headers, etag, opcRequestId, digitalAssistantParameter);
         }
     }
 

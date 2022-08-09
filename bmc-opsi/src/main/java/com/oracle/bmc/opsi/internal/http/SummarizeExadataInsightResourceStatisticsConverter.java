@@ -226,8 +226,8 @@ public class SummarizeExadataInsightResourceStatisticsConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeExadataInsightResourceStatisticsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder
                                         .summarizeExadataInsightResourceStatisticsAggregationCollection(

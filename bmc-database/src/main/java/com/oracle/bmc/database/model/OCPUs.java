@@ -18,7 +18,7 @@ package com.oracle.bmc.database.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OCPUs.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OCPUs {
+public final class OCPUs extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"totalCpu", "consumedCpu", "byWorkloadType"})
     public OCPUs(Float totalCpu, Float consumedCpu, WorkloadType byWorkloadType) {
@@ -76,20 +76,25 @@ public final class OCPUs {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OCPUs build() {
-            OCPUs __instance__ = new OCPUs(totalCpu, consumedCpu, byWorkloadType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            OCPUs model = new OCPUs(this.totalCpu, this.consumedCpu, this.byWorkloadType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OCPUs o) {
-            Builder copiedBuilder =
-                    totalCpu(o.getTotalCpu())
-                            .consumedCpu(o.getConsumedCpu())
-                            .byWorkloadType(o.getByWorkloadType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OCPUs model) {
+            if (model.wasPropertyExplicitlySet("totalCpu")) {
+                this.totalCpu(model.getTotalCpu());
+            }
+            if (model.wasPropertyExplicitlySet("consumedCpu")) {
+                this.consumedCpu(model.getConsumedCpu());
+            }
+            if (model.wasPropertyExplicitlySet("byWorkloadType")) {
+                this.byWorkloadType(model.getByWorkloadType());
+            }
+            return this;
         }
     }
 
@@ -152,10 +157,10 @@ public final class OCPUs {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OCPUs(");
+        sb.append("super=").append(super.toString());
         sb.append("totalCpu=").append(String.valueOf(this.totalCpu));
         sb.append(", consumedCpu=").append(String.valueOf(this.consumedCpu));
         sb.append(", byWorkloadType=").append(String.valueOf(this.byWorkloadType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -173,7 +178,7 @@ public final class OCPUs {
         return java.util.Objects.equals(this.totalCpu, other.totalCpu)
                 && java.util.Objects.equals(this.consumedCpu, other.consumedCpu)
                 && java.util.Objects.equals(this.byWorkloadType, other.byWorkloadType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -185,16 +190,7 @@ public final class OCPUs {
         result =
                 (result * PRIME)
                         + (this.byWorkloadType == null ? 43 : this.byWorkloadType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

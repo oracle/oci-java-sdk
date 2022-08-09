@@ -107,8 +107,8 @@ public class UpdateQueryConverter {
                                         builder =
                                                 com.oracle.bmc.usageapi.responses
                                                         .UpdateQueryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.query(response.getItem());
 

@@ -29,7 +29,7 @@ package com.oracle.bmc.autoscaling.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ExecutionSchedule {
+public class ExecutionSchedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timezone"})
     protected ExecutionSchedule(Timezone timezone) {
@@ -111,6 +111,7 @@ public class ExecutionSchedule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExecutionSchedule(");
+        sb.append("super=").append(super.toString());
         sb.append("timezone=").append(String.valueOf(this.timezone));
         sb.append(")");
         return sb.toString();
@@ -126,7 +127,7 @@ public class ExecutionSchedule {
         }
 
         ExecutionSchedule other = (ExecutionSchedule) o;
-        return java.util.Objects.equals(this.timezone, other.timezone);
+        return java.util.Objects.equals(this.timezone, other.timezone) && super.equals(other);
     }
 
     @Override
@@ -134,6 +135,7 @@ public class ExecutionSchedule {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.timezone == null ? 43 : this.timezone.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

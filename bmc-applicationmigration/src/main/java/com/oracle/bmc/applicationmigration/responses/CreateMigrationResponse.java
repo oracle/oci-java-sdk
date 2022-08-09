@@ -70,6 +70,7 @@ public class CreateMigrationResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "opcWorkRequestId",
@@ -77,11 +78,12 @@ public class CreateMigrationResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private CreateMigrationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
             com.oracle.bmc.applicationmigration.model.Migration migration) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.opcWorkRequestId = opcWorkRequestId;
@@ -93,6 +95,13 @@ public class CreateMigrationResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -170,6 +179,7 @@ public class CreateMigrationResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(CreateMigrationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
@@ -184,7 +194,7 @@ public class CreateMigrationResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public CreateMigrationResponse build() {
             return new CreateMigrationResponse(
-                    __httpStatusCode__, etag, opcRequestId, opcWorkRequestId, migration);
+                    __httpStatusCode__, headers, etag, opcRequestId, opcWorkRequestId, migration);
         }
     }
 

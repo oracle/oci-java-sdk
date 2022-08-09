@@ -121,8 +121,8 @@ public class RemoveContainerVersionConverter {
                                         builder =
                                                 com.oracle.bmc.artifacts.responses
                                                         .RemoveContainerVersionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.containerImage(response.getItem());
 

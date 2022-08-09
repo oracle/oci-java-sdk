@@ -104,8 +104,8 @@ public class GetExportSetConverter {
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
                                                         .GetExportSetResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.exportSet(response.getItem());
 

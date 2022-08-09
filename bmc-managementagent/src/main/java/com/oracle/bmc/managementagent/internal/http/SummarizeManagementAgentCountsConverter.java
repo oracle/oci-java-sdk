@@ -148,8 +148,8 @@ public class SummarizeManagementAgentCountsConverter {
                                                 com.oracle.bmc.managementagent.responses
                                                         .SummarizeManagementAgentCountsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managementAgentAggregationCollection(response.getItem());
 

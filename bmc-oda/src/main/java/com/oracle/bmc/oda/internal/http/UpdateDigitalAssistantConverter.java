@@ -115,8 +115,8 @@ public class UpdateDigitalAssistantConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses
                                                         .UpdateDigitalAssistantResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.digitalAssistant(response.getItem());
 

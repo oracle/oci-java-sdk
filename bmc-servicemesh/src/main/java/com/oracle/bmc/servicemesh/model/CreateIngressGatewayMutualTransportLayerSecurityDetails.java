@@ -20,7 +20,8 @@ package com.oracle.bmc.servicemesh.model;
     builder = CreateIngressGatewayMutualTransportLayerSecurityDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateIngressGatewayMutualTransportLayerSecurityDetails {
+public final class CreateIngressGatewayMutualTransportLayerSecurityDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"maximumValidity"})
     public CreateIngressGatewayMutualTransportLayerSecurityDetails(Integer maximumValidity) {
@@ -59,18 +60,21 @@ public final class CreateIngressGatewayMutualTransportLayerSecurityDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateIngressGatewayMutualTransportLayerSecurityDetails build() {
-            CreateIngressGatewayMutualTransportLayerSecurityDetails __instance__ =
-                    new CreateIngressGatewayMutualTransportLayerSecurityDetails(maximumValidity);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateIngressGatewayMutualTransportLayerSecurityDetails model =
+                    new CreateIngressGatewayMutualTransportLayerSecurityDetails(
+                            this.maximumValidity);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateIngressGatewayMutualTransportLayerSecurityDetails o) {
-            Builder copiedBuilder = maximumValidity(o.getMaximumValidity());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateIngressGatewayMutualTransportLayerSecurityDetails model) {
+            if (model.wasPropertyExplicitlySet("maximumValidity")) {
+                this.maximumValidity(model.getMaximumValidity());
+            }
+            return this;
         }
     }
 
@@ -120,8 +124,8 @@ public final class CreateIngressGatewayMutualTransportLayerSecurityDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateIngressGatewayMutualTransportLayerSecurityDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("maximumValidity=").append(String.valueOf(this.maximumValidity));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -138,7 +142,7 @@ public final class CreateIngressGatewayMutualTransportLayerSecurityDetails {
         CreateIngressGatewayMutualTransportLayerSecurityDetails other =
                 (CreateIngressGatewayMutualTransportLayerSecurityDetails) o;
         return java.util.Objects.equals(this.maximumValidity, other.maximumValidity)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -148,16 +152,7 @@ public final class CreateIngressGatewayMutualTransportLayerSecurityDetails {
         result =
                 (result * PRIME)
                         + (this.maximumValidity == null ? 43 : this.maximumValidity.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

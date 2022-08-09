@@ -87,6 +87,7 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcContentMd5",
         "opcRequestId",
@@ -95,12 +96,13 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
     })
     private RestoreKeyFromFileResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcContentMd5,
             String opcRequestId,
             String opcWorkRequestId,
             com.oracle.bmc.keymanagement.model.Key key) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcContentMd5 = opcContentMd5;
         this.opcRequestId = opcRequestId;
@@ -113,6 +115,13 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -209,6 +218,7 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(RestoreKeyFromFileResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcContentMd5(o.getOpcContentMd5());
             opcRequestId(o.getOpcRequestId());
@@ -224,7 +234,13 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
          */
         public RestoreKeyFromFileResponse build() {
             return new RestoreKeyFromFileResponse(
-                    __httpStatusCode__, etag, opcContentMd5, opcRequestId, opcWorkRequestId, key);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcContentMd5,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    key);
         }
     }
 

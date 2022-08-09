@@ -19,7 +19,8 @@ package com.oracle.bmc.datascience.model;
     builder = FastLaunchJobConfigSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FastLaunchJobConfigSummary {
+public final class FastLaunchJobConfigSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -160,30 +161,41 @@ public final class FastLaunchJobConfigSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FastLaunchJobConfigSummary build() {
-            FastLaunchJobConfigSummary __instance__ =
+            FastLaunchJobConfigSummary model =
                     new FastLaunchJobConfigSummary(
-                            name,
-                            shapeName,
-                            coreCount,
-                            memoryInGBs,
-                            shapeSeries,
-                            managedEgressSupport);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.shapeName,
+                            this.coreCount,
+                            this.memoryInGBs,
+                            this.shapeSeries,
+                            this.managedEgressSupport);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FastLaunchJobConfigSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .shapeName(o.getShapeName())
-                            .coreCount(o.getCoreCount())
-                            .memoryInGBs(o.getMemoryInGBs())
-                            .shapeSeries(o.getShapeSeries())
-                            .managedEgressSupport(o.getManagedEgressSupport());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FastLaunchJobConfigSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("coreCount")) {
+                this.coreCount(model.getCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("memoryInGBs")) {
+                this.memoryInGBs(model.getMemoryInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("shapeSeries")) {
+                this.shapeSeries(model.getShapeSeries());
+            }
+            if (model.wasPropertyExplicitlySet("managedEgressSupport")) {
+                this.managedEgressSupport(model.getManagedEgressSupport());
+            }
+            return this;
         }
     }
 
@@ -408,13 +420,13 @@ public final class FastLaunchJobConfigSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FastLaunchJobConfigSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", coreCount=").append(String.valueOf(this.coreCount));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
         sb.append(", shapeSeries=").append(String.valueOf(this.shapeSeries));
         sb.append(", managedEgressSupport=").append(String.valueOf(this.managedEgressSupport));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -435,7 +447,7 @@ public final class FastLaunchJobConfigSummary {
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
                 && java.util.Objects.equals(this.shapeSeries, other.shapeSeries)
                 && java.util.Objects.equals(this.managedEgressSupport, other.managedEgressSupport)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -452,16 +464,7 @@ public final class FastLaunchJobConfigSummary {
                         + (this.managedEgressSupport == null
                                 ? 43
                                 : this.managedEgressSupport.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

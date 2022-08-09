@@ -55,16 +55,18 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "taskSchedule"
     })
     private UpdateTaskScheduleResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.dataintegration.model.TaskSchedule taskSchedule) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.taskSchedule = taskSchedule;
@@ -75,6 +77,13 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(UpdateTaskScheduleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             taskSchedule(o.getTaskSchedule());
@@ -149,7 +159,7 @@ public class UpdateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
          */
         public UpdateTaskScheduleResponse build() {
             return new UpdateTaskScheduleResponse(
-                    __httpStatusCode__, opcRequestId, etag, taskSchedule);
+                    __httpStatusCode__, headers, opcRequestId, etag, taskSchedule);
         }
     }
 

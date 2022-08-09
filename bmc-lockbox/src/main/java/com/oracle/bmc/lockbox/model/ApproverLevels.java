@@ -17,7 +17,7 @@ package com.oracle.bmc.lockbox.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApproverLevels.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApproverLevels {
+public final class ApproverLevels extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"level1", "level2", "level3"})
     public ApproverLevels(ApproverInfo level1, ApproverInfo level2, ApproverInfo level3) {
@@ -61,18 +61,25 @@ public final class ApproverLevels {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApproverLevels build() {
-            ApproverLevels __instance__ = new ApproverLevels(level1, level2, level3);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ApproverLevels model = new ApproverLevels(this.level1, this.level2, this.level3);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApproverLevels o) {
-            Builder copiedBuilder =
-                    level1(o.getLevel1()).level2(o.getLevel2()).level3(o.getLevel3());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApproverLevels model) {
+            if (model.wasPropertyExplicitlySet("level1")) {
+                this.level1(model.getLevel1());
+            }
+            if (model.wasPropertyExplicitlySet("level2")) {
+                this.level2(model.getLevel2());
+            }
+            if (model.wasPropertyExplicitlySet("level3")) {
+                this.level3(model.getLevel3());
+            }
+            return this;
         }
     }
 
@@ -121,10 +128,10 @@ public final class ApproverLevels {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApproverLevels(");
+        sb.append("super=").append(super.toString());
         sb.append("level1=").append(String.valueOf(this.level1));
         sb.append(", level2=").append(String.valueOf(this.level2));
         sb.append(", level3=").append(String.valueOf(this.level3));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -142,7 +149,7 @@ public final class ApproverLevels {
         return java.util.Objects.equals(this.level1, other.level1)
                 && java.util.Objects.equals(this.level2, other.level2)
                 && java.util.Objects.equals(this.level3, other.level3)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -152,16 +159,7 @@ public final class ApproverLevels {
         result = (result * PRIME) + (this.level1 == null ? 43 : this.level1.hashCode());
         result = (result * PRIME) + (this.level2 == null ? 43 : this.level2.hashCode());
         result = (result * PRIME) + (this.level3 == null ? 43 : this.level3.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

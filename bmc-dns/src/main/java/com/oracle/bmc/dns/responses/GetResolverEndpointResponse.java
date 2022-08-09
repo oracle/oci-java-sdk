@@ -78,6 +78,7 @@ public class GetResolverEndpointResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "resolverEndpoint",
@@ -85,11 +86,12 @@ public class GetResolverEndpointResponse extends com.oracle.bmc.responses.BmcRes
     })
     private GetResolverEndpointResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dns.model.ResolverEndpoint resolverEndpoint,
             boolean isNotModified) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.resolverEndpoint = resolverEndpoint;
@@ -101,6 +103,13 @@ public class GetResolverEndpointResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -186,6 +195,7 @@ public class GetResolverEndpointResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(GetResolverEndpointResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             resolverEndpoint(o.getResolverEndpoint());
@@ -199,7 +209,12 @@ public class GetResolverEndpointResponse extends com.oracle.bmc.responses.BmcRes
          */
         public GetResolverEndpointResponse build() {
             return new GetResolverEndpointResponse(
-                    __httpStatusCode__, etag, opcRequestId, resolverEndpoint, isNotModified);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    resolverEndpoint,
+                    isNotModified);
         }
     }
 

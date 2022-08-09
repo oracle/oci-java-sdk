@@ -66,6 +66,7 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcClientRequestId",
         "opcRequestId",
         "location",
@@ -73,11 +74,12 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
     })
     private CreateMultipartUploadResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             String location,
             com.oracle.bmc.objectstorage.model.MultipartUpload multipartUpload) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
         this.location = location;
@@ -89,6 +91,13 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -163,6 +172,7 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
          */
         public Builder copy(CreateMultipartUploadResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             location(o.getLocation());
@@ -178,6 +188,7 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         public CreateMultipartUploadResponse build() {
             return new CreateMultipartUploadResponse(
                     __httpStatusCode__,
+                    headers,
                     opcClientRequestId,
                     opcRequestId,
                     location,

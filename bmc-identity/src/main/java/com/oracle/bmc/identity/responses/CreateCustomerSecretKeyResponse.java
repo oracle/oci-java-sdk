@@ -53,16 +53,18 @@ public class CreateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "customerSecretKey"
     })
     private CreateCustomerSecretKeyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.CustomerSecretKey customerSecretKey) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.customerSecretKey = customerSecretKey;
@@ -73,6 +75,13 @@ public class CreateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class CreateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
          */
         public Builder copy(CreateCustomerSecretKeyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             customerSecretKey(o.getCustomerSecretKey());
@@ -145,7 +155,7 @@ public class CreateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
          */
         public CreateCustomerSecretKeyResponse build() {
             return new CreateCustomerSecretKeyResponse(
-                    __httpStatusCode__, opcRequestId, etag, customerSecretKey);
+                    __httpStatusCode__, headers, opcRequestId, etag, customerSecretKey);
         }
     }
 

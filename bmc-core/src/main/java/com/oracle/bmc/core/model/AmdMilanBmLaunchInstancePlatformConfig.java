@@ -198,38 +198,54 @@ public final class AmdMilanBmLaunchInstancePlatformConfig extends LaunchInstance
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AmdMilanBmLaunchInstancePlatformConfig build() {
-            AmdMilanBmLaunchInstancePlatformConfig __instance__ =
+            AmdMilanBmLaunchInstancePlatformConfig model =
                     new AmdMilanBmLaunchInstancePlatformConfig(
-                            isSecureBootEnabled,
-                            isTrustedPlatformModuleEnabled,
-                            isMeasuredBootEnabled,
-                            numaNodesPerSocket,
-                            isSymmetricMultiThreadingEnabled,
-                            isAccessControlServiceEnabled,
-                            areVirtualInstructionsEnabled,
-                            isInputOutputMemoryManagementUnitEnabled,
-                            percentageOfCoresEnabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isSecureBootEnabled,
+                            this.isTrustedPlatformModuleEnabled,
+                            this.isMeasuredBootEnabled,
+                            this.numaNodesPerSocket,
+                            this.isSymmetricMultiThreadingEnabled,
+                            this.isAccessControlServiceEnabled,
+                            this.areVirtualInstructionsEnabled,
+                            this.isInputOutputMemoryManagementUnitEnabled,
+                            this.percentageOfCoresEnabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AmdMilanBmLaunchInstancePlatformConfig o) {
-            Builder copiedBuilder =
-                    isSecureBootEnabled(o.getIsSecureBootEnabled())
-                            .isTrustedPlatformModuleEnabled(o.getIsTrustedPlatformModuleEnabled())
-                            .isMeasuredBootEnabled(o.getIsMeasuredBootEnabled())
-                            .numaNodesPerSocket(o.getNumaNodesPerSocket())
-                            .isSymmetricMultiThreadingEnabled(
-                                    o.getIsSymmetricMultiThreadingEnabled())
-                            .isAccessControlServiceEnabled(o.getIsAccessControlServiceEnabled())
-                            .areVirtualInstructionsEnabled(o.getAreVirtualInstructionsEnabled())
-                            .isInputOutputMemoryManagementUnitEnabled(
-                                    o.getIsInputOutputMemoryManagementUnitEnabled())
-                            .percentageOfCoresEnabled(o.getPercentageOfCoresEnabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AmdMilanBmLaunchInstancePlatformConfig model) {
+            if (model.wasPropertyExplicitlySet("isSecureBootEnabled")) {
+                this.isSecureBootEnabled(model.getIsSecureBootEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isTrustedPlatformModuleEnabled")) {
+                this.isTrustedPlatformModuleEnabled(model.getIsTrustedPlatformModuleEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isMeasuredBootEnabled")) {
+                this.isMeasuredBootEnabled(model.getIsMeasuredBootEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("numaNodesPerSocket")) {
+                this.numaNodesPerSocket(model.getNumaNodesPerSocket());
+            }
+            if (model.wasPropertyExplicitlySet("isSymmetricMultiThreadingEnabled")) {
+                this.isSymmetricMultiThreadingEnabled(model.getIsSymmetricMultiThreadingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isAccessControlServiceEnabled")) {
+                this.isAccessControlServiceEnabled(model.getIsAccessControlServiceEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("areVirtualInstructionsEnabled")) {
+                this.areVirtualInstructionsEnabled(model.getAreVirtualInstructionsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isInputOutputMemoryManagementUnitEnabled")) {
+                this.isInputOutputMemoryManagementUnitEnabled(
+                        model.getIsInputOutputMemoryManagementUnitEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("percentageOfCoresEnabled")) {
+                this.percentageOfCoresEnabled(model.getPercentageOfCoresEnabled());
+            }
+            return this;
         }
     }
 
@@ -451,7 +467,6 @@ public final class AmdMilanBmLaunchInstancePlatformConfig extends LaunchInstance
                 .append(String.valueOf(this.isInputOutputMemoryManagementUnitEnabled));
         sb.append(", percentageOfCoresEnabled=")
                 .append(String.valueOf(this.percentageOfCoresEnabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -479,8 +494,7 @@ public final class AmdMilanBmLaunchInstancePlatformConfig extends LaunchInstance
                         other.isInputOutputMemoryManagementUnitEnabled)
                 && java.util.Objects.equals(
                         this.percentageOfCoresEnabled, other.percentageOfCoresEnabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -517,16 +531,6 @@ public final class AmdMilanBmLaunchInstancePlatformConfig extends LaunchInstance
                         + (this.percentageOfCoresEnabled == null
                                 ? 43
                                 : this.percentageOfCoresEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -103,32 +103,45 @@ public final class CreateMediaWorkflowJobByNameDetails extends CreateMediaWorkfl
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateMediaWorkflowJobByNameDetails build() {
-            CreateMediaWorkflowJobByNameDetails __instance__ =
+            CreateMediaWorkflowJobByNameDetails model =
                     new CreateMediaWorkflowJobByNameDetails(
-                            mediaWorkflowConfigurationIds,
-                            compartmentId,
-                            displayName,
-                            parameters,
-                            freeformTags,
-                            definedTags,
-                            mediaWorkflowName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.mediaWorkflowConfigurationIds,
+                            this.compartmentId,
+                            this.displayName,
+                            this.parameters,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.mediaWorkflowName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateMediaWorkflowJobByNameDetails o) {
-            Builder copiedBuilder =
-                    mediaWorkflowConfigurationIds(o.getMediaWorkflowConfigurationIds())
-                            .compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .parameters(o.getParameters())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .mediaWorkflowName(o.getMediaWorkflowName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateMediaWorkflowJobByNameDetails model) {
+            if (model.wasPropertyExplicitlySet("mediaWorkflowConfigurationIds")) {
+                this.mediaWorkflowConfigurationIds(model.getMediaWorkflowConfigurationIds());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("mediaWorkflowName")) {
+                this.mediaWorkflowName(model.getMediaWorkflowName());
+            }
+            return this;
         }
     }
 
@@ -191,7 +204,6 @@ public final class CreateMediaWorkflowJobByNameDetails extends CreateMediaWorkfl
         sb.append("CreateMediaWorkflowJobByNameDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", mediaWorkflowName=").append(String.valueOf(this.mediaWorkflowName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -207,8 +219,7 @@ public final class CreateMediaWorkflowJobByNameDetails extends CreateMediaWorkfl
 
         CreateMediaWorkflowJobByNameDetails other = (CreateMediaWorkflowJobByNameDetails) o;
         return java.util.Objects.equals(this.mediaWorkflowName, other.mediaWorkflowName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -218,16 +229,6 @@ public final class CreateMediaWorkflowJobByNameDetails extends CreateMediaWorkfl
         result =
                 (result * PRIME)
                         + (this.mediaWorkflowName == null ? 43 : this.mediaWorkflowName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

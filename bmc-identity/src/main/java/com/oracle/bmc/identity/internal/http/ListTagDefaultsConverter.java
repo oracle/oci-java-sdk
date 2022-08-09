@@ -150,8 +150,8 @@ public class ListTagDefaultsConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .ListTagDefaultsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

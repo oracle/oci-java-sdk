@@ -17,7 +17,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DiskGroupDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DiskGroupDetails {
+public final class DiskGroupDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"diskgroupName", "asmName"})
     public DiskGroupDetails(String diskgroupName, String asmName) {
@@ -65,17 +65,22 @@ public final class DiskGroupDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DiskGroupDetails build() {
-            DiskGroupDetails __instance__ = new DiskGroupDetails(diskgroupName, asmName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DiskGroupDetails model = new DiskGroupDetails(this.diskgroupName, this.asmName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DiskGroupDetails o) {
-            Builder copiedBuilder = diskgroupName(o.getDiskgroupName()).asmName(o.getAsmName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DiskGroupDetails model) {
+            if (model.wasPropertyExplicitlySet("diskgroupName")) {
+                this.diskgroupName(model.getDiskgroupName());
+            }
+            if (model.wasPropertyExplicitlySet("asmName")) {
+                this.asmName(model.getAsmName());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class DiskGroupDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DiskGroupDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("diskgroupName=").append(String.valueOf(this.diskgroupName));
         sb.append(", asmName=").append(String.valueOf(this.asmName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class DiskGroupDetails {
         DiskGroupDetails other = (DiskGroupDetails) o;
         return java.util.Objects.equals(this.diskgroupName, other.diskgroupName)
                 && java.util.Objects.equals(this.asmName, other.asmName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +166,7 @@ public final class DiskGroupDetails {
                 (result * PRIME)
                         + (this.diskgroupName == null ? 43 : this.diskgroupName.hashCode());
         result = (result * PRIME) + (this.asmName == null ? 43 : this.asmName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

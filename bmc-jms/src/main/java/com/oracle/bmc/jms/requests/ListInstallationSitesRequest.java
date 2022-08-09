@@ -174,6 +174,41 @@ public class ListInstallationSitesRequest
     public com.oracle.bmc.jms.model.JreSecurityStatus getJreSecurityStatus() {
         return jreSecurityStatus;
     }
+    /**
+     * Filter the list with path contains the given value.
+     *
+     */
+    private String pathContains;
+
+    /**
+     * Filter the list with path contains the given value.
+     *
+     */
+    public String getPathContains() {
+        return pathContains;
+    }
+    /**
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    private java.util.Date timeStart;
+
+    /**
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
+    /**
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    private java.util.Date timeEnd;
+
+    /**
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -411,6 +446,53 @@ public class ListInstallationSitesRequest
         }
 
         /**
+         * Filter the list with path contains the given value.
+         *
+         */
+        private String pathContains = null;
+
+        /**
+         * Filter the list with path contains the given value.
+         *
+         * @param pathContains the value to set
+         * @return this builder instance
+         */
+        public Builder pathContains(String pathContains) {
+            this.pathContains = pathContains;
+            return this;
+        }
+
+        /**
+         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        private java.util.Date timeStart = null;
+
+        /**
+         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeStart the value to set
+         * @return this builder instance
+         */
+        public Builder timeStart(java.util.Date timeStart) {
+            this.timeStart = timeStart;
+            return this;
+        }
+
+        /**
+         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        private java.util.Date timeEnd = null;
+
+        /**
+         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeEnd the value to set
+         * @return this builder instance
+         */
+        public Builder timeEnd(java.util.Date timeEnd) {
+            this.timeEnd = timeEnd;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -452,6 +534,9 @@ public class ListInstallationSitesRequest
             opcRequestId(o.getOpcRequestId());
             osFamily(o.getOsFamily());
             jreSecurityStatus(o.getJreSecurityStatus());
+            pathContains(o.getPathContains());
+            timeStart(o.getTimeStart());
+            timeEnd(o.getTimeEnd());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -498,8 +583,11 @@ public class ListInstallationSitesRequest
             request.opcRequestId = opcRequestId;
             request.osFamily = osFamily;
             request.jreSecurityStatus = jreSecurityStatus;
+            request.pathContains = pathContains;
+            request.timeStart = timeStart;
+            request.timeEnd = timeEnd;
             return request;
-            // new ListInstallationSitesRequest(fleetId, jreVendor, jreDistribution, jreVersion, installationPath, applicationId, managedInstanceId, limit, page, sortOrder, sortBy, opcRequestId, osFamily, jreSecurityStatus);
+            // new ListInstallationSitesRequest(fleetId, jreVendor, jreDistribution, jreVersion, installationPath, applicationId, managedInstanceId, limit, page, sortOrder, sortBy, opcRequestId, osFamily, jreSecurityStatus, pathContains, timeStart, timeEnd);
         }
     }
 
@@ -522,7 +610,10 @@ public class ListInstallationSitesRequest
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
                 .osFamily(osFamily)
-                .jreSecurityStatus(jreSecurityStatus);
+                .jreSecurityStatus(jreSecurityStatus)
+                .pathContains(pathContains)
+                .timeStart(timeStart)
+                .timeEnd(timeEnd);
     }
 
     /**
@@ -552,6 +643,9 @@ public class ListInstallationSitesRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",osFamily=").append(String.valueOf(this.osFamily));
         sb.append(",jreSecurityStatus=").append(String.valueOf(this.jreSecurityStatus));
+        sb.append(",pathContains=").append(String.valueOf(this.pathContains));
+        sb.append(",timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(",timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(")");
         return sb.toString();
     }
@@ -580,7 +674,10 @@ public class ListInstallationSitesRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
-                && java.util.Objects.equals(this.jreSecurityStatus, other.jreSecurityStatus);
+                && java.util.Objects.equals(this.jreSecurityStatus, other.jreSecurityStatus)
+                && java.util.Objects.equals(this.pathContains, other.pathContains)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd);
     }
 
     @Override
@@ -611,6 +708,9 @@ public class ListInstallationSitesRequest
         result =
                 (result * PRIME)
                         + (this.jreSecurityStatus == null ? 43 : this.jreSecurityStatus.hashCode());
+        result = (result * PRIME) + (this.pathContains == null ? 43 : this.pathContains.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         return result;
     }
 }

@@ -48,18 +48,20 @@ public final class StreamPackagingConfigEncryptionAes128 extends StreamPackaging
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StreamPackagingConfigEncryptionAes128 build() {
-            StreamPackagingConfigEncryptionAes128 __instance__ =
-                    new StreamPackagingConfigEncryptionAes128(kmsKeyId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StreamPackagingConfigEncryptionAes128 model =
+                    new StreamPackagingConfigEncryptionAes128(this.kmsKeyId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StreamPackagingConfigEncryptionAes128 o) {
-            Builder copiedBuilder = kmsKeyId(o.getKmsKeyId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StreamPackagingConfigEncryptionAes128 model) {
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            return this;
         }
     }
 
@@ -109,7 +111,6 @@ public final class StreamPackagingConfigEncryptionAes128 extends StreamPackaging
         sb.append("StreamPackagingConfigEncryptionAes128(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -124,9 +125,7 @@ public final class StreamPackagingConfigEncryptionAes128 extends StreamPackaging
         }
 
         StreamPackagingConfigEncryptionAes128 other = (StreamPackagingConfigEncryptionAes128) o;
-        return java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId) && super.equals(other);
     }
 
     @Override
@@ -134,16 +133,6 @@ public final class StreamPackagingConfigEncryptionAes128 extends StreamPackaging
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -20,7 +20,8 @@ package com.oracle.bmc.dataflow.model;
     builder = UpdatePrivateEndpointDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdatePrivateEndpointDetails {
+public final class UpdatePrivateEndpointDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTags",
@@ -197,32 +198,45 @@ public final class UpdatePrivateEndpointDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdatePrivateEndpointDetails build() {
-            UpdatePrivateEndpointDetails __instance__ =
+            UpdatePrivateEndpointDetails model =
                     new UpdatePrivateEndpointDetails(
-                            definedTags,
-                            description,
-                            displayName,
-                            dnsZones,
-                            freeformTags,
-                            maxHostCount,
-                            nsgIds);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.definedTags,
+                            this.description,
+                            this.displayName,
+                            this.dnsZones,
+                            this.freeformTags,
+                            this.maxHostCount,
+                            this.nsgIds);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdatePrivateEndpointDetails o) {
-            Builder copiedBuilder =
-                    definedTags(o.getDefinedTags())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .dnsZones(o.getDnsZones())
-                            .freeformTags(o.getFreeformTags())
-                            .maxHostCount(o.getMaxHostCount())
-                            .nsgIds(o.getNsgIds());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdatePrivateEndpointDetails model) {
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("dnsZones")) {
+                this.dnsZones(model.getDnsZones());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("maxHostCount")) {
+                this.maxHostCount(model.getMaxHostCount());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
+            return this;
         }
     }
 
@@ -376,6 +390,7 @@ public final class UpdatePrivateEndpointDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdatePrivateEndpointDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -383,7 +398,6 @@ public final class UpdatePrivateEndpointDetails {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", maxHostCount=").append(String.valueOf(this.maxHostCount));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -405,7 +419,7 @@ public final class UpdatePrivateEndpointDetails {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.maxHostCount, other.maxHostCount)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -419,16 +433,7 @@ public final class UpdatePrivateEndpointDetails {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.maxHostCount == null ? 43 : this.maxHostCount.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

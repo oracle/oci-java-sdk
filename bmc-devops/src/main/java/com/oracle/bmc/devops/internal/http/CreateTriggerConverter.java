@@ -104,8 +104,8 @@ public class CreateTriggerConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .CreateTriggerResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.triggerCreateResult(response.getItem());
 

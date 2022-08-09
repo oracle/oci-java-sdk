@@ -17,7 +17,7 @@ package com.oracle.bmc.licensemanager.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImageResponse.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImageResponse {
+public final class ImageResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -127,23 +127,37 @@ public final class ImageResponse {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageResponse build() {
-            ImageResponse __instance__ =
-                    new ImageResponse(id, listingName, publisher, listingId, packageVersion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ImageResponse model =
+                    new ImageResponse(
+                            this.id,
+                            this.listingName,
+                            this.publisher,
+                            this.listingId,
+                            this.packageVersion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImageResponse o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .listingName(o.getListingName())
-                            .publisher(o.getPublisher())
-                            .listingId(o.getListingId())
-                            .packageVersion(o.getPackageVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImageResponse model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("listingName")) {
+                this.listingName(model.getListingName());
+            }
+            if (model.wasPropertyExplicitlySet("publisher")) {
+                this.publisher(model.getPublisher());
+            }
+            if (model.wasPropertyExplicitlySet("listingId")) {
+                this.listingId(model.getListingId());
+            }
+            if (model.wasPropertyExplicitlySet("packageVersion")) {
+                this.packageVersion(model.getPackageVersion());
+            }
+            return this;
         }
     }
 
@@ -241,12 +255,12 @@ public final class ImageResponse {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImageResponse(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", listingName=").append(String.valueOf(this.listingName));
         sb.append(", publisher=").append(String.valueOf(this.publisher));
         sb.append(", listingId=").append(String.valueOf(this.listingId));
         sb.append(", packageVersion=").append(String.valueOf(this.packageVersion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -266,7 +280,7 @@ public final class ImageResponse {
                 && java.util.Objects.equals(this.publisher, other.publisher)
                 && java.util.Objects.equals(this.listingId, other.listingId)
                 && java.util.Objects.equals(this.packageVersion, other.packageVersion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -280,16 +294,7 @@ public final class ImageResponse {
         result =
                 (result * PRIME)
                         + (this.packageVersion == null ? 43 : this.packageVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

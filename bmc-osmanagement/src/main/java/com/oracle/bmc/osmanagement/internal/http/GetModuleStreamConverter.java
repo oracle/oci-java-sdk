@@ -116,8 +116,8 @@ public class GetModuleStreamConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .GetModuleStreamResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.moduleStream(response.getItem());
 

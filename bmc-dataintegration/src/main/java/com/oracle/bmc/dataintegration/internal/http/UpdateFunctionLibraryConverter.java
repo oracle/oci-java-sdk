@@ -124,8 +124,8 @@ public class UpdateFunctionLibraryConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .UpdateFunctionLibraryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.functionLibrary(response.getItem());
 

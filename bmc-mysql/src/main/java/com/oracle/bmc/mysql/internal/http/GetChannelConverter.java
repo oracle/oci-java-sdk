@@ -102,7 +102,8 @@ public class GetChannelConverter {
 
                                 com.oracle.bmc.mysql.responses.GetChannelResponse.Builder builder =
                                         com.oracle.bmc.mysql.responses.GetChannelResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 if (response.getStatusCode() != 304) {
                                     builder.channel(response.getItem());

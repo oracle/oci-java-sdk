@@ -99,8 +99,8 @@ public class GetProxyDetailsConverter {
                                         builder =
                                                 com.oracle.bmc.servicemesh.responses
                                                         .GetProxyDetailsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.proxyDetails(response.getItem());
 

@@ -131,8 +131,8 @@ public class ExtractStructuredLogFieldPathsConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ExtractStructuredLogFieldPathsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.extractLogFieldResults(response.getItem());
 

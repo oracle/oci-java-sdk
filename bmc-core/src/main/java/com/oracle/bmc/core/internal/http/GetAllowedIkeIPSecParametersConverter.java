@@ -105,8 +105,8 @@ public class GetAllowedIkeIPSecParametersConverter {
                                                 com.oracle.bmc.core.responses
                                                         .GetAllowedIkeIPSecParametersResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.allowedIkeIPSecParameters(response.getItem());
 

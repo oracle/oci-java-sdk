@@ -17,7 +17,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WafTrafficDatum.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WafTrafficDatum {
+public final class WafTrafficDatum extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeObserved",
@@ -146,30 +146,41 @@ public final class WafTrafficDatum {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WafTrafficDatum build() {
-            WafTrafficDatum __instance__ =
+            WafTrafficDatum model =
                     new WafTrafficDatum(
-                            timeObserved,
-                            timeRangeInSeconds,
-                            tenancyId,
-                            compartmentId,
-                            waasPolicyId,
-                            trafficInBytes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.timeObserved,
+                            this.timeRangeInSeconds,
+                            this.tenancyId,
+                            this.compartmentId,
+                            this.waasPolicyId,
+                            this.trafficInBytes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WafTrafficDatum o) {
-            Builder copiedBuilder =
-                    timeObserved(o.getTimeObserved())
-                            .timeRangeInSeconds(o.getTimeRangeInSeconds())
-                            .tenancyId(o.getTenancyId())
-                            .compartmentId(o.getCompartmentId())
-                            .waasPolicyId(o.getWaasPolicyId())
-                            .trafficInBytes(o.getTrafficInBytes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WafTrafficDatum model) {
+            if (model.wasPropertyExplicitlySet("timeObserved")) {
+                this.timeObserved(model.getTimeObserved());
+            }
+            if (model.wasPropertyExplicitlySet("timeRangeInSeconds")) {
+                this.timeRangeInSeconds(model.getTimeRangeInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("tenancyId")) {
+                this.tenancyId(model.getTenancyId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("waasPolicyId")) {
+                this.waasPolicyId(model.getWaasPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("trafficInBytes")) {
+                this.trafficInBytes(model.getTrafficInBytes());
+            }
+            return this;
         }
     }
 
@@ -281,13 +292,13 @@ public final class WafTrafficDatum {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WafTrafficDatum(");
+        sb.append("super=").append(super.toString());
         sb.append("timeObserved=").append(String.valueOf(this.timeObserved));
         sb.append(", timeRangeInSeconds=").append(String.valueOf(this.timeRangeInSeconds));
         sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", waasPolicyId=").append(String.valueOf(this.waasPolicyId));
         sb.append(", trafficInBytes=").append(String.valueOf(this.trafficInBytes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -308,7 +319,7 @@ public final class WafTrafficDatum {
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.waasPolicyId, other.waasPolicyId)
                 && java.util.Objects.equals(this.trafficInBytes, other.trafficInBytes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -329,16 +340,7 @@ public final class WafTrafficDatum {
         result =
                 (result * PRIME)
                         + (this.trafficInBytes == null ? 43 : this.trafficInBytes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

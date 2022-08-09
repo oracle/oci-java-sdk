@@ -93,30 +93,41 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RepositoryBranchSummary build() {
-            RepositoryBranchSummary __instance__ =
+            RepositoryBranchSummary model =
                     new RepositoryBranchSummary(
-                            refName,
-                            fullRefName,
-                            repositoryId,
-                            freeformTags,
-                            definedTags,
-                            commitId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.refName,
+                            this.fullRefName,
+                            this.repositoryId,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.commitId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RepositoryBranchSummary o) {
-            Builder copiedBuilder =
-                    refName(o.getRefName())
-                            .fullRefName(o.getFullRefName())
-                            .repositoryId(o.getRepositoryId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .commitId(o.getCommitId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RepositoryBranchSummary model) {
+            if (model.wasPropertyExplicitlySet("refName")) {
+                this.refName(model.getRefName());
+            }
+            if (model.wasPropertyExplicitlySet("fullRefName")) {
+                this.fullRefName(model.getFullRefName());
+            }
+            if (model.wasPropertyExplicitlySet("repositoryId")) {
+                this.repositoryId(model.getRepositoryId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("commitId")) {
+                this.commitId(model.getCommitId());
+            }
+            return this;
         }
     }
 
@@ -172,7 +183,6 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
         sb.append("RepositoryBranchSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", commitId=").append(String.valueOf(this.commitId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -187,9 +197,7 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
         }
 
         RepositoryBranchSummary other = (RepositoryBranchSummary) o;
-        return java.util.Objects.equals(this.commitId, other.commitId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.commitId, other.commitId) && super.equals(other);
     }
 
     @Override
@@ -197,16 +205,6 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.commitId == null ? 43 : this.commitId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -53,13 +53,20 @@ public class GeneratePlaylistResponse extends com.oracle.bmc.responses.BmcRespon
         return inputStream;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "inputStream"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "inputStream"
+    })
     private GeneratePlaylistResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.inputStream = inputStream;
@@ -70,6 +77,13 @@ public class GeneratePlaylistResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GeneratePlaylistResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(GeneratePlaylistResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             inputStream(o.getInputStream());
@@ -143,7 +158,7 @@ public class GeneratePlaylistResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public GeneratePlaylistResponse build() {
             return new GeneratePlaylistResponse(
-                    __httpStatusCode__, etag, opcRequestId, inputStream);
+                    __httpStatusCode__, headers, etag, opcRequestId, inputStream);
         }
     }
 

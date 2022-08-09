@@ -154,7 +154,8 @@ public class ListSddcsConverter {
 
                                 com.oracle.bmc.ocvp.responses.ListSddcsResponse.Builder builder =
                                         com.oracle.bmc.ocvp.responses.ListSddcsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.sddcCollection(response.getItem());
 

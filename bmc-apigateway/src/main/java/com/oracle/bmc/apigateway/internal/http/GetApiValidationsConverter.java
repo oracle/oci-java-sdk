@@ -111,8 +111,8 @@ public class GetApiValidationsConverter {
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
                                                         .GetApiValidationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.apiValidations(response.getItem());
 

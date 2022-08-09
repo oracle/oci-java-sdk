@@ -19,7 +19,7 @@ package com.oracle.bmc.ospgateway.model;
     builder = MerchantDefinedData.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MerchantDefinedData {
+public final class MerchantDefinedData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"promoType", "cloudAccountName"})
     public MerchantDefinedData(String promoType, String cloudAccountName) {
@@ -67,18 +67,23 @@ public final class MerchantDefinedData {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MerchantDefinedData build() {
-            MerchantDefinedData __instance__ = new MerchantDefinedData(promoType, cloudAccountName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            MerchantDefinedData model =
+                    new MerchantDefinedData(this.promoType, this.cloudAccountName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(MerchantDefinedData o) {
-            Builder copiedBuilder =
-                    promoType(o.getPromoType()).cloudAccountName(o.getCloudAccountName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(MerchantDefinedData model) {
+            if (model.wasPropertyExplicitlySet("promoType")) {
+                this.promoType(model.getPromoType());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAccountName")) {
+                this.cloudAccountName(model.getCloudAccountName());
+            }
+            return this;
         }
     }
 
@@ -134,9 +139,9 @@ public final class MerchantDefinedData {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("MerchantDefinedData(");
+        sb.append("super=").append(super.toString());
         sb.append("promoType=").append(String.valueOf(this.promoType));
         sb.append(", cloudAccountName=").append(String.valueOf(this.cloudAccountName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,7 +158,7 @@ public final class MerchantDefinedData {
         MerchantDefinedData other = (MerchantDefinedData) o;
         return java.util.Objects.equals(this.promoType, other.promoType)
                 && java.util.Objects.equals(this.cloudAccountName, other.cloudAccountName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -164,16 +169,7 @@ public final class MerchantDefinedData {
         result =
                 (result * PRIME)
                         + (this.cloudAccountName == null ? 43 : this.cloudAccountName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

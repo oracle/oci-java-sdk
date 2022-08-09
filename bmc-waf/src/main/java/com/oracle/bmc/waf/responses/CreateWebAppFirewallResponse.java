@@ -100,6 +100,7 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcWorkRequestId",
         "opcRequestId",
@@ -109,13 +110,14 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
     })
     private CreateWebAppFirewallResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
             String location,
             String contentLocation,
             com.oracle.bmc.waf.model.WebAppFirewall webAppFirewall) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
@@ -129,6 +131,13 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -240,6 +249,7 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(CreateWebAppFirewallResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
@@ -257,6 +267,7 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
         public CreateWebAppFirewallResponse build() {
             return new CreateWebAppFirewallResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcWorkRequestId,
                     opcRequestId,

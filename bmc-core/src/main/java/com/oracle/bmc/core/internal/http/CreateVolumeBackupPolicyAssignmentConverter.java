@@ -107,8 +107,8 @@ public class CreateVolumeBackupPolicyAssignmentConverter {
                                                 com.oracle.bmc.core.responses
                                                         .CreateVolumeBackupPolicyAssignmentResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.volumeBackupPolicyAssignment(response.getItem());
 

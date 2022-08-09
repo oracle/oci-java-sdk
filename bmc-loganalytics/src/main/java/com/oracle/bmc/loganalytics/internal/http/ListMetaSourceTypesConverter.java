@@ -143,8 +143,8 @@ public class ListMetaSourceTypesConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListMetaSourceTypesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.logAnalyticsMetaSourceTypeCollection(response.getItem());
 

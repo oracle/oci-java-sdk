@@ -17,7 +17,7 @@ package com.oracle.bmc.dataconnectivity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Attribute.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Attribute {
+public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -165,32 +165,45 @@ public final class Attribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Attribute build() {
-            Attribute __instance__ =
+            Attribute model =
                     new Attribute(
-                            name,
-                            isSensitive,
-                            isMandatory,
-                            isGenerated,
-                            isBase64Encoded,
-                            validKeyList,
-                            attributeType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.isSensitive,
+                            this.isMandatory,
+                            this.isGenerated,
+                            this.isBase64Encoded,
+                            this.validKeyList,
+                            this.attributeType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Attribute o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .isSensitive(o.getIsSensitive())
-                            .isMandatory(o.getIsMandatory())
-                            .isGenerated(o.getIsGenerated())
-                            .isBase64Encoded(o.getIsBase64Encoded())
-                            .validKeyList(o.getValidKeyList())
-                            .attributeType(o.getAttributeType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Attribute model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("isSensitive")) {
+                this.isSensitive(model.getIsSensitive());
+            }
+            if (model.wasPropertyExplicitlySet("isMandatory")) {
+                this.isMandatory(model.getIsMandatory());
+            }
+            if (model.wasPropertyExplicitlySet("isGenerated")) {
+                this.isGenerated(model.getIsGenerated());
+            }
+            if (model.wasPropertyExplicitlySet("isBase64Encoded")) {
+                this.isBase64Encoded(model.getIsBase64Encoded());
+            }
+            if (model.wasPropertyExplicitlySet("validKeyList")) {
+                this.validKeyList(model.getValidKeyList());
+            }
+            if (model.wasPropertyExplicitlySet("attributeType")) {
+                this.attributeType(model.getAttributeType());
+            }
+            return this;
         }
     }
 
@@ -316,6 +329,7 @@ public final class Attribute {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Attribute(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", isSensitive=").append(String.valueOf(this.isSensitive));
         sb.append(", isMandatory=").append(String.valueOf(this.isMandatory));
@@ -323,7 +337,6 @@ public final class Attribute {
         sb.append(", isBase64Encoded=").append(String.valueOf(this.isBase64Encoded));
         sb.append(", validKeyList=").append(String.valueOf(this.validKeyList));
         sb.append(", attributeType=").append(String.valueOf(this.attributeType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -345,7 +358,7 @@ public final class Attribute {
                 && java.util.Objects.equals(this.isBase64Encoded, other.isBase64Encoded)
                 && java.util.Objects.equals(this.validKeyList, other.validKeyList)
                 && java.util.Objects.equals(this.attributeType, other.attributeType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -363,16 +376,7 @@ public final class Attribute {
         result =
                 (result * PRIME)
                         + (this.attributeType == null ? 43 : this.attributeType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -19,7 +19,7 @@ package com.oracle.bmc.vnmonitoring.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RouteRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RouteRule {
+public final class RouteRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cidrBlock",
@@ -176,22 +176,33 @@ public final class RouteRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RouteRule build() {
-            RouteRule __instance__ =
-                    new RouteRule(cidrBlock, destination, destinationType, networkEntityId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RouteRule model =
+                    new RouteRule(
+                            this.cidrBlock,
+                            this.destination,
+                            this.destinationType,
+                            this.networkEntityId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RouteRule o) {
-            Builder copiedBuilder =
-                    cidrBlock(o.getCidrBlock())
-                            .destination(o.getDestination())
-                            .destinationType(o.getDestinationType())
-                            .networkEntityId(o.getNetworkEntityId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RouteRule model) {
+            if (model.wasPropertyExplicitlySet("cidrBlock")) {
+                this.cidrBlock(model.getCidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("destination")) {
+                this.destination(model.getDestination());
+            }
+            if (model.wasPropertyExplicitlySet("destinationType")) {
+                this.destinationType(model.getDestinationType());
+            }
+            if (model.wasPropertyExplicitlySet("networkEntityId")) {
+                this.networkEntityId(model.getNetworkEntityId());
+            }
+            return this;
         }
     }
 
@@ -396,11 +407,11 @@ public final class RouteRule {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RouteRule(");
+        sb.append("super=").append(super.toString());
         sb.append("cidrBlock=").append(String.valueOf(this.cidrBlock));
         sb.append(", destination=").append(String.valueOf(this.destination));
         sb.append(", destinationType=").append(String.valueOf(this.destinationType));
         sb.append(", networkEntityId=").append(String.valueOf(this.networkEntityId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -419,7 +430,7 @@ public final class RouteRule {
                 && java.util.Objects.equals(this.destination, other.destination)
                 && java.util.Objects.equals(this.destinationType, other.destinationType)
                 && java.util.Objects.equals(this.networkEntityId, other.networkEntityId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -434,16 +445,7 @@ public final class RouteRule {
         result =
                 (result * PRIME)
                         + (this.networkEntityId == null ? 43 : this.networkEntityId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

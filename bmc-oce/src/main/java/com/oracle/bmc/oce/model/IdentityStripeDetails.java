@@ -19,7 +19,8 @@ package com.oracle.bmc.oce.model;
     builder = IdentityStripeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IdentityStripeDetails {
+public final class IdentityStripeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"serviceName", "tenancy"})
     public IdentityStripeDetails(String serviceName, String tenancy) {
@@ -75,17 +76,22 @@ public final class IdentityStripeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IdentityStripeDetails build() {
-            IdentityStripeDetails __instance__ = new IdentityStripeDetails(serviceName, tenancy);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            IdentityStripeDetails model = new IdentityStripeDetails(this.serviceName, this.tenancy);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IdentityStripeDetails o) {
-            Builder copiedBuilder = serviceName(o.getServiceName()).tenancy(o.getTenancy());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IdentityStripeDetails model) {
+            if (model.wasPropertyExplicitlySet("serviceName")) {
+                this.serviceName(model.getServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("tenancy")) {
+                this.tenancy(model.getTenancy());
+            }
+            return this;
         }
     }
 
@@ -149,9 +155,9 @@ public final class IdentityStripeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IdentityStripeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", tenancy=").append(String.valueOf(this.tenancy));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -168,7 +174,7 @@ public final class IdentityStripeDetails {
         IdentityStripeDetails other = (IdentityStripeDetails) o;
         return java.util.Objects.equals(this.serviceName, other.serviceName)
                 && java.util.Objects.equals(this.tenancy, other.tenancy)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -177,16 +183,7 @@ public final class IdentityStripeDetails {
         int result = 1;
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
         result = (result * PRIME) + (this.tenancy == null ? 43 : this.tenancy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

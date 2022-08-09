@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = FleetStatusByCategory.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FleetStatusByCategory {
+public final class FleetStatusByCategory
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseType",
@@ -114,23 +115,33 @@ public final class FleetStatusByCategory {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FleetStatusByCategory build() {
-            FleetStatusByCategory __instance__ =
+            FleetStatusByCategory model =
                     new FleetStatusByCategory(
-                            databaseType, databaseSubType, deploymentType, inventoryCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.databaseType,
+                            this.databaseSubType,
+                            this.deploymentType,
+                            this.inventoryCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FleetStatusByCategory o) {
-            Builder copiedBuilder =
-                    databaseType(o.getDatabaseType())
-                            .databaseSubType(o.getDatabaseSubType())
-                            .deploymentType(o.getDeploymentType())
-                            .inventoryCount(o.getInventoryCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FleetStatusByCategory model) {
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSubType")) {
+                this.databaseSubType(model.getDatabaseSubType());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentType")) {
+                this.deploymentType(model.getDeploymentType());
+            }
+            if (model.wasPropertyExplicitlySet("inventoryCount")) {
+                this.inventoryCount(model.getInventoryCount());
+            }
+            return this;
         }
     }
 
@@ -218,11 +229,11 @@ public final class FleetStatusByCategory {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FleetStatusByCategory(");
+        sb.append("super=").append(super.toString());
         sb.append("databaseType=").append(String.valueOf(this.databaseType));
         sb.append(", databaseSubType=").append(String.valueOf(this.databaseSubType));
         sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
         sb.append(", inventoryCount=").append(String.valueOf(this.inventoryCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -241,7 +252,7 @@ public final class FleetStatusByCategory {
                 && java.util.Objects.equals(this.databaseSubType, other.databaseSubType)
                 && java.util.Objects.equals(this.deploymentType, other.deploymentType)
                 && java.util.Objects.equals(this.inventoryCount, other.inventoryCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -258,16 +269,7 @@ public final class FleetStatusByCategory {
         result =
                 (result * PRIME)
                         + (this.inventoryCount == null ? 43 : this.inventoryCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

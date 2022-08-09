@@ -32,7 +32,8 @@ package com.oracle.bmc.dataintegration.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AbstractDataOperationConfig {
+public class AbstractDataOperationConfig
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "metadataConfigProperties",
@@ -97,6 +98,7 @@ public class AbstractDataOperationConfig {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AbstractDataOperationConfig(");
+        sb.append("super=").append(super.toString());
         sb.append("metadataConfigProperties=")
                 .append(String.valueOf(this.metadataConfigProperties));
         sb.append(", derivedAttributes=").append(String.valueOf(this.derivedAttributes));
@@ -118,7 +120,8 @@ public class AbstractDataOperationConfig {
         return java.util.Objects.equals(
                         this.metadataConfigProperties, other.metadataConfigProperties)
                 && java.util.Objects.equals(this.derivedAttributes, other.derivedAttributes)
-                && java.util.Objects.equals(this.callAttribute, other.callAttribute);
+                && java.util.Objects.equals(this.callAttribute, other.callAttribute)
+                && super.equals(other);
     }
 
     @Override
@@ -136,6 +139,7 @@ public class AbstractDataOperationConfig {
         result =
                 (result * PRIME)
                         + (this.callAttribute == null ? 43 : this.callAttribute.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

@@ -60,17 +60,19 @@ public class SummarizeManagedInstanceUsageResponse extends com.oracle.bmc.respon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "managedInstanceUsageCollection"
     })
     private SummarizeManagedInstanceUsageResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.jms.model.ManagedInstanceUsageCollection
                     managedInstanceUsageCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.managedInstanceUsageCollection = managedInstanceUsageCollection;
@@ -81,6 +83,13 @@ public class SummarizeManagedInstanceUsageResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -148,6 +157,7 @@ public class SummarizeManagedInstanceUsageResponse extends com.oracle.bmc.respon
          */
         public Builder copy(SummarizeManagedInstanceUsageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             managedInstanceUsageCollection(o.getManagedInstanceUsageCollection());
@@ -161,7 +171,11 @@ public class SummarizeManagedInstanceUsageResponse extends com.oracle.bmc.respon
          */
         public SummarizeManagedInstanceUsageResponse build() {
             return new SummarizeManagedInstanceUsageResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, managedInstanceUsageCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    managedInstanceUsageCollection);
         }
     }
 

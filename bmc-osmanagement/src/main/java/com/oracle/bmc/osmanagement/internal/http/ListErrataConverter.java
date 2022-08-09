@@ -180,8 +180,8 @@ public class ListErrataConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .ListErrataResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

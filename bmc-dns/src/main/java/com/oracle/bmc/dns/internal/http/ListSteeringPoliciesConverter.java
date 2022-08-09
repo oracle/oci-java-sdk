@@ -217,8 +217,8 @@ public class ListSteeringPoliciesConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses
                                                         .ListSteeringPoliciesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

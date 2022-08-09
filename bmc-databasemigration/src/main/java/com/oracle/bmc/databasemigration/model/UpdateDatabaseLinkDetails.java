@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemigration.model;
     builder = UpdateDatabaseLinkDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateDatabaseLinkDetails {
+public final class UpdateDatabaseLinkDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "walletBucket"})
     public UpdateDatabaseLinkDetails(String name, UpdateObjectStoreBucket walletBucket) {
@@ -63,18 +64,23 @@ public final class UpdateDatabaseLinkDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDatabaseLinkDetails build() {
-            UpdateDatabaseLinkDetails __instance__ =
-                    new UpdateDatabaseLinkDetails(name, walletBucket);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateDatabaseLinkDetails model =
+                    new UpdateDatabaseLinkDetails(this.name, this.walletBucket);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateDatabaseLinkDetails o) {
-            Builder copiedBuilder = name(o.getName()).walletBucket(o.getWalletBucket());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateDatabaseLinkDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("walletBucket")) {
+                this.walletBucket(model.getWalletBucket());
+            }
+            return this;
         }
     }
 
@@ -125,9 +131,9 @@ public final class UpdateDatabaseLinkDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDatabaseLinkDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", walletBucket=").append(String.valueOf(this.walletBucket));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -144,7 +150,7 @@ public final class UpdateDatabaseLinkDetails {
         UpdateDatabaseLinkDetails other = (UpdateDatabaseLinkDetails) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.walletBucket, other.walletBucket)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -153,16 +159,7 @@ public final class UpdateDatabaseLinkDetails {
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.walletBucket == null ? 43 : this.walletBucket.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -208,40 +208,61 @@ public final class AkamaiManualStreamCdnConfig extends StreamCdnConfigSection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AkamaiManualStreamCdnConfig build() {
-            AkamaiManualStreamCdnConfig __instance__ =
+            AkamaiManualStreamCdnConfig model =
                     new AkamaiManualStreamCdnConfig(
-                            originAuthSignType,
-                            originAuthSignEncryption,
-                            originAuthSecretKeyA,
-                            originAuthSecretKeyNonceA,
-                            originAuthSecretKeyB,
-                            originAuthSecretKeyNonceB,
-                            edgeHostname,
-                            edgePathPrefix,
-                            isEdgeTokenAuth,
-                            edgeTokenKey,
-                            edgeTokenSalt);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.originAuthSignType,
+                            this.originAuthSignEncryption,
+                            this.originAuthSecretKeyA,
+                            this.originAuthSecretKeyNonceA,
+                            this.originAuthSecretKeyB,
+                            this.originAuthSecretKeyNonceB,
+                            this.edgeHostname,
+                            this.edgePathPrefix,
+                            this.isEdgeTokenAuth,
+                            this.edgeTokenKey,
+                            this.edgeTokenSalt);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AkamaiManualStreamCdnConfig o) {
-            Builder copiedBuilder =
-                    originAuthSignType(o.getOriginAuthSignType())
-                            .originAuthSignEncryption(o.getOriginAuthSignEncryption())
-                            .originAuthSecretKeyA(o.getOriginAuthSecretKeyA())
-                            .originAuthSecretKeyNonceA(o.getOriginAuthSecretKeyNonceA())
-                            .originAuthSecretKeyB(o.getOriginAuthSecretKeyB())
-                            .originAuthSecretKeyNonceB(o.getOriginAuthSecretKeyNonceB())
-                            .edgeHostname(o.getEdgeHostname())
-                            .edgePathPrefix(o.getEdgePathPrefix())
-                            .isEdgeTokenAuth(o.getIsEdgeTokenAuth())
-                            .edgeTokenKey(o.getEdgeTokenKey())
-                            .edgeTokenSalt(o.getEdgeTokenSalt());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AkamaiManualStreamCdnConfig model) {
+            if (model.wasPropertyExplicitlySet("originAuthSignType")) {
+                this.originAuthSignType(model.getOriginAuthSignType());
+            }
+            if (model.wasPropertyExplicitlySet("originAuthSignEncryption")) {
+                this.originAuthSignEncryption(model.getOriginAuthSignEncryption());
+            }
+            if (model.wasPropertyExplicitlySet("originAuthSecretKeyA")) {
+                this.originAuthSecretKeyA(model.getOriginAuthSecretKeyA());
+            }
+            if (model.wasPropertyExplicitlySet("originAuthSecretKeyNonceA")) {
+                this.originAuthSecretKeyNonceA(model.getOriginAuthSecretKeyNonceA());
+            }
+            if (model.wasPropertyExplicitlySet("originAuthSecretKeyB")) {
+                this.originAuthSecretKeyB(model.getOriginAuthSecretKeyB());
+            }
+            if (model.wasPropertyExplicitlySet("originAuthSecretKeyNonceB")) {
+                this.originAuthSecretKeyNonceB(model.getOriginAuthSecretKeyNonceB());
+            }
+            if (model.wasPropertyExplicitlySet("edgeHostname")) {
+                this.edgeHostname(model.getEdgeHostname());
+            }
+            if (model.wasPropertyExplicitlySet("edgePathPrefix")) {
+                this.edgePathPrefix(model.getEdgePathPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("isEdgeTokenAuth")) {
+                this.isEdgeTokenAuth(model.getIsEdgeTokenAuth());
+            }
+            if (model.wasPropertyExplicitlySet("edgeTokenKey")) {
+                this.edgeTokenKey(model.getEdgeTokenKey());
+            }
+            if (model.wasPropertyExplicitlySet("edgeTokenSalt")) {
+                this.edgeTokenSalt(model.getEdgeTokenSalt());
+            }
+            return this;
         }
     }
 
@@ -559,7 +580,6 @@ public final class AkamaiManualStreamCdnConfig extends StreamCdnConfigSection {
         sb.append(", isEdgeTokenAuth=").append(String.valueOf(this.isEdgeTokenAuth));
         sb.append(", edgeTokenKey=").append(String.valueOf(this.edgeTokenKey));
         sb.append(", edgeTokenSalt=").append(String.valueOf(this.edgeTokenSalt));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -588,8 +608,7 @@ public final class AkamaiManualStreamCdnConfig extends StreamCdnConfigSection {
                 && java.util.Objects.equals(this.isEdgeTokenAuth, other.isEdgeTokenAuth)
                 && java.util.Objects.equals(this.edgeTokenKey, other.edgeTokenKey)
                 && java.util.Objects.equals(this.edgeTokenSalt, other.edgeTokenSalt)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -637,16 +656,6 @@ public final class AkamaiManualStreamCdnConfig extends StreamCdnConfigSection {
         result =
                 (result * PRIME)
                         + (this.edgeTokenSalt == null ? 43 : this.edgeTokenSalt.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

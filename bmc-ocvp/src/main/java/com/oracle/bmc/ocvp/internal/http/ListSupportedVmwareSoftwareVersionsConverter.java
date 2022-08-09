@@ -131,8 +131,8 @@ public class ListSupportedVmwareSoftwareVersionsConverter {
                                                 com.oracle.bmc.ocvp.responses
                                                         .ListSupportedVmwareSoftwareVersionsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.supportedVmwareSoftwareVersionCollection(
                                         response.getItem());

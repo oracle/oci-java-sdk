@@ -19,7 +19,8 @@ package com.oracle.bmc.blockchain.model;
     builder = WorkRequestResourceSubTypeDetail.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestResourceSubTypeDetail {
+public final class WorkRequestResourceSubTypeDetail
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"subType", "subTypeKey", "subTypeStatus"})
     public WorkRequestResourceSubTypeDetail(
@@ -91,21 +92,27 @@ public final class WorkRequestResourceSubTypeDetail {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestResourceSubTypeDetail build() {
-            WorkRequestResourceSubTypeDetail __instance__ =
-                    new WorkRequestResourceSubTypeDetail(subType, subTypeKey, subTypeStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            WorkRequestResourceSubTypeDetail model =
+                    new WorkRequestResourceSubTypeDetail(
+                            this.subType, this.subTypeKey, this.subTypeStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(WorkRequestResourceSubTypeDetail o) {
-            Builder copiedBuilder =
-                    subType(o.getSubType())
-                            .subTypeKey(o.getSubTypeKey())
-                            .subTypeStatus(o.getSubTypeStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(WorkRequestResourceSubTypeDetail model) {
+            if (model.wasPropertyExplicitlySet("subType")) {
+                this.subType(model.getSubType());
+            }
+            if (model.wasPropertyExplicitlySet("subTypeKey")) {
+                this.subTypeKey(model.getSubTypeKey());
+            }
+            if (model.wasPropertyExplicitlySet("subTypeStatus")) {
+                this.subTypeStatus(model.getSubTypeStatus());
+            }
+            return this;
         }
     }
 
@@ -232,10 +239,10 @@ public final class WorkRequestResourceSubTypeDetail {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("WorkRequestResourceSubTypeDetail(");
+        sb.append("super=").append(super.toString());
         sb.append("subType=").append(String.valueOf(this.subType));
         sb.append(", subTypeKey=").append(String.valueOf(this.subTypeKey));
         sb.append(", subTypeStatus=").append(String.valueOf(this.subTypeStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -253,7 +260,7 @@ public final class WorkRequestResourceSubTypeDetail {
         return java.util.Objects.equals(this.subType, other.subType)
                 && java.util.Objects.equals(this.subTypeKey, other.subTypeKey)
                 && java.util.Objects.equals(this.subTypeStatus, other.subTypeStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -265,16 +272,7 @@ public final class WorkRequestResourceSubTypeDetail {
         result =
                 (result * PRIME)
                         + (this.subTypeStatus == null ? 43 : this.subTypeStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

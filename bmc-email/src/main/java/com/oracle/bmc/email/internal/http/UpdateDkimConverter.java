@@ -98,7 +98,8 @@ public class UpdateDkimConverter {
 
                                 com.oracle.bmc.email.responses.UpdateDkimResponse.Builder builder =
                                         com.oracle.bmc.email.responses.UpdateDkimResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

@@ -72,6 +72,7 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "retryAfter",
@@ -79,11 +80,12 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private GetSoftwareSourceResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Float retryAfter,
             com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.retryAfter = retryAfter;
@@ -95,6 +97,13 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -175,6 +184,7 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetSoftwareSourceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             retryAfter(o.getRetryAfter());
@@ -189,7 +199,7 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public GetSoftwareSourceResponse build() {
             return new GetSoftwareSourceResponse(
-                    __httpStatusCode__, etag, opcRequestId, retryAfter, softwareSource);
+                    __httpStatusCode__, headers, etag, opcRequestId, retryAfter, softwareSource);
         }
     }
 

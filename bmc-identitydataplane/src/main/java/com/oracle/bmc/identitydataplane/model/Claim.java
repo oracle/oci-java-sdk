@@ -17,7 +17,7 @@ package com.oracle.bmc.identitydataplane.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Claim.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Claim {
+public final class Claim extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "value", "issuer"})
     public Claim(String key, String value, String issuer) {
@@ -82,17 +82,25 @@ public final class Claim {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Claim build() {
-            Claim __instance__ = new Claim(key, value, issuer);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Claim model = new Claim(this.key, this.value, this.issuer);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Claim o) {
-            Builder copiedBuilder = key(o.getKey()).value(o.getValue()).issuer(o.getIssuer());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Claim model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            if (model.wasPropertyExplicitlySet("issuer")) {
+                this.issuer(model.getIssuer());
+            }
+            return this;
         }
     }
 
@@ -162,10 +170,10 @@ public final class Claim {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Claim(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", value=").append(String.valueOf(this.value));
         sb.append(", issuer=").append(String.valueOf(this.issuer));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -183,7 +191,7 @@ public final class Claim {
         return java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.value, other.value)
                 && java.util.Objects.equals(this.issuer, other.issuer)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -193,16 +201,7 @@ public final class Claim {
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
         result = (result * PRIME) + (this.issuer == null ? 43 : this.issuer.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

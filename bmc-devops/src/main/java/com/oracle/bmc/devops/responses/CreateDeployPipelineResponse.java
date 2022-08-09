@@ -75,6 +75,7 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "location",
         "opcWorkRequestId",
         "etag",
@@ -83,12 +84,13 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
     })
     private CreateDeployPipelineResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String opcWorkRequestId,
             String etag,
             String opcRequestId,
             com.oracle.bmc.devops.model.DeployPipeline deployPipeline) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.location = location;
         this.opcWorkRequestId = opcWorkRequestId;
         this.etag = etag;
@@ -101,6 +103,13 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -185,6 +194,7 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(CreateDeployPipelineResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             location(o.getLocation());
             opcWorkRequestId(o.getOpcWorkRequestId());
             etag(o.getEtag());
@@ -201,6 +211,7 @@ public class CreateDeployPipelineResponse extends com.oracle.bmc.responses.BmcRe
         public CreateDeployPipelineResponse build() {
             return new CreateDeployPipelineResponse(
                     __httpStatusCode__,
+                    headers,
                     location,
                     opcWorkRequestId,
                     etag,

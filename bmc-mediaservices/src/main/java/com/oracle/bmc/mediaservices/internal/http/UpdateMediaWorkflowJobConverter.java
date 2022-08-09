@@ -118,8 +118,8 @@ public class UpdateMediaWorkflowJobConverter {
                                         builder =
                                                 com.oracle.bmc.mediaservices.responses
                                                         .UpdateMediaWorkflowJobResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.mediaWorkflowJob(response.getItem());
 

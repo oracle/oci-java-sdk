@@ -29,7 +29,8 @@ package com.oracle.bmc.database.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateExternalDatabaseConnectorDetails {
+public class CreateExternalDatabaseConnectorDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "freeformTags",
@@ -136,6 +137,7 @@ public class CreateExternalDatabaseConnectorDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateExternalDatabaseConnectorDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -157,7 +159,8 @@ public class CreateExternalDatabaseConnectorDetails {
         return java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.externalDatabaseId, other.externalDatabaseId);
+                && java.util.Objects.equals(this.externalDatabaseId, other.externalDatabaseId)
+                && super.equals(other);
     }
 
     @Override
@@ -172,6 +175,7 @@ public class CreateExternalDatabaseConnectorDetails {
                         + (this.externalDatabaseId == null
                                 ? 43
                                 : this.externalDatabaseId.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 

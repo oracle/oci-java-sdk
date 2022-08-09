@@ -262,8 +262,8 @@ public class SummarizeExadataInsightResourceCapacityTrendAggregatedConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeExadataInsightResourceCapacityTrendAggregatedResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.summarizeExadataInsightResourceCapacityTrendAggregation(
                                         response.getItem());

@@ -32,7 +32,7 @@ package com.oracle.bmc.announcementsservice.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class BaseAnnouncement {
+public class BaseAnnouncement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -595,6 +595,7 @@ public class BaseAnnouncement {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BaseAnnouncement(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", referenceTicketNumber=").append(String.valueOf(this.referenceTicketNumber));
         sb.append(", summary=").append(String.valueOf(this.summary));
@@ -644,7 +645,8 @@ public class BaseAnnouncement {
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.environmentName, other.environmentName)
-                && java.util.Objects.equals(this.platformType, other.platformType);
+                && java.util.Objects.equals(this.platformType, other.platformType)
+                && super.equals(other);
     }
 
     @Override
@@ -681,6 +683,7 @@ public class BaseAnnouncement {
                 (result * PRIME)
                         + (this.environmentName == null ? 43 : this.environmentName.hashCode());
         result = (result * PRIME) + (this.platformType == null ? 43 : this.platformType.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

@@ -167,7 +167,8 @@ public class ListVolumesConverter {
 
                                 com.oracle.bmc.core.responses.ListVolumesResponse.Builder builder =
                                         com.oracle.bmc.core.responses.ListVolumesResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

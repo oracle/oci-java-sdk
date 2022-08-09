@@ -17,7 +17,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EfdRegexResult.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EfdRegexResult {
+public final class EfdRegexResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "baseFieldName",
@@ -217,38 +217,57 @@ public final class EfdRegexResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EfdRegexResult build() {
-            EfdRegexResult __instance__ =
+            EfdRegexResult model =
                     new EfdRegexResult(
-                            baseFieldName,
-                            id,
-                            matchResult,
-                            parsedFieldCount,
-                            parsedFields,
-                            regex,
-                            status,
-                            statusDescription,
-                            isValidRegexSyntax,
-                            violations);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.baseFieldName,
+                            this.id,
+                            this.matchResult,
+                            this.parsedFieldCount,
+                            this.parsedFields,
+                            this.regex,
+                            this.status,
+                            this.statusDescription,
+                            this.isValidRegexSyntax,
+                            this.violations);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EfdRegexResult o) {
-            Builder copiedBuilder =
-                    baseFieldName(o.getBaseFieldName())
-                            .id(o.getId())
-                            .matchResult(o.getMatchResult())
-                            .parsedFieldCount(o.getParsedFieldCount())
-                            .parsedFields(o.getParsedFields())
-                            .regex(o.getRegex())
-                            .status(o.getStatus())
-                            .statusDescription(o.getStatusDescription())
-                            .isValidRegexSyntax(o.getIsValidRegexSyntax())
-                            .violations(o.getViolations());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EfdRegexResult model) {
+            if (model.wasPropertyExplicitlySet("baseFieldName")) {
+                this.baseFieldName(model.getBaseFieldName());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("matchResult")) {
+                this.matchResult(model.getMatchResult());
+            }
+            if (model.wasPropertyExplicitlySet("parsedFieldCount")) {
+                this.parsedFieldCount(model.getParsedFieldCount());
+            }
+            if (model.wasPropertyExplicitlySet("parsedFields")) {
+                this.parsedFields(model.getParsedFields());
+            }
+            if (model.wasPropertyExplicitlySet("regex")) {
+                this.regex(model.getRegex());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("statusDescription")) {
+                this.statusDescription(model.getStatusDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isValidRegexSyntax")) {
+                this.isValidRegexSyntax(model.getIsValidRegexSyntax());
+            }
+            if (model.wasPropertyExplicitlySet("violations")) {
+                this.violations(model.getViolations());
+            }
+            return this;
         }
     }
 
@@ -411,6 +430,7 @@ public final class EfdRegexResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EfdRegexResult(");
+        sb.append("super=").append(super.toString());
         sb.append("baseFieldName=").append(String.valueOf(this.baseFieldName));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", matchResult=").append(String.valueOf(this.matchResult));
@@ -421,7 +441,6 @@ public final class EfdRegexResult {
         sb.append(", statusDescription=").append(String.valueOf(this.statusDescription));
         sb.append(", isValidRegexSyntax=").append(String.valueOf(this.isValidRegexSyntax));
         sb.append(", violations=").append(String.valueOf(this.violations));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -446,7 +465,7 @@ public final class EfdRegexResult {
                 && java.util.Objects.equals(this.statusDescription, other.statusDescription)
                 && java.util.Objects.equals(this.isValidRegexSyntax, other.isValidRegexSyntax)
                 && java.util.Objects.equals(this.violations, other.violations)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -473,16 +492,7 @@ public final class EfdRegexResult {
                                 ? 43
                                 : this.isValidRegexSyntax.hashCode());
         result = (result * PRIME) + (this.violations == null ? 43 : this.violations.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

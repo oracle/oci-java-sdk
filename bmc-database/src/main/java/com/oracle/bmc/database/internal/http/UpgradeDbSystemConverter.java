@@ -113,8 +113,8 @@ public class UpgradeDbSystemConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .UpgradeDbSystemResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dbSystem(response.getItem());
 

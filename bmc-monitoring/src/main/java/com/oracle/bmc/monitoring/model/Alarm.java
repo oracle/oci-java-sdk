@@ -27,7 +27,7 @@ package com.oracle.bmc.monitoring.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Alarm.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Alarm {
+public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -671,62 +671,105 @@ public final class Alarm {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Alarm build() {
-            Alarm __instance__ =
+            Alarm model =
                     new Alarm(
-                            id,
-                            displayName,
-                            compartmentId,
-                            metricCompartmentId,
-                            metricCompartmentIdInSubtree,
-                            namespace,
-                            resourceGroup,
-                            query,
-                            resolution,
-                            pendingDuration,
-                            severity,
-                            body,
-                            messageFormat,
-                            destinations,
-                            repeatNotificationDuration,
-                            suppression,
-                            isEnabled,
-                            freeformTags,
-                            definedTags,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.compartmentId,
+                            this.metricCompartmentId,
+                            this.metricCompartmentIdInSubtree,
+                            this.namespace,
+                            this.resourceGroup,
+                            this.query,
+                            this.resolution,
+                            this.pendingDuration,
+                            this.severity,
+                            this.body,
+                            this.messageFormat,
+                            this.destinations,
+                            this.repeatNotificationDuration,
+                            this.suppression,
+                            this.isEnabled,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Alarm o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .metricCompartmentId(o.getMetricCompartmentId())
-                            .metricCompartmentIdInSubtree(o.getMetricCompartmentIdInSubtree())
-                            .namespace(o.getNamespace())
-                            .resourceGroup(o.getResourceGroup())
-                            .query(o.getQuery())
-                            .resolution(o.getResolution())
-                            .pendingDuration(o.getPendingDuration())
-                            .severity(o.getSeverity())
-                            .body(o.getBody())
-                            .messageFormat(o.getMessageFormat())
-                            .destinations(o.getDestinations())
-                            .repeatNotificationDuration(o.getRepeatNotificationDuration())
-                            .suppression(o.getSuppression())
-                            .isEnabled(o.getIsEnabled())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Alarm model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("metricCompartmentId")) {
+                this.metricCompartmentId(model.getMetricCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("metricCompartmentIdInSubtree")) {
+                this.metricCompartmentIdInSubtree(model.getMetricCompartmentIdInSubtree());
+            }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            if (model.wasPropertyExplicitlySet("resourceGroup")) {
+                this.resourceGroup(model.getResourceGroup());
+            }
+            if (model.wasPropertyExplicitlySet("query")) {
+                this.query(model.getQuery());
+            }
+            if (model.wasPropertyExplicitlySet("resolution")) {
+                this.resolution(model.getResolution());
+            }
+            if (model.wasPropertyExplicitlySet("pendingDuration")) {
+                this.pendingDuration(model.getPendingDuration());
+            }
+            if (model.wasPropertyExplicitlySet("severity")) {
+                this.severity(model.getSeverity());
+            }
+            if (model.wasPropertyExplicitlySet("body")) {
+                this.body(model.getBody());
+            }
+            if (model.wasPropertyExplicitlySet("messageFormat")) {
+                this.messageFormat(model.getMessageFormat());
+            }
+            if (model.wasPropertyExplicitlySet("destinations")) {
+                this.destinations(model.getDestinations());
+            }
+            if (model.wasPropertyExplicitlySet("repeatNotificationDuration")) {
+                this.repeatNotificationDuration(model.getRepeatNotificationDuration());
+            }
+            if (model.wasPropertyExplicitlySet("suppression")) {
+                this.suppression(model.getSuppression());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            return this;
         }
     }
 
@@ -1430,6 +1473,7 @@ public final class Alarm {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Alarm(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -1454,7 +1498,6 @@ public final class Alarm {
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1493,7 +1536,7 @@ public final class Alarm {
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1544,16 +1587,7 @@ public final class Alarm {
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -82,6 +82,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcClientRequestId",
         "opcNextPage",
@@ -89,11 +90,12 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
     })
     private ListWorkRequestLogsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcClientRequestId,
             String opcNextPage,
             java.util.List<com.oracle.bmc.objectstorage.model.WorkRequestLogEntry> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcClientRequestId = opcClientRequestId;
         this.opcNextPage = opcNextPage;
@@ -105,6 +107,13 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -195,6 +204,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
          */
         public Builder copy(ListWorkRequestLogsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcClientRequestId(o.getOpcClientRequestId());
             opcNextPage(o.getOpcNextPage());
@@ -209,7 +219,12 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
          */
         public ListWorkRequestLogsResponse build() {
             return new ListWorkRequestLogsResponse(
-                    __httpStatusCode__, opcRequestId, opcClientRequestId, opcNextPage, items);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcClientRequestId,
+                    opcNextPage,
+                    items);
         }
     }
 

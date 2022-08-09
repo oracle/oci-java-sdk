@@ -18,7 +18,7 @@ package com.oracle.bmc.loganalytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExportDetails {
+public final class ExportDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -280,42 +280,65 @@ public final class ExportDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExportDetails build() {
-            ExportDetails __instance__ =
+            ExportDetails model =
                     new ExportDetails(
-                            compartmentId,
-                            compartmentIdInSubtree,
-                            queryString,
-                            subSystem,
-                            scopeFilters,
-                            maxTotalCount,
-                            timeFilter,
-                            queryTimeoutInSeconds,
-                            shouldIncludeColumns,
-                            outputFormat,
-                            shouldLocalize,
-                            shouldUseAcceleration);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.compartmentIdInSubtree,
+                            this.queryString,
+                            this.subSystem,
+                            this.scopeFilters,
+                            this.maxTotalCount,
+                            this.timeFilter,
+                            this.queryTimeoutInSeconds,
+                            this.shouldIncludeColumns,
+                            this.outputFormat,
+                            this.shouldLocalize,
+                            this.shouldUseAcceleration);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExportDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .compartmentIdInSubtree(o.getCompartmentIdInSubtree())
-                            .queryString(o.getQueryString())
-                            .subSystem(o.getSubSystem())
-                            .scopeFilters(o.getScopeFilters())
-                            .maxTotalCount(o.getMaxTotalCount())
-                            .timeFilter(o.getTimeFilter())
-                            .queryTimeoutInSeconds(o.getQueryTimeoutInSeconds())
-                            .shouldIncludeColumns(o.getShouldIncludeColumns())
-                            .outputFormat(o.getOutputFormat())
-                            .shouldLocalize(o.getShouldLocalize())
-                            .shouldUseAcceleration(o.getShouldUseAcceleration());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExportDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentIdInSubtree")) {
+                this.compartmentIdInSubtree(model.getCompartmentIdInSubtree());
+            }
+            if (model.wasPropertyExplicitlySet("queryString")) {
+                this.queryString(model.getQueryString());
+            }
+            if (model.wasPropertyExplicitlySet("subSystem")) {
+                this.subSystem(model.getSubSystem());
+            }
+            if (model.wasPropertyExplicitlySet("scopeFilters")) {
+                this.scopeFilters(model.getScopeFilters());
+            }
+            if (model.wasPropertyExplicitlySet("maxTotalCount")) {
+                this.maxTotalCount(model.getMaxTotalCount());
+            }
+            if (model.wasPropertyExplicitlySet("timeFilter")) {
+                this.timeFilter(model.getTimeFilter());
+            }
+            if (model.wasPropertyExplicitlySet("queryTimeoutInSeconds")) {
+                this.queryTimeoutInSeconds(model.getQueryTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("shouldIncludeColumns")) {
+                this.shouldIncludeColumns(model.getShouldIncludeColumns());
+            }
+            if (model.wasPropertyExplicitlySet("outputFormat")) {
+                this.outputFormat(model.getOutputFormat());
+            }
+            if (model.wasPropertyExplicitlySet("shouldLocalize")) {
+                this.shouldLocalize(model.getShouldLocalize());
+            }
+            if (model.wasPropertyExplicitlySet("shouldUseAcceleration")) {
+                this.shouldUseAcceleration(model.getShouldUseAcceleration());
+            }
+            return this;
         }
     }
 
@@ -565,6 +588,7 @@ public final class ExportDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExportDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(", queryString=").append(String.valueOf(this.queryString));
@@ -577,7 +601,6 @@ public final class ExportDetails {
         sb.append(", outputFormat=").append(String.valueOf(this.outputFormat));
         sb.append(", shouldLocalize=").append(String.valueOf(this.shouldLocalize));
         sb.append(", shouldUseAcceleration=").append(String.valueOf(this.shouldUseAcceleration));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -605,7 +628,7 @@ public final class ExportDetails {
                 && java.util.Objects.equals(this.outputFormat, other.outputFormat)
                 && java.util.Objects.equals(this.shouldLocalize, other.shouldLocalize)
                 && java.util.Objects.equals(this.shouldUseAcceleration, other.shouldUseAcceleration)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -646,16 +669,7 @@ public final class ExportDetails {
                         + (this.shouldUseAcceleration == null
                                 ? 43
                                 : this.shouldUseAcceleration.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

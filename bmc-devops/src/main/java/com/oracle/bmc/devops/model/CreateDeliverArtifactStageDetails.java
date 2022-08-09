@@ -97,33 +97,46 @@ public final class CreateDeliverArtifactStageDetails extends CreateBuildPipeline
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDeliverArtifactStageDetails build() {
-            CreateDeliverArtifactStageDetails __instance__ =
+            CreateDeliverArtifactStageDetails model =
                     new CreateDeliverArtifactStageDetails(
-                            displayName,
-                            description,
-                            buildPipelineId,
-                            buildPipelineStagePredecessorCollection,
-                            freeformTags,
-                            definedTags,
-                            deliverArtifactCollection);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.description,
+                            this.buildPipelineId,
+                            this.buildPipelineStagePredecessorCollection,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.deliverArtifactCollection);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDeliverArtifactStageDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .buildPipelineId(o.getBuildPipelineId())
-                            .buildPipelineStagePredecessorCollection(
-                                    o.getBuildPipelineStagePredecessorCollection())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .deliverArtifactCollection(o.getDeliverArtifactCollection());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDeliverArtifactStageDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineId")) {
+                this.buildPipelineId(model.getBuildPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineStagePredecessorCollection")) {
+                this.buildPipelineStagePredecessorCollection(
+                        model.getBuildPipelineStagePredecessorCollection());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("deliverArtifactCollection")) {
+                this.deliverArtifactCollection(model.getDeliverArtifactCollection());
+            }
+            return this;
         }
     }
 
@@ -180,7 +193,6 @@ public final class CreateDeliverArtifactStageDetails extends CreateBuildPipeline
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", deliverArtifactCollection=")
                 .append(String.valueOf(this.deliverArtifactCollection));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -197,8 +209,7 @@ public final class CreateDeliverArtifactStageDetails extends CreateBuildPipeline
         CreateDeliverArtifactStageDetails other = (CreateDeliverArtifactStageDetails) o;
         return java.util.Objects.equals(
                         this.deliverArtifactCollection, other.deliverArtifactCollection)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -210,16 +221,6 @@ public final class CreateDeliverArtifactStageDetails extends CreateBuildPipeline
                         + (this.deliverArtifactCollection == null
                                 ? 43
                                 : this.deliverArtifactCollection.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

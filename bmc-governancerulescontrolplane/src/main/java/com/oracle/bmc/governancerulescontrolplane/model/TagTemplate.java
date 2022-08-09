@@ -89,21 +89,29 @@ public final class TagTemplate extends Template {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TagTemplate build() {
-            TagTemplate __instance__ = new TagTemplate(name, description, tags, tagDefaults);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TagTemplate model =
+                    new TagTemplate(this.name, this.description, this.tags, this.tagDefaults);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TagTemplate o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .description(o.getDescription())
-                            .tags(o.getTags())
-                            .tagDefaults(o.getTagDefaults());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TagTemplate model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("tags")) {
+                this.tags(model.getTags());
+            }
+            if (model.wasPropertyExplicitlySet("tagDefaults")) {
+                this.tagDefaults(model.getTagDefaults());
+            }
+            return this;
         }
     }
 
@@ -200,7 +208,6 @@ public final class TagTemplate extends Template {
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", tags=").append(String.valueOf(this.tags));
         sb.append(", tagDefaults=").append(String.valueOf(this.tagDefaults));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -219,8 +226,7 @@ public final class TagTemplate extends Template {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.tags, other.tags)
                 && java.util.Objects.equals(this.tagDefaults, other.tagDefaults)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -231,16 +237,6 @@ public final class TagTemplate extends Template {
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.tags == null ? 43 : this.tags.hashCode());
         result = (result * PRIME) + (this.tagDefaults == null ? 43 : this.tagDefaults.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

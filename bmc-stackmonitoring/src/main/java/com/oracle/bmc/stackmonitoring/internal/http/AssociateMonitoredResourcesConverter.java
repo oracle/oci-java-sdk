@@ -124,8 +124,8 @@ public class AssociateMonitoredResourcesConverter {
                                                 com.oracle.bmc.stackmonitoring.responses
                                                         .AssociateMonitoredResourcesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.monitoredResourceAssociation(response.getItem());
 

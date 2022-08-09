@@ -18,7 +18,7 @@ package com.oracle.bmc.onesubscription.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InvoicingUser.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InvoicingUser {
+public final class InvoicingUser extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -201,34 +201,49 @@ public final class InvoicingUser {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InvoicingUser build() {
-            InvoicingUser __instance__ =
+            InvoicingUser model =
                     new InvoicingUser(
-                            name,
-                            userName,
-                            firstName,
-                            lastName,
-                            email,
-                            tcaContactId,
-                            tcaCustAccntSiteId,
-                            tcaPartyId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.userName,
+                            this.firstName,
+                            this.lastName,
+                            this.email,
+                            this.tcaContactId,
+                            this.tcaCustAccntSiteId,
+                            this.tcaPartyId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InvoicingUser o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .userName(o.getUserName())
-                            .firstName(o.getFirstName())
-                            .lastName(o.getLastName())
-                            .email(o.getEmail())
-                            .tcaContactId(o.getTcaContactId())
-                            .tcaCustAccntSiteId(o.getTcaCustAccntSiteId())
-                            .tcaPartyId(o.getTcaPartyId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InvoicingUser model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("firstName")) {
+                this.firstName(model.getFirstName());
+            }
+            if (model.wasPropertyExplicitlySet("lastName")) {
+                this.lastName(model.getLastName());
+            }
+            if (model.wasPropertyExplicitlySet("email")) {
+                this.email(model.getEmail());
+            }
+            if (model.wasPropertyExplicitlySet("tcaContactId")) {
+                this.tcaContactId(model.getTcaContactId());
+            }
+            if (model.wasPropertyExplicitlySet("tcaCustAccntSiteId")) {
+                this.tcaCustAccntSiteId(model.getTcaCustAccntSiteId());
+            }
+            if (model.wasPropertyExplicitlySet("tcaPartyId")) {
+                this.tcaPartyId(model.getTcaPartyId());
+            }
+            return this;
         }
     }
 
@@ -384,6 +399,7 @@ public final class InvoicingUser {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InvoicingUser(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", firstName=").append(String.valueOf(this.firstName));
@@ -392,7 +408,6 @@ public final class InvoicingUser {
         sb.append(", tcaContactId=").append(String.valueOf(this.tcaContactId));
         sb.append(", tcaCustAccntSiteId=").append(String.valueOf(this.tcaCustAccntSiteId));
         sb.append(", tcaPartyId=").append(String.valueOf(this.tcaPartyId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -415,7 +430,7 @@ public final class InvoicingUser {
                 && java.util.Objects.equals(this.tcaContactId, other.tcaContactId)
                 && java.util.Objects.equals(this.tcaCustAccntSiteId, other.tcaCustAccntSiteId)
                 && java.util.Objects.equals(this.tcaPartyId, other.tcaPartyId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -434,16 +449,7 @@ public final class InvoicingUser {
                                 ? 43
                                 : this.tcaCustAccntSiteId.hashCode());
         result = (result * PRIME) + (this.tcaPartyId == null ? 43 : this.tcaPartyId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

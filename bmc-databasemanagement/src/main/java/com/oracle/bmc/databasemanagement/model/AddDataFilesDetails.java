@@ -20,7 +20,7 @@ package com.oracle.bmc.databasemanagement.model;
     builder = AddDataFilesDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AddDataFilesDetails {
+public final class AddDataFilesDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -236,38 +236,57 @@ public final class AddDataFilesDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddDataFilesDetails build() {
-            AddDataFilesDetails __instance__ =
+            AddDataFilesDetails model =
                     new AddDataFilesDetails(
-                            credentialDetails,
-                            fileType,
-                            dataFiles,
-                            fileCount,
-                            fileSize,
-                            isReusable,
-                            isAutoExtensible,
-                            autoExtendNextSize,
-                            autoExtendMaxSize,
-                            isMaxSizeUnlimited);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.credentialDetails,
+                            this.fileType,
+                            this.dataFiles,
+                            this.fileCount,
+                            this.fileSize,
+                            this.isReusable,
+                            this.isAutoExtensible,
+                            this.autoExtendNextSize,
+                            this.autoExtendMaxSize,
+                            this.isMaxSizeUnlimited);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AddDataFilesDetails o) {
-            Builder copiedBuilder =
-                    credentialDetails(o.getCredentialDetails())
-                            .fileType(o.getFileType())
-                            .dataFiles(o.getDataFiles())
-                            .fileCount(o.getFileCount())
-                            .fileSize(o.getFileSize())
-                            .isReusable(o.getIsReusable())
-                            .isAutoExtensible(o.getIsAutoExtensible())
-                            .autoExtendNextSize(o.getAutoExtendNextSize())
-                            .autoExtendMaxSize(o.getAutoExtendMaxSize())
-                            .isMaxSizeUnlimited(o.getIsMaxSizeUnlimited());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AddDataFilesDetails model) {
+            if (model.wasPropertyExplicitlySet("credentialDetails")) {
+                this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("fileType")) {
+                this.fileType(model.getFileType());
+            }
+            if (model.wasPropertyExplicitlySet("dataFiles")) {
+                this.dataFiles(model.getDataFiles());
+            }
+            if (model.wasPropertyExplicitlySet("fileCount")) {
+                this.fileCount(model.getFileCount());
+            }
+            if (model.wasPropertyExplicitlySet("fileSize")) {
+                this.fileSize(model.getFileSize());
+            }
+            if (model.wasPropertyExplicitlySet("isReusable")) {
+                this.isReusable(model.getIsReusable());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoExtensible")) {
+                this.isAutoExtensible(model.getIsAutoExtensible());
+            }
+            if (model.wasPropertyExplicitlySet("autoExtendNextSize")) {
+                this.autoExtendNextSize(model.getAutoExtendNextSize());
+            }
+            if (model.wasPropertyExplicitlySet("autoExtendMaxSize")) {
+                this.autoExtendMaxSize(model.getAutoExtendMaxSize());
+            }
+            if (model.wasPropertyExplicitlySet("isMaxSizeUnlimited")) {
+                this.isMaxSizeUnlimited(model.getIsMaxSizeUnlimited());
+            }
+            return this;
         }
     }
 
@@ -482,6 +501,7 @@ public final class AddDataFilesDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AddDataFilesDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
         sb.append(", fileType=").append(String.valueOf(this.fileType));
         sb.append(", dataFiles=").append(String.valueOf(this.dataFiles));
@@ -492,7 +512,6 @@ public final class AddDataFilesDetails {
         sb.append(", autoExtendNextSize=").append(String.valueOf(this.autoExtendNextSize));
         sb.append(", autoExtendMaxSize=").append(String.valueOf(this.autoExtendMaxSize));
         sb.append(", isMaxSizeUnlimited=").append(String.valueOf(this.isMaxSizeUnlimited));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -517,7 +536,7 @@ public final class AddDataFilesDetails {
                 && java.util.Objects.equals(this.autoExtendNextSize, other.autoExtendNextSize)
                 && java.util.Objects.equals(this.autoExtendMaxSize, other.autoExtendMaxSize)
                 && java.util.Objects.equals(this.isMaxSizeUnlimited, other.isMaxSizeUnlimited)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -548,16 +567,7 @@ public final class AddDataFilesDetails {
                         + (this.isMaxSizeUnlimited == null
                                 ? 43
                                 : this.isMaxSizeUnlimited.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

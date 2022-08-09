@@ -38,12 +38,18 @@ public class GetVmClusterUpdateResponse extends com.oracle.bmc.responses.BmcResp
         return vmClusterUpdate;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "vmClusterUpdate"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "vmClusterUpdate"
+    })
     private GetVmClusterUpdateResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.database.model.VmClusterUpdate vmClusterUpdate) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.vmClusterUpdate = vmClusterUpdate;
     }
@@ -53,6 +59,13 @@ public class GetVmClusterUpdateResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class GetVmClusterUpdateResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetVmClusterUpdateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             vmClusterUpdate(o.getVmClusterUpdate());
 
@@ -109,7 +123,7 @@ public class GetVmClusterUpdateResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetVmClusterUpdateResponse build() {
             return new GetVmClusterUpdateResponse(
-                    __httpStatusCode__, opcRequestId, vmClusterUpdate);
+                    __httpStatusCode__, headers, opcRequestId, vmClusterUpdate);
         }
     }
 

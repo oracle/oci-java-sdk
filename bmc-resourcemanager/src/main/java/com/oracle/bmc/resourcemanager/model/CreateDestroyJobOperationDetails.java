@@ -73,24 +73,29 @@ public final class CreateDestroyJobOperationDetails extends CreateJobOperationDe
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDestroyJobOperationDetails build() {
-            CreateDestroyJobOperationDetails __instance__ =
+            CreateDestroyJobOperationDetails model =
                     new CreateDestroyJobOperationDetails(
-                            isProviderUpgradeRequired,
-                            terraformAdvancedOptions,
-                            executionPlanStrategy);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isProviderUpgradeRequired,
+                            this.terraformAdvancedOptions,
+                            this.executionPlanStrategy);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateDestroyJobOperationDetails o) {
-            Builder copiedBuilder =
-                    isProviderUpgradeRequired(o.getIsProviderUpgradeRequired())
-                            .terraformAdvancedOptions(o.getTerraformAdvancedOptions())
-                            .executionPlanStrategy(o.getExecutionPlanStrategy());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateDestroyJobOperationDetails model) {
+            if (model.wasPropertyExplicitlySet("isProviderUpgradeRequired")) {
+                this.isProviderUpgradeRequired(model.getIsProviderUpgradeRequired());
+            }
+            if (model.wasPropertyExplicitlySet("terraformAdvancedOptions")) {
+                this.terraformAdvancedOptions(model.getTerraformAdvancedOptions());
+            }
+            if (model.wasPropertyExplicitlySet("executionPlanStrategy")) {
+                this.executionPlanStrategy(model.getExecutionPlanStrategy());
+            }
+            return this;
         }
     }
 
@@ -159,7 +164,6 @@ public final class CreateDestroyJobOperationDetails extends CreateJobOperationDe
         sb.append(", terraformAdvancedOptions=")
                 .append(String.valueOf(this.terraformAdvancedOptions));
         sb.append(", executionPlanStrategy=").append(String.valueOf(this.executionPlanStrategy));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -177,8 +181,7 @@ public final class CreateDestroyJobOperationDetails extends CreateJobOperationDe
         return java.util.Objects.equals(
                         this.terraformAdvancedOptions, other.terraformAdvancedOptions)
                 && java.util.Objects.equals(this.executionPlanStrategy, other.executionPlanStrategy)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -195,16 +198,6 @@ public final class CreateDestroyJobOperationDetails extends CreateJobOperationDe
                         + (this.executionPlanStrategy == null
                                 ? 43
                                 : this.executionPlanStrategy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

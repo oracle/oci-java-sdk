@@ -126,8 +126,8 @@ public class ListByoipAllocatedRangesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListByoipAllocatedRangesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.byoipAllocatedRangeCollection(response.getItem());
 

@@ -51,13 +51,20 @@ public class GetCertificateResponse extends com.oracle.bmc.responses.BmcResponse
         return certificate;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "certificate"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "certificate"
+    })
     private GetCertificateResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.certificatesmanagement.model.Certificate certificate) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.certificate = certificate;
@@ -68,6 +75,13 @@ public class GetCertificateResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -127,6 +141,7 @@ public class GetCertificateResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetCertificateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             certificate(o.getCertificate());
@@ -139,7 +154,8 @@ public class GetCertificateResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetCertificateResponse build() {
-            return new GetCertificateResponse(__httpStatusCode__, etag, opcRequestId, certificate);
+            return new GetCertificateResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, certificate);
         }
     }
 

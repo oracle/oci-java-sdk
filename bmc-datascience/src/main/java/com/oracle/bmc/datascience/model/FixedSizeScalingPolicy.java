@@ -48,17 +48,19 @@ public final class FixedSizeScalingPolicy extends ScalingPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FixedSizeScalingPolicy build() {
-            FixedSizeScalingPolicy __instance__ = new FixedSizeScalingPolicy(instanceCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FixedSizeScalingPolicy model = new FixedSizeScalingPolicy(this.instanceCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FixedSizeScalingPolicy o) {
-            Builder copiedBuilder = instanceCount(o.getInstanceCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FixedSizeScalingPolicy model) {
+            if (model.wasPropertyExplicitlySet("instanceCount")) {
+                this.instanceCount(model.getInstanceCount());
+            }
+            return this;
         }
     }
 
@@ -108,7 +110,6 @@ public final class FixedSizeScalingPolicy extends ScalingPolicy {
         sb.append("FixedSizeScalingPolicy(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", instanceCount=").append(String.valueOf(this.instanceCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -124,8 +125,7 @@ public final class FixedSizeScalingPolicy extends ScalingPolicy {
 
         FixedSizeScalingPolicy other = (FixedSizeScalingPolicy) o;
         return java.util.Objects.equals(this.instanceCount, other.instanceCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -135,16 +135,6 @@ public final class FixedSizeScalingPolicy extends ScalingPolicy {
         result =
                 (result * PRIME)
                         + (this.instanceCount == null ? 43 : this.instanceCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

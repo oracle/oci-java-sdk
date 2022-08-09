@@ -193,7 +193,8 @@ public class ListVtapsConverter {
 
                                 com.oracle.bmc.core.responses.ListVtapsResponse.Builder builder =
                                         com.oracle.bmc.core.responses.ListVtapsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

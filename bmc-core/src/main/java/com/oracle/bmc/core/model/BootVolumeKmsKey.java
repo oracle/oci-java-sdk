@@ -18,7 +18,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BootVolumeKmsKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BootVolumeKmsKey {
+public final class BootVolumeKmsKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"kmsKeyId"})
     public BootVolumeKmsKey(String kmsKeyId) {
@@ -51,17 +51,19 @@ public final class BootVolumeKmsKey {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BootVolumeKmsKey build() {
-            BootVolumeKmsKey __instance__ = new BootVolumeKmsKey(kmsKeyId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            BootVolumeKmsKey model = new BootVolumeKmsKey(this.kmsKeyId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(BootVolumeKmsKey o) {
-            Builder copiedBuilder = kmsKeyId(o.getKmsKeyId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(BootVolumeKmsKey model) {
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            return this;
         }
     }
 
@@ -105,8 +107,8 @@ public final class BootVolumeKmsKey {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BootVolumeKmsKey(");
+        sb.append("super=").append(super.toString());
         sb.append("kmsKeyId=").append(String.valueOf(this.kmsKeyId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -121,8 +123,7 @@ public final class BootVolumeKmsKey {
         }
 
         BootVolumeKmsKey other = (BootVolumeKmsKey) o;
-        return java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId) && super.equals(other);
     }
 
     @Override
@@ -130,16 +131,7 @@ public final class BootVolumeKmsKey {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

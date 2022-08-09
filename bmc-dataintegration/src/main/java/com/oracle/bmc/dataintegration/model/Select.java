@@ -62,18 +62,22 @@ public final class Select extends PushDownOperation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Select build() {
-            Select __instance__ = new Select(isDistinct, selectColumns);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Select model = new Select(this.isDistinct, this.selectColumns);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Select o) {
-            Builder copiedBuilder =
-                    isDistinct(o.getIsDistinct()).selectColumns(o.getSelectColumns());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Select model) {
+            if (model.wasPropertyExplicitlySet("isDistinct")) {
+                this.isDistinct(model.getIsDistinct());
+            }
+            if (model.wasPropertyExplicitlySet("selectColumns")) {
+                this.selectColumns(model.getSelectColumns());
+            }
+            return this;
         }
     }
 
@@ -139,7 +143,6 @@ public final class Select extends PushDownOperation {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", isDistinct=").append(String.valueOf(this.isDistinct));
         sb.append(", selectColumns=").append(String.valueOf(this.selectColumns));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -156,8 +159,7 @@ public final class Select extends PushDownOperation {
         Select other = (Select) o;
         return java.util.Objects.equals(this.isDistinct, other.isDistinct)
                 && java.util.Objects.equals(this.selectColumns, other.selectColumns)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -168,16 +170,6 @@ public final class Select extends PushDownOperation {
         result =
                 (result * PRIME)
                         + (this.selectColumns == null ? 43 : this.selectColumns.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

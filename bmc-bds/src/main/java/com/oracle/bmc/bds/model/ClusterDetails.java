@@ -17,7 +17,7 @@ package com.oracle.bmc.bds.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClusterDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ClusterDetails {
+public final class ClusterDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bdaVersion",
@@ -319,48 +319,77 @@ public final class ClusterDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClusterDetails build() {
-            ClusterDetails __instance__ =
+            ClusterDetails model =
                     new ClusterDetails(
-                            bdaVersion,
-                            bdmVersion,
-                            bdsVersion,
-                            osVersion,
-                            dbVersion,
-                            bdCellVersion,
-                            csqlCellVersion,
-                            timeCreated,
-                            timeRefreshed,
-                            clouderaManagerUrl,
-                            ambariUrl,
-                            bigDataManagerUrl,
-                            hueServerUrl,
-                            odhVersion,
-                            jupyterHubUrl);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.bdaVersion,
+                            this.bdmVersion,
+                            this.bdsVersion,
+                            this.osVersion,
+                            this.dbVersion,
+                            this.bdCellVersion,
+                            this.csqlCellVersion,
+                            this.timeCreated,
+                            this.timeRefreshed,
+                            this.clouderaManagerUrl,
+                            this.ambariUrl,
+                            this.bigDataManagerUrl,
+                            this.hueServerUrl,
+                            this.odhVersion,
+                            this.jupyterHubUrl);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ClusterDetails o) {
-            Builder copiedBuilder =
-                    bdaVersion(o.getBdaVersion())
-                            .bdmVersion(o.getBdmVersion())
-                            .bdsVersion(o.getBdsVersion())
-                            .osVersion(o.getOsVersion())
-                            .dbVersion(o.getDbVersion())
-                            .bdCellVersion(o.getBdCellVersion())
-                            .csqlCellVersion(o.getCsqlCellVersion())
-                            .timeCreated(o.getTimeCreated())
-                            .timeRefreshed(o.getTimeRefreshed())
-                            .clouderaManagerUrl(o.getClouderaManagerUrl())
-                            .ambariUrl(o.getAmbariUrl())
-                            .bigDataManagerUrl(o.getBigDataManagerUrl())
-                            .hueServerUrl(o.getHueServerUrl())
-                            .odhVersion(o.getOdhVersion())
-                            .jupyterHubUrl(o.getJupyterHubUrl());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("bdaVersion")) {
+                this.bdaVersion(model.getBdaVersion());
+            }
+            if (model.wasPropertyExplicitlySet("bdmVersion")) {
+                this.bdmVersion(model.getBdmVersion());
+            }
+            if (model.wasPropertyExplicitlySet("bdsVersion")) {
+                this.bdsVersion(model.getBdsVersion());
+            }
+            if (model.wasPropertyExplicitlySet("osVersion")) {
+                this.osVersion(model.getOsVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("bdCellVersion")) {
+                this.bdCellVersion(model.getBdCellVersion());
+            }
+            if (model.wasPropertyExplicitlySet("csqlCellVersion")) {
+                this.csqlCellVersion(model.getCsqlCellVersion());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeRefreshed")) {
+                this.timeRefreshed(model.getTimeRefreshed());
+            }
+            if (model.wasPropertyExplicitlySet("clouderaManagerUrl")) {
+                this.clouderaManagerUrl(model.getClouderaManagerUrl());
+            }
+            if (model.wasPropertyExplicitlySet("ambariUrl")) {
+                this.ambariUrl(model.getAmbariUrl());
+            }
+            if (model.wasPropertyExplicitlySet("bigDataManagerUrl")) {
+                this.bigDataManagerUrl(model.getBigDataManagerUrl());
+            }
+            if (model.wasPropertyExplicitlySet("hueServerUrl")) {
+                this.hueServerUrl(model.getHueServerUrl());
+            }
+            if (model.wasPropertyExplicitlySet("odhVersion")) {
+                this.odhVersion(model.getOdhVersion());
+            }
+            if (model.wasPropertyExplicitlySet("jupyterHubUrl")) {
+                this.jupyterHubUrl(model.getJupyterHubUrl());
+            }
+            return this;
         }
     }
 
@@ -600,6 +629,7 @@ public final class ClusterDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClusterDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("bdaVersion=").append(String.valueOf(this.bdaVersion));
         sb.append(", bdmVersion=").append(String.valueOf(this.bdmVersion));
         sb.append(", bdsVersion=").append(String.valueOf(this.bdsVersion));
@@ -615,7 +645,6 @@ public final class ClusterDetails {
         sb.append(", hueServerUrl=").append(String.valueOf(this.hueServerUrl));
         sb.append(", odhVersion=").append(String.valueOf(this.odhVersion));
         sb.append(", jupyterHubUrl=").append(String.valueOf(this.jupyterHubUrl));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -645,7 +674,7 @@ public final class ClusterDetails {
                 && java.util.Objects.equals(this.hueServerUrl, other.hueServerUrl)
                 && java.util.Objects.equals(this.odhVersion, other.odhVersion)
                 && java.util.Objects.equals(this.jupyterHubUrl, other.jupyterHubUrl)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -681,16 +710,7 @@ public final class ClusterDetails {
         result =
                 (result * PRIME)
                         + (this.jupyterHubUrl == null ? 43 : this.jupyterHubUrl.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

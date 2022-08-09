@@ -21,7 +21,8 @@ package com.oracle.bmc.databasemigration.model;
     builder = UpdateDataPumpParameters.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateDataPumpParameters {
+public final class UpdateDataPumpParameters
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isCluster",
@@ -165,30 +166,41 @@ public final class UpdateDataPumpParameters {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDataPumpParameters build() {
-            UpdateDataPumpParameters __instance__ =
+            UpdateDataPumpParameters model =
                     new UpdateDataPumpParameters(
-                            isCluster,
-                            estimate,
-                            tableExistsAction,
-                            excludeParameters,
-                            importParallelismDegree,
-                            exportParallelismDegree);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isCluster,
+                            this.estimate,
+                            this.tableExistsAction,
+                            this.excludeParameters,
+                            this.importParallelismDegree,
+                            this.exportParallelismDegree);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateDataPumpParameters o) {
-            Builder copiedBuilder =
-                    isCluster(o.getIsCluster())
-                            .estimate(o.getEstimate())
-                            .tableExistsAction(o.getTableExistsAction())
-                            .excludeParameters(o.getExcludeParameters())
-                            .importParallelismDegree(o.getImportParallelismDegree())
-                            .exportParallelismDegree(o.getExportParallelismDegree());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateDataPumpParameters model) {
+            if (model.wasPropertyExplicitlySet("isCluster")) {
+                this.isCluster(model.getIsCluster());
+            }
+            if (model.wasPropertyExplicitlySet("estimate")) {
+                this.estimate(model.getEstimate());
+            }
+            if (model.wasPropertyExplicitlySet("tableExistsAction")) {
+                this.tableExistsAction(model.getTableExistsAction());
+            }
+            if (model.wasPropertyExplicitlySet("excludeParameters")) {
+                this.excludeParameters(model.getExcludeParameters());
+            }
+            if (model.wasPropertyExplicitlySet("importParallelismDegree")) {
+                this.importParallelismDegree(model.getImportParallelismDegree());
+            }
+            if (model.wasPropertyExplicitlySet("exportParallelismDegree")) {
+                this.exportParallelismDegree(model.getExportParallelismDegree());
+            }
+            return this;
         }
     }
 
@@ -314,6 +326,7 @@ public final class UpdateDataPumpParameters {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDataPumpParameters(");
+        sb.append("super=").append(super.toString());
         sb.append("isCluster=").append(String.valueOf(this.isCluster));
         sb.append(", estimate=").append(String.valueOf(this.estimate));
         sb.append(", tableExistsAction=").append(String.valueOf(this.tableExistsAction));
@@ -322,7 +335,6 @@ public final class UpdateDataPumpParameters {
                 .append(String.valueOf(this.importParallelismDegree));
         sb.append(", exportParallelismDegree=")
                 .append(String.valueOf(this.exportParallelismDegree));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -345,7 +357,7 @@ public final class UpdateDataPumpParameters {
                         this.importParallelismDegree, other.importParallelismDegree)
                 && java.util.Objects.equals(
                         this.exportParallelismDegree, other.exportParallelismDegree)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -370,16 +382,7 @@ public final class UpdateDataPumpParameters {
                         + (this.exportParallelismDegree == null
                                 ? 43
                                 : this.exportParallelismDegree.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

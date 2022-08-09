@@ -167,8 +167,8 @@ public class ListTemplatesConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .ListTemplatesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.templateSummaryCollection(response.getItem());
 

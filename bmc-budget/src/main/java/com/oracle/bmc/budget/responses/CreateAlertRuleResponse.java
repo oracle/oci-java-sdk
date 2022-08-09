@@ -53,13 +53,20 @@ public class CreateAlertRuleResponse extends com.oracle.bmc.responses.BmcRespons
         return alertRule;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "alertRule"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "alertRule"
+    })
     private CreateAlertRuleResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.budget.model.AlertRule alertRule) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.alertRule = alertRule;
@@ -70,6 +77,13 @@ public class CreateAlertRuleResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class CreateAlertRuleResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(CreateAlertRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             alertRule(o.getAlertRule());
@@ -142,7 +157,8 @@ public class CreateAlertRuleResponse extends com.oracle.bmc.responses.BmcRespons
          * @return the response object
          */
         public CreateAlertRuleResponse build() {
-            return new CreateAlertRuleResponse(__httpStatusCode__, opcRequestId, etag, alertRule);
+            return new CreateAlertRuleResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, alertRule);
         }
     }
 

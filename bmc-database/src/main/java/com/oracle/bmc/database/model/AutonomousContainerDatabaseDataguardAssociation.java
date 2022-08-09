@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = AutonomousContainerDatabaseDataguardAssociation.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutonomousContainerDatabaseDataguardAssociation {
+public final class AutonomousContainerDatabaseDataguardAssociation
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -402,54 +403,88 @@ public final class AutonomousContainerDatabaseDataguardAssociation {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousContainerDatabaseDataguardAssociation build() {
-            AutonomousContainerDatabaseDataguardAssociation __instance__ =
+            AutonomousContainerDatabaseDataguardAssociation model =
                     new AutonomousContainerDatabaseDataguardAssociation(
-                            id,
-                            autonomousContainerDatabaseId,
-                            role,
-                            lifecycleState,
-                            lifecycleDetails,
-                            peerAutonomousContainerDatabaseDataguardAssociationId,
-                            peerAutonomousContainerDatabaseId,
-                            peerRole,
-                            peerLifecycleState,
-                            protectionMode,
-                            applyLag,
-                            applyRate,
-                            isAutomaticFailoverEnabled,
-                            transportLag,
-                            timeLastSynced,
-                            timeCreated,
-                            timeLastRoleChanged);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.autonomousContainerDatabaseId,
+                            this.role,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.peerAutonomousContainerDatabaseDataguardAssociationId,
+                            this.peerAutonomousContainerDatabaseId,
+                            this.peerRole,
+                            this.peerLifecycleState,
+                            this.protectionMode,
+                            this.applyLag,
+                            this.applyRate,
+                            this.isAutomaticFailoverEnabled,
+                            this.transportLag,
+                            this.timeLastSynced,
+                            this.timeCreated,
+                            this.timeLastRoleChanged);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousContainerDatabaseDataguardAssociation o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
-                            .role(o.getRole())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .peerAutonomousContainerDatabaseDataguardAssociationId(
-                                    o.getPeerAutonomousContainerDatabaseDataguardAssociationId())
-                            .peerAutonomousContainerDatabaseId(
-                                    o.getPeerAutonomousContainerDatabaseId())
-                            .peerRole(o.getPeerRole())
-                            .peerLifecycleState(o.getPeerLifecycleState())
-                            .protectionMode(o.getProtectionMode())
-                            .applyLag(o.getApplyLag())
-                            .applyRate(o.getApplyRate())
-                            .isAutomaticFailoverEnabled(o.getIsAutomaticFailoverEnabled())
-                            .transportLag(o.getTransportLag())
-                            .timeLastSynced(o.getTimeLastSynced())
-                            .timeCreated(o.getTimeCreated())
-                            .timeLastRoleChanged(o.getTimeLastRoleChanged());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousContainerDatabaseDataguardAssociation model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousContainerDatabaseId")) {
+                this.autonomousContainerDatabaseId(model.getAutonomousContainerDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("role")) {
+                this.role(model.getRole());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet(
+                    "peerAutonomousContainerDatabaseDataguardAssociationId")) {
+                this.peerAutonomousContainerDatabaseDataguardAssociationId(
+                        model.getPeerAutonomousContainerDatabaseDataguardAssociationId());
+            }
+            if (model.wasPropertyExplicitlySet("peerAutonomousContainerDatabaseId")) {
+                this.peerAutonomousContainerDatabaseId(
+                        model.getPeerAutonomousContainerDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("peerRole")) {
+                this.peerRole(model.getPeerRole());
+            }
+            if (model.wasPropertyExplicitlySet("peerLifecycleState")) {
+                this.peerLifecycleState(model.getPeerLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("protectionMode")) {
+                this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("applyLag")) {
+                this.applyLag(model.getApplyLag());
+            }
+            if (model.wasPropertyExplicitlySet("applyRate")) {
+                this.applyRate(model.getApplyRate());
+            }
+            if (model.wasPropertyExplicitlySet("isAutomaticFailoverEnabled")) {
+                this.isAutomaticFailoverEnabled(model.getIsAutomaticFailoverEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("transportLag")) {
+                this.transportLag(model.getTransportLag());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSynced")) {
+                this.timeLastSynced(model.getTimeLastSynced());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastRoleChanged")) {
+                this.timeLastRoleChanged(model.getTimeLastRoleChanged());
+            }
+            return this;
         }
     }
 
@@ -1011,6 +1046,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousContainerDatabaseDataguardAssociation(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", autonomousContainerDatabaseId=")
                 .append(String.valueOf(this.autonomousContainerDatabaseId));
@@ -1032,7 +1068,6 @@ public final class AutonomousContainerDatabaseDataguardAssociation {
         sb.append(", timeLastSynced=").append(String.valueOf(this.timeLastSynced));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeLastRoleChanged=").append(String.valueOf(this.timeLastRoleChanged));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1071,7 +1106,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation {
                 && java.util.Objects.equals(this.timeLastSynced, other.timeLastSynced)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeLastRoleChanged, other.timeLastRoleChanged)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1128,16 +1163,7 @@ public final class AutonomousContainerDatabaseDataguardAssociation {
                         + (this.timeLastRoleChanged == null
                                 ? 43
                                 : this.timeLastRoleChanged.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -161,8 +161,8 @@ public class ListPathAnalyzerTestsConverter {
                                         builder =
                                                 com.oracle.bmc.vnmonitoring.responses
                                                         .ListPathAnalyzerTestsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.pathAnalyzerTestCollection(response.getItem());
 

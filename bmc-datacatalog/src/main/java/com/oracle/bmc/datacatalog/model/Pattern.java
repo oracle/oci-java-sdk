@@ -19,7 +19,7 @@ package com.oracle.bmc.datacatalog.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Pattern.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Pattern {
+public final class Pattern extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -365,48 +365,77 @@ public final class Pattern {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Pattern build() {
-            Pattern __instance__ =
+            Pattern model =
                     new Pattern(
-                            key,
-                            displayName,
-                            description,
-                            catalogId,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            createdById,
-                            updatedById,
-                            expression,
-                            filePathPrefix,
-                            checkFilePathList,
-                            isEnableCheckFailureLimit,
-                            checkFailureLimit,
-                            properties);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.displayName,
+                            this.description,
+                            this.catalogId,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.createdById,
+                            this.updatedById,
+                            this.expression,
+                            this.filePathPrefix,
+                            this.checkFilePathList,
+                            this.isEnableCheckFailureLimit,
+                            this.checkFailureLimit,
+                            this.properties);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Pattern o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .catalogId(o.getCatalogId())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .createdById(o.getCreatedById())
-                            .updatedById(o.getUpdatedById())
-                            .expression(o.getExpression())
-                            .filePathPrefix(o.getFilePathPrefix())
-                            .checkFilePathList(o.getCheckFilePathList())
-                            .isEnableCheckFailureLimit(o.getIsEnableCheckFailureLimit())
-                            .checkFailureLimit(o.getCheckFailureLimit())
-                            .properties(o.getProperties());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Pattern model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("catalogId")) {
+                this.catalogId(model.getCatalogId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("createdById")) {
+                this.createdById(model.getCreatedById());
+            }
+            if (model.wasPropertyExplicitlySet("updatedById")) {
+                this.updatedById(model.getUpdatedById());
+            }
+            if (model.wasPropertyExplicitlySet("expression")) {
+                this.expression(model.getExpression());
+            }
+            if (model.wasPropertyExplicitlySet("filePathPrefix")) {
+                this.filePathPrefix(model.getFilePathPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("checkFilePathList")) {
+                this.checkFilePathList(model.getCheckFilePathList());
+            }
+            if (model.wasPropertyExplicitlySet("isEnableCheckFailureLimit")) {
+                this.isEnableCheckFailureLimit(model.getIsEnableCheckFailureLimit());
+            }
+            if (model.wasPropertyExplicitlySet("checkFailureLimit")) {
+                this.checkFailureLimit(model.getCheckFailureLimit());
+            }
+            if (model.wasPropertyExplicitlySet("properties")) {
+                this.properties(model.getProperties());
+            }
+            return this;
         }
     }
 
@@ -690,6 +719,7 @@ public final class Pattern {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Pattern(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -706,7 +736,6 @@ public final class Pattern {
                 .append(String.valueOf(this.isEnableCheckFailureLimit));
         sb.append(", checkFailureLimit=").append(String.valueOf(this.checkFailureLimit));
         sb.append(", properties=").append(String.valueOf(this.properties));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -737,7 +766,7 @@ public final class Pattern {
                         this.isEnableCheckFailureLimit, other.isEnableCheckFailureLimit)
                 && java.util.Objects.equals(this.checkFailureLimit, other.checkFailureLimit)
                 && java.util.Objects.equals(this.properties, other.properties)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -771,16 +800,7 @@ public final class Pattern {
                 (result * PRIME)
                         + (this.checkFailureLimit == null ? 43 : this.checkFailureLimit.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

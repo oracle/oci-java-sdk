@@ -19,7 +19,8 @@ package com.oracle.bmc.mediaservices.model;
     builder = IngestStreamDistributionChannelResult.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IngestStreamDistributionChannelResult {
+public final class IngestStreamDistributionChannelResult
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"mediaWorkflowJobId"})
     public IngestStreamDistributionChannelResult(String mediaWorkflowJobId) {
@@ -50,18 +51,20 @@ public final class IngestStreamDistributionChannelResult {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IngestStreamDistributionChannelResult build() {
-            IngestStreamDistributionChannelResult __instance__ =
-                    new IngestStreamDistributionChannelResult(mediaWorkflowJobId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            IngestStreamDistributionChannelResult model =
+                    new IngestStreamDistributionChannelResult(this.mediaWorkflowJobId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(IngestStreamDistributionChannelResult o) {
-            Builder copiedBuilder = mediaWorkflowJobId(o.getMediaWorkflowJobId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(IngestStreamDistributionChannelResult model) {
+            if (model.wasPropertyExplicitlySet("mediaWorkflowJobId")) {
+                this.mediaWorkflowJobId(model.getMediaWorkflowJobId());
+            }
+            return this;
         }
     }
 
@@ -103,8 +106,8 @@ public final class IngestStreamDistributionChannelResult {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("IngestStreamDistributionChannelResult(");
+        sb.append("super=").append(super.toString());
         sb.append("mediaWorkflowJobId=").append(String.valueOf(this.mediaWorkflowJobId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -120,7 +123,7 @@ public final class IngestStreamDistributionChannelResult {
 
         IngestStreamDistributionChannelResult other = (IngestStreamDistributionChannelResult) o;
         return java.util.Objects.equals(this.mediaWorkflowJobId, other.mediaWorkflowJobId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -132,16 +135,7 @@ public final class IngestStreamDistributionChannelResult {
                         + (this.mediaWorkflowJobId == null
                                 ? 43
                                 : this.mediaWorkflowJobId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

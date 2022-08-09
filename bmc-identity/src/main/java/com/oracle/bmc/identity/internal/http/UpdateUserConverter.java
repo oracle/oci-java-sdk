@@ -101,8 +101,8 @@ public class UpdateUserConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses.UpdateUserResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.user(response.getItem());
 

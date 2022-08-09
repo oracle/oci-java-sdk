@@ -72,6 +72,7 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcWorkRequestId",
         "opcRequestId",
@@ -79,12 +80,13 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
     })
     private CreateOperatorControlAssignmentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
             com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
                     operatorControlAssignment) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
@@ -96,6 +98,13 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -176,6 +185,7 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
          */
         public Builder copy(CreateOperatorControlAssignmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
@@ -191,6 +201,7 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
         public CreateOperatorControlAssignmentResponse build() {
             return new CreateOperatorControlAssignmentResponse(
                     __httpStatusCode__,
+                    headers,
                     etag,
                     opcWorkRequestId,
                     opcRequestId,

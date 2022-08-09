@@ -19,7 +19,7 @@ package com.oracle.bmc.datacatalog.model;
     builder = UpdateTermDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateTermDetails {
+public final class UpdateTermDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -153,30 +153,41 @@ public final class UpdateTermDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateTermDetails build() {
-            UpdateTermDetails __instance__ =
+            UpdateTermDetails model =
                     new UpdateTermDetails(
-                            displayName,
-                            description,
-                            parentTermKey,
-                            owner,
-                            workflowStatus,
-                            customPropertyMembers);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.description,
+                            this.parentTermKey,
+                            this.owner,
+                            this.workflowStatus,
+                            this.customPropertyMembers);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateTermDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .parentTermKey(o.getParentTermKey())
-                            .owner(o.getOwner())
-                            .workflowStatus(o.getWorkflowStatus())
-                            .customPropertyMembers(o.getCustomPropertyMembers());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateTermDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("parentTermKey")) {
+                this.parentTermKey(model.getParentTermKey());
+            }
+            if (model.wasPropertyExplicitlySet("owner")) {
+                this.owner(model.getOwner());
+            }
+            if (model.wasPropertyExplicitlySet("workflowStatus")) {
+                this.workflowStatus(model.getWorkflowStatus());
+            }
+            if (model.wasPropertyExplicitlySet("customPropertyMembers")) {
+                this.customPropertyMembers(model.getCustomPropertyMembers());
+            }
+            return this;
         }
     }
 
@@ -292,13 +303,13 @@ public final class UpdateTermDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateTermDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", parentTermKey=").append(String.valueOf(this.parentTermKey));
         sb.append(", owner=").append(String.valueOf(this.owner));
         sb.append(", workflowStatus=").append(String.valueOf(this.workflowStatus));
         sb.append(", customPropertyMembers=").append(String.valueOf(this.customPropertyMembers));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -319,7 +330,7 @@ public final class UpdateTermDetails {
                 && java.util.Objects.equals(this.owner, other.owner)
                 && java.util.Objects.equals(this.workflowStatus, other.workflowStatus)
                 && java.util.Objects.equals(this.customPropertyMembers, other.customPropertyMembers)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -340,16 +351,7 @@ public final class UpdateTermDetails {
                         + (this.customPropertyMembers == null
                                 ? 43
                                 : this.customPropertyMembers.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

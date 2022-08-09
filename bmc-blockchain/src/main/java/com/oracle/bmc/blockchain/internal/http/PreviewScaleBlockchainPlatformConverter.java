@@ -121,8 +121,8 @@ public class PreviewScaleBlockchainPlatformConverter {
                                                 com.oracle.bmc.blockchain.responses
                                                         .PreviewScaleBlockchainPlatformResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.scaledBlockchainPlatformPreview(response.getItem());
 

@@ -104,8 +104,8 @@ public class CreateKubeconfigConverter {
                                         builder =
                                                 com.oracle.bmc.containerengine.responses
                                                         .CreateKubeconfigResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.inputStream(response.getItem());
 

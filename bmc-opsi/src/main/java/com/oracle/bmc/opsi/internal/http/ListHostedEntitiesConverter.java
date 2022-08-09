@@ -123,6 +123,23 @@ public class ListHostedEntitiesConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getHostType() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "hostType",
+                            request.getHostType(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getHostId() != null) {
+            target =
+                    target.queryParam(
+                            "hostId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHostId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -189,8 +206,8 @@ public class ListHostedEntitiesConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .ListHostedEntitiesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.hostedEntityCollection(response.getItem());
 

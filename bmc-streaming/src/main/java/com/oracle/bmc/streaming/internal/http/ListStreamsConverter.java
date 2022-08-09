@@ -178,8 +178,8 @@ public class ListStreamsConverter {
                                         builder =
                                                 com.oracle.bmc.streaming.responses
                                                         .ListStreamsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

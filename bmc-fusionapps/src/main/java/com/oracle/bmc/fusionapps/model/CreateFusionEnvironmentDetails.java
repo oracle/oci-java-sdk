@@ -19,7 +19,8 @@ package com.oracle.bmc.fusionapps.model;
     builder = CreateFusionEnvironmentDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateFusionEnvironmentDetails {
+public final class CreateFusionEnvironmentDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -259,43 +260,66 @@ public final class CreateFusionEnvironmentDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateFusionEnvironmentDetails build() {
-            CreateFusionEnvironmentDetails __instance__ =
+            CreateFusionEnvironmentDetails model =
                     new CreateFusionEnvironmentDetails(
-                            displayName,
-                            maintenancePolicy,
-                            compartmentId,
-                            fusionEnvironmentFamilyId,
-                            fusionEnvironmentType,
-                            kmsKeyId,
-                            dnsPrefix,
-                            additionalLanguagePacks,
-                            rules,
-                            createFusionEnvironmentAdminUserDetails,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.maintenancePolicy,
+                            this.compartmentId,
+                            this.fusionEnvironmentFamilyId,
+                            this.fusionEnvironmentType,
+                            this.kmsKeyId,
+                            this.dnsPrefix,
+                            this.additionalLanguagePacks,
+                            this.rules,
+                            this.createFusionEnvironmentAdminUserDetails,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateFusionEnvironmentDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .maintenancePolicy(o.getMaintenancePolicy())
-                            .compartmentId(o.getCompartmentId())
-                            .fusionEnvironmentFamilyId(o.getFusionEnvironmentFamilyId())
-                            .fusionEnvironmentType(o.getFusionEnvironmentType())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .dnsPrefix(o.getDnsPrefix())
-                            .additionalLanguagePacks(o.getAdditionalLanguagePacks())
-                            .rules(o.getRules())
-                            .createFusionEnvironmentAdminUserDetails(
-                                    o.getCreateFusionEnvironmentAdminUserDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateFusionEnvironmentDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("maintenancePolicy")) {
+                this.maintenancePolicy(model.getMaintenancePolicy());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("fusionEnvironmentFamilyId")) {
+                this.fusionEnvironmentFamilyId(model.getFusionEnvironmentFamilyId());
+            }
+            if (model.wasPropertyExplicitlySet("fusionEnvironmentType")) {
+                this.fusionEnvironmentType(model.getFusionEnvironmentType());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("dnsPrefix")) {
+                this.dnsPrefix(model.getDnsPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("additionalLanguagePacks")) {
+                this.additionalLanguagePacks(model.getAdditionalLanguagePacks());
+            }
+            if (model.wasPropertyExplicitlySet("rules")) {
+                this.rules(model.getRules());
+            }
+            if (model.wasPropertyExplicitlySet("createFusionEnvironmentAdminUserDetails")) {
+                this.createFusionEnvironmentAdminUserDetails(
+                        model.getCreateFusionEnvironmentAdminUserDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -485,6 +509,7 @@ public final class CreateFusionEnvironmentDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateFusionEnvironmentDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", maintenancePolicy=").append(String.valueOf(this.maintenancePolicy));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -500,7 +525,6 @@ public final class CreateFusionEnvironmentDetails {
                 .append(String.valueOf(this.createFusionEnvironmentAdminUserDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -531,7 +555,7 @@ public final class CreateFusionEnvironmentDetails {
                         other.createFusionEnvironmentAdminUserDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -570,16 +594,7 @@ public final class CreateFusionEnvironmentDetails {
                                 : this.createFusionEnvironmentAdminUserDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

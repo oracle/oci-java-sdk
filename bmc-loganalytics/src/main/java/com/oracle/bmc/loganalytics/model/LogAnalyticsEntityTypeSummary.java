@@ -20,7 +20,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsEntityTypeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsEntityTypeSummary {
+public final class LogAnalyticsEntityTypeSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -204,35 +205,49 @@ public final class LogAnalyticsEntityTypeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsEntityTypeSummary build() {
-            LogAnalyticsEntityTypeSummary __instance__ =
+            LogAnalyticsEntityTypeSummary model =
                     new LogAnalyticsEntityTypeSummary(
-                            name,
-                            internalName,
-                            category,
-                            cloudType,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            managementAgentEligibilityStatus);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.internalName,
+                            this.category,
+                            this.cloudType,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.managementAgentEligibilityStatus);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsEntityTypeSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .internalName(o.getInternalName())
-                            .category(o.getCategory())
-                            .cloudType(o.getCloudType())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .managementAgentEligibilityStatus(
-                                    o.getManagementAgentEligibilityStatus());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsEntityTypeSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("internalName")) {
+                this.internalName(model.getInternalName());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
+            }
+            if (model.wasPropertyExplicitlySet("cloudType")) {
+                this.cloudType(model.getCloudType());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("managementAgentEligibilityStatus")) {
+                this.managementAgentEligibilityStatus(model.getManagementAgentEligibilityStatus());
+            }
+            return this;
         }
     }
 
@@ -438,6 +453,7 @@ public final class LogAnalyticsEntityTypeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsEntityTypeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", internalName=").append(String.valueOf(this.internalName));
         sb.append(", category=").append(String.valueOf(this.category));
@@ -447,7 +463,6 @@ public final class LogAnalyticsEntityTypeSummary {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", managementAgentEligibilityStatus=")
                 .append(String.valueOf(this.managementAgentEligibilityStatus));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -472,7 +487,7 @@ public final class LogAnalyticsEntityTypeSummary {
                 && java.util.Objects.equals(
                         this.managementAgentEligibilityStatus,
                         other.managementAgentEligibilityStatus)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -493,16 +508,7 @@ public final class LogAnalyticsEntityTypeSummary {
                         + (this.managementAgentEligibilityStatus == null
                                 ? 43
                                 : this.managementAgentEligibilityStatus.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -39,7 +39,8 @@ package com.oracle.bmc.loadbalancer.model;
     builder = SessionPersistenceConfigurationDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SessionPersistenceConfigurationDetails {
+public final class SessionPersistenceConfigurationDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"cookieName", "disableFallback"})
     public SessionPersistenceConfigurationDetails(String cookieName, Boolean disableFallback) {
@@ -103,19 +104,24 @@ public final class SessionPersistenceConfigurationDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SessionPersistenceConfigurationDetails build() {
-            SessionPersistenceConfigurationDetails __instance__ =
-                    new SessionPersistenceConfigurationDetails(cookieName, disableFallback);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SessionPersistenceConfigurationDetails model =
+                    new SessionPersistenceConfigurationDetails(
+                            this.cookieName, this.disableFallback);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SessionPersistenceConfigurationDetails o) {
-            Builder copiedBuilder =
-                    cookieName(o.getCookieName()).disableFallback(o.getDisableFallback());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SessionPersistenceConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("cookieName")) {
+                this.cookieName(model.getCookieName());
+            }
+            if (model.wasPropertyExplicitlySet("disableFallback")) {
+                this.disableFallback(model.getDisableFallback());
+            }
+            return this;
         }
     }
 
@@ -187,9 +193,9 @@ public final class SessionPersistenceConfigurationDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SessionPersistenceConfigurationDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("cookieName=").append(String.valueOf(this.cookieName));
         sb.append(", disableFallback=").append(String.valueOf(this.disableFallback));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -206,7 +212,7 @@ public final class SessionPersistenceConfigurationDetails {
         SessionPersistenceConfigurationDetails other = (SessionPersistenceConfigurationDetails) o;
         return java.util.Objects.equals(this.cookieName, other.cookieName)
                 && java.util.Objects.equals(this.disableFallback, other.disableFallback)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -217,16 +223,7 @@ public final class SessionPersistenceConfigurationDetails {
         result =
                 (result * PRIME)
                         + (this.disableFallback == null ? 43 : this.disableFallback.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

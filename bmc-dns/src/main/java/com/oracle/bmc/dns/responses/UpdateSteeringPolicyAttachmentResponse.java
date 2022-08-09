@@ -59,16 +59,18 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "eTag",
         "steeringPolicyAttachment"
     })
     private UpdateSteeringPolicyAttachmentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String eTag,
             com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.eTag = eTag;
         this.steeringPolicyAttachment = steeringPolicyAttachment;
@@ -79,6 +81,13 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -144,6 +153,7 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
          */
         public Builder copy(UpdateSteeringPolicyAttachmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             eTag(o.getETag());
             steeringPolicyAttachment(o.getSteeringPolicyAttachment());
@@ -157,7 +167,7 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
          */
         public UpdateSteeringPolicyAttachmentResponse build() {
             return new UpdateSteeringPolicyAttachmentResponse(
-                    __httpStatusCode__, opcRequestId, eTag, steeringPolicyAttachment);
+                    __httpStatusCode__, headers, opcRequestId, eTag, steeringPolicyAttachment);
         }
     }
 

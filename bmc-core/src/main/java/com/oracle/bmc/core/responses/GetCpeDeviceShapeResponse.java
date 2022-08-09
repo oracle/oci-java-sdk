@@ -40,14 +40,16 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "cpeDeviceShapeDetail"
     })
     private GetCpeDeviceShapeResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.core.model.CpeDeviceShapeDetail cpeDeviceShapeDetail) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.cpeDeviceShapeDetail = cpeDeviceShapeDetail;
     }
@@ -57,6 +59,13 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -101,6 +110,7 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetCpeDeviceShapeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             cpeDeviceShapeDetail(o.getCpeDeviceShapeDetail());
 
@@ -113,7 +123,7 @@ public class GetCpeDeviceShapeResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public GetCpeDeviceShapeResponse build() {
             return new GetCpeDeviceShapeResponse(
-                    __httpStatusCode__, opcRequestId, cpeDeviceShapeDetail);
+                    __httpStatusCode__, headers, opcRequestId, cpeDeviceShapeDetail);
         }
     }
 

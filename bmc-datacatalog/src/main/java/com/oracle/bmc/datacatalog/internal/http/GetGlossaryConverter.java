@@ -117,8 +117,8 @@ public class GetGlossaryConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .GetGlossaryResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.glossary(response.getItem());
 

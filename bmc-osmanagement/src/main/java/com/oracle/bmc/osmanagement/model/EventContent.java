@@ -17,7 +17,7 @@ package com.oracle.bmc.osmanagement.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EventContent.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EventContent {
+public final class EventContent extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"contentAvailability", "instancePath", "size"})
     public EventContent(
@@ -83,20 +83,26 @@ public final class EventContent {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EventContent build() {
-            EventContent __instance__ = new EventContent(contentAvailability, instancePath, size);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            EventContent model =
+                    new EventContent(this.contentAvailability, this.instancePath, this.size);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EventContent o) {
-            Builder copiedBuilder =
-                    contentAvailability(o.getContentAvailability())
-                            .instancePath(o.getInstancePath())
-                            .size(o.getSize());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EventContent model) {
+            if (model.wasPropertyExplicitlySet("contentAvailability")) {
+                this.contentAvailability(model.getContentAvailability());
+            }
+            if (model.wasPropertyExplicitlySet("instancePath")) {
+                this.instancePath(model.getInstancePath());
+            }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
+            return this;
         }
     }
 
@@ -166,10 +172,10 @@ public final class EventContent {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EventContent(");
+        sb.append("super=").append(super.toString());
         sb.append("contentAvailability=").append(String.valueOf(this.contentAvailability));
         sb.append(", instancePath=").append(String.valueOf(this.instancePath));
         sb.append(", size=").append(String.valueOf(this.size));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -187,7 +193,7 @@ public final class EventContent {
         return java.util.Objects.equals(this.contentAvailability, other.contentAvailability)
                 && java.util.Objects.equals(this.instancePath, other.instancePath)
                 && java.util.Objects.equals(this.size, other.size)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -201,16 +207,7 @@ public final class EventContent {
                                 : this.contentAvailability.hashCode());
         result = (result * PRIME) + (this.instancePath == null ? 43 : this.instancePath.hashCode());
         result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

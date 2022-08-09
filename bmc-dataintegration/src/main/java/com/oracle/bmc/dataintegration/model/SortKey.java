@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SortKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SortKey {
+public final class SortKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sortRules"})
     public SortKey(java.util.List<SortKeyRule> sortRules) {
@@ -48,17 +48,19 @@ public final class SortKey {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SortKey build() {
-            SortKey __instance__ = new SortKey(sortRules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SortKey model = new SortKey(this.sortRules);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SortKey o) {
-            Builder copiedBuilder = sortRules(o.getSortRules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SortKey model) {
+            if (model.wasPropertyExplicitlySet("sortRules")) {
+                this.sortRules(model.getSortRules());
+            }
+            return this;
         }
     }
 
@@ -100,8 +102,8 @@ public final class SortKey {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SortKey(");
+        sb.append("super=").append(super.toString());
         sb.append("sortRules=").append(String.valueOf(this.sortRules));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -116,8 +118,7 @@ public final class SortKey {
         }
 
         SortKey other = (SortKey) o;
-        return java.util.Objects.equals(this.sortRules, other.sortRules)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.sortRules, other.sortRules) && super.equals(other);
     }
 
     @Override
@@ -125,16 +126,7 @@ public final class SortKey {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.sortRules == null ? 43 : this.sortRules.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

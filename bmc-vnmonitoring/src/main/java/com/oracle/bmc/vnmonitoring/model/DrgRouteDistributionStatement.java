@@ -21,7 +21,8 @@ package com.oracle.bmc.vnmonitoring.model;
     builder = DrgRouteDistributionStatement.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DrgRouteDistributionStatement {
+public final class DrgRouteDistributionStatement
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"matchCriteria", "action", "priority", "id"})
     public DrgRouteDistributionStatement(
@@ -128,22 +129,30 @@ public final class DrgRouteDistributionStatement {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DrgRouteDistributionStatement build() {
-            DrgRouteDistributionStatement __instance__ =
-                    new DrgRouteDistributionStatement(matchCriteria, action, priority, id);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DrgRouteDistributionStatement model =
+                    new DrgRouteDistributionStatement(
+                            this.matchCriteria, this.action, this.priority, this.id);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DrgRouteDistributionStatement o) {
-            Builder copiedBuilder =
-                    matchCriteria(o.getMatchCriteria())
-                            .action(o.getAction())
-                            .priority(o.getPriority())
-                            .id(o.getId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DrgRouteDistributionStatement model) {
+            if (model.wasPropertyExplicitlySet("matchCriteria")) {
+                this.matchCriteria(model.getMatchCriteria());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("priority")) {
+                this.priority(model.getPriority());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            return this;
         }
     }
 
@@ -282,11 +291,11 @@ public final class DrgRouteDistributionStatement {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DrgRouteDistributionStatement(");
+        sb.append("super=").append(super.toString());
         sb.append("matchCriteria=").append(String.valueOf(this.matchCriteria));
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", priority=").append(String.valueOf(this.priority));
         sb.append(", id=").append(String.valueOf(this.id));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -305,7 +314,7 @@ public final class DrgRouteDistributionStatement {
                 && java.util.Objects.equals(this.action, other.action)
                 && java.util.Objects.equals(this.priority, other.priority)
                 && java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -318,16 +327,7 @@ public final class DrgRouteDistributionStatement {
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
         result = (result * PRIME) + (this.priority == null ? 43 : this.priority.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

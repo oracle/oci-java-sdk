@@ -19,7 +19,7 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsParser.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsParser {
+public final class LogAnalyticsParser extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "content",
@@ -674,84 +674,149 @@ public final class LogAnalyticsParser {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsParser build() {
-            LogAnalyticsParser __instance__ =
+            LogAnalyticsParser model =
                     new LogAnalyticsParser(
-                            content,
-                            description,
-                            displayName,
-                            editVersion,
-                            encoding,
-                            exampleContent,
-                            fieldMaps,
-                            footerContent,
-                            headerContent,
-                            name,
-                            isDefault,
-                            isSingleLineContent,
-                            isSystem,
-                            language,
-                            timeUpdated,
-                            logTypeTestRequestVersion,
-                            mappedParsers,
-                            parserIgnorelineCharacters,
-                            isHidden,
-                            parserSequence,
-                            parserTimezone,
-                            parserFilter,
-                            isParserWrittenOnce,
-                            parserFunctions,
-                            sourcesCount,
-                            sources,
-                            shouldTokenizeOriginalText,
-                            fieldDelimiter,
-                            fieldQualifier,
-                            type,
-                            isUserDeleted,
-                            isNamespaceAware,
-                            categories);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.content,
+                            this.description,
+                            this.displayName,
+                            this.editVersion,
+                            this.encoding,
+                            this.exampleContent,
+                            this.fieldMaps,
+                            this.footerContent,
+                            this.headerContent,
+                            this.name,
+                            this.isDefault,
+                            this.isSingleLineContent,
+                            this.isSystem,
+                            this.language,
+                            this.timeUpdated,
+                            this.logTypeTestRequestVersion,
+                            this.mappedParsers,
+                            this.parserIgnorelineCharacters,
+                            this.isHidden,
+                            this.parserSequence,
+                            this.parserTimezone,
+                            this.parserFilter,
+                            this.isParserWrittenOnce,
+                            this.parserFunctions,
+                            this.sourcesCount,
+                            this.sources,
+                            this.shouldTokenizeOriginalText,
+                            this.fieldDelimiter,
+                            this.fieldQualifier,
+                            this.type,
+                            this.isUserDeleted,
+                            this.isNamespaceAware,
+                            this.categories);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsParser o) {
-            Builder copiedBuilder =
-                    content(o.getContent())
-                            .description(o.getDescription())
-                            .displayName(o.getDisplayName())
-                            .editVersion(o.getEditVersion())
-                            .encoding(o.getEncoding())
-                            .exampleContent(o.getExampleContent())
-                            .fieldMaps(o.getFieldMaps())
-                            .footerContent(o.getFooterContent())
-                            .headerContent(o.getHeaderContent())
-                            .name(o.getName())
-                            .isDefault(o.getIsDefault())
-                            .isSingleLineContent(o.getIsSingleLineContent())
-                            .isSystem(o.getIsSystem())
-                            .language(o.getLanguage())
-                            .timeUpdated(o.getTimeUpdated())
-                            .logTypeTestRequestVersion(o.getLogTypeTestRequestVersion())
-                            .mappedParsers(o.getMappedParsers())
-                            .parserIgnorelineCharacters(o.getParserIgnorelineCharacters())
-                            .isHidden(o.getIsHidden())
-                            .parserSequence(o.getParserSequence())
-                            .parserTimezone(o.getParserTimezone())
-                            .parserFilter(o.getParserFilter())
-                            .isParserWrittenOnce(o.getIsParserWrittenOnce())
-                            .parserFunctions(o.getParserFunctions())
-                            .sourcesCount(o.getSourcesCount())
-                            .sources(o.getSources())
-                            .shouldTokenizeOriginalText(o.getShouldTokenizeOriginalText())
-                            .fieldDelimiter(o.getFieldDelimiter())
-                            .fieldQualifier(o.getFieldQualifier())
-                            .type(o.getType())
-                            .isUserDeleted(o.getIsUserDeleted())
-                            .isNamespaceAware(o.getIsNamespaceAware())
-                            .categories(o.getCategories());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsParser model) {
+            if (model.wasPropertyExplicitlySet("content")) {
+                this.content(model.getContent());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("editVersion")) {
+                this.editVersion(model.getEditVersion());
+            }
+            if (model.wasPropertyExplicitlySet("encoding")) {
+                this.encoding(model.getEncoding());
+            }
+            if (model.wasPropertyExplicitlySet("exampleContent")) {
+                this.exampleContent(model.getExampleContent());
+            }
+            if (model.wasPropertyExplicitlySet("fieldMaps")) {
+                this.fieldMaps(model.getFieldMaps());
+            }
+            if (model.wasPropertyExplicitlySet("footerContent")) {
+                this.footerContent(model.getFooterContent());
+            }
+            if (model.wasPropertyExplicitlySet("headerContent")) {
+                this.headerContent(model.getHeaderContent());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("isDefault")) {
+                this.isDefault(model.getIsDefault());
+            }
+            if (model.wasPropertyExplicitlySet("isSingleLineContent")) {
+                this.isSingleLineContent(model.getIsSingleLineContent());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("language")) {
+                this.language(model.getLanguage());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("logTypeTestRequestVersion")) {
+                this.logTypeTestRequestVersion(model.getLogTypeTestRequestVersion());
+            }
+            if (model.wasPropertyExplicitlySet("mappedParsers")) {
+                this.mappedParsers(model.getMappedParsers());
+            }
+            if (model.wasPropertyExplicitlySet("parserIgnorelineCharacters")) {
+                this.parserIgnorelineCharacters(model.getParserIgnorelineCharacters());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
+            }
+            if (model.wasPropertyExplicitlySet("parserSequence")) {
+                this.parserSequence(model.getParserSequence());
+            }
+            if (model.wasPropertyExplicitlySet("parserTimezone")) {
+                this.parserTimezone(model.getParserTimezone());
+            }
+            if (model.wasPropertyExplicitlySet("parserFilter")) {
+                this.parserFilter(model.getParserFilter());
+            }
+            if (model.wasPropertyExplicitlySet("isParserWrittenOnce")) {
+                this.isParserWrittenOnce(model.getIsParserWrittenOnce());
+            }
+            if (model.wasPropertyExplicitlySet("parserFunctions")) {
+                this.parserFunctions(model.getParserFunctions());
+            }
+            if (model.wasPropertyExplicitlySet("sourcesCount")) {
+                this.sourcesCount(model.getSourcesCount());
+            }
+            if (model.wasPropertyExplicitlySet("sources")) {
+                this.sources(model.getSources());
+            }
+            if (model.wasPropertyExplicitlySet("shouldTokenizeOriginalText")) {
+                this.shouldTokenizeOriginalText(model.getShouldTokenizeOriginalText());
+            }
+            if (model.wasPropertyExplicitlySet("fieldDelimiter")) {
+                this.fieldDelimiter(model.getFieldDelimiter());
+            }
+            if (model.wasPropertyExplicitlySet("fieldQualifier")) {
+                this.fieldQualifier(model.getFieldQualifier());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("isUserDeleted")) {
+                this.isUserDeleted(model.getIsUserDeleted());
+            }
+            if (model.wasPropertyExplicitlySet("isNamespaceAware")) {
+                this.isNamespaceAware(model.getIsNamespaceAware());
+            }
+            if (model.wasPropertyExplicitlySet("categories")) {
+                this.categories(model.getCategories());
+            }
+            return this;
         }
     }
 
@@ -1303,6 +1368,7 @@ public final class LogAnalyticsParser {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsParser(");
+        sb.append("super=").append(super.toString());
         sb.append("content=").append(String.valueOf(this.content));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -1339,7 +1405,6 @@ public final class LogAnalyticsParser {
         sb.append(", isUserDeleted=").append(String.valueOf(this.isUserDeleted));
         sb.append(", isNamespaceAware=").append(String.valueOf(this.isNamespaceAware));
         sb.append(", categories=").append(String.valueOf(this.categories));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1390,7 +1455,7 @@ public final class LogAnalyticsParser {
                 && java.util.Objects.equals(this.isUserDeleted, other.isUserDeleted)
                 && java.util.Objects.equals(this.isNamespaceAware, other.isNamespaceAware)
                 && java.util.Objects.equals(this.categories, other.categories)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1472,16 +1537,7 @@ public final class LogAnalyticsParser {
                 (result * PRIME)
                         + (this.isNamespaceAware == null ? 43 : this.isNamespaceAware.hashCode());
         result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

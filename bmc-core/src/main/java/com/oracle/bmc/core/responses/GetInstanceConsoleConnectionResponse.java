@@ -40,14 +40,16 @@ public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.respons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "instanceConsoleConnection"
     })
     private GetInstanceConsoleConnectionResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.instanceConsoleConnection = instanceConsoleConnection;
     }
@@ -57,6 +59,13 @@ public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.respons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -101,6 +110,7 @@ public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.respons
          */
         public Builder copy(GetInstanceConsoleConnectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             instanceConsoleConnection(o.getInstanceConsoleConnection());
 
@@ -113,7 +123,7 @@ public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.respons
          */
         public GetInstanceConsoleConnectionResponse build() {
             return new GetInstanceConsoleConnectionResponse(
-                    __httpStatusCode__, opcRequestId, instanceConsoleConnection);
+                    __httpStatusCode__, headers, opcRequestId, instanceConsoleConnection);
         }
     }
 

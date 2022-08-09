@@ -33,7 +33,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CrossConnect.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CrossConnect {
+public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -373,48 +373,77 @@ public final class CrossConnect {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CrossConnect build() {
-            CrossConnect __instance__ =
+            CrossConnect model =
                     new CrossConnect(
-                            compartmentId,
-                            crossConnectGroupId,
-                            definedTags,
-                            displayName,
-                            freeformTags,
-                            id,
-                            lifecycleState,
-                            locationName,
-                            portName,
-                            portSpeedShapeName,
-                            customerReferenceName,
-                            timeCreated,
-                            macsecProperties,
-                            ociPhysicalDeviceName,
-                            ociLogicalDeviceName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.crossConnectGroupId,
+                            this.definedTags,
+                            this.displayName,
+                            this.freeformTags,
+                            this.id,
+                            this.lifecycleState,
+                            this.locationName,
+                            this.portName,
+                            this.portSpeedShapeName,
+                            this.customerReferenceName,
+                            this.timeCreated,
+                            this.macsecProperties,
+                            this.ociPhysicalDeviceName,
+                            this.ociLogicalDeviceName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CrossConnect o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .crossConnectGroupId(o.getCrossConnectGroupId())
-                            .definedTags(o.getDefinedTags())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
-                            .locationName(o.getLocationName())
-                            .portName(o.getPortName())
-                            .portSpeedShapeName(o.getPortSpeedShapeName())
-                            .customerReferenceName(o.getCustomerReferenceName())
-                            .timeCreated(o.getTimeCreated())
-                            .macsecProperties(o.getMacsecProperties())
-                            .ociPhysicalDeviceName(o.getOciPhysicalDeviceName())
-                            .ociLogicalDeviceName(o.getOciLogicalDeviceName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CrossConnect model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("crossConnectGroupId")) {
+                this.crossConnectGroupId(model.getCrossConnectGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("locationName")) {
+                this.locationName(model.getLocationName());
+            }
+            if (model.wasPropertyExplicitlySet("portName")) {
+                this.portName(model.getPortName());
+            }
+            if (model.wasPropertyExplicitlySet("portSpeedShapeName")) {
+                this.portSpeedShapeName(model.getPortSpeedShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("customerReferenceName")) {
+                this.customerReferenceName(model.getCustomerReferenceName());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("macsecProperties")) {
+                this.macsecProperties(model.getMacsecProperties());
+            }
+            if (model.wasPropertyExplicitlySet("ociPhysicalDeviceName")) {
+                this.ociPhysicalDeviceName(model.getOciPhysicalDeviceName());
+            }
+            if (model.wasPropertyExplicitlySet("ociLogicalDeviceName")) {
+                this.ociLogicalDeviceName(model.getOciLogicalDeviceName());
+            }
+            return this;
         }
     }
 
@@ -743,6 +772,7 @@ public final class CrossConnect {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CrossConnect(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", crossConnectGroupId=").append(String.valueOf(this.crossConnectGroupId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -758,7 +788,6 @@ public final class CrossConnect {
         sb.append(", macsecProperties=").append(String.valueOf(this.macsecProperties));
         sb.append(", ociPhysicalDeviceName=").append(String.valueOf(this.ociPhysicalDeviceName));
         sb.append(", ociLogicalDeviceName=").append(String.valueOf(this.ociLogicalDeviceName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -788,7 +817,7 @@ public final class CrossConnect {
                 && java.util.Objects.equals(this.macsecProperties, other.macsecProperties)
                 && java.util.Objects.equals(this.ociPhysicalDeviceName, other.ociPhysicalDeviceName)
                 && java.util.Objects.equals(this.ociLogicalDeviceName, other.ociLogicalDeviceName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -836,16 +865,7 @@ public final class CrossConnect {
                         + (this.ociLogicalDeviceName == null
                                 ? 43
                                 : this.ociLogicalDeviceName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GrantSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GrantSummary {
+public final class GrantSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -133,23 +133,37 @@ public final class GrantSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GrantSummary build() {
-            GrantSummary __instance__ =
-                    new GrantSummary(key, grantName, privilegeType, privilegeCategory, depthLevel);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            GrantSummary model =
+                    new GrantSummary(
+                            this.key,
+                            this.grantName,
+                            this.privilegeType,
+                            this.privilegeCategory,
+                            this.depthLevel);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(GrantSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .grantName(o.getGrantName())
-                            .privilegeType(o.getPrivilegeType())
-                            .privilegeCategory(o.getPrivilegeCategory())
-                            .depthLevel(o.getDepthLevel());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(GrantSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("grantName")) {
+                this.grantName(model.getGrantName());
+            }
+            if (model.wasPropertyExplicitlySet("privilegeType")) {
+                this.privilegeType(model.getPrivilegeType());
+            }
+            if (model.wasPropertyExplicitlySet("privilegeCategory")) {
+                this.privilegeCategory(model.getPrivilegeCategory());
+            }
+            if (model.wasPropertyExplicitlySet("depthLevel")) {
+                this.depthLevel(model.getDepthLevel());
+            }
+            return this;
         }
     }
 
@@ -353,12 +367,12 @@ public final class GrantSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GrantSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", grantName=").append(String.valueOf(this.grantName));
         sb.append(", privilegeType=").append(String.valueOf(this.privilegeType));
         sb.append(", privilegeCategory=").append(String.valueOf(this.privilegeCategory));
         sb.append(", depthLevel=").append(String.valueOf(this.depthLevel));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -378,7 +392,7 @@ public final class GrantSummary {
                 && java.util.Objects.equals(this.privilegeType, other.privilegeType)
                 && java.util.Objects.equals(this.privilegeCategory, other.privilegeCategory)
                 && java.util.Objects.equals(this.depthLevel, other.depthLevel)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -394,16 +408,7 @@ public final class GrantSummary {
                 (result * PRIME)
                         + (this.privilegeCategory == null ? 43 : this.privilegeCategory.hashCode());
         result = (result * PRIME) + (this.depthLevel == null ? 43 : this.depthLevel.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

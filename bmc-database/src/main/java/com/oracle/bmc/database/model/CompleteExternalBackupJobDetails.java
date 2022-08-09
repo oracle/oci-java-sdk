@@ -19,7 +19,8 @@ package com.oracle.bmc.database.model;
     builder = CompleteExternalBackupJobDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CompleteExternalBackupJobDetails {
+public final class CompleteExternalBackupJobDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tdeWalletPath",
@@ -148,30 +149,41 @@ public final class CompleteExternalBackupJobDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CompleteExternalBackupJobDetails build() {
-            CompleteExternalBackupJobDetails __instance__ =
+            CompleteExternalBackupJobDetails model =
                     new CompleteExternalBackupJobDetails(
-                            tdeWalletPath,
-                            cfBackupHandle,
-                            spfBackupHandle,
-                            sqlPatches,
-                            dataSize,
-                            redoSize);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.tdeWalletPath,
+                            this.cfBackupHandle,
+                            this.spfBackupHandle,
+                            this.sqlPatches,
+                            this.dataSize,
+                            this.redoSize);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CompleteExternalBackupJobDetails o) {
-            Builder copiedBuilder =
-                    tdeWalletPath(o.getTdeWalletPath())
-                            .cfBackupHandle(o.getCfBackupHandle())
-                            .spfBackupHandle(o.getSpfBackupHandle())
-                            .sqlPatches(o.getSqlPatches())
-                            .dataSize(o.getDataSize())
-                            .redoSize(o.getRedoSize());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CompleteExternalBackupJobDetails model) {
+            if (model.wasPropertyExplicitlySet("tdeWalletPath")) {
+                this.tdeWalletPath(model.getTdeWalletPath());
+            }
+            if (model.wasPropertyExplicitlySet("cfBackupHandle")) {
+                this.cfBackupHandle(model.getCfBackupHandle());
+            }
+            if (model.wasPropertyExplicitlySet("spfBackupHandle")) {
+                this.spfBackupHandle(model.getSpfBackupHandle());
+            }
+            if (model.wasPropertyExplicitlySet("sqlPatches")) {
+                this.sqlPatches(model.getSqlPatches());
+            }
+            if (model.wasPropertyExplicitlySet("dataSize")) {
+                this.dataSize(model.getDataSize());
+            }
+            if (model.wasPropertyExplicitlySet("redoSize")) {
+                this.redoSize(model.getRedoSize());
+            }
+            return this;
         }
     }
 
@@ -283,13 +295,13 @@ public final class CompleteExternalBackupJobDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CompleteExternalBackupJobDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("tdeWalletPath=").append(String.valueOf(this.tdeWalletPath));
         sb.append(", cfBackupHandle=").append(String.valueOf(this.cfBackupHandle));
         sb.append(", spfBackupHandle=").append(String.valueOf(this.spfBackupHandle));
         sb.append(", sqlPatches=").append(String.valueOf(this.sqlPatches));
         sb.append(", dataSize=").append(String.valueOf(this.dataSize));
         sb.append(", redoSize=").append(String.valueOf(this.redoSize));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -310,7 +322,7 @@ public final class CompleteExternalBackupJobDetails {
                 && java.util.Objects.equals(this.sqlPatches, other.sqlPatches)
                 && java.util.Objects.equals(this.dataSize, other.dataSize)
                 && java.util.Objects.equals(this.redoSize, other.redoSize)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -329,16 +341,7 @@ public final class CompleteExternalBackupJobDetails {
         result = (result * PRIME) + (this.sqlPatches == null ? 43 : this.sqlPatches.hashCode());
         result = (result * PRIME) + (this.dataSize == null ? 43 : this.dataSize.hashCode());
         result = (result * PRIME) + (this.redoSize == null ? 43 : this.redoSize.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

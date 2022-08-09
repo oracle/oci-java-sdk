@@ -80,19 +80,23 @@ public final class VcnDrgAttachmentNetworkUpdateDetails extends DrgAttachmentNet
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VcnDrgAttachmentNetworkUpdateDetails build() {
-            VcnDrgAttachmentNetworkUpdateDetails __instance__ =
-                    new VcnDrgAttachmentNetworkUpdateDetails(routeTableId, vcnRouteType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            VcnDrgAttachmentNetworkUpdateDetails model =
+                    new VcnDrgAttachmentNetworkUpdateDetails(this.routeTableId, this.vcnRouteType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(VcnDrgAttachmentNetworkUpdateDetails o) {
-            Builder copiedBuilder =
-                    routeTableId(o.getRouteTableId()).vcnRouteType(o.getVcnRouteType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(VcnDrgAttachmentNetworkUpdateDetails model) {
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("vcnRouteType")) {
+                this.vcnRouteType(model.getVcnRouteType());
+            }
+            return this;
         }
     }
 
@@ -175,7 +179,6 @@ public final class VcnDrgAttachmentNetworkUpdateDetails extends DrgAttachmentNet
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", vcnRouteType=").append(String.valueOf(this.vcnRouteType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -192,8 +195,7 @@ public final class VcnDrgAttachmentNetworkUpdateDetails extends DrgAttachmentNet
         VcnDrgAttachmentNetworkUpdateDetails other = (VcnDrgAttachmentNetworkUpdateDetails) o;
         return java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.vcnRouteType, other.vcnRouteType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -202,16 +204,6 @@ public final class VcnDrgAttachmentNetworkUpdateDetails extends DrgAttachmentNet
         int result = super.hashCode();
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + (this.vcnRouteType == null ? 43 : this.vcnRouteType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

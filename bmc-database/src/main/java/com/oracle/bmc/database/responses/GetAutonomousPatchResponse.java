@@ -53,16 +53,18 @@ public class GetAutonomousPatchResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "autonomousPatch"
     })
     private GetAutonomousPatchResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.AutonomousPatch autonomousPatch) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.autonomousPatch = autonomousPatch;
@@ -73,6 +75,13 @@ public class GetAutonomousPatchResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetAutonomousPatchResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetAutonomousPatchResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             autonomousPatch(o.getAutonomousPatch());
@@ -145,7 +155,7 @@ public class GetAutonomousPatchResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetAutonomousPatchResponse build() {
             return new GetAutonomousPatchResponse(
-                    __httpStatusCode__, etag, opcRequestId, autonomousPatch);
+                    __httpStatusCode__, headers, etag, opcRequestId, autonomousPatch);
         }
     }
 

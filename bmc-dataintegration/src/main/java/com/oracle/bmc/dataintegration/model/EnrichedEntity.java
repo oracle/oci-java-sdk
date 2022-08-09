@@ -17,7 +17,7 @@ package com.oracle.bmc.dataintegration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EnrichedEntity.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EnrichedEntity {
+public final class EnrichedEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"entity", "dataFormat", "modelType", "parentRef"})
     public EnrichedEntity(
@@ -79,22 +79,30 @@ public final class EnrichedEntity {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EnrichedEntity build() {
-            EnrichedEntity __instance__ =
-                    new EnrichedEntity(entity, dataFormat, modelType, parentRef);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            EnrichedEntity model =
+                    new EnrichedEntity(
+                            this.entity, this.dataFormat, this.modelType, this.parentRef);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(EnrichedEntity o) {
-            Builder copiedBuilder =
-                    entity(o.getEntity())
-                            .dataFormat(o.getDataFormat())
-                            .modelType(o.getModelType())
-                            .parentRef(o.getParentRef());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(EnrichedEntity model) {
+            if (model.wasPropertyExplicitlySet("entity")) {
+                this.entity(model.getEntity());
+            }
+            if (model.wasPropertyExplicitlySet("dataFormat")) {
+                this.dataFormat(model.getDataFormat());
+            }
+            if (model.wasPropertyExplicitlySet("modelType")) {
+                this.modelType(model.getModelType());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            return this;
         }
     }
 
@@ -157,11 +165,11 @@ public final class EnrichedEntity {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("EnrichedEntity(");
+        sb.append("super=").append(super.toString());
         sb.append("entity=").append(String.valueOf(this.entity));
         sb.append(", dataFormat=").append(String.valueOf(this.dataFormat));
         sb.append(", modelType=").append(String.valueOf(this.modelType));
         sb.append(", parentRef=").append(String.valueOf(this.parentRef));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -180,7 +188,7 @@ public final class EnrichedEntity {
                 && java.util.Objects.equals(this.dataFormat, other.dataFormat)
                 && java.util.Objects.equals(this.modelType, other.modelType)
                 && java.util.Objects.equals(this.parentRef, other.parentRef)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -191,16 +199,7 @@ public final class EnrichedEntity {
         result = (result * PRIME) + (this.dataFormat == null ? 43 : this.dataFormat.hashCode());
         result = (result * PRIME) + (this.modelType == null ? 43 : this.modelType.hashCode());
         result = (result * PRIME) + (this.parentRef == null ? 43 : this.parentRef.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

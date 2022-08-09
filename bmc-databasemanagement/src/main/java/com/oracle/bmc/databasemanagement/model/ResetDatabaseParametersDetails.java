@@ -19,7 +19,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = ResetDatabaseParametersDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResetDatabaseParametersDetails {
+public final class ResetDatabaseParametersDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"credentials", "scope", "parameters"})
     public ResetDatabaseParametersDetails(
@@ -98,21 +99,27 @@ public final class ResetDatabaseParametersDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResetDatabaseParametersDetails build() {
-            ResetDatabaseParametersDetails __instance__ =
-                    new ResetDatabaseParametersDetails(credentials, scope, parameters);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ResetDatabaseParametersDetails model =
+                    new ResetDatabaseParametersDetails(
+                            this.credentials, this.scope, this.parameters);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResetDatabaseParametersDetails o) {
-            Builder copiedBuilder =
-                    credentials(o.getCredentials())
-                            .scope(o.getScope())
-                            .parameters(o.getParameters());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResetDatabaseParametersDetails model) {
+            if (model.wasPropertyExplicitlySet("credentials")) {
+                this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("scope")) {
+                this.scope(model.getScope());
+            }
+            if (model.wasPropertyExplicitlySet("parameters")) {
+                this.parameters(model.getParameters());
+            }
+            return this;
         }
     }
 
@@ -193,10 +200,10 @@ public final class ResetDatabaseParametersDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResetDatabaseParametersDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("credentials=").append(String.valueOf(this.credentials));
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -214,7 +221,7 @@ public final class ResetDatabaseParametersDetails {
         return java.util.Objects.equals(this.credentials, other.credentials)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.parameters, other.parameters)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -224,16 +231,7 @@ public final class ResetDatabaseParametersDetails {
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -17,7 +17,7 @@ package com.oracle.bmc.aivision.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImageText.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImageText {
+public final class ImageText extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"words", "lines"})
     public ImageText(java.util.List<Word> words, java.util.List<Line> lines) {
@@ -65,17 +65,22 @@ public final class ImageText {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageText build() {
-            ImageText __instance__ = new ImageText(words, lines);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ImageText model = new ImageText(this.words, this.lines);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImageText o) {
-            Builder copiedBuilder = words(o.getWords()).lines(o.getLines());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImageText model) {
+            if (model.wasPropertyExplicitlySet("words")) {
+                this.words(model.getWords());
+            }
+            if (model.wasPropertyExplicitlySet("lines")) {
+                this.lines(model.getLines());
+            }
+            return this;
         }
     }
 
@@ -131,9 +136,9 @@ public final class ImageText {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImageText(");
+        sb.append("super=").append(super.toString());
         sb.append("words=").append(String.valueOf(this.words));
         sb.append(", lines=").append(String.valueOf(this.lines));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -150,7 +155,7 @@ public final class ImageText {
         ImageText other = (ImageText) o;
         return java.util.Objects.equals(this.words, other.words)
                 && java.util.Objects.equals(this.lines, other.lines)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -159,16 +164,7 @@ public final class ImageText {
         int result = 1;
         result = (result * PRIME) + (this.words == null ? 43 : this.words.hashCode());
         result = (result * PRIME) + (this.lines == null ? 43 : this.lines.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

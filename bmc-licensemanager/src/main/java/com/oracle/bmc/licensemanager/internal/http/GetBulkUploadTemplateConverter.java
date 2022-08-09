@@ -110,8 +110,8 @@ public class GetBulkUploadTemplateConverter {
                                         builder =
                                                 com.oracle.bmc.licensemanager.responses
                                                         .GetBulkUploadTemplateResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.bulkUploadTemplate(response.getItem());
 

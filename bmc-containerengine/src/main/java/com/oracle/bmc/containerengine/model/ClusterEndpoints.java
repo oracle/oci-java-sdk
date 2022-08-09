@@ -17,7 +17,7 @@ package com.oracle.bmc.containerengine.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClusterEndpoints.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ClusterEndpoints {
+public final class ClusterEndpoints extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "kubernetes",
@@ -112,23 +112,33 @@ public final class ClusterEndpoints {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClusterEndpoints build() {
-            ClusterEndpoints __instance__ =
+            ClusterEndpoints model =
                     new ClusterEndpoints(
-                            kubernetes, publicEndpoint, privateEndpoint, vcnHostnameEndpoint);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.kubernetes,
+                            this.publicEndpoint,
+                            this.privateEndpoint,
+                            this.vcnHostnameEndpoint);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ClusterEndpoints o) {
-            Builder copiedBuilder =
-                    kubernetes(o.getKubernetes())
-                            .publicEndpoint(o.getPublicEndpoint())
-                            .privateEndpoint(o.getPrivateEndpoint())
-                            .vcnHostnameEndpoint(o.getVcnHostnameEndpoint());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ClusterEndpoints model) {
+            if (model.wasPropertyExplicitlySet("kubernetes")) {
+                this.kubernetes(model.getKubernetes());
+            }
+            if (model.wasPropertyExplicitlySet("publicEndpoint")) {
+                this.publicEndpoint(model.getPublicEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpoint")) {
+                this.privateEndpoint(model.getPrivateEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("vcnHostnameEndpoint")) {
+                this.vcnHostnameEndpoint(model.getVcnHostnameEndpoint());
+            }
+            return this;
         }
     }
 
@@ -216,11 +226,11 @@ public final class ClusterEndpoints {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClusterEndpoints(");
+        sb.append("super=").append(super.toString());
         sb.append("kubernetes=").append(String.valueOf(this.kubernetes));
         sb.append(", publicEndpoint=").append(String.valueOf(this.publicEndpoint));
         sb.append(", privateEndpoint=").append(String.valueOf(this.privateEndpoint));
         sb.append(", vcnHostnameEndpoint=").append(String.valueOf(this.vcnHostnameEndpoint));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -239,7 +249,7 @@ public final class ClusterEndpoints {
                 && java.util.Objects.equals(this.publicEndpoint, other.publicEndpoint)
                 && java.util.Objects.equals(this.privateEndpoint, other.privateEndpoint)
                 && java.util.Objects.equals(this.vcnHostnameEndpoint, other.vcnHostnameEndpoint)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -258,16 +268,7 @@ public final class ClusterEndpoints {
                         + (this.vcnHostnameEndpoint == null
                                 ? 43
                                 : this.vcnHostnameEndpoint.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

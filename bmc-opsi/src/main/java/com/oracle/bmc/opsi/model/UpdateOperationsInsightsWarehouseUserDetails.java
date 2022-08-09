@@ -19,7 +19,8 @@ package com.oracle.bmc.opsi.model;
     builder = UpdateOperationsInsightsWarehouseUserDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateOperationsInsightsWarehouseUserDetails {
+public final class UpdateOperationsInsightsWarehouseUserDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "connectionPassword",
@@ -157,30 +158,41 @@ public final class UpdateOperationsInsightsWarehouseUserDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateOperationsInsightsWarehouseUserDetails build() {
-            UpdateOperationsInsightsWarehouseUserDetails __instance__ =
+            UpdateOperationsInsightsWarehouseUserDetails model =
                     new UpdateOperationsInsightsWarehouseUserDetails(
-                            connectionPassword,
-                            isAwrDataAccess,
-                            isEmDataAccess,
-                            isOpsiDataAccess,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.connectionPassword,
+                            this.isAwrDataAccess,
+                            this.isEmDataAccess,
+                            this.isOpsiDataAccess,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateOperationsInsightsWarehouseUserDetails o) {
-            Builder copiedBuilder =
-                    connectionPassword(o.getConnectionPassword())
-                            .isAwrDataAccess(o.getIsAwrDataAccess())
-                            .isEmDataAccess(o.getIsEmDataAccess())
-                            .isOpsiDataAccess(o.getIsOpsiDataAccess())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateOperationsInsightsWarehouseUserDetails model) {
+            if (model.wasPropertyExplicitlySet("connectionPassword")) {
+                this.connectionPassword(model.getConnectionPassword());
+            }
+            if (model.wasPropertyExplicitlySet("isAwrDataAccess")) {
+                this.isAwrDataAccess(model.getIsAwrDataAccess());
+            }
+            if (model.wasPropertyExplicitlySet("isEmDataAccess")) {
+                this.isEmDataAccess(model.getIsEmDataAccess());
+            }
+            if (model.wasPropertyExplicitlySet("isOpsiDataAccess")) {
+                this.isOpsiDataAccess(model.getIsOpsiDataAccess());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -300,13 +312,13 @@ public final class UpdateOperationsInsightsWarehouseUserDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateOperationsInsightsWarehouseUserDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("connectionPassword=").append(String.valueOf(this.connectionPassword));
         sb.append(", isAwrDataAccess=").append(String.valueOf(this.isAwrDataAccess));
         sb.append(", isEmDataAccess=").append(String.valueOf(this.isEmDataAccess));
         sb.append(", isOpsiDataAccess=").append(String.valueOf(this.isOpsiDataAccess));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -328,7 +340,7 @@ public final class UpdateOperationsInsightsWarehouseUserDetails {
                 && java.util.Objects.equals(this.isOpsiDataAccess, other.isOpsiDataAccess)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -351,16 +363,7 @@ public final class UpdateOperationsInsightsWarehouseUserDetails {
                         + (this.isOpsiDataAccess == null ? 43 : this.isOpsiDataAccess.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

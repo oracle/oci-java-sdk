@@ -55,16 +55,18 @@ public class RetrieveNamespacesResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "etag",
         "namespaceCollection"
     })
     private RetrieveNamespacesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.apmconfig.model.NamespaceCollection namespaceCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
         this.namespaceCollection = namespaceCollection;
@@ -75,6 +77,13 @@ public class RetrieveNamespacesResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class RetrieveNamespacesResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(RetrieveNamespacesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             namespaceCollection(o.getNamespaceCollection());
@@ -149,7 +159,7 @@ public class RetrieveNamespacesResponse extends com.oracle.bmc.responses.BmcResp
          */
         public RetrieveNamespacesResponse build() {
             return new RetrieveNamespacesResponse(
-                    __httpStatusCode__, opcRequestId, etag, namespaceCollection);
+                    __httpStatusCode__, headers, opcRequestId, etag, namespaceCollection);
         }
     }
 

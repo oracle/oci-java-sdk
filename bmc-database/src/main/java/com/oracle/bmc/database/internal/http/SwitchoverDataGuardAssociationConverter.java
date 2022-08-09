@@ -124,8 +124,8 @@ public class SwitchoverDataGuardAssociationConverter {
                                                 com.oracle.bmc.database.responses
                                                         .SwitchoverDataGuardAssociationResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataGuardAssociation(response.getItem());
 

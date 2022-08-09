@@ -125,8 +125,8 @@ public class ListSupportedSkusConverter {
                                         builder =
                                                 com.oracle.bmc.ocvp.responses
                                                         .ListSupportedSkusResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.supportedSkuSummaryCollection(response.getItem());
 

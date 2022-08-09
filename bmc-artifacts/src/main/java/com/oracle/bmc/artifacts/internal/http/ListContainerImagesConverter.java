@@ -206,8 +206,8 @@ public class ListContainerImagesConverter {
                                         builder =
                                                 com.oracle.bmc.artifacts.responses
                                                         .ListContainerImagesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.containerImageCollection(response.getItem());
 

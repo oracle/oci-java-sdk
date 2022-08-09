@@ -19,7 +19,8 @@ package com.oracle.bmc.loadbalancer.model;
     builder = UpdateHealthCheckerDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateHealthCheckerDetails {
+public final class UpdateHealthCheckerDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "protocol",
@@ -238,34 +239,49 @@ public final class UpdateHealthCheckerDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateHealthCheckerDetails build() {
-            UpdateHealthCheckerDetails __instance__ =
+            UpdateHealthCheckerDetails model =
                     new UpdateHealthCheckerDetails(
-                            protocol,
-                            urlPath,
-                            port,
-                            returnCode,
-                            retries,
-                            timeoutInMillis,
-                            intervalInMillis,
-                            responseBodyRegex);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.protocol,
+                            this.urlPath,
+                            this.port,
+                            this.returnCode,
+                            this.retries,
+                            this.timeoutInMillis,
+                            this.intervalInMillis,
+                            this.responseBodyRegex);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateHealthCheckerDetails o) {
-            Builder copiedBuilder =
-                    protocol(o.getProtocol())
-                            .urlPath(o.getUrlPath())
-                            .port(o.getPort())
-                            .returnCode(o.getReturnCode())
-                            .retries(o.getRetries())
-                            .timeoutInMillis(o.getTimeoutInMillis())
-                            .intervalInMillis(o.getIntervalInMillis())
-                            .responseBodyRegex(o.getResponseBodyRegex());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateHealthCheckerDetails model) {
+            if (model.wasPropertyExplicitlySet("protocol")) {
+                this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("urlPath")) {
+                this.urlPath(model.getUrlPath());
+            }
+            if (model.wasPropertyExplicitlySet("port")) {
+                this.port(model.getPort());
+            }
+            if (model.wasPropertyExplicitlySet("returnCode")) {
+                this.returnCode(model.getReturnCode());
+            }
+            if (model.wasPropertyExplicitlySet("retries")) {
+                this.retries(model.getRetries());
+            }
+            if (model.wasPropertyExplicitlySet("timeoutInMillis")) {
+                this.timeoutInMillis(model.getTimeoutInMillis());
+            }
+            if (model.wasPropertyExplicitlySet("intervalInMillis")) {
+                this.intervalInMillis(model.getIntervalInMillis());
+            }
+            if (model.wasPropertyExplicitlySet("responseBodyRegex")) {
+                this.responseBodyRegex(model.getResponseBodyRegex());
+            }
+            return this;
         }
     }
 
@@ -457,6 +473,7 @@ public final class UpdateHealthCheckerDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateHealthCheckerDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("protocol=").append(String.valueOf(this.protocol));
         sb.append(", urlPath=").append(String.valueOf(this.urlPath));
         sb.append(", port=").append(String.valueOf(this.port));
@@ -465,7 +482,6 @@ public final class UpdateHealthCheckerDetails {
         sb.append(", timeoutInMillis=").append(String.valueOf(this.timeoutInMillis));
         sb.append(", intervalInMillis=").append(String.valueOf(this.intervalInMillis));
         sb.append(", responseBodyRegex=").append(String.valueOf(this.responseBodyRegex));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -488,7 +504,7 @@ public final class UpdateHealthCheckerDetails {
                 && java.util.Objects.equals(this.timeoutInMillis, other.timeoutInMillis)
                 && java.util.Objects.equals(this.intervalInMillis, other.intervalInMillis)
                 && java.util.Objects.equals(this.responseBodyRegex, other.responseBodyRegex)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -509,16 +525,7 @@ public final class UpdateHealthCheckerDetails {
         result =
                 (result * PRIME)
                         + (this.responseBodyRegex == null ? 43 : this.responseBodyRegex.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

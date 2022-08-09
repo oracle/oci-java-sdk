@@ -65,18 +65,26 @@ public final class Base64SecretContentDetails extends SecretContentDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Base64SecretContentDetails build() {
-            Base64SecretContentDetails __instance__ =
-                    new Base64SecretContentDetails(name, stage, content);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Base64SecretContentDetails model =
+                    new Base64SecretContentDetails(this.name, this.stage, this.content);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Base64SecretContentDetails o) {
-            Builder copiedBuilder = name(o.getName()).stage(o.getStage()).content(o.getContent());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Base64SecretContentDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("stage")) {
+                this.stage(model.getStage());
+            }
+            if (model.wasPropertyExplicitlySet("content")) {
+                this.content(model.getContent());
+            }
+            return this;
         }
     }
 
@@ -126,7 +134,6 @@ public final class Base64SecretContentDetails extends SecretContentDetails {
         sb.append("Base64SecretContentDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", content=").append(String.valueOf(this.content));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -141,9 +148,7 @@ public final class Base64SecretContentDetails extends SecretContentDetails {
         }
 
         Base64SecretContentDetails other = (Base64SecretContentDetails) o;
-        return java.util.Objects.equals(this.content, other.content)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.content, other.content) && super.equals(other);
     }
 
     @Override
@@ -151,16 +156,6 @@ public final class Base64SecretContentDetails extends SecretContentDetails {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

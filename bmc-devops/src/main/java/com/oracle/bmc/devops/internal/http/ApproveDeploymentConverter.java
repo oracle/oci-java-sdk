@@ -114,8 +114,8 @@ public class ApproveDeploymentConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .ApproveDeploymentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.deployment(response.getItem());
 

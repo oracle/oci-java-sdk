@@ -43,15 +43,17 @@ public class SummarizeHostInsightResourceForecastTrendResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "summarizeHostInsightResourceForecastTrendAggregation"
     })
     private SummarizeHostInsightResourceForecastTrendResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.opsi.model.SummarizeHostInsightResourceForecastTrendAggregation
                     summarizeHostInsightResourceForecastTrendAggregation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.summarizeHostInsightResourceForecastTrendAggregation =
                 summarizeHostInsightResourceForecastTrendAggregation;
@@ -62,6 +64,13 @@ public class SummarizeHostInsightResourceForecastTrendResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -109,6 +118,7 @@ public class SummarizeHostInsightResourceForecastTrendResponse
          */
         public Builder copy(SummarizeHostInsightResourceForecastTrendResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             summarizeHostInsightResourceForecastTrendAggregation(
                     o.getSummarizeHostInsightResourceForecastTrendAggregation());
@@ -123,6 +133,7 @@ public class SummarizeHostInsightResourceForecastTrendResponse
         public SummarizeHostInsightResourceForecastTrendResponse build() {
             return new SummarizeHostInsightResourceForecastTrendResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     summarizeHostInsightResourceForecastTrendAggregation);
         }

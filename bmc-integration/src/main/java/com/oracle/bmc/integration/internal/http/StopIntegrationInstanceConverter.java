@@ -112,8 +112,8 @@ public class StopIntegrationInstanceConverter {
                                         builder =
                                                 com.oracle.bmc.integration.responses
                                                         .StopIntegrationInstanceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

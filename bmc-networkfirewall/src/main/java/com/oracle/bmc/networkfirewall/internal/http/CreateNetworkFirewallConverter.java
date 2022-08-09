@@ -113,8 +113,8 @@ public class CreateNetworkFirewallConverter {
                                         builder =
                                                 com.oracle.bmc.networkfirewall.responses
                                                         .CreateNetworkFirewallResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkFirewall(response.getItem());
 

@@ -24,7 +24,7 @@ package com.oracle.bmc.dns.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResolverSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResolverSummary {
+public final class ResolverSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -312,42 +312,65 @@ public final class ResolverSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResolverSummary build() {
-            ResolverSummary __instance__ =
+            ResolverSummary model =
                     new ResolverSummary(
-                            compartmentId,
-                            attachedVcnId,
-                            displayName,
-                            freeformTags,
-                            definedTags,
-                            id,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            self,
-                            defaultViewId,
-                            isProtected);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.attachedVcnId,
+                            this.displayName,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.id,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.self,
+                            this.defaultViewId,
+                            this.isProtected);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ResolverSummary o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .attachedVcnId(o.getAttachedVcnId())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .id(o.getId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .self(o.getSelf())
-                            .defaultViewId(o.getDefaultViewId())
-                            .isProtected(o.getIsProtected());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ResolverSummary model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("attachedVcnId")) {
+                this.attachedVcnId(model.getAttachedVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("self")) {
+                this.self(model.getSelf());
+            }
+            if (model.wasPropertyExplicitlySet("defaultViewId")) {
+                this.defaultViewId(model.getDefaultViewId());
+            }
+            if (model.wasPropertyExplicitlySet("isProtected")) {
+                this.isProtected(model.getIsProtected());
+            }
+            return this;
         }
     }
 
@@ -639,6 +662,7 @@ public final class ResolverSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ResolverSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", attachedVcnId=").append(String.valueOf(this.attachedVcnId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -651,7 +675,6 @@ public final class ResolverSummary {
         sb.append(", self=").append(String.valueOf(this.self));
         sb.append(", defaultViewId=").append(String.valueOf(this.defaultViewId));
         sb.append(", isProtected=").append(String.valueOf(this.isProtected));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -678,7 +701,7 @@ public final class ResolverSummary {
                 && java.util.Objects.equals(this.self, other.self)
                 && java.util.Objects.equals(this.defaultViewId, other.defaultViewId)
                 && java.util.Objects.equals(this.isProtected, other.isProtected)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -705,16 +728,7 @@ public final class ResolverSummary {
                 (result * PRIME)
                         + (this.defaultViewId == null ? 43 : this.defaultViewId.hashCode());
         result = (result * PRIME) + (this.isProtected == null ? 43 : this.isProtected.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

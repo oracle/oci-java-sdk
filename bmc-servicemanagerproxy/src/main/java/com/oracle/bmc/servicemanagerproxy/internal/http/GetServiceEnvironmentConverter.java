@@ -121,8 +121,8 @@ public class GetServiceEnvironmentConverter {
                                         builder =
                                                 com.oracle.bmc.servicemanagerproxy.responses
                                                         .GetServiceEnvironmentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.serviceEnvironment(response.getItem());
 

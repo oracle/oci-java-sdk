@@ -17,7 +17,7 @@ package com.oracle.bmc.oda.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImportedPackage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImportedPackage {
+public final class ImportedPackage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "odaInstanceId",
@@ -269,42 +269,65 @@ public final class ImportedPackage {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImportedPackage build() {
-            ImportedPackage __instance__ =
+            ImportedPackage model =
                     new ImportedPackage(
-                            odaInstanceId,
-                            currentPackageId,
-                            name,
-                            displayName,
-                            version,
-                            status,
-                            timeCreated,
-                            timeUpdated,
-                            freeformTags,
-                            definedTags,
-                            statusMessage,
-                            parameterValues);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.odaInstanceId,
+                            this.currentPackageId,
+                            this.name,
+                            this.displayName,
+                            this.version,
+                            this.status,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.statusMessage,
+                            this.parameterValues);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ImportedPackage o) {
-            Builder copiedBuilder =
-                    odaInstanceId(o.getOdaInstanceId())
-                            .currentPackageId(o.getCurrentPackageId())
-                            .name(o.getName())
-                            .displayName(o.getDisplayName())
-                            .version(o.getVersion())
-                            .status(o.getStatus())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .statusMessage(o.getStatusMessage())
-                            .parameterValues(o.getParameterValues());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ImportedPackage model) {
+            if (model.wasPropertyExplicitlySet("odaInstanceId")) {
+                this.odaInstanceId(model.getOdaInstanceId());
+            }
+            if (model.wasPropertyExplicitlySet("currentPackageId")) {
+                this.currentPackageId(model.getCurrentPackageId());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("statusMessage")) {
+                this.statusMessage(model.getStatusMessage());
+            }
+            if (model.wasPropertyExplicitlySet("parameterValues")) {
+                this.parameterValues(model.getParameterValues());
+            }
+            return this;
         }
     }
 
@@ -556,6 +579,7 @@ public final class ImportedPackage {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImportedPackage(");
+        sb.append("super=").append(super.toString());
         sb.append("odaInstanceId=").append(String.valueOf(this.odaInstanceId));
         sb.append(", currentPackageId=").append(String.valueOf(this.currentPackageId));
         sb.append(", name=").append(String.valueOf(this.name));
@@ -568,7 +592,6 @@ public final class ImportedPackage {
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", statusMessage=").append(String.valueOf(this.statusMessage));
         sb.append(", parameterValues=").append(String.valueOf(this.parameterValues));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -595,7 +618,7 @@ public final class ImportedPackage {
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.statusMessage, other.statusMessage)
                 && java.util.Objects.equals(this.parameterValues, other.parameterValues)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -622,16 +645,7 @@ public final class ImportedPackage {
         result =
                 (result * PRIME)
                         + (this.parameterValues == null ? 43 : this.parameterValues.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -87,21 +87,29 @@ public final class HostProduct extends HostConfigurationMetricGroup {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostProduct build() {
-            HostProduct __instance__ = new HostProduct(timeCollected, vendor, name, version);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            HostProduct model =
+                    new HostProduct(this.timeCollected, this.vendor, this.name, this.version);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(HostProduct o) {
-            Builder copiedBuilder =
-                    timeCollected(o.getTimeCollected())
-                            .vendor(o.getVendor())
-                            .name(o.getName())
-                            .version(o.getVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(HostProduct model) {
+            if (model.wasPropertyExplicitlySet("timeCollected")) {
+                this.timeCollected(model.getTimeCollected());
+            }
+            if (model.wasPropertyExplicitlySet("vendor")) {
+                this.vendor(model.getVendor());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            return this;
         }
     }
 
@@ -183,7 +191,6 @@ public final class HostProduct extends HostConfigurationMetricGroup {
         sb.append(", vendor=").append(String.valueOf(this.vendor));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", version=").append(String.valueOf(this.version));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -201,8 +208,7 @@ public final class HostProduct extends HostConfigurationMetricGroup {
         return java.util.Objects.equals(this.vendor, other.vendor)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.version, other.version)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -212,16 +218,6 @@ public final class HostProduct extends HostConfigurationMetricGroup {
         result = (result * PRIME) + (this.vendor == null ? 43 : this.vendor.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

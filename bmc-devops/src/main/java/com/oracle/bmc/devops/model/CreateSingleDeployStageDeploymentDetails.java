@@ -103,33 +103,45 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateSingleDeployStageDeploymentDetails build() {
-            CreateSingleDeployStageDeploymentDetails __instance__ =
+            CreateSingleDeployStageDeploymentDetails model =
                     new CreateSingleDeployStageDeploymentDetails(
-                            deployPipelineId,
-                            displayName,
-                            freeformTags,
-                            definedTags,
-                            deployStageId,
-                            deploymentArguments,
-                            deployArtifactOverrideArguments);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.deployPipelineId,
+                            this.displayName,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.deployStageId,
+                            this.deploymentArguments,
+                            this.deployArtifactOverrideArguments);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateSingleDeployStageDeploymentDetails o) {
-            Builder copiedBuilder =
-                    deployPipelineId(o.getDeployPipelineId())
-                            .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .deployStageId(o.getDeployStageId())
-                            .deploymentArguments(o.getDeploymentArguments())
-                            .deployArtifactOverrideArguments(
-                                    o.getDeployArtifactOverrideArguments());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateSingleDeployStageDeploymentDetails model) {
+            if (model.wasPropertyExplicitlySet("deployPipelineId")) {
+                this.deployPipelineId(model.getDeployPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("deployStageId")) {
+                this.deployStageId(model.getDeployStageId());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentArguments")) {
+                this.deploymentArguments(model.getDeploymentArguments());
+            }
+            if (model.wasPropertyExplicitlySet("deployArtifactOverrideArguments")) {
+                this.deployArtifactOverrideArguments(model.getDeployArtifactOverrideArguments());
+            }
+            return this;
         }
     }
 
@@ -205,7 +217,6 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
         sb.append(", deploymentArguments=").append(String.valueOf(this.deploymentArguments));
         sb.append(", deployArtifactOverrideArguments=")
                 .append(String.valueOf(this.deployArtifactOverrideArguments));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -225,8 +236,7 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
                 && java.util.Objects.equals(this.deploymentArguments, other.deploymentArguments)
                 && java.util.Objects.equals(
                         this.deployArtifactOverrideArguments, other.deployArtifactOverrideArguments)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -246,16 +256,6 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
                         + (this.deployArtifactOverrideArguments == null
                                 ? 43
                                 : this.deployArtifactOverrideArguments.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

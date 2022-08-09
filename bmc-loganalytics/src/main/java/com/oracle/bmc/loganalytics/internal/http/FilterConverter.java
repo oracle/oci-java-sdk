@@ -107,8 +107,8 @@ public class FilterConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses.FilterResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.filterOutput(response.getItem());
 

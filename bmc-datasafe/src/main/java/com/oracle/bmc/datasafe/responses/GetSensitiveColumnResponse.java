@@ -53,16 +53,18 @@ public class GetSensitiveColumnResponse extends com.oracle.bmc.responses.BmcResp
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "sensitiveColumn"
     })
     private GetSensitiveColumnResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datasafe.model.SensitiveColumn sensitiveColumn) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.sensitiveColumn = sensitiveColumn;
@@ -73,6 +75,13 @@ public class GetSensitiveColumnResponse extends com.oracle.bmc.responses.BmcResp
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -132,6 +141,7 @@ public class GetSensitiveColumnResponse extends com.oracle.bmc.responses.BmcResp
          */
         public Builder copy(GetSensitiveColumnResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             sensitiveColumn(o.getSensitiveColumn());
@@ -145,7 +155,7 @@ public class GetSensitiveColumnResponse extends com.oracle.bmc.responses.BmcResp
          */
         public GetSensitiveColumnResponse build() {
             return new GetSensitiveColumnResponse(
-                    __httpStatusCode__, etag, opcRequestId, sensitiveColumn);
+                    __httpStatusCode__, headers, etag, opcRequestId, sensitiveColumn);
         }
     }
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.waas.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ThreatFeedAction.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ThreatFeedAction {
+public final class ThreatFeedAction extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "action"})
     public ThreatFeedAction(String key, Action action) {
@@ -65,17 +65,22 @@ public final class ThreatFeedAction {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ThreatFeedAction build() {
-            ThreatFeedAction __instance__ = new ThreatFeedAction(key, action);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ThreatFeedAction model = new ThreatFeedAction(this.key, this.action);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ThreatFeedAction o) {
-            Builder copiedBuilder = key(o.getKey()).action(o.getAction());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ThreatFeedAction model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            return this;
         }
     }
 
@@ -167,9 +172,9 @@ public final class ThreatFeedAction {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ThreatFeedAction(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", action=").append(String.valueOf(this.action));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -186,7 +191,7 @@ public final class ThreatFeedAction {
         ThreatFeedAction other = (ThreatFeedAction) o;
         return java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.action, other.action)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -195,16 +200,7 @@ public final class ThreatFeedAction {
         int result = 1;
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

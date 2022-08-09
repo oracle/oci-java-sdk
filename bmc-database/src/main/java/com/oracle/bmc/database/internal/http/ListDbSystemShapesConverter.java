@@ -133,8 +133,8 @@ public class ListDbSystemShapesConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListDbSystemShapesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.cloudguard.model;
     builder = AttachTargetDetectorRecipeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AttachTargetDetectorRecipeDetails {
+public final class AttachTargetDetectorRecipeDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"detectorRecipeId"})
     public AttachTargetDetectorRecipeDetails(String detectorRecipeId) {
@@ -50,18 +51,20 @@ public final class AttachTargetDetectorRecipeDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AttachTargetDetectorRecipeDetails build() {
-            AttachTargetDetectorRecipeDetails __instance__ =
-                    new AttachTargetDetectorRecipeDetails(detectorRecipeId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AttachTargetDetectorRecipeDetails model =
+                    new AttachTargetDetectorRecipeDetails(this.detectorRecipeId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AttachTargetDetectorRecipeDetails o) {
-            Builder copiedBuilder = detectorRecipeId(o.getDetectorRecipeId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AttachTargetDetectorRecipeDetails model) {
+            if (model.wasPropertyExplicitlySet("detectorRecipeId")) {
+                this.detectorRecipeId(model.getDetectorRecipeId());
+            }
+            return this;
         }
     }
 
@@ -103,8 +106,8 @@ public final class AttachTargetDetectorRecipeDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AttachTargetDetectorRecipeDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("detectorRecipeId=").append(String.valueOf(this.detectorRecipeId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -120,7 +123,7 @@ public final class AttachTargetDetectorRecipeDetails {
 
         AttachTargetDetectorRecipeDetails other = (AttachTargetDetectorRecipeDetails) o;
         return java.util.Objects.equals(this.detectorRecipeId, other.detectorRecipeId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -130,16 +133,7 @@ public final class AttachTargetDetectorRecipeDetails {
         result =
                 (result * PRIME)
                         + (this.detectorRecipeId == null ? 43 : this.detectorRecipeId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

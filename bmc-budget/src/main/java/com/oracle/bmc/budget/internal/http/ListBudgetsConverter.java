@@ -166,8 +166,8 @@ public class ListBudgetsConverter {
                                         builder =
                                                 com.oracle.bmc.budget.responses.ListBudgetsResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

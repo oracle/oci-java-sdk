@@ -18,7 +18,7 @@ package com.oracle.bmc.onesubscription.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InvoiceSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InvoiceSummary {
+public final class InvoiceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "spmInvoiceNumber",
@@ -378,56 +378,93 @@ public final class InvoiceSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InvoiceSummary build() {
-            InvoiceSummary __instance__ =
+            InvoiceSummary model =
                     new InvoiceSummary(
-                            spmInvoiceNumber,
-                            arInvoices,
-                            billToCustomer,
-                            billToContact,
-                            billToAddress,
-                            paymentMethod,
-                            paymentTerm,
-                            receiptMethod,
-                            currency,
-                            organization,
-                            type,
-                            status,
-                            subscriptionNumber,
-                            timeInvoiceDate,
-                            timeCreated,
-                            createdBy,
-                            timeUpdated,
-                            updatedBy,
-                            invoiceLines);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.spmInvoiceNumber,
+                            this.arInvoices,
+                            this.billToCustomer,
+                            this.billToContact,
+                            this.billToAddress,
+                            this.paymentMethod,
+                            this.paymentTerm,
+                            this.receiptMethod,
+                            this.currency,
+                            this.organization,
+                            this.type,
+                            this.status,
+                            this.subscriptionNumber,
+                            this.timeInvoiceDate,
+                            this.timeCreated,
+                            this.createdBy,
+                            this.timeUpdated,
+                            this.updatedBy,
+                            this.invoiceLines);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InvoiceSummary o) {
-            Builder copiedBuilder =
-                    spmInvoiceNumber(o.getSpmInvoiceNumber())
-                            .arInvoices(o.getArInvoices())
-                            .billToCustomer(o.getBillToCustomer())
-                            .billToContact(o.getBillToContact())
-                            .billToAddress(o.getBillToAddress())
-                            .paymentMethod(o.getPaymentMethod())
-                            .paymentTerm(o.getPaymentTerm())
-                            .receiptMethod(o.getReceiptMethod())
-                            .currency(o.getCurrency())
-                            .organization(o.getOrganization())
-                            .type(o.getType())
-                            .status(o.getStatus())
-                            .subscriptionNumber(o.getSubscriptionNumber())
-                            .timeInvoiceDate(o.getTimeInvoiceDate())
-                            .timeCreated(o.getTimeCreated())
-                            .createdBy(o.getCreatedBy())
-                            .timeUpdated(o.getTimeUpdated())
-                            .updatedBy(o.getUpdatedBy())
-                            .invoiceLines(o.getInvoiceLines());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InvoiceSummary model) {
+            if (model.wasPropertyExplicitlySet("spmInvoiceNumber")) {
+                this.spmInvoiceNumber(model.getSpmInvoiceNumber());
+            }
+            if (model.wasPropertyExplicitlySet("arInvoices")) {
+                this.arInvoices(model.getArInvoices());
+            }
+            if (model.wasPropertyExplicitlySet("billToCustomer")) {
+                this.billToCustomer(model.getBillToCustomer());
+            }
+            if (model.wasPropertyExplicitlySet("billToContact")) {
+                this.billToContact(model.getBillToContact());
+            }
+            if (model.wasPropertyExplicitlySet("billToAddress")) {
+                this.billToAddress(model.getBillToAddress());
+            }
+            if (model.wasPropertyExplicitlySet("paymentMethod")) {
+                this.paymentMethod(model.getPaymentMethod());
+            }
+            if (model.wasPropertyExplicitlySet("paymentTerm")) {
+                this.paymentTerm(model.getPaymentTerm());
+            }
+            if (model.wasPropertyExplicitlySet("receiptMethod")) {
+                this.receiptMethod(model.getReceiptMethod());
+            }
+            if (model.wasPropertyExplicitlySet("currency")) {
+                this.currency(model.getCurrency());
+            }
+            if (model.wasPropertyExplicitlySet("organization")) {
+                this.organization(model.getOrganization());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionNumber")) {
+                this.subscriptionNumber(model.getSubscriptionNumber());
+            }
+            if (model.wasPropertyExplicitlySet("timeInvoiceDate")) {
+                this.timeInvoiceDate(model.getTimeInvoiceDate());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("updatedBy")) {
+                this.updatedBy(model.getUpdatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("invoiceLines")) {
+                this.invoiceLines(model.getInvoiceLines());
+            }
+            return this;
         }
     }
 
@@ -705,6 +742,7 @@ public final class InvoiceSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InvoiceSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("spmInvoiceNumber=").append(String.valueOf(this.spmInvoiceNumber));
         sb.append(", arInvoices=").append(String.valueOf(this.arInvoices));
         sb.append(", billToCustomer=").append(String.valueOf(this.billToCustomer));
@@ -724,7 +762,6 @@ public final class InvoiceSummary {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", updatedBy=").append(String.valueOf(this.updatedBy));
         sb.append(", invoiceLines=").append(String.valueOf(this.invoiceLines));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -758,7 +795,7 @@ public final class InvoiceSummary {
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.updatedBy, other.updatedBy)
                 && java.util.Objects.equals(this.invoiceLines, other.invoiceLines)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -802,16 +839,7 @@ public final class InvoiceSummary {
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.updatedBy == null ? 43 : this.updatedBy.hashCode());
         result = (result * PRIME) + (this.invoiceLines == null ? 43 : this.invoiceLines.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

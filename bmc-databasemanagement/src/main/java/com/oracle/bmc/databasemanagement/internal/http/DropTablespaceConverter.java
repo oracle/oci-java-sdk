@@ -123,8 +123,8 @@ public class DropTablespaceConverter {
                                         builder =
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .DropTablespaceResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.tablespaceAdminStatus(response.getItem());
 

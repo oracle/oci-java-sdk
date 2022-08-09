@@ -61,6 +61,19 @@ public interface DashboardGroup extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a DashboardGroup resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/ChangeDashboardGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDashboardGroupCompartment API.
+     */
+    ChangeDashboardGroupCompartmentResponse changeDashboardGroupCompartment(
+            ChangeDashboardGroupCompartmentRequest request);
+
+    /**
      * Creates a new dashboard group using the details provided in request body.
      * <p>
      **Caution:** Resources for the Dashboard service are created in the tenacy's home region.

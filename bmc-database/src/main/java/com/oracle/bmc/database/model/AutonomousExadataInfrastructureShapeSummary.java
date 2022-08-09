@@ -24,7 +24,8 @@ package com.oracle.bmc.database.model;
     builder = AutonomousExadataInfrastructureShapeSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutonomousExadataInfrastructureShapeSummary {
+public final class AutonomousExadataInfrastructureShapeSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -153,30 +154,41 @@ public final class AutonomousExadataInfrastructureShapeSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousExadataInfrastructureShapeSummary build() {
-            AutonomousExadataInfrastructureShapeSummary __instance__ =
+            AutonomousExadataInfrastructureShapeSummary model =
                     new AutonomousExadataInfrastructureShapeSummary(
-                            name,
-                            availableCoreCount,
-                            minimumCoreCount,
-                            coreCountIncrement,
-                            minimumNodeCount,
-                            maximumNodeCount);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.availableCoreCount,
+                            this.minimumCoreCount,
+                            this.coreCountIncrement,
+                            this.minimumNodeCount,
+                            this.maximumNodeCount);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousExadataInfrastructureShapeSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .availableCoreCount(o.getAvailableCoreCount())
-                            .minimumCoreCount(o.getMinimumCoreCount())
-                            .coreCountIncrement(o.getCoreCountIncrement())
-                            .minimumNodeCount(o.getMinimumNodeCount())
-                            .maximumNodeCount(o.getMaximumNodeCount());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AutonomousExadataInfrastructureShapeSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("availableCoreCount")) {
+                this.availableCoreCount(model.getAvailableCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("minimumCoreCount")) {
+                this.minimumCoreCount(model.getMinimumCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("coreCountIncrement")) {
+                this.coreCountIncrement(model.getCoreCountIncrement());
+            }
+            if (model.wasPropertyExplicitlySet("minimumNodeCount")) {
+                this.minimumNodeCount(model.getMinimumNodeCount());
+            }
+            if (model.wasPropertyExplicitlySet("maximumNodeCount")) {
+                this.maximumNodeCount(model.getMaximumNodeCount());
+            }
+            return this;
         }
     }
 
@@ -288,13 +300,13 @@ public final class AutonomousExadataInfrastructureShapeSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AutonomousExadataInfrastructureShapeSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", availableCoreCount=").append(String.valueOf(this.availableCoreCount));
         sb.append(", minimumCoreCount=").append(String.valueOf(this.minimumCoreCount));
         sb.append(", coreCountIncrement=").append(String.valueOf(this.coreCountIncrement));
         sb.append(", minimumNodeCount=").append(String.valueOf(this.minimumNodeCount));
         sb.append(", maximumNodeCount=").append(String.valueOf(this.maximumNodeCount));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -316,7 +328,7 @@ public final class AutonomousExadataInfrastructureShapeSummary {
                 && java.util.Objects.equals(this.coreCountIncrement, other.coreCountIncrement)
                 && java.util.Objects.equals(this.minimumNodeCount, other.minimumNodeCount)
                 && java.util.Objects.equals(this.maximumNodeCount, other.maximumNodeCount)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -343,16 +355,7 @@ public final class AutonomousExadataInfrastructureShapeSummary {
         result =
                 (result * PRIME)
                         + (this.maximumNodeCount == null ? 43 : this.maximumNodeCount.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -184,8 +184,8 @@ public class ListCertificateAuthoritiesConverter {
                                                 com.oracle.bmc.certificatesmanagement.responses
                                                         .ListCertificateAuthoritiesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.certificateAuthorityCollection(response.getItem());
 

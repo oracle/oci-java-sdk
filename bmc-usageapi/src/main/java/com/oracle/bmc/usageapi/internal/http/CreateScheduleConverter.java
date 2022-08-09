@@ -101,8 +101,8 @@ public class CreateScheduleConverter {
                                         builder =
                                                 com.oracle.bmc.usageapi.responses
                                                         .CreateScheduleResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.schedule(response.getItem());
 

@@ -19,7 +19,7 @@ package com.oracle.bmc.databasemanagement.model;
     builder = AwrDbCpuUsageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwrDbCpuUsageSummary {
+public final class AwrDbCpuUsageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timestamp", "avgValue"})
     public AwrDbCpuUsageSummary(java.util.Date timestamp, Double avgValue) {
@@ -67,17 +67,22 @@ public final class AwrDbCpuUsageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwrDbCpuUsageSummary build() {
-            AwrDbCpuUsageSummary __instance__ = new AwrDbCpuUsageSummary(timestamp, avgValue);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AwrDbCpuUsageSummary model = new AwrDbCpuUsageSummary(this.timestamp, this.avgValue);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AwrDbCpuUsageSummary o) {
-            Builder copiedBuilder = timestamp(o.getTimestamp()).avgValue(o.getAvgValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AwrDbCpuUsageSummary model) {
+            if (model.wasPropertyExplicitlySet("timestamp")) {
+                this.timestamp(model.getTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("avgValue")) {
+                this.avgValue(model.getAvgValue());
+            }
+            return this;
         }
     }
 
@@ -133,9 +138,9 @@ public final class AwrDbCpuUsageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AwrDbCpuUsageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", avgValue=").append(String.valueOf(this.avgValue));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -152,7 +157,7 @@ public final class AwrDbCpuUsageSummary {
         AwrDbCpuUsageSummary other = (AwrDbCpuUsageSummary) o;
         return java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.avgValue, other.avgValue)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -161,16 +166,7 @@ public final class AwrDbCpuUsageSummary {
         int result = 1;
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
         result = (result * PRIME) + (this.avgValue == null ? 43 : this.avgValue.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

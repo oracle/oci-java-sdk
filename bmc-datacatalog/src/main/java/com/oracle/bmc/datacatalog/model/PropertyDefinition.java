@@ -19,7 +19,7 @@ package com.oracle.bmc.datacatalog.model;
     builder = PropertyDefinition.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PropertyDefinition {
+public final class PropertyDefinition extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "type", "isRequired", "isUpdatable"})
     public PropertyDefinition(String name, String type, Boolean isRequired, Boolean isUpdatable) {
@@ -101,22 +101,29 @@ public final class PropertyDefinition {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PropertyDefinition build() {
-            PropertyDefinition __instance__ =
-                    new PropertyDefinition(name, type, isRequired, isUpdatable);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            PropertyDefinition model =
+                    new PropertyDefinition(this.name, this.type, this.isRequired, this.isUpdatable);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PropertyDefinition o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .type(o.getType())
-                            .isRequired(o.getIsRequired())
-                            .isUpdatable(o.getIsUpdatable());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PropertyDefinition model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("isRequired")) {
+                this.isRequired(model.getIsRequired());
+            }
+            if (model.wasPropertyExplicitlySet("isUpdatable")) {
+                this.isUpdatable(model.getIsUpdatable());
+            }
+            return this;
         }
     }
 
@@ -200,11 +207,11 @@ public final class PropertyDefinition {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PropertyDefinition(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", isRequired=").append(String.valueOf(this.isRequired));
         sb.append(", isUpdatable=").append(String.valueOf(this.isUpdatable));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -223,7 +230,7 @@ public final class PropertyDefinition {
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.isRequired, other.isRequired)
                 && java.util.Objects.equals(this.isUpdatable, other.isUpdatable)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -234,16 +241,7 @@ public final class PropertyDefinition {
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.isRequired == null ? 43 : this.isRequired.hashCode());
         result = (result * PRIME) + (this.isUpdatable == null ? 43 : this.isUpdatable.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

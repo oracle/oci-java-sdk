@@ -67,17 +67,22 @@ public final class LiteralArgument extends Argument {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LiteralArgument build() {
-            LiteralArgument __instance__ = new LiteralArgument(dataType, value);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            LiteralArgument model = new LiteralArgument(this.dataType, this.value);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LiteralArgument o) {
-            Builder copiedBuilder = dataType(o.getDataType()).value(o.getValue());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LiteralArgument model) {
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
+            }
+            if (model.wasPropertyExplicitlySet("value")) {
+                this.value(model.getValue());
+            }
+            return this;
         }
     }
 
@@ -147,7 +152,6 @@ public final class LiteralArgument extends Argument {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", dataType=").append(String.valueOf(this.dataType));
         sb.append(", value=").append(String.valueOf(this.value));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -164,8 +168,7 @@ public final class LiteralArgument extends Argument {
         LiteralArgument other = (LiteralArgument) o;
         return java.util.Objects.equals(this.dataType, other.dataType)
                 && java.util.Objects.equals(this.value, other.value)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -174,16 +177,6 @@ public final class LiteralArgument extends Argument {
         int result = super.hashCode();
         result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -20,7 +20,8 @@ package com.oracle.bmc.database.model;
     builder = InfoForNetworkGenDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InfoForNetworkGenDetails {
+public final class InfoForNetworkGenDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "networkType",
@@ -168,26 +169,45 @@ public final class InfoForNetworkGenDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InfoForNetworkGenDetails build() {
-            InfoForNetworkGenDetails __instance__ =
+            InfoForNetworkGenDetails model =
                     new InfoForNetworkGenDetails(
-                            networkType, vlanId, cidr, gateway, netmask, domain, prefix);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.networkType,
+                            this.vlanId,
+                            this.cidr,
+                            this.gateway,
+                            this.netmask,
+                            this.domain,
+                            this.prefix);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InfoForNetworkGenDetails o) {
-            Builder copiedBuilder =
-                    networkType(o.getNetworkType())
-                            .vlanId(o.getVlanId())
-                            .cidr(o.getCidr())
-                            .gateway(o.getGateway())
-                            .netmask(o.getNetmask())
-                            .domain(o.getDomain())
-                            .prefix(o.getPrefix());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InfoForNetworkGenDetails model) {
+            if (model.wasPropertyExplicitlySet("networkType")) {
+                this.networkType(model.getNetworkType());
+            }
+            if (model.wasPropertyExplicitlySet("vlanId")) {
+                this.vlanId(model.getVlanId());
+            }
+            if (model.wasPropertyExplicitlySet("cidr")) {
+                this.cidr(model.getCidr());
+            }
+            if (model.wasPropertyExplicitlySet("gateway")) {
+                this.gateway(model.getGateway());
+            }
+            if (model.wasPropertyExplicitlySet("netmask")) {
+                this.netmask(model.getNetmask());
+            }
+            if (model.wasPropertyExplicitlySet("domain")) {
+                this.domain(model.getDomain());
+            }
+            if (model.wasPropertyExplicitlySet("prefix")) {
+                this.prefix(model.getPrefix());
+            }
+            return this;
         }
     }
 
@@ -348,6 +368,7 @@ public final class InfoForNetworkGenDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InfoForNetworkGenDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("networkType=").append(String.valueOf(this.networkType));
         sb.append(", vlanId=").append(String.valueOf(this.vlanId));
         sb.append(", cidr=").append(String.valueOf(this.cidr));
@@ -355,7 +376,6 @@ public final class InfoForNetworkGenDetails {
         sb.append(", netmask=").append(String.valueOf(this.netmask));
         sb.append(", domain=").append(String.valueOf(this.domain));
         sb.append(", prefix=").append(String.valueOf(this.prefix));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -377,7 +397,7 @@ public final class InfoForNetworkGenDetails {
                 && java.util.Objects.equals(this.netmask, other.netmask)
                 && java.util.Objects.equals(this.domain, other.domain)
                 && java.util.Objects.equals(this.prefix, other.prefix)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -391,16 +411,7 @@ public final class InfoForNetworkGenDetails {
         result = (result * PRIME) + (this.netmask == null ? 43 : this.netmask.hashCode());
         result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
         result = (result * PRIME) + (this.prefix == null ? 43 : this.prefix.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

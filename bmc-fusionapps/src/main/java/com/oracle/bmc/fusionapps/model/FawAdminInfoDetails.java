@@ -19,7 +19,7 @@ package com.oracle.bmc.fusionapps.model;
     builder = FawAdminInfoDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FawAdminInfoDetails {
+public final class FawAdminInfoDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"adwAdminPass", "fawServicePass", "notificationEmail"})
     public FawAdminInfoDetails(
@@ -85,21 +85,27 @@ public final class FawAdminInfoDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FawAdminInfoDetails build() {
-            FawAdminInfoDetails __instance__ =
-                    new FawAdminInfoDetails(adwAdminPass, fawServicePass, notificationEmail);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            FawAdminInfoDetails model =
+                    new FawAdminInfoDetails(
+                            this.adwAdminPass, this.fawServicePass, this.notificationEmail);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(FawAdminInfoDetails o) {
-            Builder copiedBuilder =
-                    adwAdminPass(o.getAdwAdminPass())
-                            .fawServicePass(o.getFawServicePass())
-                            .notificationEmail(o.getNotificationEmail());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(FawAdminInfoDetails model) {
+            if (model.wasPropertyExplicitlySet("adwAdminPass")) {
+                this.adwAdminPass(model.getAdwAdminPass());
+            }
+            if (model.wasPropertyExplicitlySet("fawServicePass")) {
+                this.fawServicePass(model.getFawServicePass());
+            }
+            if (model.wasPropertyExplicitlySet("notificationEmail")) {
+                this.notificationEmail(model.getNotificationEmail());
+            }
+            return this;
         }
     }
 
@@ -169,10 +175,10 @@ public final class FawAdminInfoDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("FawAdminInfoDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("adwAdminPass=").append(String.valueOf(this.adwAdminPass));
         sb.append(", fawServicePass=").append(String.valueOf(this.fawServicePass));
         sb.append(", notificationEmail=").append(String.valueOf(this.notificationEmail));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -190,7 +196,7 @@ public final class FawAdminInfoDetails {
         return java.util.Objects.equals(this.adwAdminPass, other.adwAdminPass)
                 && java.util.Objects.equals(this.fawServicePass, other.fawServicePass)
                 && java.util.Objects.equals(this.notificationEmail, other.notificationEmail)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -204,16 +210,7 @@ public final class FawAdminInfoDetails {
         result =
                 (result * PRIME)
                         + (this.notificationEmail == null ? 43 : this.notificationEmail.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

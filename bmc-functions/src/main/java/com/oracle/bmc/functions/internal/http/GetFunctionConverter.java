@@ -102,8 +102,8 @@ public class GetFunctionConverter {
                                         builder =
                                                 com.oracle.bmc.functions.responses
                                                         .GetFunctionResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.function(response.getItem());
 

@@ -99,8 +99,8 @@ public class CreateRunConverter {
                                         builder =
                                                 com.oracle.bmc.dataflow.responses.CreateRunResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.run(response.getItem());
 

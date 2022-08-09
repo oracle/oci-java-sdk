@@ -48,17 +48,19 @@ public final class StaticPublicKeySet extends PublicKeySet {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StaticPublicKeySet build() {
-            StaticPublicKeySet __instance__ = new StaticPublicKeySet(keys);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            StaticPublicKeySet model = new StaticPublicKeySet(this.keys);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StaticPublicKeySet o) {
-            Builder copiedBuilder = keys(o.getKeys());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StaticPublicKeySet model) {
+            if (model.wasPropertyExplicitlySet("keys")) {
+                this.keys(model.getKeys());
+            }
+            return this;
         }
     }
 
@@ -108,7 +110,6 @@ public final class StaticPublicKeySet extends PublicKeySet {
         sb.append("StaticPublicKeySet(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", keys=").append(String.valueOf(this.keys));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -123,9 +124,7 @@ public final class StaticPublicKeySet extends PublicKeySet {
         }
 
         StaticPublicKeySet other = (StaticPublicKeySet) o;
-        return java.util.Objects.equals(this.keys, other.keys)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.keys, other.keys) && super.equals(other);
     }
 
     @Override
@@ -133,16 +132,6 @@ public final class StaticPublicKeySet extends PublicKeySet {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.keys == null ? 43 : this.keys.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

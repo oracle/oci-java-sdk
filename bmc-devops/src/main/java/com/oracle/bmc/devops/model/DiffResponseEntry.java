@@ -19,7 +19,7 @@ package com.oracle.bmc.devops.model;
     builder = DiffResponseEntry.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DiffResponseEntry {
+public final class DiffResponseEntry extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "changeType",
@@ -243,40 +243,61 @@ public final class DiffResponseEntry {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DiffResponseEntry build() {
-            DiffResponseEntry __instance__ =
+            DiffResponseEntry model =
                     new DiffResponseEntry(
-                            changeType,
-                            objectType,
-                            commitId,
-                            oldPath,
-                            newPath,
-                            oldId,
-                            newId,
-                            url,
-                            addedLinesCount,
-                            deletedLinesCount,
-                            areConflictsInFile);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.changeType,
+                            this.objectType,
+                            this.commitId,
+                            this.oldPath,
+                            this.newPath,
+                            this.oldId,
+                            this.newId,
+                            this.url,
+                            this.addedLinesCount,
+                            this.deletedLinesCount,
+                            this.areConflictsInFile);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DiffResponseEntry o) {
-            Builder copiedBuilder =
-                    changeType(o.getChangeType())
-                            .objectType(o.getObjectType())
-                            .commitId(o.getCommitId())
-                            .oldPath(o.getOldPath())
-                            .newPath(o.getNewPath())
-                            .oldId(o.getOldId())
-                            .newId(o.getNewId())
-                            .url(o.getUrl())
-                            .addedLinesCount(o.getAddedLinesCount())
-                            .deletedLinesCount(o.getDeletedLinesCount())
-                            .areConflictsInFile(o.getAreConflictsInFile());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DiffResponseEntry model) {
+            if (model.wasPropertyExplicitlySet("changeType")) {
+                this.changeType(model.getChangeType());
+            }
+            if (model.wasPropertyExplicitlySet("objectType")) {
+                this.objectType(model.getObjectType());
+            }
+            if (model.wasPropertyExplicitlySet("commitId")) {
+                this.commitId(model.getCommitId());
+            }
+            if (model.wasPropertyExplicitlySet("oldPath")) {
+                this.oldPath(model.getOldPath());
+            }
+            if (model.wasPropertyExplicitlySet("newPath")) {
+                this.newPath(model.getNewPath());
+            }
+            if (model.wasPropertyExplicitlySet("oldId")) {
+                this.oldId(model.getOldId());
+            }
+            if (model.wasPropertyExplicitlySet("newId")) {
+                this.newId(model.getNewId());
+            }
+            if (model.wasPropertyExplicitlySet("url")) {
+                this.url(model.getUrl());
+            }
+            if (model.wasPropertyExplicitlySet("addedLinesCount")) {
+                this.addedLinesCount(model.getAddedLinesCount());
+            }
+            if (model.wasPropertyExplicitlySet("deletedLinesCount")) {
+                this.deletedLinesCount(model.getDeletedLinesCount());
+            }
+            if (model.wasPropertyExplicitlySet("areConflictsInFile")) {
+                this.areConflictsInFile(model.getAreConflictsInFile());
+            }
+            return this;
         }
     }
 
@@ -458,6 +479,7 @@ public final class DiffResponseEntry {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DiffResponseEntry(");
+        sb.append("super=").append(super.toString());
         sb.append("changeType=").append(String.valueOf(this.changeType));
         sb.append(", objectType=").append(String.valueOf(this.objectType));
         sb.append(", commitId=").append(String.valueOf(this.commitId));
@@ -469,7 +491,6 @@ public final class DiffResponseEntry {
         sb.append(", addedLinesCount=").append(String.valueOf(this.addedLinesCount));
         sb.append(", deletedLinesCount=").append(String.valueOf(this.deletedLinesCount));
         sb.append(", areConflictsInFile=").append(String.valueOf(this.areConflictsInFile));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -495,7 +516,7 @@ public final class DiffResponseEntry {
                 && java.util.Objects.equals(this.addedLinesCount, other.addedLinesCount)
                 && java.util.Objects.equals(this.deletedLinesCount, other.deletedLinesCount)
                 && java.util.Objects.equals(this.areConflictsInFile, other.areConflictsInFile)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -521,16 +542,7 @@ public final class DiffResponseEntry {
                         + (this.areConflictsInFile == null
                                 ? 43
                                 : this.areConflictsInFile.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

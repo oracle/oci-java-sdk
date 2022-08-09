@@ -20,7 +20,8 @@ package com.oracle.bmc.mysql.model;
     builder = UpdateHeatWaveClusterDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateHeatWaveClusterDetails {
+public final class UpdateHeatWaveClusterDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shapeName", "clusterSize"})
     public UpdateHeatWaveClusterDetails(String shapeName, Integer clusterSize) {
@@ -88,18 +89,23 @@ public final class UpdateHeatWaveClusterDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateHeatWaveClusterDetails build() {
-            UpdateHeatWaveClusterDetails __instance__ =
-                    new UpdateHeatWaveClusterDetails(shapeName, clusterSize);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateHeatWaveClusterDetails model =
+                    new UpdateHeatWaveClusterDetails(this.shapeName, this.clusterSize);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateHeatWaveClusterDetails o) {
-            Builder copiedBuilder = shapeName(o.getShapeName()).clusterSize(o.getClusterSize());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateHeatWaveClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("clusterSize")) {
+                this.clusterSize(model.getClusterSize());
+            }
+            return this;
         }
     }
 
@@ -175,9 +181,9 @@ public final class UpdateHeatWaveClusterDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateHeatWaveClusterDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", clusterSize=").append(String.valueOf(this.clusterSize));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -194,7 +200,7 @@ public final class UpdateHeatWaveClusterDetails {
         UpdateHeatWaveClusterDetails other = (UpdateHeatWaveClusterDetails) o;
         return java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.clusterSize, other.clusterSize)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -203,16 +209,7 @@ public final class UpdateHeatWaveClusterDetails {
         int result = 1;
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.clusterSize == null ? 43 : this.clusterSize.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

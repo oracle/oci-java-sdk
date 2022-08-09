@@ -86,22 +86,29 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DefaultJobConfigurationDetails build() {
-            DefaultJobConfigurationDetails __instance__ =
+            DefaultJobConfigurationDetails model =
                     new DefaultJobConfigurationDetails(
-                            environmentVariables, commandLineArguments, maximumRuntimeInMinutes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.environmentVariables,
+                            this.commandLineArguments,
+                            this.maximumRuntimeInMinutes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DefaultJobConfigurationDetails o) {
-            Builder copiedBuilder =
-                    environmentVariables(o.getEnvironmentVariables())
-                            .commandLineArguments(o.getCommandLineArguments())
-                            .maximumRuntimeInMinutes(o.getMaximumRuntimeInMinutes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DefaultJobConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("environmentVariables")) {
+                this.environmentVariables(model.getEnvironmentVariables());
+            }
+            if (model.wasPropertyExplicitlySet("commandLineArguments")) {
+                this.commandLineArguments(model.getCommandLineArguments());
+            }
+            if (model.wasPropertyExplicitlySet("maximumRuntimeInMinutes")) {
+                this.maximumRuntimeInMinutes(model.getMaximumRuntimeInMinutes());
+            }
+            return this;
         }
     }
 
@@ -193,7 +200,6 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
         sb.append(", commandLineArguments=").append(String.valueOf(this.commandLineArguments));
         sb.append(", maximumRuntimeInMinutes=")
                 .append(String.valueOf(this.maximumRuntimeInMinutes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -212,8 +218,7 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
                 && java.util.Objects.equals(this.commandLineArguments, other.commandLineArguments)
                 && java.util.Objects.equals(
                         this.maximumRuntimeInMinutes, other.maximumRuntimeInMinutes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -235,16 +240,6 @@ public final class DefaultJobConfigurationDetails extends JobConfigurationDetail
                         + (this.maximumRuntimeInMinutes == null
                                 ? 43
                                 : this.maximumRuntimeInMinutes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

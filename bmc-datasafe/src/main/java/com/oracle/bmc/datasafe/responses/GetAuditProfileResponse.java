@@ -53,16 +53,18 @@ public class GetAuditProfileResponse extends com.oracle.bmc.responses.BmcRespons
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "auditProfile"
     })
     private GetAuditProfileResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datasafe.model.AuditProfile auditProfile) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.auditProfile = auditProfile;
@@ -73,6 +75,13 @@ public class GetAuditProfileResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -131,6 +140,7 @@ public class GetAuditProfileResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(GetAuditProfileResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             auditProfile(o.getAuditProfile());
@@ -144,7 +154,7 @@ public class GetAuditProfileResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public GetAuditProfileResponse build() {
             return new GetAuditProfileResponse(
-                    __httpStatusCode__, etag, opcRequestId, auditProfile);
+                    __httpStatusCode__, headers, etag, opcRequestId, auditProfile);
         }
     }
 

@@ -171,8 +171,8 @@ public class ListRepositoriesConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .ListRepositoriesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.repositoryCollection(response.getItem());
 

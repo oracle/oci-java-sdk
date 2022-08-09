@@ -105,8 +105,8 @@ public class GetRecommendationConverter {
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
                                                         .GetRecommendationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.recommendation(response.getItem());
 

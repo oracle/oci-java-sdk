@@ -185,8 +185,8 @@ public class ListNetworkFirewallsConverter {
                                         builder =
                                                 com.oracle.bmc.networkfirewall.responses
                                                         .ListNetworkFirewallsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.networkFirewallCollection(response.getItem());
 

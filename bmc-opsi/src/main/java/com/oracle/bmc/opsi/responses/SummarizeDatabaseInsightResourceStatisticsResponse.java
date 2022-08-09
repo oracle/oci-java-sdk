@@ -63,18 +63,20 @@ public class SummarizeDatabaseInsightResourceStatisticsResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "summarizeDatabaseInsightResourceStatisticsAggregationCollection"
     })
     private SummarizeDatabaseInsightResourceStatisticsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.opsi.model
                             .SummarizeDatabaseInsightResourceStatisticsAggregationCollection
                     summarizeDatabaseInsightResourceStatisticsAggregationCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.summarizeDatabaseInsightResourceStatisticsAggregationCollection =
@@ -86,6 +88,13 @@ public class SummarizeDatabaseInsightResourceStatisticsResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -156,6 +165,7 @@ public class SummarizeDatabaseInsightResourceStatisticsResponse
          */
         public Builder copy(SummarizeDatabaseInsightResourceStatisticsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             summarizeDatabaseInsightResourceStatisticsAggregationCollection(
@@ -171,6 +181,7 @@ public class SummarizeDatabaseInsightResourceStatisticsResponse
         public SummarizeDatabaseInsightResourceStatisticsResponse build() {
             return new SummarizeDatabaseInsightResourceStatisticsResponse(
                     __httpStatusCode__,
+                    headers,
                     opcRequestId,
                     opcNextPage,
                     summarizeDatabaseInsightResourceStatisticsAggregationCollection);

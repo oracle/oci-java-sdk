@@ -22,7 +22,7 @@ package com.oracle.bmc.objectstorage.model;
     builder = ObjectVersionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ObjectVersionSummary {
+public final class ObjectVersionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -231,38 +231,57 @@ public final class ObjectVersionSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectVersionSummary build() {
-            ObjectVersionSummary __instance__ =
+            ObjectVersionSummary model =
                     new ObjectVersionSummary(
-                            name,
-                            size,
-                            md5,
-                            timeCreated,
-                            timeModified,
-                            etag,
-                            storageTier,
-                            archivalState,
-                            versionId,
-                            isDeleteMarker);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.size,
+                            this.md5,
+                            this.timeCreated,
+                            this.timeModified,
+                            this.etag,
+                            this.storageTier,
+                            this.archivalState,
+                            this.versionId,
+                            this.isDeleteMarker);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ObjectVersionSummary o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .size(o.getSize())
-                            .md5(o.getMd5())
-                            .timeCreated(o.getTimeCreated())
-                            .timeModified(o.getTimeModified())
-                            .etag(o.getEtag())
-                            .storageTier(o.getStorageTier())
-                            .archivalState(o.getArchivalState())
-                            .versionId(o.getVersionId())
-                            .isDeleteMarker(o.getIsDeleteMarker());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ObjectVersionSummary model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
+            if (model.wasPropertyExplicitlySet("md5")) {
+                this.md5(model.getMd5());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeModified")) {
+                this.timeModified(model.getTimeModified());
+            }
+            if (model.wasPropertyExplicitlySet("etag")) {
+                this.etag(model.getEtag());
+            }
+            if (model.wasPropertyExplicitlySet("storageTier")) {
+                this.storageTier(model.getStorageTier());
+            }
+            if (model.wasPropertyExplicitlySet("archivalState")) {
+                this.archivalState(model.getArchivalState());
+            }
+            if (model.wasPropertyExplicitlySet("versionId")) {
+                this.versionId(model.getVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("isDeleteMarker")) {
+                this.isDeleteMarker(model.getIsDeleteMarker());
+            }
+            return this;
         }
     }
 
@@ -434,6 +453,7 @@ public final class ObjectVersionSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ObjectVersionSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", md5=").append(String.valueOf(this.md5));
@@ -444,7 +464,6 @@ public final class ObjectVersionSummary {
         sb.append(", archivalState=").append(String.valueOf(this.archivalState));
         sb.append(", versionId=").append(String.valueOf(this.versionId));
         sb.append(", isDeleteMarker=").append(String.valueOf(this.isDeleteMarker));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -469,7 +488,7 @@ public final class ObjectVersionSummary {
                 && java.util.Objects.equals(this.archivalState, other.archivalState)
                 && java.util.Objects.equals(this.versionId, other.versionId)
                 && java.util.Objects.equals(this.isDeleteMarker, other.isDeleteMarker)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -490,16 +509,7 @@ public final class ObjectVersionSummary {
         result =
                 (result * PRIME)
                         + (this.isDeleteMarker == null ? 43 : this.isDeleteMarker.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

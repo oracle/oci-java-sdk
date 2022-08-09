@@ -19,7 +19,8 @@ package com.oracle.bmc.devops.model;
     builder = CreateBuildRunDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateBuildRunDetails {
+public final class CreateBuildRunDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -135,30 +136,41 @@ public final class CreateBuildRunDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateBuildRunDetails build() {
-            CreateBuildRunDetails __instance__ =
+            CreateBuildRunDetails model =
                     new CreateBuildRunDetails(
-                            displayName,
-                            buildPipelineId,
-                            commitInfo,
-                            buildRunArguments,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.displayName,
+                            this.buildPipelineId,
+                            this.commitInfo,
+                            this.buildRunArguments,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateBuildRunDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .buildPipelineId(o.getBuildPipelineId())
-                            .commitInfo(o.getCommitInfo())
-                            .buildRunArguments(o.getBuildRunArguments())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateBuildRunDetails model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("buildPipelineId")) {
+                this.buildPipelineId(model.getBuildPipelineId());
+            }
+            if (model.wasPropertyExplicitlySet("commitInfo")) {
+                this.commitInfo(model.getCommitInfo());
+            }
+            if (model.wasPropertyExplicitlySet("buildRunArguments")) {
+                this.buildRunArguments(model.getBuildRunArguments());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -256,13 +268,13 @@ public final class CreateBuildRunDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateBuildRunDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", buildPipelineId=").append(String.valueOf(this.buildPipelineId));
         sb.append(", commitInfo=").append(String.valueOf(this.commitInfo));
         sb.append(", buildRunArguments=").append(String.valueOf(this.buildRunArguments));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -283,7 +295,7 @@ public final class CreateBuildRunDetails {
                 && java.util.Objects.equals(this.buildRunArguments, other.buildRunArguments)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -300,16 +312,7 @@ public final class CreateBuildRunDetails {
                         + (this.buildRunArguments == null ? 43 : this.buildRunArguments.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

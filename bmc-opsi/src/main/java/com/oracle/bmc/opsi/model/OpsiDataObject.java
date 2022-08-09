@@ -36,7 +36,7 @@ package com.oracle.bmc.opsi.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class OpsiDataObject {
+public class OpsiDataObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "identifier",
@@ -125,6 +125,7 @@ public class OpsiDataObject {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("OpsiDataObject(");
+        sb.append("super=").append(super.toString());
         sb.append("identifier=").append(String.valueOf(this.identifier));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -146,7 +147,8 @@ public class OpsiDataObject {
         return java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
-                && java.util.Objects.equals(this.columnsMetadata, other.columnsMetadata);
+                && java.util.Objects.equals(this.columnsMetadata, other.columnsMetadata)
+                && super.equals(other);
     }
 
     @Override
@@ -159,6 +161,7 @@ public class OpsiDataObject {
         result =
                 (result * PRIME)
                         + (this.columnsMetadata == null ? 43 : this.columnsMetadata.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
     }
 }

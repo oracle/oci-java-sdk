@@ -20,7 +20,7 @@ package com.oracle.bmc.apmtraces.model;
     builder = SpanLogCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SpanLogCollection {
+public final class SpanLogCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeCreated", "spanLogs"})
     public SpanLogCollection(java.util.Date timeCreated, java.util.List<SpanLog> spanLogs) {
@@ -72,17 +72,22 @@ public final class SpanLogCollection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SpanLogCollection build() {
-            SpanLogCollection __instance__ = new SpanLogCollection(timeCreated, spanLogs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            SpanLogCollection model = new SpanLogCollection(this.timeCreated, this.spanLogs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SpanLogCollection o) {
-            Builder copiedBuilder = timeCreated(o.getTimeCreated()).spanLogs(o.getSpanLogs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SpanLogCollection model) {
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("spanLogs")) {
+                this.spanLogs(model.getSpanLogs());
+            }
+            return this;
         }
     }
 
@@ -142,9 +147,9 @@ public final class SpanLogCollection {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SpanLogCollection(");
+        sb.append("super=").append(super.toString());
         sb.append("timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", spanLogs=").append(String.valueOf(this.spanLogs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -161,7 +166,7 @@ public final class SpanLogCollection {
         SpanLogCollection other = (SpanLogCollection) o;
         return java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.spanLogs, other.spanLogs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -170,16 +175,7 @@ public final class SpanLogCollection {
         int result = 1;
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.spanLogs == null ? 43 : this.spanLogs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

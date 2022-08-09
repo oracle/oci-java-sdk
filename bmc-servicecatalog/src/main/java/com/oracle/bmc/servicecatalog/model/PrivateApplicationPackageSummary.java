@@ -19,7 +19,8 @@ package com.oracle.bmc.servicecatalog.model;
     builder = PrivateApplicationPackageSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PrivateApplicationPackageSummary {
+public final class PrivateApplicationPackageSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -160,30 +161,41 @@ public final class PrivateApplicationPackageSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PrivateApplicationPackageSummary build() {
-            PrivateApplicationPackageSummary __instance__ =
+            PrivateApplicationPackageSummary model =
                     new PrivateApplicationPackageSummary(
-                            id,
-                            privateApplicationId,
-                            displayName,
-                            version,
-                            packageType,
-                            timeCreated);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.privateApplicationId,
+                            this.displayName,
+                            this.version,
+                            this.packageType,
+                            this.timeCreated);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PrivateApplicationPackageSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .privateApplicationId(o.getPrivateApplicationId())
-                            .displayName(o.getDisplayName())
-                            .version(o.getVersion())
-                            .packageType(o.getPackageType())
-                            .timeCreated(o.getTimeCreated());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PrivateApplicationPackageSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("privateApplicationId")) {
+                this.privateApplicationId(model.getPrivateApplicationId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            if (model.wasPropertyExplicitlySet("packageType")) {
+                this.packageType(model.getPackageType());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            return this;
         }
     }
 
@@ -307,13 +319,13 @@ public final class PrivateApplicationPackageSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PrivateApplicationPackageSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", privateApplicationId=").append(String.valueOf(this.privateApplicationId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", packageType=").append(String.valueOf(this.packageType));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -334,7 +346,7 @@ public final class PrivateApplicationPackageSummary {
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.packageType, other.packageType)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -351,16 +363,7 @@ public final class PrivateApplicationPackageSummary {
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.packageType == null ? 43 : this.packageType.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

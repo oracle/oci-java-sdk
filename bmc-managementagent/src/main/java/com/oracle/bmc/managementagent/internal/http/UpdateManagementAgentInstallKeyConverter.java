@@ -131,8 +131,8 @@ public class UpdateManagementAgentInstallKeyConverter {
                                                 com.oracle.bmc.managementagent.responses
                                                         .UpdateManagementAgentInstallKeyResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.managementAgentInstallKey(response.getItem());
 

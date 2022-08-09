@@ -190,39 +190,58 @@ public final class CreateServiceCloudChannelDetails extends CreateChannelDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateServiceCloudChannelDetails build() {
-            CreateServiceCloudChannelDetails __instance__ =
+            CreateServiceCloudChannelDetails model =
                     new CreateServiceCloudChannelDetails(
-                            name,
-                            description,
-                            sessionExpiryDurationInMilliseconds,
-                            freeformTags,
-                            definedTags,
-                            domainName,
-                            hostNamePrefix,
-                            userName,
-                            password,
-                            clientType);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.name,
+                            this.description,
+                            this.sessionExpiryDurationInMilliseconds,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.domainName,
+                            this.hostNamePrefix,
+                            this.userName,
+                            this.password,
+                            this.clientType);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateServiceCloudChannelDetails o) {
-            Builder copiedBuilder =
-                    name(o.getName())
-                            .description(o.getDescription())
-                            .sessionExpiryDurationInMilliseconds(
-                                    o.getSessionExpiryDurationInMilliseconds())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .domainName(o.getDomainName())
-                            .hostNamePrefix(o.getHostNamePrefix())
-                            .userName(o.getUserName())
-                            .password(o.getPassword())
-                            .clientType(o.getClientType());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateServiceCloudChannelDetails model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("sessionExpiryDurationInMilliseconds")) {
+                this.sessionExpiryDurationInMilliseconds(
+                        model.getSessionExpiryDurationInMilliseconds());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("domainName")) {
+                this.domainName(model.getDomainName());
+            }
+            if (model.wasPropertyExplicitlySet("hostNamePrefix")) {
+                this.hostNamePrefix(model.getHostNamePrefix());
+            }
+            if (model.wasPropertyExplicitlySet("userName")) {
+                this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("clientType")) {
+                this.clientType(model.getClientType());
+            }
+            return this;
         }
     }
 
@@ -378,7 +397,6 @@ public final class CreateServiceCloudChannelDetails extends CreateChannelDetails
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", password=").append(String.valueOf(this.password));
         sb.append(", clientType=").append(String.valueOf(this.clientType));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -398,8 +416,7 @@ public final class CreateServiceCloudChannelDetails extends CreateChannelDetails
                 && java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.clientType, other.clientType)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -413,16 +430,6 @@ public final class CreateServiceCloudChannelDetails extends CreateChannelDetails
         result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
         result = (result * PRIME) + (this.clientType == null ? 43 : this.clientType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -113,8 +113,8 @@ public class DeleteAutoScalingPolicyConverter {
                                         builder =
                                                 com.oracle.bmc.autoscaling.responses
                                                         .DeleteAutoScalingPolicyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

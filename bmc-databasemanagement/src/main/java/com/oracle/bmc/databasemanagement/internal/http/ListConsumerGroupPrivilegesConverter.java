@@ -161,8 +161,8 @@ public class ListConsumerGroupPrivilegesConverter {
                                                 com.oracle.bmc.databasemanagement.responses
                                                         .ListConsumerGroupPrivilegesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.consumerGroupPrivilegeCollection(response.getItem());
 

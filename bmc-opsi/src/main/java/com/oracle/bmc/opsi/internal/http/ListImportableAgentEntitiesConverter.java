@@ -144,8 +144,8 @@ public class ListImportableAgentEntitiesConverter {
                                                 com.oracle.bmc.opsi.responses
                                                         .ListImportableAgentEntitiesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.importableAgentEntitySummaryCollection(response.getItem());
 

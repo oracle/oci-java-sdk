@@ -128,8 +128,8 @@ public class SearchResourcesConverter {
                                         builder =
                                                 com.oracle.bmc.resourcesearch.responses
                                                         .SearchResourcesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.resourceSummaryCollection(response.getItem());
 

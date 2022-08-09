@@ -105,8 +105,8 @@ public class CreateBuildRunConverter {
                                         builder =
                                                 com.oracle.bmc.devops.responses
                                                         .CreateBuildRunResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.buildRun(response.getItem());
 

@@ -111,8 +111,8 @@ public class GetOpsiDataObjectConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .GetOpsiDataObjectResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.opsiDataObject(response.getItem());
 

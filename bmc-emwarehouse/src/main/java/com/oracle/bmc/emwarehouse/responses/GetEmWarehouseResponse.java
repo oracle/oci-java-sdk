@@ -53,13 +53,20 @@ public class GetEmWarehouseResponse extends com.oracle.bmc.responses.BmcResponse
         return emWarehouse;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "emWarehouse"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "emWarehouse"
+    })
     private GetEmWarehouseResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.emwarehouse.model.EmWarehouse emWarehouse) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.emWarehouse = emWarehouse;
@@ -70,6 +77,13 @@ public class GetEmWarehouseResponse extends com.oracle.bmc.responses.BmcResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -130,6 +144,7 @@ public class GetEmWarehouseResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetEmWarehouseResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             emWarehouse(o.getEmWarehouse());
@@ -142,7 +157,8 @@ public class GetEmWarehouseResponse extends com.oracle.bmc.responses.BmcResponse
          * @return the response object
          */
         public GetEmWarehouseResponse build() {
-            return new GetEmWarehouseResponse(__httpStatusCode__, etag, opcRequestId, emWarehouse);
+            return new GetEmWarehouseResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, emWarehouse);
         }
     }
 

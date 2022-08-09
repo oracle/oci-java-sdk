@@ -19,7 +19,8 @@ package com.oracle.bmc.oda.model;
     builder = AuthenticationProvider.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuthenticationProvider {
+public final class AuthenticationProvider
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -427,58 +428,94 @@ public final class AuthenticationProvider {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuthenticationProvider build() {
-            AuthenticationProvider __instance__ =
+            AuthenticationProvider model =
                     new AuthenticationProvider(
-                            id,
-                            grantType,
-                            identityProvider,
-                            name,
-                            tokenEndpointUrl,
-                            authorizationEndpointUrl,
-                            shortAuthorizationCodeRequestUrl,
-                            revokeTokenEndpointUrl,
-                            clientId,
-                            scopes,
-                            subjectClaim,
-                            refreshTokenRetentionPeriodInDays,
-                            redirectUrl,
-                            isVisible,
-                            lifecycleState,
-                            timeCreated,
-                            timeUpdated,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.grantType,
+                            this.identityProvider,
+                            this.name,
+                            this.tokenEndpointUrl,
+                            this.authorizationEndpointUrl,
+                            this.shortAuthorizationCodeRequestUrl,
+                            this.revokeTokenEndpointUrl,
+                            this.clientId,
+                            this.scopes,
+                            this.subjectClaim,
+                            this.refreshTokenRetentionPeriodInDays,
+                            this.redirectUrl,
+                            this.isVisible,
+                            this.lifecycleState,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AuthenticationProvider o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .grantType(o.getGrantType())
-                            .identityProvider(o.getIdentityProvider())
-                            .name(o.getName())
-                            .tokenEndpointUrl(o.getTokenEndpointUrl())
-                            .authorizationEndpointUrl(o.getAuthorizationEndpointUrl())
-                            .shortAuthorizationCodeRequestUrl(
-                                    o.getShortAuthorizationCodeRequestUrl())
-                            .revokeTokenEndpointUrl(o.getRevokeTokenEndpointUrl())
-                            .clientId(o.getClientId())
-                            .scopes(o.getScopes())
-                            .subjectClaim(o.getSubjectClaim())
-                            .refreshTokenRetentionPeriodInDays(
-                                    o.getRefreshTokenRetentionPeriodInDays())
-                            .redirectUrl(o.getRedirectUrl())
-                            .isVisible(o.getIsVisible())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AuthenticationProvider model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("grantType")) {
+                this.grantType(model.getGrantType());
+            }
+            if (model.wasPropertyExplicitlySet("identityProvider")) {
+                this.identityProvider(model.getIdentityProvider());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("tokenEndpointUrl")) {
+                this.tokenEndpointUrl(model.getTokenEndpointUrl());
+            }
+            if (model.wasPropertyExplicitlySet("authorizationEndpointUrl")) {
+                this.authorizationEndpointUrl(model.getAuthorizationEndpointUrl());
+            }
+            if (model.wasPropertyExplicitlySet("shortAuthorizationCodeRequestUrl")) {
+                this.shortAuthorizationCodeRequestUrl(model.getShortAuthorizationCodeRequestUrl());
+            }
+            if (model.wasPropertyExplicitlySet("revokeTokenEndpointUrl")) {
+                this.revokeTokenEndpointUrl(model.getRevokeTokenEndpointUrl());
+            }
+            if (model.wasPropertyExplicitlySet("clientId")) {
+                this.clientId(model.getClientId());
+            }
+            if (model.wasPropertyExplicitlySet("scopes")) {
+                this.scopes(model.getScopes());
+            }
+            if (model.wasPropertyExplicitlySet("subjectClaim")) {
+                this.subjectClaim(model.getSubjectClaim());
+            }
+            if (model.wasPropertyExplicitlySet("refreshTokenRetentionPeriodInDays")) {
+                this.refreshTokenRetentionPeriodInDays(
+                        model.getRefreshTokenRetentionPeriodInDays());
+            }
+            if (model.wasPropertyExplicitlySet("redirectUrl")) {
+                this.redirectUrl(model.getRedirectUrl());
+            }
+            if (model.wasPropertyExplicitlySet("isVisible")) {
+                this.isVisible(model.getIsVisible());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -802,6 +839,7 @@ public final class AuthenticationProvider {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuthenticationProvider(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", grantType=").append(String.valueOf(this.grantType));
         sb.append(", identityProvider=").append(String.valueOf(this.identityProvider));
@@ -824,7 +862,6 @@ public final class AuthenticationProvider {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -864,7 +901,7 @@ public final class AuthenticationProvider {
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -912,16 +949,7 @@ public final class AuthenticationProvider {
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

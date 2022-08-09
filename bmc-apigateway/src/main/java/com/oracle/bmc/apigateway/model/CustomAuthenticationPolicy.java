@@ -92,23 +92,33 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CustomAuthenticationPolicy build() {
-            CustomAuthenticationPolicy __instance__ =
+            CustomAuthenticationPolicy model =
                     new CustomAuthenticationPolicy(
-                            isAnonymousAccessAllowed, functionId, tokenHeader, tokenQueryParam);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isAnonymousAccessAllowed,
+                            this.functionId,
+                            this.tokenHeader,
+                            this.tokenQueryParam);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CustomAuthenticationPolicy o) {
-            Builder copiedBuilder =
-                    isAnonymousAccessAllowed(o.getIsAnonymousAccessAllowed())
-                            .functionId(o.getFunctionId())
-                            .tokenHeader(o.getTokenHeader())
-                            .tokenQueryParam(o.getTokenQueryParam());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CustomAuthenticationPolicy model) {
+            if (model.wasPropertyExplicitlySet("isAnonymousAccessAllowed")) {
+                this.isAnonymousAccessAllowed(model.getIsAnonymousAccessAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("functionId")) {
+                this.functionId(model.getFunctionId());
+            }
+            if (model.wasPropertyExplicitlySet("tokenHeader")) {
+                this.tokenHeader(model.getTokenHeader());
+            }
+            if (model.wasPropertyExplicitlySet("tokenQueryParam")) {
+                this.tokenQueryParam(model.getTokenQueryParam());
+            }
+            return this;
         }
     }
 
@@ -196,7 +206,6 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
         sb.append(", functionId=").append(String.valueOf(this.functionId));
         sb.append(", tokenHeader=").append(String.valueOf(this.tokenHeader));
         sb.append(", tokenQueryParam=").append(String.valueOf(this.tokenQueryParam));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -214,8 +223,7 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
         return java.util.Objects.equals(this.functionId, other.functionId)
                 && java.util.Objects.equals(this.tokenHeader, other.tokenHeader)
                 && java.util.Objects.equals(this.tokenQueryParam, other.tokenQueryParam)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -227,16 +235,6 @@ public final class CustomAuthenticationPolicy extends AuthenticationPolicy {
         result =
                 (result * PRIME)
                         + (this.tokenQueryParam == null ? 43 : this.tokenQueryParam.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

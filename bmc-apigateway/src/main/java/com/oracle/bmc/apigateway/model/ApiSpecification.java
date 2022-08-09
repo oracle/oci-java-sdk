@@ -17,7 +17,7 @@ package com.oracle.bmc.apigateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApiSpecification.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApiSpecification {
+public final class ApiSpecification extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"requestPolicies", "loggingPolicies", "routes"})
     public ApiSpecification(
@@ -71,21 +71,26 @@ public final class ApiSpecification {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApiSpecification build() {
-            ApiSpecification __instance__ =
-                    new ApiSpecification(requestPolicies, loggingPolicies, routes);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ApiSpecification model =
+                    new ApiSpecification(this.requestPolicies, this.loggingPolicies, this.routes);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApiSpecification o) {
-            Builder copiedBuilder =
-                    requestPolicies(o.getRequestPolicies())
-                            .loggingPolicies(o.getLoggingPolicies())
-                            .routes(o.getRoutes());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ApiSpecification model) {
+            if (model.wasPropertyExplicitlySet("requestPolicies")) {
+                this.requestPolicies(model.getRequestPolicies());
+            }
+            if (model.wasPropertyExplicitlySet("loggingPolicies")) {
+                this.loggingPolicies(model.getLoggingPolicies());
+            }
+            if (model.wasPropertyExplicitlySet("routes")) {
+                this.routes(model.getRoutes());
+            }
+            return this;
         }
     }
 
@@ -141,10 +146,10 @@ public final class ApiSpecification {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ApiSpecification(");
+        sb.append("super=").append(super.toString());
         sb.append("requestPolicies=").append(String.valueOf(this.requestPolicies));
         sb.append(", loggingPolicies=").append(String.valueOf(this.loggingPolicies));
         sb.append(", routes=").append(String.valueOf(this.routes));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -162,7 +167,7 @@ public final class ApiSpecification {
         return java.util.Objects.equals(this.requestPolicies, other.requestPolicies)
                 && java.util.Objects.equals(this.loggingPolicies, other.loggingPolicies)
                 && java.util.Objects.equals(this.routes, other.routes)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -176,16 +181,7 @@ public final class ApiSpecification {
                 (result * PRIME)
                         + (this.loggingPolicies == null ? 43 : this.loggingPolicies.hashCode());
         result = (result * PRIME) + (this.routes == null ? 43 : this.routes.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

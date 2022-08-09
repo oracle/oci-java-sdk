@@ -188,7 +188,8 @@ public class ListRunsConverter {
 
                                 com.oracle.bmc.dataflow.responses.ListRunsResponse.Builder builder =
                                         com.oracle.bmc.dataflow.responses.ListRunsResponse.builder()
-                                                .__httpStatusCode__(rawResponse.getStatus());
+                                                .__httpStatusCode__(rawResponse.getStatus())
+                                                .headers(headers);
 
                                 builder.items(response.getItem());
 

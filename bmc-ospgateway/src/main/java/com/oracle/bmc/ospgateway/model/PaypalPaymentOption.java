@@ -113,30 +113,41 @@ public final class PaypalPaymentOption extends PaymentOption {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PaypalPaymentOption build() {
-            PaypalPaymentOption __instance__ =
+            PaypalPaymentOption model =
                     new PaypalPaymentOption(
-                            walletInstrumentId,
-                            walletTransactionId,
-                            emailAddress,
-                            firstName,
-                            lastName,
-                            extBillingAgreementId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.walletInstrumentId,
+                            this.walletTransactionId,
+                            this.emailAddress,
+                            this.firstName,
+                            this.lastName,
+                            this.extBillingAgreementId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(PaypalPaymentOption o) {
-            Builder copiedBuilder =
-                    walletInstrumentId(o.getWalletInstrumentId())
-                            .walletTransactionId(o.getWalletTransactionId())
-                            .emailAddress(o.getEmailAddress())
-                            .firstName(o.getFirstName())
-                            .lastName(o.getLastName())
-                            .extBillingAgreementId(o.getExtBillingAgreementId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(PaypalPaymentOption model) {
+            if (model.wasPropertyExplicitlySet("walletInstrumentId")) {
+                this.walletInstrumentId(model.getWalletInstrumentId());
+            }
+            if (model.wasPropertyExplicitlySet("walletTransactionId")) {
+                this.walletTransactionId(model.getWalletTransactionId());
+            }
+            if (model.wasPropertyExplicitlySet("emailAddress")) {
+                this.emailAddress(model.getEmailAddress());
+            }
+            if (model.wasPropertyExplicitlySet("firstName")) {
+                this.firstName(model.getFirstName());
+            }
+            if (model.wasPropertyExplicitlySet("lastName")) {
+                this.lastName(model.getLastName());
+            }
+            if (model.wasPropertyExplicitlySet("extBillingAgreementId")) {
+                this.extBillingAgreementId(model.getExtBillingAgreementId());
+            }
+            return this;
         }
     }
 
@@ -240,7 +251,6 @@ public final class PaypalPaymentOption extends PaymentOption {
         sb.append(", firstName=").append(String.valueOf(this.firstName));
         sb.append(", lastName=").append(String.valueOf(this.lastName));
         sb.append(", extBillingAgreementId=").append(String.valueOf(this.extBillingAgreementId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -259,8 +269,7 @@ public final class PaypalPaymentOption extends PaymentOption {
                 && java.util.Objects.equals(this.firstName, other.firstName)
                 && java.util.Objects.equals(this.lastName, other.lastName)
                 && java.util.Objects.equals(this.extBillingAgreementId, other.extBillingAgreementId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -275,16 +284,6 @@ public final class PaypalPaymentOption extends PaymentOption {
                         + (this.extBillingAgreementId == null
                                 ? 43
                                 : this.extBillingAgreementId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

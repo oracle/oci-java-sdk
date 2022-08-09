@@ -55,13 +55,20 @@ public class GetSubscriberResponse extends com.oracle.bmc.responses.BmcResponse 
         return subscriber;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "subscriber"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "etag",
+        "opcRequestId",
+        "subscriber"
+    })
     private GetSubscriberResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.apigateway.model.Subscriber subscriber) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.subscriber = subscriber;
@@ -72,6 +79,13 @@ public class GetSubscriberResponse extends com.oracle.bmc.responses.BmcResponse 
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -134,6 +148,7 @@ public class GetSubscriberResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public Builder copy(GetSubscriberResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             subscriber(o.getSubscriber());
@@ -146,7 +161,8 @@ public class GetSubscriberResponse extends com.oracle.bmc.responses.BmcResponse 
          * @return the response object
          */
         public GetSubscriberResponse build() {
-            return new GetSubscriberResponse(__httpStatusCode__, etag, opcRequestId, subscriber);
+            return new GetSubscriberResponse(
+                    __httpStatusCode__, headers, etag, opcRequestId, subscriber);
         }
     }
 

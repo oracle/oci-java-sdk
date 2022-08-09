@@ -17,7 +17,7 @@ package com.oracle.bmc.nosql.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Schema.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Schema {
+public final class Schema extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"columns", "primaryKey", "shardKey", "ttl"})
     public Schema(
@@ -103,21 +103,28 @@ public final class Schema {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Schema build() {
-            Schema __instance__ = new Schema(columns, primaryKey, shardKey, ttl);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            Schema model = new Schema(this.columns, this.primaryKey, this.shardKey, this.ttl);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Schema o) {
-            Builder copiedBuilder =
-                    columns(o.getColumns())
-                            .primaryKey(o.getPrimaryKey())
-                            .shardKey(o.getShardKey())
-                            .ttl(o.getTtl());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Schema model) {
+            if (model.wasPropertyExplicitlySet("columns")) {
+                this.columns(model.getColumns());
+            }
+            if (model.wasPropertyExplicitlySet("primaryKey")) {
+                this.primaryKey(model.getPrimaryKey());
+            }
+            if (model.wasPropertyExplicitlySet("shardKey")) {
+                this.shardKey(model.getShardKey());
+            }
+            if (model.wasPropertyExplicitlySet("ttl")) {
+                this.ttl(model.getTtl());
+            }
+            return this;
         }
     }
 
@@ -201,11 +208,11 @@ public final class Schema {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Schema(");
+        sb.append("super=").append(super.toString());
         sb.append("columns=").append(String.valueOf(this.columns));
         sb.append(", primaryKey=").append(String.valueOf(this.primaryKey));
         sb.append(", shardKey=").append(String.valueOf(this.shardKey));
         sb.append(", ttl=").append(String.valueOf(this.ttl));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -224,7 +231,7 @@ public final class Schema {
                 && java.util.Objects.equals(this.primaryKey, other.primaryKey)
                 && java.util.Objects.equals(this.shardKey, other.shardKey)
                 && java.util.Objects.equals(this.ttl, other.ttl)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -235,16 +242,7 @@ public final class Schema {
         result = (result * PRIME) + (this.primaryKey == null ? 43 : this.primaryKey.hashCode());
         result = (result * PRIME) + (this.shardKey == null ? 43 : this.shardKey.hashCode());
         result = (result * PRIME) + (this.ttl == null ? 43 : this.ttl.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

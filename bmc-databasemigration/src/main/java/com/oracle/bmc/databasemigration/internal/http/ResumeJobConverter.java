@@ -114,8 +114,8 @@ public class ResumeJobConverter {
                                         builder =
                                                 com.oracle.bmc.databasemigration.responses
                                                         .ResumeJobResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.job(response.getItem());
 

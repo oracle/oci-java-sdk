@@ -17,7 +17,7 @@ package com.oracle.bmc.usageapi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryDefinition.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryDefinition {
+public final class QueryDefinition extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "reportQuery", "costAnalysisUI", "version"})
     public QueryDefinition(
@@ -89,22 +89,30 @@ public final class QueryDefinition {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueryDefinition build() {
-            QueryDefinition __instance__ =
-                    new QueryDefinition(displayName, reportQuery, costAnalysisUI, version);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            QueryDefinition model =
+                    new QueryDefinition(
+                            this.displayName, this.reportQuery, this.costAnalysisUI, this.version);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(QueryDefinition o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .reportQuery(o.getReportQuery())
-                            .costAnalysisUI(o.getCostAnalysisUI())
-                            .version(o.getVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(QueryDefinition model) {
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("reportQuery")) {
+                this.reportQuery(model.getReportQuery());
+            }
+            if (model.wasPropertyExplicitlySet("costAnalysisUI")) {
+                this.costAnalysisUI(model.getCostAnalysisUI());
+            }
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
+            return this;
         }
     }
 
@@ -174,11 +182,11 @@ public final class QueryDefinition {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("QueryDefinition(");
+        sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", reportQuery=").append(String.valueOf(this.reportQuery));
         sb.append(", costAnalysisUI=").append(String.valueOf(this.costAnalysisUI));
         sb.append(", version=").append(String.valueOf(this.version));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -197,7 +205,7 @@ public final class QueryDefinition {
                 && java.util.Objects.equals(this.reportQuery, other.reportQuery)
                 && java.util.Objects.equals(this.costAnalysisUI, other.costAnalysisUI)
                 && java.util.Objects.equals(this.version, other.version)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -210,16 +218,7 @@ public final class QueryDefinition {
                 (result * PRIME)
                         + (this.costAnalysisUI == null ? 43 : this.costAnalysisUI.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

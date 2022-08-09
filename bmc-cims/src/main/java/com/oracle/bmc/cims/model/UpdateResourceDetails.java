@@ -22,7 +22,8 @@ package com.oracle.bmc.cims.model;
     builder = UpdateResourceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateResourceDetails {
+public final class UpdateResourceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"item"})
     public UpdateResourceDetails(UpdateItemDetails item) {
@@ -46,17 +47,19 @@ public final class UpdateResourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateResourceDetails build() {
-            UpdateResourceDetails __instance__ = new UpdateResourceDetails(item);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            UpdateResourceDetails model = new UpdateResourceDetails(this.item);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateResourceDetails o) {
-            Builder copiedBuilder = item(o.getItem());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateResourceDetails model) {
+            if (model.wasPropertyExplicitlySet("item")) {
+                this.item(model.getItem());
+            }
+            return this;
         }
     }
 
@@ -91,8 +94,8 @@ public final class UpdateResourceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateResourceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("item=").append(String.valueOf(this.item));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -107,8 +110,7 @@ public final class UpdateResourceDetails {
         }
 
         UpdateResourceDetails other = (UpdateResourceDetails) o;
-        return java.util.Objects.equals(this.item, other.item)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.item, other.item) && super.equals(other);
     }
 
     @Override
@@ -116,16 +118,7 @@ public final class UpdateResourceDetails {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.item == null ? 43 : this.item.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

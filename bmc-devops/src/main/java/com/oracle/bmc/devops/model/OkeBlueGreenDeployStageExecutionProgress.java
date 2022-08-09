@@ -114,35 +114,50 @@ public final class OkeBlueGreenDeployStageExecutionProgress extends DeployStageE
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public OkeBlueGreenDeployStageExecutionProgress build() {
-            OkeBlueGreenDeployStageExecutionProgress __instance__ =
+            OkeBlueGreenDeployStageExecutionProgress model =
                     new OkeBlueGreenDeployStageExecutionProgress(
-                            deployStageDisplayName,
-                            deployStageId,
-                            timeStarted,
-                            timeFinished,
-                            status,
-                            deployStagePredecessors,
-                            deployStageExecutionProgressDetails,
-                            namespace);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.deployStageDisplayName,
+                            this.deployStageId,
+                            this.timeStarted,
+                            this.timeFinished,
+                            this.status,
+                            this.deployStagePredecessors,
+                            this.deployStageExecutionProgressDetails,
+                            this.namespace);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(OkeBlueGreenDeployStageExecutionProgress o) {
-            Builder copiedBuilder =
-                    deployStageDisplayName(o.getDeployStageDisplayName())
-                            .deployStageId(o.getDeployStageId())
-                            .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished())
-                            .status(o.getStatus())
-                            .deployStagePredecessors(o.getDeployStagePredecessors())
-                            .deployStageExecutionProgressDetails(
-                                    o.getDeployStageExecutionProgressDetails())
-                            .namespace(o.getNamespace());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(OkeBlueGreenDeployStageExecutionProgress model) {
+            if (model.wasPropertyExplicitlySet("deployStageDisplayName")) {
+                this.deployStageDisplayName(model.getDeployStageDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("deployStageId")) {
+                this.deployStageId(model.getDeployStageId());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
+            }
+            if (model.wasPropertyExplicitlySet("timeFinished")) {
+                this.timeFinished(model.getTimeFinished());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("deployStagePredecessors")) {
+                this.deployStagePredecessors(model.getDeployStagePredecessors());
+            }
+            if (model.wasPropertyExplicitlySet("deployStageExecutionProgressDetails")) {
+                this.deployStageExecutionProgressDetails(
+                        model.getDeployStageExecutionProgressDetails());
+            }
+            if (model.wasPropertyExplicitlySet("namespace")) {
+                this.namespace(model.getNamespace());
+            }
+            return this;
         }
     }
 
@@ -207,7 +222,6 @@ public final class OkeBlueGreenDeployStageExecutionProgress extends DeployStageE
         sb.append("OkeBlueGreenDeployStageExecutionProgress(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -223,9 +237,7 @@ public final class OkeBlueGreenDeployStageExecutionProgress extends DeployStageE
 
         OkeBlueGreenDeployStageExecutionProgress other =
                 (OkeBlueGreenDeployStageExecutionProgress) o;
-        return java.util.Objects.equals(this.namespace, other.namespace)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.namespace, other.namespace) && super.equals(other);
     }
 
     @Override
@@ -233,16 +245,6 @@ public final class OkeBlueGreenDeployStageExecutionProgress extends DeployStageE
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

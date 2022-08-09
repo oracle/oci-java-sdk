@@ -124,8 +124,8 @@ public class GenerateAnalyticsClusterMemoryEstimateConverter {
                                                 com.oracle.bmc.mysql.responses
                                                         .GenerateAnalyticsClusterMemoryEstimateResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.analyticsClusterMemoryEstimate(response.getItem());
 

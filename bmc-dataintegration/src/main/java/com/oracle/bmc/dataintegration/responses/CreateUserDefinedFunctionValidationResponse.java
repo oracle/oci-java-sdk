@@ -58,17 +58,19 @@ public class CreateUserDefinedFunctionValidationResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "userDefinedFunctionValidation"
     })
     private CreateUserDefinedFunctionValidationResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidation
                     userDefinedFunctionValidation) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.userDefinedFunctionValidation = userDefinedFunctionValidation;
@@ -79,6 +81,13 @@ public class CreateUserDefinedFunctionValidationResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -142,6 +151,7 @@ public class CreateUserDefinedFunctionValidationResponse
          */
         public Builder copy(CreateUserDefinedFunctionValidationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             userDefinedFunctionValidation(o.getUserDefinedFunctionValidation());
@@ -155,7 +165,7 @@ public class CreateUserDefinedFunctionValidationResponse
          */
         public CreateUserDefinedFunctionValidationResponse build() {
             return new CreateUserDefinedFunctionValidationResponse(
-                    __httpStatusCode__, etag, opcRequestId, userDefinedFunctionValidation);
+                    __httpStatusCode__, headers, etag, opcRequestId, userDefinedFunctionValidation);
         }
     }
 

@@ -42,15 +42,17 @@ public class BatchDetectLanguageSentimentsResponse extends com.oracle.bmc.respon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "batchDetectLanguageSentimentsResult"
     })
     private BatchDetectLanguageSentimentsResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsResult
                     batchDetectLanguageSentimentsResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.batchDetectLanguageSentimentsResult = batchDetectLanguageSentimentsResult;
     }
@@ -60,6 +62,13 @@ public class BatchDetectLanguageSentimentsResponse extends com.oracle.bmc.respon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -106,6 +115,7 @@ public class BatchDetectLanguageSentimentsResponse extends com.oracle.bmc.respon
          */
         public Builder copy(BatchDetectLanguageSentimentsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             batchDetectLanguageSentimentsResult(o.getBatchDetectLanguageSentimentsResult());
 
@@ -118,7 +128,7 @@ public class BatchDetectLanguageSentimentsResponse extends com.oracle.bmc.respon
          */
         public BatchDetectLanguageSentimentsResponse build() {
             return new BatchDetectLanguageSentimentsResponse(
-                    __httpStatusCode__, opcRequestId, batchDetectLanguageSentimentsResult);
+                    __httpStatusCode__, headers, opcRequestId, batchDetectLanguageSentimentsResult);
         }
     }
 

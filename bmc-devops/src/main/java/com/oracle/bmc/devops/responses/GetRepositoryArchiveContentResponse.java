@@ -62,6 +62,7 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "contentType",
         "contentDisposition",
@@ -69,11 +70,12 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
     })
     private GetRepositoryArchiveContentResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String contentType,
             String contentDisposition,
             java.io.InputStream inputStream) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.contentType = contentType;
         this.contentDisposition = contentDisposition;
@@ -85,6 +87,13 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -154,6 +163,7 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
          */
         public Builder copy(GetRepositoryArchiveContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             contentType(o.getContentType());
             contentDisposition(o.getContentDisposition());
@@ -168,7 +178,12 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
          */
         public GetRepositoryArchiveContentResponse build() {
             return new GetRepositoryArchiveContentResponse(
-                    __httpStatusCode__, opcRequestId, contentType, contentDisposition, inputStream);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    contentType,
+                    contentDisposition,
+                    inputStream);
         }
     }
 

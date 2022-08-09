@@ -85,22 +85,27 @@ public final class StandaloneJobInfrastructureConfigurationDetails
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StandaloneJobInfrastructureConfigurationDetails build() {
-            StandaloneJobInfrastructureConfigurationDetails __instance__ =
+            StandaloneJobInfrastructureConfigurationDetails model =
                     new StandaloneJobInfrastructureConfigurationDetails(
-                            shapeName, subnetId, blockStorageSizeInGBs);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.shapeName, this.subnetId, this.blockStorageSizeInGBs);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(StandaloneJobInfrastructureConfigurationDetails o) {
-            Builder copiedBuilder =
-                    shapeName(o.getShapeName())
-                            .subnetId(o.getSubnetId())
-                            .blockStorageSizeInGBs(o.getBlockStorageSizeInGBs());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(StandaloneJobInfrastructureConfigurationDetails model) {
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("blockStorageSizeInGBs")) {
+                this.blockStorageSizeInGBs(model.getBlockStorageSizeInGBs());
+            }
+            return this;
         }
     }
 
@@ -187,7 +192,6 @@ public final class StandaloneJobInfrastructureConfigurationDetails
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", blockStorageSizeInGBs=").append(String.valueOf(this.blockStorageSizeInGBs));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -206,8 +210,7 @@ public final class StandaloneJobInfrastructureConfigurationDetails
         return java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.blockStorageSizeInGBs, other.blockStorageSizeInGBs)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -221,16 +224,6 @@ public final class StandaloneJobInfrastructureConfigurationDetails
                         + (this.blockStorageSizeInGBs == null
                                 ? 43
                                 : this.blockStorageSizeInGBs.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

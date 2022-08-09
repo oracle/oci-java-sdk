@@ -78,6 +78,7 @@ public class ListShapesResponse extends com.oracle.bmc.responses.BmcResponse {
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "opcNextPage",
         "opcPrevPage",
@@ -85,11 +86,12 @@ public class ListShapesResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ListShapesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
             com.oracle.bmc.rover.model.ShapeCollection shapeCollection) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
         this.opcPrevPage = opcPrevPage;
@@ -101,6 +103,13 @@ public class ListShapesResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -186,6 +195,7 @@ public class ListShapesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder copy(ListShapesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());
@@ -200,7 +210,12 @@ public class ListShapesResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public ListShapesResponse build() {
             return new ListShapesResponse(
-                    __httpStatusCode__, opcRequestId, opcNextPage, opcPrevPage, shapeCollection);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    opcPrevPage,
+                    shapeCollection);
         }
     }
 

@@ -18,7 +18,7 @@ package com.oracle.bmc.databasemigration.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Migration.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Migration {
+public final class Migration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -559,73 +559,126 @@ public final class Migration {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Migration build() {
-            Migration __instance__ =
+            Migration model =
                     new Migration(
-                            id,
-                            displayName,
-                            compartmentId,
-                            type,
-                            waitAfter,
-                            agentId,
-                            credentialsSecretId,
-                            sourceDatabaseConnectionId,
-                            sourceContainerDatabaseConnectionId,
-                            targetDatabaseConnectionId,
-                            executingJobId,
-                            dataTransferMediumDetails,
-                            dumpTransferDetails,
-                            datapumpSettings,
-                            advisorSettings,
-                            excludeObjects,
-                            includeObjects,
-                            goldenGateDetails,
-                            vaultDetails,
-                            timeCreated,
-                            timeUpdated,
-                            timeLastMigration,
-                            lifecycleState,
-                            lifecycleDetails,
-                            freeformTags,
-                            definedTags,
-                            systemTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.displayName,
+                            this.compartmentId,
+                            this.type,
+                            this.waitAfter,
+                            this.agentId,
+                            this.credentialsSecretId,
+                            this.sourceDatabaseConnectionId,
+                            this.sourceContainerDatabaseConnectionId,
+                            this.targetDatabaseConnectionId,
+                            this.executingJobId,
+                            this.dataTransferMediumDetails,
+                            this.dumpTransferDetails,
+                            this.datapumpSettings,
+                            this.advisorSettings,
+                            this.excludeObjects,
+                            this.includeObjects,
+                            this.goldenGateDetails,
+                            this.vaultDetails,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.timeLastMigration,
+                            this.lifecycleState,
+                            this.lifecycleDetails,
+                            this.freeformTags,
+                            this.definedTags,
+                            this.systemTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Migration o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .compartmentId(o.getCompartmentId())
-                            .type(o.getType())
-                            .waitAfter(o.getWaitAfter())
-                            .agentId(o.getAgentId())
-                            .credentialsSecretId(o.getCredentialsSecretId())
-                            .sourceDatabaseConnectionId(o.getSourceDatabaseConnectionId())
-                            .sourceContainerDatabaseConnectionId(
-                                    o.getSourceContainerDatabaseConnectionId())
-                            .targetDatabaseConnectionId(o.getTargetDatabaseConnectionId())
-                            .executingJobId(o.getExecutingJobId())
-                            .dataTransferMediumDetails(o.getDataTransferMediumDetails())
-                            .dumpTransferDetails(o.getDumpTransferDetails())
-                            .datapumpSettings(o.getDatapumpSettings())
-                            .advisorSettings(o.getAdvisorSettings())
-                            .excludeObjects(o.getExcludeObjects())
-                            .includeObjects(o.getIncludeObjects())
-                            .goldenGateDetails(o.getGoldenGateDetails())
-                            .vaultDetails(o.getVaultDetails())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .timeLastMigration(o.getTimeLastMigration())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .systemTags(o.getSystemTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Migration model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("type")) {
+                this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("waitAfter")) {
+                this.waitAfter(model.getWaitAfter());
+            }
+            if (model.wasPropertyExplicitlySet("agentId")) {
+                this.agentId(model.getAgentId());
+            }
+            if (model.wasPropertyExplicitlySet("credentialsSecretId")) {
+                this.credentialsSecretId(model.getCredentialsSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDatabaseConnectionId")) {
+                this.sourceDatabaseConnectionId(model.getSourceDatabaseConnectionId());
+            }
+            if (model.wasPropertyExplicitlySet("sourceContainerDatabaseConnectionId")) {
+                this.sourceContainerDatabaseConnectionId(
+                        model.getSourceContainerDatabaseConnectionId());
+            }
+            if (model.wasPropertyExplicitlySet("targetDatabaseConnectionId")) {
+                this.targetDatabaseConnectionId(model.getTargetDatabaseConnectionId());
+            }
+            if (model.wasPropertyExplicitlySet("executingJobId")) {
+                this.executingJobId(model.getExecutingJobId());
+            }
+            if (model.wasPropertyExplicitlySet("dataTransferMediumDetails")) {
+                this.dataTransferMediumDetails(model.getDataTransferMediumDetails());
+            }
+            if (model.wasPropertyExplicitlySet("dumpTransferDetails")) {
+                this.dumpTransferDetails(model.getDumpTransferDetails());
+            }
+            if (model.wasPropertyExplicitlySet("datapumpSettings")) {
+                this.datapumpSettings(model.getDatapumpSettings());
+            }
+            if (model.wasPropertyExplicitlySet("advisorSettings")) {
+                this.advisorSettings(model.getAdvisorSettings());
+            }
+            if (model.wasPropertyExplicitlySet("excludeObjects")) {
+                this.excludeObjects(model.getExcludeObjects());
+            }
+            if (model.wasPropertyExplicitlySet("includeObjects")) {
+                this.includeObjects(model.getIncludeObjects());
+            }
+            if (model.wasPropertyExplicitlySet("goldenGateDetails")) {
+                this.goldenGateDetails(model.getGoldenGateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("vaultDetails")) {
+                this.vaultDetails(model.getVaultDetails());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastMigration")) {
+                this.timeLastMigration(model.getTimeLastMigration());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
+            return this;
         }
     }
 
@@ -1041,6 +1094,7 @@ public final class Migration {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Migration(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -1072,7 +1126,6 @@ public final class Migration {
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1119,7 +1172,7 @@ public final class Migration {
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1197,16 +1250,7 @@ public final class Migration {
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -113,8 +113,8 @@ public class DisableKeyConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .DisableKeyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.key(response.getItem());
 

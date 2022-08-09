@@ -17,7 +17,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CpeDeviceInfo.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CpeDeviceInfo {
+public final class CpeDeviceInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"vendor", "platformSoftwareVersion"})
     public CpeDeviceInfo(String vendor, String platformSoftwareVersion) {
@@ -65,18 +65,22 @@ public final class CpeDeviceInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CpeDeviceInfo build() {
-            CpeDeviceInfo __instance__ = new CpeDeviceInfo(vendor, platformSoftwareVersion);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CpeDeviceInfo model = new CpeDeviceInfo(this.vendor, this.platformSoftwareVersion);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CpeDeviceInfo o) {
-            Builder copiedBuilder =
-                    vendor(o.getVendor()).platformSoftwareVersion(o.getPlatformSoftwareVersion());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CpeDeviceInfo model) {
+            if (model.wasPropertyExplicitlySet("vendor")) {
+                this.vendor(model.getVendor());
+            }
+            if (model.wasPropertyExplicitlySet("platformSoftwareVersion")) {
+                this.platformSoftwareVersion(model.getPlatformSoftwareVersion());
+            }
+            return this;
         }
     }
 
@@ -132,10 +136,10 @@ public final class CpeDeviceInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CpeDeviceInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("vendor=").append(String.valueOf(this.vendor));
         sb.append(", platformSoftwareVersion=")
                 .append(String.valueOf(this.platformSoftwareVersion));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -153,7 +157,7 @@ public final class CpeDeviceInfo {
         return java.util.Objects.equals(this.vendor, other.vendor)
                 && java.util.Objects.equals(
                         this.platformSoftwareVersion, other.platformSoftwareVersion)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -166,16 +170,7 @@ public final class CpeDeviceInfo {
                         + (this.platformSoftwareVersion == null
                                 ? 43
                                 : this.platformSoftwareVersion.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

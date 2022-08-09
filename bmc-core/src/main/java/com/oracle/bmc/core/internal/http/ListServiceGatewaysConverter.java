@@ -156,8 +156,8 @@ public class ListServiceGatewaysConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListServiceGatewaysResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

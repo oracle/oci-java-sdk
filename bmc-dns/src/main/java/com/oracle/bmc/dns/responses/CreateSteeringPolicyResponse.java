@@ -74,6 +74,7 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "eTag",
         "location",
         "opcRequestId",
@@ -81,11 +82,12 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
     })
     private CreateSteeringPolicyResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String eTag,
             String location,
             String opcRequestId,
             com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.eTag = eTag;
         this.location = location;
         this.opcRequestId = opcRequestId;
@@ -97,6 +99,13 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -178,6 +187,7 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(CreateSteeringPolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             eTag(o.getETag());
             location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
@@ -192,7 +202,7 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
          */
         public CreateSteeringPolicyResponse build() {
             return new CreateSteeringPolicyResponse(
-                    __httpStatusCode__, eTag, location, opcRequestId, steeringPolicy);
+                    __httpStatusCode__, headers, eTag, location, opcRequestId, steeringPolicy);
         }
     }
 

@@ -19,7 +19,8 @@ package com.oracle.bmc.dataintegration.model;
     builder = CreateSourceApplicationInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateSourceApplicationInfo {
+public final class CreateSourceApplicationInfo
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"workspaceId", "applicationKey"})
     public CreateSourceApplicationInfo(String workspaceId, String applicationKey) {
@@ -67,19 +68,23 @@ public final class CreateSourceApplicationInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateSourceApplicationInfo build() {
-            CreateSourceApplicationInfo __instance__ =
-                    new CreateSourceApplicationInfo(workspaceId, applicationKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            CreateSourceApplicationInfo model =
+                    new CreateSourceApplicationInfo(this.workspaceId, this.applicationKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateSourceApplicationInfo o) {
-            Builder copiedBuilder =
-                    workspaceId(o.getWorkspaceId()).applicationKey(o.getApplicationKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateSourceApplicationInfo model) {
+            if (model.wasPropertyExplicitlySet("workspaceId")) {
+                this.workspaceId(model.getWorkspaceId());
+            }
+            if (model.wasPropertyExplicitlySet("applicationKey")) {
+                this.applicationKey(model.getApplicationKey());
+            }
+            return this;
         }
     }
 
@@ -135,9 +140,9 @@ public final class CreateSourceApplicationInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateSourceApplicationInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("workspaceId=").append(String.valueOf(this.workspaceId));
         sb.append(", applicationKey=").append(String.valueOf(this.applicationKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -154,7 +159,7 @@ public final class CreateSourceApplicationInfo {
         CreateSourceApplicationInfo other = (CreateSourceApplicationInfo) o;
         return java.util.Objects.equals(this.workspaceId, other.workspaceId)
                 && java.util.Objects.equals(this.applicationKey, other.applicationKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -165,16 +170,7 @@ public final class CreateSourceApplicationInfo {
         result =
                 (result * PRIME)
                         + (this.applicationKey == null ? 43 : this.applicationKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

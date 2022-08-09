@@ -132,8 +132,8 @@ public class ListBlockchainPlatformPatchesConverter {
                                                 com.oracle.bmc.blockchain.responses
                                                         .ListBlockchainPlatformPatchesResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.blockchainPlatformPatchCollection(response.getItem());
 

@@ -120,8 +120,8 @@ public class GetGenericArtifactByPathConverter {
                                         builder =
                                                 com.oracle.bmc.artifacts.responses
                                                         .GetGenericArtifactByPathResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.genericArtifact(response.getItem());
 

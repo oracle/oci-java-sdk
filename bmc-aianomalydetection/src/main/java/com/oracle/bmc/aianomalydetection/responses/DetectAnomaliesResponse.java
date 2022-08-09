@@ -38,12 +38,18 @@ public class DetectAnomaliesResponse extends com.oracle.bmc.responses.BmcRespons
         return anomalyDetectResult;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "anomalyDetectResult"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "anomalyDetectResult"
+    })
     private DetectAnomaliesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.aianomalydetection.model.AnomalyDetectResult anomalyDetectResult) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.anomalyDetectResult = anomalyDetectResult;
     }
@@ -53,6 +59,13 @@ public class DetectAnomaliesResponse extends com.oracle.bmc.responses.BmcRespons
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -97,6 +110,7 @@ public class DetectAnomaliesResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public Builder copy(DetectAnomaliesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             anomalyDetectResult(o.getAnomalyDetectResult());
 
@@ -109,7 +123,7 @@ public class DetectAnomaliesResponse extends com.oracle.bmc.responses.BmcRespons
          */
         public DetectAnomaliesResponse build() {
             return new DetectAnomaliesResponse(
-                    __httpStatusCode__, opcRequestId, anomalyDetectResult);
+                    __httpStatusCode__, headers, opcRequestId, anomalyDetectResult);
         }
     }
 

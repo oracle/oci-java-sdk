@@ -166,8 +166,8 @@ public class ListEndpointsConverter {
                                         builder =
                                                 com.oracle.bmc.dataconnectivity.responses
                                                         .ListEndpointsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.endpointSummaryCollection(response.getItem());
 

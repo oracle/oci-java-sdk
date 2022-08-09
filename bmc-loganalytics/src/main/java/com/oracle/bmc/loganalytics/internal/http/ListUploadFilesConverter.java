@@ -164,8 +164,8 @@ public class ListUploadFilesConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListUploadFilesResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.uploadFileCollection(response.getItem());
 

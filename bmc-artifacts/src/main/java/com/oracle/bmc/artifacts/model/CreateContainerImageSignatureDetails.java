@@ -19,7 +19,8 @@ package com.oracle.bmc.artifacts.model;
     builder = CreateContainerImageSignatureDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateContainerImageSignatureDetails {
+public final class CreateContainerImageSignatureDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -185,32 +186,45 @@ public final class CreateContainerImageSignatureDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateContainerImageSignatureDetails build() {
-            CreateContainerImageSignatureDetails __instance__ =
+            CreateContainerImageSignatureDetails model =
                     new CreateContainerImageSignatureDetails(
-                            compartmentId,
-                            imageId,
-                            kmsKeyId,
-                            kmsKeyVersionId,
-                            message,
-                            signature,
-                            signingAlgorithm);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.imageId,
+                            this.kmsKeyId,
+                            this.kmsKeyVersionId,
+                            this.message,
+                            this.signature,
+                            this.signingAlgorithm);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateContainerImageSignatureDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .imageId(o.getImageId())
-                            .kmsKeyId(o.getKmsKeyId())
-                            .kmsKeyVersionId(o.getKmsKeyVersionId())
-                            .message(o.getMessage())
-                            .signature(o.getSignature())
-                            .signingAlgorithm(o.getSigningAlgorithm());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateContainerImageSignatureDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("imageId")) {
+                this.imageId(model.getImageId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
+                this.kmsKeyVersionId(model.getKmsKeyVersionId());
+            }
+            if (model.wasPropertyExplicitlySet("message")) {
+                this.message(model.getMessage());
+            }
+            if (model.wasPropertyExplicitlySet("signature")) {
+                this.signature(model.getSignature());
+            }
+            if (model.wasPropertyExplicitlySet("signingAlgorithm")) {
+                this.signingAlgorithm(model.getSigningAlgorithm());
+            }
+            return this;
         }
     }
 
@@ -391,6 +405,7 @@ public final class CreateContainerImageSignatureDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateContainerImageSignatureDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
@@ -398,7 +413,6 @@ public final class CreateContainerImageSignatureDetails {
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", signature=").append(String.valueOf(this.signature));
         sb.append(", signingAlgorithm=").append(String.valueOf(this.signingAlgorithm));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -420,7 +434,7 @@ public final class CreateContainerImageSignatureDetails {
                 && java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.signature, other.signature)
                 && java.util.Objects.equals(this.signingAlgorithm, other.signingAlgorithm)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -440,16 +454,7 @@ public final class CreateContainerImageSignatureDetails {
         result =
                 (result * PRIME)
                         + (this.signingAlgorithm == null ? 43 : this.signingAlgorithm.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

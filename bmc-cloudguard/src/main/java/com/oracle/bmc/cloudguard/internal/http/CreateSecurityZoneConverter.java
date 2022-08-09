@@ -106,8 +106,8 @@ public class CreateSecurityZoneConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .CreateSecurityZoneResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.securityZone(response.getItem());
 

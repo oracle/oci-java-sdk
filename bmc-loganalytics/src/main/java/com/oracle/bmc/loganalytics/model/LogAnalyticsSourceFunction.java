@@ -19,7 +19,8 @@ package com.oracle.bmc.loganalytics.model;
     builder = LogAnalyticsSourceFunction.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogAnalyticsSourceFunction {
+public final class LogAnalyticsSourceFunction
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "arguments",
@@ -337,50 +338,81 @@ public final class LogAnalyticsSourceFunction {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsSourceFunction build() {
-            LogAnalyticsSourceFunction __instance__ =
+            LogAnalyticsSourceFunction model =
                     new LogAnalyticsSourceFunction(
-                            arguments,
-                            isEnabled,
-                            function,
-                            functionName,
-                            functionReference,
-                            sourceReference,
-                            features,
-                            functionId,
-                            order,
-                            isSystem,
-                            lookupColumn,
-                            lookupColumnPosition,
-                            lookupDisplayName,
-                            lookupMode,
-                            lookupTable,
-                            sourceId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.arguments,
+                            this.isEnabled,
+                            this.function,
+                            this.functionName,
+                            this.functionReference,
+                            this.sourceReference,
+                            this.features,
+                            this.functionId,
+                            this.order,
+                            this.isSystem,
+                            this.lookupColumn,
+                            this.lookupColumnPosition,
+                            this.lookupDisplayName,
+                            this.lookupMode,
+                            this.lookupTable,
+                            this.sourceId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(LogAnalyticsSourceFunction o) {
-            Builder copiedBuilder =
-                    arguments(o.getArguments())
-                            .isEnabled(o.getIsEnabled())
-                            .function(o.getFunction())
-                            .functionName(o.getFunctionName())
-                            .functionReference(o.getFunctionReference())
-                            .sourceReference(o.getSourceReference())
-                            .features(o.getFeatures())
-                            .functionId(o.getFunctionId())
-                            .order(o.getOrder())
-                            .isSystem(o.getIsSystem())
-                            .lookupColumn(o.getLookupColumn())
-                            .lookupColumnPosition(o.getLookupColumnPosition())
-                            .lookupDisplayName(o.getLookupDisplayName())
-                            .lookupMode(o.getLookupMode())
-                            .lookupTable(o.getLookupTable())
-                            .sourceId(o.getSourceId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(LogAnalyticsSourceFunction model) {
+            if (model.wasPropertyExplicitlySet("arguments")) {
+                this.arguments(model.getArguments());
+            }
+            if (model.wasPropertyExplicitlySet("isEnabled")) {
+                this.isEnabled(model.getIsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("function")) {
+                this.function(model.getFunction());
+            }
+            if (model.wasPropertyExplicitlySet("functionName")) {
+                this.functionName(model.getFunctionName());
+            }
+            if (model.wasPropertyExplicitlySet("functionReference")) {
+                this.functionReference(model.getFunctionReference());
+            }
+            if (model.wasPropertyExplicitlySet("sourceReference")) {
+                this.sourceReference(model.getSourceReference());
+            }
+            if (model.wasPropertyExplicitlySet("features")) {
+                this.features(model.getFeatures());
+            }
+            if (model.wasPropertyExplicitlySet("functionId")) {
+                this.functionId(model.getFunctionId());
+            }
+            if (model.wasPropertyExplicitlySet("order")) {
+                this.order(model.getOrder());
+            }
+            if (model.wasPropertyExplicitlySet("isSystem")) {
+                this.isSystem(model.getIsSystem());
+            }
+            if (model.wasPropertyExplicitlySet("lookupColumn")) {
+                this.lookupColumn(model.getLookupColumn());
+            }
+            if (model.wasPropertyExplicitlySet("lookupColumnPosition")) {
+                this.lookupColumnPosition(model.getLookupColumnPosition());
+            }
+            if (model.wasPropertyExplicitlySet("lookupDisplayName")) {
+                this.lookupDisplayName(model.getLookupDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("lookupMode")) {
+                this.lookupMode(model.getLookupMode());
+            }
+            if (model.wasPropertyExplicitlySet("lookupTable")) {
+                this.lookupTable(model.getLookupTable());
+            }
+            if (model.wasPropertyExplicitlySet("sourceId")) {
+                this.sourceId(model.getSourceId());
+            }
+            return this;
         }
     }
 
@@ -679,6 +711,7 @@ public final class LogAnalyticsSourceFunction {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsSourceFunction(");
+        sb.append("super=").append(super.toString());
         sb.append("arguments=").append(String.valueOf(this.arguments));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", function=").append(String.valueOf(this.function));
@@ -695,7 +728,6 @@ public final class LogAnalyticsSourceFunction {
         sb.append(", lookupMode=").append(String.valueOf(this.lookupMode));
         sb.append(", lookupTable=").append(String.valueOf(this.lookupTable));
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -726,7 +758,7 @@ public final class LogAnalyticsSourceFunction {
                 && java.util.Objects.equals(this.lookupMode, other.lookupMode)
                 && java.util.Objects.equals(this.lookupTable, other.lookupTable)
                 && java.util.Objects.equals(this.sourceId, other.sourceId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -759,16 +791,7 @@ public final class LogAnalyticsSourceFunction {
         result = (result * PRIME) + (this.lookupMode == null ? 43 : this.lookupMode.hashCode());
         result = (result * PRIME) + (this.lookupTable == null ? 43 : this.lookupTable.hashCode());
         result = (result * PRIME) + (this.sourceId == null ? 43 : this.sourceId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -125,8 +125,8 @@ public class GetCustomPropertyConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .GetCustomPropertyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.customProperty(response.getItem());
 

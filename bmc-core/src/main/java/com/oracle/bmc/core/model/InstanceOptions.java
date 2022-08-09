@@ -17,7 +17,7 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InstanceOptions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceOptions {
+public final class InstanceOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"areLegacyImdsEndpointsDisabled"})
     public InstanceOptions(Boolean areLegacyImdsEndpointsDisabled) {
@@ -54,18 +54,19 @@ public final class InstanceOptions {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceOptions build() {
-            InstanceOptions __instance__ = new InstanceOptions(areLegacyImdsEndpointsDisabled);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            InstanceOptions model = new InstanceOptions(this.areLegacyImdsEndpointsDisabled);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(InstanceOptions o) {
-            Builder copiedBuilder =
-                    areLegacyImdsEndpointsDisabled(o.getAreLegacyImdsEndpointsDisabled());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(InstanceOptions model) {
+            if (model.wasPropertyExplicitlySet("areLegacyImdsEndpointsDisabled")) {
+                this.areLegacyImdsEndpointsDisabled(model.getAreLegacyImdsEndpointsDisabled());
+            }
+            return this;
         }
     }
 
@@ -113,9 +114,9 @@ public final class InstanceOptions {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("InstanceOptions(");
+        sb.append("super=").append(super.toString());
         sb.append("areLegacyImdsEndpointsDisabled=")
                 .append(String.valueOf(this.areLegacyImdsEndpointsDisabled));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -132,7 +133,7 @@ public final class InstanceOptions {
         InstanceOptions other = (InstanceOptions) o;
         return java.util.Objects.equals(
                         this.areLegacyImdsEndpointsDisabled, other.areLegacyImdsEndpointsDisabled)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -144,16 +145,7 @@ public final class InstanceOptions {
                         + (this.areLegacyImdsEndpointsDisabled == null
                                 ? 43
                                 : this.areLegacyImdsEndpointsDisabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

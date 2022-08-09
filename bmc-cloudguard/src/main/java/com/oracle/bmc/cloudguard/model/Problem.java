@@ -17,7 +17,7 @@ package com.oracle.bmc.cloudguard.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Problem.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Problem {
+public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -507,68 +507,117 @@ public final class Problem {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Problem build() {
-            Problem __instance__ =
+            Problem model =
                     new Problem(
-                            id,
-                            compartmentId,
-                            detectorRuleId,
-                            region,
-                            regions,
-                            riskLevel,
-                            riskScore,
-                            peakRiskScoreDate,
-                            peakRiskScore,
-                            autoResolveDate,
-                            peakRiskScoreLookupPeriodInDays,
-                            resourceId,
-                            resourceName,
-                            resourceType,
-                            labels,
-                            timeLastDetected,
-                            timeFirstDetected,
-                            lifecycleState,
-                            lifecycleDetail,
-                            detectorId,
-                            targetId,
-                            additionalDetails,
-                            description,
-                            recommendation,
-                            comment);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.id,
+                            this.compartmentId,
+                            this.detectorRuleId,
+                            this.region,
+                            this.regions,
+                            this.riskLevel,
+                            this.riskScore,
+                            this.peakRiskScoreDate,
+                            this.peakRiskScore,
+                            this.autoResolveDate,
+                            this.peakRiskScoreLookupPeriodInDays,
+                            this.resourceId,
+                            this.resourceName,
+                            this.resourceType,
+                            this.labels,
+                            this.timeLastDetected,
+                            this.timeFirstDetected,
+                            this.lifecycleState,
+                            this.lifecycleDetail,
+                            this.detectorId,
+                            this.targetId,
+                            this.additionalDetails,
+                            this.description,
+                            this.recommendation,
+                            this.comment);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Problem o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .compartmentId(o.getCompartmentId())
-                            .detectorRuleId(o.getDetectorRuleId())
-                            .region(o.getRegion())
-                            .regions(o.getRegions())
-                            .riskLevel(o.getRiskLevel())
-                            .riskScore(o.getRiskScore())
-                            .peakRiskScoreDate(o.getPeakRiskScoreDate())
-                            .peakRiskScore(o.getPeakRiskScore())
-                            .autoResolveDate(o.getAutoResolveDate())
-                            .peakRiskScoreLookupPeriodInDays(o.getPeakRiskScoreLookupPeriodInDays())
-                            .resourceId(o.getResourceId())
-                            .resourceName(o.getResourceName())
-                            .resourceType(o.getResourceType())
-                            .labels(o.getLabels())
-                            .timeLastDetected(o.getTimeLastDetected())
-                            .timeFirstDetected(o.getTimeFirstDetected())
-                            .lifecycleState(o.getLifecycleState())
-                            .lifecycleDetail(o.getLifecycleDetail())
-                            .detectorId(o.getDetectorId())
-                            .targetId(o.getTargetId())
-                            .additionalDetails(o.getAdditionalDetails())
-                            .description(o.getDescription())
-                            .recommendation(o.getRecommendation())
-                            .comment(o.getComment());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(Problem model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("detectorRuleId")) {
+                this.detectorRuleId(model.getDetectorRuleId());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("regions")) {
+                this.regions(model.getRegions());
+            }
+            if (model.wasPropertyExplicitlySet("riskLevel")) {
+                this.riskLevel(model.getRiskLevel());
+            }
+            if (model.wasPropertyExplicitlySet("riskScore")) {
+                this.riskScore(model.getRiskScore());
+            }
+            if (model.wasPropertyExplicitlySet("peakRiskScoreDate")) {
+                this.peakRiskScoreDate(model.getPeakRiskScoreDate());
+            }
+            if (model.wasPropertyExplicitlySet("peakRiskScore")) {
+                this.peakRiskScore(model.getPeakRiskScore());
+            }
+            if (model.wasPropertyExplicitlySet("autoResolveDate")) {
+                this.autoResolveDate(model.getAutoResolveDate());
+            }
+            if (model.wasPropertyExplicitlySet("peakRiskScoreLookupPeriodInDays")) {
+                this.peakRiskScoreLookupPeriodInDays(model.getPeakRiskScoreLookupPeriodInDays());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
+            if (model.wasPropertyExplicitlySet("resourceName")) {
+                this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("labels")) {
+                this.labels(model.getLabels());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastDetected")) {
+                this.timeLastDetected(model.getTimeLastDetected());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstDetected")) {
+                this.timeFirstDetected(model.getTimeFirstDetected());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetail")) {
+                this.lifecycleDetail(model.getLifecycleDetail());
+            }
+            if (model.wasPropertyExplicitlySet("detectorId")) {
+                this.detectorId(model.getDetectorId());
+            }
+            if (model.wasPropertyExplicitlySet("targetId")) {
+                this.targetId(model.getTargetId());
+            }
+            if (model.wasPropertyExplicitlySet("additionalDetails")) {
+                this.additionalDetails(model.getAdditionalDetails());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("recommendation")) {
+                this.recommendation(model.getRecommendation());
+            }
+            if (model.wasPropertyExplicitlySet("comment")) {
+                this.comment(model.getComment());
+            }
+            return this;
         }
     }
 
@@ -946,6 +995,7 @@ public final class Problem {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Problem(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", detectorRuleId=").append(String.valueOf(this.detectorRuleId));
@@ -972,7 +1022,6 @@ public final class Problem {
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", recommendation=").append(String.valueOf(this.recommendation));
         sb.append(", comment=").append(String.valueOf(this.comment));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -1013,7 +1062,7 @@ public final class Problem {
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.recommendation, other.recommendation)
                 && java.util.Objects.equals(this.comment, other.comment)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -1071,16 +1120,7 @@ public final class Problem {
                 (result * PRIME)
                         + (this.recommendation == null ? 43 : this.recommendation.hashCode());
         result = (result * PRIME) + (this.comment == null ? 43 : this.comment.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

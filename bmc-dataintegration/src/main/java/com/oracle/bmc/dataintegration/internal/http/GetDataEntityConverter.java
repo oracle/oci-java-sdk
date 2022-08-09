@@ -121,8 +121,8 @@ public class GetDataEntityConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .GetDataEntityResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dataEntity(response.getItem());
 

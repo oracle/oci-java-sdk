@@ -20,7 +20,8 @@ package com.oracle.bmc.waf.model;
     builder = ProtectionCapabilitySettings.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProtectionCapabilitySettings {
+public final class ProtectionCapabilitySettings
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "maxNumberOfArguments",
@@ -163,30 +164,41 @@ public final class ProtectionCapabilitySettings {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ProtectionCapabilitySettings build() {
-            ProtectionCapabilitySettings __instance__ =
+            ProtectionCapabilitySettings model =
                     new ProtectionCapabilitySettings(
-                            maxNumberOfArguments,
-                            maxSingleArgumentLength,
-                            maxTotalArgumentLength,
-                            maxHttpRequestHeaders,
-                            maxHttpRequestHeaderLength,
-                            allowedHttpMethods);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.maxNumberOfArguments,
+                            this.maxSingleArgumentLength,
+                            this.maxTotalArgumentLength,
+                            this.maxHttpRequestHeaders,
+                            this.maxHttpRequestHeaderLength,
+                            this.allowedHttpMethods);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ProtectionCapabilitySettings o) {
-            Builder copiedBuilder =
-                    maxNumberOfArguments(o.getMaxNumberOfArguments())
-                            .maxSingleArgumentLength(o.getMaxSingleArgumentLength())
-                            .maxTotalArgumentLength(o.getMaxTotalArgumentLength())
-                            .maxHttpRequestHeaders(o.getMaxHttpRequestHeaders())
-                            .maxHttpRequestHeaderLength(o.getMaxHttpRequestHeaderLength())
-                            .allowedHttpMethods(o.getAllowedHttpMethods());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ProtectionCapabilitySettings model) {
+            if (model.wasPropertyExplicitlySet("maxNumberOfArguments")) {
+                this.maxNumberOfArguments(model.getMaxNumberOfArguments());
+            }
+            if (model.wasPropertyExplicitlySet("maxSingleArgumentLength")) {
+                this.maxSingleArgumentLength(model.getMaxSingleArgumentLength());
+            }
+            if (model.wasPropertyExplicitlySet("maxTotalArgumentLength")) {
+                this.maxTotalArgumentLength(model.getMaxTotalArgumentLength());
+            }
+            if (model.wasPropertyExplicitlySet("maxHttpRequestHeaders")) {
+                this.maxHttpRequestHeaders(model.getMaxHttpRequestHeaders());
+            }
+            if (model.wasPropertyExplicitlySet("maxHttpRequestHeaderLength")) {
+                this.maxHttpRequestHeaderLength(model.getMaxHttpRequestHeaderLength());
+            }
+            if (model.wasPropertyExplicitlySet("allowedHttpMethods")) {
+                this.allowedHttpMethods(model.getAllowedHttpMethods());
+            }
+            return this;
         }
     }
 
@@ -312,6 +324,7 @@ public final class ProtectionCapabilitySettings {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ProtectionCapabilitySettings(");
+        sb.append("super=").append(super.toString());
         sb.append("maxNumberOfArguments=").append(String.valueOf(this.maxNumberOfArguments));
         sb.append(", maxSingleArgumentLength=")
                 .append(String.valueOf(this.maxSingleArgumentLength));
@@ -320,7 +333,6 @@ public final class ProtectionCapabilitySettings {
         sb.append(", maxHttpRequestHeaderLength=")
                 .append(String.valueOf(this.maxHttpRequestHeaderLength));
         sb.append(", allowedHttpMethods=").append(String.valueOf(this.allowedHttpMethods));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -344,7 +356,7 @@ public final class ProtectionCapabilitySettings {
                 && java.util.Objects.equals(
                         this.maxHttpRequestHeaderLength, other.maxHttpRequestHeaderLength)
                 && java.util.Objects.equals(this.allowedHttpMethods, other.allowedHttpMethods)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -381,16 +393,7 @@ public final class ProtectionCapabilitySettings {
                         + (this.allowedHttpMethods == null
                                 ? 43
                                 : this.allowedHttpMethods.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

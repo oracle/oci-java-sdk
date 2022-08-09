@@ -43,15 +43,17 @@ public class AddNetworkSecurityGroupSecurityRulesResponse
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcRequestId",
         "addedNetworkSecurityGroupSecurityRules"
     })
     private AddNetworkSecurityGroupSecurityRulesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.core.model.AddedNetworkSecurityGroupSecurityRules
                     addedNetworkSecurityGroupSecurityRules) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.addedNetworkSecurityGroupSecurityRules = addedNetworkSecurityGroupSecurityRules;
     }
@@ -61,6 +63,13 @@ public class AddNetworkSecurityGroupSecurityRulesResponse
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -107,6 +116,7 @@ public class AddNetworkSecurityGroupSecurityRulesResponse
          */
         public Builder copy(AddNetworkSecurityGroupSecurityRulesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             addedNetworkSecurityGroupSecurityRules(o.getAddedNetworkSecurityGroupSecurityRules());
 
@@ -119,7 +129,10 @@ public class AddNetworkSecurityGroupSecurityRulesResponse
          */
         public AddNetworkSecurityGroupSecurityRulesResponse build() {
             return new AddNetworkSecurityGroupSecurityRulesResponse(
-                    __httpStatusCode__, opcRequestId, addedNetworkSecurityGroupSecurityRules);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    addedNetworkSecurityGroupSecurityRules);
         }
     }
 

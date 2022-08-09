@@ -80,24 +80,29 @@ public final class SslInboundInspectionProfile extends DecryptionProfile {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SslInboundInspectionProfile build() {
-            SslInboundInspectionProfile __instance__ =
+            SslInboundInspectionProfile model =
                     new SslInboundInspectionProfile(
-                            isUnsupportedVersionBlocked,
-                            isUnsupportedCipherBlocked,
-                            isOutOfCapacityBlocked);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.isUnsupportedVersionBlocked,
+                            this.isUnsupportedCipherBlocked,
+                            this.isOutOfCapacityBlocked);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SslInboundInspectionProfile o) {
-            Builder copiedBuilder =
-                    isUnsupportedVersionBlocked(o.getIsUnsupportedVersionBlocked())
-                            .isUnsupportedCipherBlocked(o.getIsUnsupportedCipherBlocked())
-                            .isOutOfCapacityBlocked(o.getIsOutOfCapacityBlocked());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SslInboundInspectionProfile model) {
+            if (model.wasPropertyExplicitlySet("isUnsupportedVersionBlocked")) {
+                this.isUnsupportedVersionBlocked(model.getIsUnsupportedVersionBlocked());
+            }
+            if (model.wasPropertyExplicitlySet("isUnsupportedCipherBlocked")) {
+                this.isUnsupportedCipherBlocked(model.getIsUnsupportedCipherBlocked());
+            }
+            if (model.wasPropertyExplicitlySet("isOutOfCapacityBlocked")) {
+                this.isOutOfCapacityBlocked(model.getIsOutOfCapacityBlocked());
+            }
+            return this;
         }
     }
 
@@ -184,7 +189,6 @@ public final class SslInboundInspectionProfile extends DecryptionProfile {
         sb.append(", isUnsupportedCipherBlocked=")
                 .append(String.valueOf(this.isUnsupportedCipherBlocked));
         sb.append(", isOutOfCapacityBlocked=").append(String.valueOf(this.isOutOfCapacityBlocked));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -205,8 +209,7 @@ public final class SslInboundInspectionProfile extends DecryptionProfile {
                         this.isUnsupportedCipherBlocked, other.isUnsupportedCipherBlocked)
                 && java.util.Objects.equals(
                         this.isOutOfCapacityBlocked, other.isOutOfCapacityBlocked)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -228,16 +231,6 @@ public final class SslInboundInspectionProfile extends DecryptionProfile {
                         + (this.isOutOfCapacityBlocked == null
                                 ? 43
                                 : this.isOutOfCapacityBlocked.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

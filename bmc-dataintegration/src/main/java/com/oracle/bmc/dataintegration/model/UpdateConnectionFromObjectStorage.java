@@ -186,46 +186,73 @@ public final class UpdateConnectionFromObjectStorage extends UpdateConnectionDet
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateConnectionFromObjectStorage build() {
-            UpdateConnectionFromObjectStorage __instance__ =
+            UpdateConnectionFromObjectStorage model =
                     new UpdateConnectionFromObjectStorage(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            name,
-                            description,
-                            objectStatus,
-                            objectVersion,
-                            identifier,
-                            connectionProperties,
-                            registryMetadata,
-                            credentialFileContent,
-                            userId,
-                            fingerPrint,
-                            passPhrase);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.name,
+                            this.description,
+                            this.objectStatus,
+                            this.objectVersion,
+                            this.identifier,
+                            this.connectionProperties,
+                            this.registryMetadata,
+                            this.credentialFileContent,
+                            this.userId,
+                            this.fingerPrint,
+                            this.passPhrase);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateConnectionFromObjectStorage o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .name(o.getName())
-                            .description(o.getDescription())
-                            .objectStatus(o.getObjectStatus())
-                            .objectVersion(o.getObjectVersion())
-                            .identifier(o.getIdentifier())
-                            .connectionProperties(o.getConnectionProperties())
-                            .registryMetadata(o.getRegistryMetadata())
-                            .credentialFileContent(o.getCredentialFileContent())
-                            .userId(o.getUserId())
-                            .fingerPrint(o.getFingerPrint())
-                            .passPhrase(o.getPassPhrase());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateConnectionFromObjectStorage model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("objectVersion")) {
+                this.objectVersion(model.getObjectVersion());
+            }
+            if (model.wasPropertyExplicitlySet("identifier")) {
+                this.identifier(model.getIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("connectionProperties")) {
+                this.connectionProperties(model.getConnectionProperties());
+            }
+            if (model.wasPropertyExplicitlySet("registryMetadata")) {
+                this.registryMetadata(model.getRegistryMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("credentialFileContent")) {
+                this.credentialFileContent(model.getCredentialFileContent());
+            }
+            if (model.wasPropertyExplicitlySet("userId")) {
+                this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("fingerPrint")) {
+                this.fingerPrint(model.getFingerPrint());
+            }
+            if (model.wasPropertyExplicitlySet("passPhrase")) {
+                this.passPhrase(model.getPassPhrase());
+            }
+            return this;
         }
     }
 
@@ -347,7 +374,6 @@ public final class UpdateConnectionFromObjectStorage extends UpdateConnectionDet
         sb.append(", userId=").append(String.valueOf(this.userId));
         sb.append(", fingerPrint=").append(String.valueOf(this.fingerPrint));
         sb.append(", passPhrase=").append(String.valueOf(this.passPhrase));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -366,8 +392,7 @@ public final class UpdateConnectionFromObjectStorage extends UpdateConnectionDet
                 && java.util.Objects.equals(this.userId, other.userId)
                 && java.util.Objects.equals(this.fingerPrint, other.fingerPrint)
                 && java.util.Objects.equals(this.passPhrase, other.passPhrase)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -382,16 +407,6 @@ public final class UpdateConnectionFromObjectStorage extends UpdateConnectionDet
         result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
         result = (result * PRIME) + (this.fingerPrint == null ? 43 : this.fingerPrint.hashCode());
         result = (result * PRIME) + (this.passPhrase == null ? 43 : this.passPhrase.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

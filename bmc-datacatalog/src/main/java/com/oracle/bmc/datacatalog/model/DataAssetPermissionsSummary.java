@@ -19,7 +19,8 @@ package com.oracle.bmc.datacatalog.model;
     builder = DataAssetPermissionsSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataAssetPermissionsSummary {
+public final class DataAssetPermissionsSummary
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dataAssetKey", "userPermissions"})
     public DataAssetPermissionsSummary(
@@ -68,19 +69,23 @@ public final class DataAssetPermissionsSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataAssetPermissionsSummary build() {
-            DataAssetPermissionsSummary __instance__ =
-                    new DataAssetPermissionsSummary(dataAssetKey, userPermissions);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DataAssetPermissionsSummary model =
+                    new DataAssetPermissionsSummary(this.dataAssetKey, this.userPermissions);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DataAssetPermissionsSummary o) {
-            Builder copiedBuilder =
-                    dataAssetKey(o.getDataAssetKey()).userPermissions(o.getUserPermissions());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DataAssetPermissionsSummary model) {
+            if (model.wasPropertyExplicitlySet("dataAssetKey")) {
+                this.dataAssetKey(model.getDataAssetKey());
+            }
+            if (model.wasPropertyExplicitlySet("userPermissions")) {
+                this.userPermissions(model.getUserPermissions());
+            }
+            return this;
         }
     }
 
@@ -136,9 +141,9 @@ public final class DataAssetPermissionsSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataAssetPermissionsSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("dataAssetKey=").append(String.valueOf(this.dataAssetKey));
         sb.append(", userPermissions=").append(String.valueOf(this.userPermissions));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -155,7 +160,7 @@ public final class DataAssetPermissionsSummary {
         DataAssetPermissionsSummary other = (DataAssetPermissionsSummary) o;
         return java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
                 && java.util.Objects.equals(this.userPermissions, other.userPermissions)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -166,16 +171,7 @@ public final class DataAssetPermissionsSummary {
         result =
                 (result * PRIME)
                         + (this.userPermissions == null ? 43 : this.userPermissions.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

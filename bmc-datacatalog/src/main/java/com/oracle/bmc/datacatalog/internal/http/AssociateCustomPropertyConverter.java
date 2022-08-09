@@ -124,8 +124,8 @@ public class AssociateCustomPropertyConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .AssociateCustomPropertyResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.type(response.getItem());
 

@@ -140,38 +140,57 @@ public final class RenameRule extends ProjectionRule {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RenameRule build() {
-            RenameRule __instance__ =
+            RenameRule model =
                     new RenameRule(
-                            key,
-                            modelVersion,
-                            parentRef,
-                            isJavaRegexSyntax,
-                            configValues,
-                            objectStatus,
-                            description,
-                            isSkipRemainingRulesOnMatch,
-                            fromName,
-                            toName);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.modelVersion,
+                            this.parentRef,
+                            this.isJavaRegexSyntax,
+                            this.configValues,
+                            this.objectStatus,
+                            this.description,
+                            this.isSkipRemainingRulesOnMatch,
+                            this.fromName,
+                            this.toName);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RenameRule o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .modelVersion(o.getModelVersion())
-                            .parentRef(o.getParentRef())
-                            .isJavaRegexSyntax(o.getIsJavaRegexSyntax())
-                            .configValues(o.getConfigValues())
-                            .objectStatus(o.getObjectStatus())
-                            .description(o.getDescription())
-                            .isSkipRemainingRulesOnMatch(o.getIsSkipRemainingRulesOnMatch())
-                            .fromName(o.getFromName())
-                            .toName(o.getToName());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RenameRule model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("modelVersion")) {
+                this.modelVersion(model.getModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("parentRef")) {
+                this.parentRef(model.getParentRef());
+            }
+            if (model.wasPropertyExplicitlySet("isJavaRegexSyntax")) {
+                this.isJavaRegexSyntax(model.getIsJavaRegexSyntax());
+            }
+            if (model.wasPropertyExplicitlySet("configValues")) {
+                this.configValues(model.getConfigValues());
+            }
+            if (model.wasPropertyExplicitlySet("objectStatus")) {
+                this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isSkipRemainingRulesOnMatch")) {
+                this.isSkipRemainingRulesOnMatch(model.getIsSkipRemainingRulesOnMatch());
+            }
+            if (model.wasPropertyExplicitlySet("fromName")) {
+                this.fromName(model.getFromName());
+            }
+            if (model.wasPropertyExplicitlySet("toName")) {
+                this.toName(model.getToName());
+            }
+            return this;
         }
     }
 
@@ -271,7 +290,6 @@ public final class RenameRule extends ProjectionRule {
                 .append(String.valueOf(this.isSkipRemainingRulesOnMatch));
         sb.append(", fromName=").append(String.valueOf(this.fromName));
         sb.append(", toName=").append(String.valueOf(this.toName));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -290,8 +308,7 @@ public final class RenameRule extends ProjectionRule {
                         this.isSkipRemainingRulesOnMatch, other.isSkipRemainingRulesOnMatch)
                 && java.util.Objects.equals(this.fromName, other.fromName)
                 && java.util.Objects.equals(this.toName, other.toName)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+                && super.equals(other);
     }
 
     @Override
@@ -305,16 +322,6 @@ public final class RenameRule extends ProjectionRule {
                                 : this.isSkipRemainingRulesOnMatch.hashCode());
         result = (result * PRIME) + (this.fromName == null ? 43 : this.fromName.hashCode());
         result = (result * PRIME) + (this.toName == null ? 43 : this.toName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

@@ -66,6 +66,7 @@ public class CreateTranslatorResponse extends com.oracle.bmc.responses.BmcRespon
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "location",
         "etag",
         "opcRequestId",
@@ -73,11 +74,12 @@ public class CreateTranslatorResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private CreateTranslatorResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String etag,
             String opcRequestId,
             com.oracle.bmc.oda.model.Translator translator) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.location = location;
         this.etag = etag;
         this.opcRequestId = opcRequestId;
@@ -89,6 +91,13 @@ public class CreateTranslatorResponse extends com.oracle.bmc.responses.BmcRespon
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -162,6 +171,7 @@ public class CreateTranslatorResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public Builder copy(CreateTranslatorResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             location(o.getLocation());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
@@ -176,7 +186,7 @@ public class CreateTranslatorResponse extends com.oracle.bmc.responses.BmcRespon
          */
         public CreateTranslatorResponse build() {
             return new CreateTranslatorResponse(
-                    __httpStatusCode__, location, etag, opcRequestId, translator);
+                    __httpStatusCode__, headers, location, etag, opcRequestId, translator);
         }
     }
 

@@ -19,7 +19,7 @@ package com.oracle.bmc.identitydataplane.model;
     builder = AuthorizationRequest.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuthorizationRequest {
+public final class AuthorizationRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "requestId",
@@ -152,30 +152,41 @@ public final class AuthorizationRequest {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AuthorizationRequest build() {
-            AuthorizationRequest __instance__ =
+            AuthorizationRequest model =
                     new AuthorizationRequest(
-                            requestId,
-                            userPrincipal,
-                            svcPrincipal,
-                            serviceName,
-                            context,
-                            policyHash);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.requestId,
+                            this.userPrincipal,
+                            this.svcPrincipal,
+                            this.serviceName,
+                            this.context,
+                            this.policyHash);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AuthorizationRequest o) {
-            Builder copiedBuilder =
-                    requestId(o.getRequestId())
-                            .userPrincipal(o.getUserPrincipal())
-                            .svcPrincipal(o.getSvcPrincipal())
-                            .serviceName(o.getServiceName())
-                            .context(o.getContext())
-                            .policyHash(o.getPolicyHash());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AuthorizationRequest model) {
+            if (model.wasPropertyExplicitlySet("requestId")) {
+                this.requestId(model.getRequestId());
+            }
+            if (model.wasPropertyExplicitlySet("userPrincipal")) {
+                this.userPrincipal(model.getUserPrincipal());
+            }
+            if (model.wasPropertyExplicitlySet("svcPrincipal")) {
+                this.svcPrincipal(model.getSvcPrincipal());
+            }
+            if (model.wasPropertyExplicitlySet("serviceName")) {
+                this.serviceName(model.getServiceName());
+            }
+            if (model.wasPropertyExplicitlySet("context")) {
+                this.context(model.getContext());
+            }
+            if (model.wasPropertyExplicitlySet("policyHash")) {
+                this.policyHash(model.getPolicyHash());
+            }
+            return this;
         }
     }
 
@@ -291,13 +302,13 @@ public final class AuthorizationRequest {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AuthorizationRequest(");
+        sb.append("super=").append(super.toString());
         sb.append("requestId=").append(String.valueOf(this.requestId));
         sb.append(", userPrincipal=").append(String.valueOf(this.userPrincipal));
         sb.append(", svcPrincipal=").append(String.valueOf(this.svcPrincipal));
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", context=").append(String.valueOf(this.context));
         sb.append(", policyHash=").append(String.valueOf(this.policyHash));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -318,7 +329,7 @@ public final class AuthorizationRequest {
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
                 && java.util.Objects.equals(this.context, other.context)
                 && java.util.Objects.equals(this.policyHash, other.policyHash)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -333,16 +344,7 @@ public final class AuthorizationRequest {
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
         result = (result * PRIME) + (this.context == null ? 43 : this.context.hashCode());
         result = (result * PRIME) + (this.policyHash == null ? 43 : this.policyHash.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

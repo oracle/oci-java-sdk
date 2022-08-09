@@ -66,6 +66,7 @@ public class ListConnectHarnessesResponse extends com.oracle.bmc.responses.BmcRe
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "opcNextPage",
         "opcPrevPage",
         "opcRequestId",
@@ -73,11 +74,12 @@ public class ListConnectHarnessesResponse extends com.oracle.bmc.responses.BmcRe
     })
     private ListConnectHarnessesResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcPrevPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.streaming.model.ConnectHarnessSummary> items) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.opcNextPage = opcNextPage;
         this.opcPrevPage = opcPrevPage;
         this.opcRequestId = opcRequestId;
@@ -89,6 +91,13 @@ public class ListConnectHarnessesResponse extends com.oracle.bmc.responses.BmcRe
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -163,6 +172,7 @@ public class ListConnectHarnessesResponse extends com.oracle.bmc.responses.BmcRe
          */
         public Builder copy(ListConnectHarnessesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());
             opcRequestId(o.getOpcRequestId());
@@ -177,7 +187,7 @@ public class ListConnectHarnessesResponse extends com.oracle.bmc.responses.BmcRe
          */
         public ListConnectHarnessesResponse build() {
             return new ListConnectHarnessesResponse(
-                    __httpStatusCode__, opcNextPage, opcPrevPage, opcRequestId, items);
+                    __httpStatusCode__, headers, opcNextPage, opcPrevPage, opcRequestId, items);
         }
     }
 

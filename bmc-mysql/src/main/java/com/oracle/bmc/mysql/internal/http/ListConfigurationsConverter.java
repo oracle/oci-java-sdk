@@ -186,8 +186,8 @@ public class ListConfigurationsConverter {
                                         builder =
                                                 com.oracle.bmc.mysql.responses
                                                         .ListConfigurationsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.items(response.getItem());
 

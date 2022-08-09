@@ -105,8 +105,8 @@ public class GetUserAssessmentConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .GetUserAssessmentResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.userAssessment(response.getItem());
 

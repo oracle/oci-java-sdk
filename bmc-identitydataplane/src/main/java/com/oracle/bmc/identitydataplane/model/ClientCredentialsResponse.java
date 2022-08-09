@@ -19,7 +19,8 @@ package com.oracle.bmc.identitydataplane.model;
     builder = ClientCredentialsResponse.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ClientCredentialsResponse {
+public final class ClientCredentialsResponse
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"accessToken", "tokenType", "expiresIn"})
     public ClientCredentialsResponse(String accessToken, String tokenType, String expiresIn) {
@@ -84,21 +85,26 @@ public final class ClientCredentialsResponse {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClientCredentialsResponse build() {
-            ClientCredentialsResponse __instance__ =
-                    new ClientCredentialsResponse(accessToken, tokenType, expiresIn);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ClientCredentialsResponse model =
+                    new ClientCredentialsResponse(this.accessToken, this.tokenType, this.expiresIn);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ClientCredentialsResponse o) {
-            Builder copiedBuilder =
-                    accessToken(o.getAccessToken())
-                            .tokenType(o.getTokenType())
-                            .expiresIn(o.getExpiresIn());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ClientCredentialsResponse model) {
+            if (model.wasPropertyExplicitlySet("accessToken")) {
+                this.accessToken(model.getAccessToken());
+            }
+            if (model.wasPropertyExplicitlySet("tokenType")) {
+                this.tokenType(model.getTokenType());
+            }
+            if (model.wasPropertyExplicitlySet("expiresIn")) {
+                this.expiresIn(model.getExpiresIn());
+            }
+            return this;
         }
     }
 
@@ -168,10 +174,10 @@ public final class ClientCredentialsResponse {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClientCredentialsResponse(");
+        sb.append("super=").append(super.toString());
         sb.append("accessToken=").append(String.valueOf(this.accessToken));
         sb.append(", tokenType=").append(String.valueOf(this.tokenType));
         sb.append(", expiresIn=").append(String.valueOf(this.expiresIn));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -189,7 +195,7 @@ public final class ClientCredentialsResponse {
         return java.util.Objects.equals(this.accessToken, other.accessToken)
                 && java.util.Objects.equals(this.tokenType, other.tokenType)
                 && java.util.Objects.equals(this.expiresIn, other.expiresIn)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -199,16 +205,7 @@ public final class ClientCredentialsResponse {
         result = (result * PRIME) + (this.accessToken == null ? 43 : this.accessToken.hashCode());
         result = (result * PRIME) + (this.tokenType == null ? 43 : this.tokenType.hashCode());
         result = (result * PRIME) + (this.expiresIn == null ? 43 : this.expiresIn.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

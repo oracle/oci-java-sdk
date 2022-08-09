@@ -130,8 +130,8 @@ public class AddStorageCapacityExadataInfrastructureConverter {
                                                 com.oracle.bmc.database.responses
                                                         .AddStorageCapacityExadataInfrastructureResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.exadataInfrastructure(response.getItem());
 

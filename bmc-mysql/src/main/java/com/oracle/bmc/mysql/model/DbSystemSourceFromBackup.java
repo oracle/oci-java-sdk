@@ -51,17 +51,19 @@ public final class DbSystemSourceFromBackup extends DbSystemSource {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbSystemSourceFromBackup build() {
-            DbSystemSourceFromBackup __instance__ = new DbSystemSourceFromBackup(backupId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            DbSystemSourceFromBackup model = new DbSystemSourceFromBackup(this.backupId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DbSystemSourceFromBackup o) {
-            Builder copiedBuilder = backupId(o.getBackupId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(DbSystemSourceFromBackup model) {
+            if (model.wasPropertyExplicitlySet("backupId")) {
+                this.backupId(model.getBackupId());
+            }
+            return this;
         }
     }
 
@@ -113,7 +115,6 @@ public final class DbSystemSourceFromBackup extends DbSystemSource {
         sb.append("DbSystemSourceFromBackup(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", backupId=").append(String.valueOf(this.backupId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -128,9 +129,7 @@ public final class DbSystemSourceFromBackup extends DbSystemSource {
         }
 
         DbSystemSourceFromBackup other = (DbSystemSourceFromBackup) o;
-        return java.util.Objects.equals(this.backupId, other.backupId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__)
-                && super.equals(o);
+        return java.util.Objects.equals(this.backupId, other.backupId) && super.equals(other);
     }
 
     @Override
@@ -138,16 +137,6 @@ public final class DbSystemSourceFromBackup extends DbSystemSource {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.backupId == null ? 43 : this.backupId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

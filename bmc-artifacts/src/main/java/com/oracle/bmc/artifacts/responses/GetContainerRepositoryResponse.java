@@ -55,16 +55,18 @@ public class GetContainerRepositoryResponse extends com.oracle.bmc.responses.Bmc
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "containerRepository"
     })
     private GetContainerRepositoryResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.artifacts.model.ContainerRepository containerRepository) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.containerRepository = containerRepository;
@@ -75,6 +77,13 @@ public class GetContainerRepositoryResponse extends com.oracle.bmc.responses.Bmc
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -136,6 +145,7 @@ public class GetContainerRepositoryResponse extends com.oracle.bmc.responses.Bmc
          */
         public Builder copy(GetContainerRepositoryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             containerRepository(o.getContainerRepository());
@@ -149,7 +159,7 @@ public class GetContainerRepositoryResponse extends com.oracle.bmc.responses.Bmc
          */
         public GetContainerRepositoryResponse build() {
             return new GetContainerRepositoryResponse(
-                    __httpStatusCode__, etag, opcRequestId, containerRepository);
+                    __httpStatusCode__, headers, etag, opcRequestId, containerRepository);
         }
     }
 

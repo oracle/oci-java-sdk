@@ -17,7 +17,7 @@ package com.oracle.bmc.datasafe.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = References.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class References {
+public final class References extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"stig", "cis", "gdpr"})
     public References(String stig, String cis, String gdpr) {
@@ -82,17 +82,25 @@ public final class References {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public References build() {
-            References __instance__ = new References(stig, cis, gdpr);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            References model = new References(this.stig, this.cis, this.gdpr);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(References o) {
-            Builder copiedBuilder = stig(o.getStig()).cis(o.getCis()).gdpr(o.getGdpr());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(References model) {
+            if (model.wasPropertyExplicitlySet("stig")) {
+                this.stig(model.getStig());
+            }
+            if (model.wasPropertyExplicitlySet("cis")) {
+                this.cis(model.getCis());
+            }
+            if (model.wasPropertyExplicitlySet("gdpr")) {
+                this.gdpr(model.getGdpr());
+            }
+            return this;
         }
     }
 
@@ -162,10 +170,10 @@ public final class References {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("References(");
+        sb.append("super=").append(super.toString());
         sb.append("stig=").append(String.valueOf(this.stig));
         sb.append(", cis=").append(String.valueOf(this.cis));
         sb.append(", gdpr=").append(String.valueOf(this.gdpr));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -183,7 +191,7 @@ public final class References {
         return java.util.Objects.equals(this.stig, other.stig)
                 && java.util.Objects.equals(this.cis, other.cis)
                 && java.util.Objects.equals(this.gdpr, other.gdpr)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -193,16 +201,7 @@ public final class References {
         result = (result * PRIME) + (this.stig == null ? 43 : this.stig.hashCode());
         result = (result * PRIME) + (this.cis == null ? 43 : this.cis.hashCode());
         result = (result * PRIME) + (this.gdpr == null ? 43 : this.gdpr.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

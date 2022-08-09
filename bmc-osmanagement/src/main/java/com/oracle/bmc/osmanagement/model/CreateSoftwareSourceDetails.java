@@ -19,7 +19,8 @@ package com.oracle.bmc.osmanagement.model;
     builder = CreateSoftwareSourceDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateSoftwareSourceDetails {
+public final class CreateSoftwareSourceDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -252,40 +253,61 @@ public final class CreateSoftwareSourceDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateSoftwareSourceDetails build() {
-            CreateSoftwareSourceDetails __instance__ =
+            CreateSoftwareSourceDetails model =
                     new CreateSoftwareSourceDetails(
-                            compartmentId,
-                            displayName,
-                            description,
-                            archType,
-                            maintainerName,
-                            maintainerEmail,
-                            maintainerPhone,
-                            checksumType,
-                            parentId,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.compartmentId,
+                            this.displayName,
+                            this.description,
+                            this.archType,
+                            this.maintainerName,
+                            this.maintainerEmail,
+                            this.maintainerPhone,
+                            this.checksumType,
+                            this.parentId,
+                            this.freeformTags,
+                            this.definedTags);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateSoftwareSourceDetails o) {
-            Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
-                            .description(o.getDescription())
-                            .archType(o.getArchType())
-                            .maintainerName(o.getMaintainerName())
-                            .maintainerEmail(o.getMaintainerEmail())
-                            .maintainerPhone(o.getMaintainerPhone())
-                            .checksumType(o.getChecksumType())
-                            .parentId(o.getParentId())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CreateSoftwareSourceDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("archType")) {
+                this.archType(model.getArchType());
+            }
+            if (model.wasPropertyExplicitlySet("maintainerName")) {
+                this.maintainerName(model.getMaintainerName());
+            }
+            if (model.wasPropertyExplicitlySet("maintainerEmail")) {
+                this.maintainerEmail(model.getMaintainerEmail());
+            }
+            if (model.wasPropertyExplicitlySet("maintainerPhone")) {
+                this.maintainerPhone(model.getMaintainerPhone());
+            }
+            if (model.wasPropertyExplicitlySet("checksumType")) {
+                this.checksumType(model.getChecksumType());
+            }
+            if (model.wasPropertyExplicitlySet("parentId")) {
+                this.parentId(model.getParentId());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            return this;
         }
     }
 
@@ -475,6 +497,7 @@ public final class CreateSoftwareSourceDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateSoftwareSourceDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -486,7 +509,6 @@ public final class CreateSoftwareSourceDetails {
         sb.append(", parentId=").append(String.valueOf(this.parentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -512,7 +534,7 @@ public final class CreateSoftwareSourceDetails {
                 && java.util.Objects.equals(this.parentId, other.parentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -538,16 +560,7 @@ public final class CreateSoftwareSourceDetails {
         result = (result * PRIME) + (this.parentId == null ? 43 : this.parentId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

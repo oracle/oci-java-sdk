@@ -49,16 +49,18 @@ public class GetProtectionRuleResponse extends com.oracle.bmc.responses.BmcRespo
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
+        "headers",
         "etag",
         "opcRequestId",
         "protectionRule"
     })
     private GetProtectionRuleResponse(
             int __httpStatusCode__,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.waas.model.ProtectionRule protectionRule) {
-        super(__httpStatusCode__);
+        super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.protectionRule = protectionRule;
@@ -69,6 +71,13 @@ public class GetProtectionRuleResponse extends com.oracle.bmc.responses.BmcRespo
 
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
+            return this;
+        }
+
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+            this.headers = headers;
             return this;
         }
 
@@ -123,6 +132,7 @@ public class GetProtectionRuleResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public Builder copy(GetProtectionRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            headers(o.getHeaders());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             protectionRule(o.getProtectionRule());
@@ -136,7 +146,7 @@ public class GetProtectionRuleResponse extends com.oracle.bmc.responses.BmcRespo
          */
         public GetProtectionRuleResponse build() {
             return new GetProtectionRuleResponse(
-                    __httpStatusCode__, etag, opcRequestId, protectionRule);
+                    __httpStatusCode__, headers, etag, opcRequestId, protectionRule);
         }
     }
 

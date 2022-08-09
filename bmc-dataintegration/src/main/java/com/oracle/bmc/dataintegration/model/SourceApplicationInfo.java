@@ -19,7 +19,8 @@ package com.oracle.bmc.dataintegration.model;
     builder = SourceApplicationInfo.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SourceApplicationInfo {
+public final class SourceApplicationInfo
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "workspaceId",
@@ -110,23 +111,33 @@ public final class SourceApplicationInfo {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SourceApplicationInfo build() {
-            SourceApplicationInfo __instance__ =
+            SourceApplicationInfo model =
                     new SourceApplicationInfo(
-                            workspaceId, applicationKey, applicationVersion, lastPatchKey);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.workspaceId,
+                            this.applicationKey,
+                            this.applicationVersion,
+                            this.lastPatchKey);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(SourceApplicationInfo o) {
-            Builder copiedBuilder =
-                    workspaceId(o.getWorkspaceId())
-                            .applicationKey(o.getApplicationKey())
-                            .applicationVersion(o.getApplicationVersion())
-                            .lastPatchKey(o.getLastPatchKey());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(SourceApplicationInfo model) {
+            if (model.wasPropertyExplicitlySet("workspaceId")) {
+                this.workspaceId(model.getWorkspaceId());
+            }
+            if (model.wasPropertyExplicitlySet("applicationKey")) {
+                this.applicationKey(model.getApplicationKey());
+            }
+            if (model.wasPropertyExplicitlySet("applicationVersion")) {
+                this.applicationVersion(model.getApplicationVersion());
+            }
+            if (model.wasPropertyExplicitlySet("lastPatchKey")) {
+                this.lastPatchKey(model.getLastPatchKey());
+            }
+            return this;
         }
     }
 
@@ -210,11 +221,11 @@ public final class SourceApplicationInfo {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SourceApplicationInfo(");
+        sb.append("super=").append(super.toString());
         sb.append("workspaceId=").append(String.valueOf(this.workspaceId));
         sb.append(", applicationKey=").append(String.valueOf(this.applicationKey));
         sb.append(", applicationVersion=").append(String.valueOf(this.applicationVersion));
         sb.append(", lastPatchKey=").append(String.valueOf(this.lastPatchKey));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -233,7 +244,7 @@ public final class SourceApplicationInfo {
                 && java.util.Objects.equals(this.applicationKey, other.applicationKey)
                 && java.util.Objects.equals(this.applicationVersion, other.applicationVersion)
                 && java.util.Objects.equals(this.lastPatchKey, other.lastPatchKey)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -250,16 +261,7 @@ public final class SourceApplicationInfo {
                                 ? 43
                                 : this.applicationVersion.hashCode());
         result = (result * PRIME) + (this.lastPatchKey == null ? 43 : this.lastPatchKey.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

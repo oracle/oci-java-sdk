@@ -110,8 +110,8 @@ public class GetDbServerConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetDbServerResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.dbServer(response.getItem());
 

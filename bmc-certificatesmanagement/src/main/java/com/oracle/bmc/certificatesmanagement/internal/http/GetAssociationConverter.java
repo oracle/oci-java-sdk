@@ -112,8 +112,8 @@ public class GetAssociationConverter {
                                         builder =
                                                 com.oracle.bmc.certificatesmanagement.responses
                                                         .GetAssociationResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.association(response.getItem());
 

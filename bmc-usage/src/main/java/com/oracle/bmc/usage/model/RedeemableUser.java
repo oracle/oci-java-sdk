@@ -17,7 +17,7 @@ package com.oracle.bmc.usage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RedeemableUser.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RedeemableUser {
+public final class RedeemableUser extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"emailId"})
     public RedeemableUser(String emailId) {
@@ -48,17 +48,19 @@ public final class RedeemableUser {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RedeemableUser build() {
-            RedeemableUser __instance__ = new RedeemableUser(emailId);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            RedeemableUser model = new RedeemableUser(this.emailId);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(RedeemableUser o) {
-            Builder copiedBuilder = emailId(o.getEmailId());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(RedeemableUser model) {
+            if (model.wasPropertyExplicitlySet("emailId")) {
+                this.emailId(model.getEmailId());
+            }
+            return this;
         }
     }
 
@@ -100,8 +102,8 @@ public final class RedeemableUser {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RedeemableUser(");
+        sb.append("super=").append(super.toString());
         sb.append("emailId=").append(String.valueOf(this.emailId));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -116,8 +118,7 @@ public final class RedeemableUser {
         }
 
         RedeemableUser other = (RedeemableUser) o;
-        return java.util.Objects.equals(this.emailId, other.emailId)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+        return java.util.Objects.equals(this.emailId, other.emailId) && super.equals(other);
     }
 
     @Override
@@ -125,16 +126,7 @@ public final class RedeemableUser {
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.emailId == null ? 43 : this.emailId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

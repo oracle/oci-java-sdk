@@ -204,8 +204,8 @@ public class ListDigitalAssistantsConverter {
                                         builder =
                                                 com.oracle.bmc.oda.responses
                                                         .ListDigitalAssistantsResponse.builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.digitalAssistantCollection(response.getItem());
 

@@ -115,8 +115,8 @@ public class GetExternalPluggableDatabaseConverter {
                                                 com.oracle.bmc.database.responses
                                                         .GetExternalPluggableDatabaseResponse
                                                         .builder()
-                                                        .__httpStatusCode__(
-                                                                rawResponse.getStatus());
+                                                        .__httpStatusCode__(rawResponse.getStatus())
+                                                        .headers(headers);
 
                                 builder.externalPluggableDatabase(response.getItem());
 

@@ -17,7 +17,7 @@ package com.oracle.bmc.marketplace.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AgreementSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AgreementSummary {
+public final class AgreementSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "contentUrl", "author", "prompt"})
     public AgreementSummary(String id, String contentUrl, Author author, String prompt) {
@@ -99,21 +99,29 @@ public final class AgreementSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AgreementSummary build() {
-            AgreementSummary __instance__ = new AgreementSummary(id, contentUrl, author, prompt);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            AgreementSummary model =
+                    new AgreementSummary(this.id, this.contentUrl, this.author, this.prompt);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AgreementSummary o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .contentUrl(o.getContentUrl())
-                            .author(o.getAuthor())
-                            .prompt(o.getPrompt());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(AgreementSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("contentUrl")) {
+                this.contentUrl(model.getContentUrl());
+            }
+            if (model.wasPropertyExplicitlySet("author")) {
+                this.author(model.getAuthor());
+            }
+            if (model.wasPropertyExplicitlySet("prompt")) {
+                this.prompt(model.getPrompt());
+            }
+            return this;
         }
     }
 
@@ -245,11 +253,11 @@ public final class AgreementSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AgreementSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", contentUrl=").append(String.valueOf(this.contentUrl));
         sb.append(", author=").append(String.valueOf(this.author));
         sb.append(", prompt=").append(String.valueOf(this.prompt));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -268,7 +276,7 @@ public final class AgreementSummary {
                 && java.util.Objects.equals(this.contentUrl, other.contentUrl)
                 && java.util.Objects.equals(this.author, other.author)
                 && java.util.Objects.equals(this.prompt, other.prompt)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -279,16 +287,7 @@ public final class AgreementSummary {
         result = (result * PRIME) + (this.contentUrl == null ? 43 : this.contentUrl.hashCode());
         result = (result * PRIME) + (this.author == null ? 43 : this.author.hashCode());
         result = (result * PRIME) + (this.prompt == null ? 43 : this.prompt.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

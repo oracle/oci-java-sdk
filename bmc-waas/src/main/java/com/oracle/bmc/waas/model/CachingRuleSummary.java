@@ -19,7 +19,7 @@ package com.oracle.bmc.waas.model;
     builder = CachingRuleSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CachingRuleSummary {
+public final class CachingRuleSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -179,32 +179,45 @@ public final class CachingRuleSummary {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CachingRuleSummary build() {
-            CachingRuleSummary __instance__ =
+            CachingRuleSummary model =
                     new CachingRuleSummary(
-                            key,
-                            name,
-                            action,
-                            cachingDuration,
-                            isClientCachingEnabled,
-                            clientCachingDuration,
-                            criteria);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.key,
+                            this.name,
+                            this.action,
+                            this.cachingDuration,
+                            this.isClientCachingEnabled,
+                            this.clientCachingDuration,
+                            this.criteria);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CachingRuleSummary o) {
-            Builder copiedBuilder =
-                    key(o.getKey())
-                            .name(o.getName())
-                            .action(o.getAction())
-                            .cachingDuration(o.getCachingDuration())
-                            .isClientCachingEnabled(o.getIsClientCachingEnabled())
-                            .clientCachingDuration(o.getClientCachingDuration())
-                            .criteria(o.getCriteria());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(CachingRuleSummary model) {
+            if (model.wasPropertyExplicitlySet("key")) {
+                this.key(model.getKey());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("action")) {
+                this.action(model.getAction());
+            }
+            if (model.wasPropertyExplicitlySet("cachingDuration")) {
+                this.cachingDuration(model.getCachingDuration());
+            }
+            if (model.wasPropertyExplicitlySet("isClientCachingEnabled")) {
+                this.isClientCachingEnabled(model.getIsClientCachingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("clientCachingDuration")) {
+                this.clientCachingDuration(model.getClientCachingDuration());
+            }
+            if (model.wasPropertyExplicitlySet("criteria")) {
+                this.criteria(model.getCriteria());
+            }
+            return this;
         }
     }
 
@@ -392,6 +405,7 @@ public final class CachingRuleSummary {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CachingRuleSummary(");
+        sb.append("super=").append(super.toString());
         sb.append("key=").append(String.valueOf(this.key));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", action=").append(String.valueOf(this.action));
@@ -399,7 +413,6 @@ public final class CachingRuleSummary {
         sb.append(", isClientCachingEnabled=").append(String.valueOf(this.isClientCachingEnabled));
         sb.append(", clientCachingDuration=").append(String.valueOf(this.clientCachingDuration));
         sb.append(", criteria=").append(String.valueOf(this.criteria));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -422,7 +435,7 @@ public final class CachingRuleSummary {
                         this.isClientCachingEnabled, other.isClientCachingEnabled)
                 && java.util.Objects.equals(this.clientCachingDuration, other.clientCachingDuration)
                 && java.util.Objects.equals(this.criteria, other.criteria)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -446,16 +459,7 @@ public final class CachingRuleSummary {
                                 ? 43
                                 : this.clientCachingDuration.hashCode());
         result = (result * PRIME) + (this.criteria == null ? 43 : this.criteria.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

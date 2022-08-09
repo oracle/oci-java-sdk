@@ -20,7 +20,8 @@ package com.oracle.bmc.databasemanagement.model;
     builder = ExecutionPlanStatsComparision.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExecutionPlanStatsComparision {
+public final class ExecutionPlanStatsComparision
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"original", "modified"})
     public ExecutionPlanStatsComparision(
@@ -55,18 +56,23 @@ public final class ExecutionPlanStatsComparision {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExecutionPlanStatsComparision build() {
-            ExecutionPlanStatsComparision __instance__ =
-                    new ExecutionPlanStatsComparision(original, modified);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            ExecutionPlanStatsComparision model =
+                    new ExecutionPlanStatsComparision(this.original, this.modified);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ExecutionPlanStatsComparision o) {
-            Builder copiedBuilder = original(o.getOriginal()).modified(o.getModified());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(ExecutionPlanStatsComparision model) {
+            if (model.wasPropertyExplicitlySet("original")) {
+                this.original(model.getOriginal());
+            }
+            if (model.wasPropertyExplicitlySet("modified")) {
+                this.modified(model.getModified());
+            }
+            return this;
         }
     }
 
@@ -108,9 +114,9 @@ public final class ExecutionPlanStatsComparision {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ExecutionPlanStatsComparision(");
+        sb.append("super=").append(super.toString());
         sb.append("original=").append(String.valueOf(this.original));
         sb.append(", modified=").append(String.valueOf(this.modified));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -127,7 +133,7 @@ public final class ExecutionPlanStatsComparision {
         ExecutionPlanStatsComparision other = (ExecutionPlanStatsComparision) o;
         return java.util.Objects.equals(this.original, other.original)
                 && java.util.Objects.equals(this.modified, other.modified)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -136,16 +142,7 @@ public final class ExecutionPlanStatsComparision {
         int result = 1;
         result = (result * PRIME) + (this.original == null ? 43 : this.original.hashCode());
         result = (result * PRIME) + (this.modified == null ? 43 : this.modified.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

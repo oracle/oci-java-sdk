@@ -19,7 +19,8 @@ package com.oracle.bmc.core.model;
     builder = UpdateIPSecTunnelBgpSessionDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateIPSecTunnelBgpSessionDetails {
+public final class UpdateIPSecTunnelBgpSessionDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "oracleInterfaceIp",
@@ -251,28 +252,37 @@ public final class UpdateIPSecTunnelBgpSessionDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateIPSecTunnelBgpSessionDetails build() {
-            UpdateIPSecTunnelBgpSessionDetails __instance__ =
+            UpdateIPSecTunnelBgpSessionDetails model =
                     new UpdateIPSecTunnelBgpSessionDetails(
-                            oracleInterfaceIp,
-                            customerInterfaceIp,
-                            oracleInterfaceIpv6,
-                            customerInterfaceIpv6,
-                            customerBgpAsn);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+                            this.oracleInterfaceIp,
+                            this.customerInterfaceIp,
+                            this.oracleInterfaceIpv6,
+                            this.customerInterfaceIpv6,
+                            this.customerBgpAsn);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateIPSecTunnelBgpSessionDetails o) {
-            Builder copiedBuilder =
-                    oracleInterfaceIp(o.getOracleInterfaceIp())
-                            .customerInterfaceIp(o.getCustomerInterfaceIp())
-                            .oracleInterfaceIpv6(o.getOracleInterfaceIpv6())
-                            .customerInterfaceIpv6(o.getCustomerInterfaceIpv6())
-                            .customerBgpAsn(o.getCustomerBgpAsn());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(UpdateIPSecTunnelBgpSessionDetails model) {
+            if (model.wasPropertyExplicitlySet("oracleInterfaceIp")) {
+                this.oracleInterfaceIp(model.getOracleInterfaceIp());
+            }
+            if (model.wasPropertyExplicitlySet("customerInterfaceIp")) {
+                this.customerInterfaceIp(model.getCustomerInterfaceIp());
+            }
+            if (model.wasPropertyExplicitlySet("oracleInterfaceIpv6")) {
+                this.oracleInterfaceIpv6(model.getOracleInterfaceIpv6());
+            }
+            if (model.wasPropertyExplicitlySet("customerInterfaceIpv6")) {
+                this.customerInterfaceIpv6(model.getCustomerInterfaceIpv6());
+            }
+            if (model.wasPropertyExplicitlySet("customerBgpAsn")) {
+                this.customerBgpAsn(model.getCustomerBgpAsn());
+            }
+            return this;
         }
     }
 
@@ -492,12 +502,12 @@ public final class UpdateIPSecTunnelBgpSessionDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateIPSecTunnelBgpSessionDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("oracleInterfaceIp=").append(String.valueOf(this.oracleInterfaceIp));
         sb.append(", customerInterfaceIp=").append(String.valueOf(this.customerInterfaceIp));
         sb.append(", oracleInterfaceIpv6=").append(String.valueOf(this.oracleInterfaceIpv6));
         sb.append(", customerInterfaceIpv6=").append(String.valueOf(this.customerInterfaceIpv6));
         sb.append(", customerBgpAsn=").append(String.valueOf(this.customerBgpAsn));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -517,7 +527,7 @@ public final class UpdateIPSecTunnelBgpSessionDetails {
                 && java.util.Objects.equals(this.oracleInterfaceIpv6, other.oracleInterfaceIpv6)
                 && java.util.Objects.equals(this.customerInterfaceIpv6, other.customerInterfaceIpv6)
                 && java.util.Objects.equals(this.customerBgpAsn, other.customerBgpAsn)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -545,16 +555,7 @@ public final class UpdateIPSecTunnelBgpSessionDetails {
         result =
                 (result * PRIME)
                         + (this.customerBgpAsn == null ? 43 : this.customerBgpAsn.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }

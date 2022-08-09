@@ -19,7 +19,8 @@ package com.oracle.bmc.aispeech.model;
     builder = TranscriptionModelDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TranscriptionModelDetails {
+public final class TranscriptionModelDetails
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"domain", "languageCode"})
     public TranscriptionModelDetails(Domain domain, LanguageCode languageCode) {
@@ -48,12 +49,34 @@ public final class TranscriptionModelDetails {
         }
         /**
          * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+         * - en-US: English - United States
+         * - es-ES: Spanish - Spain
+         * - pt-BR: Portuguese - Brazil
+         * - en-GB: English - Great Britain
+         * - en-AU: English - Australia
+         * - en-IN: English - India
+         * - hi-IN: Hindi - India
+         * - fr-FR: French - France
+         * - de-DE: German - Germany
+         * - it-IT: Italian - Italy
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private LanguageCode languageCode;
 
         /**
          * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+         * - en-US: English - United States
+         * - es-ES: Spanish - Spain
+         * - pt-BR: Portuguese - Brazil
+         * - en-GB: English - Great Britain
+         * - en-AU: English - Australia
+         * - en-IN: English - India
+         * - hi-IN: Hindi - India
+         * - fr-FR: French - France
+         * - de-DE: German - Germany
+         * - it-IT: Italian - Italy
+         *
          * @param languageCode the value to set
          * @return this builder
          **/
@@ -67,18 +90,23 @@ public final class TranscriptionModelDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TranscriptionModelDetails build() {
-            TranscriptionModelDetails __instance__ =
-                    new TranscriptionModelDetails(domain, languageCode);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
+            TranscriptionModelDetails model =
+                    new TranscriptionModelDetails(this.domain, this.languageCode);
+            for (String explicitlySetProperty : this.__explicitlySet__) {
+                model.markPropertyAsExplicitlySet(explicitlySetProperty);
+            }
+            return model;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(TranscriptionModelDetails o) {
-            Builder copiedBuilder = domain(o.getDomain()).languageCode(o.getLanguageCode());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
+        public Builder copy(TranscriptionModelDetails model) {
+            if (model.wasPropertyExplicitlySet("domain")) {
+                this.domain(model.getDomain());
+            }
+            if (model.wasPropertyExplicitlySet("languageCode")) {
+                this.languageCode(model.getLanguageCode());
+            }
+            return this;
         }
     }
 
@@ -155,11 +183,29 @@ public final class TranscriptionModelDetails {
 
     /**
      * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+     * - en-US: English - United States
+     * - es-ES: Spanish - Spain
+     * - pt-BR: Portuguese - Brazil
+     * - en-GB: English - Great Britain
+     * - en-AU: English - Australia
+     * - en-IN: English - India
+     * - hi-IN: Hindi - India
+     * - fr-FR: French - France
+     * - de-DE: German - Germany
+     * - it-IT: Italian - Italy
+     *
      **/
     public enum LanguageCode {
         EnUs("en-US"),
         EsEs("es-ES"),
         PtBr("pt-BR"),
+        EnGb("en-GB"),
+        EnAu("en-AU"),
+        EnIn("en-IN"),
+        HiIn("hi-IN"),
+        FrFr("fr-FR"),
+        DeDe("de-DE"),
+        ItIt("it-IT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -204,12 +250,34 @@ public final class TranscriptionModelDetails {
     };
     /**
      * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+     * - en-US: English - United States
+     * - es-ES: Spanish - Spain
+     * - pt-BR: Portuguese - Brazil
+     * - en-GB: English - Great Britain
+     * - en-AU: English - Australia
+     * - en-IN: English - India
+     * - hi-IN: Hindi - India
+     * - fr-FR: French - France
+     * - de-DE: German - Germany
+     * - it-IT: Italian - Italy
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final LanguageCode languageCode;
 
     /**
      * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+     * - en-US: English - United States
+     * - es-ES: Spanish - Spain
+     * - pt-BR: Portuguese - Brazil
+     * - en-GB: English - Great Britain
+     * - en-AU: English - Australia
+     * - en-IN: English - India
+     * - hi-IN: Hindi - India
+     * - fr-FR: French - France
+     * - de-DE: German - Germany
+     * - it-IT: Italian - Italy
+     *
      * @return the value
      **/
     public LanguageCode getLanguageCode() {
@@ -229,9 +297,9 @@ public final class TranscriptionModelDetails {
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("TranscriptionModelDetails(");
+        sb.append("super=").append(super.toString());
         sb.append("domain=").append(String.valueOf(this.domain));
         sb.append(", languageCode=").append(String.valueOf(this.languageCode));
-        sb.append("__explicitlySet__=").append(String.valueOf(this.__explicitlySet__));
         sb.append(")");
         return sb.toString();
     }
@@ -248,7 +316,7 @@ public final class TranscriptionModelDetails {
         TranscriptionModelDetails other = (TranscriptionModelDetails) o;
         return java.util.Objects.equals(this.domain, other.domain)
                 && java.util.Objects.equals(this.languageCode, other.languageCode)
-                && java.util.Objects.equals(this.__explicitlySet__, other.__explicitlySet__);
+                && super.equals(other);
     }
 
     @Override
@@ -257,16 +325,7 @@ public final class TranscriptionModelDetails {
         int result = 1;
         result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
         result = (result * PRIME) + (this.languageCode == null ? 43 : this.languageCode.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.__explicitlySet__ == null ? 43 : this.__explicitlySet__.hashCode());
+        result = (result * PRIME) + super.hashCode();
         return result;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-    public java.util.Set<String> get__explicitlySet__() {
-        return this.__explicitlySet__;
     }
 }
